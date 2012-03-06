@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
+		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
+		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
+		E1C877541505F41700592954 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877531505F41700592954 /* CoreData.framework */; };
+		E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1C877581505F41700592954 /* InfoPlist.strings */; };
+		E1C8775C1505F41700592954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C8775B1505F41700592954 /* main.m */; };
+		E1C877601505F41700592954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C8775F1505F41700592954 /* AppDelegate.m */; };
+		E1C877631505F41700592954 /* WeTongji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1C877611505F41700592954 /* WeTongji.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E1C877511505F41700592954 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1C877531505F41700592954 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E1C877571505F41700592954 /* WeTongji-Info.plist */ = {isa = PBXFileReference; path = "WeTongji-Info.plist"; sourceTree = "<group>"; };
+		E1C877591505F41700592954 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1C8775B1505F41700592954 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1C8775D1505F41700592954 /* WeTongji-Prefix.pch */ = {isa = PBXFileReference; path = "WeTongji-Prefix.pch"; sourceTree = "<group>"; };
+		E1C8775E1505F41700592954 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1C8775F1505F41700592954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1C877621505F41700592954 /* WeTongji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeTongji.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1C877461505F41700592954 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */,
+				E1C877501505F41700592954 /* Foundation.framework in Frameworks */,
+				E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */,
+				E1C877541505F41700592954 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1C8773E1505F41700592954 = {
+			isa = PBXGroup;
+			children = (
+				E1C877551505F41700592954 /* WeTongji */,
+				E1C8774C1505F41700592954 /* Frameworks */,
+				E1C8774A1505F41700592954 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1C8774A1505F41700592954 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1C877491505F41700592954 /* WeTongji.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1C8774C1505F41700592954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8774D1505F41700592954 /* UIKit.framework */,
+				E1C8774F1505F41700592954 /* Foundation.framework */,
+				E1C877511505F41700592954 /* CoreGraphics.framework */,
+				E1C877531505F41700592954 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1C877551505F41700592954 /* WeTongji */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8775E1505F41700592954 /* AppDelegate.h */,
+				E1C8775F1505F41700592954 /* AppDelegate.m */,
+				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
+				E1C877561505F41700592954 /* Supporting Files */,
+			);
+			path = WeTongji;
+			sourceTree = "<group>";
+		};
+		E1C877561505F41700592954 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1C877571505F41700592954 /* WeTongji-Info.plist */,
+				E1C877581505F41700592954 /* InfoPlist.strings */,
+				E1C8775B1505F41700592954 /* main.m */,
+				E1C8775D1505F41700592954 /* WeTongji-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1C877481505F41700592954 /* WeTongji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C877661505F41700592954 /* Build configuration list for PBXNativeTarget "WeTongji" */;
+			buildPhases = (
+				E1C877451505F41700592954 /* Sources */,
+				E1C877461505F41700592954 /* Frameworks */,
+				E1C877471505F41700592954 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeTongji;
+			productName = WeTongji;
+			productReference = E1C877491505F41700592954 /* WeTongji.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1C877401505F41700592954 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E1C877431505F41700592954 /* Build configuration list for PBXProject "WeTongji" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E1C8773E1505F41700592954;
+			productRefGroup = E1C8774A1505F41700592954 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1C877481505F41700592954 /* WeTongji */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1C877471505F41700592954 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1C877451505F41700592954 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C8775C1505F41700592954 /* main.m in Sources */,
+				E1C877601505F41700592954 /* AppDelegate.m in Sources */,
+				E1C877631505F41700592954 /* WeTongji.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1C877581505F41700592954 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C877591505F41700592954 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1C877641505F41700592954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E1C877651505F41700592954 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1C877671505F41700592954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
+				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E1C877681505F41700592954 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
+				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1C877431505F41700592954 /* Build configuration list for PBXProject "WeTongji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C877641505F41700592954 /* Debug */,
+				E1C877651505F41700592954 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1C877661505F41700592954 /* Build configuration list for PBXNativeTarget "WeTongji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C877671505F41700592954 /* Debug */,
+				E1C877681505F41700592954 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E1C877611505F41700592954 /* WeTongji.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E1C877621505F41700592954 /* WeTongji.xcdatamodel */,
+			);
+			currentVersion = E1C877621505F41700592954 /* WeTongji.xcdatamodel */;
+			path = WeTongji.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E1C877401505F41700592954 /* Project object */;
+}
