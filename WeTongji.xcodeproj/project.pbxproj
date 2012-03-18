@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E11965491507B2F200AE32E0 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11965481507B2F200AE32E0 /* RootView.m */; };
+		E191772D15078188009FB941 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E191772B15078188009FB941 /* UserInfoViewController.m */; };
+		E191772E15078188009FB941 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* UserInfoViewController.xib */; };
+		E1917731150783C4009FB941 /* user_info_default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = E1917730150783C4009FB941 /* user_info_default_image.png */; };
+		E1917734150785ED009FB941 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1917733150785ED009FB941 /* MainWindow.xib */; };
+		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
+		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
+		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
 		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
 		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
@@ -15,21 +23,53 @@
 		E1C8775C1505F41700592954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C8775B1505F41700592954 /* main.m */; };
 		E1C877601505F41700592954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C8775F1505F41700592954 /* AppDelegate.m */; };
 		E1C877631505F41700592954 /* WeTongji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1C877611505F41700592954 /* WeTongji.xcdatamodeld */; };
+		E1C877A51505FB4800592954 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C877A41505FB4800592954 /* RootViewController.m */; };
+		E1C877B515063FCD00592954 /* MetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C877B415063FCD00592954 /* MetroViewController.m */; };
+		E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C877BC15064B4900592954 /* MetroViewController.xib */; };
+		E1C877C215064B6300592954 /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877BF15064B6300592954 /* main_bg.png */; };
+		E1C877C315064B6300592954 /* main_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C015064B6300592954 /* main_bg_2.png */; };
+		E1C877C415064B6300592954 /* main_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C115064B6300592954 /* main_bg_3.png */; };
+		E1C877C715064BA500592954 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C515064BA500592954 /* Default.png */; };
+		E1C877C815064BA500592954 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C615064BA500592954 /* Default@2x.png */; };
+		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
+		E1DEA598150E262D003F51B5 /* dock_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E11965471507B2F200AE32E0 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootView.h; path = Classes/RootView.h; sourceTree = "<group>"; };
+		E11965481507B2F200AE32E0 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootView.m; path = Classes/RootView.m; sourceTree = "<group>"; };
+		E191772A15078188009FB941 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoViewController.h; path = Classes/UserInfoViewController.h; sourceTree = "<group>"; };
+		E191772B15078188009FB941 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoViewController.m; path = Classes/UserInfoViewController.m; sourceTree = "<group>"; };
+		E191772C15078188009FB941 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoViewController.xib; path = Classes/UserInfoViewController.xib; sourceTree = "<group>"; };
+		E1917730150783C4009FB941 /* user_info_default_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_info_default_image.png; sourceTree = "<group>"; };
+		E1917733150785ED009FB941 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		E191773515078609009FB941 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E1B0BC411507D27B0085D9AB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
+		E1B0BC441507D27D0085D9AB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1C877511505F41700592954 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E1C877531505F41700592954 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E1C877571505F41700592954 /* WeTongji-Info.plist */ = {isa = PBXFileReference; path = "WeTongji-Info.plist"; sourceTree = "<group>"; };
+		E1C877571505F41700592954 /* WeTongji-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeTongji-Info.plist"; sourceTree = "<group>"; };
 		E1C877591505F41700592954 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1C8775B1505F41700592954 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E1C8775D1505F41700592954 /* WeTongji-Prefix.pch */ = {isa = PBXFileReference; path = "WeTongji-Prefix.pch"; sourceTree = "<group>"; };
-		E1C8775E1505F41700592954 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1C8775D1505F41700592954 /* WeTongji-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeTongji-Prefix.pch"; sourceTree = "<group>"; };
+		E1C8775E1505F41700592954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1C8775F1505F41700592954 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E1C877621505F41700592954 /* WeTongji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeTongji.xcdatamodel; sourceTree = "<group>"; };
+		E1C877A31505FB4800592954 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = Classes/RootViewController.h; sourceTree = "<group>"; };
+		E1C877A41505FB4800592954 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = Classes/RootViewController.m; sourceTree = "<group>"; };
+		E1C877B315063FCD00592954 /* MetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetroViewController.h; path = Classes/MetroViewController.h; sourceTree = "<group>"; };
+		E1C877B415063FCD00592954 /* MetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MetroViewController.m; path = Classes/MetroViewController.m; sourceTree = "<group>"; };
+		E1C877BC15064B4900592954 /* MetroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MetroViewController.xib; path = Classes/MetroViewController.xib; sourceTree = "<group>"; };
+		E1C877BF15064B6300592954 /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
+		E1C877C015064B6300592954 /* main_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg_2.png; sourceTree = "<group>"; };
+		E1C877C115064B6300592954 /* main_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg_3.png; sourceTree = "<group>"; };
+		E1C877C515064BA500592954 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E1C877C615064BA500592954 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
+		E1DEA596150E262D003F51B5 /* dock_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1917732150783C9009FB941 /* user_info */ = {
+			isa = PBXGroup;
+			children = (
+				E1917730150783C4009FB941 /* user_info_default_image.png */,
+			);
+			name = user_info;
+			sourceTree = "<group>";
+		};
 		E1C8773E1505F41700592954 = {
 			isa = PBXGroup;
 			children = (
 				E1C877551505F41700592954 /* WeTongji */,
 				E1C8774C1505F41700592954 /* Frameworks */,
 				E1C8774A1505F41700592954 /* Products */,
+				E1C877BE15064B6300592954 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +127,11 @@
 		E1C877551505F41700592954 /* WeTongji */ = {
 			isa = PBXGroup;
 			children = (
+				E1917733150785ED009FB941 /* MainWindow.xib */,
 				E1C8775E1505F41700592954 /* AppDelegate.h */,
 				E1C8775F1505F41700592954 /* AppDelegate.m */,
 				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
+				E1C877A61505FB5600592954 /* Classes */,
 				E1C877561505F41700592954 /* Supporting Files */,
 			);
 			path = WeTongji;
@@ -95,6 +146,50 @@
 				E1C8775D1505F41700592954 /* WeTongji-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1C877A61505FB5600592954 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E1C877A31505FB4800592954 /* RootViewController.h */,
+				E1C877A41505FB4800592954 /* RootViewController.m */,
+				E191773515078609009FB941 /* RootViewController.xib */,
+				E1C877B315063FCD00592954 /* MetroViewController.h */,
+				E1C877B415063FCD00592954 /* MetroViewController.m */,
+				E1C877BC15064B4900592954 /* MetroViewController.xib */,
+				E191772A15078188009FB941 /* UserInfoViewController.h */,
+				E191772B15078188009FB941 /* UserInfoViewController.m */,
+				E191772C15078188009FB941 /* UserInfoViewController.xib */,
+				E11965471507B2F200AE32E0 /* RootView.h */,
+				E11965481507B2F200AE32E0 /* RootView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E1C877BE15064B6300592954 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1DEA593150E261B003F51B5 /* dock */,
+				E1B0BC441507D27D0085D9AB /* Icon@2x.png */,
+				E1B0BC411507D27B0085D9AB /* Icon.png */,
+				E1917732150783C9009FB941 /* user_info */,
+				E1C877C515064BA500592954 /* Default.png */,
+				E1C877C615064BA500592954 /* Default@2x.png */,
+				E1C877BF15064B6300592954 /* main_bg.png */,
+				E1C877C015064B6300592954 /* main_bg_2.png */,
+				E1C877C115064B6300592954 /* main_bg_3.png */,
+			);
+			name = Resources;
+			path = WeTongji/Resources;
+			sourceTree = "<group>";
+		};
+		E1DEA593150E261B003F51B5 /* dock */ = {
+			isa = PBXGroup;
+			children = (
+				E1DEA595150E262D003F51B5 /* dock_bg@2x.png */,
+				E1DEA596150E262D003F51B5 /* dock_btn@2x.png */,
+			);
+			name = dock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +243,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */,
+				E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */,
+				E1C877C215064B6300592954 /* main_bg.png in Resources */,
+				E1C877C315064B6300592954 /* main_bg_2.png in Resources */,
+				E1C877C415064B6300592954 /* main_bg_3.png in Resources */,
+				E1C877C715064BA500592954 /* Default.png in Resources */,
+				E1C877C815064BA500592954 /* Default@2x.png in Resources */,
+				E191772E15078188009FB941 /* UserInfoViewController.xib in Resources */,
+				E1917731150783C4009FB941 /* user_info_default_image.png in Resources */,
+				E1917734150785ED009FB941 /* MainWindow.xib in Resources */,
+				E191773615078609009FB941 /* RootViewController.xib in Resources */,
+				E1B0BC421507D27B0085D9AB /* Icon.png in Resources */,
+				E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */,
+				E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */,
+				E1DEA598150E262D003F51B5 /* dock_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +270,10 @@
 				E1C8775C1505F41700592954 /* main.m in Sources */,
 				E1C877601505F41700592954 /* AppDelegate.m in Sources */,
 				E1C877631505F41700592954 /* WeTongji.xcdatamodeld in Sources */,
+				E1C877A51505FB4800592954 /* RootViewController.m in Sources */,
+				E1C877B515063FCD00592954 /* MetroViewController.m in Sources */,
+				E191772D15078188009FB941 /* UserInfoViewController.m in Sources */,
+				E11965491507B2F200AE32E0 /* RootView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +377,7 @@
 				E1C877681505F41700592954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
