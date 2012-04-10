@@ -13,6 +13,7 @@
 		E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830F1534497300734341 /* dock_btn_mail@2x.png */; };
 		E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */; };
 		E1498316153467CC00734341 /* dock_btn_collect_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */; };
+		E149831A15346C2A00734341 /* UIImageView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E149831915346C2A00734341 /* UIImageView+Addition.m */; };
 		E191772D15078188009FB941 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E191772B15078188009FB941 /* UserInfoViewController.m */; };
 		E191772E15078188009FB941 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* UserInfoViewController.xib */; };
 		E1917731150783C4009FB941 /* user_info_default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = E1917730150783C4009FB941 /* user_info_default_image.png */; };
@@ -51,6 +52,8 @@
 		E149830F1534497300734341 /* dock_btn_mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_mail@2x.png"; sourceTree = "<group>"; };
 		E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_mail_hl@2x.png"; sourceTree = "<group>"; };
 		E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect_hl@2x.png"; sourceTree = "<group>"; };
+		E149831815346C2A00734341 /* UIImageView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Addition.h"; path = "Classes/UIImageView+Addition.h"; sourceTree = "<group>"; };
+		E149831915346C2A00734341 /* UIImageView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Addition.m"; path = "Classes/UIImageView+Addition.m"; sourceTree = "<group>"; };
 		E191772A15078188009FB941 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoViewController.h; path = Classes/UserInfoViewController.h; sourceTree = "<group>"; };
 		E191772B15078188009FB941 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoViewController.m; path = Classes/UserInfoViewController.m; sourceTree = "<group>"; };
 		E191772C15078188009FB941 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoViewController.xib; path = Classes/UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E149831715346C0000734341 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E149831815346C2A00734341 /* UIImageView+Addition.h */,
+				E149831915346C2A00734341 /* UIImageView+Addition.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		E1917732150783C9009FB941 /* user_info */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +179,7 @@
 		E1C877A61505FB5600592954 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E149831715346C0000734341 /* Categories */,
 				E1C877A31505FB4800592954 /* RootViewController.h */,
 				E1C877A41505FB4800592954 /* RootViewController.m */,
 				E191773515078609009FB941 /* RootViewController.xib */,
@@ -306,6 +319,7 @@
 				E11965491507B2F200AE32E0 /* RootView.m in Sources */,
 				E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */,
 				E149830B15343BCB00734341 /* WTDockButton.m in Sources */,
+				E149831A15346C2A00734341 /* UIImageView+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
