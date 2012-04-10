@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		E11965491507B2F200AE32E0 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11965481507B2F200AE32E0 /* RootView.m */; };
+		E149830B15343BCB00734341 /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E149830A15343BCA00734341 /* WTDockButton.m */; };
+		E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830D15343D4A00734341 /* dock_btn_collect@2x.png */; };
+		E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830F1534497300734341 /* dock_btn_mail@2x.png */; };
+		E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */; };
+		E1498316153467CC00734341 /* dock_btn_collect_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */; };
 		E191772D15078188009FB941 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E191772B15078188009FB941 /* UserInfoViewController.m */; };
 		E191772E15078188009FB941 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* UserInfoViewController.xib */; };
 		E1917731150783C4009FB941 /* user_info_default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = E1917730150783C4009FB941 /* user_info_default_image.png */; };
 		E1917734150785ED009FB941 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1917733150785ED009FB941 /* MainWindow.xib */; };
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
+		E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AE08851531826F006964B8 /* ScheduleViewController.m */; };
+		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
 		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
@@ -32,18 +39,27 @@
 		E1C877C715064BA500592954 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C515064BA500592954 /* Default.png */; };
 		E1C877C815064BA500592954 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C615064BA500592954 /* Default@2x.png */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
-		E1DEA598150E262D003F51B5 /* dock_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn@2x.png */; };
+		E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E11965471507B2F200AE32E0 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootView.h; path = Classes/RootView.h; sourceTree = "<group>"; };
 		E11965481507B2F200AE32E0 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootView.m; path = Classes/RootView.m; sourceTree = "<group>"; };
+		E149830915343BCA00734341 /* WTDockButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
+		E149830A15343BCA00734341 /* WTDockButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTDockButton.m; path = Classes/WTDockButton.m; sourceTree = "<group>"; };
+		E149830D15343D4A00734341 /* dock_btn_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect@2x.png"; sourceTree = "<group>"; };
+		E149830F1534497300734341 /* dock_btn_mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_mail@2x.png"; sourceTree = "<group>"; };
+		E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_mail_hl@2x.png"; sourceTree = "<group>"; };
+		E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect_hl@2x.png"; sourceTree = "<group>"; };
 		E191772A15078188009FB941 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoViewController.h; path = Classes/UserInfoViewController.h; sourceTree = "<group>"; };
 		E191772B15078188009FB941 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoViewController.m; path = Classes/UserInfoViewController.m; sourceTree = "<group>"; };
 		E191772C15078188009FB941 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoViewController.xib; path = Classes/UserInfoViewController.xib; sourceTree = "<group>"; };
 		E1917730150783C4009FB941 /* user_info_default_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_info_default_image.png; sourceTree = "<group>"; };
 		E1917733150785ED009FB941 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E191773515078609009FB941 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E1AE08841531826F006964B8 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
+		E1AE08851531826F006964B8 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
+		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
 		E1B0BC411507D27B0085D9AB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		E1B0BC441507D27D0085D9AB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +85,7 @@
 		E1C877C515064BA500592954 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E1C877C615064BA500592954 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
-		E1DEA596150E262D003F51B5 /* dock_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn@2x.png"; sourceTree = "<group>"; };
+		E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_cover@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +178,11 @@
 				E191772C15078188009FB941 /* UserInfoViewController.xib */,
 				E11965471507B2F200AE32E0 /* RootView.h */,
 				E11965481507B2F200AE32E0 /* RootView.m */,
+				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
+				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
+				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
+				E149830915343BCA00734341 /* WTDockButton.h */,
+				E149830A15343BCA00734341 /* WTDockButton.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -186,8 +207,12 @@
 		E1DEA593150E261B003F51B5 /* dock */ = {
 			isa = PBXGroup;
 			children = (
+				E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */,
+				E149830F1534497300734341 /* dock_btn_mail@2x.png */,
+				E149830D15343D4A00734341 /* dock_btn_collect@2x.png */,
 				E1DEA595150E262D003F51B5 /* dock_bg@2x.png */,
-				E1DEA596150E262D003F51B5 /* dock_btn@2x.png */,
+				E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */,
+				E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */,
 			);
 			name = dock;
 			sourceTree = "<group>";
@@ -256,7 +281,12 @@
 				E1B0BC421507D27B0085D9AB /* Icon.png in Resources */,
 				E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */,
 				E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */,
-				E1DEA598150E262D003F51B5 /* dock_btn@2x.png in Resources */,
+				E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */,
+				E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */,
+				E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */,
+				E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */,
+				E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */,
+				E1498316153467CC00734341 /* dock_btn_collect_hl@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +304,8 @@
 				E1C877B515063FCD00592954 /* MetroViewController.m in Sources */,
 				E191772D15078188009FB941 /* UserInfoViewController.m in Sources */,
 				E11965491507B2F200AE32E0 /* RootView.m in Sources */,
+				E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */,
+				E149830B15343BCB00734341 /* WTDockButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,16 +8,15 @@
 
 #import "MetroViewController.h"
 #import "RootView.h"
+#import "WTDockButton.h"
 
 #define BUTTON_WIDTH        70
-#define BUTTON_HEIGHT       67
-#define BUTTON_REAL_WIDTH   70
-#define BUTTON_REAL_HEIGHT  75
+#define BUTTON_HEIGHT       70
 
 #define BUTTON_HORIZONTAL_INTERVAL  8
-#define BUTTON_VERTICAL_INTERVAL    8
+#define BUTTON_VERTICAL_INTERVAL    6
 #define BUTTON_HORIZONTAL_OFFSET    8
-#define BUTTON_VERTICAL_OFFSET      9
+#define BUTTON_VERTICAL_OFFSET      5
 
 #define BUTTON_COUNT    24
 
@@ -61,17 +60,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     for(int i = 0; i < BUTTON_COUNT; i++) {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BUTTON_REAL_WIDTH, BUTTON_REAL_HEIGHT)];
-        CGRect frame = button.frame;
+        WTDockButton *button = nil;
+        if(i == 0)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl@2x.png"] title:@"我的收藏"];
+        else if(i == 1)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl@2x.png"] title:@"我的邮箱"];
+        else 
+            button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
+        
+        CGPoint center = button.center;
         int j = i % 4;
         int k = i / 4;
-        frame.origin.x = BUTTON_HORIZONTAL_OFFSET + (BUTTON_HORIZONTAL_INTERVAL + BUTTON_WIDTH) * j;
-        frame.origin.y = BUTTON_VERTICAL_OFFSET + (BUTTON_VERTICAL_INTERVAL + BUTTON_HEIGHT) * k + SCROLL_HEADER_VIEW_HEIGHT;
-        button.frame = frame;
-        [button setBackgroundImage:[UIImage imageNamed:@"dock_btn@2x.png"] forState:UIControlStateNormal];
-        button.userInteractionEnabled = NO;
-        //button.backgroundColor = [UIColor colorWithRed:63.0f / 255.0f green:191.0f / 255.0f blue:237.0f / 255.0f alpha:1.0f];
         
+        center.x = BUTTON_HORIZONTAL_OFFSET + (BUTTON_HORIZONTAL_INTERVAL + BUTTON_WIDTH) * j + BUTTON_WIDTH / 2;
+        center.y = BUTTON_VERTICAL_OFFSET + (BUTTON_VERTICAL_INTERVAL + BUTTON_HEIGHT) * k + SCROLL_HEADER_VIEW_HEIGHT + BUTTON_HEIGHT / 2;
+        button.center = center;
+
         [self.scrollView addSubview:button];
         [self.buttonHeap addObject:button];
     }
