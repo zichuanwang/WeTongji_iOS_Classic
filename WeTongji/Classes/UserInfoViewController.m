@@ -18,6 +18,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //self.navigationController.navigationBar.hidden = NO;
+    if([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    }
+    UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    logoImageView.image = [UIImage imageNamed:@"navigation_bar_logo@2x.png"];
+    [self.navigationController.view addSubview:logoImageView];
+    
+    NSLog(@"frame y:%f", self.view.frame.origin.y);
 }
 
 - (void)viewDidUnload

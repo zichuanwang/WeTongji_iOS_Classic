@@ -62,9 +62,17 @@
     for(int i = 0; i < BUTTON_COUNT; i++) {
         WTDockButton *button = nil;
         if(i == 0)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl@2x.png"] title:@"我的收藏"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_channel@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_channel_hl@2x.png"] title:@"频道"];
         else if(i == 1)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl@2x.png"] title:@"我的邮箱"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_news@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_news_hl@2x.png"] title:@"新闻"];
+        else if(i == 2)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl@2x.png"] title:@"收藏"];
+        else if(i == 3)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_schedule@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_schedule_hl@2x.png"] title:@"日程"];
+        else if(i == 4)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_circles@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_circles_hl@2x.png"] title:@"圈子"];
+        else if(i == 5)
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl@2x.png"] title:@"邮箱"];
         else 
             button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
         

@@ -14,6 +14,18 @@
 		E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */; };
 		E1498316153467CC00734341 /* dock_btn_collect_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */; };
 		E149831A15346C2A00734341 /* UIImageView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E149831915346C2A00734341 /* UIImageView+Addition.m */; };
+		E149832315349ED800734341 /* dock_btn_channel_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149831B15349ED700734341 /* dock_btn_channel_hl@2x.png */; };
+		E149832415349ED800734341 /* dock_btn_channel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149831C15349ED700734341 /* dock_btn_channel@2x.png */; };
+		E149832515349ED800734341 /* dock_btn_circles_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149831D15349ED700734341 /* dock_btn_circles_hl@2x.png */; };
+		E149832615349ED800734341 /* dock_btn_circles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149831E15349ED700734341 /* dock_btn_circles@2x.png */; };
+		E149832715349ED800734341 /* dock_btn_news_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149831F15349ED800734341 /* dock_btn_news_hl@2x.png */; };
+		E149832815349ED800734341 /* dock_btn_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832015349ED800734341 /* dock_btn_news@2x.png */; };
+		E149832915349ED800734341 /* dock_btn_schedule_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832115349ED800734341 /* dock_btn_schedule_hl@2x.png */; };
+		E149832A15349ED800734341 /* dock_btn_schedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832215349ED800734341 /* dock_btn_schedule@2x.png */; };
+		E149832C1534BA1800734341 /* navigation_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */; };
+		E14983311534C22900734341 /* navigation_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* navigation_bar_bg.png */; };
+		E14983331534C38400734341 /* navigation_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* navigation_bar_logo@2x.png */; };
+		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
 		E191772D15078188009FB941 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E191772B15078188009FB941 /* UserInfoViewController.m */; };
 		E191772E15078188009FB941 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* UserInfoViewController.xib */; };
 		E1917731150783C4009FB941 /* user_info_default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = E1917730150783C4009FB941 /* user_info_default_image.png */; };
@@ -54,6 +66,18 @@
 		E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect_hl@2x.png"; sourceTree = "<group>"; };
 		E149831815346C2A00734341 /* UIImageView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Addition.h"; path = "Classes/UIImageView+Addition.h"; sourceTree = "<group>"; };
 		E149831915346C2A00734341 /* UIImageView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Addition.m"; path = "Classes/UIImageView+Addition.m"; sourceTree = "<group>"; };
+		E149831B15349ED700734341 /* dock_btn_channel_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_channel_hl@2x.png"; sourceTree = "<group>"; };
+		E149831C15349ED700734341 /* dock_btn_channel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_channel@2x.png"; sourceTree = "<group>"; };
+		E149831D15349ED700734341 /* dock_btn_circles_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_circles_hl@2x.png"; sourceTree = "<group>"; };
+		E149831E15349ED700734341 /* dock_btn_circles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_circles@2x.png"; sourceTree = "<group>"; };
+		E149831F15349ED800734341 /* dock_btn_news_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_news_hl@2x.png"; sourceTree = "<group>"; };
+		E149832015349ED800734341 /* dock_btn_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_news@2x.png"; sourceTree = "<group>"; };
+		E149832115349ED800734341 /* dock_btn_schedule_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_schedule_hl@2x.png"; sourceTree = "<group>"; };
+		E149832215349ED800734341 /* dock_btn_schedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_schedule@2x.png"; sourceTree = "<group>"; };
+		E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar_bg@2x.png"; sourceTree = "<group>"; };
+		E14983301534C22900734341 /* navigation_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bar_bg.png; sourceTree = "<group>"; };
+		E14983321534C38400734341 /* navigation_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar_logo@2x.png"; sourceTree = "<group>"; };
+		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
 		E191772A15078188009FB941 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoViewController.h; path = Classes/UserInfoViewController.h; sourceTree = "<group>"; };
 		E191772B15078188009FB941 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoViewController.m; path = Classes/UserInfoViewController.m; sourceTree = "<group>"; };
 		E191772C15078188009FB941 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoViewController.xib; path = Classes/UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -220,12 +244,24 @@
 		E1DEA593150E261B003F51B5 /* dock */ = {
 			isa = PBXGroup;
 			children = (
-				E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */,
-				E149830F1534497300734341 /* dock_btn_mail@2x.png */,
-				E149830D15343D4A00734341 /* dock_btn_collect@2x.png */,
+				E1498334153555F000734341 /* main_bg@2x.png */,
+				E14983321534C38400734341 /* navigation_bar_logo@2x.png */,
+				E14983301534C22900734341 /* navigation_bar_bg.png */,
+				E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */,
 				E1DEA595150E262D003F51B5 /* dock_bg@2x.png */,
+				E149831C15349ED700734341 /* dock_btn_channel@2x.png */,
+				E149831B15349ED700734341 /* dock_btn_channel_hl@2x.png */,
+				E149831E15349ED700734341 /* dock_btn_circles@2x.png */,
+				E149831D15349ED700734341 /* dock_btn_circles_hl@2x.png */,
+				E149830D15343D4A00734341 /* dock_btn_collect@2x.png */,
+				E1498315153467CC00734341 /* dock_btn_collect_hl@2x.png */,
 				E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */,
+				E149830F1534497300734341 /* dock_btn_mail@2x.png */,
 				E14983131534647D00734341 /* dock_btn_mail_hl@2x.png */,
+				E149832015349ED800734341 /* dock_btn_news@2x.png */,
+				E149831F15349ED800734341 /* dock_btn_news_hl@2x.png */,
+				E149832215349ED800734341 /* dock_btn_schedule@2x.png */,
+				E149832115349ED800734341 /* dock_btn_schedule_hl@2x.png */,
 			);
 			name = dock;
 			sourceTree = "<group>";
@@ -300,6 +336,18 @@
 				E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */,
 				E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */,
 				E1498316153467CC00734341 /* dock_btn_collect_hl@2x.png in Resources */,
+				E149832315349ED800734341 /* dock_btn_channel_hl@2x.png in Resources */,
+				E149832415349ED800734341 /* dock_btn_channel@2x.png in Resources */,
+				E149832515349ED800734341 /* dock_btn_circles_hl@2x.png in Resources */,
+				E149832615349ED800734341 /* dock_btn_circles@2x.png in Resources */,
+				E149832715349ED800734341 /* dock_btn_news_hl@2x.png in Resources */,
+				E149832815349ED800734341 /* dock_btn_news@2x.png in Resources */,
+				E149832915349ED800734341 /* dock_btn_schedule_hl@2x.png in Resources */,
+				E149832A15349ED800734341 /* dock_btn_schedule@2x.png in Resources */,
+				E149832C1534BA1800734341 /* navigation_bar_bg@2x.png in Resources */,
+				E14983311534C22900734341 /* navigation_bar_bg.png in Resources */,
+				E14983331534C38400734341 /* navigation_bar_logo@2x.png in Resources */,
+				E1498335153555F000734341 /* main_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

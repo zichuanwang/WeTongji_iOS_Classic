@@ -59,7 +59,7 @@
         [self.highlightedImageView fadeOut];
     }
     else if(!self.highlighted && highlighted) {
-        [self.highlightedImageView fadeIn];
+        self.highlightedImageView.alpha = 1;
     }
     [super setHighlighted:highlighted];
 }

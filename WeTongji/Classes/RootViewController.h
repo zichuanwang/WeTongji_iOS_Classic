@@ -10,6 +10,6 @@
 
 @interface RootViewController : UIViewController
 
-@property (nonatomic, retain) IBOutlet UIImageView *defaultImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *defaultImageView;
 
 @end
