@@ -8,13 +8,13 @@
 
 #import "RootViewController.h"
 #import "MetroViewController.h"
-#import "UserInfoViewController.h"
+#import "MainViewController.h"
 #import "RootView.h"
 
 @interface RootViewController ()
 
 @property (strong, nonatomic) MetroViewController *metroViewController;
-@property (strong, nonatomic) UserInfoViewController *userInfoViewController;
+@property (strong, nonatomic) MainViewController *MainViewController;
 @property (strong, nonatomic) UINavigationController *navigationController;
 
 @end
@@ -23,15 +23,15 @@
 
 @synthesize defaultImageView = _defaultImageView;
 @synthesize metroViewController = _metroViewController;
-@synthesize userInfoViewController = _userInfoViewController;
+@synthesize MainViewController = _MainViewController;
 @synthesize navigationController = _navigationController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
-        self.userInfoViewController = [[UserInfoViewController alloc] init];
+        self.MainViewController = [[MainViewController alloc] init];
         self.metroViewController = [[MetroViewController alloc] init];
-        UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:self.userInfoViewController];
+        UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:self.MainViewController];
         self.navigationController = aNavigationController;
         self.navigationController.view.tag = ROOT_USER_INFO_VIEW_TAG;
         self.navigationController.view.frame = CGRectMake(0, 0, 320, 460);

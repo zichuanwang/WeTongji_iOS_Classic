@@ -60,19 +60,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     for(int i = 0; i < BUTTON_COUNT; i++) {
-        WTDockButton *button = nil;
+        WTButton *button = nil;
         if(i == 0)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_channel@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_channel_hl@2x.png"] title:@"频道"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_channel.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_channel_hl.png"] title:@"频道"];
         else if(i == 1)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_news@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_news_hl@2x.png"] title:@"新闻"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_news.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_news_hl.png"] title:@"新闻"];
         else if(i == 2)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl@2x.png"] title:@"收藏"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl.png"] title:@"收藏"];
         else if(i == 3)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_schedule@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_schedule_hl@2x.png"] title:@"日程"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_schedule.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_schedule_hl.png"] title:@"日程"];
         else if(i == 4)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_circles@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_circles_hl@2x.png"] title:@"圈子"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_circles.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_circles_hl.png"] title:@"圈子"];
         else if(i == 5)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail@2x.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl@2x.png"] title:@"邮箱"];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl.png"] title:@"邮箱"];
         else 
             button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
         
