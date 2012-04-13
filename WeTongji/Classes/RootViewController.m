@@ -48,7 +48,7 @@
     [self.view insertSubview:self.metroViewController.view belowSubview:self.defaultImageView];
 
     self.defaultImageView.alpha = 1.0f;
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.6f delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.defaultImageView.alpha = 0;
     } completion:nil];
 }

@@ -97,7 +97,7 @@
     headerView.tag = ROOT_METRO_SCROLL_HEADER_VIEW_TAG;
     [self.scrollView addSubview:headerView];
         
-    self.scrollView.contentOffset = CGPointMake(0, SCROLL_HEADER_VIEW_HEIGHT);
+    //self.scrollView.contentOffset = CGPointMake(0, SCROLL_HEADER_VIEW_HEIGHT);
     self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     [self refreshScrollViewContentHeight];
 }

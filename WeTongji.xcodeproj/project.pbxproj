@@ -75,9 +75,6 @@
 		E1C877A51505FB4800592954 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C877A41505FB4800592954 /* RootViewController.m */; };
 		E1C877B515063FCD00592954 /* MetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C877B415063FCD00592954 /* MetroViewController.m */; };
 		E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C877BC15064B4900592954 /* MetroViewController.xib */; };
-		E1C877C215064B6300592954 /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877BF15064B6300592954 /* main_bg.png */; };
-		E1C877C315064B6300592954 /* main_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C015064B6300592954 /* main_bg_2.png */; };
-		E1C877C415064B6300592954 /* main_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C115064B6300592954 /* main_bg_3.png */; };
 		E1C877C715064BA500592954 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C515064BA500592954 /* Default.png */; };
 		E1C877C815064BA500592954 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C615064BA500592954 /* Default@2x.png */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
@@ -177,9 +174,6 @@
 		E1C877B315063FCD00592954 /* MetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetroViewController.h; path = Classes/MetroViewController.h; sourceTree = "<group>"; };
 		E1C877B415063FCD00592954 /* MetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MetroViewController.m; path = Classes/MetroViewController.m; sourceTree = "<group>"; };
 		E1C877BC15064B4900592954 /* MetroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MetroViewController.xib; path = Classes/MetroViewController.xib; sourceTree = "<group>"; };
-		E1C877BF15064B6300592954 /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
-		E1C877C015064B6300592954 /* main_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg_2.png; sourceTree = "<group>"; };
-		E1C877C115064B6300592954 /* main_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg_3.png; sourceTree = "<group>"; };
 		E1C877C515064BA500592954 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E1C877C615064BA500592954 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
@@ -358,9 +352,6 @@
 				E10A16631536171700700A0E /* main */,
 				E1DEA593150E261B003F51B5 /* dock */,
 				E1917732150783C9009FB941 /* user_info */,
-				E1C877BF15064B6300592954 /* main_bg.png */,
-				E1C877C015064B6300592954 /* main_bg_2.png */,
-				E1C877C115064B6300592954 /* main_bg_3.png */,
 			);
 			name = Resources;
 			path = WeTongji/Resources;
@@ -511,9 +502,6 @@
 			files = (
 				E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */,
 				E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */,
-				E1C877C215064B6300592954 /* main_bg.png in Resources */,
-				E1C877C315064B6300592954 /* main_bg_2.png in Resources */,
-				E1C877C415064B6300592954 /* main_bg_3.png in Resources */,
 				E1C877C715064BA500592954 /* Default.png in Resources */,
 				E1C877C815064BA500592954 /* Default@2x.png in Resources */,
 				E191772E15078188009FB941 /* MainViewController.xib in Resources */,
