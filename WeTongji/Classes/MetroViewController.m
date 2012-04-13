@@ -10,20 +10,6 @@
 #import "RootView.h"
 #import "WTDockButton.h"
 
-#define BUTTON_WIDTH        70
-#define BUTTON_HEIGHT       70
-
-#define BUTTON_HORIZONTAL_INTERVAL  8
-#define BUTTON_VERTICAL_INTERVAL    6
-#define BUTTON_HORIZONTAL_OFFSET    8
-#define BUTTON_VERTICAL_OFFSET      5
-
-#define BUTTON_COUNT    24
-
-#define SCROLL_VIEW_SHRINK_POS_Y    100
-#define SCROLL_VIEW_SPREAD_POS_Y    100
-#define SCROLL_HEADER_VIEW_HEIGHT   (460 - BUTTON_HEIGHT - BUTTON_VERTICAL_OFFSET - BUTTON_VERTICAL_INTERVAL)
-
 @interface MetroViewController ()
 
 @property (strong, nonatomic) NSMutableArray *buttonHeap;

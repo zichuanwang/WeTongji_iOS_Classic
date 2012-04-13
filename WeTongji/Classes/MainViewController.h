@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet WTButton *checkButton;
 @property (strong, nonatomic) IBOutlet WTButton *settingButton;
 
+@property (strong, nonatomic) IBOutlet UIImageView *topCoverImageView;
+
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 
 @end

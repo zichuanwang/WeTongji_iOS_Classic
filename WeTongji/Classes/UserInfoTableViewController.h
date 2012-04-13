@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) NSMutableArray *dataSourceIndexArray;
+@property (strong, nonatomic) NSMutableDictionary *dataSourceDictionary;
+
 @end

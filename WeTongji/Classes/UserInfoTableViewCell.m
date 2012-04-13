@@ -21,6 +21,9 @@
 - (void)awakeFromNib {
     self.categoryLabel.text = @"";
     self.contentLabel.text = @"";
+    
+    UIView *tempView = [[UIView alloc] init];
+    [self setBackgroundView:tempView];
 }
 
 @end

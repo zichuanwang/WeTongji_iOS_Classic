@@ -23,6 +23,7 @@
 @synthesize userInfoButton = _userInfoButton;
 @synthesize checkButton = _checkButton;
 @synthesize settingButton = _settingButton;
+@synthesize topCoverImageView = _topCoverImageView;
 
 @synthesize userInfoViewController = _userInfoViewController;
 
@@ -42,6 +43,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.topCoverImageView = nil;
+    self.userInfoButton = nil;
+    self.settingButton = nil;
+    self.checkButton = nil;
 }
 
 - (void)configureNavigationBar {
@@ -64,10 +69,10 @@
 - (void)configureUserInfo {
     UserInfoTableViewController *vc = [[UserInfoTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
-    frame.origin = CGPointMake(0, 44);
+    frame.origin = CGPointMake(0, 45);
     vc.view.frame = frame;
     self.userInfoViewController = vc;
-    [self.view addSubview:vc.view];
+    [self.view insertSubview:vc.view belowSubview:self.topCoverImageView];
 }
 
 #pragma mark - 
