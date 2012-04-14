@@ -9,6 +9,7 @@
 #import "MetroViewController.h"
 #import "RootView.h"
 #import "WTDockButton.h"
+#import "ChannelViewController.h"
 
 #define BUTTON_WIDTH        70
 #define BUTTON_HEIGHT       70
@@ -61,8 +62,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     for(int i = 0; i < BUTTON_COUNT; i++) {
         WTButton *button = nil;
-        if(i == 0)
+        if(i == 0) {
             button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_channel.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_channel_hl.png"] title:@"频道"];
+            [button addTarget:self action:@selector(didClickChannelButton:) forControlEvents:UIControlEventTouchUpInside];
+        }
         else if(i == 1)
             button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_news.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_news_hl.png"] title:@"新闻"];
         else if(i == 2)
@@ -208,6 +211,12 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     //[self adjustScrollViewAnimation];
     self.shrinking = NO;
+}
+
+- (void)didClickChannelButton:(UIButton *)sender {
+    ChannelViewController *channel = [[ChannelViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:channel];
+    [self presentModalViewController:nav animated:YES];
 }
 
 @end

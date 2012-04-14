@@ -28,7 +28,7 @@
 		E10A168E153617E300700A0E /* main_tab_bar_btn_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1679153617E300700A0E /* main_tab_bar_btn_setting.png */; };
 		E10A168F153617E300700A0E /* main_tab_bar_btn_user_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A167A153617E300700A0E /* main_tab_bar_btn_user_hl.png */; };
 		E10A1690153617E300700A0E /* main_tab_bar_btn_user.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A167B153617E300700A0E /* main_tab_bar_btn_user.png */; };
-		E10A1691153617E300700A0E /* navigation_bar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A167C153617E300700A0E /* navigation_bar_logo.png */; };
+		E10A1691153617E300700A0E /* nav_bar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A167C153617E300700A0E /* nav_bar_logo.png */; };
 		E10A16931536182600700A0E /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A16921536182600700A0E /* main_bg.png */; };
 		E11965491507B2F200AE32E0 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11965481507B2F200AE32E0 /* RootView.m */; };
 		E149830B15343BCB00734341 /* WTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E149830A15343BCA00734341 /* WTButton.m */; };
@@ -45,9 +45,9 @@
 		E149832815349ED800734341 /* dock_btn_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832015349ED800734341 /* dock_btn_news@2x.png */; };
 		E149832915349ED800734341 /* dock_btn_schedule_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832115349ED800734341 /* dock_btn_schedule_hl@2x.png */; };
 		E149832A15349ED800734341 /* dock_btn_schedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832215349ED800734341 /* dock_btn_schedule@2x.png */; };
-		E149832C1534BA1800734341 /* navigation_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */; };
-		E14983311534C22900734341 /* navigation_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* navigation_bar_bg.png */; };
-		E14983331534C38400734341 /* navigation_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* navigation_bar_logo@2x.png */; };
+		E149832C1534BA1800734341 /* nav_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149832B1534BA1800734341 /* nav_bar_bg@2x.png */; };
+		E14983311534C22900734341 /* nav_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* nav_bar_bg.png */; };
+		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
 		E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */; };
 		E180639015360BAD00460F8B /* main_tab_bar_btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */; };
@@ -93,7 +93,7 @@
 		E1DF6FB21537EAE7001C60EA /* main_bg_header_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FB11537EAE7001C60EA /* main_bg_header_cover.png */; };
 		E1DF6FCA153985C1001C60EA /* main_tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FC8153985C1001C60EA /* main_tab_bar_bg.png */; };
 		E1DF6FCB153985C1001C60EA /* main_tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FC9153985C1001C60EA /* main_tab_bar_bg@2x.png */; };
-		E1DF6FD915398C85001C60EA /* AbstractMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD815398C84001C60EA /* AbstractMainTableViewController.m */; };
+		E1DF6FD915398C85001C60EA /* WTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */; };
 		E1DF6FE415399417001C60EA /* ToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */; };
 		E1DF6FE51539941E001C60EA /* ToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */; };
 		E1DF6FE6153995B4001C60EA /* ToDoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */; };
@@ -102,6 +102,13 @@
 		E1DF6FED1539986D001C60EA /* to_do_list_point_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */; };
 		E1DF6FEE1539986D001C60EA /* to_do_list_point_green.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */; };
 		E1DF6FEF1539986D001C60EA /* to_do_list_point_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */; };
+		E1DF6FF51539B865001C60EA /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FF31539B865001C60EA /* ChannelViewController.m */; };
+		E1DF6FF61539B865001C60EA /* ChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FF41539B865001C60EA /* ChannelViewController.xib */; };
+		E1DF6FFA1539B93A001C60EA /* WTNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */; };
+		E1DF6FFD1539C93F001C60EA /* nav_bar_btn_finish.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FFB1539C93F001C60EA /* nav_bar_btn_finish.png */; };
+		E1DF6FFE1539C93F001C60EA /* nav_bar_btn_finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FFC1539C93F001C60EA /* nav_bar_btn_finish@2x.png */; };
+		E1DF70011539CD2A001C60EA /* nav_bar_btn_finish_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */; };
+		E1DF70021539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,7 +134,7 @@
 		E10A1679153617E300700A0E /* main_tab_bar_btn_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_tab_bar_btn_setting.png; sourceTree = "<group>"; };
 		E10A167A153617E300700A0E /* main_tab_bar_btn_user_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_tab_bar_btn_user_hl.png; sourceTree = "<group>"; };
 		E10A167B153617E300700A0E /* main_tab_bar_btn_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_tab_bar_btn_user.png; sourceTree = "<group>"; };
-		E10A167C153617E300700A0E /* navigation_bar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bar_logo.png; sourceTree = "<group>"; };
+		E10A167C153617E300700A0E /* nav_bar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_logo.png; sourceTree = "<group>"; };
 		E10A16921536182600700A0E /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
 		E11965471507B2F200AE32E0 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootView.h; path = Classes/RootView.h; sourceTree = "<group>"; };
 		E11965481507B2F200AE32E0 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootView.m; path = Classes/RootView.m; sourceTree = "<group>"; };
@@ -147,9 +154,9 @@
 		E149832015349ED800734341 /* dock_btn_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_news@2x.png"; sourceTree = "<group>"; };
 		E149832115349ED800734341 /* dock_btn_schedule_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_schedule_hl@2x.png"; sourceTree = "<group>"; };
 		E149832215349ED800734341 /* dock_btn_schedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_schedule@2x.png"; sourceTree = "<group>"; };
-		E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar_bg@2x.png"; sourceTree = "<group>"; };
-		E14983301534C22900734341 /* navigation_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bar_bg.png; sourceTree = "<group>"; };
-		E14983321534C38400734341 /* navigation_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar_logo@2x.png"; sourceTree = "<group>"; };
+		E149832B1534BA1800734341 /* nav_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_bg@2x.png"; sourceTree = "<group>"; };
+		E14983301534C22900734341 /* nav_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_bg.png; sourceTree = "<group>"; };
+		E14983321534C38400734341 /* nav_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_logo@2x.png"; sourceTree = "<group>"; };
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
 		E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_check@2x.png"; sourceTree = "<group>"; };
 		E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting@2x.png"; sourceTree = "<group>"; };
@@ -208,8 +215,8 @@
 		E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToDoListTableViewController.h; path = Classes/ToDoListTableViewController.h; sourceTree = "<group>"; };
 		E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToDoListTableViewController.m; path = Classes/ToDoListTableViewController.m; sourceTree = "<group>"; };
 		E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ToDoListTableViewController.xib; path = Classes/ToDoListTableViewController.xib; sourceTree = "<group>"; };
-		E1DF6FD715398C82001C60EA /* AbstractMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractMainTableViewController.h; path = Classes/AbstractMainTableViewController.h; sourceTree = "<group>"; };
-		E1DF6FD815398C84001C60EA /* AbstractMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractMainTableViewController.m; path = Classes/AbstractMainTableViewController.m; sourceTree = "<group>"; };
+		E1DF6FD715398C82001C60EA /* WTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMainTableViewController.h; path = Classes/WTMainTableViewController.h; sourceTree = "<group>"; };
+		E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMainTableViewController.m; path = Classes/WTMainTableViewController.m; sourceTree = "<group>"; };
 		E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToDoListTableViewCell.h; path = Classes/ToDoListTableViewCell.h; sourceTree = "<group>"; };
 		E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToDoListTableViewCell.m; path = Classes/ToDoListTableViewCell.m; sourceTree = "<group>"; };
 		E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ToDoListTableViewCell.xib; path = Classes/ToDoListTableViewCell.xib; sourceTree = "<group>"; };
@@ -217,6 +224,15 @@
 		E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_blue@2x.png"; sourceTree = "<group>"; };
 		E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_green.png; sourceTree = "<group>"; };
 		E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_green@2x.png"; sourceTree = "<group>"; };
+		E1DF6FF21539B865001C60EA /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = Classes/ChannelViewController.h; sourceTree = "<group>"; };
+		E1DF6FF31539B865001C60EA /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Classes/ChannelViewController.m; sourceTree = "<group>"; };
+		E1DF6FF41539B865001C60EA /* ChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelViewController.xib; path = Classes/ChannelViewController.xib; sourceTree = "<group>"; };
+		E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTNavigationViewController.h; path = Classes/WTNavigationViewController.h; sourceTree = "<group>"; };
+		E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTNavigationViewController.m; path = Classes/WTNavigationViewController.m; sourceTree = "<group>"; };
+		E1DF6FFB1539C93F001C60EA /* nav_bar_btn_finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_finish.png; sourceTree = "<group>"; };
+		E1DF6FFC1539C93F001C60EA /* nav_bar_btn_finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_finish@2x.png"; sourceTree = "<group>"; };
+		E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_finish_hl.png; sourceTree = "<group>"; };
+		E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_finish_hl@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,10 +278,14 @@
 		E10A16651536172400700A0E /* nav */ = {
 			isa = PBXGroup;
 			children = (
-				E14983301534C22900734341 /* navigation_bar_bg.png */,
-				E149832B1534BA1800734341 /* navigation_bar_bg@2x.png */,
-				E10A167C153617E300700A0E /* navigation_bar_logo.png */,
-				E14983321534C38400734341 /* navigation_bar_logo@2x.png */,
+				E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */,
+				E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */,
+				E1DF6FFB1539C93F001C60EA /* nav_bar_btn_finish.png */,
+				E1DF6FFC1539C93F001C60EA /* nav_bar_btn_finish@2x.png */,
+				E14983301534C22900734341 /* nav_bar_bg.png */,
+				E149832B1534BA1800734341 /* nav_bar_bg@2x.png */,
+				E10A167C153617E300700A0E /* nav_bar_logo.png */,
+				E14983321534C38400734341 /* nav_bar_logo@2x.png */,
 			);
 			name = nav;
 			sourceTree = "<group>";
@@ -439,30 +459,9 @@
 		E1DF6F981537612E001C60EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E191772A15078188009FB941 /* MainViewController.h */,
-				E191772B15078188009FB941 /* MainViewController.m */,
-				E191772C15078188009FB941 /* MainViewController.xib */,
-				E1C877B315063FCD00592954 /* MetroViewController.h */,
-				E1C877B415063FCD00592954 /* MetroViewController.m */,
-				E1C877BC15064B4900592954 /* MetroViewController.xib */,
-				E1C877A31505FB4800592954 /* RootViewController.h */,
-				E1C877A41505FB4800592954 /* RootViewController.m */,
-				E191773515078609009FB941 /* RootViewController.xib */,
-				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
-				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
-				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
-				E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */,
-				E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */,
-				E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */,
-				E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */,
-				E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */,
-				E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */,
-				E1DF6FA4153762FF001C60EA /* UserInfoTableViewCell.h */,
-				E1DF6FA5153762FF001C60EA /* UserInfoTableViewCell.m */,
-				E1DF6FA615376300001C60EA /* UserInfoTableViewCell.xib */,
-				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
-				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
-				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
+				E1DF6FF71539B8C8001C60EA /* schedule */,
+				E1DF6FF11539B836001C60EA /* channel */,
+				E1DF6FF01539B801001C60EA /* main */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -470,8 +469,10 @@
 		E1DF6F9915376145001C60EA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E1DF6FD715398C82001C60EA /* AbstractMainTableViewController.h */,
-				E1DF6FD815398C84001C60EA /* AbstractMainTableViewController.m */,
+				E1DF6FD715398C82001C60EA /* WTMainTableViewController.h */,
+				E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */,
+				E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */,
+				E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -487,6 +488,54 @@
 				E11965481507B2F200AE32E0 /* RootView.m */,
 			);
 			name = Accessories;
+			sourceTree = "<group>";
+		};
+		E1DF6FF01539B801001C60EA /* main */ = {
+			isa = PBXGroup;
+			children = (
+				E191772A15078188009FB941 /* MainViewController.h */,
+				E191772B15078188009FB941 /* MainViewController.m */,
+				E191772C15078188009FB941 /* MainViewController.xib */,
+				E1C877B315063FCD00592954 /* MetroViewController.h */,
+				E1C877B415063FCD00592954 /* MetroViewController.m */,
+				E1C877BC15064B4900592954 /* MetroViewController.xib */,
+				E1C877A31505FB4800592954 /* RootViewController.h */,
+				E1C877A41505FB4800592954 /* RootViewController.m */,
+				E191773515078609009FB941 /* RootViewController.xib */,
+				E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */,
+				E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */,
+				E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */,
+				E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */,
+				E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */,
+				E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */,
+				E1DF6FA4153762FF001C60EA /* UserInfoTableViewCell.h */,
+				E1DF6FA5153762FF001C60EA /* UserInfoTableViewCell.m */,
+				E1DF6FA615376300001C60EA /* UserInfoTableViewCell.xib */,
+				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
+				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
+				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		E1DF6FF11539B836001C60EA /* channel */ = {
+			isa = PBXGroup;
+			children = (
+				E1DF6FF21539B865001C60EA /* ChannelViewController.h */,
+				E1DF6FF31539B865001C60EA /* ChannelViewController.m */,
+				E1DF6FF41539B865001C60EA /* ChannelViewController.xib */,
+			);
+			name = channel;
+			sourceTree = "<group>";
+		};
+		E1DF6FF71539B8C8001C60EA /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
+				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
+				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
+			);
+			name = schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,9 +613,9 @@
 				E149832815349ED800734341 /* dock_btn_news@2x.png in Resources */,
 				E149832915349ED800734341 /* dock_btn_schedule_hl@2x.png in Resources */,
 				E149832A15349ED800734341 /* dock_btn_schedule@2x.png in Resources */,
-				E149832C1534BA1800734341 /* navigation_bar_bg@2x.png in Resources */,
-				E14983311534C22900734341 /* navigation_bar_bg.png in Resources */,
-				E14983331534C38400734341 /* navigation_bar_logo@2x.png in Resources */,
+				E149832C1534BA1800734341 /* nav_bar_bg@2x.png in Resources */,
+				E14983311534C22900734341 /* nav_bar_bg.png in Resources */,
+				E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */,
 				E1498335153555F000734341 /* main_bg@2x.png in Resources */,
 				E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */,
 				E180639015360BAD00460F8B /* main_tab_bar_btn_setting@2x.png in Resources */,
@@ -594,7 +643,7 @@
 				E10A168E153617E300700A0E /* main_tab_bar_btn_setting.png in Resources */,
 				E10A168F153617E300700A0E /* main_tab_bar_btn_user_hl.png in Resources */,
 				E10A1690153617E300700A0E /* main_tab_bar_btn_user.png in Resources */,
-				E10A1691153617E300700A0E /* navigation_bar_logo.png in Resources */,
+				E10A1691153617E300700A0E /* nav_bar_logo.png in Resources */,
 				E10A16931536182600700A0E /* main_bg.png in Resources */,
 				E1DF6F9515376124001C60EA /* paper_footer@2x.png in Resources */,
 				E1DF6F9615376124001C60EA /* paper_header@2x.png in Resources */,
@@ -614,6 +663,11 @@
 				E1DF6FED1539986D001C60EA /* to_do_list_point_blue@2x.png in Resources */,
 				E1DF6FEE1539986D001C60EA /* to_do_list_point_green.png in Resources */,
 				E1DF6FEF1539986D001C60EA /* to_do_list_point_green@2x.png in Resources */,
+				E1DF6FF61539B865001C60EA /* ChannelViewController.xib in Resources */,
+				E1DF6FFD1539C93F001C60EA /* nav_bar_btn_finish.png in Resources */,
+				E1DF6FFE1539C93F001C60EA /* nav_bar_btn_finish@2x.png in Resources */,
+				E1DF70011539CD2A001C60EA /* nav_bar_btn_finish_hl.png in Resources */,
+				E1DF70021539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,9 +691,11 @@
 				E10A165E15360ED400700A0E /* WTDockButton.m in Sources */,
 				E1DF6F9E153761A0001C60EA /* UserInfoTableViewController.m in Sources */,
 				E1DF6FA715376300001C60EA /* UserInfoTableViewCell.m in Sources */,
-				E1DF6FD915398C85001C60EA /* AbstractMainTableViewController.m in Sources */,
+				E1DF6FD915398C85001C60EA /* WTMainTableViewController.m in Sources */,
 				E1DF6FE415399417001C60EA /* ToDoListTableViewController.m in Sources */,
 				E1DF6FE6153995B4001C60EA /* ToDoListTableViewCell.m in Sources */,
+				E1DF6FF51539B865001C60EA /* ChannelViewController.m in Sources */,
+				E1DF6FFA1539B93A001C60EA /* WTNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

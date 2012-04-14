@@ -39,7 +39,7 @@
 }
 
 #pragma mark -
-#pragma mark AbstractMainTableViewController methods to overwrite
+#pragma mark WTMainTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
     return @"ToDoListTableViewCell";

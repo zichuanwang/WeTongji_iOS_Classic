@@ -55,11 +55,8 @@
 }
 
 - (void)configureNavigationBar {
-    if([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
-    }
     UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    logoImageView.image = [UIImage imageNamed:@"navigation_bar_logo.png"];
+    logoImageView.image = [UIImage imageNamed:@"nav_bar_logo.png"];
     [self.navigationController.view addSubview:logoImageView];
 }
 

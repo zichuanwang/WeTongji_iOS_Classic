@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AbstractMainTableViewController.h"
+#import "WTMainTableViewController.h"
 
-@interface UserInfoTableViewController : AbstractMainTableViewController 
+@interface UserInfoTableViewController : WTMainTableViewController 
 
 @end

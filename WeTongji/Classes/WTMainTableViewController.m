@@ -1,18 +1,18 @@
 //
-//  AbstractMainTableViewController.m
+//  WTMainTableViewController.m
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-14.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "AbstractMainTableViewController.h"
+#import "WTMainTableViewController.h"
 
-@interface AbstractMainTableViewController ()
+@interface WTMainTableViewController ()
 
 @end
 
-@implementation AbstractMainTableViewController
+@implementation WTMainTableViewController
 
 @synthesize tableView = _tableView;
 @synthesize dataSourceIndexArray = _dataSourceIndexArray;

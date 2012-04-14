@@ -1,5 +1,5 @@
 //
-//  AbstractMainTableViewController.h
+//  WTMainTableViewController.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AbstractMainTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WTMainTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

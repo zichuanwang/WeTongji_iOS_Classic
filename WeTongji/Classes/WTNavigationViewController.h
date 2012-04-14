@@ -1,5 +1,5 @@
 //
-//  ToDoListTableViewController.h
+//  WTNavigationViewController.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-14.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTMainTableViewController.h"
 
-@interface ToDoListTableViewController : WTMainTableViewController
+@interface WTNavigationViewController : UIViewController
 
 @end
