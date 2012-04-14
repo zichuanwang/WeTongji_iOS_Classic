@@ -10,7 +10,6 @@
 
 @interface UserInfoTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
 

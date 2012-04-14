@@ -14,7 +14,6 @@
 
 @implementation UserInfoTableViewCell
 
-@synthesize bgImageView = _bgImageView;
 @synthesize categoryLabel = _categoryLabel;
 @synthesize contentLabel = _contentLabel;
 

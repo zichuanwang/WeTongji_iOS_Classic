@@ -7,7 +7,7 @@
 //
 
 #import "WTButton.h"
-#import "UIImageView+Addition.h"
+#import "UIView+Addition.h"
 
 @interface WTButton()
 

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define DOCK_VIEW_HEIGHT   81
-
 @interface MetroViewController : UIViewController <UIScrollViewDelegate> {
     CGFloat _lastScrollContentOffsetY;
     BOOL _isScrollingDownward;

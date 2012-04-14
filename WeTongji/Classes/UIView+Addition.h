@@ -1,5 +1,5 @@
 //
-//  UIImageView+Addition.h
+//  UIView+Addition.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-10.
@@ -8,7 +8,7 @@
 
 
 
-@interface UIImageView (Addition)
+@interface UIView (Addition)
 
 - (void)fadeIn;
 
