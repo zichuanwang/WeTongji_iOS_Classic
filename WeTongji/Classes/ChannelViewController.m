@@ -33,9 +33,9 @@
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish_hl.png"] forState:UIControlStateHighlighted];
     [button setTitle:@"完成" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.9f] forState:UIControlStateHighlighted];
-    [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:0.8f] forState:UIControlStateHighlighted];
+    [button setTitleShadowColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:13];
     button.titleLabel.shadowOffset = CGSizeMake(0, 1);
     [button addTarget:self action:@selector(didClickFinishButton) forControlEvents:UIControlEventTouchUpInside];
