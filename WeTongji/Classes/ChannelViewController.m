@@ -33,15 +33,15 @@
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish_hl.png"] forState:UIControlStateHighlighted];
     [button setTitle:@"完成" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:0.98f green:0.98f blue:0.98f alpha:1] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:0.8f] forState:UIControlStateHighlighted];
     [button setTitleShadowColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:13];
     button.titleLabel.shadowOffset = CGSizeMake(0, 1);
     [button addTarget:self action:@selector(didClickFinishButton) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *finishButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = finishButton;
-    self.navigationItem.rightBarButtonItem.enabled = YES;
+    self.navigationItem.leftBarButtonItem = finishButton;
+    self.navigationItem.leftBarButtonItem.enabled = YES;
 }
 
 - (void)viewDidUnload
