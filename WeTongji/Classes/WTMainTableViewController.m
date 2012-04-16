@@ -86,24 +86,24 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 60;
+    return 55;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20;
+    return 15;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
     UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_header.png"]];
-    headerImageView.frame = CGRectMake(0, 21, 320, 40);
+    headerImageView.frame = CGRectMake(0, 16, 320, 40);
     
     NSString *title = [self.dataSourceIndexArray objectAtIndex:section];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14, 0, 300, 45)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 40)];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.98f alpha:1];
     titleLabel.shadowColor = [UIColor blackColor];
     titleLabel.shadowOffset = CGSizeMake(0, 1);
     titleLabel.text = title;
@@ -114,7 +114,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 15)];
     UIImageView *footerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_footer.png"]];
     footerImageView.frame = CGRectMake(0, 0, 320, 40);
     

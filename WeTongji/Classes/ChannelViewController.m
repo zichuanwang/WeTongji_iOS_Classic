@@ -27,14 +27,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationController.navigationBar.topItem.title = @"频道";
-    //UIBarButtonItem *finishButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] landscapeImagePhone:nil style:UIBarButtonItemStyleDone target:self action:@selector(didClickFinishButton)];
+    //self.navigationController.navigationBar.topItem.title = @"频道";
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    titleLabel.text = @"频道";
+    titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    titleLabel.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8];
+    titleLabel.shadowColor = [UIColor darkGrayColor];
+    titleLabel.shadowOffset = CGSizeMake(0, 1);
+    [titleLabel sizeToFit];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.topItem.titleView = titleLabel;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish_hl.png"] forState:UIControlStateHighlighted];
     [button setTitle:@"完成" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:0.98f green:0.98f blue:0.98f alpha:1] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:0.8f] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f] forState:UIControlStateHighlighted];
     [button setTitleShadowColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:13];
     button.titleLabel.shadowOffset = CGSizeMake(0, 1);
