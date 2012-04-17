@@ -7,6 +7,7 @@
 //
 
 #import "ChannelViewController.h"
+#import "UIBarButtonItem+WTBarButtonItem.h"
 
 @interface ChannelViewController ()
 
@@ -37,17 +38,8 @@
     [titleLabel sizeToFit];
     titleLabel.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.topItem.titleView = titleLabel;
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
-    [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish_hl.png"] forState:UIControlStateHighlighted];
-    [button setTitle:@"完成" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f] forState:UIControlStateHighlighted];
-    [button setTitleShadowColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:13];
-    button.titleLabel.shadowOffset = CGSizeMake(0, 1);
-    [button addTarget:self action:@selector(didClickFinishButton) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *finishButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     self.navigationItem.leftBarButtonItem.enabled = YES;
 }

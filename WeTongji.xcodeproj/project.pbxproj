@@ -52,8 +52,16 @@
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
-		E174A96F153D851D00E7165A /* avatar_frame_tape.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96D153D851D00E7165A /* avatar_frame_tape.png */; };
-		E174A970153D851D00E7165A /* avatar_frame_tape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96E153D851D00E7165A /* avatar_frame_tape@2x.png */; };
+		E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */; };
+		E174A977153DAA1E00E7165A /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A975153DAA1D00E7165A /* LoginTableViewController.m */; };
+		E174A978153DAA1E00E7165A /* LoginTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginTableViewController.xib */; };
+		E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A979153DB2C100E7165A /* login_user_list_bg.png */; };
+		E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */; };
+		E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97E153DB59A00E7165A /* login_light_color_line.png */; };
+		E174A983153DDE7100E7165A /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A981153DDDF600E7165A /* LoginTableViewCell.m */; };
+		E174A984153DE02500E7165A /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A982153DDDF700E7165A /* LoginTableViewCell.xib */; };
+		E174A987153DE34F00E7165A /* login_add_user.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A985153DE34E00E7165A /* login_add_user.png */; };
+		E174A988153DE34F00E7165A /* login_add_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A986153DE34E00E7165A /* login_add_user@2x.png */; };
 		E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */; };
 		E180639015360BAD00460F8B /* main_tab_bar_btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */; };
 		E180639115360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638B15360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png */; };
@@ -165,8 +173,19 @@
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
-		E174A96D153D851D00E7165A /* avatar_frame_tape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame_tape.png; sourceTree = "<group>"; };
-		E174A96E153D851D00E7165A /* avatar_frame_tape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame_tape@2x.png"; sourceTree = "<group>"; };
+		E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+WTBarButtonItem.h"; path = "Classes/UIBarButtonItem+WTBarButtonItem.h"; sourceTree = "<group>"; };
+		E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+WTBarButtonItem.m"; path = "Classes/UIBarButtonItem+WTBarButtonItem.m"; sourceTree = "<group>"; };
+		E174A974153DAA1C00E7165A /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewController.h; path = Classes/LoginTableViewController.h; sourceTree = "<group>"; };
+		E174A975153DAA1D00E7165A /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewController.m; path = Classes/LoginTableViewController.m; sourceTree = "<group>"; };
+		E174A976153DAA1D00E7165A /* LoginTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginTableViewController.xib; path = Classes/LoginTableViewController.xib; sourceTree = "<group>"; };
+		E174A979153DB2C100E7165A /* login_user_list_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_user_list_bg.png; sourceTree = "<group>"; };
+		E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user_list_bg@2x.png"; sourceTree = "<group>"; };
+		E174A97E153DB59A00E7165A /* login_light_color_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_light_color_line.png; sourceTree = "<group>"; };
+		E174A980153DDDF500E7165A /* LoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTableViewCell.h; sourceTree = "<group>"; };
+		E174A981153DDDF600E7165A /* LoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewCell.m; sourceTree = "<group>"; };
+		E174A982153DDDF700E7165A /* LoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginTableViewCell.xib; sourceTree = "<group>"; };
+		E174A985153DE34E00E7165A /* login_add_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_add_user.png; sourceTree = "<group>"; };
+		E174A986153DE34E00E7165A /* login_add_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_add_user@2x.png"; sourceTree = "<group>"; };
 		E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_check@2x.png"; sourceTree = "<group>"; };
 		E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting@2x.png"; sourceTree = "<group>"; };
 		E180638B15360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting_hl@2x.png"; sourceTree = "<group>"; };
@@ -321,15 +340,27 @@
 			children = (
 				E149831815346C2A00734341 /* UIView+Addition.h */,
 				E149831915346C2A00734341 /* UIView+Addition.m */,
+				E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */,
+				E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		E174A97D153DB2C600E7165A /* login */ = {
+			isa = PBXGroup;
+			children = (
+				E174A97E153DB59A00E7165A /* login_light_color_line.png */,
+				E174A979153DB2C100E7165A /* login_user_list_bg.png */,
+				E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */,
+				E174A985153DE34E00E7165A /* login_add_user.png */,
+				E174A986153DE34E00E7165A /* login_add_user@2x.png */,
+			);
+			name = login;
 			sourceTree = "<group>";
 		};
 		E1917732150783C9009FB941 /* user_info */ = {
 			isa = PBXGroup;
 			children = (
-				E174A96D153D851D00E7165A /* avatar_frame_tape.png */,
-				E174A96E153D851D00E7165A /* avatar_frame_tape@2x.png */,
 				E174A969153D832F00E7165A /* avatar_frame.png */,
 				E174A96A153D832F00E7165A /* avatar_frame@2x.png */,
 				E174A966153D822B00E7165A /* user_info_default_image.jpg */,
@@ -404,6 +435,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E174A97D153DB2C600E7165A /* login */,
 				E1DF6F901537610F001C60EA /* paper */,
 				E10A16671536175100700A0E /* default */,
 				E10A16661536173E00700A0E /* icon */,
@@ -526,6 +558,12 @@
 				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
 				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
 				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
+				E174A974153DAA1C00E7165A /* LoginTableViewController.h */,
+				E174A975153DAA1D00E7165A /* LoginTableViewController.m */,
+				E174A976153DAA1D00E7165A /* LoginTableViewController.xib */,
+				E174A980153DDDF500E7165A /* LoginTableViewCell.h */,
+				E174A981153DDDF600E7165A /* LoginTableViewCell.m */,
+				E174A982153DDDF700E7165A /* LoginTableViewCell.xib */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -600,6 +638,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E174A984153DE02500E7165A /* LoginTableViewCell.xib in Resources */,
 				E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */,
 				E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */,
 				E1C877C715064BA500592954 /* Default.png in Resources */,
@@ -682,8 +721,12 @@
 				E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */,
 				E174A96B153D832F00E7165A /* avatar_frame.png in Resources */,
 				E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */,
-				E174A96F153D851D00E7165A /* avatar_frame_tape.png in Resources */,
-				E174A970153D851D00E7165A /* avatar_frame_tape@2x.png in Resources */,
+				E174A978153DAA1E00E7165A /* LoginTableViewController.xib in Resources */,
+				E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */,
+				E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */,
+				E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */,
+				E174A987153DE34F00E7165A /* login_add_user.png in Resources */,
+				E174A988153DE34F00E7165A /* login_add_user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +755,9 @@
 				E1DF6FE6153995B4001C60EA /* ToDoListTableViewCell.m in Sources */,
 				E1DF6FF51539B865001C60EA /* ChannelViewController.m in Sources */,
 				E1DF6FFA1539B93A001C60EA /* WTNavigationViewController.m in Sources */,
+				E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */,
+				E174A977153DAA1E00E7165A /* LoginTableViewController.m in Sources */,
+				E174A983153DDE7100E7165A /* LoginTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

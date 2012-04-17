@@ -14,4 +14,8 @@
 
 - (void)fadeOut;
 
+- (void)transitionFadeIn;
+
+- (void)transitionFadeOut;
+
 @end

@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet WTButton *settingButton;
 
 @property (strong, nonatomic) IBOutlet UIView *tabBarView;
+@property (strong, nonatomic) IBOutlet UIImageView *headerCoverImageView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 
