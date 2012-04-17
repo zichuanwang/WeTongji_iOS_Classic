@@ -185,6 +185,7 @@
     NSLog(@"begin drag");
     _scrollViewStartTouch = YES;
     self.shrinking = NO;
+    [self refreshScrollViewContentHeight];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

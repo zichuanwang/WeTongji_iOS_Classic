@@ -30,6 +30,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    UIImageView *avatarFrameImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_frame.png"]];
+    UIImageView *avatarFrameTapeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_frame_tape.png"]];
+    avatarFrameTapeImageView.frame = CGRectMake(0, 0, 100, 100);
+    UIImageView *avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_info_default_image.jpg"]];
+    avatarImageView.frame = CGRectMake(17, 17, 66, 66);
+    avatarFrameImageView.frame = CGRectMake(215, 50, 100, 100);
+    [avatarFrameImageView addSubview:avatarImageView];
+    [avatarFrameImageView addSubview:avatarFrameTapeImageView];
+    [self.tableView addSubview:avatarFrameImageView];
 }
 
 - (void)viewDidUnload
