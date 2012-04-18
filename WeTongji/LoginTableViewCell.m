@@ -19,7 +19,7 @@
 
 - (void)awakeFromNib {
     self.userNameLabel.text = @"";
-    //self.avatarImageView.hidden = YES;
+    self.avatarImageView.hidden = YES;
 }
 
 @end

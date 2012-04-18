@@ -141,31 +141,45 @@
 								<string key="NSFrame">{{230, 52}, {70, 2}}</string>
 								<reference key="NSSuperview" ref="34847821"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="801146804"/>
+								<reference key="NSNextKeyView" ref="927723686"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIImage" ref="941980452"/>
 							</object>
-							<object class="IBUITableView" id="801146804">
+							<object class="IBUIView" id="927723686">
 								<reference key="NSNextResponder" ref="34847821"/>
-								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{10, 71}, {300, 120}}</string>
+								<int key="NSvFlags">292</int>
+								<array class="NSMutableArray" key="NSSubviews">
+									<object class="IBUITableView" id="801146804">
+										<reference key="NSNextResponder" ref="927723686"/>
+										<int key="NSvFlags">274</int>
+										<string key="NSFrameSize">{300, 120}</string>
+										<reference key="NSSuperview" ref="927723686"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<object class="NSColor" key="IBUIBackgroundColor">
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MCAwAA</bytes>
+										</object>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<bool key="IBUIAlwaysBounceVertical">YES</bool>
+										<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
+										<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
+										<float key="IBUIRowHeight">44</float>
+										<float key="IBUISectionHeaderHeight">22</float>
+										<float key="IBUISectionFooterHeight">22</float>
+									</object>
+								</array>
+								<string key="NSFrame">{{10, 71}, {300, 118}}</string>
 								<reference key="NSSuperview" ref="34847821"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="801146804"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MCAwAA</bytes>
-								</object>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<bool key="IBUIAlwaysBounceVertical">YES</bool>
-								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
-								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
-								<float key="IBUIRowHeight">44</float>
-								<float key="IBUISectionHeaderHeight">22</float>
-								<float key="IBUISectionFooterHeight">22</float>
 							</object>
 						</array>
 						<string key="NSFrame">{{0, 40}, {320, 210}}</string>
@@ -203,19 +217,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">dataSource</string>
-						<reference key="source" ref="801146804"/>
-						<reference key="destination" ref="372490531"/>
-					</object>
-					<int key="connectionID">12</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="801146804"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="801146804"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">12</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -254,7 +268,7 @@
 							<reference ref="468060009"/>
 							<reference ref="1061193626"/>
 							<reference ref="723990033"/>
-							<reference ref="801146804"/>
+							<reference ref="927723686"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -284,9 +298,17 @@
 						<reference key="parent" ref="34847821"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
+						<reference key="object" ref="927723686"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="801146804"/>
+						</array>
+						<reference key="parent" ref="34847821"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
 						<reference key="object" ref="801146804"/>
-						<reference key="parent" ref="34847821"/>
+						<reference key="parent" ref="927723686"/>
 					</object>
 				</array>
 			</object>
@@ -297,6 +319,7 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -308,7 +331,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">13</int>
+			<int key="maxID">14</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

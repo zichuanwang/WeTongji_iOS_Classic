@@ -8,6 +8,8 @@
 
 #import "LoginTableViewController.h"
 #import "LoginTableViewCell.h"
+#import "LoginViewController.h"
+#import "UIApplication+Addition.h"
 
 @interface LoginTableViewController ()
 
@@ -26,9 +28,9 @@
     if (self) {
         // Custom initialization
         self.userListArray = [[NSMutableArray alloc] initWithCapacity:10];
-        [self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
-        [self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
-        [self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
+        //[self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
+        //[self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
+        //[self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
         [self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
     }
     return self;
@@ -78,6 +80,7 @@
         loginCell.avatarImageView.image = [UIImage imageNamed:@"user_info_default_image.jpg"];
     }
     else if(indexPath.row == self.userListArray.count) {
+        loginCell.avatarImageView.hidden = NO;
         loginCell.avatarImageView.image = [UIImage imageNamed:@"login_add_user.png"];
         loginCell.userNameLabel.text = @"添加一个新的账户";
     }
@@ -97,7 +100,8 @@
         [self.tableView reloadData];
     }
     else if(indexPath.row == self.userListArray.count) {
-        
+        LoginViewController *vc = [[LoginViewController alloc] init];
+        [[UIApplication sharedApplication] presentModalViewController:vc];
     }
 }
 
