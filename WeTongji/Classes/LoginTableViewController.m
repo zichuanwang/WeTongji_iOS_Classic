@@ -11,9 +11,13 @@
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
 
+#define TABLE_HEADER_FOOTER_CELL_NUM    5
+
 @interface LoginTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *userListArray;
+@property (strong, nonatomic) UIView *tableViewHeaderView;
+@property (strong, nonatomic) UIView *tableViewFooterView;
 
 @end
 
@@ -21,6 +25,8 @@
 
 @synthesize tableView = _tableView;
 @synthesize userListArray = _userListArray;
+@synthesize tableViewFooterView = _tableViewFooterView;
+@synthesize tableViewHeaderView = _tableViewHeaderView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +45,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view from its nib. 
+    self.tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, -40 * TABLE_HEADER_FOOTER_CELL_NUM, 320, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
+    self.tableViewFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, [self numberOfRowsInTableView] * 40, 320, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
+    for(int i = 0; i < TABLE_HEADER_FOOTER_CELL_NUM; i++) {
+        UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_main.png"]];
+        UIImageView *footerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_main.png"]];
+        headerView.frame = CGRectMake(-10, 40 * i, 320, 40);
+        footerView.frame = headerView.frame;
+        [self.tableViewHeaderView addSubview:headerView];
+        [self.tableViewFooterView addSubview:footerView];
+    }
+    [self.tableView addSubview:self.tableViewHeaderView];
+    [self.tableView addSubview:self.tableViewFooterView];
 }
 
 - (void)viewDidUnload
@@ -49,12 +67,16 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (NSInteger)numberOfRowsInTableView {
+    NSInteger count = self.userListArray.count + 1;
+    return count >= 3 ? count : 3;
+}
+
 #pragma mark -
 #pragma mark UITableView data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger count = self.userListArray.count + 1;
-    return count >= 3 ? count : 3;
+    return [self numberOfRowsInTableView];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
@@ -81,9 +103,10 @@
     }
     else if(indexPath.row == self.userListArray.count) {
         loginCell.avatarImageView.hidden = NO;
-        loginCell.avatarImageView.image = [UIImage imageNamed:@"login_add_user.png"];
+        loginCell.avatarImageView.image = nil;
         loginCell.userNameLabel.text = @"添加一个新的账户";
     }
+    
     return cell;
 }
 
