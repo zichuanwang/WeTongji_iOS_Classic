@@ -99,6 +99,9 @@
     UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_header.png"]];
     headerImageView.frame = CGRectMake(0, 16, 320, 40);
     
+    UIImageView *lineImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_single_line.png"]];
+    lineImageView.frame = headerImageView.frame;
+    
     NSString *title = [self.dataSourceIndexArray objectAtIndex:section];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 40)];
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -108,8 +111,9 @@
     titleLabel.shadowOffset = CGSizeMake(0, 1);
     titleLabel.text = title;
     
-    [headerView addSubview:titleLabel];
     [headerView addSubview:headerImageView];
+    [headerView addSubview:lineImageView];
+    [headerView addSubview:titleLabel];
     return headerView;
 }
 

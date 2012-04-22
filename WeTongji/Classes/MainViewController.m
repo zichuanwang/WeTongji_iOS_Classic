@@ -43,7 +43,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //self.navigationController.navigationBar.hidden = NO;
-    
     [self configureNavigationBar];
     [self configureTabBarButtons];
     [self configureUserInfo];

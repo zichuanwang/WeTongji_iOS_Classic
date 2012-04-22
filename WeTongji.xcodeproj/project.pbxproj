@@ -77,6 +77,12 @@
 		E191772E15078188009FB941 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* MainViewController.xib */; };
 		E1917734150785ED009FB941 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1917733150785ED009FB941 /* MainWindow.xib */; };
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
+		E1A836DD154466320086F62E /* nav_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DB154466310086F62E /* nav_bar_shadow.png */; };
+		E1A836DE154466320086F62E /* nav_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */; };
+		E1A836E415446A800086F62E /* paper_info_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E015446A7F0086F62E /* paper_info_line.png */; };
+		E1A836E515446A800086F62E /* paper_info_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E115446A7F0086F62E /* paper_info_line@2x.png */; };
+		E1A836E615446A800086F62E /* paper_single_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E215446A800086F62E /* paper_single_line.png */; };
+		E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E315446A800086F62E /* paper_single_line@2x.png */; };
 		E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AE08851531826F006964B8 /* ScheduleViewController.m */; };
 		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
@@ -207,6 +213,12 @@
 		E191772C15078188009FB941 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
 		E1917733150785ED009FB941 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E191773515078609009FB941 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E1A836DB154466310086F62E /* nav_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_shadow.png; sourceTree = "<group>"; };
+		E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_shadow@2x.png"; sourceTree = "<group>"; };
+		E1A836E015446A7F0086F62E /* paper_info_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_info_line.png; sourceTree = "<group>"; };
+		E1A836E115446A7F0086F62E /* paper_info_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_info_line@2x.png"; sourceTree = "<group>"; };
+		E1A836E215446A800086F62E /* paper_single_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_single_line.png; sourceTree = "<group>"; };
+		E1A836E315446A800086F62E /* paper_single_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_single_line@2x.png"; sourceTree = "<group>"; };
 		E1AE08841531826F006964B8 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
 		E1AE08851531826F006964B8 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
 		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
@@ -311,6 +323,8 @@
 		E10A16651536172400700A0E /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				E1A836DB154466310086F62E /* nav_bar_shadow.png */,
+				E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */,
 				E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */,
 				E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */,
 				E1DF6FFB1539C93F001C60EA /* nav_bar_btn_finish.png */,
@@ -513,6 +527,10 @@
 		E1DF6F901537610F001C60EA /* paper */ = {
 			isa = PBXGroup;
 			children = (
+				E1A836E015446A7F0086F62E /* paper_info_line.png */,
+				E1A836E115446A7F0086F62E /* paper_info_line@2x.png */,
+				E1A836E215446A800086F62E /* paper_single_line.png */,
+				E1A836E315446A800086F62E /* paper_single_line@2x.png */,
 				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
 				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
 				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
@@ -757,6 +775,12 @@
 				E174A9A3153E800400E7165A /* LoginViewController.xib in Resources */,
 				E174A9AA153E83BD00E7165A /* login_btn_cancel.png in Resources */,
 				E174A9AB153E83BD00E7165A /* login_btn_cancel@2x.png in Resources */,
+				E1A836DD154466320086F62E /* nav_bar_shadow.png in Resources */,
+				E1A836DE154466320086F62E /* nav_bar_shadow@2x.png in Resources */,
+				E1A836E415446A800086F62E /* paper_info_line.png in Resources */,
+				E1A836E515446A800086F62E /* paper_info_line@2x.png in Resources */,
+				E1A836E615446A800086F62E /* paper_single_line.png in Resources */,
+				E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

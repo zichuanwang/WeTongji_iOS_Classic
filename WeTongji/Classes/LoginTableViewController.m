@@ -49,8 +49,8 @@
     self.tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, -40 * TABLE_HEADER_FOOTER_CELL_NUM, 320, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
     self.tableViewFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, [self numberOfRowsInTableView] * 40, 320, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
     for(int i = 0; i < TABLE_HEADER_FOOTER_CELL_NUM; i++) {
-        UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_main.png"]];
-        UIImageView *footerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_main.png"]];
+        UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_info_line.png"]];
+        UIImageView *footerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_info_line.png"]];
         headerView.frame = CGRectMake(-10, 40 * i, 320, 40);
         footerView.frame = headerView.frame;
         [self.tableViewHeaderView addSubview:headerView];
