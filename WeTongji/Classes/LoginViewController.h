@@ -10,7 +10,7 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
 
 - (IBAction)didClickCancelButton:(UIButton *)sender;
 

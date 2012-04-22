@@ -7,17 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTTabelViewController.h"
 
-@interface WTMainTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WTMainTableViewController : WTTabelViewController 
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) NSMutableArray *dataSourceIndexArray;
-@property (strong, nonatomic) NSMutableDictionary *dataSourceDictionary;
+@property (nonatomic, strong) NSMutableArray *dataSourceIndexArray;
+@property (nonatomic, strong) NSMutableDictionary *dataSourceDictionary;
 
 //methods to overwrite
 - (void)configureDataSource;
-- (NSString *)customCellClassName;
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

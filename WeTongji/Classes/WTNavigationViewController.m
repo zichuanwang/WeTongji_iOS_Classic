@@ -14,6 +14,8 @@
 
 @implementation WTNavigationViewController
 
+@synthesize navBarShadowImageView = _navBarShadowImageView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -21,6 +23,10 @@
     if([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     }
+}
+
+- (void)viewDidUnload {
+    self.navBarShadowImageView = nil;
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @interface WTDockButton : WTButton
 
-@property (strong, nonatomic) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 - (id)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage title:(NSString *)title;
 

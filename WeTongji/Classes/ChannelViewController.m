@@ -8,12 +8,17 @@
 
 #import "ChannelViewController.h"
 #import "UIBarButtonItem+WTBarButtonItem.h"
+#import "ChannelCategoryTableViewController.h"
 
 @interface ChannelViewController ()
+
+@property (nonatomic, strong) ChannelCategoryTableViewController *categoryTableViewController;
 
 @end
 
 @implementation ChannelViewController
+
+@synthesize categoryTableViewController = _categoryTableViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +47,8 @@
     UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     self.navigationItem.leftBarButtonItem.enabled = YES;
+    
+    [self configureTableView];
 }
 
 - (void)viewDidUnload
@@ -53,6 +60,15 @@
 
 - (void)didClickFinishButton {
     [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark UI methods
+
+- (void)configureTableView {
+    ChannelCategoryTableViewController *vc = [[ChannelCategoryTableViewController alloc] init];
+    [self.view insertSubview:vc.view belowSubview:self.navBarShadowImageView];
+    self.categoryTableViewController = vc;
 }
 
 @end

@@ -14,7 +14,6 @@
 
 @implementation WTMainTableViewController
 
-@synthesize tableView = _tableView;
 @synthesize dataSourceIndexArray = _dataSourceIndexArray;
 @synthesize dataSourceDictionary = _dataSourceDictionary;
 
@@ -40,7 +39,6 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    self.tableView = nil;
 }
 
 #pragma mark -
@@ -54,28 +52,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSourceIndexArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *name = [self customCellClassName];
-    
-    NSString *CellIdentifier = name ? name : @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        if (name) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:[self customCellClassName] owner:self options:nil];
-            cell = [nib lastObject];
-        }
-        else {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-    }
-    
-    [self configureCell:cell atIndexPath:indexPath];
-    
-    return cell;
 }
 
 #pragma mark -
@@ -129,16 +105,7 @@
 #pragma mark -
 #pragma mark Methods to overwrite
 
-- (NSString *)customCellClassName
-{
-    return nil;
-}
-
 - (void)configureDataSource {
-    
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
 }
 

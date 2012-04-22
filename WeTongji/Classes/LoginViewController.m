@@ -11,7 +11,7 @@
 
 @interface LoginViewController ()
 
-@property (weak, nonatomic) UITextField *editingTextField;
+@property (nonatomic, weak) UITextField *editingTextField;
 
 @end
 

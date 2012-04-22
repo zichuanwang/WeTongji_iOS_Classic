@@ -58,8 +58,6 @@
 		E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A979153DB2C100E7165A /* login_user_list_bg.png */; };
 		E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */; };
 		E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97E153DB59A00E7165A /* login_light_color_line.png */; };
-		E174A983153DDE7100E7165A /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A981153DDDF600E7165A /* LoginTableViewCell.m */; };
-		E174A984153DE02500E7165A /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A982153DDDF700E7165A /* LoginTableViewCell.xib */; };
 		E174A99B153E7FB900E7165A /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A999153E7FB900E7165A /* login_bg.png */; };
 		E174A99C153E7FB900E7165A /* login_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A99A153E7FB900E7165A /* login_bg@2x.png */; };
 		E174A9A2153E800400E7165A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A9A0153E800400E7165A /* LoginViewController.m */; };
@@ -83,6 +81,17 @@
 		E1A836E515446A800086F62E /* paper_info_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E115446A7F0086F62E /* paper_info_line@2x.png */; };
 		E1A836E615446A800086F62E /* paper_single_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E215446A800086F62E /* paper_single_line.png */; };
 		E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E315446A800086F62E /* paper_single_line@2x.png */; };
+		E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836E915446FEB0086F62E /* WTTabelViewController.m */; };
+		E1A836EE154473360086F62E /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836EC154473160086F62E /* LoginTableViewCell.m */; };
+		E1A836EF154473390086F62E /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836ED154473190086F62E /* LoginTableViewCell.xib */; };
+		E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */; };
+		E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */; };
+		E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */; };
+		E1A836FB1544777C0086F62E /* ChannelCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */; };
+		E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */; };
+		E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */; };
+		E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */; };
+		E1A8370515447C720086F62E /* PaperHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */; };
 		E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AE08851531826F006964B8 /* ScheduleViewController.m */; };
 		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
@@ -190,9 +199,6 @@
 		E174A979153DB2C100E7165A /* login_user_list_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_user_list_bg.png; sourceTree = "<group>"; };
 		E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user_list_bg@2x.png"; sourceTree = "<group>"; };
 		E174A97E153DB59A00E7165A /* login_light_color_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_light_color_line.png; sourceTree = "<group>"; };
-		E174A980153DDDF500E7165A /* LoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTableViewCell.h; sourceTree = "<group>"; };
-		E174A981153DDDF600E7165A /* LoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewCell.m; sourceTree = "<group>"; };
-		E174A982153DDDF700E7165A /* LoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginTableViewCell.xib; sourceTree = "<group>"; };
 		E174A999153E7FB900E7165A /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
 		E174A99A153E7FB900E7165A /* login_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2x.png"; sourceTree = "<group>"; };
 		E174A99F153E800400E7165A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
@@ -219,6 +225,23 @@
 		E1A836E115446A7F0086F62E /* paper_info_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_info_line@2x.png"; sourceTree = "<group>"; };
 		E1A836E215446A800086F62E /* paper_single_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_single_line.png; sourceTree = "<group>"; };
 		E1A836E315446A800086F62E /* paper_single_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_single_line@2x.png"; sourceTree = "<group>"; };
+		E1A836E815446FEB0086F62E /* WTTabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTTabelViewController.h; path = Classes/WTTabelViewController.h; sourceTree = "<group>"; };
+		E1A836E915446FEB0086F62E /* WTTabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTTabelViewController.m; path = Classes/WTTabelViewController.m; sourceTree = "<group>"; };
+		E1A836EB154473140086F62E /* LoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = Classes/LoginTableViewCell.h; sourceTree = "<group>"; };
+		E1A836EC154473160086F62E /* LoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewCell.m; path = Classes/LoginTableViewCell.m; sourceTree = "<group>"; };
+		E1A836ED154473190086F62E /* LoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginTableViewCell.xib; path = Classes/LoginTableViewCell.xib; sourceTree = "<group>"; };
+		E1A836F0154473870086F62E /* ChannelCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelCategoryTableViewController.h; path = Classes/ChannelCategoryTableViewController.h; sourceTree = "<group>"; };
+		E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelCategoryTableViewController.m; path = Classes/ChannelCategoryTableViewController.m; sourceTree = "<group>"; };
+		E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelCategoryTableViewController.xib; path = Classes/ChannelCategoryTableViewController.xib; sourceTree = "<group>"; };
+		E1A836F5154476EB0086F62E /* ChannelCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelCategoryTableViewCell.h; path = Classes/ChannelCategoryTableViewCell.h; sourceTree = "<group>"; };
+		E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelCategoryTableViewCell.m; path = Classes/ChannelCategoryTableViewCell.m; sourceTree = "<group>"; };
+		E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelCategoryTableViewCell.xib; path = Classes/ChannelCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		E1A836FC15447BE80086F62E /* PaperHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperHeaderTableViewCell.h; path = Classes/PaperHeaderTableViewCell.h; sourceTree = "<group>"; };
+		E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaperHeaderTableViewCell.m; path = Classes/PaperHeaderTableViewCell.m; sourceTree = "<group>"; };
+		E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperFooterTableViewCell.h; path = Classes/PaperFooterTableViewCell.h; sourceTree = "<group>"; };
+		E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaperFooterTableViewCell.m; path = Classes/PaperFooterTableViewCell.m; sourceTree = "<group>"; };
+		E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaperFooterTableViewCell.xib; path = Classes/PaperFooterTableViewCell.xib; sourceTree = "<group>"; };
+		E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaperHeaderTableViewCell.xib; path = Classes/PaperHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E1AE08841531826F006964B8 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
 		E1AE08851531826F006964B8 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
 		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
@@ -564,6 +587,8 @@
 				E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */,
 				E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */,
 				E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */,
+				E1A836E815446FEB0086F62E /* WTTabelViewController.h */,
+				E1A836E915446FEB0086F62E /* WTTabelViewController.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -571,12 +596,18 @@
 		E1DF6F9A1537615B001C60EA /* Accessories */ = {
 			isa = PBXGroup;
 			children = (
+				E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */,
+				E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */,
+				E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */,
+				E1A836FC15447BE80086F62E /* PaperHeaderTableViewCell.h */,
+				E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */,
+				E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */,
+				E11965471507B2F200AE32E0 /* RootView.h */,
+				E11965481507B2F200AE32E0 /* RootView.m */,
 				E149830915343BCA00734341 /* WTButton.h */,
 				E149830A15343BCA00734341 /* WTButton.m */,
 				E10A165C15360EC900700A0E /* WTDockButton.h */,
 				E10A165D15360EC900700A0E /* WTDockButton.m */,
-				E11965471507B2F200AE32E0 /* RootView.h */,
-				E11965481507B2F200AE32E0 /* RootView.m */,
 			);
 			name = Accessories;
 			sourceTree = "<group>";
@@ -608,9 +639,9 @@
 				E174A974153DAA1C00E7165A /* LoginTableViewController.h */,
 				E174A975153DAA1D00E7165A /* LoginTableViewController.m */,
 				E174A976153DAA1D00E7165A /* LoginTableViewController.xib */,
-				E174A980153DDDF500E7165A /* LoginTableViewCell.h */,
-				E174A981153DDDF600E7165A /* LoginTableViewCell.m */,
-				E174A982153DDDF700E7165A /* LoginTableViewCell.xib */,
+				E1A836EB154473140086F62E /* LoginTableViewCell.h */,
+				E1A836EC154473160086F62E /* LoginTableViewCell.m */,
+				E1A836ED154473190086F62E /* LoginTableViewCell.xib */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -621,6 +652,12 @@
 				E1DF6FF21539B865001C60EA /* ChannelViewController.h */,
 				E1DF6FF31539B865001C60EA /* ChannelViewController.m */,
 				E1DF6FF41539B865001C60EA /* ChannelViewController.xib */,
+				E1A836F0154473870086F62E /* ChannelCategoryTableViewController.h */,
+				E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */,
+				E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */,
+				E1A836F5154476EB0086F62E /* ChannelCategoryTableViewCell.h */,
+				E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */,
+				E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */,
 			);
 			name = channel;
 			sourceTree = "<group>";
@@ -685,7 +722,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E174A984153DE02500E7165A /* LoginTableViewCell.xib in Resources */,
 				E1C8775A1505F41700592954 /* InfoPlist.strings in Resources */,
 				E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */,
 				E1C877C715064BA500592954 /* Default.png in Resources */,
@@ -781,6 +817,11 @@
 				E1A836E515446A800086F62E /* paper_info_line@2x.png in Resources */,
 				E1A836E615446A800086F62E /* paper_single_line.png in Resources */,
 				E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */,
+				E1A836EF154473390086F62E /* LoginTableViewCell.xib in Resources */,
+				E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */,
+				E1A836FB1544777C0086F62E /* ChannelCategoryTableViewCell.xib in Resources */,
+				E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */,
+				E1A8370515447C720086F62E /* PaperHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,9 +852,14 @@
 				E1DF6FFA1539B93A001C60EA /* WTNavigationViewController.m in Sources */,
 				E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */,
 				E174A977153DAA1E00E7165A /* LoginTableViewController.m in Sources */,
-				E174A983153DDE7100E7165A /* LoginTableViewCell.m in Sources */,
 				E174A9A2153E800400E7165A /* LoginViewController.m in Sources */,
 				E174A9B3153E857800E7165A /* UIApplication+Addition.m in Sources */,
+				E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */,
+				E1A836EE154473360086F62E /* LoginTableViewCell.m in Sources */,
+				E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */,
+				E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */,
+				E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */,
+				E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

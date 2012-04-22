@@ -12,12 +12,12 @@
 
 @interface MainViewController : WTNavigationViewController
 
-@property (strong, nonatomic) IBOutlet WTButton *userInfoButton;
-@property (strong, nonatomic) IBOutlet WTButton *checkButton;
-@property (strong, nonatomic) IBOutlet WTButton *settingButton;
+@property (nonatomic, strong) IBOutlet WTButton *userInfoButton;
+@property (nonatomic, strong) IBOutlet WTButton *checkButton;
+@property (nonatomic, strong) IBOutlet WTButton *settingButton;
 
-@property (strong, nonatomic) IBOutlet UIView *tabBarView;
-@property (strong, nonatomic) IBOutlet UIImageView *headerCoverImageView;
+@property (nonatomic, strong) IBOutlet UIView *tabBarView;
+@property (nonatomic, strong) IBOutlet UIImageView *headerCoverImageView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 

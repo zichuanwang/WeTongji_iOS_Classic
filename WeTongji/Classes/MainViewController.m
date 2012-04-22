@@ -15,10 +15,10 @@
 
 @interface MainViewController ()
 
-@property (strong, nonatomic) UserInfoTableViewController *userInfoViewController;
-@property (strong, nonatomic) ToDoListTableViewController *toDoListTableViewController;
-@property (weak, nonatomic) UIViewController *currentViewController;
-@property (strong, nonatomic) LoginTableViewController *loginUserListViewController;
+@property (nonatomic, strong) UserInfoTableViewController *userInfoViewController;
+@property (nonatomic, strong) ToDoListTableViewController *toDoListTableViewController;
+@property (nonatomic, weak) UIViewController *currentViewController;
+@property (nonatomic, strong) LoginTableViewController *loginUserListViewController;
 
 - (void)configureNavigationBar;
 - (void)configureTabBarButtons;

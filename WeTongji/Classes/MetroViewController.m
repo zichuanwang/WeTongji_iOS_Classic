@@ -27,7 +27,7 @@
 
 @interface MetroViewController ()
 
-@property (strong, nonatomic) NSMutableArray *buttonHeap;
+@property (nonatomic, strong) NSMutableArray *buttonHeap;
 @property (readonly, nonatomic) CGFloat scrollViewHeight;
 
 @property (getter = isShrink, nonatomic) BOOL shrink;

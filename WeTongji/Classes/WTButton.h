@@ -13,6 +13,6 @@
 
 @interface WTButton : UIButton
 
-@property (strong, nonatomic) UIImageView *highlightedImageView;
+@property (nonatomic, strong) UIImageView *highlightedImageView;
 
 @end

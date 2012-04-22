@@ -10,4 +10,6 @@
 
 @interface WTNavigationViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIImageView *navBarShadowImageView;
+
 @end

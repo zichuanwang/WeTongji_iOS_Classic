@@ -10,10 +10,10 @@
 
 @interface ToDoListTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *whenLabel;
-@property (strong, nonatomic) IBOutlet UILabel *whatLabel;
-@property (strong, nonatomic) IBOutlet UILabel *whereLabel;
+@property (nonatomic, strong) IBOutlet UILabel *whenLabel;
+@property (nonatomic, strong) IBOutlet UILabel *whatLabel;
+@property (nonatomic, strong) IBOutlet UILabel *whereLabel;
 
-@property (strong, nonatomic) IBOutlet UIImageView *pointImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *pointImageView;
 
 @end

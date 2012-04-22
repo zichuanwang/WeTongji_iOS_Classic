@@ -15,9 +15,9 @@
 
 @interface LoginTableViewController ()
 
-@property (strong, nonatomic) NSMutableArray *userListArray;
-@property (strong, nonatomic) UIView *tableViewHeaderView;
-@property (strong, nonatomic) UIView *tableViewFooterView;
+@property (nonatomic, strong) NSMutableArray *userListArray;
+@property (nonatomic, strong) UIView *tableViewHeaderView;
+@property (nonatomic, strong) UIView *tableViewFooterView;
 
 @end
 
@@ -79,15 +79,14 @@
     return [self numberOfRowsInTableView];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
-    NSString *CellIdentifier = @"LoginTableViewCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib lastObject];
-    }
-    
+#pragma mark -
+#pragma mark WTTableViewController methods to overwrite
+
+- (NSString *)customCellClassName {
+    return @"LoginTableViewCell";
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == _selectRow) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -106,8 +105,6 @@
         loginCell.avatarImageView.image = nil;
         loginCell.userNameLabel.text = @"添加一个新的账户";
     }
-    
-    return cell;
 }
 
 #pragma mark -

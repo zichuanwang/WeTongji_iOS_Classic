@@ -13,9 +13,9 @@
 
 @interface RootViewController ()
 
-@property (strong, nonatomic) MetroViewController *metroViewController;
-@property (strong, nonatomic) MainViewController *MainViewController;
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (nonatomic, strong) MetroViewController *metroViewController;
+@property (nonatomic, strong) MainViewController *MainViewController;
+@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTTabelViewController.h"
 
-@interface LoginTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface LoginTableViewController : WTTabelViewController {
     NSInteger _selectRow;
 }
-
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
