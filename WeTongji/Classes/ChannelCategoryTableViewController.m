@@ -69,10 +69,10 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     if([cell isMemberOfClass:[ChannelCategoryTableViewCell class]]) {
         ChannelCategoryTableViewCell *categoryCell = (ChannelCategoryTableViewCell *)cell;
         categoryCell.categoryLabel.text = [self.categoryArray objectAtIndex:indexPath.row - 1];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 }
 

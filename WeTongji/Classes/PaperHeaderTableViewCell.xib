@@ -41,8 +41,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIImageView" id="118394964">
 								<reference key="NSNextResponder" ref="4829017"/>
-								<int key="NSvFlags">293</int>
-								<string key="NSFrameSize">{320, 40}</string>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="4829017"/>
 								<reference key="NSNextKeyView" ref="521043464"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -55,8 +55,8 @@
 							</object>
 							<object class="IBUIImageView" id="521043464">
 								<reference key="NSNextResponder" ref="4829017"/>
-								<int key="NSvFlags">293</int>
-								<string key="NSFrameSize">{320, 40}</string>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="4829017"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -68,7 +68,7 @@
 								</object>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 39}</string>
+						<string key="NSFrameSize">{300, 39}</string>
 						<reference key="NSSuperview" ref="560359023"/>
 						<reference key="NSNextKeyView" ref="118394964"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -83,7 +83,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 40}</string>
+				<string key="NSFrameSize">{300, 40}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="4829017"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>

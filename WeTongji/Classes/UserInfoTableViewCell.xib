@@ -45,7 +45,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="632109872"/>
-								<reference key="NSNextKeyView" ref="453336593"/>
+								<reference key="NSNextKeyView" ref="629567870"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -54,7 +54,7 @@
 									<string key="NSResourceName">paper_main.png</string>
 								</object>
 							</object>
-							<object class="IBUIImageView" id="453336593">
+							<object class="IBUIImageView" id="629567870">
 								<reference key="NSNextResponder" ref="632109872"/>
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
@@ -81,9 +81,9 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">姓名</string>
-								<object class="NSColor" key="IBUITextColor" id="628768433">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+								<object class="NSColor" key="IBUITextColor" id="862962938">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="141096588">
 									<int key="NSColorSpace">3</int>
@@ -109,7 +109,6 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{80, 9.5}, {210, 20}}</string>
 								<reference key="NSSuperview" ref="632109872"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -117,7 +116,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">王紫川</string>
-								<reference key="IBUITextColor" ref="628768433"/>
+								<reference key="IBUITextColor" ref="862962938"/>
 								<reference key="IBUIHighlightedColor" ref="141096588"/>
 								<reference key="IBUIShadowColor" ref="141096588"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
@@ -196,7 +195,7 @@
 							<reference ref="174509668"/>
 							<reference ref="521504458"/>
 							<reference ref="141452417"/>
-							<reference ref="453336593"/>
+							<reference ref="629567870"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -217,7 +216,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="453336593"/>
+						<reference key="object" ref="629567870"/>
 						<reference key="parent" ref="659482095"/>
 					</object>
 				</array>
