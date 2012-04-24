@@ -12,13 +12,16 @@
 #import "UIView+Addition.h"
 #import "UIBarButtonItem+WTBarButtonItem.h"
 #import "LoginTableViewController.h"
+#import "SettingTableViewController.h"
+#import "WTClient.h"
 
 @interface MainViewController ()
 
+@property (nonatomic, weak) UIViewController *currentViewController;
 @property (nonatomic, strong) UserInfoTableViewController *userInfoViewController;
 @property (nonatomic, strong) ToDoListTableViewController *toDoListTableViewController;
-@property (nonatomic, weak) UIViewController *currentViewController;
 @property (nonatomic, strong) LoginTableViewController *loginUserListViewController;
+@property (nonatomic, strong) SettingTableViewController *settingViewController;
 
 - (void)configureNavigationBar;
 - (void)configureTabBarButtons;
@@ -37,6 +40,7 @@
 @synthesize userInfoViewController = _userInfoViewController;
 @synthesize toDoListTableViewController = _toDoListTableViewController;
 @synthesize loginUserListViewController = _loginUserListViewController;
+@synthesize settingViewController = _settingViewController;
 
 - (void)viewDidLoad
 {
@@ -48,6 +52,7 @@
     [self configureUserInfo];
     [self configureToDoList];
     [self configureLoginUserList];
+    [self configureSetting];
 }
 
 - (void)viewDidUnload
@@ -97,6 +102,16 @@
     vc.view.frame = frame;
     vc.view.alpha = 0;
     self.toDoListTableViewController = vc;
+    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+}
+
+- (void)configureSetting {
+    SettingTableViewController *vc = [[SettingTableViewController alloc] init];
+    CGRect frame =  vc.view.frame;
+    frame.origin = CGPointMake(0, 44);
+    vc.view.frame = frame;
+    vc.view.alpha = 0;
+    self.settingViewController = vc;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
@@ -171,7 +186,7 @@
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender {
     NSArray *buttonArray = [NSArray arrayWithObjects:self.userInfoButton, self.checkButton, self.settingButton, nil];
-    NSArray *viewControllerArray = [NSArray arrayWithObjects:self.userInfoViewController, self.toDoListTableViewController, nil];
+    NSArray *viewControllerArray = [NSArray arrayWithObjects:self.userInfoViewController, self.toDoListTableViewController, self.settingViewController, nil];
     [buttonArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = obj;
         if(btn == sender) {
@@ -193,6 +208,9 @@
 }
 
 - (void)didClickLogoutButton {
+    WTClient *client = [WTClient client];
+    [client getChannel];
+    return;
     self.navigationItem.rightBarButtonItem.enabled = NO;
     [self showLoginViewWithCompletion:^{
         UIBarButtonItem *loginButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"登录" target:self   action:@selector(didClickLoginButton)];

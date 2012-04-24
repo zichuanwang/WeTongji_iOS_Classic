@@ -49,6 +49,7 @@
 		E14983311534C22900734341 /* nav_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* nav_bar_bg.png */; };
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
+		E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
@@ -169,6 +170,10 @@
 		E1FD956B1545AAB600B39069 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FD956A1545AAB600B39069 /* SystemConfiguration.framework */; };
 		E1FD956D1545AAD600B39069 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FD956C1545AAD500B39069 /* libz.1.2.5.dylib */; };
 		E1FD956F1545AAF900B39069 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FD956E1545AAF900B39069 /* MobileCoreServices.framework */; };
+		E1FD95791546557800B39069 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95771546557700B39069 /* SettingTableViewController.m */; };
+		E1FD957A1546557800B39069 /* SettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FD95781546557700B39069 /* SettingTableViewController.xib */; };
+		E1FD957D15465EE000B39069 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */; };
+		E1FD957F15465EF900B39069 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -388,6 +393,14 @@
 		E1FD956A1545AAB600B39069 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E1FD956C1545AAD500B39069 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		E1FD956E1545AAF900B39069 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E1FD95701545B8CC00B39069 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Classes/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "Classes/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		E1FD95761546557700B39069 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTableViewController.h; path = Classes/SettingTableViewController.h; sourceTree = "<group>"; };
+		E1FD95771546557700B39069 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTableViewController.m; path = Classes/SettingTableViewController.m; sourceTree = "<group>"; };
+		E1FD95781546557700B39069 /* SettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingTableViewController.xib; path = Classes/SettingTableViewController.xib; sourceTree = "<group>"; };
+		E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTableViewCell.h; path = Classes/SettingTableViewCell.h; sourceTree = "<group>"; };
+		E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTableViewCell.m; path = Classes/SettingTableViewCell.m; sourceTree = "<group>"; };
+		E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingTableViewCell.xib; path = Classes/SettingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +483,8 @@
 		E149831715346C0000734341 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E1FD95701545B8CC00B39069 /* NSString+URLEncoding.h */,
+				E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */,
 				E149831815346C2A00734341 /* UIView+Addition.h */,
 				E149831915346C2A00734341 /* UIView+Addition.m */,
 				E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */,
@@ -497,6 +512,12 @@
 		E174A99E153E7FC800E7165A /* login */ = {
 			isa = PBXGroup;
 			children = (
+				E1A836EB154473140086F62E /* LoginTableViewCell.h */,
+				E1A836EC154473160086F62E /* LoginTableViewCell.m */,
+				E1A836ED154473190086F62E /* LoginTableViewCell.xib */,
+				E174A974153DAA1C00E7165A /* LoginTableViewController.h */,
+				E174A975153DAA1D00E7165A /* LoginTableViewController.m */,
+				E174A976153DAA1D00E7165A /* LoginTableViewController.xib */,
 				E174A99F153E800400E7165A /* LoginViewController.h */,
 				E174A9A0153E800400E7165A /* LoginViewController.m */,
 				E174A9A1153E800400E7165A /* LoginViewController.xib */,
@@ -733,12 +754,12 @@
 				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
 				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
 				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
-				E174A974153DAA1C00E7165A /* LoginTableViewController.h */,
-				E174A975153DAA1D00E7165A /* LoginTableViewController.m */,
-				E174A976153DAA1D00E7165A /* LoginTableViewController.xib */,
-				E1A836EB154473140086F62E /* LoginTableViewCell.h */,
-				E1A836EC154473160086F62E /* LoginTableViewCell.m */,
-				E1A836ED154473190086F62E /* LoginTableViewCell.xib */,
+				E1FD95761546557700B39069 /* SettingTableViewController.h */,
+				E1FD95771546557700B39069 /* SettingTableViewController.m */,
+				E1FD95781546557700B39069 /* SettingTableViewController.xib */,
+				E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */,
+				E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */,
+				E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -998,6 +1019,8 @@
 				E1A83713154497260086F62E /* paper_blue_seperator@2x.png in Resources */,
 				E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */,
 				E1FD9526154537FF00B39069 /* ChannelDetailTableViewController.xib in Resources */,
+				E1FD957A1546557800B39069 /* SettingTableViewController.xib in Resources */,
+				E1FD957F15465EF900B39069 /* SettingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1079,9 @@
 				E1FD95651545A9DB00B39069 /* SBJsonBase.m in Sources */,
 				E1FD95661545A9DB00B39069 /* SBJsonParser.m in Sources */,
 				E1FD95671545A9DB00B39069 /* SBJsonWriter.m in Sources */,
+				E1FD95791546557800B39069 /* SettingTableViewController.m in Sources */,
+				E1FD957D15465EE000B39069 /* SettingTableViewCell.m in Sources */,
+				E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
