@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
 
-#define TABLE_HEADER_FOOTER_CELL_NUM    5
+#define TABLE_HEADER_FOOTER_CELL_NUM    7
 
 @interface LoginListTableViewController ()
 
