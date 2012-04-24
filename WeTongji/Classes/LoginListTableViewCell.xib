@@ -50,6 +50,7 @@
 										<int key="NSvFlags">293</int>
 										<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 										<reference key="NSSuperview" ref="1060888640"/>
+										<reference key="NSNextKeyView" ref="1072926749"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -63,6 +64,7 @@
 										<int key="NSvFlags">297</int>
 										<string key="NSFrame">{{80, 10}, {210, 20}}</string>
 										<reference key="NSSuperview" ref="1060888640"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -109,6 +111,7 @@
 								</array>
 								<string key="NSFrameSize">{300, 40}</string>
 								<reference key="NSSuperview" ref="632109872"/>
+								<reference key="NSNextKeyView" ref="364695429"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -136,7 +139,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="632109872"/>
-				<string key="IBUIReuseIdentifier">LoginTableViewCell</string>
+				<string key="IBUIReuseIdentifier">LoginListTableViewCell</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -220,7 +223,7 @@
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="4.CustomClassName">LoginTableViewCell</string>
+				<string key="4.CustomClassName">LoginListTableViewCell</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>

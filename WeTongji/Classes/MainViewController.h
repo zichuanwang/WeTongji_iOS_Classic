@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WTButton.h"
 #import "WTNavigationViewController.h"
+#import "SettingTableViewController.h"
 
-@interface MainViewController : WTNavigationViewController
+@interface MainViewController : WTNavigationViewController <SettingTableViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet WTButton *userInfoButton;
 @property (nonatomic, strong) IBOutlet WTButton *checkButton;

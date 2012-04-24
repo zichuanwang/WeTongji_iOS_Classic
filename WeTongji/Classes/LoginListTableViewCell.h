@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginTableViewCell : UITableViewCell
+@interface LoginListTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *userNameLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;

@@ -15,6 +15,8 @@
 
 @implementation SettingTableViewController
 
+@synthesize delegate = _delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +37,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.delegate = nil;
 }
 
 #pragma mark -
@@ -45,25 +48,36 @@
 }
 
 - (void)configureDataSource {
-    //[self.dataSourceIndexArray addObject:[NSString stringWithString:@"账号设置"]];
+    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"账号设置"]];
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"应用设置"]];
     
-    NSArray *account = [NSArray arrayWithObjects:
-                    [NSArray arrayWithObjects:[NSString stringWithString:@"8:00"], [NSString stringWithString:@"高等数学"], [NSString stringWithString:@"南楼 101"], nil], nil];
+    NSArray *account = [NSArray arrayWithObjects:@"切换账户", nil];
     
     NSArray *application = [NSArray arrayWithObjects:@"自动同步课表"
                       ,nil];
     
-    //[self.dataSourceDictionary setValue:account forKey:[self.dataSourceIndexArray objectAtIndex:0]];
-    [self.dataSourceDictionary setValue:application forKey:[self.dataSourceIndexArray objectAtIndex:0]];
+    [self.dataSourceDictionary setValue:account forKey:[self.dataSourceIndexArray objectAtIndex:0]];
+    [self.dataSourceDictionary setValue:application forKey:[self.dataSourceIndexArray objectAtIndex:1]];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    SettingTableViewCell *toDoListCell = (SettingTableViewCell *)cell;
+    SettingTableViewCell *settingCell = (SettingTableViewCell *)cell;
     NSString *key = [self.dataSourceIndexArray objectAtIndex:indexPath.section];
     NSArray *value = [self.dataSourceDictionary objectForKey:key];
     NSString *data = [value objectAtIndex:indexPath.row];
-    toDoListCell.itemTitleLabel.text = data;
+    settingCell.itemTitleLabel.text = data;
+    if(indexPath.section == 0) {
+        settingCell.itemSwitch.hidden = YES;
+        settingCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+}
+
+#pragma mark -
+#pragma mark UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.section == 0 && indexPath.row == 0)
+        [self.delegate settingTableViewControllerDidSelectLoginListCell];
 }
 
 @end

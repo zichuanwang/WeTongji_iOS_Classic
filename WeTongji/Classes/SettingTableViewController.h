@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "WTMainTableViewController.h"
 
+@protocol SettingTableViewControllerDelegate;
+
 @interface SettingTableViewController : WTMainTableViewController
+
+@property (nonatomic, weak) id<SettingTableViewControllerDelegate> delegate;
+
+@end
+
+@protocol SettingTableViewControllerDelegate <NSObject>
+
+- (void)settingTableViewControllerDidSelectLoginListCell;
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "LoginTableViewCell.h"
+#import "LoginListTableViewCell.h"
 
-@interface LoginTableViewCell ()
+@interface LoginListTableViewCell ()
 
 @end
 
-@implementation LoginTableViewCell
+@implementation LoginListTableViewCell
 
 @synthesize userNameLabel = _userNameLabel;
 @synthesize avatarImageView = _avatarImageView;

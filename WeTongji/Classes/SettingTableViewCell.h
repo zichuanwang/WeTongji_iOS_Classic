@@ -11,5 +11,6 @@
 @interface SettingTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *itemTitleLabel;
+@property (nonatomic, strong) IBOutlet UISwitch *itemSwitch;
 
 @end

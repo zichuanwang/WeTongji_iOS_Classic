@@ -11,6 +11,7 @@
 @implementation SettingTableViewCell
 
 @synthesize itemTitleLabel = _itemTitleLabel;
+@synthesize itemSwitch = _itemSwitch;
 
 - (void)awakeFromNib {
     self.itemTitleLabel.text = @"";

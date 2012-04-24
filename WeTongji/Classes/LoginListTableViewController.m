@@ -1,19 +1,19 @@
 //
-//  LoginTableViewController.m
+//  LoginListTableViewController.m
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-17.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "LoginTableViewController.h"
-#import "LoginTableViewCell.h"
+#import "LoginListTableViewController.h"
+#import "LoginListTableViewCell.h"
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    5
 
-@interface LoginTableViewController ()
+@interface LoginListTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *userListArray;
 @property (nonatomic, strong) UIView *tableViewHeaderView;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation LoginTableViewController
+@implementation LoginListTableViewController
 
 @synthesize tableView = _tableView;
 @synthesize userListArray = _userListArray;
@@ -83,7 +83,7 @@
 #pragma mark WTTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
-    return @"LoginTableViewCell";
+    return @"LoginListTableViewCell";
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -94,7 +94,7 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    LoginTableViewCell *loginCell = (LoginTableViewCell *)cell;
+    LoginListTableViewCell *loginCell = (LoginListTableViewCell *)cell;
     if(indexPath.row < self.userListArray.count) {
         loginCell.userNameLabel.text = [self.userListArray objectAtIndex:indexPath.row];
         loginCell.avatarImageView.hidden = NO;

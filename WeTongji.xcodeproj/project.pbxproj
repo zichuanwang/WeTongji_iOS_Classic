@@ -50,12 +50,19 @@
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
 		E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E1538D47154702890076DDEC /* LoginListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1538D45154702890076DDEC /* LoginListViewController.m */; };
+		E1538D48154702890076DDEC /* LoginListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1538D46154702890076DDEC /* LoginListViewController.xib */; };
+		E1538D4B154708760076DDEC /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1538D4A154708760076DDEC /* UILabel+Addition.m */; };
+		E1538D5015470D2A0076DDEC /* nav_bar_btn_back_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4C15470D2A0076DDEC /* nav_bar_btn_back_hl.png */; };
+		E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */; };
+		E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */; };
+		E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
 		E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */; };
-		E174A977153DAA1E00E7165A /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A975153DAA1D00E7165A /* LoginTableViewController.m */; };
-		E174A978153DAA1E00E7165A /* LoginTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginTableViewController.xib */; };
+		E174A977153DAA1E00E7165A /* LoginListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A975153DAA1D00E7165A /* LoginListTableViewController.m */; };
+		E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */; };
 		E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A979153DB2C100E7165A /* login_user_list_bg.png */; };
 		E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */; };
 		E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97E153DB59A00E7165A /* login_light_color_line.png */; };
@@ -83,8 +90,8 @@
 		E1A836E615446A800086F62E /* paper_single_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E215446A800086F62E /* paper_single_line.png */; };
 		E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E315446A800086F62E /* paper_single_line@2x.png */; };
 		E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836E915446FEB0086F62E /* WTTabelViewController.m */; };
-		E1A836EE154473360086F62E /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836EC154473160086F62E /* LoginTableViewCell.m */; };
-		E1A836EF154473390086F62E /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836ED154473190086F62E /* LoginTableViewCell.xib */; };
+		E1A836EE154473360086F62E /* LoginListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836EC154473160086F62E /* LoginListTableViewCell.m */; };
+		E1A836EF154473390086F62E /* LoginListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836ED154473190086F62E /* LoginListTableViewCell.xib */; };
 		E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */; };
 		E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */; };
 		E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */; };
@@ -223,14 +230,23 @@
 		E14983301534C22900734341 /* nav_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_bg.png; sourceTree = "<group>"; };
 		E14983321534C38400734341 /* nav_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_logo@2x.png"; sourceTree = "<group>"; };
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
+		E1538D44154702890076DDEC /* LoginListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginListViewController.h; path = Classes/LoginListViewController.h; sourceTree = "<group>"; };
+		E1538D45154702890076DDEC /* LoginListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginListViewController.m; path = Classes/LoginListViewController.m; sourceTree = "<group>"; };
+		E1538D46154702890076DDEC /* LoginListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginListViewController.xib; path = Classes/LoginListViewController.xib; sourceTree = "<group>"; };
+		E1538D49154708760076DDEC /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Addition.h"; path = "Classes/UILabel+Addition.h"; sourceTree = "<group>"; };
+		E1538D4A154708760076DDEC /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Addition.m"; path = "Classes/UILabel+Addition.m"; sourceTree = "<group>"; };
+		E1538D4C15470D2A0076DDEC /* nav_bar_btn_back_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back_hl.png; sourceTree = "<group>"; };
+		E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back_hl@2x.png"; sourceTree = "<group>"; };
+		E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back.png; sourceTree = "<group>"; };
+		E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back@2x.png"; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
 		E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+WTBarButtonItem.h"; path = "Classes/UIBarButtonItem+WTBarButtonItem.h"; sourceTree = "<group>"; };
 		E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+WTBarButtonItem.m"; path = "Classes/UIBarButtonItem+WTBarButtonItem.m"; sourceTree = "<group>"; };
-		E174A974153DAA1C00E7165A /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewController.h; path = Classes/LoginTableViewController.h; sourceTree = "<group>"; };
-		E174A975153DAA1D00E7165A /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewController.m; path = Classes/LoginTableViewController.m; sourceTree = "<group>"; };
-		E174A976153DAA1D00E7165A /* LoginTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginTableViewController.xib; path = Classes/LoginTableViewController.xib; sourceTree = "<group>"; };
+		E174A974153DAA1C00E7165A /* LoginListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginListTableViewController.h; path = Classes/LoginListTableViewController.h; sourceTree = "<group>"; };
+		E174A975153DAA1D00E7165A /* LoginListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginListTableViewController.m; path = Classes/LoginListTableViewController.m; sourceTree = "<group>"; };
+		E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginListTableViewController.xib; path = Classes/LoginListTableViewController.xib; sourceTree = "<group>"; };
 		E174A979153DB2C100E7165A /* login_user_list_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_user_list_bg.png; sourceTree = "<group>"; };
 		E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user_list_bg@2x.png"; sourceTree = "<group>"; };
 		E174A97E153DB59A00E7165A /* login_light_color_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_light_color_line.png; sourceTree = "<group>"; };
@@ -262,9 +278,9 @@
 		E1A836E315446A800086F62E /* paper_single_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_single_line@2x.png"; sourceTree = "<group>"; };
 		E1A836E815446FEB0086F62E /* WTTabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTTabelViewController.h; path = Classes/WTTabelViewController.h; sourceTree = "<group>"; };
 		E1A836E915446FEB0086F62E /* WTTabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTTabelViewController.m; path = Classes/WTTabelViewController.m; sourceTree = "<group>"; };
-		E1A836EB154473140086F62E /* LoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = Classes/LoginTableViewCell.h; sourceTree = "<group>"; };
-		E1A836EC154473160086F62E /* LoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewCell.m; path = Classes/LoginTableViewCell.m; sourceTree = "<group>"; };
-		E1A836ED154473190086F62E /* LoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginTableViewCell.xib; path = Classes/LoginTableViewCell.xib; sourceTree = "<group>"; };
+		E1A836EB154473140086F62E /* LoginListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginListTableViewCell.h; path = Classes/LoginListTableViewCell.h; sourceTree = "<group>"; };
+		E1A836EC154473160086F62E /* LoginListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginListTableViewCell.m; path = Classes/LoginListTableViewCell.m; sourceTree = "<group>"; };
+		E1A836ED154473190086F62E /* LoginListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginListTableViewCell.xib; path = Classes/LoginListTableViewCell.xib; sourceTree = "<group>"; };
 		E1A836F0154473870086F62E /* ChannelCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelCategoryTableViewController.h; path = Classes/ChannelCategoryTableViewController.h; sourceTree = "<group>"; };
 		E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelCategoryTableViewController.m; path = Classes/ChannelCategoryTableViewController.m; sourceTree = "<group>"; };
 		E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelCategoryTableViewController.xib; path = Classes/ChannelCategoryTableViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +464,10 @@
 		E10A16651536172400700A0E /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				E1538D4C15470D2A0076DDEC /* nav_bar_btn_back_hl.png */,
+				E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */,
+				E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */,
+				E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */,
 				E1A836DB154466310086F62E /* nav_bar_shadow.png */,
 				E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */,
 				E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */,
@@ -491,6 +511,8 @@
 				E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */,
 				E174A9B1153E84EC00E7165A /* UIApplication+Addition.h */,
 				E174A9B2153E84EC00E7165A /* UIApplication+Addition.m */,
+				E1538D49154708760076DDEC /* UILabel+Addition.h */,
+				E1538D4A154708760076DDEC /* UILabel+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -512,12 +534,15 @@
 		E174A99E153E7FC800E7165A /* login */ = {
 			isa = PBXGroup;
 			children = (
-				E1A836EB154473140086F62E /* LoginTableViewCell.h */,
-				E1A836EC154473160086F62E /* LoginTableViewCell.m */,
-				E1A836ED154473190086F62E /* LoginTableViewCell.xib */,
-				E174A974153DAA1C00E7165A /* LoginTableViewController.h */,
-				E174A975153DAA1D00E7165A /* LoginTableViewController.m */,
-				E174A976153DAA1D00E7165A /* LoginTableViewController.xib */,
+				E1A836EB154473140086F62E /* LoginListTableViewCell.h */,
+				E1A836EC154473160086F62E /* LoginListTableViewCell.m */,
+				E1A836ED154473190086F62E /* LoginListTableViewCell.xib */,
+				E174A974153DAA1C00E7165A /* LoginListTableViewController.h */,
+				E174A975153DAA1D00E7165A /* LoginListTableViewController.m */,
+				E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */,
+				E1538D44154702890076DDEC /* LoginListViewController.h */,
+				E1538D45154702890076DDEC /* LoginListViewController.m */,
+				E1538D46154702890076DDEC /* LoginListViewController.xib */,
 				E174A99F153E800400E7165A /* LoginViewController.h */,
 				E174A9A0153E800400E7165A /* LoginViewController.m */,
 				E174A9A1153E800400E7165A /* LoginViewController.xib */,
@@ -993,7 +1018,7 @@
 				E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */,
 				E174A96B153D832F00E7165A /* avatar_frame.png in Resources */,
 				E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */,
-				E174A978153DAA1E00E7165A /* LoginTableViewController.xib in Resources */,
+				E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */,
 				E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */,
 				E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */,
 				E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */,
@@ -1008,7 +1033,7 @@
 				E1A836E515446A800086F62E /* paper_info_line@2x.png in Resources */,
 				E1A836E615446A800086F62E /* paper_single_line.png in Resources */,
 				E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */,
-				E1A836EF154473390086F62E /* LoginTableViewCell.xib in Resources */,
+				E1A836EF154473390086F62E /* LoginListTableViewCell.xib in Resources */,
 				E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */,
 				E1A836FB1544777C0086F62E /* ChannelCategoryTableViewCell.xib in Resources */,
 				E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */,
@@ -1021,6 +1046,11 @@
 				E1FD9526154537FF00B39069 /* ChannelDetailTableViewController.xib in Resources */,
 				E1FD957A1546557800B39069 /* SettingTableViewController.xib in Resources */,
 				E1FD957F15465EF900B39069 /* SettingTableViewCell.xib in Resources */,
+				E1538D48154702890076DDEC /* LoginListViewController.xib in Resources */,
+				E1538D5015470D2A0076DDEC /* nav_bar_btn_back_hl.png in Resources */,
+				E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */,
+				E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */,
+				E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,11 +1080,11 @@
 				E1DF6FF51539B865001C60EA /* ChannelViewController.m in Sources */,
 				E1DF6FFA1539B93A001C60EA /* WTNavigationViewController.m in Sources */,
 				E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */,
-				E174A977153DAA1E00E7165A /* LoginTableViewController.m in Sources */,
+				E174A977153DAA1E00E7165A /* LoginListTableViewController.m in Sources */,
 				E174A9A2153E800400E7165A /* LoginViewController.m in Sources */,
 				E174A9B3153E857800E7165A /* UIApplication+Addition.m in Sources */,
 				E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */,
-				E1A836EE154473360086F62E /* LoginTableViewCell.m in Sources */,
+				E1A836EE154473360086F62E /* LoginListTableViewCell.m in Sources */,
 				E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */,
 				E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */,
 				E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */,
@@ -1082,6 +1112,8 @@
 				E1FD95791546557800B39069 /* SettingTableViewController.m in Sources */,
 				E1FD957D15465EE000B39069 /* SettingTableViewCell.m in Sources */,
 				E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */,
+				E1538D47154702890076DDEC /* LoginListViewController.m in Sources */,
+				E1538D4B154708760076DDEC /* UILabel+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

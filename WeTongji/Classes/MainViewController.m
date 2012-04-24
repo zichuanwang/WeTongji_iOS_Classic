@@ -11,9 +11,9 @@
 #import "ToDoListTableViewController.h"
 #import "UIView+Addition.h"
 #import "UIBarButtonItem+WTBarButtonItem.h"
-#import "LoginTableViewController.h"
 #import "SettingTableViewController.h"
 #import "WTClient.h"
+#import "LoginListViewController.h"
 
 typedef enum {
     UserInfoTabBarViewController,
@@ -26,7 +26,6 @@ typedef enum {
 @property (nonatomic, assign) TabBarViewControllerName currentTabBarSubViewControllerName;
 @property (nonatomic, strong) UserInfoTableViewController *userInfoViewController;
 @property (nonatomic, strong) ToDoListTableViewController *toDoListTableViewController;
-@property (nonatomic, strong) LoginTableViewController *loginUserListViewController;
 @property (nonatomic, strong) SettingTableViewController *settingViewController;
 
 - (void)configureNavigationBar;
@@ -45,7 +44,6 @@ typedef enum {
 @synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 @synthesize userInfoViewController = _userInfoViewController;
 @synthesize toDoListTableViewController = _toDoListTableViewController;
-@synthesize loginUserListViewController = _loginUserListViewController;
 @synthesize settingViewController = _settingViewController;
 
 - (void)viewDidLoad
@@ -72,12 +70,8 @@ typedef enum {
 
 - (void)configureNavigationBar {
     UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    logoImageView.image = [UIImage imageNamed:@"nav_bar_logo.png"];
-    [self.navigationController.view addSubview:logoImageView];
-    
-    UIBarButtonItem *logoutButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"登出" target:self   action:@selector(didClickLogoutButton)];
-    self.navigationItem.rightBarButtonItem = logoutButton;
-    self.navigationItem.rightBarButtonItem.enabled = YES;
+    logoImageView.image = [UIImage imageNamed:@"nav_bar_logo.png"];    
+    self.navigationItem.titleView = logoImageView;
 }
 
 - (void)configureTabBarButtons {
@@ -128,16 +122,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.settingViewController = vc;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
-}
-
-- (void)configureLoginUserList {
-    LoginTableViewController *vc = [[LoginTableViewController alloc] init];
-    CGRect frame =  vc.view.frame;
-    frame.origin = CGPointMake(0, 0);
-    vc.view.frame = frame;
-    vc.view.alpha = 0;
-    self.loginUserListViewController = vc;
+    self.settingViewController.delegate = self;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
@@ -172,6 +157,14 @@ typedef enum {
             [btn setSelected:NO];
         }
     }];
+}
+
+#pragma mark - 
+#pragma mark SettingTableViewController delegate
+
+- (void)settingTableViewControllerDidSelectLoginListCell {
+    LoginListViewController *vc = [[LoginListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
