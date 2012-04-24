@@ -51,7 +51,7 @@
 - (void)configureNavBar {
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"切换账户"];
     
-    UIBarButtonItem *backButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
+    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
 
     self.navigationItem.titleView = titleLabel;
     self.navigationItem.leftBarButtonItem = backButton;
