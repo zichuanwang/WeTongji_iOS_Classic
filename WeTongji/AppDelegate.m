@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "WTClient.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    WTClient *client = [WTClient client];
+    [client getActivitesWithChannelID:2];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;

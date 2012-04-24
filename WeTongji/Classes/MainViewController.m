@@ -15,9 +15,15 @@
 #import "SettingTableViewController.h"
 #import "WTClient.h"
 
+typedef enum {
+    UserInfoTabBarViewController,
+    ToDoListTabBarViewController,
+    SettingTabBarViewController,
+} TabBarViewControllerName;
+
 @interface MainViewController ()
 
-@property (nonatomic, weak) UIViewController *currentViewController;
+@property (nonatomic, assign) TabBarViewControllerName currentTabBarSubViewControllerName;
 @property (nonatomic, strong) UserInfoTableViewController *userInfoViewController;
 @property (nonatomic, strong) ToDoListTableViewController *toDoListTableViewController;
 @property (nonatomic, strong) LoginTableViewController *loginUserListViewController;
@@ -36,7 +42,7 @@
 @synthesize tabBarView = _tabBarView;
 @synthesize headerCoverImageView = _headerCoverImageView;
 
-@synthesize currentViewController = _currentViewController;
+@synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 @synthesize userInfoViewController = _userInfoViewController;
 @synthesize toDoListTableViewController = _toDoListTableViewController;
 @synthesize loginUserListViewController = _loginUserListViewController;
@@ -49,10 +55,7 @@
     //self.navigationController.navigationBar.hidden = NO;
     [self configureNavigationBar];
     [self configureTabBarButtons];
-    [self configureUserInfo];
-    [self configureToDoList];
-    [self configureLoginUserList];
-    [self configureSetting];
+    [self configureUserInfoTabBarViewController];
 }
 
 - (void)viewDidUnload
@@ -85,32 +88,45 @@
     [self.userInfoButton setSelected:YES];
 }
 
-- (void)configureUserInfo {
+- (void)configureTabBarSubViewController:(TabBarViewControllerName)viewControllerName {
+    if(self.currentTabBarSubViewControllerName == viewControllerName)
+        return;
+    [self clearCurrentTabBarSubViewController];
+    self.currentTabBarSubViewControllerName = viewControllerName;
+    if(viewControllerName == UserInfoTabBarViewController) {
+        [self configureUserInfoTabBarViewController];
+    }
+    else if(viewControllerName == ToDoListTabBarViewController) {
+        [self configureToDoListTabBarViewController];
+    }
+    else if(viewControllerName == SettingTabBarViewController) {
+        [self configureSettingTabBarViewController];
+    }
+}
+
+- (void)configureUserInfoTabBarViewController {
     UserInfoTableViewController *vc = [[UserInfoTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
-    frame.origin = CGPointMake(0, 45);
+    frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.userInfoViewController = vc;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
-    self.currentViewController = vc;
 }
 
-- (void)configureToDoList {
+- (void)configureToDoListTabBarViewController {
     ToDoListTableViewController *vc = [[ToDoListTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
-    frame.origin = CGPointMake(0, 45);
+    frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
-    vc.view.alpha = 0;
     self.toDoListTableViewController = vc;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
-- (void)configureSetting {
+- (void)configureSettingTabBarViewController {
     SettingTableViewController *vc = [[SettingTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
-    vc.view.alpha = 0;
     self.settingViewController = vc;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
@@ -125,106 +141,36 @@
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
-#pragma mark - 
-#pragma mark IBActions 
-
-- (void)hideMainViewWithCompletion:(void (^)(void))completion {
-    [UIView animateWithDuration:0.3f animations:^{
-        self.tabBarView.alpha = 0;
-        self.currentViewController.view.alpha = 0;
-    } completion:^(BOOL finished) {
-        if(completion)
-            completion();
-    }];
-}
-
-- (void)showMainViewWithCompletion:(void (^)(void))completion {
-    [UIView animateWithDuration:0.3f animations:^{
-        self.tabBarView.alpha = 1;
-        self.currentViewController.view.alpha = 1;
-    } completion:^(BOOL finished) {
-        if(completion)
-            completion();
-    }];
-}
-
-- (void)hideLoginViewWithCompletion:(void (^)(void))completion {
-    CGRect frame = self.loginUserListViewController.view.frame;
-    frame.origin.y = 0;
-    self.loginUserListViewController.view.frame = frame;
-    [UIView animateWithDuration:0.3f animations:^{
-        CGRect frame = self.loginUserListViewController.view.frame;
-        frame.origin.y = 416;
-        self.loginUserListViewController.view.frame = frame;
-    } completion:^(BOOL finished) {
-        self.loginUserListViewController.view.alpha = 0;
-        [self showMainViewWithCompletion:completion];
-    }];
-    
-    
-}
-
-- (void)showLoginViewWithCompletion:(void (^)(void))completion {
-    self.loginUserListViewController.view.alpha = 1;
-    CGRect frame = self.loginUserListViewController.view.frame;
-    frame.origin.y = 416;
-    self.loginUserListViewController.view.frame = frame;
-    [self hideMainViewWithCompletion:^{
-        [UIView animateWithDuration:0.3f animations:^{
-            CGRect frame = self.loginUserListViewController.view.frame;
-            frame.origin.y = 0;
-            self.loginUserListViewController.view.frame = frame;
-        } completion:^(BOOL finished) {
-            if(completion)
-                completion();
-        }];
-    }];
+- (void)clearCurrentTabBarSubViewController {
+    if(self.currentTabBarSubViewControllerName == UserInfoTabBarViewController) {
+        [self.userInfoViewController.view removeFromSuperview];
+        self.userInfoViewController = nil;
+    }
+    else if(self.currentTabBarSubViewControllerName == ToDoListTabBarViewController) {
+        [self.toDoListTableViewController.view removeFromSuperview];
+        self.toDoListTableViewController = nil;
+    }
+    else if(self.currentTabBarSubViewControllerName == SettingTabBarViewController) {
+        [self.settingViewController.view removeFromSuperview];
+        self.settingViewController = nil;
+    }
 }
 
 #pragma mark - 
 #pragma mark IBActions 
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender {
+    
     NSArray *buttonArray = [NSArray arrayWithObjects:self.userInfoButton, self.checkButton, self.settingButton, nil];
-    NSArray *viewControllerArray = [NSArray arrayWithObjects:self.userInfoViewController, self.toDoListTableViewController, self.settingViewController, nil];
     [buttonArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = obj;
         if(btn == sender) {
             [btn setSelected:YES];
-            UIViewController *vc = [viewControllerArray objectAtIndex:idx];
-            if(vc.view.alpha != 1)
-                [vc.view transitionFadeIn];
-            self.currentViewController = vc;
+            [self configureTabBarSubViewController:idx];
         }
         else {
             [btn setSelected:NO];
-            if(idx < viewControllerArray.count) {
-                UIViewController *vc = [viewControllerArray objectAtIndex:idx];
-                if(vc.view.alpha != 0)
-                    [vc.view transitionFadeOut];
-            }
         }
-    }];
-}
-
-- (void)didClickLogoutButton {
-    WTClient *client = [WTClient client];
-    [client getChannel];
-    return;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    [self showLoginViewWithCompletion:^{
-        UIBarButtonItem *loginButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"登录" target:self   action:@selector(didClickLoginButton)];
-        self.navigationItem.rightBarButtonItem = loginButton;
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-    }];
-}
-
-- (void)didClickLoginButton {
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    [self hideLoginViewWithCompletion:^{
-        UIBarButtonItem *logoutButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"登出" target:self   action:@selector(didClickLogoutButton)];
-        self.navigationItem.rightBarButtonItem = logoutButton;
-        self.navigationItem.rightBarButtonItem.enabled = YES;
     }];
 }
 

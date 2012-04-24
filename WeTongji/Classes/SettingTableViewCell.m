@@ -10,13 +10,13 @@
 
 @implementation SettingTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+@synthesize itemTitleLabel = _itemTitleLabel;
+
+- (void)awakeFromNib {
+    self.itemTitleLabel.text = @"";
+    
+    UIView *tempView = [[UIView alloc] init];
+    [self setBackgroundView:tempView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

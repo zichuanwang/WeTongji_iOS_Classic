@@ -54,7 +54,7 @@
     
     NSArray *later = [NSArray arrayWithObjects:
                     [NSArray arrayWithObjects:[NSString stringWithString:@"10:00"], [NSString stringWithString:@"C语言程序设计"], [NSString stringWithString:@"机房"], nil],
-                     [NSArray arrayWithObjects:[NSString stringWithString:@"15:20"], [NSString stringWithString:@"社会学"], [NSString stringWithString:@"北楼 310"], nil] ,nil];
+                     [NSArray arrayWithObjects:[NSString stringWithString:@"15:20"], [NSString stringWithString:@"社会学"], [NSString stringWithString:@"北楼 310"], nil], nil];
     
     [self.dataSourceDictionary setValue:now forKey:[self.dataSourceIndexArray objectAtIndex:0]];
     [self.dataSourceDictionary setValue:later forKey:[self.dataSourceIndexArray objectAtIndex:1]];

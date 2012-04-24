@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTMainTableViewController.h"
 
-@interface SettingTableViewController : UIViewController
+@interface SettingTableViewController : WTMainTableViewController
 
 @end

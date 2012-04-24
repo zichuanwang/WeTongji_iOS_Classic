@@ -10,4 +10,6 @@
 
 @interface SettingTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) IBOutlet UILabel *itemTitleLabel;
+
 @end

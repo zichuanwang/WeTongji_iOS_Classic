@@ -65,6 +65,9 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
         
         _request = [[ASIHTTPRequest alloc] initWithURL:nil];
         _request.delegate = self;
+        
+        [self.params setObject:@"iPhone" forKey:@"D"];
+        [self.params setObject:@"1.0" forKey:@"V"];
     }
     return self;
 }
@@ -85,6 +88,8 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
     NSLog(@"Response code:%d", request.responseStatusCode);
     
     switch (request.responseStatusCode) {
+        case 200: // OK: everything went awesome.
+            break;
         default:
         {
             self.hasError = YES;
@@ -94,18 +99,18 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
     }
     
     self.responseJSONObject = [request.responseString JSONValue];
+    NSLog(@"respond dict:%@", self.responseJSONObject);
     
     if ([self.responseJSONObject isKindOfClass:[NSDictionary class]]) {
-        NSDictionary* dic = (NSDictionary*)self.responseJSONObject;
-        NSString* errorCodeString = [dic objectForKey:@"error_code"];
-        
-        if (errorCodeString) {
+        NSDictionary *dic = (NSDictionary*)self.responseJSONObject;
+        NSDictionary *status = [dic objectForKey:@"Status"];
+        NSString *statusId = [status objectForKey:@"Id"];
+        if([statusId intValue] != 0) {
             self.hasError = YES;
-            self.responseStatusCode = [errorCodeString intValue];
-            self.errorDesc = [dic objectForKey:@"error"];
-            NSLog(@"Server responsed error code: %d\n\
-                  desc: %@\n\
-                  url: %@\n", self.responseStatusCode, self.errorDesc, request.url);
+            self.responseStatusCode = [statusId intValue];
+            self.errorDesc = [status objectForKey:@"Memo"];
+            NSLog(@"Server responsed error code:%d\n\
+                  desc: %@\n", self.responseStatusCode, self.errorDesc);
         }
     }
     
@@ -128,26 +133,39 @@ report_completion:
 #pragma mark - 
 #pragma mark URL generation
 
+- (NSString *)hashQueryString:(NSString *)queryString {
+    NSMutableString *result = [NSMutableString stringWithString:queryString];
+    NSString *md5 = [queryString md5HexDigest];
+    [result appendFormat:@"&H=%@", md5];
+    return result;
+}
+
 - (NSString *)queryString
 {
     NSMutableString *str = [NSMutableString stringWithCapacity:0];
     
     NSArray *names = [_params allKeys];
-    for (int i = 0; i < [names count]; i++) {
+    NSArray *sortedNames = [names sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSString *str1 = (NSString *)obj1;
+        NSString *str2 = (NSString *)obj2;
+        return [str1 compare:str2];
+    }];
+    
+    for (int i = 0; i < [sortedNames count]; i++) {
         if (i > 0) {
             [str appendString:@"&"];
         }
-        NSString *name = [names objectAtIndex:i];
+        NSString *name = [sortedNames objectAtIndex:i];
         [str appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
                            [[self.params objectForKey:name] URLEncodedString]]];
     }
-    
-    return str;
+        
+    return [self hashQueryString:str];
 }
 
 - (void)buildURL
 {
-    NSString* url = [NSString stringWithFormat:@"http://%@/%@", APIDomain, self.path];
+    NSString* url = [NSString stringWithFormat:@"http://%@/%@", APIDomain, @"api/call"];
     
     if ([self.params count]) {
         url = [NSString stringWithFormat:@"%@?%@", url, [self queryString]];
@@ -157,7 +175,7 @@ report_completion:
     
     NSLog(@"requestURL: %@", finalURL);
     
-    [_request setURL:finalURL];
+    [self.request setURL:finalURL];
 }
 
 - (void)sendRequest
@@ -167,22 +185,15 @@ report_completion:
     }
     
     [self buildURL];
-    
-    [self.request addRequestHeader:@"Content-Type" value:@"application/x-www-form-urlencoded"];
-    self.request.requestMethod = @"POST";
-    NSString *postBody = [self queryString];
-    NSMutableData *postData = [[[NSMutableData alloc] initWithData:[postBody dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
-    [self.request setPostBody:postData];
-    
     [self.request startAsynchronous];
 }
 
 #pragma mark -
 #pragma mark APIs
 
-- (void)getChannel {
-    self.path = @"channel";
-    [self.params setObject:@"channel.get" forKey:@"m"];
+- (void)getActivitesWithChannelID:(NSInteger)channel_id {
+    [self.params setObject:@"Activities.Get" forKey:@"M"];
+    [self.params setObject:[NSString stringWithFormat:@"%d", channel_id] forKey:@"Channel_Id"];
     [self sendRequest];
 }
 
