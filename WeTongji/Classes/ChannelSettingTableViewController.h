@@ -1,5 +1,5 @@
 //
-//  ChannelCategoryTableViewController.h
+//  ChannelSettingTableViewController.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-23.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTTabelViewController.h"
+#import "WTGroupTableViewController.h"
 
-@interface ChannelCategoryTableViewController : WTTabelViewController
+@interface ChannelSettingTableViewController : WTGroupTableViewController
 
 @end

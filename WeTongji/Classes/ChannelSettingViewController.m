@@ -1,23 +1,23 @@
 //
-//  LoginListViewController.m
+//  ChannelSettingViewController.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-4-24.
+//  Created by 紫川 王 on 12-4-26.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "LoginListViewController.h"
-#import "LoginListTableViewController.h"
+#import "ChannelSettingViewController.h"
+#import "ChannelSettingTableViewController.h"
 
-@interface LoginListViewController ()
+@interface ChannelSettingViewController ()
 
-@property (nonatomic, strong) LoginListTableViewController *loginListTableViewController;
+@property (nonatomic, strong) ChannelSettingTableViewController *settingTableViewController;
 
 @end
 
-@implementation LoginListViewController
+@implementation ChannelSettingViewController
 
-@synthesize loginListTableViewController = _loginListTableViewController;
+@synthesize settingTableViewController = _settingTableViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self configureSettingTabelView];
     [self configureNavBar];
-    [self configureLoginList];
 }
 
 - (void)viewDidUnload
@@ -47,25 +47,22 @@
 #pragma mark UI methods
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"切换账户"];
-    
-    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
-
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"频道设置"];
     self.navigationItem.titleView = titleLabel;
+    
+    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"频道" target:self action:@selector(didClickBackButton)];
     self.navigationItem.leftBarButtonItem = backButton;
 }
 
-- (void)configureLoginList {
-    LoginListTableViewController *vc = [[LoginListTableViewController alloc] init];
-    CGRect frame =  vc.view.frame;
-    frame.origin = CGPointMake(0, 0);
-    vc.view.frame = frame;
-    self.loginListTableViewController = vc;
+- (void)configureSettingTabelView {
+    ChannelSettingTableViewController *vc = [[ChannelSettingTableViewController alloc] init];
+    self.settingTableViewController = vc;
     [self.view insertSubview:vc.view belowSubview:self.navBarShadowImageView];
+
 }
 
 #pragma mark - 
-#pragma mark IBAction
+#pragma mark IBActions 
 
 - (void)didClickBackButton {
     [self.navigationController popViewControllerAnimated:YES];

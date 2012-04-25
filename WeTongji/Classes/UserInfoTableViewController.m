@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    
     UIImageView *avatarFrameImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_frame.png"]];
     UIImageView *avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_info_default_image.jpg"]];
     avatarImageView.frame = CGRectMake(17, 17, 66, 66);
@@ -45,7 +47,7 @@
 }
 
 #pragma mark -
-#pragma mark WTMainTableViewController methods to overwrite
+#pragma mark WTGroupTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
     return @"UserInfoTableViewCell";

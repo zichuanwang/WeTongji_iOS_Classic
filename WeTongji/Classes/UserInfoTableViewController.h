@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTMainTableViewController.h"
+#import "WTGroupTableViewController.h"
 
-@interface UserInfoTableViewController : WTMainTableViewController 
+@interface UserInfoTableViewController : WTGroupTableViewController 
 
 @end

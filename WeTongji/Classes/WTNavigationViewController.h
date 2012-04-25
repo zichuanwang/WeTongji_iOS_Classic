@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIBarButtonItem+WTBarButtonItem.h"
+#import "UILabel+Addition.h"
 
 @interface WTNavigationViewController : UIViewController
 

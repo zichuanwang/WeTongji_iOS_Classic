@@ -1,5 +1,5 @@
 //
-//  WTMainTableViewController.h
+//  WTGroupTableViewController.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WTTabelViewController.h"
 
-@interface WTMainTableViewController : WTTabelViewController 
+@interface WTGroupTableViewController : WTTabelViewController 
 
 @property (nonatomic, strong) NSMutableArray *dataSourceIndexArray;
 @property (nonatomic, strong) NSMutableDictionary *dataSourceDictionary;

@@ -92,10 +92,10 @@
 		E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836E915446FEB0086F62E /* WTTabelViewController.m */; };
 		E1A836EE154473360086F62E /* LoginListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836EC154473160086F62E /* LoginListTableViewCell.m */; };
 		E1A836EF154473390086F62E /* LoginListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836ED154473190086F62E /* LoginListTableViewCell.xib */; };
-		E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */; };
-		E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */; };
-		E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */; };
-		E1A836FB1544777C0086F62E /* ChannelCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */; };
+		E1A836F3154473880086F62E /* ChannelSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F1154473870086F62E /* ChannelSettingTableViewController.m */; };
+		E1A836F4154473880086F62E /* ChannelSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836F2154473880086F62E /* ChannelSettingTableViewController.xib */; };
+		E1A836F7154476EE0086F62E /* ChannelSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F6154476ED0086F62E /* ChannelSettingTableViewCell.m */; };
+		E1A836FB1544777C0086F62E /* ChannelSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836FA1544777A0086F62E /* ChannelSettingTableViewCell.xib */; };
 		E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */; };
 		E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */; };
 		E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */; };
@@ -137,7 +137,7 @@
 		E1DF6FAE1537642F001C60EA /* paper_main.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FAB1537642F001C60EA /* paper_main.png */; };
 		E1DF6FCA153985C1001C60EA /* main_tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FC8153985C1001C60EA /* main_tab_bar_bg.png */; };
 		E1DF6FCB153985C1001C60EA /* main_tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FC9153985C1001C60EA /* main_tab_bar_bg@2x.png */; };
-		E1DF6FD915398C85001C60EA /* WTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */; };
+		E1DF6FD915398C85001C60EA /* WTGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD815398C84001C60EA /* WTGroupTableViewController.m */; };
 		E1DF6FE415399417001C60EA /* ToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */; };
 		E1DF6FE51539941E001C60EA /* ToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */; };
 		E1DF6FE6153995B4001C60EA /* ToDoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */; };
@@ -153,6 +153,8 @@
 		E1DF6FFE1539C93F001C60EA /* nav_bar_btn_finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FFC1539C93F001C60EA /* nav_bar_btn_finish@2x.png */; };
 		E1DF70011539CD2A001C60EA /* nav_bar_btn_finish_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */; };
 		E1DF70021539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */; };
+		E1E4836D1548726900814FA4 /* ChannelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4836B1548726800814FA4 /* ChannelSettingViewController.m */; };
+		E1E4836E1548726A00814FA4 /* ChannelSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E4836C1548726900814FA4 /* ChannelSettingViewController.xib */; };
 		E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */; };
 		E1FD9521154537E100B39069 /* ChannelDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD9520154537E100B39069 /* ChannelDetailTableViewCell.m */; };
 		E1FD9525154537FF00B39069 /* ChannelDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD9523154537FE00B39069 /* ChannelDetailTableViewController.m */; };
@@ -281,12 +283,12 @@
 		E1A836EB154473140086F62E /* LoginListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginListTableViewCell.h; path = Classes/LoginListTableViewCell.h; sourceTree = "<group>"; };
 		E1A836EC154473160086F62E /* LoginListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginListTableViewCell.m; path = Classes/LoginListTableViewCell.m; sourceTree = "<group>"; };
 		E1A836ED154473190086F62E /* LoginListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginListTableViewCell.xib; path = Classes/LoginListTableViewCell.xib; sourceTree = "<group>"; };
-		E1A836F0154473870086F62E /* ChannelCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelCategoryTableViewController.h; path = Classes/ChannelCategoryTableViewController.h; sourceTree = "<group>"; };
-		E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelCategoryTableViewController.m; path = Classes/ChannelCategoryTableViewController.m; sourceTree = "<group>"; };
-		E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelCategoryTableViewController.xib; path = Classes/ChannelCategoryTableViewController.xib; sourceTree = "<group>"; };
-		E1A836F5154476EB0086F62E /* ChannelCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelCategoryTableViewCell.h; path = Classes/ChannelCategoryTableViewCell.h; sourceTree = "<group>"; };
-		E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelCategoryTableViewCell.m; path = Classes/ChannelCategoryTableViewCell.m; sourceTree = "<group>"; };
-		E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelCategoryTableViewCell.xib; path = Classes/ChannelCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		E1A836F0154473870086F62E /* ChannelSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelSettingTableViewController.h; path = Classes/ChannelSettingTableViewController.h; sourceTree = "<group>"; };
+		E1A836F1154473870086F62E /* ChannelSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelSettingTableViewController.m; path = Classes/ChannelSettingTableViewController.m; sourceTree = "<group>"; };
+		E1A836F2154473880086F62E /* ChannelSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelSettingTableViewController.xib; path = Classes/ChannelSettingTableViewController.xib; sourceTree = "<group>"; };
+		E1A836F5154476EB0086F62E /* ChannelSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelSettingTableViewCell.h; path = Classes/ChannelSettingTableViewCell.h; sourceTree = "<group>"; };
+		E1A836F6154476ED0086F62E /* ChannelSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelSettingTableViewCell.m; path = Classes/ChannelSettingTableViewCell.m; sourceTree = "<group>"; };
+		E1A836FA1544777A0086F62E /* ChannelSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelSettingTableViewCell.xib; path = Classes/ChannelSettingTableViewCell.xib; sourceTree = "<group>"; };
 		E1A836FC15447BE80086F62E /* PaperHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperHeaderTableViewCell.h; path = Classes/PaperHeaderTableViewCell.h; sourceTree = "<group>"; };
 		E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaperHeaderTableViewCell.m; path = Classes/PaperHeaderTableViewCell.m; sourceTree = "<group>"; };
 		E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperFooterTableViewCell.h; path = Classes/PaperFooterTableViewCell.h; sourceTree = "<group>"; };
@@ -344,8 +346,8 @@
 		E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToDoListTableViewController.h; path = Classes/ToDoListTableViewController.h; sourceTree = "<group>"; };
 		E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToDoListTableViewController.m; path = Classes/ToDoListTableViewController.m; sourceTree = "<group>"; };
 		E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ToDoListTableViewController.xib; path = Classes/ToDoListTableViewController.xib; sourceTree = "<group>"; };
-		E1DF6FD715398C82001C60EA /* WTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTMainTableViewController.h; path = Classes/WTMainTableViewController.h; sourceTree = "<group>"; };
-		E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTMainTableViewController.m; path = Classes/WTMainTableViewController.m; sourceTree = "<group>"; };
+		E1DF6FD715398C82001C60EA /* WTGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTGroupTableViewController.h; path = Classes/WTGroupTableViewController.h; sourceTree = "<group>"; };
+		E1DF6FD815398C84001C60EA /* WTGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTGroupTableViewController.m; path = Classes/WTGroupTableViewController.m; sourceTree = "<group>"; };
 		E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToDoListTableViewCell.h; path = Classes/ToDoListTableViewCell.h; sourceTree = "<group>"; };
 		E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToDoListTableViewCell.m; path = Classes/ToDoListTableViewCell.m; sourceTree = "<group>"; };
 		E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ToDoListTableViewCell.xib; path = Classes/ToDoListTableViewCell.xib; sourceTree = "<group>"; };
@@ -362,6 +364,9 @@
 		E1DF6FFC1539C93F001C60EA /* nav_bar_btn_finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_finish@2x.png"; sourceTree = "<group>"; };
 		E1DF6FFF1539CD2A001C60EA /* nav_bar_btn_finish_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_finish_hl.png; sourceTree = "<group>"; };
 		E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_finish_hl@2x.png"; sourceTree = "<group>"; };
+		E1E4836A1548726700814FA4 /* ChannelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelSettingViewController.h; path = Classes/ChannelSettingViewController.h; sourceTree = "<group>"; };
+		E1E4836B1548726800814FA4 /* ChannelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelSettingViewController.m; path = Classes/ChannelSettingViewController.m; sourceTree = "<group>"; };
+		E1E4836C1548726900814FA4 /* ChannelSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelSettingViewController.xib; path = Classes/ChannelSettingViewController.xib; sourceTree = "<group>"; };
 		E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_user_indicator@2x.png"; sourceTree = "<group>"; };
 		E1FD951F154537E100B39069 /* ChannelDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelDetailTableViewCell.h; path = Classes/ChannelDetailTableViewCell.h; sourceTree = "<group>"; };
 		E1FD9520154537E100B39069 /* ChannelDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelDetailTableViewCell.m; path = Classes/ChannelDetailTableViewCell.m; sourceTree = "<group>"; };
@@ -726,8 +731,8 @@
 		E1DF6F9915376145001C60EA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E1DF6FD715398C82001C60EA /* WTMainTableViewController.h */,
-				E1DF6FD815398C84001C60EA /* WTMainTableViewController.m */,
+				E1DF6FD715398C82001C60EA /* WTGroupTableViewController.h */,
+				E1DF6FD815398C84001C60EA /* WTGroupTableViewController.m */,
 				E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */,
 				E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */,
 				E1A836E815446FEB0086F62E /* WTTabelViewController.h */,
@@ -798,12 +803,12 @@
 				E1DF6FF21539B865001C60EA /* ChannelViewController.h */,
 				E1DF6FF31539B865001C60EA /* ChannelViewController.m */,
 				E1DF6FF41539B865001C60EA /* ChannelViewController.xib */,
-				E1A836F0154473870086F62E /* ChannelCategoryTableViewController.h */,
-				E1A836F1154473870086F62E /* ChannelCategoryTableViewController.m */,
-				E1A836F2154473880086F62E /* ChannelCategoryTableViewController.xib */,
-				E1A836F5154476EB0086F62E /* ChannelCategoryTableViewCell.h */,
-				E1A836F6154476ED0086F62E /* ChannelCategoryTableViewCell.m */,
-				E1A836FA1544777A0086F62E /* ChannelCategoryTableViewCell.xib */,
+				E1A836F0154473870086F62E /* ChannelSettingTableViewController.h */,
+				E1A836F1154473870086F62E /* ChannelSettingTableViewController.m */,
+				E1A836F2154473880086F62E /* ChannelSettingTableViewController.xib */,
+				E1A836F5154476EB0086F62E /* ChannelSettingTableViewCell.h */,
+				E1A836F6154476ED0086F62E /* ChannelSettingTableViewCell.m */,
+				E1A836FA1544777A0086F62E /* ChannelSettingTableViewCell.xib */,
 				E1A8370B154496270086F62E /* ChannelOutlineTableViewCell.h */,
 				E1A8370C154496290086F62E /* ChannelOutlineTableViewCell.m */,
 				E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */,
@@ -812,6 +817,9 @@
 				E1FD9522154537FE00B39069 /* ChannelDetailTableViewController.h */,
 				E1FD9523154537FE00B39069 /* ChannelDetailTableViewController.m */,
 				E1FD9524154537FF00B39069 /* ChannelDetailTableViewController.xib */,
+				E1E4836A1548726700814FA4 /* ChannelSettingViewController.h */,
+				E1E4836B1548726800814FA4 /* ChannelSettingViewController.m */,
+				E1E4836C1548726900814FA4 /* ChannelSettingViewController.xib */,
 			);
 			name = channel;
 			sourceTree = "<group>";
@@ -1034,8 +1042,8 @@
 				E1A836E615446A800086F62E /* paper_single_line.png in Resources */,
 				E1A836E715446A800086F62E /* paper_single_line@2x.png in Resources */,
 				E1A836EF154473390086F62E /* LoginListTableViewCell.xib in Resources */,
-				E1A836F4154473880086F62E /* ChannelCategoryTableViewController.xib in Resources */,
-				E1A836FB1544777C0086F62E /* ChannelCategoryTableViewCell.xib in Resources */,
+				E1A836F4154473880086F62E /* ChannelSettingTableViewController.xib in Resources */,
+				E1A836FB1544777C0086F62E /* ChannelSettingTableViewCell.xib in Resources */,
 				E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */,
 				E1A8370515447C720086F62E /* PaperHeaderTableViewCell.xib in Resources */,
 				E1A8370A1544957C0086F62E /* ChannelOutlineTableViewController.xib in Resources */,
@@ -1051,6 +1059,7 @@
 				E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */,
 				E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */,
 				E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */,
+				E1E4836E1548726A00814FA4 /* ChannelSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,7 +1083,7 @@
 				E10A165E15360ED400700A0E /* WTDockButton.m in Sources */,
 				E1DF6F9E153761A0001C60EA /* UserInfoTableViewController.m in Sources */,
 				E1DF6FA715376300001C60EA /* UserInfoTableViewCell.m in Sources */,
-				E1DF6FD915398C85001C60EA /* WTMainTableViewController.m in Sources */,
+				E1DF6FD915398C85001C60EA /* WTGroupTableViewController.m in Sources */,
 				E1DF6FE415399417001C60EA /* ToDoListTableViewController.m in Sources */,
 				E1DF6FE6153995B4001C60EA /* ToDoListTableViewCell.m in Sources */,
 				E1DF6FF51539B865001C60EA /* ChannelViewController.m in Sources */,
@@ -1085,8 +1094,8 @@
 				E174A9B3153E857800E7165A /* UIApplication+Addition.m in Sources */,
 				E1A836EA15446FEB0086F62E /* WTTabelViewController.m in Sources */,
 				E1A836EE154473360086F62E /* LoginListTableViewCell.m in Sources */,
-				E1A836F3154473880086F62E /* ChannelCategoryTableViewController.m in Sources */,
-				E1A836F7154476EE0086F62E /* ChannelCategoryTableViewCell.m in Sources */,
+				E1A836F3154473880086F62E /* ChannelSettingTableViewController.m in Sources */,
+				E1A836F7154476EE0086F62E /* ChannelSettingTableViewCell.m in Sources */,
 				E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */,
 				E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */,
 				E1A837091544957C0086F62E /* ChannelOutlineTableViewController.m in Sources */,
@@ -1114,6 +1123,7 @@
 				E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */,
 				E1538D47154702890076DDEC /* LoginListViewController.m in Sources */,
 				E1538D4B154708760076DDEC /* UILabel+Addition.m in Sources */,
+				E1E4836D1548726900814FA4 /* ChannelSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

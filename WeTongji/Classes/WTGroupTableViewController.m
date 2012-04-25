@@ -1,18 +1,18 @@
 //
-//  WTMainTableViewController.m
+//  WTGroupTableViewController.m
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-14.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "WTMainTableViewController.h"
+#import "WTGroupTableViewController.h"
 
-@interface WTMainTableViewController ()
+@interface WTGroupTableViewController ()
 
 @end
 
-@implementation WTMainTableViewController
+@implementation WTGroupTableViewController
 
 @synthesize dataSourceIndexArray = _dataSourceIndexArray;
 @synthesize dataSourceDictionary = _dataSourceDictionary;
@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
 }
 
 - (void)viewDidUnload

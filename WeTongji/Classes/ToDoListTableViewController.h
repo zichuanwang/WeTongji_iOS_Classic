@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTMainTableViewController.h"
+#import "WTGroupTableViewController.h"
 
-@interface ToDoListTableViewController : WTMainTableViewController
+@interface ToDoListTableViewController : WTGroupTableViewController
 
 @end

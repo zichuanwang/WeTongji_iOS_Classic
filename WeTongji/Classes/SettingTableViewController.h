@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTMainTableViewController.h"
+#import "WTGroupTableViewController.h"
 
 @protocol SettingTableViewControllerDelegate;
 
-@interface SettingTableViewController : WTMainTableViewController
+@interface SettingTableViewController : WTGroupTableViewController
 
 @property (nonatomic, weak) id<SettingTableViewControllerDelegate> delegate;
 

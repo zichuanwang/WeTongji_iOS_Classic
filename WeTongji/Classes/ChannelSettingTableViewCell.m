@@ -1,14 +1,14 @@
 //
-//  ChannelCategoryTableViewCell.m
+//  ChannelSettingTableViewCell.m
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-23.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChannelCategoryTableViewCell.h"
+#import "ChannelSettingTableViewCell.h"
 
-@implementation ChannelCategoryTableViewCell
+@implementation ChannelSettingTableViewCell
 
 @synthesize categoryLabel = _categoryLabel;
 
@@ -26,6 +26,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)awakeFromNib {
+    self.categoryLabel.text = @"";
+    
+    UIView *tempView = [[UIView alloc] init];
+    [self setBackgroundView:tempView];
 }
 
 @end

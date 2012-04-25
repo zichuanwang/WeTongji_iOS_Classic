@@ -7,19 +7,18 @@
 //
 
 #import "ChannelViewController.h"
-#import "UIBarButtonItem+WTBarButtonItem.h"
-#import "ChannelCategoryTableViewController.h"
-#import "UILabel+Addition.h"
+#import "ChannelOutlineTableViewController.h"
+#import "ChannelSettingViewController.h"
 
 @interface ChannelViewController ()
 
-@property (nonatomic, strong) ChannelCategoryTableViewController *categoryTableViewController;
+@property (nonatomic, strong) ChannelOutlineTableViewController *outlineTableViewController;
 
 @end
 
 @implementation ChannelViewController
 
-@synthesize categoryTableViewController = _categoryTableViewController;
+@synthesize outlineTableViewController = _outlineTableViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,7 +35,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self configureNavBar];
-    [self configureTableView];
+    [self configureOutlineTableView];
 }
 
 - (void)viewDidUnload
@@ -44,10 +43,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-}
-
-- (void)didClickFinishButton {
-    [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -59,12 +54,28 @@
     
     UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
+    
+    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"设置" target:self action:@selector(didClickSettingButton)];
+    self.navigationItem.rightBarButtonItem = settingButton;
 }
 
-- (void)configureTableView {
-    ChannelCategoryTableViewController *vc = [[ChannelCategoryTableViewController alloc] init];
+- (void)configureOutlineTableView {
+    ChannelOutlineTableViewController *vc = [[ChannelOutlineTableViewController alloc] init];
     [self.view insertSubview:vc.view belowSubview:self.navBarShadowImageView];
-    self.categoryTableViewController = vc;
+    self.outlineTableViewController = vc;
 }
+
+#pragma mark - 
+#pragma mark IBActions 
+
+- (void)didClickFinishButton {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)didClickSettingButton {
+    ChannelSettingViewController *vc = [[ChannelSettingViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end

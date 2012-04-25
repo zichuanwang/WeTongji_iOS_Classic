@@ -1,5 +1,5 @@
 //
-//  ChannelCategoryTableViewCell.h
+//  ChannelSettingTableViewCell.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-4-23.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChannelCategoryTableViewCell : UITableViewCell
+@interface ChannelSettingTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *categoryLabel;
 
