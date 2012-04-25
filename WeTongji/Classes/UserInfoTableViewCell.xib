@@ -81,9 +81,9 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">姓名</string>
-								<object class="NSColor" key="IBUITextColor" id="862962938">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwIDAAA</bytes>
+								<object class="NSColor" key="IBUITextColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4yAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="141096588">
 									<int key="NSColorSpace">3</int>
@@ -116,7 +116,10 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">王紫川</string>
-								<reference key="IBUITextColor" ref="862962938"/>
+								<object class="NSColor" key="IBUITextColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4yAA</bytes>
+								</object>
 								<reference key="IBUIHighlightedColor" ref="141096588"/>
 								<reference key="IBUIShadowColor" ref="141096588"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>

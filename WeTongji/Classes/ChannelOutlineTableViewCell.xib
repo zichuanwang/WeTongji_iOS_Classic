@@ -107,8 +107,8 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">创新与超越性思维</string>
 								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwIDAAA</bytes>
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4yAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="428022899">
 									<int key="NSColorSpace">3</int>
@@ -141,9 +141,9 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">四平路校区综合楼1002报告厅 </string>
-								<object class="NSColor" key="IBUITextColor" id="798390869">
+								<object class="NSColor" key="IBUITextColor" id="662682461">
 									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="428022899"/>
 								<reference key="IBUIShadowColor" ref="428022899"/>
@@ -172,7 +172,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">4月26日（周四）18:30-20:00 </string>
-								<reference key="IBUITextColor" ref="798390869"/>
+								<reference key="IBUITextColor" ref="662682461"/>
 								<reference key="IBUIHighlightedColor" ref="428022899"/>
 								<reference key="IBUIShadowColor" ref="428022899"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>

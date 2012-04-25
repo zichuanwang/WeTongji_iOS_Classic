@@ -71,8 +71,8 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">欢迎使用WeTongji</string>
 								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwIDAAA</bytes>
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4yAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="404987012">
 									<int key="NSColorSpace">3</int>
@@ -109,7 +109,7 @@
 								<string key="IBUIText">请选择一个账号登录</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+									<bytes key="NSWhite">MC42NwA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="404987012"/>
 								<reference key="IBUIShadowColor" ref="404987012"/>
@@ -164,7 +164,6 @@
 										<string key="NSFrameSize">{300, 200}</string>
 										<reference key="NSSuperview" ref="113392235"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">3</int>

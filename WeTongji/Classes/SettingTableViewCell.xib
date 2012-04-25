@@ -86,8 +86,8 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">自动同步课表</string>
 								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwIDAAA</bytes>
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4yAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="141096588">
 									<int key="NSColorSpace">3</int>

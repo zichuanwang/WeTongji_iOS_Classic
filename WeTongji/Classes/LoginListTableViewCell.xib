@@ -64,7 +64,6 @@
 										<int key="NSvFlags">297</int>
 										<string key="NSFrame">{{80, 10}, {210, 20}}</string>
 										<reference key="NSSuperview" ref="1060888640"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -73,8 +72,8 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">王紫川</string>
 										<object class="NSColor" key="IBUITextColor">
-											<int key="NSColorSpace">1</int>
-											<bytes key="NSRGB">MCAwIDAAA</bytes>
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MC4yAA</bytes>
 										</object>
 										<object class="NSColor" key="IBUIHighlightedColor" id="141096588">
 											<int key="NSColorSpace">3</int>

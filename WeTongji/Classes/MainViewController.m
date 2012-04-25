@@ -99,6 +99,10 @@ typedef enum {
 }
 
 - (void)configureUserInfoTabBarViewController {
+    if(self.userInfoViewController) {
+        self.userInfoViewController.view.hidden = NO;
+        return;
+    }
     UserInfoTableViewController *vc = [[UserInfoTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
     frame.origin = CGPointMake(0, 44);
@@ -108,6 +112,10 @@ typedef enum {
 }
 
 - (void)configureToDoListTabBarViewController {
+    if(self.toDoListTableViewController) {
+        self.toDoListTableViewController.view.hidden = NO;
+        return;
+    }
     ToDoListTableViewController *vc = [[ToDoListTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
     frame.origin = CGPointMake(0, 44);
@@ -117,6 +125,10 @@ typedef enum {
 }
 
 - (void)configureSettingTabBarViewController {
+    if(self.settingViewController) {
+        self.settingViewController.view.hidden = NO;
+        return;
+    }
     SettingTableViewController *vc = [[SettingTableViewController alloc] init];
     CGRect frame =  vc.view.frame;
     frame.origin = CGPointMake(0, 44);
@@ -127,18 +139,9 @@ typedef enum {
 }
 
 - (void)clearCurrentTabBarSubViewController {
-    if(self.currentTabBarSubViewControllerName == UserInfoTabBarViewController) {
-        [self.userInfoViewController.view removeFromSuperview];
-        self.userInfoViewController = nil;
-    }
-    else if(self.currentTabBarSubViewControllerName == ToDoListTabBarViewController) {
-        [self.toDoListTableViewController.view removeFromSuperview];
-        self.toDoListTableViewController = nil;
-    }
-    else if(self.currentTabBarSubViewControllerName == SettingTabBarViewController) {
-        [self.settingViewController.view removeFromSuperview];
-        self.settingViewController = nil;
-    }
+    self.userInfoViewController.view.hidden = YES;
+    self.toDoListTableViewController.view.hidden = YES;
+    self.settingViewController.view.hidden = YES;
 }
 
 #pragma mark - 

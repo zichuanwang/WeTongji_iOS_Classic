@@ -45,6 +45,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="516940550"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -59,21 +60,22 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="669954640"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">paper_info_line.png</string>
+									<string key="NSResourceName">paper_single_line.png</string>
 								</object>
 							</object>
 							<object class="IBUILabel" id="669954640">
 								<reference key="NSNextResponder" ref="615273713"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{80, 10}, {210, 20}}</string>
+								<string key="NSFrame">{{10, 10}, {210, 20}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -83,7 +85,7 @@
 								<string key="IBUIText"> 文娱活动</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+									<bytes key="NSWhite">MC4yAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="428022899">
 									<int key="NSColorSpace">3</int>
@@ -106,6 +108,7 @@
 						</array>
 						<string key="NSFrameSize">{280, 39}</string>
 						<reference key="NSSuperview" ref="122098843"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="455203948"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -121,6 +124,7 @@
 				</array>
 				<string key="NSFrameSize">{300, 40}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="615273713"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -203,7 +207,29 @@
 			<nil key="sourceID"/>
 			<int key="maxID">8</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">ChannelCategoryTableViewCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">categoryLabel</string>
+						<string key="NS.object.0">UILabel</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">categoryLabel</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">categoryLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ChannelCategoryTableViewCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
@@ -213,8 +239,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="paper_info_line.png">{320, 40}</string>
 			<string key="paper_main.png">{320, 40}</string>
+			<string key="paper_single_line.png">{320, 40}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
