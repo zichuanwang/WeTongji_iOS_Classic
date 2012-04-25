@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface ChannelOutlineTableViewController : UIViewController
+@interface ChannelOutlineTableViewController : CoreDataTableViewController
 
 @end

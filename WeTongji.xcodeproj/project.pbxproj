@@ -155,6 +155,12 @@
 		E1DF70021539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF70001539CD2A001C60EA /* nav_bar_btn_finish_hl@2x.png */; };
 		E1E4836D1548726900814FA4 /* ChannelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4836B1548726800814FA4 /* ChannelSettingViewController.m */; };
 		E1E4836E1548726A00814FA4 /* ChannelSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E4836C1548726900814FA4 /* ChannelSettingViewController.xib */; };
+		E1E4837215487F0A00814FA4 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4837115487F0A00814FA4 /* Channel.m */; };
+		E1E4837515487F0B00814FA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4837415487F0B00814FA4 /* User.m */; };
+		E1E4837815487F0B00814FA4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4837715487F0B00814FA4 /* Student.m */; };
+		E1E4837D15487F4500814FA4 /* Channel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4837C15487F4500814FA4 /* Channel+Addition.m */; };
+		E1E4838A154884BF00814FA4 /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4838915487FF400814FA4 /* CoreDataViewController.m */; };
+		E1E4838B154884C100814FA4 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */; };
 		E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */; };
 		E1FD9521154537E100B39069 /* ChannelDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD9520154537E100B39069 /* ChannelDetailTableViewCell.m */; };
 		E1FD9525154537FF00B39069 /* ChannelDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD9523154537FE00B39069 /* ChannelDetailTableViewController.m */; };
@@ -367,6 +373,18 @@
 		E1E4836A1548726700814FA4 /* ChannelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelSettingViewController.h; path = Classes/ChannelSettingViewController.h; sourceTree = "<group>"; };
 		E1E4836B1548726800814FA4 /* ChannelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelSettingViewController.m; path = Classes/ChannelSettingViewController.m; sourceTree = "<group>"; };
 		E1E4836C1548726900814FA4 /* ChannelSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelSettingViewController.xib; path = Classes/ChannelSettingViewController.xib; sourceTree = "<group>"; };
+		E1E4837015487F0A00814FA4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		E1E4837115487F0A00814FA4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		E1E4837315487F0B00814FA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E1E4837415487F0B00814FA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1E4837615487F0B00814FA4 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E1E4837715487F0B00814FA4 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E1E4837B15487F4500814FA4 /* Channel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Channel+Addition.h"; sourceTree = "<group>"; };
+		E1E4837C15487F4500814FA4 /* Channel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Channel+Addition.m"; sourceTree = "<group>"; };
+		E1E4838615487FF200814FA4 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = Classes/CoreDataTableViewController.h; sourceTree = "<group>"; };
+		E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = Classes/CoreDataTableViewController.m; sourceTree = "<group>"; };
+		E1E4838815487FF400814FA4 /* CoreDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoreDataViewController.h; path = Classes/CoreDataViewController.h; sourceTree = "<group>"; };
+		E1E4838915487FF400814FA4 /* CoreDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoreDataViewController.m; path = Classes/CoreDataViewController.m; sourceTree = "<group>"; };
 		E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_user_indicator@2x.png"; sourceTree = "<group>"; };
 		E1FD951F154537E100B39069 /* ChannelDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelDetailTableViewCell.h; path = Classes/ChannelDetailTableViewCell.h; sourceTree = "<group>"; };
 		E1FD9520154537E100B39069 /* ChannelDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelDetailTableViewCell.m; path = Classes/ChannelDetailTableViewCell.m; sourceTree = "<group>"; };
@@ -632,6 +650,7 @@
 		E1C877A61505FB5600592954 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E1E4836F15487D6700814FA4 /* Core Data Models */,
 				E1FD952E1545A4D400B39069 /* Client */,
 				E1DF6F9A1537615B001C60EA /* Accessories */,
 				E1DF6F9915376145001C60EA /* Tools */,
@@ -731,6 +750,10 @@
 		E1DF6F9915376145001C60EA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E1E4838615487FF200814FA4 /* CoreDataTableViewController.h */,
+				E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */,
+				E1E4838815487FF400814FA4 /* CoreDataViewController.h */,
+				E1E4838915487FF400814FA4 /* CoreDataViewController.m */,
 				E1DF6FD715398C82001C60EA /* WTGroupTableViewController.h */,
 				E1DF6FD815398C84001C60EA /* WTGroupTableViewController.m */,
 				E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */,
@@ -832,6 +855,38 @@
 				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
 			);
 			name = schedule;
+			sourceTree = "<group>";
+		};
+		E1E4836F15487D6700814FA4 /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4837A15487F2400814FA4 /* Categories */,
+				E1E4837915487F1900814FA4 /* Models */,
+			);
+			name = "Core Data Models";
+			path = "Classes/Core Data Models";
+			sourceTree = "<group>";
+		};
+		E1E4837915487F1900814FA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4837615487F0B00814FA4 /* Student.h */,
+				E1E4837715487F0B00814FA4 /* Student.m */,
+				E1E4837315487F0B00814FA4 /* User.h */,
+				E1E4837415487F0B00814FA4 /* User.m */,
+				E1E4837015487F0A00814FA4 /* Channel.h */,
+				E1E4837115487F0A00814FA4 /* Channel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E1E4837A15487F2400814FA4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4837B15487F4500814FA4 /* Channel+Addition.h */,
+				E1E4837C15487F4500814FA4 /* Channel+Addition.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		E1FD952E1545A4D400B39069 /* Client */ = {
@@ -1124,6 +1179,12 @@
 				E1538D47154702890076DDEC /* LoginListViewController.m in Sources */,
 				E1538D4B154708760076DDEC /* UILabel+Addition.m in Sources */,
 				E1E4836D1548726900814FA4 /* ChannelSettingViewController.m in Sources */,
+				E1E4837215487F0A00814FA4 /* Channel.m in Sources */,
+				E1E4837515487F0B00814FA4 /* User.m in Sources */,
+				E1E4837815487F0B00814FA4 /* Student.m in Sources */,
+				E1E4837D15487F4500814FA4 /* Channel+Addition.m in Sources */,
+				E1E4838A154884BF00814FA4 /* CoreDataViewController.m in Sources */,
+				E1E4838B154884C100814FA4 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
