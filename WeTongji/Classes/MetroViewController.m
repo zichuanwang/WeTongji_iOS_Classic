@@ -131,7 +131,6 @@
 
 - (void)spreadAnimation {
     float duration = _willScrollViewDecelerate ? 0.1f : 0.2f;
-    NSLog(@"duration:%f", duration);
     [UIView animateWithDuration:duration animations:^{
         self.scrollView.contentOffset = CGPointMake(0, SCROLL_HEADER_VIEW_HEIGHT);
     } completion:^(BOOL finished) {
@@ -182,7 +181,6 @@
 #pragma mark UIScrollView delegate 
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"begin drag");
     _scrollViewStartTouch = YES;
     self.shrinking = NO;
     [self refreshScrollViewContentHeight];
@@ -206,7 +204,6 @@
     if(_lastScrollContentOffsetY < SCROLL_HEADER_VIEW_HEIGHT)
         self.shrink = _isScrollingDownward;
     _scrollViewStartTouch = NO;
-    NSLog(@"end drag");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

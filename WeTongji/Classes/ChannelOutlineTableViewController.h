@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
+#import "WTTabelViewController.h"
 
-@interface ChannelOutlineTableViewController : CoreDataTableViewController
+@interface ChannelOutlineTableViewController : WTTabelViewController
 
 @end
