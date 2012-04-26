@@ -15,11 +15,13 @@ UITableViewDelegate, UITableViewDataSource> {
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, readonly) NSInteger numberOfRowsInFirstSection;
 
 //methods to override
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)configureRequest:(NSFetchRequest *)request;
 - (void)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)insertCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)customCellClassName;
 - (NSString *)customSectionNameKeyPath;
 

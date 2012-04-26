@@ -1,18 +1,14 @@
 //
-//  ChannelOutlineTableViewCell.m
+//  EmptyTableViewCell.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-4-23.
+//  Created by 紫川 王 on 12-4-26.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChannelOutlineTableViewCell.h"
+#import "EmptyTableViewCell.h"
 
-@implementation ChannelOutlineTableViewCell
-
-@synthesize titleLabel = _titleLabel;
-@synthesize timeLabel = _timeLabel;
-@synthesize locationLabel = _locationLabel;
+@implementation EmptyTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -29,6 +25,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end

@@ -32,6 +32,6 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 //+ (BOOL)authorized;
 //+ (void)signout;
 //+ (NSString *)currentUserID;
-- (void)getActivitesWithChannelID:(NSInteger)channel_id;
+- (void)getActivitesWithChannelID:(NSInteger)channel_id page:(NSInteger)page;
 
 @end

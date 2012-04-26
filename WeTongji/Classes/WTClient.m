@@ -191,9 +191,12 @@ report_completion:
 #pragma mark -
 #pragma mark APIs
 
-- (void)getActivitesWithChannelID:(NSInteger)channel_id {
+- (void)getActivitesWithChannelID:(NSInteger)channel_id page:(NSInteger)page {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
-    [self.params setObject:[NSString stringWithFormat:@"%d", channel_id] forKey:@"Channel_Id"];
+    if(channel_id > 0) 
+        [self.params setObject:[NSString stringWithFormat:@"%d", channel_id] forKey:@"Channel_Id"];
+    if(page > 0)
+        [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
     [self sendRequest];
 }
 

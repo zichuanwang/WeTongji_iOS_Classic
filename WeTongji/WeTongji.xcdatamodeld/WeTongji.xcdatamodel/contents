@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Channel" representedClassName="Channel" syncable="YES">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="activity_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activity_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="can_follow" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_hot" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_like" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="favorite_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hot_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="like_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="photo_link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="schedule_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Channel" representedClassName="Channel" syncable="YES">
+        <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="channel_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="channel_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" parentEntity="User" syncable="YES"/>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_ud" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Channel" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="User" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="255"/>
     </elements>
 </model>

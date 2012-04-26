@@ -10,6 +10,16 @@
 #import "CoreDataTableViewController.h"
 #import "WTTabelViewController.h"
 
-@interface ChannelOutlineTableViewController : WTTabelViewController
+@protocol ChannelOutlineTableViewControllerDelegate;
+
+@interface ChannelOutlineTableViewController : CoreDataTableViewController
+
+@property (nonatomic, weak) id<ChannelOutlineTableViewControllerDelegate> delegate;
+
+@end
+
+@protocol ChannelOutlineTableViewControllerDelegate <NSObject>
+
+- (void)channelOutlineTableViewDidSelectActivity:(NSString *)activityID;
 
 @end

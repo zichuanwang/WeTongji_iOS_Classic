@@ -11,15 +11,10 @@
 
 @implementation Channel
 
-@dynamic id;
+@dynamic channel_id;
 @dynamic title;
-@dynamic content;
-@dynamic photo_link;
-@dynamic begin_time;
-@dynamic place;
-@dynamic end_time;
-@dynamic favorite_count;
-@dynamic like_count;
-@dynamic schedule_count;
+@dynamic channel_description;
+@dynamic avatar_link;
+@dynamic follow_count;
 
 @end

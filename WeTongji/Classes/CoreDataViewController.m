@@ -7,9 +7,19 @@
 //
 
 #import "CoreDataViewController.h"
+#import "AppDelegate.h"
 
 @implementation CoreDataViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
+
+- (id)init {
+    self = [super init];
+    if(self) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = appDelegate.managedObjectContext;
+    }
+    return self;
+}
 
 @end
