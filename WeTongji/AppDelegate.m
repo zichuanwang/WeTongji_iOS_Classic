@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "WTClient.h"
+#import "NSString+Addition.h"
 
 @implementation AppDelegate
 

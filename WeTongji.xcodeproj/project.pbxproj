@@ -175,6 +175,7 @@
 		E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483AF1549207700814FA4 /* Activity+Addition.m */; };
 		E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */; };
 		E1E483B5154931C500814FA4 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */; };
+		E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B71549434C00814FA4 /* NSString+Addition.m */; };
 		E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */; };
 		E1FD952D1545A4CA00B39069 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD952C1545A4CA00B39069 /* WTClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1FD95461545A51A00B39069 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95311545A51A00B39069 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -414,6 +415,8 @@
 		E1E483B1154931AA00814FA4 /* EmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptyTableViewCell.h; path = Classes/EmptyTableViewCell.h; sourceTree = "<group>"; };
 		E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptyTableViewCell.m; path = Classes/EmptyTableViewCell.m; sourceTree = "<group>"; };
 		E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyTableViewCell.xib; path = Classes/EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		E1E483B61549434B00814FA4 /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Addition.h"; path = "Classes/NSString+Addition.h"; sourceTree = "<group>"; };
+		E1E483B71549434C00814FA4 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Addition.m"; path = "Classes/NSString+Addition.m"; sourceTree = "<group>"; };
 		E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_user_indicator@2x.png"; sourceTree = "<group>"; };
 		E1FD952B1545A4C900B39069 /* WTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTClient.h; path = Classes/WTClient.h; sourceTree = "<group>"; };
 		E1FD952C1545A4CA00B39069 /* WTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTClient.m; path = Classes/WTClient.m; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 				E174A9B2153E84EC00E7165A /* UIApplication+Addition.m */,
 				E1538D49154708760076DDEC /* UILabel+Addition.h */,
 				E1538D4A154708760076DDEC /* UILabel+Addition.m */,
+				E1E483B61549434B00814FA4 /* NSString+Addition.h */,
+				E1E483B71549434C00814FA4 /* NSString+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1241,6 +1246,7 @@
 				E1E483AD1549201100814FA4 /* Student.m in Sources */,
 				E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */,
 				E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */,
+				E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

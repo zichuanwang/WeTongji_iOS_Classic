@@ -7,13 +7,14 @@
 //
 
 #import "Activity+Addition.h"
+#import "NSString+Addition.h"
 
 @implementation Activity (Addition)
 
 + (Activity *)insertActivity:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSString *activityID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Id"]];
-    
+
     if (!activityID || [activityID isEqualToString:@""]) {
         return nil;
     }
@@ -29,6 +30,8 @@
     result.location = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
+    result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
+    result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
     
     return result;
 }

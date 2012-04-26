@@ -10,6 +10,7 @@
 #import "ChannelOutlineTableViewCell.h"
 #import "WTClient.h"
 #import "Activity+Addition.h"
+#import "NSString+Addition.h"
 
 @interface ChannelOutlineTableViewController ()
 
@@ -149,6 +150,9 @@
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
         outlineCell.titleLabel.text = activity.title;
         outlineCell.locationLabel.text = activity.location;
+        NSString *timeStr = [NSString monthDayWeekTimeConvertFromDate:activity.begin_time];
+        timeStr = [NSString stringWithFormat:@"%@ - %@", timeStr, [NSString timeConvertFromDate:activity.end_time]];
+        outlineCell.timeLabel.text = timeStr;
     }
 }
 
