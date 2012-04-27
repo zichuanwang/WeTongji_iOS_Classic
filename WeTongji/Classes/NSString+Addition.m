@@ -75,4 +75,10 @@
     return result;
 }
 
++ (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end {
+    NSString *timeStr = [NSString monthDayWeekTimeConvertFromDate:begin];
+    timeStr = [NSString stringWithFormat:@"%@ - %@", timeStr, [NSString timeConvertFromDate:end]];
+    return timeStr;
+}
+
 @end

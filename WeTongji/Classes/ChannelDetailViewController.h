@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
+#import "Activity.h"
 
 @interface ChannelDetailViewController : WTNavigationViewController
+
+@property (nonatomic, strong) IBOutlet UILabel *organizerNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *timeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *placeLabel;
+@property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
+@property (nonatomic, strong) IBOutlet UILabel *activityCategoryLabel;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
+- (id)initWithActivity:(Activity *)activity;
 
 @end

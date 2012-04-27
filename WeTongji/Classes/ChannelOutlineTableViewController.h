@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 #import "WTTabelViewController.h"
+#import "Activity.h"
 
 @protocol ChannelOutlineTableViewControllerDelegate;
 
@@ -20,6 +21,6 @@
 
 @protocol ChannelOutlineTableViewControllerDelegate <NSObject>
 
-- (void)channelOutlineTableViewDidSelectActivity:(NSString *)activityID;
+- (void)channelOutlineTableViewDidSelectActivity:(Activity *)activity;
 
 @end

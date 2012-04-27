@@ -116,6 +116,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate channelOutlineTableViewDidSelectActivity:activity];
 }
 
 #pragma mark -
@@ -150,9 +152,7 @@
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
         outlineCell.titleLabel.text = activity.title;
         outlineCell.locationLabel.text = activity.location;
-        NSString *timeStr = [NSString monthDayWeekTimeConvertFromDate:activity.begin_time];
-        timeStr = [NSString stringWithFormat:@"%@ - %@", timeStr, [NSString timeConvertFromDate:activity.end_time]];
-        outlineCell.timeLabel.text = timeStr;
+        outlineCell.timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
     }
 }
 
@@ -161,7 +161,7 @@
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
     //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.weiboUser.followers];
     //[request setPredicate:predicate];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];;
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObject:sort];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;

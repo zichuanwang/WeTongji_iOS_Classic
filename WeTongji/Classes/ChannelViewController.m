@@ -9,6 +9,7 @@
 #import "ChannelViewController.h"
 #import "ChannelOutlineTableViewController.h"
 #import "ChannelSettingViewController.h"
+#import "ChannelDetailViewController.h"
 
 @interface ChannelViewController ()
 
@@ -63,6 +64,7 @@
     ChannelOutlineTableViewController *vc = [[ChannelOutlineTableViewController alloc] init];
     [self.view insertSubview:vc.view belowSubview:self.navBarShadowImageView];
     self.outlineTableViewController = vc;
+    vc.delegate = self;
 }
 
 #pragma mark - 
@@ -74,6 +76,14 @@
 
 - (void)didClickSettingButton {
     ChannelSettingViewController *vc = [[ChannelSettingViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - 
+#pragma mark ChannelOutlineTableViewController delegate
+
+- (void)channelOutlineTableViewDidSelectActivity:(Activity *)activity {
+    ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:activity];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
