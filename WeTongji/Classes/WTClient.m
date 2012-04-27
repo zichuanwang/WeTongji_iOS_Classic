@@ -156,8 +156,8 @@ report_completion:
             [str appendString:@"&"];
         }
         NSString *name = [sortedNames objectAtIndex:i];
-        [str appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
-                           [[self.params objectForKey:name] URLEncodedString]]];
+        [str appendString:[NSString stringWithFormat:@"%@=%@", name, 
+                           [self.params objectForKey:name]]];
     }
         
     return [self hashQueryString:str];
@@ -191,10 +191,14 @@ report_completion:
 #pragma mark -
 #pragma mark APIs
 
-- (void)getActivitesWithChannelID:(NSInteger)channel_id page:(NSInteger)page {
+- (void)getActivitesWithChannelIds:(NSString *)channelStatusStr page:(NSInteger)page {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
-    if(channel_id > 0) 
-        [self.params setObject:[NSString stringWithFormat:@"%d", channel_id] forKey:@"Channel_Id"];
+    if(channelStatusStr) {
+        [self.params setObject:channelStatusStr forKey:@"Channel_Ids"];
+    }
+    else {
+        [self.params setObject:[NSString stringWithFormat:@"1,2,3,4"] forKey:@"Channel_Ids"];
+    }
     if(page > 0)
         [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
     [self sendRequest];

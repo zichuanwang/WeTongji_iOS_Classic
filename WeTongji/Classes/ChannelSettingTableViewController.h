@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WTGroupTableViewController.h"
+#import "ChannelSettingTableViewCell.h"
 
-@interface ChannelSettingTableViewController : WTGroupTableViewController
+@interface ChannelSettingTableViewController : WTGroupTableViewController <ChannelSettingTableViewCellDelegate>
 
 @end

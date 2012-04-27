@@ -15,27 +15,93 @@ typedef enum {
     ChannelEnterprise = 3,
 } ChannelName;
 
+#define kUserDefaultsInitialized @"kUserDefaultsInitialized"
+
 @implementation NSUserDefaults (Addition)
 
-- (void)setChannelFollowStatus:(NSArray *)channels {
++ (void)initialize {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    for(int i = 0; i < channels.count; i++) {
-        NSNumber *channelStatus = [channels objectAtIndex:i];
+//    BOOL hasInit = [userDefaults boolForKey:kUserDefaultsInitialized];
+//    if(hasInit)
+//        return;
+    [userDefaults setBool:YES forKey:kUserDefaultsInitialized];
+    for(int i = 0; i < 4; i++) {
         NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];
-        [userDefaults setObject:channelStatus forKey:channelKey];
+        [userDefaults setBool:YES forKey:channelKey];
+    }
+    for(int i = 0; i < 2; i++) {
+        NSString *channelSortKey = [NSString stringWithFormat:@"sort_channel_%d", i];
+        [userDefaults setBool:NO forKey:channelSortKey];
+    }
+    [userDefaults setBool:YES forKey:@"sort_channel_0"];
+    
+    [userDefaults synchronize];
+}
+
++ (void)setChannelFollowStatus:(NSArray *)channelsStatus {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    for(int i = 0; i < channelsStatus.count; i++) {
+        NSNumber *channelStatus = [channelsStatus objectAtIndex:i];
+        NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];
+        [userDefaults setBool:channelStatus.boolValue forKey:channelKey];
     }
     [userDefaults synchronize];
 }
 
-- (NSArray *)getChannelFollowStatus {
++ (NSArray *)getChannelFollowStatusArray {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:4];
     for(int i = 0; i < 4; i++) {
-        NSString *channel_key = [NSString stringWithFormat:@"follow_channel_%d", i];
-        NSNumber *status = [userDefaults objectForKey:channelKey];
-        [result addObject:status];
+        NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];
+        [result addObject:[NSNumber numberWithBool:[userDefaults boolForKey:channelKey]]];
     }
     return result;
+}
+
++ (NSString *)getChannelFollowStatusString {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableString *result = nil;
+    for(int i = 0; i < 4; i++) {
+        NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];
+        if([userDefaults boolForKey:channelKey]) {
+            if(result)
+                [result appendFormat:@",%d", i + 1];
+            else 
+                result = [NSMutableString stringWithFormat:@"%d", i + 1];
+        }
+    }
+    NSLog(@"channel follow str:%@", result);
+    return result;
+}
+
++ (void)setChannelSortMethodArray:(NSArray *)sortMethods {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    for(int i = 0; i < sortMethods.count; i++) {
+        NSNumber *channelStatus = [sortMethods objectAtIndex:i];
+        NSString *channelKey = [NSString stringWithFormat:@"sort_channel_%d", i];
+        [userDefaults setBool:channelStatus.boolValue forKey:channelKey];
+    }
+    [userDefaults synchronize];
+}
+
++ (NSArray *)getChannelSortMethodArray {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:2];
+    for(int i = 0; i < 2; i++) {
+        NSString *channelSortKey = [NSString stringWithFormat:@"sort_channel_%d", i];
+        [result addObject:[NSNumber numberWithBool:[userDefaults boolForKey:channelSortKey]]];
+    }
+    return result;
+}
+
++ (ChannelSortMethod)getChannelSortMethod {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    for(int i = 0; i < 2; i++) {
+        NSString *channelSortKey = [NSString stringWithFormat:@"sort_channel_%d", i];
+        if([userDefaults boolForKey:channelSortKey])
+            return i;
+    }
+    return 0;
 }
 
 @end

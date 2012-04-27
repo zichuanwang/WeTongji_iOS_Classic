@@ -18,6 +18,7 @@
 @implementation ChannelSettingViewController
 
 @synthesize settingTableViewController = _settingTableViewController;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,6 +66,7 @@
 #pragma mark IBActions 
 
 - (void)didClickBackButton {
+    [self.delegate channelSettingViewControllerWillDismiss:self];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -14,6 +14,7 @@
 			<string>IBUITableViewCell</string>
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
+			<string>IBUISwitch</string>
 			<string>IBProxyObject</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -45,7 +46,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="516940550"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -60,7 +60,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="669954640"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -75,7 +74,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{10, 10}, {210, 20}}</string>
 								<reference key="NSSuperview" ref="615273713"/>
-								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1012545166"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -105,10 +104,25 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
+							<object class="IBUISwitch" id="1012545166">
+								<reference key="NSNextResponder" ref="615273713"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{201, 6}, {94, 27}}</string>
+								<reference key="NSSuperview" ref="615273713"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<bool key="IBUIOn">YES</bool>
+								<object class="NSColor" key="IBUIOnTintColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC42IDAuOCAxAA</bytes>
+								</object>
+							</object>
 						</array>
-						<string key="NSFrameSize">{280, 39}</string>
+						<string key="NSFrameSize">{300, 39}</string>
 						<reference key="NSSuperview" ref="122098843"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="455203948"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -124,12 +138,10 @@
 				</array>
 				<string key="NSFrameSize">{300, 40}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="615273713"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">0</int>
-				<int key="IBUIAccessoryType">3</int>
 				<reference key="IBUIContentView" ref="615273713"/>
 				<string key="IBUIReuseIdentifier">ChannelSettingTableViewCell</string>
 			</object>
@@ -143,6 +155,23 @@
 						<reference key="destination" ref="669954640"/>
 					</object>
 					<int key="connectionID">8</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">itemSwitch</string>
+						<reference key="source" ref="122098843"/>
+						<reference key="destination" ref="1012545166"/>
+					</object>
+					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">didCLickSwitch:</string>
+						<reference key="source" ref="1012545166"/>
+						<reference key="destination" ref="122098843"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">12</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -171,6 +200,7 @@
 							<reference ref="455203948"/>
 							<reference ref="516940550"/>
 							<reference ref="669954640"/>
+							<reference ref="1012545166"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -189,12 +219,18 @@
 						<reference key="object" ref="669954640"/>
 						<reference key="parent" ref="122098843"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">10</int>
+						<reference key="object" ref="1012545166"/>
+						<reference key="parent" ref="122098843"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">ChannelSettingTableViewCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -205,31 +241,9 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">8</int>
+			<int key="maxID">13</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">ChannelSettingTableViewCell</string>
-					<string key="superclassName">UITableViewCell</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">categoryLabel</string>
-						<string key="NS.object.0">UILabel</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">categoryLabel</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">categoryLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ChannelSettingTableViewCell.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">

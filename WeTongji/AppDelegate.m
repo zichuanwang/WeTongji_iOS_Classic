@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "WTClient.h"
 #import "NSString+Addition.h"
+#import "NSUserDefaults+Addition.h"
 
 @implementation AppDelegate
 
@@ -20,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [NSUserDefaults initialize];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;

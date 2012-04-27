@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ChannelSettingTableViewCellDelegate;
+
 @interface ChannelSettingTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *categoryLabel;
+@property (nonatomic, strong) IBOutlet UISwitch *itemSwitch;
+@property (nonatomic, weak) id<ChannelSettingTableViewCellDelegate> delegate;
+
+- (IBAction)didCLickSwitch:(UISwitch *)sender;
+
+@end
+
+@protocol ChannelSettingTableViewCellDelegate <NSObject>
+
+@optional
+- (void)channelSettingCellDidClickSwitch:(UITableViewCell *)cell;
 
 @end

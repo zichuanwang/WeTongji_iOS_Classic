@@ -11,6 +11,7 @@
 #import "WTClient.h"
 #import "Activity+Addition.h"
 #import "NSString+Addition.h"
+#import "NSUserDefaults+Addition.h"
 
 @interface ChannelOutlineTableViewController ()
 
@@ -107,7 +108,6 @@
     [self configureTableViewFooter];
 }
 
-
 #pragma mark -
 #pragma mark UITableView delegate
 
@@ -131,12 +131,11 @@
             NSDictionary *data = [dict objectForKey:@"Data"];
             NSArray *array = [data objectForKey:@"Activities"];
             for(NSDictionary *activityDict in array) {
-                NSLog(@"activity dict:%@", activityDict);
                 [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
             }
         }
     }];
-    [client getActivitesWithChannelID:-1 page:1];
+    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:1];
 }
 
 #pragma mark -
@@ -161,7 +160,13 @@
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
     //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.weiboUser.followers];
     //[request setPredicate:predicate];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSSortDescriptor *sort = nil;
+    ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
+    if(methodCode == ChannelSortByLikeCount)
+        sort = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
+    else 
+        sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
+    
     NSArray *descriptors = [NSArray arrayWithObject:sort];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;

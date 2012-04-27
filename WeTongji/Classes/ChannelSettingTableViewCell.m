@@ -11,6 +11,8 @@
 @implementation ChannelSettingTableViewCell
 
 @synthesize categoryLabel = _categoryLabel;
+@synthesize itemSwitch = _itemSwitch;
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -33,6 +35,15 @@
     
     UIView *tempView = [[UIView alloc] init];
     [self setBackgroundView:tempView];
+}
+
+#pragma mark -
+#pragma mark IBActions
+
+- (IBAction)didCLickSwitch:(UISwitch *)sender {
+    if([self.delegate respondsToSelector:@selector(channelSettingCellDidClickSwitch:)]) {
+        [self.delegate channelSettingCellDidClickSwitch:self];
+    }
 }
 
 @end

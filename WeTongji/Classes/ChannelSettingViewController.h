@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
 
+@protocol ChannelSettingViewControllerDelegate;
+
 @interface ChannelSettingViewController : WTNavigationViewController
+
+@property (nonatomic, weak) id<ChannelSettingViewControllerDelegate> delegate;
+
+@end
+
+@protocol ChannelSettingViewControllerDelegate <NSObject>
+
+- (void)channelSettingViewControllerWillDismiss:(ChannelSettingViewController *)vc;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "ChannelViewController.h"
 #import "ChannelOutlineTableViewController.h"
-#import "ChannelSettingViewController.h"
 #import "ChannelDetailViewController.h"
 
 @interface ChannelViewController ()
@@ -76,6 +75,7 @@
 
 - (void)didClickSettingButton {
     ChannelSettingViewController *vc = [[ChannelSettingViewController alloc] init];
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -87,5 +87,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - 
+#pragma mark ChannelSettingViewController delegate
+
+- (void)channelSettingViewControllerWillDismiss:(ChannelSettingViewController *)vc {
+    [self.outlineTableViewController.view removeFromSuperview];
+    self.outlineTableViewController = nil;
+    [self configureOutlineTableView];
+}
 
 @end

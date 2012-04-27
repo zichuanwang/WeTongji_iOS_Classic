@@ -28,10 +28,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (WTCompletionBlock)completionBlock;
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
-// return true if user already logged in
-//+ (BOOL)authorized;
-//+ (void)signout;
-//+ (NSString *)currentUserID;
-- (void)getActivitesWithChannelID:(NSInteger)channel_id page:(NSInteger)page;
+
+- (void)getActivitesWithChannelIds:(NSString *)channelStatusStr page:(NSInteger)page;
 
 @end

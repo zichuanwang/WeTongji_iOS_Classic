@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    ChannelSortByActivityBeginTime = 0,
+    ChannelSortByLikeCount = 1,
+} ChannelSortMethod;
+
 @interface NSUserDefaults (Addition)
+
++ (void)initialize;
++ (void)setChannelFollowStatus:(NSArray *)channels;
++ (NSArray *)getChannelFollowStatusArray;
++ (NSString *)getChannelFollowStatusString;
++ (void)setChannelSortMethodArray:(NSArray *)sortMethods;
++ (NSArray *)getChannelSortMethodArray;
++ (ChannelSortMethod)getChannelSortMethod;
 
 @end

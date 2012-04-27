@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
 #import "ChannelOutlineTableViewController.h"
+#import "ChannelSettingViewController.h"
 
-@interface ChannelViewController : WTNavigationViewController <ChannelOutlineTableViewControllerDelegate>
+@interface ChannelViewController : WTNavigationViewController <ChannelOutlineTableViewControllerDelegate, ChannelSettingViewControllerDelegate>
 
 @end
