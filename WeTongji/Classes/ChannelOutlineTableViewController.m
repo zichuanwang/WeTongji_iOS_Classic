@@ -48,7 +48,7 @@
 
 - (void)setTableFooterViewStyle:(NSInteger)style {
     if(style == 0) {
-        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
         UIImageView *footerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_footer.png"]];
         footerImageView.center = CGPointMake(160, 60);
         UIImageView *mainImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_main.png"]];
@@ -72,7 +72,7 @@
         self.tableView.tableFooterView = footerView;
     }
     else if(style == 1) {
-        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
         UIImageView *footerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_footer.png"]];
         footerImageView.center = CGPointMake(160, 20);
         [footerView addSubview:footerImageView];
@@ -91,11 +91,11 @@
 }
 
 - (void)configureTableViewHeader {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 320, 20)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
     UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_header.png"]];
-    headerImageView.center = CGPointMake(160, 0);
+    headerImageView.center = CGPointMake(160, 10);
     UIImageView *lineImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_single_line.png"]];
-    lineImageView.center = CGPointMake(160, 0);
+    lineImageView.center = CGPointMake(160, 10);
     lineImageView.center = headerImageView.center;
     [headerView addSubview:headerImageView];
     [headerView addSubview:lineImageView];
@@ -112,7 +112,7 @@
 #pragma mark UITableView delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
