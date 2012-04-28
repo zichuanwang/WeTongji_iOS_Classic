@@ -158,8 +158,8 @@
 - (void)configureRequest:(NSFetchRequest *)request
 {
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
-    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.weiboUser.followers];
-    //[request setPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"channel_id IN %@", [NSUserDefaults getFollowedChannelArray]];
+    [request setPredicate:predicate];
     NSSortDescriptor *sort = nil;
     ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
     if(methodCode == ChannelSortByLikeCount)

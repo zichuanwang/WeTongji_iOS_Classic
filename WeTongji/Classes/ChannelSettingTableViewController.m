@@ -84,7 +84,7 @@
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"频道筛选"]];
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"阅读顺序"]];
     
-    NSArray *channel = [NSArray arrayWithObjects:@"学术讲座", @"赛事信息", @"文娱活动", @"企业招聘", nil];
+    NSArray *channel = [NSUserDefaults getChannelNameArray];
     
     NSArray *sort = [NSArray arrayWithObjects:@"按活动开始时间排序", @"按好评数排序", nil];
     

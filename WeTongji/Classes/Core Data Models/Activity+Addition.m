@@ -29,10 +29,15 @@
     result.activity_description = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
     result.location = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
+    result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
-    
+    result.channel_id = [NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue] - 1];
+    result.like_count = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
+    result.hot_count = [NSNumber numberWithInt:[[dict objectForKey:@"Hot"] intValue]];
+    result.follow_count = [NSNumber numberWithInt:[[dict objectForKey:@"Follow"] intValue]];
+    NSLog(@"channel_id:%d", result.channel_id.intValue);
     return result;
 }
 

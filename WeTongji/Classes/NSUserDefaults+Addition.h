@@ -19,8 +19,10 @@ typedef enum {
 + (void)setChannelFollowStatus:(NSArray *)channels;
 + (NSArray *)getChannelFollowStatusArray;
 + (NSString *)getChannelFollowStatusString;
++ (NSArray *)getFollowedChannelArray;
 + (void)setChannelSortMethodArray:(NSArray *)sortMethods;
 + (NSArray *)getChannelSortMethodArray;
 + (ChannelSortMethod)getChannelSortMethod;
++ (NSArray *)getChannelNameArray;
 
 @end

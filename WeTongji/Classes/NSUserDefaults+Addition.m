@@ -58,6 +58,17 @@ typedef enum {
     return result;
 }
 
++ (NSArray *)getFollowedChannelArray {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:4];
+    for(int i = 0; i < 4; i++) {
+        NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];
+        if([userDefaults boolForKey:channelKey])
+            [result addObject:[NSNumber numberWithInt:i]];
+    }
+    return result;
+}
+
 + (NSString *)getChannelFollowStatusString {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableString *result = nil;
@@ -102,6 +113,10 @@ typedef enum {
             return i;
     }
     return 0;
+}
+
++ (NSArray *)getChannelNameArray {
+    return [NSArray arrayWithObjects:@"学术讲座", @"赛事信息", @"文娱活动", @"企业招聘", nil];
 }
 
 @end

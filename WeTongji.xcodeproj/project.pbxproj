@@ -111,6 +111,7 @@
 		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
 		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
+		E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6099E154C4D7C00F659F7 /* Activity.m */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
 		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
 		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
@@ -171,7 +172,6 @@
 		E1E483A01548988700814FA4 /* paper_wide_single_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E4839E1548988700814FA4 /* paper_wide_single_line.png */; };
 		E1E483A11548988700814FA4 /* paper_wide_single_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E4839F1548988700814FA4 /* paper_wide_single_line@2x.png */; };
 		E1E483A41549200B00814FA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483A31549200A00814FA4 /* User.m */; };
-		E1E483A71549200D00814FA4 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483A61549200D00814FA4 /* Activity.m */; };
 		E1E483AA1549200F00814FA4 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483A91549200F00814FA4 /* Channel.m */; };
 		E1E483AD1549201100814FA4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483AC1549201100814FA4 /* Student.m */; };
 		E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483AF1549207700814FA4 /* Activity+Addition.m */; };
@@ -329,6 +329,8 @@
 		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
 		E1B0BC411507D27B0085D9AB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		E1B0BC441507D27D0085D9AB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
+		E1B6099D154C4D7C00F659F7 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E1B6099E154C4D7C00F659F7 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -409,8 +411,6 @@
 		E1E4839F1548988700814FA4 /* paper_wide_single_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_wide_single_line@2x.png"; sourceTree = "<group>"; };
 		E1E483A21549200A00814FA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1E483A31549200A00814FA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		E1E483A51549200C00814FA4 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E1E483A61549200D00814FA4 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E1E483A81549200F00814FA4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
 		E1E483A91549200F00814FA4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		E1E483AB1549201100814FA4 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -923,8 +923,8 @@
 				E1E483A91549200F00814FA4 /* Channel.m */,
 				E1E483AB1549201100814FA4 /* Student.h */,
 				E1E483AC1549201100814FA4 /* Student.m */,
-				E1E483A51549200C00814FA4 /* Activity.h */,
-				E1E483A61549200D00814FA4 /* Activity.m */,
+				E1B6099D154C4D7C00F659F7 /* Activity.h */,
+				E1B6099E154C4D7C00F659F7 /* Activity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1250,13 +1250,13 @@
 				E1E4838B154884C100814FA4 /* CoreDataTableViewController.m in Sources */,
 				E1E4838F1548851200814FA4 /* ChannelDetailViewController.m in Sources */,
 				E1E483A41549200B00814FA4 /* User.m in Sources */,
-				E1E483A71549200D00814FA4 /* Activity.m in Sources */,
 				E1E483AA1549200F00814FA4 /* Channel.m in Sources */,
 				E1E483AD1549201100814FA4 /* Student.m in Sources */,
 				E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */,
 				E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */,
 				E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */,
 				E1E04F61154B28470036E2E1 /* NSUserDefaults+Addition.m in Sources */,
+				E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

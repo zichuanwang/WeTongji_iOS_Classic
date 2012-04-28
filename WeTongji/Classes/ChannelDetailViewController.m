@@ -8,6 +8,7 @@
 
 #import "ChannelDetailViewController.h"
 #import "NSString+Addition.h"
+#import "NSUserDefaults+Addition.h"
 
 @interface ChannelDetailViewController ()
 
@@ -24,6 +25,7 @@
 @synthesize activityCategoryLabel = _activityCategoryLabel;
 @synthesize titleLabel = _titleLabel;
 @synthesize scrollView = _scrollView;
+@synthesize subOrganizerNameLabel = _subOrganizerNameLabel;
 
 @synthesize activity = _activity;
 
@@ -56,6 +58,7 @@
     self.activityCategoryLabel = nil;
     self.titleLabel = nil;
     self.scrollView = nil;
+    self.subOrganizerNameLabel = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -84,6 +87,10 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
     self.timeLabel.text = [NSString timeConvertFromBeginDate:self.activity.begin_time endDate:self.activity.end_time];
     self.placeLabel.text = self.activity.location;
+    self.subOrganizerNameLabel.text = self.activity.sub_organizer;
+    NSArray *channelNames = [NSUserDefaults getChannelNameArray];
+    self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
+    
 }
 
 #pragma mark - 

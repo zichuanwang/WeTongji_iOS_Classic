@@ -13,6 +13,7 @@
 @interface ChannelDetailViewController : WTNavigationViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *organizerNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *subOrganizerNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *placeLabel;

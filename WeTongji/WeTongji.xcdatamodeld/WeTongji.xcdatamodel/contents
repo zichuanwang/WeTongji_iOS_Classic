@@ -7,6 +7,7 @@
         <attribute name="can_follow" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="can_hot" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="can_like" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="channel_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="hot_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -14,6 +15,7 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sub_organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES">
@@ -30,9 +32,9 @@
         <attribute name="user_ud" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="285"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="45"/>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>
