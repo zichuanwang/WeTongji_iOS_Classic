@@ -16,8 +16,8 @@
     UIActivityIndicatorView* _activityView;
 }
 
-@property(nonatomic, strong) EGORefreshTableHeaderView *egoHeaderView;
-@property(nonatomic, strong) UIButton *loadMoreDataButton;
+@property (nonatomic, strong) EGORefreshTableHeaderView *egoHeaderView;
+@property (nonatomic, strong) UIButton *loadMoreDataButton;
 
 - (void)doneLoadingTableViewData;
 - (void)showLoadMoreDataButton;

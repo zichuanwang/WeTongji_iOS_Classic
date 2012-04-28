@@ -36,13 +36,10 @@ typedef enum{
 @protocol EGORefreshTableHeaderDelegate;
 @interface EGORefreshTableHeaderView : UIView {
 	EGOPullRefreshState _state;
-	UILabel *_lastUpdatedLabel;
-	UILabel *_statusLabel;
 }
 
 @property (nonatomic, weak) id <EGORefreshTableHeaderDelegate> delegate;
 
-- (void)refreshLastUpdatedDate;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading;

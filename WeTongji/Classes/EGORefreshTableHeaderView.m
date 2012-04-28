@@ -27,11 +27,16 @@
 #import "EGORefreshTableHeaderView.h"
 
 #define TEXT_COLOR  [UIColor whiteColor]
+#define SHADOW_COLOR  [UIColor blackColor]
+#define SHADOW_OFFSET CGSizeMake(0, 1)
 #define TEXT_FONT   [UIFont boldSystemFontOfSize:14.0f]
+#define CONTENT_INSET_TOP 60.0f
+#define LABEL_HEIGHT (CONTENT_INSET_TOP + 15.0f)
 
 @interface EGORefreshTableHeaderView()
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong) UILabel *statusLabel;
 
 - (void)setState:(EGOPullRefreshState)aState;
 
@@ -41,33 +46,27 @@
 
 @synthesize delegate = _delegate;
 @synthesize activityView = _activityView;
+@synthesize statusLabel = _statusLabel;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor clearColor];
-
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
-		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = TEXT_FONT;
-        label.textColor = TEXT_COLOR;
-		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
-		[self addSubview:label];
-		_lastUpdatedLabel = label;
 		
-		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 60.0f, self.frame.size.width, 60.0f)];
+		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - CONTENT_INSET_TOP, self.frame.size.width, LABEL_HEIGHT)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = TEXT_FONT;
         label.textColor = TEXT_COLOR;
+        label.shadowColor = SHADOW_COLOR;
+        label.shadowOffset = SHADOW_OFFSET;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
 		[self addSubview:label];
-		_statusLabel = label;
+		self.statusLabel = label;
 				
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-		view.frame = CGRectMake(25.0f, frame.size.height - 42.0f, 20.0f, 20.0f);
+        view.center = CGPointMake(35.0f, label.center.y);
 		[self addSubview:view];
 		self.activityView = view;
 		
@@ -81,44 +80,21 @@
 #pragma mark -
 #pragma mark Setters
 
-- (void)refreshLastUpdatedDate {
-	
-	if ([self.delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
-		
-		NSDate *date = [self.delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
-		
-		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-		[formatter setAMSymbol:@"AM"];
-		[formatter setPMSymbol:@"PM"];
-		[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"最后更新: %@", [formatter stringFromDate:date]];
-		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-		
-	} else {
-		
-		_lastUpdatedLabel.text = nil;
-		
-	}
-
-}
-
 - (void)setState:(EGOPullRefreshState)aState{
 	
 	switch (aState) {
 		case EGOOPullRefreshPulling:
 			
-			_statusLabel.text = NSLocalizedString(@"松开即刷新...", @"松开以刷新状态");
+			self.statusLabel.text = NSLocalizedString(@"松开即刷新...", @"松开以刷新状态");
 			break;
 		case EGOOPullRefreshNormal:			
-			_statusLabel.text = NSLocalizedString(@"下拉以刷新...", @"下拉以刷新状态");
+			self.statusLabel.text = NSLocalizedString(@"下拉以刷新...", @"下拉以刷新状态");
 			[self.activityView stopAnimating];
-			[self refreshLastUpdatedDate];
 			
 			break;
 		case EGOOPullRefreshLoading:
 			
-			_statusLabel.text = NSLocalizedString(@"请稍等...", @"载入状态");
+			self.statusLabel.text = NSLocalizedString(@"请稍等...", @"载入状态");
 			[self.activityView startAnimating];
 			break;
 		default:
@@ -173,7 +149,7 @@
 		}
         [self setState:EGOOPullRefreshLoading];
         [UIView animateWithDuration:.2 animations:^(void) {
-                             scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);}];		
+                             scrollView.contentInset = UIEdgeInsetsMake(CONTENT_INSET_TOP, 0.0f, 0.0f, 0.0f);}];		
 	}
 }
 

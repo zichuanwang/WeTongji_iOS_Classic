@@ -38,39 +38,33 @@
     return _loadMoreDataButton;
 }
 
--(void)startLoading
-{
+- (void)startLoading {
     _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityView.frame = CGRectMake(15, 15, 30, 30);
     [self.loadMoreDataButton addSubview:_activityView];
     [_activityView startAnimating];
 }
 
--(void)stopLoading
-{
-    
-    if (_activityView != nil)
-    {
+- (void)stopLoading {
+    if (_activityView != nil) {
         [_activityView stopAnimating];
         [_activityView removeFromSuperview];
         _activityView = nil;
     }
 }
-- (void)showLoadMoreDataButton
-{
+
+- (void)showLoadMoreDataButton {
     [self.tableView setTableFooterView:self.loadMoreDataButton];
 }
 
-- (void)hideLoadMoreDataButton
-{
+- (void)hideLoadMoreDataButton {
     [self.tableView setTableFooterView:nil];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     //NSLog(@"bound width:%f, bound height:%f", self.tableView.bounds.size.width,self.tableView.bounds.size.height);
-    _egoHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 
+    self.egoHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 
                                                                                  0.0f - self.tableView.bounds.size.height, 
                                                                                  self.tableView.frame.size.width, 
                                                                                  self.tableView.bounds.size.height)];
