@@ -112,6 +112,8 @@
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
 		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
 		E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6099E154C4D7C00F659F7 /* Activity.m */; };
+		E1B609A5154C67BC00F659F7 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B609A2154C65BD00F659F7 /* EGORefreshTableHeaderView.m */; };
+		E1B609A6154C67BE00F659F7 /* EGOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
 		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
 		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
@@ -331,6 +333,10 @@
 		E1B0BC441507D27D0085D9AB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		E1B6099D154C4D7C00F659F7 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		E1B6099E154C4D7C00F659F7 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E1B609A1154C65BD00F659F7 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EGORefreshTableHeaderView.h; path = Classes/EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		E1B609A2154C65BD00F659F7 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = Classes/EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		E1B609A3154C65BD00F659F7 /* EGOTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EGOTableViewController.h; path = Classes/EGOTableViewController.h; sourceTree = "<group>"; };
+		E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGOTableViewController.m; path = Classes/EGOTableViewController.m; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -800,6 +806,10 @@
 				E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */,
 				E1E4838815487FF400814FA4 /* CoreDataViewController.h */,
 				E1E4838915487FF400814FA4 /* CoreDataViewController.m */,
+				E1B609A1154C65BD00F659F7 /* EGORefreshTableHeaderView.h */,
+				E1B609A2154C65BD00F659F7 /* EGORefreshTableHeaderView.m */,
+				E1B609A3154C65BD00F659F7 /* EGOTableViewController.h */,
+				E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */,
 				E1DF6FD715398C82001C60EA /* WTGroupTableViewController.h */,
 				E1DF6FD815398C84001C60EA /* WTGroupTableViewController.m */,
 				E1DF6FF81539B93A001C60EA /* WTNavigationViewController.h */,
@@ -1257,6 +1267,8 @@
 				E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */,
 				E1E04F61154B28470036E2E1 /* NSUserDefaults+Addition.m in Sources */,
 				E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */,
+				E1B609A5154C67BC00F659F7 /* EGORefreshTableHeaderView.m in Sources */,
+				E1B609A6154C67BE00F659F7 /* EGOTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

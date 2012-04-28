@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataTableViewController.h"
+#import "EGOTableViewController.h"
 #import "WTTabelViewController.h"
 #import "Activity.h"
 
 @protocol ChannelOutlineTableViewControllerDelegate;
 
-@interface ChannelOutlineTableViewController : CoreDataTableViewController
+@interface ChannelOutlineTableViewController : EGOTableViewController
 
 @property (nonatomic, weak) id<ChannelOutlineTableViewControllerDelegate> delegate;
 

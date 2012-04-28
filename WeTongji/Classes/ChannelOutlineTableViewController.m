@@ -121,24 +121,6 @@
 }
 
 #pragma mark -
-#pragma mark EGO methods
-
-- (void)loadMoreData {
-    WTClient *client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client) {
-        if(!client.hasError) {
-            NSDictionary *dict = client.responseJSONObject;
-            NSDictionary *data = [dict objectForKey:@"Data"];
-            NSArray *array = [data objectForKey:@"Activities"];
-            for(NSDictionary *activityDict in array) {
-                [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
-            }
-        }
-    }];
-    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:1];
-}
-
-#pragma mark -
 #pragma mark CoreDataTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
@@ -174,6 +156,35 @@
 
 - (void)insertCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     [self configureTableViewFooter];
+}
+
+#pragma mark -
+#pragma mark EGORefresh Method
+
+- (void)refresh {
+    //[self hideLoadMoreDataButton];
+    [self loadMoreData];
+}
+
+- (void)clearData
+{
+    
+}
+
+- (void)loadMoreData {
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            NSDictionary *dict = client.responseJSONObject;
+            NSDictionary *data = [dict objectForKey:@"Data"];
+            NSArray *array = [data objectForKey:@"Activities"];
+            for(NSDictionary *activityDict in array) {
+                [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
+            }
+        }
+        [self doneLoadingTableViewData];
+    }];
+    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:1];
 }
 
 @end
