@@ -21,9 +21,9 @@ typedef enum {
 
 + (void)initialize {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    BOOL hasInit = [userDefaults boolForKey:kUserDefaultsInitialized];
-//    if(hasInit)
-//        return;
+    BOOL hasInit = [userDefaults boolForKey:kUserDefaultsInitialized];
+    if(hasInit)
+        return;
     [userDefaults setBool:YES forKey:kUserDefaultsInitialized];
     for(int i = 0; i < 4; i++) {
         NSString *channelKey = [NSString stringWithFormat:@"follow_channel_%d", i];

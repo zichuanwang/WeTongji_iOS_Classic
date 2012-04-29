@@ -26,6 +26,12 @@
 @synthesize titleLabel = _titleLabel;
 @synthesize scrollView = _scrollView;
 @synthesize subOrganizerNameLabel = _subOrganizerNameLabel;
+@synthesize favoriteButton = _favoriteButton;
+@synthesize likeButton = _likeButton;
+@synthesize scheduleButton = _scheduleButton;
+@synthesize favoriteLabel = _favoriteLabel;
+@synthesize likeLabel = _likeLabel;
+@synthesize scheduleLabel = _scheduleLabel;
 
 @synthesize activity = _activity;
 
@@ -59,6 +65,9 @@
     self.titleLabel = nil;
     self.scrollView = nil;
     self.subOrganizerNameLabel = nil;
+    self.favoriteButton = nil;
+    self.likeButton = nil;
+    self.scheduleButton = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -95,6 +104,9 @@
     self.subOrganizerNameLabel.text = self.activity.sub_organizer;
     NSArray *channelNames = [NSUserDefaults getChannelNameArray];
     self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
+    self.likeLabel.text = [NSString stringWithFormat:@"%d", self.activity.like_count.intValue];
+    self.scheduleLabel.text = [NSString stringWithFormat:@"%d", self.activity.hot_count.intValue];
+    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.activity.follow_count.intValue];
     
 }
 
@@ -102,8 +114,18 @@
 #pragma mark IBActions 
 
 - (void)didClickBackButton {
-    
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)didClickFavoriteButton:(UIButton *)sender {
+    [self.favoriteButton setSelected:!sender.selected];
+}
+
+- (IBAction)didClickLikeButton:(UIButton *)sender {
+    [self.likeButton setSelected:!sender.selected];
+}
+- (IBAction)didClickScheduleButton:(UIButton *)sender {
+    [self.scheduleButton setSelected:!sender.selected];
 }
 
 @end
