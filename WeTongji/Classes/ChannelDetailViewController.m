@@ -30,6 +30,7 @@
 @synthesize likeButton = _likeButton;
 @synthesize scheduleButton = _scheduleButton;
 @synthesize scrollViewContentView = _scrollViewContentView;
+@synthesize likeLabel = _likeLabel;
 
 @synthesize activity = _activity;
 
@@ -66,6 +67,7 @@
     self.favoriteButton = nil;
     self.likeButton = nil;
     self.scheduleButton = nil;
+    self.likeLabel = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -107,6 +109,7 @@
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
+    self.likeLabel.text = [NSString stringWithFormat:@"%d人喜欢这个活动", self.activity.like_count.intValue];
 }
 
 #pragma mark - 
