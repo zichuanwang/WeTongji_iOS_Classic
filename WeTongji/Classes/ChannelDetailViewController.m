@@ -29,9 +29,7 @@
 @synthesize favoriteButton = _favoriteButton;
 @synthesize likeButton = _likeButton;
 @synthesize scheduleButton = _scheduleButton;
-@synthesize favoriteLabel = _favoriteLabel;
-@synthesize likeLabel = _likeLabel;
-@synthesize scheduleLabel = _scheduleLabel;
+@synthesize scrollViewContentView = _scrollViewContentView;
 
 @synthesize activity = _activity;
 
@@ -104,10 +102,11 @@
     self.subOrganizerNameLabel.text = self.activity.sub_organizer;
     NSArray *channelNames = [NSUserDefaults getChannelNameArray];
     self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
-    self.likeLabel.text = [NSString stringWithFormat:@"%d", self.activity.like_count.intValue];
-    self.scheduleLabel.text = [NSString stringWithFormat:@"%d", self.activity.hot_count.intValue];
-    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.activity.follow_count.intValue];
     
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollViewContentView.frame.size.height);
+    self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
+    self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
+    self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
 }
 
 #pragma mark - 

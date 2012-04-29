@@ -21,12 +21,10 @@
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UILabel *activityCategoryLabel;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIButton *favoriteButton;
-@property (nonatomic, strong) IBOutlet UIButton *likeButton;
-@property (nonatomic, strong) IBOutlet UIButton *scheduleButton;
-@property (nonatomic, strong) IBOutlet UILabel *favoriteLabel;
-@property (nonatomic, strong) IBOutlet UILabel *likeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *scheduleLabel;
+@property (nonatomic, strong) IBOutlet WTButton *favoriteButton;
+@property (nonatomic, strong) IBOutlet WTButton *likeButton;
+@property (nonatomic, strong) IBOutlet WTButton *scheduleButton;
+@property (nonatomic, strong) IBOutlet UIView *scrollViewContentView;
 
 - (id)initWithActivity:(Activity *)activity;
 - (IBAction)didClickFavoriteButton:(UIButton *)sender;
