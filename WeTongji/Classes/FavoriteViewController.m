@@ -48,4 +48,11 @@
     self.navigationItem.leftBarButtonItem = finishButton;
 }
 
+#pragma mark - 
+#pragma mark IBActions 
+
+- (void)didClickFinishButton {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
 @end
