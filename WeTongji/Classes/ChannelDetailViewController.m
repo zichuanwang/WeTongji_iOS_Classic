@@ -109,7 +109,11 @@
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
-    self.likeLabel.text = [NSString stringWithFormat:@"%d人喜欢这个活动", self.activity.like_count.intValue];
+    int likeCount = self.activity.like_count.intValue;
+    if(likeCount > 0)
+        self.likeLabel.text = [NSString stringWithFormat:@"%d 人喜欢这个活动", likeCount];
+    else 
+        self.likeLabel.text = [NSString stringWithFormat:@"喜欢这个活动就为它投一票吧！"];
 }
 
 #pragma mark - 
