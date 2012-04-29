@@ -144,7 +144,7 @@
 												<reference key="IBUIFont" ref="192662475"/>
 											</object>
 										</array>
-										<string key="NSFrame">{{0, 500}, {320, 200}}</string>
+										<string key="NSFrame">{{0, 480}, {320, 200}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="557153398"/>

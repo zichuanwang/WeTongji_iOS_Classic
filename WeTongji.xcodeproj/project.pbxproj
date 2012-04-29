@@ -127,6 +127,12 @@
 		E1C877BD15064B4900592954 /* MetroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C877BC15064B4900592954 /* MetroViewController.xib */; };
 		E1C877C715064BA500592954 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C515064BA500592954 /* Default.png */; };
 		E1C877C815064BA500592954 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C877C615064BA500592954 /* Default@2x.png */; };
+		E1D3877C154D457E006325E8 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D3877A154D457E006325E8 /* FavoriteViewController.m */; };
+		E1D3877D154D457E006325E8 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D3877B154D457E006325E8 /* FavoriteViewController.xib */; };
+		E1D38782154D458D006325E8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D38780154D458D006325E8 /* NewsViewController.m */; };
+		E1D38783154D458D006325E8 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D38781154D458D006325E8 /* NewsViewController.xib */; };
+		E1D3879F154DA656006325E8 /* MetroInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D3879E154DA656006325E8 /* MetroInfoReader.m */; };
+		E1D387A2154DA872006325E8 /* MetroInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D387A1154DA871006325E8 /* MetroInfo.plist */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
 		E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */; };
 		E1DF6F9515376124001C60EA /* paper_footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6F9215376124001C60EA /* paper_footer@2x.png */; };
@@ -356,6 +362,15 @@
 		E1C877BC15064B4900592954 /* MetroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MetroViewController.xib; path = Classes/MetroViewController.xib; sourceTree = "<group>"; };
 		E1C877C515064BA500592954 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E1C877C615064BA500592954 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E1D38779154D457E006325E8 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteViewController.h; path = Classes/FavoriteViewController.h; sourceTree = "<group>"; };
+		E1D3877A154D457E006325E8 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteViewController.m; path = Classes/FavoriteViewController.m; sourceTree = "<group>"; };
+		E1D3877B154D457E006325E8 /* FavoriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteViewController.xib; path = Classes/FavoriteViewController.xib; sourceTree = "<group>"; };
+		E1D3877F154D458D006325E8 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = Classes/NewsViewController.h; sourceTree = "<group>"; };
+		E1D38780154D458D006325E8 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = Classes/NewsViewController.m; sourceTree = "<group>"; };
+		E1D38781154D458D006325E8 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = Classes/NewsViewController.xib; sourceTree = "<group>"; };
+		E1D3879D154DA656006325E8 /* MetroInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetroInfoReader.h; path = Classes/MetroInfoReader.h; sourceTree = "<group>"; };
+		E1D3879E154DA656006325E8 /* MetroInfoReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MetroInfoReader.m; path = Classes/MetroInfoReader.m; sourceTree = "<group>"; };
+		E1D387A1154DA871006325E8 /* MetroInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MetroInfo.plist; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
 		E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_cover@2x.png"; sourceTree = "<group>"; };
 		E1DF6F9215376124001C60EA /* paper_footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_footer@2x.png"; sourceTree = "<group>"; };
@@ -618,6 +633,9 @@
 		E174A9D415406D0B00E7165A /* news */ = {
 			isa = PBXGroup;
 			children = (
+				E1D3877F154D458D006325E8 /* NewsViewController.h */,
+				E1D38780154D458D006325E8 /* NewsViewController.m */,
+				E1D38781154D458D006325E8 /* NewsViewController.xib */,
 			);
 			name = news;
 			sourceTree = "<group>";
@@ -718,6 +736,19 @@
 			path = WeTongji/Resources;
 			sourceTree = "<group>";
 		};
+		E1D38784154D45ED006325E8 /* metro */ = {
+			isa = PBXGroup;
+			children = (
+				E1C877B315063FCD00592954 /* MetroViewController.h */,
+				E1C877B415063FCD00592954 /* MetroViewController.m */,
+				E1C877BC15064B4900592954 /* MetroViewController.xib */,
+				E1D3879D154DA656006325E8 /* MetroInfoReader.h */,
+				E1D3879E154DA656006325E8 /* MetroInfoReader.m */,
+				E1D387A1154DA871006325E8 /* MetroInfo.plist */,
+			);
+			name = metro;
+			sourceTree = "<group>";
+		};
 		E1DEA593150E261B003F51B5 /* dock */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +824,7 @@
 				E174A9D415406D0B00E7165A /* news */,
 				E174A99E153E7FC800E7165A /* login */,
 				E1DF6FF71539B8C8001C60EA /* schedule */,
+				E1D38784154D45ED006325E8 /* metro */,
 				E1DF6FF11539B836001C60EA /* channel */,
 				E1DF6FF01539B801001C60EA /* main */,
 			);
@@ -848,9 +880,6 @@
 				E191772A15078188009FB941 /* MainViewController.h */,
 				E191772B15078188009FB941 /* MainViewController.m */,
 				E191772C15078188009FB941 /* MainViewController.xib */,
-				E1C877B315063FCD00592954 /* MetroViewController.h */,
-				E1C877B415063FCD00592954 /* MetroViewController.m */,
-				E1C877BC15064B4900592954 /* MetroViewController.xib */,
 				E1C877A31505FB4800592954 /* RootViewController.h */,
 				E1C877A41505FB4800592954 /* RootViewController.m */,
 				E191773515078609009FB941 /* RootViewController.xib */,
@@ -953,6 +982,9 @@
 		E1E4839115488D9700814FA4 /* favorite */ = {
 			isa = PBXGroup;
 			children = (
+				E1D38779154D457E006325E8 /* FavoriteViewController.h */,
+				E1D3877A154D457E006325E8 /* FavoriteViewController.m */,
+				E1D3877B154D457E006325E8 /* FavoriteViewController.xib */,
 			);
 			name = favorite;
 			sourceTree = "<group>";
@@ -1193,6 +1225,9 @@
 				E1E483A11548988700814FA4 /* paper_wide_single_line@2x.png in Resources */,
 				E1E483B5154931C500814FA4 /* EmptyTableViewCell.xib in Resources */,
 				E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */,
+				E1D3877D154D457E006325E8 /* FavoriteViewController.xib in Resources */,
+				E1D38783154D458D006325E8 /* NewsViewController.xib in Resources */,
+				E1D387A2154DA872006325E8 /* MetroInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1304,9 @@
 				E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */,
 				E1B609A5154C67BC00F659F7 /* EGORefreshTableHeaderView.m in Sources */,
 				E1B609A6154C67BE00F659F7 /* EGOTableViewController.m in Sources */,
+				E1D3877C154D457E006325E8 /* FavoriteViewController.m in Sources */,
+				E1D38782154D458D006325E8 /* NewsViewController.m in Sources */,
+				E1D3879F154DA656006325E8 /* MetroInfoReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

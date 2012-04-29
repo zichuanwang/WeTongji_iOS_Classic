@@ -66,6 +66,7 @@ typedef enum {
     self.settingButton = nil;
     self.checkButton = nil;
     self.headerCoverImageView = nil;
+    [self clearAllTabBarSubview];
 }
 
 - (void)configureNavigationBar {
@@ -142,6 +143,15 @@ typedef enum {
     self.userInfoViewController.view.hidden = YES;
     self.toDoListTableViewController.view.hidden = YES;
     self.settingViewController.view.hidden = YES;
+}
+
+- (void)clearAllTabBarSubview {
+    [self.userInfoViewController.view removeFromSuperview];
+    self.userInfoViewController = nil;
+    [self.toDoListTableViewController.view removeFromSuperview];
+    self.toDoListTableViewController = nil;
+    [self.settingViewController.view removeFromSuperview];
+    self.settingViewController = nil;
 }
 
 #pragma mark - 

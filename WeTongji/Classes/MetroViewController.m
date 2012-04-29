@@ -10,6 +10,10 @@
 #import "RootView.h"
 #import "WTDockButton.h"
 #import "ChannelViewController.h"
+#import "FavoriteViewController.h"
+#import "NewsViewController.h"
+#import "ScheduleViewController.h"
+#import "MetroInfoReader.h"
 
 #define BUTTON_WIDTH        70
 #define BUTTON_HEIGHT       70
@@ -29,9 +33,10 @@
 
 @property (nonatomic, strong) NSMutableArray *buttonHeap;
 @property (readonly, nonatomic) CGFloat scrollViewHeight;
-
-@property (getter = isShrink, nonatomic) BOOL shrink;
-@property (getter = isShrinking, nonatomic) BOOL shrinking;
+@property (nonatomic, getter = isShrink) BOOL shrink;
+@property (nonatomic, getter = isShrinking) BOOL shrinking;
+@property (nonatomic, strong) NSMutableArray *buttonInfoArray;
+@property (nonatomic, strong) NSArray *metroInfoArray;
 
 - (void)refreshScrollViewContentHeight;
 
@@ -42,16 +47,19 @@
 @synthesize scrollView = _scrollView;
 @synthesize buttonHeap = _buttonHeap;
 @synthesize scrollBackgroundView = _scrollBackgroundView;
-
 @synthesize shrink = _shrink;
 @synthesize shrinking = _shrinking;
+@synthesize buttonInfoArray = _buttonInfoArray;
+@synthesize metroInfoArray = _metroInfoArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.buttonHeap =  [[NSMutableArray alloc] init];
+        MetroInfoReader *reader = [[MetroInfoReader alloc] init];
+        NSArray *metroInfoArray = [reader getMetroInfoArray];
+        self.metroInfoArray = metroInfoArray;
     }
     return self;
 }
@@ -60,37 +68,27 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    for(int i = 0; i < BUTTON_COUNT; i++) {
-        WTButton *button = nil;
-        if(i == 0) {
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_channel.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_channel_hl.png"] title:@"频道"];
-            [button addTarget:self action:@selector(didClickChannelButton:) forControlEvents:UIControlEventTouchUpInside];
-        }
-        else if(i == 1)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_news.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_news_hl.png"] title:@"新闻"];
-        else if(i == 2)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_collect.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_collect_hl.png"] title:@"收藏"];
-        else if(i == 3)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_schedule.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_schedule_hl.png"] title:@"日程"];
-        else if(i == 4)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_circles.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_circles_hl.png"] title:@"圈子"];
-        else if(i == 5)
-            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:@"dock_btn_mail.png"] highlightedImage:[UIImage imageNamed:@"dock_btn_mail_hl.png"] title:@"邮箱"];
-        else 
-            button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
-        
-        CGPoint center = button.center;
-        int j = i % 4;
-        int k = i / 4;
-        
-        center.x = BUTTON_HORIZONTAL_OFFSET + (BUTTON_HORIZONTAL_INTERVAL + BUTTON_WIDTH) * j + BUTTON_WIDTH / 2;
-        center.y = BUTTON_VERTICAL_OFFSET + (BUTTON_VERTICAL_INTERVAL + BUTTON_HEIGHT) * k + SCROLL_HEADER_VIEW_HEIGHT + BUTTON_HEIGHT / 2;
-        button.center = center;
+    [self configureMetroButton];
+    [self configureScrollView];
+    [self refreshScrollViewContentHeight];
+}
 
-        [self.scrollView addSubview:button];
-        [self.buttonHeap addObject:button];
-    }
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    self.scrollView = nil;
+    self.scrollBackgroundView = nil;
+}
+
+- (void)configureMetroButtonInfo {
     
+}
+
+#pragma mark -
+#pragma mark UI methods
+
+- (void)configureScrollView {
     CGRect frame = self.scrollBackgroundView.frame;
     frame.origin.y = SCROLL_HEADER_VIEW_HEIGHT;
     self.scrollBackgroundView.frame = frame;
@@ -99,16 +97,36 @@
     headerView.backgroundColor = [UIColor clearColor];
     headerView.tag = ROOT_METRO_SCROLL_HEADER_VIEW_TAG;
     [self.scrollView addSubview:headerView];
-        
-    //self.scrollView.contentOffset = CGPointMake(0, SCROLL_HEADER_VIEW_HEIGHT);
+    
     self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
-    [self refreshScrollViewContentHeight];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+- (void)configureMetroButton {
+    
+    self.buttonHeap =  [[NSMutableArray alloc] init];
+    for(int i = 0; i < BUTTON_COUNT; i++) {
+        WTButton *button = nil;
+        if(i < self.metroInfoArray.count) {
+            MetroInfo *info = [self.metroInfoArray objectAtIndex:i];
+            button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:info.buttonImageFileName] highlightedImage:[UIImage imageNamed:info.buttonHighlightImageFileName] title:info.buttonTitle];
+            if(info.nibFileName)
+                [button addTarget:self action:@selector(didClickMetroButton:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else {
+            button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
+        }
+        
+        CGPoint center = button.center;
+        int j = i % 4;
+        int k = i / 4;
+        
+        center.x = BUTTON_HORIZONTAL_OFFSET + (BUTTON_HORIZONTAL_INTERVAL + BUTTON_WIDTH) * j + BUTTON_WIDTH / 2;
+        center.y = BUTTON_VERTICAL_OFFSET + (BUTTON_VERTICAL_INTERVAL + BUTTON_HEIGHT) * k + SCROLL_HEADER_VIEW_HEIGHT + BUTTON_HEIGHT / 2;
+        button.center = center;
+        
+        [self.scrollView addSubview:button];
+        [self.buttonHeap addObject:button];
+    }
 }
 
 - (void)refreshScrollViewContentHeight {
@@ -154,6 +172,7 @@
     CGFloat result = BUTTON_VERTICAL_OFFSET + (BUTTON_HEIGHT + BUTTON_VERTICAL_INTERVAL) * k + SCROLL_HEADER_VIEW_HEIGHT;
     if(result < 460.0f + SCROLL_HEADER_VIEW_HEIGHT)
         result = 460.0f + SCROLL_HEADER_VIEW_HEIGHT;
+//    CGFloat result = 460.0f + SCROLL_HEADER_VIEW_HEIGHT;
     return result;
 }
 
@@ -211,10 +230,15 @@
     self.shrinking = NO;
 }
 
-- (void)didClickChannelButton:(UIButton *)sender {
-    ChannelViewController *channel = [[ChannelViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:channel];
-    [self presentModalViewController:nav animated:YES];
+- (void)didClickMetroButton:(UIButton *)sender {
+    NSUInteger index = [self.buttonHeap indexOfObject:sender];
+    MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
+    NSLog(@"nib:%@", info.nibFileName);
+    UIViewController *vc = [[NSClassFromString(info.nibFileName) alloc] initWithNibName:info.nibFileName bundle:nil];
+    if(vc) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentModalViewController:nav animated:YES];
+    }
 }
 
 @end

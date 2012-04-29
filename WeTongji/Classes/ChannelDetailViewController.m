@@ -21,7 +21,7 @@
 @synthesize organizerNameLabel = _organizerNameLabel;
 @synthesize timeLabel = _timeLabel;
 @synthesize placeLabel = _placeLabel;
-@synthesize descriptionTextView = _descriptionTextView;
+@synthesize descriptionLabel = _descriptionLabel;
 @synthesize activityCategoryLabel = _activityCategoryLabel;
 @synthesize titleLabel = _titleLabel;
 @synthesize scrollView = _scrollView;
@@ -54,7 +54,7 @@
     self.organizerNameLabel = nil;
     self.timeLabel = nil;
     self.placeLabel = nil;
-    self.descriptionTextView = nil;
+    self.descriptionLabel = nil;
     self.activityCategoryLabel = nil;
     self.titleLabel = nil;
     self.scrollView = nil;
@@ -82,7 +82,12 @@
 
 - (void)configureIBOutlets {
     self.titleLabel.text = self.activity.title;
-    self.descriptionTextView.text = self.activity.activity_description;
+    self.descriptionLabel.text = self.activity.activity_description;
+    [self.descriptionLabel sizeToFit];
+    CGRect rect = self.descriptionLabel.frame;
+    if(rect.size.height >= 110)
+        rect.size.height = 110;
+    self.descriptionLabel.frame = rect;
     self.organizerNameLabel.text = self.activity.organizer;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
     self.timeLabel.text = [NSString timeConvertFromBeginDate:self.activity.begin_time endDate:self.activity.end_time];

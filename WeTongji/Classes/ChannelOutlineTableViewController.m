@@ -142,14 +142,14 @@
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"channel_id IN %@", [NSUserDefaults getFollowedChannelArray]];
     [request setPredicate:predicate];
-    NSSortDescriptor *sort = nil;
+    NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
+    NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
     ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
+    NSArray *descriptors = nil;
     if(methodCode == ChannelSortByLikeCount)
-        sort = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
+        descriptors = [NSArray arrayWithObjects:sortByLike, sortByBegin, nil];
     else 
-        sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
-    
-    NSArray *descriptors = [NSArray arrayWithObject:sort];
+        descriptors = [NSArray arrayWithObjects:sortByBegin, sortByLike, nil];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;
 }

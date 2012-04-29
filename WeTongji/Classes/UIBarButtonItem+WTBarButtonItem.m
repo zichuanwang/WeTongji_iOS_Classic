@@ -16,7 +16,7 @@
     [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f] forState:UIControlStateHighlighted];
     [button setTitleShadowColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:13];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     button.titleLabel.shadowOffset = CGSizeMake(0, 1);
     if(target && action)
         [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
