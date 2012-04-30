@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewController.h"
+#import "WTClient.h"
 
 @interface NewsViewController ()
 
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
+    [self loadMoreData];
 }
 
 - (void)viewDidUnload
@@ -53,6 +55,17 @@
 
 - (void)didClickFinishButton {
     [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)loadMoreData 
+{ 
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            
+        }
+    }];
+    [client getNewsList:1];
 }
 
 @end

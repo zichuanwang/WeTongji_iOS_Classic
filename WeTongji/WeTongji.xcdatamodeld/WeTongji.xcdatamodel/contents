@@ -25,6 +25,9 @@
         <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="News" syncable="YES">
+        <attribute name="news_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Student" representedClassName="Student" parentEntity="User" syncable="YES"/>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
@@ -36,5 +39,6 @@
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="45"/>
         <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="News" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

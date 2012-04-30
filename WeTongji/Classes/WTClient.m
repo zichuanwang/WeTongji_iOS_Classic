@@ -199,8 +199,17 @@ report_completion:
     else {
         [self.params setObject:[NSString stringWithFormat:@"1,2,3,4"] forKey:@"Channel_Ids"];
     }
-    if(page > 0)
-        [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
+    if(page <= 0)
+        page = 1;
+    [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
+    [self sendRequest];
+}
+
+- (void)getNewsList:(NSInteger)page {
+    [self.params setObject:@"News.GetList" forKey:@"M"];
+    if(page <= 0)
+        page = 1;
+    [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
     [self sendRequest];
 }
 

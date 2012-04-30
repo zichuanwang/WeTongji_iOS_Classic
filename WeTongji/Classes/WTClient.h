@@ -30,5 +30,6 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 + (id)client;
 
 - (void)getActivitesWithChannelIds:(NSString *)channelStatusStr page:(NSInteger)page;
+- (void)getNewsList:(NSInteger)page;
 
 @end
