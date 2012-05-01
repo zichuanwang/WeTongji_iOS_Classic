@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C007C7F155034B90047D641 /* DaySchedule.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C7E155034B90047D641 /* DaySchedule.jpg */; };
+		5C007C99155035E40047D641 /* DayScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C84155035890047D641 /* DayScheduleView.m */; };
+		5C007C9A155035E70047D641 /* DayScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C86155035890047D641 /* DayScheduleViewController.m */; };
+		5C007C9B155035F00047D641 /* DayScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C87155035890047D641 /* DayScheduleViewController.xib */; };
+		5C007C9C155035F50047D641 /* ListScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C89155035890047D641 /* ListScheduleViewController.m */; };
+		5C007C9D155035F80047D641 /* ListScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C8A155035890047D641 /* ListScheduleViewController.xib */; };
+		5C007C9E155035FC0047D641 /* MonthScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C8C155035890047D641 /* MonthScheduleView.m */; };
+		5C007C9F155036000047D641 /* MonthScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C8E155035890047D641 /* MonthScheduleViewController.m */; };
+		5C007CA0155036040047D641 /* MonthScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C8F155035890047D641 /* MonthScheduleViewController.xib */; };
+		5C007CA1155036090047D641 /* quartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C91155035890047D641 /* quartzView.m */; };
+		5C007CA21550360D0047D641 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C931550358A0047D641 /* ScheduleTableViewCell.m */; };
+		5C007CA3155036100047D641 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C941550358A0047D641 /* ScheduleTableViewCell.xib */; };
+		5C007CA4155036140047D641 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C007C961550358A0047D641 /* ScheduleViewController.m */; };
+		5C007CA5155036180047D641 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C007C971550358A0047D641 /* ScheduleViewController.xib */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
 		E10A167D153617E300700A0E /* dock_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1668153617E200700A0E /* dock_bg.png */; };
 		E10A167E153617E300700A0E /* dock_btn_channel_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1669153617E200700A0E /* dock_btn_channel_hl.png */; };
@@ -107,8 +121,6 @@
 		E1A8370F1544964D0086F62E /* ChannelOutlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */; };
 		E1A83712154497260086F62E /* paper_blue_seperator.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A83710154497230086F62E /* paper_blue_seperator.png */; };
 		E1A83713154497260086F62E /* paper_blue_seperator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A83711154497250086F62E /* paper_blue_seperator@2x.png */; };
-		E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AE08851531826F006964B8 /* ScheduleViewController.m */; };
-		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
 		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
 		E1B6099F154C4D7C00F659F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6099E154C4D7C00F659F7 /* Activity.m */; };
@@ -226,6 +238,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C007C7E155034B90047D641 /* DaySchedule.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DaySchedule.jpg; sourceTree = "<group>"; };
+		5C007C83155035890047D641 /* DayScheduleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DayScheduleView.h; path = Classes/DayScheduleView.h; sourceTree = "<group>"; };
+		5C007C84155035890047D641 /* DayScheduleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DayScheduleView.m; path = Classes/DayScheduleView.m; sourceTree = "<group>"; };
+		5C007C85155035890047D641 /* DayScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DayScheduleViewController.h; path = Classes/DayScheduleViewController.h; sourceTree = "<group>"; };
+		5C007C86155035890047D641 /* DayScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DayScheduleViewController.m; path = Classes/DayScheduleViewController.m; sourceTree = "<group>"; };
+		5C007C87155035890047D641 /* DayScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DayScheduleViewController.xib; path = Classes/DayScheduleViewController.xib; sourceTree = "<group>"; };
+		5C007C88155035890047D641 /* ListScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ListScheduleViewController.h; path = Classes/ListScheduleViewController.h; sourceTree = "<group>"; };
+		5C007C89155035890047D641 /* ListScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ListScheduleViewController.m; path = Classes/ListScheduleViewController.m; sourceTree = "<group>"; };
+		5C007C8A155035890047D641 /* ListScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListScheduleViewController.xib; path = Classes/ListScheduleViewController.xib; sourceTree = "<group>"; };
+		5C007C8B155035890047D641 /* MonthScheduleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MonthScheduleView.h; path = Classes/MonthScheduleView.h; sourceTree = "<group>"; };
+		5C007C8C155035890047D641 /* MonthScheduleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MonthScheduleView.m; path = Classes/MonthScheduleView.m; sourceTree = "<group>"; };
+		5C007C8D155035890047D641 /* MonthScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MonthScheduleViewController.h; path = Classes/MonthScheduleViewController.h; sourceTree = "<group>"; };
+		5C007C8E155035890047D641 /* MonthScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MonthScheduleViewController.m; path = Classes/MonthScheduleViewController.m; sourceTree = "<group>"; };
+		5C007C8F155035890047D641 /* MonthScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MonthScheduleViewController.xib; path = Classes/MonthScheduleViewController.xib; sourceTree = "<group>"; };
+		5C007C90155035890047D641 /* quartzView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = quartzView.h; path = Classes/quartzView.h; sourceTree = "<group>"; };
+		5C007C91155035890047D641 /* quartzView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = quartzView.m; path = Classes/quartzView.m; sourceTree = "<group>"; };
+		5C007C92155035890047D641 /* ScheduleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewCell.h; path = Classes/ScheduleTableViewCell.h; sourceTree = "<group>"; };
+		5C007C931550358A0047D641 /* ScheduleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScheduleTableViewCell.m; path = Classes/ScheduleTableViewCell.m; sourceTree = "<group>"; };
+		5C007C941550358A0047D641 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScheduleTableViewCell.xib; path = Classes/ScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		5C007C951550358A0047D641 /* ScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
+		5C007C961550358A0047D641 /* ScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
+		5C007C971550358A0047D641 /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
 		E10A165C15360EC900700A0E /* WTDockButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
 		E10A165D15360EC900700A0E /* WTDockButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WTDockButton.m; path = Classes/WTDockButton.m; sourceTree = "<group>"; };
 		E10A1668153617E200700A0E /* dock_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_bg.png; sourceTree = "<group>"; };
@@ -344,9 +378,6 @@
 		E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelOutlineTableViewCell.xib; path = Classes/ChannelOutlineTableViewCell.xib; sourceTree = "<group>"; };
 		E1A83710154497230086F62E /* paper_blue_seperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_blue_seperator.png; sourceTree = "<group>"; };
 		E1A83711154497250086F62E /* paper_blue_seperator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_blue_seperator@2x.png"; sourceTree = "<group>"; };
-		E1AE08841531826F006964B8 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
-		E1AE08851531826F006964B8 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
-		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
 		E1B0BC411507D27B0085D9AB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		E1B0BC441507D27D0085D9AB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		E1B6099D154C4D7C00F659F7 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
@@ -538,6 +569,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C007C7D155034A70047D641 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				5C007C7E155034B90047D641 /* DaySchedule.jpg */,
+			);
+			name = schedule;
+			sourceTree = "<group>";
+		};
 		E10A16631536171700700A0E /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +786,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C007C7D155034A70047D641 /* schedule */,
 				E1D387A3154DC801006325E8 /* channel */,
 				E174A97D153DB2C600E7165A /* login */,
 				E1DF6F901537610F001C60EA /* paper */,
@@ -980,9 +1020,27 @@
 		E1DF6FF71539B8C8001C60EA /* schedule */ = {
 			isa = PBXGroup;
 			children = (
-				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
-				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
-				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
+				5C007C83155035890047D641 /* DayScheduleView.h */,
+				5C007C84155035890047D641 /* DayScheduleView.m */,
+				5C007C85155035890047D641 /* DayScheduleViewController.h */,
+				5C007C86155035890047D641 /* DayScheduleViewController.m */,
+				5C007C87155035890047D641 /* DayScheduleViewController.xib */,
+				5C007C88155035890047D641 /* ListScheduleViewController.h */,
+				5C007C89155035890047D641 /* ListScheduleViewController.m */,
+				5C007C8A155035890047D641 /* ListScheduleViewController.xib */,
+				5C007C8B155035890047D641 /* MonthScheduleView.h */,
+				5C007C8C155035890047D641 /* MonthScheduleView.m */,
+				5C007C8D155035890047D641 /* MonthScheduleViewController.h */,
+				5C007C8E155035890047D641 /* MonthScheduleViewController.m */,
+				5C007C8F155035890047D641 /* MonthScheduleViewController.xib */,
+				5C007C90155035890047D641 /* quartzView.h */,
+				5C007C91155035890047D641 /* quartzView.m */,
+				5C007C92155035890047D641 /* ScheduleTableViewCell.h */,
+				5C007C931550358A0047D641 /* ScheduleTableViewCell.m */,
+				5C007C941550358A0047D641 /* ScheduleTableViewCell.xib */,
+				5C007C951550358A0047D641 /* ScheduleViewController.h */,
+				5C007C961550358A0047D641 /* ScheduleViewController.m */,
+				5C007C971550358A0047D641 /* ScheduleViewController.xib */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -1156,7 +1214,6 @@
 				E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */,
 				E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */,
 				E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */,
-				E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */,
 				E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */,
 				E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */,
 				E14983141534647D00734341 /* dock_btn_mail_hl@2x.png in Resources */,
@@ -1284,6 +1341,12 @@
 				E1D387B9154DD341006325E8 /* channel_btn_like_hl@2x.png in Resources */,
 				E1D387BA154DD341006325E8 /* channel_btn_like.png in Resources */,
 				E1D387BB154DD341006325E8 /* channel_btn_like@2x.png in Resources */,
+				5C007C7F155034B90047D641 /* DaySchedule.jpg in Resources */,
+				5C007C9B155035F00047D641 /* DayScheduleViewController.xib in Resources */,
+				5C007C9D155035F80047D641 /* ListScheduleViewController.xib in Resources */,
+				5C007CA0155036040047D641 /* MonthScheduleViewController.xib in Resources */,
+				5C007CA3155036100047D641 /* ScheduleTableViewCell.xib in Resources */,
+				5C007CA5155036180047D641 /* ScheduleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,7 +1364,6 @@
 				E1C877B515063FCD00592954 /* MetroViewController.m in Sources */,
 				E191772D15078188009FB941 /* MainViewController.m in Sources */,
 				E11965491507B2F200AE32E0 /* RootView.m in Sources */,
-				E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */,
 				E149830B15343BCB00734341 /* WTButton.m in Sources */,
 				E149831A15346C2A00734341 /* UIView+Addition.m in Sources */,
 				E10A165E15360ED400700A0E /* WTDockButton.m in Sources */,
@@ -1363,6 +1425,14 @@
 				E1D3877C154D457E006325E8 /* FavoriteViewController.m in Sources */,
 				E1D38782154D458D006325E8 /* NewsViewController.m in Sources */,
 				E1D3879F154DA656006325E8 /* MetroInfoReader.m in Sources */,
+				5C007C99155035E40047D641 /* DayScheduleView.m in Sources */,
+				5C007C9A155035E70047D641 /* DayScheduleViewController.m in Sources */,
+				5C007C9C155035F50047D641 /* ListScheduleViewController.m in Sources */,
+				5C007C9E155035FC0047D641 /* MonthScheduleView.m in Sources */,
+				5C007C9F155036000047D641 /* MonthScheduleViewController.m in Sources */,
+				5C007CA1155036090047D641 /* quartzView.m in Sources */,
+				5C007CA21550360D0047D641 /* ScheduleTableViewCell.m in Sources */,
+				5C007CA4155036140047D641 /* ScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

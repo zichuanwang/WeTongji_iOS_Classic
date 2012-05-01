@@ -12,7 +12,6 @@
 #import "ChannelViewController.h"
 #import "FavoriteViewController.h"
 #import "NewsViewController.h"
-#import "ScheduleViewController.h"
 #import "MetroInfoReader.h"
 
 #define BUTTON_WIDTH        70
