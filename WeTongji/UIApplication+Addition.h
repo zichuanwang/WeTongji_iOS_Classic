@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define kAnimationDuration 0.25
-#define kToastBottomVerticalPosition 400.0f
+#define DefaultToastVerticalPosition 420.0f
 
 @interface UIApplication (Addition)
 
@@ -17,9 +16,8 @@
 
 - (void)presentModalViewController:(UIViewController *)vc;
 - (void)dismissModalViewController;
-- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y;
-- (void)presentToastwithShortInterval:(NSString *)text withVerticalPos:(CGFloat)y;
-- (void)presentErrorToast:(NSString *)text withVerticalPos:(CGFloat)y;
++ (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y;
++ (void)presentAlertToast:(NSString *)text withVerticalPos:(CGFloat)y;
 + (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title;
 
 @end

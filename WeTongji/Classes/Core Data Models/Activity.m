@@ -2,11 +2,12 @@
 //  Activity.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-4-29.
+//  Created by 紫川 王 on 12-5-2.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "Activity.h"
+#import "User.h"
 
 
 @implementation Activity
@@ -17,6 +18,7 @@
 @dynamic can_follow;
 @dynamic can_hot;
 @dynamic can_like;
+@dynamic channel_id;
 @dynamic end_time;
 @dynamic follow_count;
 @dynamic hot_count;
@@ -24,8 +26,9 @@
 @dynamic location;
 @dynamic organizer;
 @dynamic status;
-@dynamic title;
-@dynamic channel_id;
 @dynamic sub_organizer;
+@dynamic title;
+@dynamic favoredBy;
+@dynamic scheduledBy;
 
 @end

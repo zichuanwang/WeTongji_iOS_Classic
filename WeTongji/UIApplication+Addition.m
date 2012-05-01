@@ -14,11 +14,14 @@ static UIViewController *_modalViewController;
 static UIView *_backView;
 static BOOL _isShowingToast;
 
-#define TOAST_VIEW_WIDTH    205.0f
-#define TOAST_VIEW_HEIGHT   32.0f
+#define TOAST_VIEW_WIDTH    180.0f
+#define TOAST_VIEW_HEIGHT   50.0f
+#define LONG_TOAST_VIEW_WIDTH    210.0f
 
 #define SCREEN_WIDTH    320.0f
 #define SCREEN_HEIGHT   480.0f
+
+#define DefaultModelViewControllerAnimationDuration 0.25f
 
 @implementation UIApplication (Addition)
 
@@ -52,7 +55,7 @@ static BOOL _isShowingToast;
 	[[self rootView] addSubview:_backView];
 	[[self rootView] addSubview:vc.view];
 	
-    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:DefaultModelViewControllerAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect frame = vc.view.frame;
         frame.origin.y = 0;
         vc.view.frame = frame;
@@ -61,7 +64,7 @@ static BOOL _isShowingToast;
 
 - (void)dismissModalViewController
 {
-    [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [UIView animateWithDuration:DefaultModelViewControllerAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         _backView.alpha = 0.0;
         CGRect frame = _modalViewController.view.frame;
         frame.origin.y = SCREEN_HEIGHT;
@@ -77,22 +80,25 @@ static BOOL _isShowingToast;
     }];
 }
 
-- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y andTime:(float)time isError:(BOOL)isError
+- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y andTime:(float)time isAlert:(BOOL)isAlert
 {
     if(_isShowingToast)
         return;
     _isShowingToast = YES;
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - TOAST_VIEW_WIDTH) / 2, y, TOAST_VIEW_WIDTH, TOAST_VIEW_HEIGHT)];
-    if(isError)
-        bgImageView.image = [UIImage imageNamed:@"toast_bg_red@2x.png"];
+    UIImage *bgImage = nil;
+    if(isAlert)
+        bgImage = [UIImage imageNamed:@"toast_alert_bg.png"];
     else
-        bgImageView.image = [UIImage imageNamed:@"toast_bg_green.png"];
+        bgImage = [UIImage imageNamed:@"toast_normal_bg.png"];
     
-    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, TOAST_VIEW_WIDTH - 8.0f, TOAST_VIEW_HEIGHT)];
-    labelView.center = CGPointMake(TOAST_VIEW_WIDTH / 2 + 2.0f, TOAST_VIEW_HEIGHT / 2 - 3.0f);
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+    bgImageView.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, y);
+    
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, TOAST_VIEW_WIDTH, TOAST_VIEW_HEIGHT)];
+    labelView.center = CGPointMake(bgImageView.frame.size.width / 2, bgImageView.frame.size.height / 2);
+    
     labelView.font = [UIFont boldSystemFontOfSize:14.0f];
-    labelView.minimumFontSize = 10.0f;
-    labelView.adjustsFontSizeToFitWidth = YES;
+    labelView.minimumFontSize = 14.0f;
     labelView.text = text;
     labelView.backgroundColor = [UIColor clearColor];
     labelView.textColor = [UIColor whiteColor];
@@ -119,16 +125,12 @@ static BOOL _isShowingToast;
     }];
 }
 
-- (void)presentErrorToast:(NSString *)text withVerticalPos:(CGFloat)y {
-    [self presentToast:text withVerticalPos:y andTime:1.2f isError:YES];
++ (void)presentAlertToast:(NSString *)text withVerticalPos:(CGFloat)y {
+    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:1.2f isAlert:YES];
 }
 
-- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y {
-    [self presentToast:text withVerticalPos:y andTime:1.2f isError:NO];
-}
-
-- (void)presentToastwithShortInterval:(NSString *)text withVerticalPos:(CGFloat)y {
-       [self presentToast:text withVerticalPos:y andTime:0.5f isError:NO];
++ (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y {
+    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:1.2f isAlert:NO];
 }
 
 + (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title {

@@ -9,6 +9,7 @@
 #import "ChannelDetailViewController.h"
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "UIApplication+Addition.h"
 
 @interface ChannelDetailViewController ()
 
@@ -129,6 +130,7 @@
 
 - (IBAction)didClickLikeButton:(UIButton *)sender {
     [self.likeButton setSelected:!sender.selected];
+    [UIApplication presentToast:@"请先登录微同济。" withVerticalPos:DefaultToastVerticalPosition];
 }
 - (IBAction)didClickScheduleButton:(UIButton *)sender {
     [self.scheduleButton setSelected:!sender.selected];

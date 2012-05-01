@@ -17,6 +17,8 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sub_organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favoredBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favor" inverseEntity="User" syncable="YES"/>
+        <relationship name="scheduledBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="schedule" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES">
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,12 +35,14 @@
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_ud" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="favoredBy" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="schedule" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="scheduledBy" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="285"/>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="315"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Student" positionX="160" positionY="192" width="128" height="45"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
         <element name="News" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Student" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
