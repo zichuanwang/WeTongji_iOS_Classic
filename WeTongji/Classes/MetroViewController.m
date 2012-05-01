@@ -14,6 +14,7 @@
 #import "NewsViewController.h"
 #import "ScheduleViewController.h"
 #import "MetroInfoReader.h"
+#import "UIApplication+Addition.h"
 
 #define BUTTON_WIDTH        70
 #define BUTTON_HEIGHT       70
@@ -111,6 +112,8 @@
             button = [[WTDockButton alloc] initWithImage:[UIImage imageNamed:info.buttonImageFileName] highlightedImage:[UIImage imageNamed:info.buttonHighlightImageFileName] title:info.buttonTitle];
             if(info.nibFileName)
                 [button addTarget:self action:@selector(didClickMetroButton:) forControlEvents:UIControlEventTouchUpInside];
+            else if(info.alertMessage)
+                [button addTarget:self action:@selector(didTriggerAlertMessage:) forControlEvents:UIControlEventTouchUpInside];
         }
         else {
             button = [[WTDockButton alloc] initWithImage:nil highlightedImage:nil title:@""];
@@ -239,6 +242,14 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentModalViewController:nav animated:YES];
     }
+}
+
+- (void)didTriggerAlertMessage:(UIButton *)sender {
+    NSUInteger index = [self.buttonHeap indexOfObject:sender];
+    MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
+    NSLog(@"message:%@", info.alertMessage);
+    [UIApplication showAlertMessage:info.alertMessage withTitle:@"即将推出"];
+
 }
 
 @end

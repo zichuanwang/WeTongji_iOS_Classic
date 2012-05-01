@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSString *buttonTitle;
 @property (nonatomic, strong) NSString *buttonImageFileName;
 @property (nonatomic, strong) NSString *buttonHighlightImageFileName;
+@property (nonatomic, strong) NSString *alertMessage;
 
 @end

@@ -131,5 +131,13 @@ static BOOL _isShowingToast;
        [self presentToast:text withVerticalPos:y andTime:0.5f isError:NO];
 }
 
++ (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"关闭"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 @end

@@ -39,12 +39,16 @@
 			<string>dock_btn_circles</string>
 			<key>kButtonTitle</key>
 			<string>圈子</string>
+			<key>kAlertMessage</key>
+			<string>想要轻松结识同专业、同社团的朋友吗？想要即时了解大牛们的活动安排吗？圈子功能，即将推出。</string>
 		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
 			<string>dock_btn_mail</string>
 			<key>kButtonTitle</key>
 			<string>邮箱</string>
+			<key>kAlertMessage</key>
+			<string>同济学子的专属邮箱@tongji.edu.cn即将与微同济无缝整合，敬请期待。</string>
 		</dict>
 	</array>
 </dict>

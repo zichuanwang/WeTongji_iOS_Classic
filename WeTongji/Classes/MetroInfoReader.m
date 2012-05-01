@@ -10,6 +10,7 @@
 #define kButtonTitle            @"kButtonTitle"
 #define kNibFileName            @"kNibFileName"
 #define kButtonImageFileName    @"kButtonImageFileName"
+#define kAlertMessage           @"kAlertMessage"
 
 #import "MetroInfoReader.h"
 
@@ -46,6 +47,7 @@
         info.buttonHighlightImageFileName = [NSString stringWithFormat:@"%@_hl.png", imageFileName];
         info.buttonTitle = [dict objectForKey:kButtonTitle];
         info.nibFileName = [dict objectForKey:kNibFileName];
+        info.alertMessage = [dict objectForKey:kAlertMessage];
         [result addObject:info];
     }
     return result;
@@ -59,5 +61,6 @@
 @synthesize nibFileName = _nibFileName;
 @synthesize buttonImageFileName = _buttonImageFileName;
 @synthesize buttonHighlightImageFileName = _buttonHighlightImageFileName;
+@synthesize alertMessage = _alertMessage;
 
 @end

@@ -20,4 +20,6 @@
 - (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y;
 - (void)presentToastwithShortInterval:(NSString *)text withVerticalPos:(CGFloat)y;
 - (void)presentErrorToast:(NSString *)text withVerticalPos:(CGFloat)y;
++ (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title;
+
 @end
