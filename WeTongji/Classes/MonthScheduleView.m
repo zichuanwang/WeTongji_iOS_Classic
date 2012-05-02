@@ -322,9 +322,9 @@ const int	weekFontSize=12;
 	self.transform=CGAffineTransformMakeTranslation(posX,0);
 	
 	
-	float height;
-	int row_Count=([self getDayCountOfaMonth:currentMonthDate]+[self getMonthWeekday:currentMonthDate]-2)/7+1;
-	height=row_Count*itemHeight+headHeight;
+	//float height;
+	//int row_Count=([self getDayCountOfaMonth:currentMonthDate]+[self getMonthWeekday:currentMonthDate]-2)/7+1;
+	//height=row_Count*itemHeight+headHeight;
 	//self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
 	self.hidden=NO;
 	[UIView beginAnimations:nil	context:nil];
@@ -463,11 +463,14 @@ const int	weekFontSize=12;
 	int x;
 	int y;
 	int width=self.frame.size.width;
-	int weekday=[self getMonthWeekday:currentMonthDate];
+	int firstMonthday=[self getMonthWeekday:currentMonthDate];
+    if (firstMonthday == 7) {
+        firstMonthday = 0;
+    }
 	int monthDayCount=[self getDayCountOfaMonth:currentMonthDate];
-	x=touchPoint.x*7/width;
-	y=(touchPoint.y-headHeight)/itemHeight;
-	int monthday=x+(y+1)*7-weekday+1;
+	x=touchPoint.x*7/width+1;
+	y=(touchPoint.y-headHeight)/itemHeight+1;
+    int monthday = (y-1)*7+x - firstMonthday;
 	if(monthday>0 && monthday<monthDayCount+1)
 	{
 		currentSelectDate.year=currentMonthDate.year;

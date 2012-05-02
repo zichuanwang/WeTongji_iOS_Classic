@@ -112,7 +112,7 @@
         
         NSInteger length = ([endHour intValue]*60+[endMin intValue]) - ([startHour intValue]*60+[startMin intValue]);
         length = (CGFloat)length*43/60;
-        CGFloat startPosition =  17.0f + ([startHour intValue]*60 + [startMin intValue])*43/60;
+        CGFloat startPosition =  13.0f + ([startHour intValue]*60 + [startMin intValue])*43/60;
         
         addRoundedRectToPath(context, CGRectMake(kCELL_X, startPosition, kCELLWIDTH, length), 4.0f, 4.0f);
         

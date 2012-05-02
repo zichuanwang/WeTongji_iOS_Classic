@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class DayScheduleView;
+
 @interface DayScheduleViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableArray *datesIndexArray;
-@property (nonatomic, strong) NSMutableDictionary *dateSourceDictionary;
-
-//@property (nonatomic, strong) IBOutlet UILabel *currentDateLabel;
-//- (IBAction)didClickPreviousDay:(id)sender;
-//- (IBAction)didClickNextDay:(id)sender;
+@property (nonatomic, strong) IBOutlet DayScheduleView *dayScheduleView;
 
 - (void)moveToToday;
 
