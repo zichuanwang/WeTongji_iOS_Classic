@@ -22,12 +22,17 @@
     return date;
 }
 
-+ (NSString *)monthDayWeekTimeConvertFromDate:(NSDate *)date {
++ (NSString *)yearMonthDayTimeConvertFromDate:(NSDate *)date {
     NSDateFormatter *form = [[NSDateFormatter alloc] init];
-    [form setDateFormat:@"MM月dd日"];
+    [form setDateFormat:@"yyyy年MM月dd日"];
     NSString *result = [form stringFromDate:date];
     NSString *month = [result substringWithRange:NSMakeRange(0, 2)];
     result = [result stringByReplacingCharactersInRange:NSMakeRange(0, 2) withString:[NSString stringWithFormat:@"%d", month.intValue]];
+    return result;
+}
+
++ (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date {
+    NSString *result = [NSString yearMonthDayTimeConvertFromDate:date];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
@@ -76,7 +81,7 @@
 }
 
 + (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end {
-    NSString *timeStr = [NSString monthDayWeekTimeConvertFromDate:begin];
+    NSString *timeStr = [NSString yearMonthDayWeekTimeConvertFromDate:begin];
     timeStr = [NSString stringWithFormat:@"%@ - %@", timeStr, [NSString timeConvertFromDate:end]];
     return timeStr;
 }

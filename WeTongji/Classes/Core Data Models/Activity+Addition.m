@@ -26,7 +26,7 @@
     
     result.activity_id = activityID;
     result.title = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
-    result.activity_description = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
+    result.content = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
     result.location = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];
@@ -37,7 +37,6 @@
     result.like_count = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
     result.hot_count = [NSNumber numberWithInt:[[dict objectForKey:@"Hot"] intValue]];
     result.follow_count = [NSNumber numberWithInt:[[dict objectForKey:@"Follow"] intValue]];
-    NSLog(@"channel_id:%d", result.channel_id.intValue);
     return result;
 }
 

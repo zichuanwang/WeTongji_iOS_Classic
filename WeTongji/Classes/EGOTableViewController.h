@@ -9,11 +9,15 @@
 #import "CoreDataTableViewController.h"
 #import "EGORefreshTableHeaderView.h"
 
+typedef enum {
+    EGOTableViewFooterEmpty,
+    EGOTableViewFooterEmptyWithHint,
+    EGOTableViewFooterLoadMore,
+} EGORefreshTableViewFooterType;
+
 @interface EGOTableViewController : CoreDataTableViewController<EGORefreshTableHeaderDelegate> {
     BOOL _reloadingFlag;
     BOOL _loadingFlag;
-    
-    UIActivityIndicatorView* _activityView;
 }
 
 @property (nonatomic, strong) EGORefreshTableHeaderView *egoHeaderView;
@@ -24,6 +28,8 @@
 - (void)hideLoadMoreDataButton;
 - (void)startLoading;
 - (void)stopLoading;
+- (void)configureTableViewFooterWithType:(EGORefreshTableViewFooterType)type;
+- (void)configureTableViewHeader;
 
 //to override
 - (void)loadMoreData;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
+#import "NewsOutlineTableViewController.h"
 
-@interface NewsViewController : WTNavigationViewController
+@interface NewsViewController : WTNavigationViewController <NewsOutlineTableViewControllerDelegate>
 
 @end

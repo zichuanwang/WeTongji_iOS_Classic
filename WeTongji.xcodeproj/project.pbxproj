@@ -107,6 +107,16 @@
 		E1A8370F1544964D0086F62E /* ChannelOutlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */; };
 		E1A83712154497260086F62E /* paper_blue_seperator.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A83710154497230086F62E /* paper_blue_seperator.png */; };
 		E1A83713154497260086F62E /* paper_blue_seperator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A83711154497250086F62E /* paper_blue_seperator@2x.png */; };
+		E1AD1B8C155196C4003B7052 /* NewsOutlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B8A155196C4003B7052 /* NewsOutlineTableViewController.m */; };
+		E1AD1B8D155196C4003B7052 /* NewsOutlineTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AD1B8B155196C4003B7052 /* NewsOutlineTableViewController.xib */; };
+		E1AD1B911551A27A003B7052 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B901551A27A003B7052 /* Student.m */; };
+		E1AD1B941551A27B003B7052 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B931551A27B003B7052 /* News.m */; };
+		E1AD1B971551A27C003B7052 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B961551A27C003B7052 /* User.m */; };
+		E1AD1B9A1551A27C003B7052 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B991551A27C003B7052 /* Channel.m */; };
+		E1AD1B9D1551A27C003B7052 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B9C1551A27C003B7052 /* Activity.m */; };
+		E1AD1BA01551A305003B7052 /* News+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B9F1551A305003B7052 /* News+Addition.m */; };
+		E1AD1BA31551A4ED003B7052 /* NewsOutlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1BA21551A4ED003B7052 /* NewsOutlineTableViewCell.m */; };
+		E1AD1BA51551A509003B7052 /* NewsOutlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AD1BA41551A509003B7052 /* NewsOutlineTableViewCell.xib */; };
 		E1AE088715318270006964B8 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AE08851531826F006964B8 /* ScheduleViewController.m */; };
 		E1AE088815318270006964B8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE08861531826F006964B8 /* ScheduleViewController.xib */; };
 		E1B0BC421507D27B0085D9AB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC411507D27B0085D9AB /* Icon.png */; };
@@ -152,8 +162,6 @@
 		E1D5504B15509D3800068824 /* toast_long_normal_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D5504315509D3800068824 /* toast_long_normal_bg@2x.png */; };
 		E1D5504C15509D3800068824 /* toast_normal_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D5504415509D3800068824 /* toast_normal_bg.png */; };
 		E1D5504D15509D3800068824 /* toast_normal_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D5504515509D3800068824 /* toast_normal_bg@2x.png */; };
-		E1D550501550AACC00068824 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D5504F1550AACC00068824 /* User.m */; };
-		E1D550531550AACD00068824 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D550521550AACD00068824 /* Activity.m */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
 		E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */; };
 		E1DF6F9515376124001C60EA /* paper_footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6F9215376124001C60EA /* paper_footer@2x.png */; };
@@ -200,8 +208,6 @@
 		E1E4839D1548977100814FA4 /* paper_wide_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E483971548977100814FA4 /* paper_wide_main@2x.png */; };
 		E1E483A01548988700814FA4 /* paper_wide_single_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E4839E1548988700814FA4 /* paper_wide_single_line.png */; };
 		E1E483A11548988700814FA4 /* paper_wide_single_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E4839F1548988700814FA4 /* paper_wide_single_line@2x.png */; };
-		E1E483AA1549200F00814FA4 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483A91549200F00814FA4 /* Channel.m */; };
-		E1E483AD1549201100814FA4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483AC1549201100814FA4 /* Student.m */; };
 		E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483AF1549207700814FA4 /* Activity+Addition.m */; };
 		E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */; };
 		E1E483B5154931C500814FA4 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */; };
@@ -352,6 +358,24 @@
 		E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelOutlineTableViewCell.xib; path = Classes/ChannelOutlineTableViewCell.xib; sourceTree = "<group>"; };
 		E1A83710154497230086F62E /* paper_blue_seperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_blue_seperator.png; sourceTree = "<group>"; };
 		E1A83711154497250086F62E /* paper_blue_seperator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_blue_seperator@2x.png"; sourceTree = "<group>"; };
+		E1AD1B89155196C4003B7052 /* NewsOutlineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsOutlineTableViewController.h; path = Classes/NewsOutlineTableViewController.h; sourceTree = "<group>"; };
+		E1AD1B8A155196C4003B7052 /* NewsOutlineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsOutlineTableViewController.m; path = Classes/NewsOutlineTableViewController.m; sourceTree = "<group>"; };
+		E1AD1B8B155196C4003B7052 /* NewsOutlineTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsOutlineTableViewController.xib; path = Classes/NewsOutlineTableViewController.xib; sourceTree = "<group>"; };
+		E1AD1B8F1551A27A003B7052 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E1AD1B901551A27A003B7052 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E1AD1B921551A27B003B7052 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		E1AD1B931551A27B003B7052 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		E1AD1B951551A27C003B7052 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E1AD1B961551A27C003B7052 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1AD1B981551A27C003B7052 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		E1AD1B991551A27C003B7052 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		E1AD1B9B1551A27C003B7052 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E1AD1B9C1551A27C003B7052 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E1AD1B9E1551A304003B7052 /* News+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "News+Addition.h"; sourceTree = "<group>"; };
+		E1AD1B9F1551A305003B7052 /* News+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "News+Addition.m"; sourceTree = "<group>"; };
+		E1AD1BA11551A4ED003B7052 /* NewsOutlineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsOutlineTableViewCell.h; path = Classes/NewsOutlineTableViewCell.h; sourceTree = "<group>"; };
+		E1AD1BA21551A4ED003B7052 /* NewsOutlineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsOutlineTableViewCell.m; path = Classes/NewsOutlineTableViewCell.m; sourceTree = "<group>"; };
+		E1AD1BA41551A509003B7052 /* NewsOutlineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsOutlineTableViewCell.xib; path = Classes/NewsOutlineTableViewCell.xib; sourceTree = "<group>"; };
 		E1AE08841531826F006964B8 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = Classes/ScheduleViewController.h; sourceTree = "<group>"; };
 		E1AE08851531826F006964B8 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = Classes/ScheduleViewController.m; sourceTree = "<group>"; };
 		E1AE08861531826F006964B8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleViewController.xib; path = Classes/ScheduleViewController.xib; sourceTree = "<group>"; };
@@ -409,10 +433,6 @@
 		E1D5504315509D3800068824 /* toast_long_normal_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_long_normal_bg@2x.png"; sourceTree = "<group>"; };
 		E1D5504415509D3800068824 /* toast_normal_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_normal_bg.png; sourceTree = "<group>"; };
 		E1D5504515509D3800068824 /* toast_normal_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_normal_bg@2x.png"; sourceTree = "<group>"; };
-		E1D5504E1550AACC00068824 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E1D5504F1550AACC00068824 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		E1D550511550AACD00068824 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E1D550521550AACD00068824 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
 		E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_cover@2x.png"; sourceTree = "<group>"; };
 		E1DF6F9215376124001C60EA /* paper_footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_footer@2x.png"; sourceTree = "<group>"; };
@@ -472,10 +492,6 @@
 		E1E483971548977100814FA4 /* paper_wide_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_wide_main@2x.png"; sourceTree = "<group>"; };
 		E1E4839E1548988700814FA4 /* paper_wide_single_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_wide_single_line.png; sourceTree = "<group>"; };
 		E1E4839F1548988700814FA4 /* paper_wide_single_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_wide_single_line@2x.png"; sourceTree = "<group>"; };
-		E1E483A81549200F00814FA4 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
-		E1E483A91549200F00814FA4 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
-		E1E483AB1549201100814FA4 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		E1E483AC1549201100814FA4 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E1E483AE1549207700814FA4 /* Activity+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+Addition.h"; sourceTree = "<group>"; };
 		E1E483AF1549207700814FA4 /* Activity+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+Addition.m"; sourceTree = "<group>"; };
 		E1E483B1154931AA00814FA4 /* EmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptyTableViewCell.h; path = Classes/EmptyTableViewCell.h; sourceTree = "<group>"; };
@@ -676,6 +692,12 @@
 				E1D3877F154D458D006325E8 /* NewsViewController.h */,
 				E1D38780154D458D006325E8 /* NewsViewController.m */,
 				E1D38781154D458D006325E8 /* NewsViewController.xib */,
+				E1AD1B89155196C4003B7052 /* NewsOutlineTableViewController.h */,
+				E1AD1B8A155196C4003B7052 /* NewsOutlineTableViewController.m */,
+				E1AD1B8B155196C4003B7052 /* NewsOutlineTableViewController.xib */,
+				E1AD1BA11551A4ED003B7052 /* NewsOutlineTableViewCell.h */,
+				E1AD1BA21551A4ED003B7052 /* NewsOutlineTableViewCell.m */,
+				E1AD1BA41551A509003B7052 /* NewsOutlineTableViewCell.xib */,
 			);
 			name = news;
 			sourceTree = "<group>";
@@ -1032,14 +1054,16 @@
 		E1E4837915487F1900814FA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1E483A81549200F00814FA4 /* Channel.h */,
-				E1E483A91549200F00814FA4 /* Channel.m */,
-				E1E483AB1549201100814FA4 /* Student.h */,
-				E1E483AC1549201100814FA4 /* Student.m */,
-				E1D5504E1550AACC00068824 /* User.h */,
-				E1D5504F1550AACC00068824 /* User.m */,
-				E1D550511550AACD00068824 /* Activity.h */,
-				E1D550521550AACD00068824 /* Activity.m */,
+				E1AD1B8F1551A27A003B7052 /* Student.h */,
+				E1AD1B901551A27A003B7052 /* Student.m */,
+				E1AD1B951551A27C003B7052 /* User.h */,
+				E1AD1B961551A27C003B7052 /* User.m */,
+				E1AD1B981551A27C003B7052 /* Channel.h */,
+				E1AD1B991551A27C003B7052 /* Channel.m */,
+				E1AD1B9B1551A27C003B7052 /* Activity.h */,
+				E1AD1B9C1551A27C003B7052 /* Activity.m */,
+				E1AD1B921551A27B003B7052 /* News.h */,
+				E1AD1B931551A27B003B7052 /* News.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1051,6 +1075,8 @@
 				E1E4837C15487F4500814FA4 /* Channel+Addition.m */,
 				E1E483AE1549207700814FA4 /* Activity+Addition.h */,
 				E1E483AF1549207700814FA4 /* Activity+Addition.m */,
+				E1AD1B9E1551A304003B7052 /* News+Addition.h */,
+				E1AD1B9F1551A305003B7052 /* News+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1324,6 +1350,8 @@
 				E1D5504B15509D3800068824 /* toast_long_normal_bg@2x.png in Resources */,
 				E1D5504C15509D3800068824 /* toast_normal_bg.png in Resources */,
 				E1D5504D15509D3800068824 /* toast_normal_bg@2x.png in Resources */,
+				E1AD1B8D155196C4003B7052 /* NewsOutlineTableViewController.xib in Resources */,
+				E1AD1BA51551A509003B7052 /* NewsOutlineTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1390,8 +1418,6 @@
 				E1E4838A154884BF00814FA4 /* CoreDataViewController.m in Sources */,
 				E1E4838B154884C100814FA4 /* CoreDataTableViewController.m in Sources */,
 				E1E4838F1548851200814FA4 /* ChannelDetailViewController.m in Sources */,
-				E1E483AA1549200F00814FA4 /* Channel.m in Sources */,
-				E1E483AD1549201100814FA4 /* Student.m in Sources */,
 				E1E483B01549207800814FA4 /* Activity+Addition.m in Sources */,
 				E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */,
 				E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */,
@@ -1401,8 +1427,14 @@
 				E1D3877C154D457E006325E8 /* FavoriteViewController.m in Sources */,
 				E1D38782154D458D006325E8 /* NewsViewController.m in Sources */,
 				E1D3879F154DA656006325E8 /* MetroInfoReader.m in Sources */,
-				E1D550501550AACC00068824 /* User.m in Sources */,
-				E1D550531550AACD00068824 /* Activity.m in Sources */,
+				E1AD1B8C155196C4003B7052 /* NewsOutlineTableViewController.m in Sources */,
+				E1AD1B911551A27A003B7052 /* Student.m in Sources */,
+				E1AD1B941551A27B003B7052 /* News.m in Sources */,
+				E1AD1B971551A27C003B7052 /* User.m in Sources */,
+				E1AD1B9A1551A27C003B7052 /* Channel.m in Sources */,
+				E1AD1B9D1551A27C003B7052 /* Activity.m in Sources */,
+				E1AD1BA01551A305003B7052 /* News+Addition.m in Sources */,
+				E1AD1BA31551A4ED003B7052 /* NewsOutlineTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

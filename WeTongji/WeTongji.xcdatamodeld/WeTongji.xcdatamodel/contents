@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Activity" representedClassName="Activity" syncable="YES">
-        <attribute name="activity_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="activity_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="can_follow" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="can_hot" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="can_like" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="channel_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="hot_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -21,20 +22,33 @@
         <relationship name="scheduledBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="schedule" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES">
-        <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="channel_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="channel_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="News" syncable="YES">
+    <entity name="News" representedClassName="News" syncable="YES">
+        <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="news_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Student" representedClassName="Student" parentEntity="User" syncable="YES"/>
+    <entity name="Student" representedClassName="Student" parentEntity="User" syncable="YES">
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="student_number" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birth_place" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email_address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="user_ud" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weibo_account" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="favor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="favoredBy" inverseEntity="Activity" syncable="YES"/>
         <relationship name="schedule" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="scheduledBy" inverseEntity="Activity" syncable="YES"/>
     </entity>

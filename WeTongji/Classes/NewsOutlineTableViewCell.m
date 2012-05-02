@@ -1,19 +1,19 @@
 //
-//  ChannelOutlineTableViewCell.m
+//  NewsOutlineTableViewCell.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-4-23.
-//  Copyright (c) 2012年 Tongji Apple Club. All rights reserved.
+//  Created by 紫川 王 on 12-5-3.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChannelOutlineTableViewCell.h"
+#import "NewsOutlineTableViewCell.h"
 
-@implementation ChannelOutlineTableViewCell
+@implementation NewsOutlineTableViewCell
 
 @synthesize titleLabel = _titleLabel;
+@synthesize categoryLabel = _categoryLabel;
 @synthesize timeLabel = _timeLabel;
-@synthesize locationLabel = _locationLabel;
-@synthesize likeCountLabel = _likeCountLabel;
+@synthesize avatarImageView = _avatarImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,6 +30,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end

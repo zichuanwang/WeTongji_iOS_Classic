@@ -28,8 +28,7 @@
     
     result.channel_id = channelID;
     result.title = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
-    result.channel_description = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
-    result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"image"]];
+    result.content = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
     //result.name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"screen_name"]];
     
     return result;

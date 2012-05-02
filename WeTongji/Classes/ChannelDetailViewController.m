@@ -95,7 +95,7 @@
 
 - (void)configureIBOutlets {
     self.titleLabel.text = self.activity.title;
-    self.descriptionLabel.text = self.activity.activity_description;
+    self.descriptionLabel.text = self.activity.content;
     [self.descriptionLabel sizeToFit];
     CGRect rect = self.descriptionLabel.frame;
     self.descriptionLabel.frame = rect;

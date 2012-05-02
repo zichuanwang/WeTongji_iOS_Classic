@@ -8,12 +8,17 @@
 
 #import "NewsViewController.h"
 #import "WTClient.h"
+#import "NewsOutlineTableViewController.h"
 
 @interface NewsViewController ()
+
+@property (nonatomic, strong) NewsOutlineTableViewController *outlineTableViewController;
 
 @end
 
 @implementation NewsViewController
+
+@synthesize outlineTableViewController = _outlineTableViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
-    [self loadMoreData];
+    [self configureOutlineTableView];
 }
 
 - (void)viewDidUnload
@@ -50,6 +55,13 @@
     self.navigationItem.leftBarButtonItem = finishButton;
 }
 
+- (void)configureOutlineTableView {
+    NewsOutlineTableViewController *vc = [[NewsOutlineTableViewController alloc] init];
+    [self.view insertSubview:vc.view belowSubview:self.navBarShadowImageView];
+    self.outlineTableViewController = vc;
+    vc.delegate = self;
+}
+
 #pragma mark - 
 #pragma mark IBActions 
 
@@ -57,15 +69,11 @@
     [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
-- (void)loadMoreData 
-{ 
-    WTClient *client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client) {
-        if(!client.hasError) {
-            
-        }
-    }];
-    [client getNewsList:1];
+#pragma mark - 
+#pragma mark NewsOutlineTableViewController delegate
+
+- (void)newsOutlineTableViewDidSelectNews:(News *)news {
+    
 }
 
 @end

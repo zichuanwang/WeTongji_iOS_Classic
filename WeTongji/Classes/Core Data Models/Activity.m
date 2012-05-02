@@ -2,8 +2,8 @@
 //  Activity.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-2.
-//  Copyright (c) 2012年 Tongji Apple Club. All rights reserved.
+//  Created by 紫川 王 on 12-5-3.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "Activity.h"
@@ -12,7 +12,7 @@
 
 @implementation Activity
 
-@dynamic activity_description;
+@dynamic content;
 @dynamic activity_id;
 @dynamic begin_time;
 @dynamic can_follow;
@@ -28,6 +28,7 @@
 @dynamic status;
 @dynamic sub_organizer;
 @dynamic title;
+@dynamic avatar_link;
 @dynamic favoredBy;
 @dynamic scheduledBy;
 
