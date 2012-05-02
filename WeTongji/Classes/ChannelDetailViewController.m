@@ -30,8 +30,9 @@
 @synthesize favoriteButton = _favoriteButton;
 @synthesize likeButton = _likeButton;
 @synthesize scheduleButton = _scheduleButton;
-@synthesize scrollViewContentView = _scrollViewContentView;
 @synthesize likeLabel = _likeLabel;
+@synthesize middleView = _middleView;
+@synthesize bottomView = _bottomView;
 
 @synthesize activity = _activity;
 
@@ -69,6 +70,8 @@
     self.likeButton = nil;
     self.scheduleButton = nil;
     self.likeLabel = nil;
+    self.middleView = nil;
+    self.bottomView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -95,9 +98,8 @@
     self.descriptionLabel.text = self.activity.activity_description;
     [self.descriptionLabel sizeToFit];
     CGRect rect = self.descriptionLabel.frame;
-    if(rect.size.height >= 110)
-        rect.size.height = 110;
     self.descriptionLabel.frame = rect;
+    
     self.organizerNameLabel.text = self.activity.organizer;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
     self.timeLabel.text = [NSString timeConvertFromBeginDate:self.activity.begin_time endDate:self.activity.end_time];
@@ -106,7 +108,6 @@
     NSArray *channelNames = [NSUserDefaults getChannelNameArray];
     self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
     
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollViewContentView.frame.size.height);
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
@@ -115,6 +116,24 @@
         self.likeLabel.text = [NSString stringWithFormat:@"%d 人喜欢这个活动", likeCount];
     else 
         self.likeLabel.text = [NSString stringWithFormat:@"喜欢这个活动就为它投一票吧！"];
+    
+    [self refreshViewLayout];
+}
+
+- (void)refreshViewLayout {
+    CGRect middleFrame = self.middleView.frame;
+    middleFrame.size.height = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 15;
+    self.middleView.frame = middleFrame;
+    
+    self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    
+    CGRect bottomFrame = self.bottomView.frame;
+    bottomFrame.origin.y = middleFrame.origin.y + middleFrame.size.height;
+    self.bottomView.frame = bottomFrame;
+    
+    CGFloat scrollContentHeight = bottomFrame.origin.y + bottomFrame.size.height;
+    scrollContentHeight = scrollContentHeight > self.scrollView.frame.size.height ? scrollContentHeight : self.scrollView.frame.size.height + 1;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, scrollContentHeight);
 }
 
 #pragma mark - 

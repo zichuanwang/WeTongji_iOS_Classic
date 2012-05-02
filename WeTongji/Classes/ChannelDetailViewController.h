@@ -24,8 +24,9 @@
 @property (nonatomic, strong) IBOutlet WTButton *favoriteButton;
 @property (nonatomic, strong) IBOutlet WTButton *likeButton;
 @property (nonatomic, strong) IBOutlet WTButton *scheduleButton;
-@property (nonatomic, strong) IBOutlet UIView *scrollViewContentView;
 @property (nonatomic, strong) IBOutlet UILabel *likeLabel;
+@property (nonatomic, strong) IBOutlet UIView *middleView;
+@property (nonatomic, strong) IBOutlet UIView *bottomView;
 
 - (id)initWithActivity:(Activity *)activity;
 - (IBAction)didClickFavoriteButton:(UIButton *)sender;
