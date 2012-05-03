@@ -110,8 +110,6 @@ const float dayPrevNextButtonSpaceHeight=12;
     [self.dateSourceDictionary setValue:day4 forKey:[self.datesIndexArray objectAtIndex:3]];
     [self.dateSourceDictionary setValue:day5 forKey:[self.datesIndexArray objectAtIndex:4]];
     [self.dateSourceDictionary setValue:day6 forKey:[self.datesIndexArray objectAtIndex:5]];
-    
-//    self.sv.currentDate = @"3月3日";
 }
 
 - (void)drawPrevButton:(CGPoint)leftTop
@@ -140,12 +138,11 @@ const float dayPrevNextButtonSpaceHeight=12;
 	
 	CGContextRef ctx=UIGraphicsGetCurrentContext();
 	
-	size_t num_locations = 3;
-	CGFloat locations[3] = { 0.0, 0.5, 1.0};
-	CGFloat components[12] = {  
-		0.8, 0.8, 0.8, 1.0,
-		0.5, 0.5, 0.5, 1.0,
-		0.8, 0.8, 0.8, 1.0 
+	size_t num_locations = 2;
+	CGFloat locations[2] = { 0.0, 1.0};
+	CGFloat components[8] = {  
+		1.0, 1.0, 1.0, 1.0,
+		0.7, 0.7, 0.7, 0.85 
 	};
 	
 	
@@ -202,10 +199,6 @@ const float dayPrevNextButtonSpaceHeight=12;
     [date drawAtPoint:CGPointMake(dayPrevNextButtonSize + dayPrevNextButtonSpaceWidth+10,dayPrevNextButtonSpaceHeight) withFont:dateFont];
     date = [NSString stringWithFormat:@"%d %d %d",currentMonthDate.year,currentMonthDate.month,currentMonthDate.day];
     [date drawAtPoint:CGPointMake(self.frame.size.width-dayPrevNextButtonSpaceWidth-dayPrevNextButtonSize-86,dayPrevNextButtonSpaceHeight) withFont:dateFont];
-}
-
-- (void)drawCourses{
-    [self.sv setNeedsDisplay];
 }
 
 - (void)moveToToday{

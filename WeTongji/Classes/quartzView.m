@@ -122,7 +122,7 @@
         NSString *location = [tmpCourse objectForKey:@"Location"];
         currentCourseInfo.text = [NSString stringWithFormat:@"%@\n%@",name,location];
         currentCourseInfo.font = [UIFont fontWithName:@"Arial" size:12];
-        currentCourseInfo.textColor = [UIColor blackColor];
+        currentCourseInfo.textColor = [UIColor colorWithRed:46/256 green:128/256 blue:24/256 alpha:1.0f];
         currentCourseInfo.textAlignment = UITextAlignmentLeft;
         currentCourseInfo.backgroundColor = [UIColor clearColor];
         currentCourseInfo.numberOfLines = 2;

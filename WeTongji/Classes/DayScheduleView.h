@@ -29,7 +29,6 @@
 @property (nonatomic, strong) quartzView *currentView;
 @property (nonatomic, strong) UIImageView* viewImageView;
 
-- (void)drawCourses;
 - (void)moveToToday;
 
 @end
