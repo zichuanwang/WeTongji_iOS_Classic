@@ -150,6 +150,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
 //        UIAlertView *alert = [[UIAlertView alloc] 
 //                              initWithTitle: @"清除账户" 
 //                              message: @"是否确认清除？清除账户不会导致用户数据在服务器端的删除。" 
