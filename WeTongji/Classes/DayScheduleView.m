@@ -193,13 +193,15 @@ const float dayPrevNextButtonSpaceHeight=12;
             tmp = @"六";
             break;
         case 7:
-            tmp = @"七";
+            tmp = @"日";
             break;
         default:
             break;
     }
     NSString *date=[NSString stringWithFormat:@"星期%@",tmp];
-    [date drawAtPoint:CGPointMake(dayPrevNextButtonSize + dayPrevNextButtonSpaceWidth+7,dayPrevNextButtonSpaceHeight) withFont:dateFont];
+    [date drawAtPoint:CGPointMake(dayPrevNextButtonSize + dayPrevNextButtonSpaceWidth+10,dayPrevNextButtonSpaceHeight) withFont:dateFont];
+    date = [NSString stringWithFormat:@"%d %d %d",currentMonthDate.year,currentMonthDate.month,currentMonthDate.day];
+    [date drawAtPoint:CGPointMake(self.frame.size.width-dayPrevNextButtonSpaceWidth-dayPrevNextButtonSize-86,dayPrevNextButtonSpaceHeight) withFont:dateFont];
 }
 
 - (void)drawCourses{
