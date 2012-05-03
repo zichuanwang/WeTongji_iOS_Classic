@@ -9,6 +9,7 @@
 #define kCELL_X 60
 #define kCELLWIDTH 240
 
+#import <QuartzCore/QuartzCore.h>
 #import "DayScheduleView.h"
 #import "quartzView.h"
 
@@ -265,6 +266,7 @@ const float dayPrevNextButtonSpaceHeight=12;
 	UIImage *viewImage;
 	
 	UIGraphicsBeginImageContext(self.bounds.size);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
 	//[self.layer renderInContext:UIGraphicsGetCurrentContext()];	
 	viewImage= UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
@@ -359,6 +361,7 @@ const float dayPrevNextButtonSpaceHeight=12;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+
 	int width=self.frame.size.width;
 	UITouch* touch=[touches anyObject];
 	CGPoint touchPoint=[touch locationInView:self];

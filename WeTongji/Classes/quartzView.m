@@ -165,4 +165,13 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
     CGContextRestoreGState(context); // 13
 }
 
+#pragma mark
+#pragma mark - touch events
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+	UITouch* touch=[touches anyObject];
+	CGPoint touchPoint=[touch locationInView:self];
+    
+    NSLog(@"%f",self.firstRect.origin.y);
+}
+
 @end
