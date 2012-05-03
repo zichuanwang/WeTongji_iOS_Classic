@@ -48,11 +48,13 @@
 
 - (void)configureNavBar {
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"切换账户"];
+    self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
-
-    self.navigationItem.titleView = titleLabel;
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    UIBarButtonItem *editButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"编辑" target:self action:@selector(didClickEditButton)];
+    self.navigationItem.rightBarButtonItem = editButton;
 }
 
 - (void)configureLoginList {
@@ -69,6 +71,11 @@
 
 - (void)didClickBackButton {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didClickEditButton {
+    BOOL isEditing = self.loginListTableViewController.tableView.editing;
+    [self.loginListTableViewController.tableView setEditing:!isEditing animated:YES];
 }
 
 @end

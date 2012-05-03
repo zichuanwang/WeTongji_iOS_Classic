@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WTTabelViewController.h"
 
-@interface LoginListTableViewController : WTTabelViewController {
+@interface LoginListTableViewController : WTTabelViewController <UIAlertViewDelegate> {
     NSInteger _selectRow;
 }
 
