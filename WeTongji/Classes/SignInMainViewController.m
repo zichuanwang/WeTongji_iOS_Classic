@@ -19,6 +19,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize studentNumberTextField = _studentNumberTextField;
 @synthesize passwordTextField = _passwordTextField;
+@synthesize bgView = _bgView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +48,7 @@
     self.studentNumberTextField = nil;
     self.nameTextField = nil;
     self.passwordTextField = nil;
+    self.bgView = nil;
 }
 
 #pragma mark -
@@ -65,7 +67,7 @@
 
 - (void)configureScrollView {
     CGRect frame = self.scrollView.frame;
-    frame.size.height += 1;
+    frame.size.height = self.bgView.frame.size.height;
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
@@ -94,6 +96,10 @@
         
     }
     return NO;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y / 2) animated:YES];
 }
 
 @end

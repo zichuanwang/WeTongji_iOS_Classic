@@ -16,5 +16,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *studentNumberTextField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, strong) IBOutlet UIView *bgView;
 
 @end
