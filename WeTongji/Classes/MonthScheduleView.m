@@ -191,12 +191,11 @@ const int	weekFontSize=10;
     /*CGContextSetGrayFillColor(ctx, 0.7, 0.85);
     CGContextAddRect(ctx, CGRectMake(0, headHeight, self.frame.size.width, row_Count*itemHeight));
     CGContextFillPath(ctx);*/
-    size_t num_locations = 3;
-	CGFloat locations[3] = { 0.0, 0.5 ,1.0};
-	CGFloat components[12] = {  
-		1.0, 1.0, 1.0, 1.0,
-		0.7, 0.7, 0.7, 0.85,
-        1.0, 1.0, 1.0, 1.0
+    size_t num_locations = 2;
+	CGFloat locations[2] = { 0.0,1.0};
+	CGFloat components[8] = { 
+        0.85, 0.85, 0.85, 0.9, 
+		0.75, 0.75, 0.75, 0.9
 	};
 	
 	CGGradientRef myGradient;
@@ -277,7 +276,7 @@ const int	weekFontSize=10;
 	int y=0;
 	int s_width=width/7;
 	int curr_Weekday=[self getMonthWeekday:currentMonthDate];
-	UIFont *weekfont=[UIFont boldSystemFontOfSize:12];
+    UIFont *weekfont = [UIFont fontWithName:@"Arial-BoldMT" size:14];
 
 	for(int i=1;i<dayCount+1;i++)
 	{
@@ -399,10 +398,10 @@ const int	weekFontSize=10;
         }
 		CGContextRef ctx=UIGraphicsGetCurrentContext(); 
 		CGContextSetRGBFillColor(ctx, 0.5, 0.5, 0.5, 1);
-		CGContextMoveToPoint(ctx, x*swidth+1, y*itemHeight+headHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+swidth+2, y*itemHeight+headHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+swidth+2, y*itemHeight+headHeight+itemHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+itemHeight);
+		CGContextMoveToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+1);
+		CGContextAddLineToPoint(ctx, x*swidth+swidth-1, y*itemHeight+headHeight+1);
+		CGContextAddLineToPoint(ctx, x*swidth+swidth-1, y*itemHeight+headHeight+itemHeight-1);
+		CGContextAddLineToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+itemHeight-1);
 		CGContextFillPath(ctx);
 
 		CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
@@ -453,10 +452,10 @@ const int	weekFontSize=10;
 			CGContextSetRGBFillColor(ctx, 0, 0, 0.7, 1);
 		else
 			CGContextSetRGBFillColor(ctx, 0, 0, 1, 1);
-		CGContextMoveToPoint(ctx, x*swidth+1, y*itemHeight+headHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+swidth+2, y*itemHeight+headHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+swidth+2, y*itemHeight+headHeight+itemHeight);
-		CGContextAddLineToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+itemHeight);
+		CGContextMoveToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+1);
+		CGContextAddLineToPoint(ctx, x*swidth+swidth-1, y*itemHeight+headHeight+1);
+		CGContextAddLineToPoint(ctx, x*swidth+swidth-1, y*itemHeight+headHeight+itemHeight-1);
+		CGContextAddLineToPoint(ctx, x*swidth+1, y*itemHeight+headHeight+itemHeight-1);
 		CGContextFillPath(ctx);	
 		
 		if(todayFlag==1)
