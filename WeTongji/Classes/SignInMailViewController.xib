@@ -164,7 +164,7 @@
 												<string key="NSFrame">{{18, 15}, {284, 110}}</string>
 												<reference key="NSSuperview" ref="587855546"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="678926841"/>
+												<reference key="NSNextKeyView" ref="272615804"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<bool key="IBUIClipsSubviews">YES</bool>
@@ -190,7 +190,7 @@
 													<int key="NSfFlags">16</int>
 												</object>
 											</object>
-											<object class="IBUIButton" id="678926841">
+											<object class="IBUIButton" id="272615804">
 												<reference key="NSNextResponder" ref="587855546"/>
 												<int key="NSvFlags">292</int>
 												<string key="NSFrame">{{30, 140}, {260, 40}}</string>
@@ -362,6 +362,15 @@
 					</object>
 					<int key="connectionID">23</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">didClickMailButton:</string>
+						<reference key="source" ref="272615804"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -420,7 +429,7 @@
 						<reference key="object" ref="587855546"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="77552210"/>
-							<reference ref="678926841"/>
+							<reference ref="272615804"/>
 						</array>
 						<reference key="parent" ref="1060031884"/>
 					</object>
@@ -486,7 +495,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
-						<reference key="object" ref="678926841"/>
+						<reference key="object" ref="272615804"/>
 						<reference key="parent" ref="587855546"/>
 					</object>
 				</array>
@@ -518,13 +527,24 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">SignInMailViewController</string>
 					<string key="superclassName">WTNavigationViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">didClickMailButton:</string>
+						<string key="NS.object.0">UIButton</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">didClickMailButton:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">didClickMailButton:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="descriptionLabel">UILabel</string>
 						<string key="mainBgView">UIView</string>

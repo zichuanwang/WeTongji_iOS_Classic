@@ -1,23 +1,24 @@
 //
-//  SignInMailViewController.m
+//  SignInMainViewController.m
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-5-4.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "SignInMailViewController.h"
 #import "SignInMainViewController.h"
 
-@interface SignInMailViewController ()
+@interface SignInMainViewController ()
 
 @end
 
-@implementation SignInMailViewController
+@implementation SignInMainViewController
 
 @synthesize mainBgView = _mainBgView;
+@synthesize nameTextField = _nameTextField;
 @synthesize scrollView = _scrollView;
-@synthesize descriptionLabel = _descriptionLabel;
+@synthesize studentNumberTextField = _studentNumberTextField;
+@synthesize passwordTextField = _passwordTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +44,9 @@
     // e.g. self.myOutlet = nil;
     self.scrollView = nil;
     self.mainBgView = nil;
-    self.descriptionLabel = nil;
+    self.studentNumberTextField = nil;
+    self.nameTextField = nil;
+    self.passwordTextField = nil;
 }
 
 #pragma mark -
@@ -53,17 +56,21 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"注册"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *finishButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
+    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     
-    UIBarButtonItem *nextButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"继续" target:self action:@selector(didClickNextButton)];
-    self.navigationItem.rightBarButtonItem = nextButton;
+    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickNextButton)];
+    self.navigationItem.rightBarButtonItem = settingButton;
 }
 
 - (void)configureScrollView {
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.frame.size.height + 1);
+    CGRect frame = self.scrollView.frame;
+    frame.size.height += 1;
+    self.scrollView.contentSize = frame.size;
+    
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
-    [self.descriptionLabel sizeToFit];
+    
+    [self.nameTextField becomeFirstResponder];
 }
 
 #pragma mark -
@@ -74,12 +81,19 @@
 }
 
 - (void)didClickNextButton {
-    SignInMainViewController *vc = [[SignInMainViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
-- (IBAction)didClickMailButton:(UIButton *)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mail.tongji.edu.cn"]];
+#pragma mark -
+#pragma mark UITextFiled delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.nameTextField) {
+        [self.studentNumberTextField becomeFirstResponder];
+    } else if(textField == self.passwordTextField) {
+        
+    }
+    return NO;
 }
 
 @end

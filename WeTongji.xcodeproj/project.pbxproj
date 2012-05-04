@@ -62,6 +62,8 @@
 		E168FE8C1553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */; };
 		E168FE8D1553D4B000BEE141 /* sign_in_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */; };
 		E168FE8E1553D4B000BEE141 /* sign_in_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */; };
+		E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FE951553DCC400BEE141 /* SignInMainViewController.m */; };
+		E168FE981553DCC400BEE141 /* SignInMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FE961553DCC400BEE141 /* SignInMainViewController.xib */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
@@ -308,6 +310,9 @@
 		E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn_bg_hl@2x.png"; sourceTree = "<group>"; };
 		E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_in_btn_bg.png; sourceTree = "<group>"; };
 		E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn_bg@2x.png"; sourceTree = "<group>"; };
+		E168FE941553DCC300BEE141 /* SignInMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInMainViewController.h; path = Classes/SignInMainViewController.h; sourceTree = "<group>"; };
+		E168FE951553DCC400BEE141 /* SignInMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInMainViewController.m; path = Classes/SignInMainViewController.m; sourceTree = "<group>"; };
+		E168FE961553DCC400BEE141 /* SignInMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInMainViewController.xib; path = Classes/SignInMainViewController.xib; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
@@ -710,6 +715,9 @@
 				E1A6DC0615538BB900DBB589 /* SignInMailViewController.h */,
 				E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */,
 				E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */,
+				E168FE941553DCC300BEE141 /* SignInMainViewController.h */,
+				E168FE951553DCC400BEE141 /* SignInMainViewController.m */,
+				E168FE961553DCC400BEE141 /* SignInMainViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -1386,6 +1394,7 @@
 				E168FE8C1553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png in Resources */,
 				E168FE8D1553D4B000BEE141 /* sign_in_btn_bg.png in Resources */,
 				E168FE8E1553D4B000BEE141 /* sign_in_btn_bg@2x.png in Resources */,
+				E168FE981553DCC400BEE141 /* SignInMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1480,7 @@
 				E1AD1BA31551A4ED003B7052 /* NewsOutlineTableViewCell.m in Sources */,
 				E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */,
 				E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */,
+				E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

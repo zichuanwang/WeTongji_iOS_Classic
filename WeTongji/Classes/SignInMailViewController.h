@@ -15,4 +15,6 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 
+- (IBAction)didClickMailButton:(UIButton *)sender;
+
 @end
