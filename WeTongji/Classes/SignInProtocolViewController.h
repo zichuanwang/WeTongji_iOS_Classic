@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
 
-@interface SignInProtocolViewController : WTNavigationViewController
+@interface SignInProtocolViewController : WTNavigationViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIView *mainBgView;
 @property (nonatomic, strong) IBOutlet UIView *bottomBgView;

@@ -7,6 +7,7 @@
 //
 
 #import "SignInProtocolViewController.h"
+#import "SignInMailViewController.h"
 
 @interface SignInProtocolViewController ()
 
@@ -54,11 +55,11 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"注册"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"取消" target:self action:@selector(didClickCancelButton)];
+    UIBarButtonItem *finishButton = [UIBarButtonItem getBackButtonItemWithTitle:@"登录" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     
-    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"继续" target:self action:@selector(didClickNextButton)];
-    self.navigationItem.rightBarButtonItem = settingButton;
+    UIBarButtonItem *nextButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"继续" target:self action:@selector(didClickNextButton)];
+    self.navigationItem.rightBarButtonItem = nextButton;
 }
 
 - (void)refreshScrollView {
@@ -92,7 +93,23 @@
 }
 
 - (void)didClickNextButton {
-    
+    UIAlertView *alert = [[UIAlertView alloc] 
+                          initWithTitle: @"确认用户协议" 
+                          message: @"我已阅读并同意该用户协议。" 
+                          delegate: self
+                          cancelButtonTitle: @"取消"
+                          otherButtonTitles: @"确定", nil];
+    [alert show];
+}
+
+#pragma mark -
+#pragma mark UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1) {
+        SignInMailViewController *vc = [[SignInMailViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end

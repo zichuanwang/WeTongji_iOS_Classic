@@ -86,6 +86,8 @@
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
+		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
+		E1A6DC0A15538BBB00DBB589 /* SignInMailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */; };
 		E1A836DD154466320086F62E /* nav_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DB154466310086F62E /* nav_bar_shadow.png */; };
 		E1A836DE154466320086F62E /* nav_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */; };
 		E1A836E415446A800086F62E /* paper_info_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E015446A7F0086F62E /* paper_info_line.png */; };
@@ -332,6 +334,9 @@
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
+		E1A6DC0615538BB900DBB589 /* SignInMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInMailViewController.h; path = Classes/SignInMailViewController.h; sourceTree = "<group>"; };
+		E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInMailViewController.m; path = Classes/SignInMailViewController.m; sourceTree = "<group>"; };
+		E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInMailViewController.xib; path = Classes/SignInMailViewController.xib; sourceTree = "<group>"; };
 		E1A836DB154466310086F62E /* nav_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_shadow.png; sourceTree = "<group>"; };
 		E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_shadow@2x.png"; sourceTree = "<group>"; };
 		E1A836E015446A7F0086F62E /* paper_info_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_info_line.png; sourceTree = "<group>"; };
@@ -690,6 +695,9 @@
 				E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */,
 				E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */,
 				E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */,
+				E1A6DC0615538BB900DBB589 /* SignInMailViewController.h */,
+				E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */,
+				E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -1361,6 +1369,7 @@
 				E1AD1B8D155196C4003B7052 /* NewsOutlineTableViewController.xib in Resources */,
 				E1AD1BA51551A509003B7052 /* NewsOutlineTableViewCell.xib in Resources */,
 				E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */,
+				E1A6DC0A15538BBB00DBB589 /* SignInMailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1445,6 +1454,7 @@
 				E1AD1BA01551A305003B7052 /* News+Addition.m in Sources */,
 				E1AD1BA31551A4ED003B7052 /* NewsOutlineTableViewCell.m in Sources */,
 				E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */,
+				E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
