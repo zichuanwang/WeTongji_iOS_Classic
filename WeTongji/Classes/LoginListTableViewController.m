@@ -27,6 +27,7 @@
 @synthesize userListArray = _userListArray;
 @synthesize tableViewFooterView = _tableViewFooterView;
 @synthesize tableViewHeaderView = _tableViewHeaderView;
+@synthesize mainBgView = _mainBgView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,7 +46,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib. 
-    [self configureTableViewHeaderFooter];
+    [self configureTableView];
 }
 
 - (void)viewDidUnload
@@ -53,12 +54,13 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.mainBgView = nil;
 }
 
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTableViewHeaderFooter {
+- (void)configureTableView{
     self.tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, -40 * TABLE_HEADER_FOOTER_CELL_NUM, 300, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
     self.tableViewFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, [self numberOfRowsInTableView] * 40, 300, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
     for(int i = 0; i < TABLE_HEADER_FOOTER_CELL_NUM; i++) {
@@ -78,8 +80,7 @@
     
     UIButton *newAccountButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
     newAccountButton.backgroundColor = [UIColor clearColor];
-    [newAccountButton setTitle:@"点击新增一个账户" forState:UIControlStateNormal];
-    [newAccountButton setTitle:@"点击了" forState:UIControlStateHighlighted];
+    [newAccountButton setTitle:@"点此新增一个账户" forState:UIControlStateNormal];
     [newAccountButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [newAccountButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
     newAccountButton.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
@@ -92,6 +93,8 @@
     //[tableFooterView addSubview:footerImageView];
     [tableFooterView addSubview:newAccountButton];
     self.tableView.tableFooterView = tableFooterView;
+    
+    self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
 }
 
 - (NSInteger)numberOfRowsInTableView {
@@ -194,7 +197,8 @@
 
 - (void)didClickNewAccountButton {
     LoginViewController *vc = [[LoginViewController alloc] init];
-    [[UIApplication sharedApplication] presentModalViewController:vc];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [[UIApplication sharedApplication].rootViewController presentModalViewController:nav animated:YES];
 }
 
 @end

@@ -47,7 +47,7 @@
 #pragma mark UI methods
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"切换账户"];
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"账号管理"];
     self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];

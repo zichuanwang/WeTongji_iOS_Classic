@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTNavigationViewController.h"
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@interface LoginViewController : WTNavigationViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
-
-- (IBAction)didClickCancelButton:(UIButton *)sender;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UITextField *accountTextField;
+@property (nonatomic, strong) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, strong) IBOutlet UIView *mainBgView;
 
 @end
