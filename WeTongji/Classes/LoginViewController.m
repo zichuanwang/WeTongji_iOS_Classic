@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
+#import "SignInProtocolViewController.h"
 
 @interface LoginViewController ()
 
@@ -92,7 +93,8 @@
 }
 
 - (void)didClickSignInButton {
-    
+    SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 

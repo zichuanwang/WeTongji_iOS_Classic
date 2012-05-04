@@ -84,6 +84,8 @@
 		E191772E15078188009FB941 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* MainViewController.xib */; };
 		E1917734150785ED009FB941 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1917733150785ED009FB941 /* MainWindow.xib */; };
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
+		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
+		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A836DD154466320086F62E /* nav_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DB154466310086F62E /* nav_bar_shadow.png */; };
 		E1A836DE154466320086F62E /* nav_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */; };
 		E1A836E415446A800086F62E /* paper_info_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A836E015446A7F0086F62E /* paper_info_line.png */; };
@@ -327,6 +329,9 @@
 		E191772C15078188009FB941 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
 		E1917733150785ED009FB941 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E191773515078609009FB941 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
+		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
+		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
 		E1A836DB154466310086F62E /* nav_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_shadow.png; sourceTree = "<group>"; };
 		E1A836DC154466310086F62E /* nav_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_shadow@2x.png"; sourceTree = "<group>"; };
 		E1A836E015446A7F0086F62E /* paper_info_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_info_line.png; sourceTree = "<group>"; };
@@ -682,6 +687,9 @@
 				E174A99F153E800400E7165A /* LoginViewController.h */,
 				E174A9A0153E800400E7165A /* LoginViewController.m */,
 				E174A9A1153E800400E7165A /* LoginViewController.xib */,
+				E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */,
+				E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */,
+				E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -1352,6 +1360,7 @@
 				E1D5504D15509D3800068824 /* toast_normal_bg@2x.png in Resources */,
 				E1AD1B8D155196C4003B7052 /* NewsOutlineTableViewController.xib in Resources */,
 				E1AD1BA51551A509003B7052 /* NewsOutlineTableViewCell.xib in Resources */,
+				E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1435,6 +1444,7 @@
 				E1AD1B9D1551A27C003B7052 /* Activity.m in Sources */,
 				E1AD1BA01551A305003B7052 /* News+Addition.m in Sources */,
 				E1AD1BA31551A4ED003B7052 /* NewsOutlineTableViewCell.m in Sources */,
+				E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

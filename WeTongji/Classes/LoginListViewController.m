@@ -74,8 +74,15 @@
 }
 
 - (void)didClickEditButton {
-    BOOL isEditing = self.loginListTableViewController.tableView.editing;
-    [self.loginListTableViewController.tableView setEditing:!isEditing animated:YES];
+    BOOL isEditing = !self.loginListTableViewController.tableView.editing;
+    [self.loginListTableViewController.tableView setEditing:isEditing animated:YES];
+    if(isEditing) {
+        UIBarButtonItem *finishEditButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickEditButton)];
+        self.navigationItem.rightBarButtonItem = finishEditButton;
+    } else {
+        UIBarButtonItem *editButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"编辑" target:self action:@selector(didClickEditButton)];
+        self.navigationItem.rightBarButtonItem = editButton;
+    }
 }
 
 @end
