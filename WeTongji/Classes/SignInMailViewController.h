@@ -11,4 +11,8 @@
 
 @interface SignInMailViewController : WTNavigationViewController
 
+@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
+
 @end

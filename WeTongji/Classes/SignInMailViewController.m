@@ -14,6 +14,10 @@
 
 @implementation SignInMailViewController
 
+@synthesize mainBgView = _mainBgView;
+@synthesize scrollView = _scrollView;
+@synthesize descriptionLabel = _descriptionLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
+    [self configureScrollView];
 }
 
 - (void)viewDidUnload
@@ -35,6 +40,9 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.scrollView = nil;
+    self.mainBgView = nil;
+    self.descriptionLabel = nil;
 }
 
 #pragma mark -
@@ -49,6 +57,12 @@
     
     UIBarButtonItem *nextButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"继续" target:self action:@selector(didClickNextButton)];
     self.navigationItem.rightBarButtonItem = nextButton;
+}
+
+- (void)configureScrollView {
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.frame.size.height + 1);
+    self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    [self.descriptionLabel sizeToFit];
 }
 
 #pragma mark -

@@ -58,6 +58,10 @@
 		E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */; };
 		E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */; };
 		E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */; };
+		E168FE8B1553D4B000BEE141 /* sign_in_btn_bg_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE871553D4B000BEE141 /* sign_in_btn_bg_hl.png */; };
+		E168FE8C1553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */; };
+		E168FE8D1553D4B000BEE141 /* sign_in_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */; };
+		E168FE8E1553D4B000BEE141 /* sign_in_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
@@ -300,6 +304,10 @@
 		E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back_hl@2x.png"; sourceTree = "<group>"; };
 		E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back.png; sourceTree = "<group>"; };
 		E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back@2x.png"; sourceTree = "<group>"; };
+		E168FE871553D4B000BEE141 /* sign_in_btn_bg_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_in_btn_bg_hl.png; sourceTree = "<group>"; };
+		E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn_bg_hl@2x.png"; sourceTree = "<group>"; };
+		E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_in_btn_bg.png; sourceTree = "<group>"; };
+		E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn_bg@2x.png"; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
@@ -666,6 +674,10 @@
 		E174A97D153DB2C600E7165A /* login */ = {
 			isa = PBXGroup;
 			children = (
+				E168FE871553D4B000BEE141 /* sign_in_btn_bg_hl.png */,
+				E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */,
+				E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */,
+				E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */,
 				E174A97E153DB59A00E7165A /* login_light_color_line.png */,
 				E174A979153DB2C100E7165A /* login_user_list_bg.png */,
 				E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */,
@@ -1370,6 +1382,10 @@
 				E1AD1BA51551A509003B7052 /* NewsOutlineTableViewCell.xib in Resources */,
 				E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */,
 				E1A6DC0A15538BBB00DBB589 /* SignInMailViewController.xib in Resources */,
+				E168FE8B1553D4B000BEE141 /* sign_in_btn_bg_hl.png in Resources */,
+				E168FE8C1553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png in Resources */,
+				E168FE8D1553D4B000BEE141 /* sign_in_btn_bg.png in Resources */,
+				E168FE8E1553D4B000BEE141 /* sign_in_btn_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
