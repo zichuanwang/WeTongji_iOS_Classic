@@ -13,7 +13,6 @@
 @synthesize titleLabel = _titleLabel;
 @synthesize timeLabel = _timeLabel;
 @synthesize locationLabel = _locationLabel;
-@synthesize likeCountLabel = _likeCountLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

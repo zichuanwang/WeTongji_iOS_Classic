@@ -8,6 +8,9 @@
 
 #import "CoreDataViewController.h"
 #import "AppDelegate.h"
+#import "User+Addition.h"
+
+static User *currentUserInstance = nil;
 
 @implementation CoreDataViewController
 
@@ -20,6 +23,14 @@
         self.managedObjectContext = appDelegate.managedObjectContext;
     }
     return self;
+}
+
+- (User *)currentUser {
+    if(currentUserInstance == nil) {
+        NSDictionary *dict = [NSDictionary dictionaryWithObject:@"092969" forKey:@"Id"];
+        currentUserInstance = [User insertUser:dict inManagedObjectContext:self.managedObjectContext];
+    }
+    return currentUserInstance;
 }
 
 @end

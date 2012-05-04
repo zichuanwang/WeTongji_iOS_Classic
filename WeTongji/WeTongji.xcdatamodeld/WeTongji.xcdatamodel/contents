@@ -49,8 +49,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weibo_account" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="favor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="favoredBy" inverseEntity="Activity" syncable="YES"/>
-        <relationship name="schedule" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="scheduledBy" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="favor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="favoredBy" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="scheduledBy" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
         <element name="Activity" positionX="160" positionY="192" width="128" height="315"/>

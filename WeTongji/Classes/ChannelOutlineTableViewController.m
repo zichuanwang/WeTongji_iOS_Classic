@@ -88,7 +88,6 @@
         outlineCell.titleLabel.text = activity.title;
         outlineCell.locationLabel.text = activity.location;
         outlineCell.timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
-        outlineCell.likeCountLabel.text = [NSString stringWithFormat:@"%d赞", activity.like_count.intValue];
     }
 }
 

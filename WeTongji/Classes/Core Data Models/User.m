@@ -2,7 +2,7 @@
 //  User.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-3.
+//  Created by 紫川 王 on 12-5-4.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,14 +12,14 @@
 
 @implementation User
 
-@dynamic birthday;
-@dynamic name;
-@dynamic user_id;
 @dynamic avatar_link;
 @dynamic birth_place;
-@dynamic mobile_phone;
-@dynamic weibo_account;
+@dynamic birthday;
 @dynamic email_address;
+@dynamic mobile_phone;
+@dynamic name;
+@dynamic user_id;
+@dynamic weibo_account;
 @dynamic favor;
 @dynamic schedule;
 

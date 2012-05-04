@@ -13,6 +13,5 @@
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *locationLabel;
-@property (nonatomic, strong) IBOutlet UILabel *likeCountLabel;
 
 @end

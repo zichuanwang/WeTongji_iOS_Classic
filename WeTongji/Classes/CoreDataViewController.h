@@ -7,22 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#define kWeiboUser  @"kWeiboUser"
-#define kRenrenUser @"kRenrenUser"
-#define kCurrentWeiboUser  @"kCurrentWeiboUser"
-#define kCurrentRenrenUser @"kCurrentRenrenUser"
-
-#define kPlatformRenren NO
-#define kPlatformWeibo  YES
-
-@class RenrenUser;
-@class WeiboUser;
+#import "User+Addition.h"
 
 @interface CoreDataViewController : UIViewController {
     NSManagedObjectContext *_managedObjectContext;
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) User *currentUser;
 
 @end

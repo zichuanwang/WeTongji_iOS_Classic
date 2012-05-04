@@ -17,6 +17,8 @@
 
 @property (nonatomic, weak) id<ChannelOutlineTableViewControllerDelegate> delegate;
 
+- (void)configureTableViewFooter;
+
 @end
 
 @protocol ChannelOutlineTableViewControllerDelegate <NSObject>
