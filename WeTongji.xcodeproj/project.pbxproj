@@ -73,6 +73,8 @@
 		E168FEA915540A1700BEE141 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEA815540A1700BEE141 /* User.m */; };
 		E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */; };
 		E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */; };
+		E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */; };
+		E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
@@ -334,6 +336,9 @@
 		E168FEAA15540D4C00BEE141 /* ChannelDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelDetailViewController.h; path = Classes/ChannelDetailViewController.h; sourceTree = "<group>"; };
 		E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelDetailViewController.m; path = Classes/ChannelDetailViewController.m; sourceTree = "<group>"; };
 		E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelDetailViewController.xib; path = Classes/ChannelDetailViewController.xib; sourceTree = "<group>"; };
+		E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoViewController.h; path = Classes/UpdateUserInfoViewController.h; sourceTree = "<group>"; };
+		E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoViewController.m; path = Classes/UpdateUserInfoViewController.m; sourceTree = "<group>"; };
+		E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserInfoViewController.xib; path = Classes/UpdateUserInfoViewController.xib; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
@@ -695,6 +700,32 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		E168FEB71555406600BEE141 /* user_info */ = {
+			isa = PBXGroup;
+			children = (
+				E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */,
+				E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */,
+				E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */,
+			);
+			name = user_info;
+			sourceTree = "<group>";
+		};
+		E168FEBE155542D500BEE141 /* sign_in */ = {
+			isa = PBXGroup;
+			children = (
+				E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */,
+				E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */,
+				E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */,
+				E1A6DC0615538BB900DBB589 /* SignInMailViewController.h */,
+				E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */,
+				E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */,
+				E168FE941553DCC300BEE141 /* SignInMainViewController.h */,
+				E168FE951553DCC400BEE141 /* SignInMainViewController.m */,
+				E168FE961553DCC400BEE141 /* SignInMainViewController.xib */,
+			);
+			name = sign_in;
+			sourceTree = "<group>";
+		};
 		E174A97D153DB2C600E7165A /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,15 +759,6 @@
 				E174A99F153E800400E7165A /* LoginViewController.h */,
 				E174A9A0153E800400E7165A /* LoginViewController.m */,
 				E174A9A1153E800400E7165A /* LoginViewController.xib */,
-				E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */,
-				E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */,
-				E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */,
-				E1A6DC0615538BB900DBB589 /* SignInMailViewController.h */,
-				E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */,
-				E1A6DC0815538BBA00DBB589 /* SignInMailViewController.xib */,
-				E168FE941553DCC300BEE141 /* SignInMainViewController.h */,
-				E168FE951553DCC400BEE141 /* SignInMainViewController.m */,
-				E168FE961553DCC400BEE141 /* SignInMainViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -977,6 +999,8 @@
 		E1DF6F981537612E001C60EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E168FEBE155542D500BEE141 /* sign_in */,
+				E168FEB71555406600BEE141 /* user_info */,
 				E1E4839115488D9700814FA4 /* favorite */,
 				E174A9D415406D0B00E7165A /* news */,
 				E174A99E153E7FC800E7165A /* login */,
@@ -1430,6 +1454,7 @@
 				E168FEA21553FAA900BEE141 /* dock_btn_treize.png in Resources */,
 				E168FEA31553FAA900BEE141 /* dock_btn_treize@2x.png in Resources */,
 				E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */,
+				E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1519,6 +1544,7 @@
 				E168FEA61554066200BEE141 /* User+Addition.m in Sources */,
 				E168FEA915540A1700BEE141 /* User.m in Sources */,
 				E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */,
+				E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

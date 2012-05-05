@@ -14,4 +14,6 @@
 
 + (UIBarButtonItem *)getBackButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
++ (UIBarButtonItem *)getActivityIndicatorButtonItem;
+
 @end

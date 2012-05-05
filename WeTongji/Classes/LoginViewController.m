@@ -11,11 +11,13 @@
 #import "SignInProtocolViewController.h"
 #import "WTClient.h"
 
+#import "SignInMainViewController.h"
+
 @interface LoginViewController ()
 
 @property (nonatomic, weak) UITextField *editingTextField;
 @property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
-@property (nonatomic, assign, getter = isLogingIn) BOOL logingIn;
+@property (nonatomic, assign, getter = isSendingRequest) BOOL sendingRequest;
 
 @end
 
@@ -27,7 +29,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
 @synthesize passwordTextField = _passwordTextField;
-@synthesize logingIn = _logingIn;
+@synthesize sendingRequest = _sendingRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,7 +86,7 @@
 - (void)login {
     if(!self.isParameterValid)
         return;
-    if(self.isLogingIn)
+    if(self.isSendingRequest)
         return;
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
@@ -95,10 +97,10 @@
         } else {
             [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:HighToastVerticalPosition];
         }
-        self.logingIn = NO;
+        self.sendingRequest = NO;
     }];
     [client login:self.accountTextField.text password:self.passwordTextField.text];
-    self.logingIn = YES;
+    self.sendingRequest = YES;
 }
 
 #pragma mark -
@@ -135,7 +137,8 @@
 }
 
 - (void)didClickSignInButton {
-    SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
+    //SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
+    SignInMainViewController *vc = [[SignInMainViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

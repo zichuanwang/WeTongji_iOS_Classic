@@ -40,4 +40,15 @@
     return result;
 }
 
++ (UIBarButtonItem *)getActivityIndicatorButtonItem {
+    UIButton *button = [UIBarButtonItem getNavButtonWithTitle:@"" target:nil action:nil];
+    [button setBackgroundImage:[UIImage imageNamed:@"nav_bar_btn_finish.png"] forState:UIControlStateNormal];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    indicator.center = button.center;
+    [button addSubview:indicator];
+    [indicator startAnimating];
+    UIBarButtonItem *result = [[UIBarButtonItem alloc] initWithCustomView:button];
+    return result;
+}
+
 @end

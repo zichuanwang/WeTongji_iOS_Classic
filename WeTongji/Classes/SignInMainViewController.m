@@ -13,6 +13,7 @@
 @interface SignInMainViewController ()
 
 @property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
+@property (nonatomic, assign, getter = isSendingRequest) BOOL sendingRequest;
 
 @end
 
@@ -24,6 +25,7 @@
 @synthesize studentNumberTextField = _studentNumberTextField;
 @synthesize passwordTextField = _passwordTextField;
 @synthesize bgView = _bgView;
+@synthesize sendingRequest = _sendingRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,6 +81,9 @@
 - (void)activateUser {
     if(self.isParameterValid == NO)
         return;
+    if(self.isSendingRequest)
+        return;
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem getActivityIndicatorButtonItem];
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
@@ -90,10 +95,13 @@
                 [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:HighToastVerticalPosition];
             else if(client.responseStatusCode == 2)
                 [UIApplication presentAlertToast:@"该账户已经注册过。" withVerticalPos:HighToastVerticalPosition];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+            [self configureNavBar];
         }
+        self.sendingRequest = NO;
     }];
     [client activateUser:self.nameTextField.text stutentNum:self.studentNumberTextField.text password:self.passwordTextField.text];
+    self.sendingRequest = YES;
 }
 
 #pragma mark -
@@ -106,8 +114,8 @@
     UIBarButtonItem *finishButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     
-    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickActivateButton)];
-    self.navigationItem.rightBarButtonItem = settingButton;
+    UIBarButtonItem *activateButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickActivateButton)];
+    self.navigationItem.rightBarButtonItem = activateButton;
 }
 
 - (void)configureScrollView {
