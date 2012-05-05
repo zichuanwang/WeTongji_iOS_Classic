@@ -17,19 +17,21 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 @property (nonatomic, retain) NSMutableDictionary *params;
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, retain) ASIHTTPRequest *request;
+@property (nonatomic, retain) id responseJSONObject;
 
 @end
 
 @implementation WTClient
 
-@synthesize responseJSONObject = _responseJSONObject;
 @synthesize responseStatusCode = _responseStatusCode;
 @synthesize hasError = _hasError;
 @synthesize errorDesc = _errorDesc;
+@synthesize responseData = _responseData;
 
 @synthesize params = _params;
 @synthesize request = _request;
 @synthesize path = _path;
+@synthesize responseJSONObject = _responseJSONObject;
 
 - (void)setCompletionBlock:(void (^)(WTClient* client))completionBlock {
     [_completionBlock autorelease];
@@ -53,6 +55,7 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
     [_params release];
     [_path release];
     [_request release];
+    [_responseData release];
     [super dealloc];
 }
 
@@ -102,10 +105,13 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
     NSLog(@"respond dict:%@", self.responseJSONObject);
     
     if ([self.responseJSONObject isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *dic = (NSDictionary*)self.responseJSONObject;
-        NSDictionary *status = [dic objectForKey:@"Status"];
+        NSDictionary *dict = (NSDictionary*)self.responseJSONObject;
+        NSDictionary *status = [dict objectForKey:@"Status"];
         NSString *statusId = [status objectForKey:@"Id"];
-        if([statusId intValue] != 0) {
+        NSDictionary *data = [dict objectForKey:@"Data"];
+        if(data && [statusId intValue] == 0) {
+            self.responseData = data;
+        } else {
             self.hasError = YES;
             self.responseStatusCode = [statusId intValue];
             self.errorDesc = [status objectForKey:@"Memo"];
@@ -134,16 +140,14 @@ report_completion:
 #pragma mark URL generation
 
 - (NSString *)hashQueryString:(NSString *)queryString {
-    NSMutableString *result = [NSMutableString stringWithString:queryString];
+    NSMutableString *result = [NSMutableString stringWithString:@"&H="];
     NSString *md5 = [queryString md5HexDigest];
-    [result appendFormat:@"&H=%@", md5];
+    [result appendFormat:@"%@", md5];
     return result;
 }
 
 - (NSString *)queryString
 {
-    NSMutableString *str = [NSMutableString stringWithCapacity:0];
-    
     NSArray *names = [_params allKeys];
     NSArray *sortedNames = [names sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *str1 = (NSString *)obj1;
@@ -151,16 +155,29 @@ report_completion:
         return [str1 compare:str2];
     }];
     
+    NSMutableString *str = [NSMutableString stringWithCapacity:10];
     for (int i = 0; i < [sortedNames count]; i++) {
-        if (i > 0) {
+        if (i > 0)
             [str appendString:@"&"];
-        }
         NSString *name = [sortedNames objectAtIndex:i];
+        NSString *parameter = [self.params objectForKey:name];
         [str appendString:[NSString stringWithFormat:@"%@=%@", name, 
-                           [self.params objectForKey:name]]];
+                           parameter]];
     }
+    NSString *hash = [self hashQueryString:str];
+    
+    NSMutableString *result = [NSMutableString stringWithCapacity:10];
+    for (int i = 0; i < [sortedNames count]; i++) {
+        if (i > 0)
+            [result appendString:@"&"];
+        NSString *name = [sortedNames objectAtIndex:i];
+        NSString *parameter = [self.params objectForKey:name];
+        [result appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
+                           [parameter URLEncodedString]]];
+    }
+    [result appendFormat:@"%@", hash];
         
-    return [self hashQueryString:str];
+    return result;
 }
 
 - (void)buildURL
@@ -210,6 +227,26 @@ report_completion:
     if(page <= 0)
         page = 1;
     [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
+    [self sendRequest];
+}
+
+- (void)activateUser:(NSString *)name stutentNum:(NSString *)num password:(NSString *)password {
+    [self.params setObject:@"User.Active" forKey:@"M"];
+    [self.params setObject:name forKey:@"Name"];
+    [self.params setObject:num forKey:@"NO"];
+    [self.params setObject:password forKey:@"Password"];
+    [self sendRequest];
+}
+
+- (void)login:(NSString *)num password:(NSString *)password {
+    [self.params setObject:@"User.LogOn" forKey:@"M"];
+    [self.params setObject:num forKey:@"NO"];
+    [self.params setObject:password forKey:@"Password"];
+    [self sendRequest];
+}
+
+- (void)logout {
+    [self.params setObject:@"User.LogOut" forKey:@"M"];
     [self sendRequest];
 }
 

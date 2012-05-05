@@ -89,7 +89,7 @@
 #pragma mark IBActions
 
 - (void)didClickCancelButton {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didClickNextButton {

@@ -7,8 +7,12 @@
 //
 
 #import "SignInMainViewController.h"
+#import "WTClient.h"
+#import "UIApplication+Addition.h"
 
 @interface SignInMainViewController ()
+
+@property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
 
 @end
 
@@ -51,6 +55,47 @@
     self.bgView = nil;
 }
 
+#pragma mark - 
+#pragma mark Logic methods 
+
+- (BOOL)isParameterValid {
+    BOOL result = YES;
+    if([self.nameTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请输入姓名。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    } else if([self.studentNumberTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请输入学号。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    } else if([self.passwordTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    } else if(self.passwordTextField.text.length < 6) {
+        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    }
+    return result;
+}
+
+- (void)activateUser {
+    if(self.isParameterValid == NO)
+        return;
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            [UIApplication showAlertMessage:@"请登录您的同济大学邮箱查收验证邮件。" withTitle:@"注册成功"];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        else {
+            if(client.responseStatusCode == 1) 
+                [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:HighToastVerticalPosition];
+            else if(client.responseStatusCode == 2)
+                [UIApplication presentAlertToast:@"该账户已经注册过。" withVerticalPos:HighToastVerticalPosition];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }];
+    [client activateUser:self.nameTextField.text stutentNum:self.studentNumberTextField.text password:self.passwordTextField.text];
+}
+
 #pragma mark -
 #pragma mark UI methods
 
@@ -61,7 +106,7 @@
     UIBarButtonItem *finishButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     
-    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickNextButton)];
+    UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickActivateButton)];
     self.navigationItem.rightBarButtonItem = settingButton;
 }
 
@@ -82,8 +127,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didClickNextButton {
-    
+- (void)didClickActivateButton {
+    [self activateUser];
 }
 
 #pragma mark -
@@ -93,7 +138,7 @@
     if(textField == self.nameTextField) {
         [self.studentNumberTextField becomeFirstResponder];
     } else if(textField == self.passwordTextField) {
-        
+        [self activateUser];
     }
     return NO;
 }

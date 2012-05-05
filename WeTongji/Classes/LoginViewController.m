@@ -9,10 +9,13 @@
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
 #import "SignInProtocolViewController.h"
+#import "WTClient.h"
 
 @interface LoginViewController ()
 
 @property (nonatomic, weak) UITextField *editingTextField;
+@property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
+@property (nonatomic, assign, getter = isLogingIn) BOOL logingIn;
 
 @end
 
@@ -24,6 +27,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
 @synthesize passwordTextField = _passwordTextField;
+@synthesize logingIn = _logingIn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +61,44 @@
     self.scrollView = nil;
     self.accountTextField = nil;
     self.passwordTextField = nil;
+}
+
+#pragma mark -
+#pragma mark Logic methods
+
+- (BOOL)isParameterValid {
+    BOOL result = YES;
+    if([self.accountTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请输入账号。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    } else if([self.passwordTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    } else if(self.passwordTextField.text.length < 6) {
+        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:HighToastVerticalPosition];
+        result = NO;
+    }
+    return result;
+}
+
+- (void)login {
+    if(!self.isParameterValid)
+        return;
+    if(self.isLogingIn)
+        return;
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            [self.parentViewController dismissModalViewControllerAnimated:YES];
+            [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
+            
+        } else {
+            [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:HighToastVerticalPosition];
+        }
+        self.logingIn = NO;
+    }];
+    [client login:self.accountTextField.text password:self.passwordTextField.text];
+    self.logingIn = YES;
 }
 
 #pragma mark -
@@ -102,6 +144,13 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.editingTextField = textField;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.passwordTextField) {
+        [self login];
+    }
+    return NO;
 }
 
 @end

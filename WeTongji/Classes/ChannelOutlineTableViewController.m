@@ -129,9 +129,7 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            NSDictionary *dict = client.responseJSONObject;
-            NSDictionary *data = [dict objectForKey:@"Data"];
-            NSArray *array = [data objectForKey:@"Activities"];
+            NSArray *array = [client.responseData objectForKey:@"Activities"];
             for(NSDictionary *activityDict in array) {
                 [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
             }

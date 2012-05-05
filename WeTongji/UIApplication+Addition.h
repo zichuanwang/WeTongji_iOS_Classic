@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define DefaultToastVerticalPosition 420.0f
+#define HighToastVerticalPosition 200.0f
 
 @interface UIApplication (Addition)
 
