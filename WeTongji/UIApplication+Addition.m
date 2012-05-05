@@ -80,11 +80,7 @@ static BOOL _isShowingToast;
     }];
 }
 
-- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y andTime:(float)time isAlert:(BOOL)isAlert
-{
-    if(_isShowingToast)
-        return;
-    _isShowingToast = YES;
+- (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y andTime:(float)time isAlert:(BOOL)isAlert {
     UIImage *bgImage = nil;
     if(isAlert)
         bgImage = [UIImage imageNamed:@"toast_alert_bg.png"];
@@ -109,12 +105,7 @@ static BOOL _isShowingToast;
     [bgImageView addSubview:labelView];
     [self.keyWindow addSubview:bgImageView];
     
-    labelView.alpha = 0;
-    bgImageView.alpha = 0;
-    [UIView animateWithDuration:0.2f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        labelView.alpha = 1;
-        bgImageView.alpha = 1;
-    } completion:^(BOOL finished) {
+    void (^ completion)(BOOL finished) = ^ (BOOL finished){
         [UIView animateWithDuration:0.3f delay:time options:UIViewAnimationOptionCurveEaseInOut animations:^{
             labelView.alpha = 0;
             bgImageView.alpha = 0;
@@ -122,15 +113,30 @@ static BOOL _isShowingToast;
             [bgImageView removeFromSuperview];
             _isShowingToast = NO;
         }];
-    }];
+    };
+    
+    if(!_isShowingToast) {
+        
+        labelView.alpha = 0;
+        bgImageView.alpha = 0;
+        
+        [UIView animateWithDuration:0.2f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            labelView.alpha = 1;
+            bgImageView.alpha = 1;
+        } completion:completion];
+    }
+    else
+        completion(YES);
+    
+    _isShowingToast = YES;
 }
 
 + (void)presentAlertToast:(NSString *)text withVerticalPos:(CGFloat)y {
-    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:1.2f isAlert:YES];
+    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:0.7f isAlert:YES];
 }
 
 + (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y {
-    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:1.2f isAlert:NO];
+    [[UIApplication sharedApplication] presentToast:text withVerticalPos:y andTime:0.7f isAlert:NO];
 }
 
 + (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title {

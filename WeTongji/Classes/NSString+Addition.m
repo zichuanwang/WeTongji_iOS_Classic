@@ -26,8 +26,8 @@
     NSDateFormatter *form = [[NSDateFormatter alloc] init];
     [form setDateFormat:@"yyyy年MM月dd日"];
     NSString *result = [form stringFromDate:date];
-    NSString *month = [result substringWithRange:NSMakeRange(0, 2)];
-    result = [result stringByReplacingCharactersInRange:NSMakeRange(0, 2) withString:[NSString stringWithFormat:@"%d", month.intValue]];
+    NSString *month = [result substringWithRange:NSMakeRange(5, 2)];
+    result = [result stringByReplacingCharactersInRange:NSMakeRange(5, 2) withString:[NSString stringWithFormat:@"%d", month.intValue]];
     return result;
 }
 
@@ -68,7 +68,7 @@
             break;
     }
         
-    result = [NSString stringWithFormat:@"%@(%@) %@", result, weekdayStr, [NSString timeConvertFromDate:date]];
+    result = [NSString stringWithFormat:@"%@(%@)%@", result, weekdayStr, [NSString timeConvertFromDate:date]];
     
     return result;
 }
@@ -82,7 +82,7 @@
 
 + (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end {
     NSString *timeStr = [NSString yearMonthDayWeekTimeConvertFromDate:begin];
-    timeStr = [NSString stringWithFormat:@"%@ - %@", timeStr, [NSString timeConvertFromDate:end]];
+    timeStr = [NSString stringWithFormat:@"%@-%@", timeStr, [NSString timeConvertFromDate:end]];
     return timeStr;
 }
 

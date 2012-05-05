@@ -58,7 +58,7 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"注册"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
+    UIBarButtonItem *finishButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = finishButton;
     
     UIBarButtonItem *settingButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"注册" target:self action:@selector(didClickNextButton)];
