@@ -16,7 +16,6 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 @interface WTClient()
 
 @property (nonatomic, retain) NSMutableDictionary *params;
-@property (nonatomic, copy) NSString *path;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, assign, getter = isSessionRequired) BOOL sessionRequired;
 @property (nonatomic, assign, getter = isCurrentUserIDRequired) BOOL currentUserIDRequired;
@@ -32,7 +31,6 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 
 @synthesize params = _params;
 @synthesize request = _request;
-@synthesize path = _path;
 @synthesize sessionRequired = _sessionRequired;
 @synthesize currentUserIDRequired = _currentUserIDRequired;
 
@@ -55,7 +53,6 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
     [_errorDesc release];
     [_completionBlock release];
     [_params release];
-    [_path release];
     [_request release];
     [_responseData release];
     [super dealloc];
@@ -64,12 +61,12 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 - (id)init {
     self = [super init];
     if(self) {
-        _params = [[NSMutableDictionary alloc] initWithCapacity:10];
-        _hasError = NO;
-        _responseStatusCode = 0;
+        self.params = [[NSMutableDictionary alloc] initWithCapacity:10];
+        self.hasError = NO;
+        self.responseStatusCode = 0;
         
-        _request = [[ASIHTTPRequest alloc] initWithURL:nil];
-        _request.delegate = self;
+        self.request = [[ASIHTTPRequest alloc] initWithURL:nil];
+        self.request.delegate = self;
         
         [self.params setObject:@"iPhone" forKey:@"D"];
         [self.params setObject:@"1.0" forKey:@"V"];
@@ -130,7 +127,7 @@ report_completion:
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSLog(@"Request Failed");
-    NSLog(@"%@", _request.error);
+    NSLog(@"%@", self.request.error);
     
     self.hasError = YES;
     self.errorDesc = @""; //to do
@@ -143,32 +140,33 @@ report_completion:
 #pragma mark URL generation
 
 - (NSString *)hashQueryString:(NSString *)queryString {
-    NSMutableString *result = [NSMutableString stringWithString:queryString];
+    NSMutableString *result = [NSMutableString stringWithString:@"&H="];
     NSString *md5 = [queryString md5HexDigest];
-    [result appendFormat:@"&H=%@", md5];
+    [result appendFormat:@"%@", md5];
     return result;
 }
 
 - (NSString *)queryString
 {
-    NSArray *names = [_params allKeys];
+    NSArray *names = [self.params allKeys];
     NSArray *sortedNames = [names sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSString *str1 = (NSString *)obj1;
         NSString *str2 = (NSString *)obj2;
         return [str1 compare:str2];
-    }];
+    }];    
     
-    NSMutableString *str = [NSMutableString stringWithCapacity:10];
+    NSMutableString *result = [NSMutableString stringWithCapacity:10];
     for (int i = 0; i < [sortedNames count]; i++) {
         if (i > 0)
-            [str appendString:@"&"];
+            [result appendString:@"&"];
         NSString *name = [sortedNames objectAtIndex:i];
         NSString *parameter = [self.params objectForKey:name];
-        [str appendString:[NSString stringWithFormat:@"%@=%@", name, 
-                           parameter]];
+        [result appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
+                           [parameter URLEncodedString]]];
     }
-    NSString *hashStr = [self hashQueryString:str];    
-    NSString *result = [hashStr URLEncodedString];
+    NSString *hash = [self hashQueryString:result];
+    [result appendFormat:@"%@", hash];
+        
     return result;
 }
 
@@ -189,7 +187,7 @@ report_completion:
 
 - (void)sendRequest
 {
-    if ([_request url]) {
+    if ([self.request url]) {
         return;
     }
     
@@ -254,17 +252,21 @@ report_completion:
     NSDictionary *itemDict = [NSDictionary dictionaryWithObjectsAndKeys:display_name, @"DisplayName", nil];
     NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];
     NSString *userJSONStr = [userDict JSONRepresentation];
-    [self.params setObject:userJSONStr forKey:@"User"];
     NSLog(@"userJSONStr %@", userJSONStr);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:nil];
+    [request setPostValue:userJSONStr forKey:@"User"];
+    self.request = request;
+    request.delegate = self;
     [self sendRequest];
 }
 
 - (void)updateUserAvatar:(UIImage *)image {
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:nil];
     [self.params setObject:@"User.Update.Avatar" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
     NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:nil];
+    request.delegate = self;
     [request addData:imageData forKey:@"Image"];
     self.request = request;
     [self sendRequest];
