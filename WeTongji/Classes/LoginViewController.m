@@ -10,14 +10,14 @@
 #import "UIApplication+Addition.h"
 #import "SignInProtocolViewController.h"
 #import "WTClient.h"
+#import "User+Addition.h"
+#import "NSUserDefaults+Addition.h"
 
 #import "SignInMainViewController.h"
 
 @interface LoginViewController ()
 
 @property (nonatomic, weak) UITextField *editingTextField;
-@property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
-@property (nonatomic, assign, getter = isSendingRequest) BOOL sendingRequest;
 
 @end
 
@@ -29,7 +29,6 @@
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
 @synthesize passwordTextField = _passwordTextField;
-@synthesize sendingRequest = _sendingRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,13 +70,13 @@
 - (BOOL)isParameterValid {
     BOOL result = YES;
     if([self.accountTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入账号。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入账号。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if([self.passwordTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if(self.passwordTextField.text.length < 6) {
-        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     }
     return result;
@@ -91,11 +90,17 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
+            NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
+            User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
+            NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
+            [NSUserDefaults setCurrentUserID:user.user_id session:session];
+            NSLog(@"user id:%@, session:%@", user.user_id, session);
+            
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
-            [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:HighToastVerticalPosition];
+            [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:self.toastVerticalPos];
         }
         self.sendingRequest = NO;
     }];

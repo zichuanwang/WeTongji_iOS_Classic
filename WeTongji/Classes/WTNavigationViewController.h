@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "UIBarButtonItem+WTBarButtonItem.h"
 #import "UILabel+Addition.h"
+#import "CoreDataViewController.h"
 
-@interface WTNavigationViewController : UIViewController
+@interface WTNavigationViewController : CoreDataViewController
 
 @property (nonatomic, strong) IBOutlet UIImageView *navBarShadowImageView;
 

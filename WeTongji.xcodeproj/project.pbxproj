@@ -75,21 +75,15 @@
 		E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */; };
 		E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */; };
 		E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */; };
+		E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEC0155555BB00BEE141 /* WTPostViewController.m */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
 		E174A973153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */; };
 		E174A977153DAA1E00E7165A /* LoginListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A975153DAA1D00E7165A /* LoginListTableViewController.m */; };
 		E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */; };
-		E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A979153DB2C100E7165A /* login_user_list_bg.png */; };
-		E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */; };
-		E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A97E153DB59A00E7165A /* login_light_color_line.png */; };
-		E174A99B153E7FB900E7165A /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A999153E7FB900E7165A /* login_bg.png */; };
-		E174A99C153E7FB900E7165A /* login_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A99A153E7FB900E7165A /* login_bg@2x.png */; };
 		E174A9A2153E800400E7165A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A9A0153E800400E7165A /* LoginViewController.m */; };
 		E174A9A3153E800400E7165A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A9A1153E800400E7165A /* LoginViewController.xib */; };
-		E174A9AA153E83BD00E7165A /* login_btn_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A9A8153E83BD00E7165A /* login_btn_cancel.png */; };
-		E174A9AB153E83BD00E7165A /* login_btn_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A9A9153E83BD00E7165A /* login_btn_cancel@2x.png */; };
 		E174A9B3153E857800E7165A /* UIApplication+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A9B2153E84EC00E7165A /* UIApplication+Addition.m */; };
 		E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */; };
 		E180639015360BAD00460F8B /* main_tab_bar_btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */; };
@@ -339,6 +333,8 @@
 		E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoViewController.h; path = Classes/UpdateUserInfoViewController.h; sourceTree = "<group>"; };
 		E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoViewController.m; path = Classes/UpdateUserInfoViewController.m; sourceTree = "<group>"; };
 		E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserInfoViewController.xib; path = Classes/UpdateUserInfoViewController.xib; sourceTree = "<group>"; };
+		E168FEBF155555BB00BEE141 /* WTPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; name = WTPostViewController.h; path = Classes/WTPostViewController.h; sourceTree = "<group>"; };
+		E168FEC0155555BB00BEE141 /* WTPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTPostViewController.m; path = Classes/WTPostViewController.m; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
@@ -347,16 +343,9 @@
 		E174A974153DAA1C00E7165A /* LoginListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginListTableViewController.h; path = Classes/LoginListTableViewController.h; sourceTree = "<group>"; };
 		E174A975153DAA1D00E7165A /* LoginListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginListTableViewController.m; path = Classes/LoginListTableViewController.m; sourceTree = "<group>"; };
 		E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginListTableViewController.xib; path = Classes/LoginListTableViewController.xib; sourceTree = "<group>"; };
-		E174A979153DB2C100E7165A /* login_user_list_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_user_list_bg.png; sourceTree = "<group>"; };
-		E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user_list_bg@2x.png"; sourceTree = "<group>"; };
-		E174A97E153DB59A00E7165A /* login_light_color_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_light_color_line.png; sourceTree = "<group>"; };
-		E174A999153E7FB900E7165A /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
-		E174A99A153E7FB900E7165A /* login_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2x.png"; sourceTree = "<group>"; };
 		E174A99F153E800400E7165A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
 		E174A9A0153E800400E7165A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
 		E174A9A1153E800400E7165A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
-		E174A9A8153E83BD00E7165A /* login_btn_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_cancel.png; sourceTree = "<group>"; };
-		E174A9A9153E83BD00E7165A /* login_btn_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_cancel@2x.png"; sourceTree = "<group>"; };
 		E174A9B1153E84EC00E7165A /* UIApplication+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Addition.h"; sourceTree = "<group>"; };
 		E174A9B2153E84EC00E7165A /* UIApplication+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Addition.m"; sourceTree = "<group>"; };
 		E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_check@2x.png"; sourceTree = "<group>"; };
@@ -726,22 +715,15 @@
 			name = sign_in;
 			sourceTree = "<group>";
 		};
-		E174A97D153DB2C600E7165A /* login */ = {
+		E174A97D153DB2C600E7165A /* sign_in */ = {
 			isa = PBXGroup;
 			children = (
 				E168FE871553D4B000BEE141 /* sign_in_btn_bg_hl.png */,
 				E168FE881553D4B000BEE141 /* sign_in_btn_bg_hl@2x.png */,
 				E168FE891553D4B000BEE141 /* sign_in_btn_bg.png */,
 				E168FE8A1553D4B000BEE141 /* sign_in_btn_bg@2x.png */,
-				E174A97E153DB59A00E7165A /* login_light_color_line.png */,
-				E174A979153DB2C100E7165A /* login_user_list_bg.png */,
-				E174A97A153DB2C200E7165A /* login_user_list_bg@2x.png */,
-				E174A999153E7FB900E7165A /* login_bg.png */,
-				E174A99A153E7FB900E7165A /* login_bg@2x.png */,
-				E174A9A8153E83BD00E7165A /* login_btn_cancel.png */,
-				E174A9A9153E83BD00E7165A /* login_btn_cancel@2x.png */,
 			);
-			name = login;
+			name = sign_in;
 			sourceTree = "<group>";
 		};
 		E174A99E153E7FC800E7165A /* login */ = {
@@ -864,7 +846,7 @@
 			children = (
 				E1D5503C15509D2800068824 /* toast */,
 				E1D387A3154DC801006325E8 /* channel */,
-				E174A97D153DB2C600E7165A /* login */,
+				E174A97D153DB2C600E7165A /* sign_in */,
 				E1DF6F901537610F001C60EA /* paper */,
 				E10A16671536175100700A0E /* default */,
 				E10A16661536173E00700A0E /* icon */,
@@ -1029,6 +1011,8 @@
 				E1DF6FF91539B93A001C60EA /* WTNavigationViewController.m */,
 				E1A836E815446FEB0086F62E /* WTTabelViewController.h */,
 				E1A836E915446FEB0086F62E /* WTTabelViewController.m */,
+				E168FEBF155555BB00BEE141 /* WTPostViewController.h */,
+				E168FEC0155555BB00BEE141 /* WTPostViewController.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -1374,14 +1358,7 @@
 				E174A96B153D832F00E7165A /* avatar_frame.png in Resources */,
 				E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */,
 				E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */,
-				E174A97B153DB2C200E7165A /* login_user_list_bg.png in Resources */,
-				E174A97C153DB2C200E7165A /* login_user_list_bg@2x.png in Resources */,
-				E174A97F153DB59A00E7165A /* login_light_color_line.png in Resources */,
-				E174A99B153E7FB900E7165A /* login_bg.png in Resources */,
-				E174A99C153E7FB900E7165A /* login_bg@2x.png in Resources */,
 				E174A9A3153E800400E7165A /* LoginViewController.xib in Resources */,
-				E174A9AA153E83BD00E7165A /* login_btn_cancel.png in Resources */,
-				E174A9AB153E83BD00E7165A /* login_btn_cancel@2x.png in Resources */,
 				E1A836DD154466320086F62E /* nav_bar_shadow.png in Resources */,
 				E1A836DE154466320086F62E /* nav_bar_shadow@2x.png in Resources */,
 				E1A836E415446A800086F62E /* paper_info_line.png in Resources */,
@@ -1545,6 +1522,7 @@
 				E168FEA915540A1700BEE141 /* User.m in Sources */,
 				E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */,
 				E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */,
+				E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

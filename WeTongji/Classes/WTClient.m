@@ -9,6 +9,7 @@
 #import "WTClient.h"
 #import "JSON.h"
 #import "NSString+URLEncoding.h"
+#import "NSUserDefaults+Addition.h"
 
 static NSString* const APIDomain = @"106.187.95.107:8080";
 
@@ -17,7 +18,8 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 @property (nonatomic, retain) NSMutableDictionary *params;
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, retain) ASIHTTPRequest *request;
-@property (nonatomic, retain) id responseJSONObject;
+@property (nonatomic, assign, getter = isSessionRequired) BOOL sessionRequired;
+@property (nonatomic, assign, getter = isCurrentUserIDRequired) BOOL currentUserIDRequired;
 
 @end
 
@@ -31,7 +33,8 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 @synthesize params = _params;
 @synthesize request = _request;
 @synthesize path = _path;
-@synthesize responseJSONObject = _responseJSONObject;
+@synthesize sessionRequired = _sessionRequired;
+@synthesize currentUserIDRequired = _currentUserIDRequired;
 
 - (void)setCompletionBlock:(void (^)(WTClient* client))completionBlock {
     [_completionBlock autorelease];
@@ -49,7 +52,6 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
 
 - (void)dealloc {
     NSLog(@"WeiboClient dealloc");
-    [_responseJSONObject release];
     [_errorDesc release];
     [_completionBlock release];
     [_params release];
@@ -97,15 +99,16 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
         {
             self.hasError = YES;
             self.errorDesc = [NSHTTPURLResponse localizedStringForStatusCode:request.responseStatusCode];
+            NSLog(@"error %@", self.errorDesc);
             goto report_completion;
         }
     }
     
-    self.responseJSONObject = [request.responseString JSONValue];
-    NSLog(@"respond dict:%@", self.responseJSONObject);
+    id responseJSONObject = [request.responseString JSONValue];
+    NSLog(@"respond dict:%@", responseJSONObject);
     
-    if ([self.responseJSONObject isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *dict = (NSDictionary*)self.responseJSONObject;
+    if ([responseJSONObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary*)responseJSONObject;
         NSDictionary *status = [dict objectForKey:@"Status"];
         NSString *statusId = [status objectForKey:@"Id"];
         NSDictionary *data = [dict objectForKey:@"Data"];
@@ -140,9 +143,9 @@ report_completion:
 #pragma mark URL generation
 
 - (NSString *)hashQueryString:(NSString *)queryString {
-    NSMutableString *result = [NSMutableString stringWithString:@"&H="];
+    NSMutableString *result = [NSMutableString stringWithString:queryString];
     NSString *md5 = [queryString md5HexDigest];
-    [result appendFormat:@"%@", md5];
+    [result appendFormat:@"&H=%@", md5];
     return result;
 }
 
@@ -164,19 +167,8 @@ report_completion:
         [str appendString:[NSString stringWithFormat:@"%@=%@", name, 
                            parameter]];
     }
-    NSString *hash = [self hashQueryString:str];
-    
-    NSMutableString *result = [NSMutableString stringWithCapacity:10];
-    for (int i = 0; i < [sortedNames count]; i++) {
-        if (i > 0)
-            [result appendString:@"&"];
-        NSString *name = [sortedNames objectAtIndex:i];
-        NSString *parameter = [self.params objectForKey:name];
-        [result appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
-                           [parameter URLEncodedString]]];
-    }
-    [result appendFormat:@"%@", hash];
-        
+    NSString *hashStr = [self hashQueryString:str];    
+    NSString *result = [hashStr URLEncodedString];
     return result;
 }
 
@@ -201,6 +193,11 @@ report_completion:
         return;
     }
     
+    if(self.isCurrentUserIDRequired)
+        [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
+    if(self.isSessionRequired)
+        [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
+
     [self buildURL];
     [self.request startAsynchronous];
 }
@@ -247,6 +244,29 @@ report_completion:
 
 - (void)logout {
     [self.params setObject:@"User.LogOut" forKey:@"M"];
+    [self sendRequest];
+}
+
+- (void)updateUserDisplayName:(NSString *)display_name {
+    [self.params setObject:@"User.Update" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    NSDictionary *itemDict = [NSDictionary dictionaryWithObjectsAndKeys:display_name, @"DisplayName", nil];
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];
+    NSString *userJSONStr = [userDict JSONRepresentation];
+    [self.params setObject:userJSONStr forKey:@"User"];
+    NSLog(@"userJSONStr %@", userJSONStr);
+    [self sendRequest];
+}
+
+- (void)updateUserAvatar:(UIImage *)image {
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:nil];
+    [self.params setObject:@"User.Update.Avatar" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
+    [request addData:imageData forKey:@"Image"];
+    self.request = request;
     [self sendRequest];
 }
 

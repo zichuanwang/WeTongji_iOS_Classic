@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavigationViewController.h"
+#import "WTPostViewController.h"
 
-@interface SignInMainViewController : WTNavigationViewController <UITextFieldDelegate>
+@interface SignInMainViewController : WTPostViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UITextField *nameTextField;

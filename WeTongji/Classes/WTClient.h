@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @class WTClient;
 
@@ -34,5 +34,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)activateUser:(NSString *)name stutentNum:(NSString *)num password:(NSString *)password;
 - (void)login:(NSString *)num password:(NSString *)password;
 - (void)logout;
+- (void)updateUserDisplayName:(NSString *)display_name;
+- (void)updateUserAvatar:(UIImage *)image;
 
 @end

@@ -12,7 +12,7 @@
 
 + (User *)insertUser:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSString *userID = [NSString stringWithFormat:@"@",[dict objectForKey:@"Id"]];
+    NSString *userID = [NSString stringWithFormat:@"%@",[dict objectForKey:@"UID"]];
     
     if (!userID || [userID isEqualToString:@""]) {
         return nil;
@@ -24,6 +24,8 @@
     }
     
     result.user_id = userID;
+    result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Avatar"]];
+    result.email_address = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Email"]];
     
     return result;
 }

@@ -12,9 +12,6 @@
 
 @interface SignInMainViewController ()
 
-@property (nonatomic, readonly, getter = isParameterValid) BOOL parameterValid;
-@property (nonatomic, assign, getter = isSendingRequest) BOOL sendingRequest;
-
 @end
 
 @implementation SignInMainViewController
@@ -25,7 +22,6 @@
 @synthesize studentNumberTextField = _studentNumberTextField;
 @synthesize passwordTextField = _passwordTextField;
 @synthesize bgView = _bgView;
-@synthesize sendingRequest = _sendingRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,16 +59,16 @@
 - (BOOL)isParameterValid {
     BOOL result = YES;
     if([self.nameTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入姓名。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入姓名。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if([self.studentNumberTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入学号。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入学号。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if([self.passwordTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if(self.passwordTextField.text.length < 6) {
-        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:HighToastVerticalPosition];
+        [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     }
     return result;
@@ -91,10 +87,10 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
         else {
-            if(client.responseStatusCode == 1) 
-                [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:HighToastVerticalPosition];
+            if(client.responseStatusCode == 3) 
+                [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:self.toastVerticalPos];
             else if(client.responseStatusCode == 2)
-                [UIApplication presentAlertToast:@"该账户已经注册过。" withVerticalPos:HighToastVerticalPosition];
+                [UIApplication presentAlertToast:@"该账户已经注册过。" withVerticalPos:self.toastVerticalPos];
             
             [self configureNavBar];
         }

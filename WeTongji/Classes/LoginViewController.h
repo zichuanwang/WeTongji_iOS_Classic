@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavigationViewController.h"
+#import "WTPostViewController.h"
 
-@interface LoginViewController : WTNavigationViewController <UITextFieldDelegate>
+@interface LoginViewController : WTPostViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;

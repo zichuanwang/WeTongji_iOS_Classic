@@ -16,6 +16,7 @@ typedef enum {
 @interface NSUserDefaults (Addition)
 
 + (void)initialize;
+
 + (void)setChannelFollowStatus:(NSArray *)channels;
 + (NSArray *)getChannelFollowStatusArray;
 + (NSString *)getChannelFollowStatusString;
@@ -24,5 +25,9 @@ typedef enum {
 + (NSArray *)getChannelSortMethodArray;
 + (ChannelSortMethod)getChannelSortMethod;
 + (NSArray *)getChannelNameArray;
+
++ (void)setCurrentUserID:(NSString *)userID session:(NSString *)session;
++ (NSString *)getCurrentUserID;
++ (NSString *)getCurrentUserSession;
 
 @end
