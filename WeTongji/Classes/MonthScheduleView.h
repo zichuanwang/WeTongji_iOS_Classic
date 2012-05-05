@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CalendarViewDelegate;
+@class MonthEventTableViewController;
 
 @interface MonthScheduleView : UIView {
 	CFGregorianDate currentMonthDate;
@@ -24,6 +24,7 @@
 @property CFAbsoluteTime  currentTime;
 
 @property (nonatomic, retain) UIImageView* viewImageView;
+@property (nonatomic, retain) MonthEventTableViewController *eventViewController;
 //@property (unsafe_unretained) id<CalendarViewDelegate> calendarViewDelegate;
 -(int)getDayCountOfaMonth:(CFGregorianDate)date;
 -(int)getMonthWeekday:(CFGregorianDate)date;

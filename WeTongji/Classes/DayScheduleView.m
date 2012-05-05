@@ -21,8 +21,6 @@ const float dayPrevNextButtonSpaceHeight=12;
 
 @implementation DayScheduleView
 
-@synthesize datesIndexArray = _datesIndexArray;
-@synthesize dateSourceDictionary = _dateSourceDictionary;
 @synthesize sv = _sv;
 @synthesize currentView = _currentView;
 @synthesize viewImageView = _viewImageView;
@@ -50,7 +48,6 @@ const float dayPrevNextButtonSpaceHeight=12;
         currentMonthDate=CFAbsoluteTimeGetGregorianDate(currentTime,CFTimeZoneCopyDefault());
         
         self.firstRect = CGRectMake(0, 0, kCELLWIDTH, 1);
-        [self setupData];
     }
     return self;
 }
@@ -62,54 +59,6 @@ const float dayPrevNextButtonSpaceHeight=12;
         // Initialization code
     }
     return self;
-}
-
-- (void)setupData{
-    //set up the course data
-    NSDictionary *course1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"操作系统",@"Name",
-                             @"9",@"startHour",@"00",@"startMin",
-                             @"10",@"endHour",@"00",@"endMin",
-                             @"A301",@"Location", nil];
-    NSDictionary *course2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"组成原理",@"Name",
-                             @"10",@"startHour",@"00",@"startMin",
-                             @"12",@"endHour",@"00",@"endMin",
-                             @"B410",@"Location", nil];
-    NSDictionary *course3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"未来剧场",@"Name",
-                             @"17",@"startHour",@"00",@"startMin",
-                             @"19",@"endHour",@"00",@"endMin",
-                             @"A310",@"Location", nil];
-    NSDictionary *course4 = [[NSDictionary alloc] initWithObjectsAndKeys:@"flash",@"Name",
-                             @"16",@"startHour",@"00",@"startMin",
-                             @"17",@"endHour",@"00",@"endMin",
-                             @"F210",@"Location", nil];
-    NSDictionary *course5 = [[NSDictionary alloc] initWithObjectsAndKeys:@"平面设计",@"Name",
-                             @"20",@"startHour",@"00",@"startMin",
-                             @"22",@"endHour",@"00",@"endMin",
-                             @"F301",@"Location", nil];
-    NSDictionary *course6 = [[NSDictionary alloc] initWithObjectsAndKeys:@"数据库",@"Name",
-                             @"13",@"startHour",@"00",@"startMin",
-                             @"14",@"endHour",@"00",@"endMin",
-                             @"AG301",@"Location", nil];
-    
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月1日"]];
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月2日"]];
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月3日"]];
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月4日"]];
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月5日"]];
-    [self.datesIndexArray addObject:[NSString stringWithString:@"3月6日"]];
-    NSArray *day1 = [NSArray arrayWithObjects:course1, nil];
-    NSArray *day2 = [NSArray arrayWithObjects:course2, course3, nil];
-    NSArray *day3 = [NSArray arrayWithObjects:course4, course5, course6, nil];
-    NSArray *day4 = [NSArray arrayWithObjects:course1, course3, nil];
-    NSArray *day5 = [NSArray arrayWithObjects:course2, course4, nil];
-    NSArray *day6 = [NSArray arrayWithObjects:course4, course2, course6, nil];
-    
-    [self.dateSourceDictionary setValue:day1 forKey:[self.datesIndexArray objectAtIndex:0]];
-    [self.dateSourceDictionary setValue:day2 forKey:[self.datesIndexArray objectAtIndex:1]];
-    [self.dateSourceDictionary setValue:day3 forKey:[self.datesIndexArray objectAtIndex:2]];
-    [self.dateSourceDictionary setValue:day4 forKey:[self.datesIndexArray objectAtIndex:3]];
-    [self.dateSourceDictionary setValue:day5 forKey:[self.datesIndexArray objectAtIndex:4]];
-    [self.dateSourceDictionary setValue:day6 forKey:[self.datesIndexArray objectAtIndex:5]];
 }
 
 - (void)drawPrevButton:(CGPoint)leftTop
@@ -202,7 +151,16 @@ const float dayPrevNextButtonSpaceHeight=12;
 }
 
 - (void)moveToToday{
-    [self.sv scrollRectToVisible:self.currentView.firstRect animated:YES];
+    CGRect tmp;
+    NSLog(@"sv:  %f",self.sv.contentOffset.y);
+    NSLog(@"firstRec:  %f",self.currentView.firstRect.origin.y);
+    if (self.currentView.firstRect.origin.y>291+self.sv.contentOffset.y ) {
+        tmp = CGRectMake(self.currentView.firstRect.origin.x, self.currentView.firstRect.origin.y+280, self.currentView.firstRect.size.width, self.currentView.firstRect.size.height);
+        [self.sv scrollRectToVisible:tmp animated:YES];
+    }else {
+        tmp = CGRectMake(self.currentView.firstRect.origin.x, self.currentView.firstRect.origin.y-10, self.currentView.firstRect.size.width, self.currentView.firstRect.size.height);
+        [self.sv scrollRectToVisible:tmp animated:YES];
+    }
 }
 
 - (int)getDayCountOfaMonth:(CFGregorianDate)date{
@@ -215,7 +173,6 @@ const float dayPrevNextButtonSpaceHeight=12;
 		case 10:
 		case 12:
 			return 31;
-			
 		case 2:
 			if(date.year%4==0 && date.year%100!=0)
 				return 29;
@@ -282,12 +239,7 @@ const float dayPrevNextButtonSpaceHeight=12;
 	self.hidden=YES;
 	[self setNeedsDisplay];
 	self.transform=CGAffineTransformMakeTranslation(posX,0);
-	
-	
-	//float height;
-	//int row_Count=([self getDayCountOfaMonth:currentMonthDate]+[self getMonthWeekday:currentMonthDate]-2)/7+1;
-	//height=row_Count*itemHeight+headHeight;
-	//self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
+    
 	self.hidden=NO;
 	[UIView beginAnimations:nil	context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -331,28 +283,9 @@ const float dayPrevNextButtonSpaceHeight=12;
 }
 
 - (void) touchAtDate:(CGPoint) touchPoint{
-	int x;
-	int y;
-	int width=self.frame.size.width;
-	int firstMonthday=[self getMonthWeekday:currentMonthDate];
-    if (firstMonthday == 7) {
-        firstMonthday = 0;
-    }
-	int monthDayCount=[self getDayCountOfaMonth:currentMonthDate];
-	x=touchPoint.x*7/width+1;
-	y=(touchPoint.y-dayHeadHeight)/dayItemHeight+1;
-    int monthday = (y-1)*7+x - firstMonthday;
-	if(monthday>0 && monthday<monthDayCount+1)
-	{
-		currentSelectDate.year=currentMonthDate.year;
-		currentSelectDate.month=currentMonthDate.month;
-		currentSelectDate.day=monthday;
-		currentSelectDate.hour=0;
-		currentSelectDate.minute=0;
-		currentSelectDate.second=1;
-		//[calendarViewDelegate selectDateChanged:currentSelectDate];
-		[self setNeedsDisplay];
-	}
+	//judge which course is touched 
+    //and push a new detail view
+    
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -377,7 +310,6 @@ const float dayPrevNextButtonSpaceHeight=12;
     // Drawing code
     [self drawTopGradientBar];
     [self drawToday];
-    //[self drawCourses];
 }
 
 

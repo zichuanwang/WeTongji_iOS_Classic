@@ -16,9 +16,6 @@
 	CFAbsoluteTime	currentTime;
 }
 
-@property (nonatomic, strong) NSMutableArray *datesIndexArray;
-@property (nonatomic, strong) NSMutableDictionary *dateSourceDictionary;
-
 @property CFGregorianDate currentMonthDate;
 @property CFGregorianDate currentSelectDate;
 @property CFAbsoluteTime  currentTime;

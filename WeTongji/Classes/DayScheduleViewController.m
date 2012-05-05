@@ -12,9 +12,7 @@
 
 @interface DayScheduleViewController ()
 
-@property (nonatomic, strong) quartzView *previousView;
 @property (nonatomic, strong) quartzView *currentView;
-@property (nonatomic, strong) quartzView *nextView;
 
 @property (nonatomic, retain) NSString *currentDate;
 
@@ -23,9 +21,7 @@
 @implementation DayScheduleViewController
 
 @synthesize dayScheduleView = _dayScheduleView;
-@synthesize previousView = _previousView;
 @synthesize currentView = _currentView;
-@synthesize nextView = _nextView;
 @synthesize currentDate = _currentDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

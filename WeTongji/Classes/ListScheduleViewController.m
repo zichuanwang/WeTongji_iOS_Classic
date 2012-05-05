@@ -62,17 +62,29 @@
     
     //set up the course data
     NSDictionary *course1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"操作系统",@"Name",
-                             @"9:00",@"startTime",@"10:00",@"endTime",@"A301",@"Location", nil];
+                             @"9",@"startHour",@"00",@"startMin",
+                             @"10",@"endHour",@"00",@"endMin",
+                             @"A301",@"Location", nil];
     NSDictionary *course2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"组成原理",@"Name",
-                             @"10:00",@"startTime",@"12:00",@"endTime",@"B410",@"Location", nil];
+                             @"10",@"startHour",@"00",@"startMin",
+                             @"12",@"endHour",@"00",@"endMin",
+                             @"B410",@"Location", nil];
     NSDictionary *course3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"未来剧场",@"Name",
-                             @"17:00",@"startTime",@"19:00",@"endTime",@"A310",@"Location", nil];
+                             @"17",@"startHour",@"00",@"startMin",
+                             @"19",@"endHour",@"00",@"endMin",
+                             @"A310",@"Location", nil];
     NSDictionary *course4 = [[NSDictionary alloc] initWithObjectsAndKeys:@"flash",@"Name",
-                             @"16:00",@"startTime",@"17:00",@"endTime",@"F210",@"Location", nil];
+                             @"16",@"startHour",@"00",@"startMin",
+                             @"17",@"endHour",@"00",@"endMin",
+                             @"F210",@"Location", nil];
     NSDictionary *course5 = [[NSDictionary alloc] initWithObjectsAndKeys:@"平面设计",@"Name",
-                             @"20:00",@"startTime",@"22:00",@"endTime",@"F301",@"Location", nil];
+                             @"20",@"startHour",@"00",@"startMin",
+                             @"22",@"endHour",@"00",@"endMin",
+                             @"F301",@"Location", nil];
     NSDictionary *course6 = [[NSDictionary alloc] initWithObjectsAndKeys:@"数据库",@"Name",
-                             @"13:00",@"startTime",@"14:00",@"endTime",@"AG301",@"Location", nil];
+                             @"13",@"startHour",@"00",@"startMin",
+                             @"14",@"endHour",@"00",@"endMin",
+                             @"AG301",@"Location", nil];
     
     [self.datesIndexArray addObject:[NSString stringWithString:@"3月1日"]];
     [self.datesIndexArray addObject:[NSString stringWithString:@"3月2日"]];
@@ -125,19 +137,12 @@
     NSDictionary *rowData = [tmp objectAtIndex:row];
     
     cell.nameLabel.text = [rowData objectForKey:@"Name"];
-    cell.timeLabel.text = [rowData objectForKey:@"startTime"];
+    cell.timeLabel.text = [rowData objectForKey:@"Name"];
+    cell.timeLabel.text = [NSString stringWithFormat:@"%@:%@",[rowData objectForKey:@"startHour"],[rowData objectForKey:@"startMin"]];
     cell.locationLabel.text = [rowData objectForKey:@"Location"];
     
     return cell;
 }
-
-/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
-    UILabel *date = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 280, 40)];
-    date.text = [self.datesIndexArray objectAtIndex:section];
-    [view addSubview:date];
-    return view;
-}*/
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.datesIndexArray objectAtIndex:section];

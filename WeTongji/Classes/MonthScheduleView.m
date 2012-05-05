@@ -7,10 +7,11 @@
 //
 
 #import "MonthScheduleView.h"
+#import "MonthEventTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 const float headHeight=60;
-const float itemHeight=35;
+const float itemHeight=37;
 const float prevNextButtonSize=20;
 const float prevNextButtonSpaceWidth=15;
 const float prevNextButtonSpaceHeight=12;
@@ -23,6 +24,7 @@ const int	weekFontSize=10;
 @synthesize currentSelectDate;
 @synthesize currentTime;
 @synthesize viewImageView;
+@synthesize eventViewController = _eventViewController;
 
 - (void)initCalView{
 	currentTime=CFAbsoluteTimeGetCurrent();
@@ -58,7 +60,6 @@ const int	weekFontSize=10;
 		case 10:
 		case 12:
 			return 31;
-			
 		case 2:
 			if(date.year%4==0 && date.year%100!=0)
 				return 29;
@@ -179,8 +180,8 @@ const int	weekFontSize=10;
 }
 
 - (void)drawGirdLines{
-	
 	CGContextRef ctx=UIGraphicsGetCurrentContext();
+    
 	int width=self.frame.size.width;
     int row_Count = 0;
     if ([self getMonthWeekday:currentMonthDate] != 7) {
@@ -188,9 +189,16 @@ const int	weekFontSize=10;
     }else {
         row_Count=([self getDayCountOfaMonth:currentMonthDate])/7+1;
     }
-    /*CGContextSetGrayFillColor(ctx, 0.7, 0.85);
-    CGContextAddRect(ctx, CGRectMake(0, headHeight, self.frame.size.width, row_Count*itemHeight));
-    CGContextFillPath(ctx);*/
+    
+    //add the events view 
+    self.eventViewController = [[MonthEventTableViewController alloc] init];
+//    self.eventView = [[MonthEventTableViewController alloc] initWithFrame:CGRectMake(0, headHeight+itemHeight*row_Count, width, self.frame.size.height-headHeight-itemHeight*row_Count)];
+    //self.eventViewController.view = [[UITableView alloc] initWithFrame:CGRectMake(0, headHeight+itemHeight*row_Count, width, self.frame.size.height-headHeight-itemHeight*row_Count)];
+    [self.eventViewController setViewPositionY:headHeight+itemHeight*row_Count viewHeight:self.frame.size.height-headHeight-itemHeight*row_Count];
+    [self addSubview:self.eventViewController.view];
+    
+    
+    //paint the monthview background
     size_t num_locations = 2;
 	CGFloat locations[2] = { 0.0,1.0};
 	CGFloat components[8] = { 
@@ -213,14 +221,6 @@ const int	weekFontSize=10;
 	
 	int s_width=width/7;
 	int tabHeight=row_Count*itemHeight+headHeight;
-
-	CGContextSetGrayStrokeColor(ctx,0,1);
-	//CGContextMoveToPoint	(ctx,0,headHeight);
-	//CGContextAddLineToPoint	(ctx,0,tabHeight);
-	//CGContextStrokePath		(ctx);
-	//CGContextMoveToPoint	(ctx,width,headHeight);
-	//CGContextAddLineToPoint	(ctx,width,tabHeight);
-	//CGContextStrokePath		(ctx);
 	
 	for(int i=1;i<7;i++){
 		CGContextSetGrayStrokeColor(ctx,0.9,1);
@@ -341,12 +341,7 @@ const int	weekFontSize=10;
 	self.hidden=YES;
 	[self setNeedsDisplay];
 	self.transform=CGAffineTransformMakeTranslation(posX,0);
-	
-	
-	//float height;
-	//int row_Count=([self getDayCountOfaMonth:currentMonthDate]+[self getMonthWeekday:currentMonthDate]-2)/7+1;
-	//height=row_Count*itemHeight+headHeight;
-	//self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
+    
 	self.hidden=NO;
 	[UIView beginAnimations:nil	context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -546,9 +541,7 @@ const int	weekFontSize=10;
 }
 
 - (void)dealloc {
-    //[super dealloc];
 	free(monthFlagArray);
 }
-
 
 @end
