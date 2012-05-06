@@ -24,10 +24,10 @@
     [NSUserDefaults initialize];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
-    WTClient *client = [WTClient client];
+    //WTClient *client = [WTClient client];
     //[client updateUserDisplayName:@"王二"];
     //[client updateUserAvatar:[UIImage imageNamed:@"user_info_default_image.jpg"]];
-    [client updatePassword:@"1234" withOldPassword:@"123456"];
+    //[client updatePassword:@"123456" withOldPassword:@"123456"];
     return YES;
 }
 

@@ -76,6 +76,12 @@
 		E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */; };
 		E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */; };
 		E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEC0155555BB00BEE141 /* WTPostViewController.m */; };
+		E172F8191556493800D6F99C /* SettingInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E172F8181556493800D6F99C /* SettingInfoReader.m */; };
+		E172F81B1556494500D6F99C /* SettingInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E172F81A1556494500D6F99C /* SettingInfo.plist */; };
+		E172F81F155653C600D6F99C /* UpdateUserAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E172F81D155653C500D6F99C /* UpdateUserAvatarViewController.m */; };
+		E172F820155653C600D6F99C /* UpdateUserAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E172F81E155653C500D6F99C /* UpdateUserAvatarViewController.xib */; };
+		E172F8241556545200D6F99C /* UpdateUserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E172F8221556545200D6F99C /* UpdateUserPasswordViewController.m */; };
+		E172F8251556545200D6F99C /* UpdateUserPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E172F8231556545200D6F99C /* UpdateUserPasswordViewController.xib */; };
 		E174A967153D822B00E7165A /* user_info_default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E174A966153D822B00E7165A /* user_info_default_image.jpg */; };
 		E174A96B153D832F00E7165A /* avatar_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A969153D832F00E7165A /* avatar_frame.png */; };
 		E174A96C153D832F00E7165A /* avatar_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E174A96A153D832F00E7165A /* avatar_frame@2x.png */; };
@@ -335,6 +341,15 @@
 		E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserInfoViewController.xib; path = Classes/UpdateUserInfoViewController.xib; sourceTree = "<group>"; };
 		E168FEBF155555BB00BEE141 /* WTPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTPostViewController.h; path = Classes/WTPostViewController.h; sourceTree = "<group>"; };
 		E168FEC0155555BB00BEE141 /* WTPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTPostViewController.m; path = Classes/WTPostViewController.m; sourceTree = "<group>"; };
+		E172F8171556493800D6F99C /* SettingInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingInfoReader.h; path = Classes/SettingInfoReader.h; sourceTree = "<group>"; };
+		E172F8181556493800D6F99C /* SettingInfoReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingInfoReader.m; path = Classes/SettingInfoReader.m; sourceTree = "<group>"; };
+		E172F81A1556494500D6F99C /* SettingInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingInfo.plist; sourceTree = "<group>"; };
+		E172F81C155653C500D6F99C /* UpdateUserAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserAvatarViewController.h; path = Classes/UpdateUserAvatarViewController.h; sourceTree = "<group>"; };
+		E172F81D155653C500D6F99C /* UpdateUserAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserAvatarViewController.m; path = Classes/UpdateUserAvatarViewController.m; sourceTree = "<group>"; };
+		E172F81E155653C500D6F99C /* UpdateUserAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserAvatarViewController.xib; path = Classes/UpdateUserAvatarViewController.xib; sourceTree = "<group>"; };
+		E172F8211556545200D6F99C /* UpdateUserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserPasswordViewController.h; path = Classes/UpdateUserPasswordViewController.h; sourceTree = "<group>"; };
+		E172F8221556545200D6F99C /* UpdateUserPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserPasswordViewController.m; path = Classes/UpdateUserPasswordViewController.m; sourceTree = "<group>"; };
+		E172F8231556545200D6F99C /* UpdateUserPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserPasswordViewController.xib; path = Classes/UpdateUserPasswordViewController.xib; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
 		E174A96A153D832F00E7165A /* avatar_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_frame@2x.png"; sourceTree = "<group>"; };
@@ -689,14 +704,20 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		E168FEB71555406600BEE141 /* user_info */ = {
+		E168FEB71555406600BEE141 /* update_user_info */ = {
 			isa = PBXGroup;
 			children = (
 				E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */,
 				E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */,
 				E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */,
+				E172F81C155653C500D6F99C /* UpdateUserAvatarViewController.h */,
+				E172F81D155653C500D6F99C /* UpdateUserAvatarViewController.m */,
+				E172F81E155653C500D6F99C /* UpdateUserAvatarViewController.xib */,
+				E172F8211556545200D6F99C /* UpdateUserPasswordViewController.h */,
+				E172F8221556545200D6F99C /* UpdateUserPasswordViewController.m */,
+				E172F8231556545200D6F99C /* UpdateUserPasswordViewController.xib */,
 			);
-			name = user_info;
+			name = update_user_info;
 			sourceTree = "<group>";
 		};
 		E168FEBE155542D500BEE141 /* sign_in */ = {
@@ -737,6 +758,9 @@
 				E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */,
 				E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */,
 				E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */,
+				E172F8171556493800D6F99C /* SettingInfoReader.h */,
+				E172F8181556493800D6F99C /* SettingInfoReader.m */,
+				E172F81A1556494500D6F99C /* SettingInfo.plist */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -1021,7 +1045,7 @@
 			isa = PBXGroup;
 			children = (
 				E168FEBE155542D500BEE141 /* sign_in */,
-				E168FEB71555406600BEE141 /* user_info */,
+				E168FEB71555406600BEE141 /* update_user_info */,
 				E1E4839115488D9700814FA4 /* favorite */,
 				E174A9D415406D0B00E7165A /* news */,
 				E174A99E153E7FC800E7165A /* login */,
@@ -1456,6 +1480,9 @@
 				E168FEA31553FAA900BEE141 /* dock_btn_treize@2x.png in Resources */,
 				E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */,
 				E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */,
+				E172F81B1556494500D6F99C /* SettingInfo.plist in Resources */,
+				E172F820155653C600D6F99C /* UpdateUserAvatarViewController.xib in Resources */,
+				E172F8251556545200D6F99C /* UpdateUserPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1547,6 +1574,9 @@
 				E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */,
 				E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */,
 				E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */,
+				E172F8191556493800D6F99C /* SettingInfoReader.m in Sources */,
+				E172F81F155653C600D6F99C /* UpdateUserAvatarViewController.m in Sources */,
+				E172F8241556545200D6F99C /* UpdateUserPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

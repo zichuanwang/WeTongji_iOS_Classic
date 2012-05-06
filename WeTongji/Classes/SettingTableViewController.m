@@ -8,6 +8,8 @@
 
 #import "SettingTableViewController.h"
 #import "SettingTableViewCell.h"
+#import "SettingInfoReader.h"
+#import "UIApplication+Addition.h"
 
 @interface SettingTableViewController ()
 
@@ -42,6 +44,16 @@
 }
 
 #pragma mark -
+#pragma mark Logic Methods
+
+- (SettingInfo *)getSettingInfoAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *key = [self.dataSourceIndexArray objectAtIndex:indexPath.section];
+    NSArray *value = [self.dataSourceDictionary objectForKey:key];
+    SettingInfo *info = [value objectAtIndex:indexPath.row];
+    return info;
+}
+
+#pragma mark -
 #pragma mark WTGroupTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
@@ -49,36 +61,46 @@
 }
 
 - (void)configureDataSource {
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"账号设置"]];
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"应用设置"]];
-    
-    NSArray *account = [NSArray arrayWithObjects:@"切换账号", nil];
-    
-    NSArray *application = [NSArray arrayWithObjects:@"自动同步课表"
-                      ,nil];
-    
-    [self.dataSourceDictionary setValue:account forKey:[self.dataSourceIndexArray objectAtIndex:0]];
-    [self.dataSourceDictionary setValue:application forKey:[self.dataSourceIndexArray objectAtIndex:1]];
+    SettingInfoReader *reader = [[SettingInfoReader alloc] init];
+    NSArray *sectionArray = [reader getSettingInfoSectionArray];
+    NSLog(@"sectionArray:%@", sectionArray);
+    for(SettingInfoSection *section in sectionArray) {
+        [self.dataSourceIndexArray addObject:section.sectionTitle];
+        NSMutableArray *itemTitleArray = [NSMutableArray array];
+        for(SettingInfo *info in section.itemArray) {
+            [itemTitleArray addObject:info];
+        }
+        [self.dataSourceDictionary setValue:itemTitleArray forKey:section.sectionTitle];
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     SettingTableViewCell *settingCell = (SettingTableViewCell *)cell;
-    NSString *key = [self.dataSourceIndexArray objectAtIndex:indexPath.section];
-    NSArray *value = [self.dataSourceDictionary objectForKey:key];
-    NSString *data = [value objectAtIndex:indexPath.row];
-    settingCell.itemTitleLabel.text = data;
-    if(indexPath.section == 0) {
-        settingCell.itemSwitch.hidden = YES;
+    SettingInfo *info = [self getSettingInfoAtIndexPath:indexPath];
+    settingCell.itemTitleLabel.text = info.itemTitle;
+    if([info.accessoryType isEqualToString:kAccessoryTypeSwitch]) {
+        settingCell.itemSwitch.hidden = NO;
+    } else if([info.accessoryType isEqualToString:kAccessoryTypeDisclosure]) {
         settingCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 }
-
 #pragma mark -
 #pragma mark UITableView delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0 && indexPath.row == 0)
-        [self.delegate settingTableViewControllerDidSelectLoginListCell];
+    SettingInfo *info = [self getSettingInfoAtIndexPath:indexPath];
+    if(info.nibFileName) {
+        UIViewController *vc = [[NSClassFromString(info.nibFileName) alloc] initWithNibName:info.nibFileName bundle:nil];
+        if(!vc)
+            return;
+        if([info.wayToPresentViewController isEqualToString:kModalViewController]) {
+            [[UIApplication sharedApplication].rootViewController presentModalViewController:vc animated:YES];
+        }
+        else if([info.wayToPresentViewController isEqualToString:kPushNavigationController]) {
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self.delegate settingTableViewController:self pushViewController:nav];
+        }
+    }
 }
 
 @end

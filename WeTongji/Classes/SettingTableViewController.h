@@ -19,6 +19,6 @@
 
 @protocol SettingTableViewControllerDelegate <NSObject>
 
-- (void)settingTableViewControllerDidSelectLoginListCell;
+- (void)settingTableViewController:(SettingTableViewController *)vc pushViewController:(UIViewController *)pushVc;
 
 @end

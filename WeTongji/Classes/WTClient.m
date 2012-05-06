@@ -114,7 +114,7 @@ static NSString* const APIDomain = @"106.187.95.107:8080";
         } else {
             self.hasError = YES;
             self.responseStatusCode = [statusId intValue];
-            self.errorDesc = [status objectForKey:@"Memo"];
+            self.errorDesc = [NSString stringWithFormat:@"%@", [status objectForKey:@"Memo"]];
             NSLog(@"Server responsed error code:%d\n\
                   desc: %@\n", self.responseStatusCode, self.errorDesc);
         }

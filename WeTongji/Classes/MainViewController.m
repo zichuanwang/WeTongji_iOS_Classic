@@ -13,7 +13,6 @@
 #import "UIBarButtonItem+WTBarButtonItem.h"
 #import "SettingTableViewController.h"
 #import "WTClient.h"
-#import "LoginListViewController.h"
 
 typedef enum {
     UserInfoTabBarViewController,
@@ -175,9 +174,8 @@ typedef enum {
 #pragma mark - 
 #pragma mark SettingTableViewController delegate
 
-- (void)settingTableViewControllerDidSelectLoginListCell {
-    LoginListViewController *vc = [[LoginListViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)settingTableViewController:(SettingTableViewController *)vc pushViewController:(UIViewController *)pushVc {
+    [self.navigationController pushViewController:pushVc animated:YES];
 }
 
 @end
