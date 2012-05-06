@@ -333,7 +333,7 @@
 		E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoViewController.h; path = Classes/UpdateUserInfoViewController.h; sourceTree = "<group>"; };
 		E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoViewController.m; path = Classes/UpdateUserInfoViewController.m; sourceTree = "<group>"; };
 		E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserInfoViewController.xib; path = Classes/UpdateUserInfoViewController.xib; sourceTree = "<group>"; };
-		E168FEBF155555BB00BEE141 /* WTPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; name = WTPostViewController.h; path = Classes/WTPostViewController.h; sourceTree = "<group>"; };
+		E168FEBF155555BB00BEE141 /* WTPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTPostViewController.h; path = Classes/WTPostViewController.h; sourceTree = "<group>"; };
 		E168FEC0155555BB00BEE141 /* WTPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTPostViewController.m; path = Classes/WTPostViewController.m; sourceTree = "<group>"; };
 		E174A966153D822B00E7165A /* user_info_default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_info_default_image.jpg; sourceTree = "<group>"; };
 		E174A969153D832F00E7165A /* avatar_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_frame.png; sourceTree = "<group>"; };
@@ -715,6 +715,45 @@
 			name = sign_in;
 			sourceTree = "<group>";
 		};
+		E168FEC215563C2400BEE141 /* to_do */ = {
+			isa = PBXGroup;
+			children = (
+				E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */,
+				E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */,
+				E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */,
+				E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */,
+				E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */,
+				E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */,
+			);
+			name = to_do;
+			sourceTree = "<group>";
+		};
+		E172F81515563CF900D6F99C /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				E1FD95761546557700B39069 /* SettingTableViewController.h */,
+				E1FD95771546557700B39069 /* SettingTableViewController.m */,
+				E1FD95781546557700B39069 /* SettingTableViewController.xib */,
+				E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */,
+				E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */,
+				E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */,
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
+		E172F81615563D0400D6F99C /* user_info */ = {
+			isa = PBXGroup;
+			children = (
+				E1DF6FA4153762FF001C60EA /* UserInfoTableViewCell.h */,
+				E1DF6FA5153762FF001C60EA /* UserInfoTableViewCell.m */,
+				E1DF6FA615376300001C60EA /* UserInfoTableViewCell.xib */,
+				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
+				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
+				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
+			);
+			name = user_info;
+			sourceTree = "<group>";
+		};
 		E174A97D153DB2C600E7165A /* sign_in */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,30 +1081,15 @@
 		E1DF6FF01539B801001C60EA /* main */ = {
 			isa = PBXGroup;
 			children = (
+				E172F81615563D0400D6F99C /* user_info */,
+				E172F81515563CF900D6F99C /* setting */,
+				E168FEC215563C2400BEE141 /* to_do */,
 				E191772A15078188009FB941 /* MainViewController.h */,
 				E191772B15078188009FB941 /* MainViewController.m */,
 				E191772C15078188009FB941 /* MainViewController.xib */,
 				E1C877A31505FB4800592954 /* RootViewController.h */,
 				E1C877A41505FB4800592954 /* RootViewController.m */,
 				E191773515078609009FB941 /* RootViewController.xib */,
-				E1DF6FDA15398C99001C60EA /* ToDoListTableViewCell.h */,
-				E1DF6FDB15398C9A001C60EA /* ToDoListTableViewCell.m */,
-				E1DF6FDC15398C9B001C60EA /* ToDoListTableViewCell.xib */,
-				E1DF6FD415398BC8001C60EA /* ToDoListTableViewController.h */,
-				E1DF6FD515398BC9001C60EA /* ToDoListTableViewController.m */,
-				E1DF6FD615398BCA001C60EA /* ToDoListTableViewController.xib */,
-				E1DF6FA4153762FF001C60EA /* UserInfoTableViewCell.h */,
-				E1DF6FA5153762FF001C60EA /* UserInfoTableViewCell.m */,
-				E1DF6FA615376300001C60EA /* UserInfoTableViewCell.xib */,
-				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
-				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
-				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
-				E1FD95761546557700B39069 /* SettingTableViewController.h */,
-				E1FD95771546557700B39069 /* SettingTableViewController.m */,
-				E1FD95781546557700B39069 /* SettingTableViewController.xib */,
-				E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */,
-				E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */,
-				E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */,
 			);
 			name = main;
 			sourceTree = "<group>";

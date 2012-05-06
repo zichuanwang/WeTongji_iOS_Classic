@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kMetroInfoArray</key>
+	<array>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_channel</string>
+			<key>kButtonTitle</key>
+			<string>频道</string>
+			<key>kNibFileName</key>
+			<string>ChannelViewController</string>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_news</string>
+			<key>kButtonTitle</key>
+			<string>新闻</string>
+			<key>kNibFileName</key>
+			<string>NewsViewController</string>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_collect</string>
+			<key>kButtonTitle</key>
+			<string>收藏</string>
+			<key>kNibFileName</key>
+			<string>FavoriteViewController</string>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_schedule</string>
+			<key>kButtonTitle</key>
+			<string>日程</string>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_circles</string>
+			<key>kButtonTitle</key>
+			<string>圈子</string>
+			<key>kAlertMessage</key>
+			<string>想要轻松结识同专业、同社团的朋友吗？想要即时了解大牛们的活动安排吗？圈子功能，即将推出。</string>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_mail</string>
+			<key>kButtonTitle</key>
+			<string>邮箱</string>
+			<key>kAlertMessage</key>
+			<string>同济学子的专属邮箱@tongji.edu.cn即将与微同济无缝整合，敬请期待。</string>
+		</dict>
+        <dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_treize</string>
+			<key>kButtonTitle</key>
+			<string>treize</string>
+			<key>kAlertMessage</key>
+			<string>treize来袭！</string>
+		</dict>
+	</array>
+</dict>
+</plist>

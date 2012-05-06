@@ -52,7 +52,7 @@
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"账号设置"]];
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"应用设置"]];
     
-    NSArray *account = [NSArray arrayWithObjects:@"切换账户", nil];
+    NSArray *account = [NSArray arrayWithObjects:@"切换账号", nil];
     
     NSArray *application = [NSArray arrayWithObjects:@"自动同步课表"
                       ,nil];

@@ -82,15 +82,25 @@ static BOOL _isShowingToast;
 
 - (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y andTime:(float)time isAlert:(BOOL)isAlert {
     UIImage *bgImage = nil;
-    if(isAlert)
-        bgImage = [UIImage imageNamed:@"toast_alert_bg.png"];
-    else
-        bgImage = [UIImage imageNamed:@"toast_normal_bg.png"];
+    BOOL isLong = text.length > 12;
+    if(isLong) {
+        if(isAlert)
+            bgImage = [UIImage imageNamed:@"toast_long_alert_bg.png"];
+        else
+            bgImage = [UIImage imageNamed:@"toast_long_normal_bg.png"];
+    }
+    else {
+        if(isAlert)
+            bgImage = [UIImage imageNamed:@"toast_alert_bg.png"];
+        else
+            bgImage = [UIImage imageNamed:@"toast_normal_bg.png"];
+    }
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, y);
     
-    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, TOAST_VIEW_WIDTH, TOAST_VIEW_HEIGHT)];
+    CGFloat labelWidth = isLong ? LONG_TOAST_VIEW_WIDTH : TOAST_VIEW_WIDTH;
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, TOAST_VIEW_HEIGHT)];
     labelView.center = CGPointMake(bgImageView.frame.size.width / 2, bgImageView.frame.size.height / 2);
     
     labelView.font = [UIFont boldSystemFontOfSize:14.0f];

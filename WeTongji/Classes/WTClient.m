@@ -245,7 +245,7 @@ report_completion:
     [self sendRequest];
 }
 
-- (void)updateUserDisplayName:(NSString *)display_name {
+- (void)updateUserDisplayName:(NSString *)display_name email:(NSString *)email weiboName:(NSString *)weibo phoneNum:(NSString *)phone qqAccount:(NSString *)qq {
     [self.params setObject:@"User.Update" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
@@ -264,11 +264,22 @@ report_completion:
     [self.params setObject:@"User.Update.Avatar" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:nil];
     request.delegate = self;
-    [request addData:imageData forKey:@"Image"];
+    [request addData:imageData withFileName:@"avatar.jpg" andContentType:@"image/jpeg" forKey:@"Image"];
     self.request = request;
+    
+    [self sendRequest];
+}
+
+- (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old {
+    [self.params setObject:@"User.Update.Password" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:new forKey:@"New"];
+    [self.params setObject:old forKey:@"Old"];
     [self sendRequest];
 }
 

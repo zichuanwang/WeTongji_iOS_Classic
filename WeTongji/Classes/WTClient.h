@@ -34,7 +34,12 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)activateUser:(NSString *)name stutentNum:(NSString *)num password:(NSString *)password;
 - (void)login:(NSString *)num password:(NSString *)password;
 - (void)logout;
-- (void)updateUserDisplayName:(NSString *)display_name;
+- (void)updateUserDisplayName:(NSString *)display_name 
+                        email:(NSString *)email 
+                    weiboName:(NSString *)weibo 
+                     phoneNum:(NSString *)phone 
+                    qqAccount:(NSString *)qq;
 - (void)updateUserAvatar:(UIImage *)image;
+- (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old;
 
 @end
