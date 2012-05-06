@@ -21,7 +21,7 @@
 				</dict>
 				<dict>
 					<key>kItemTitle</key>
-					<string>更新个人信息</string>
+					<string>更新资料</string>
 					<key>kAccessoryType</key>
 					<string>kAccessoryTypeDisclosure</string>
 					<key>kNibFileName</key>

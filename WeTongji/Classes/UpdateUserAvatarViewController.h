@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTNavigationViewController.h"
 
-@interface UpdateUserAvatarViewController : UIViewController
+@interface UpdateUserAvatarViewController : WTNavigationViewController
 
 @end

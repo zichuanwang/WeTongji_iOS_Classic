@@ -9,6 +9,7 @@
 #import "SignInMainViewController.h"
 #import "WTClient.h"
 #import "UIApplication+Addition.h"
+#import "NSString+Addition.h"
 
 @interface SignInMainViewController ()
 
@@ -56,19 +57,6 @@
 #pragma mark - 
 #pragma mark Logic methods 
 
-- (BOOL)isPasswordCharacterValid {
-    BOOL result = YES;
-    NSString *password = self.passwordTextField.text;
-    for(int i = 0; i < password.length; i++) {
-        unichar c = [password characterAtIndex:i];
-        if(isalnum(c) == 0 && c != '_') {
-            result = NO;
-            break;
-        }
-    }
-    return result;
-}
-
 - (BOOL)isParameterValid {
     BOOL result = YES;
     if([self.nameTextField.text isEqualToString:@""]) {
@@ -80,7 +68,7 @@
     } else if([self.passwordTextField.text isEqualToString:@""]) {
         [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
-    } else if(![self isPasswordCharacterValid]) {
+    } else if(![self.passwordTextField.text isSuitableForPassword]) {
         [UIApplication presentAlertToast:@"密码只支持数字、字母及下划线。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if(self.passwordTextField.text.length < 6) {
@@ -108,8 +96,8 @@
             
             else if(client.responseStatusCode == 3) 
                 [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:self.toastVerticalPos];
-            [self configureNavBar];
         }
+        [self configureNavBar];
         self.sendingRequest = NO;
     }];
     [client activateUser:self.nameTextField.text stutentNum:self.studentNumberTextField.text password:self.passwordTextField.text];

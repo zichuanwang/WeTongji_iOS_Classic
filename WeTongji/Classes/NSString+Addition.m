@@ -86,4 +86,17 @@
     return timeStr;
 }
 
+- (BOOL)isSuitableForPassword {
+    BOOL result = YES;
+    NSString *password = self;
+    for(int i = 0; i < password.length; i++) {
+        unichar c = [password characterAtIndex:i];
+        if(isalnum(c) == 0 && c != '_') {
+            result = NO;
+            break;
+        }
+    }
+    return result;
+}
+
 @end

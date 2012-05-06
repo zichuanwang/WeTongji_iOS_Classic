@@ -2,7 +2,7 @@
 //  User.h
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-4.
+//  Created by 紫川 王 on 12-5-6.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -17,10 +17,13 @@
 @property (nonatomic, retain) NSString * birth_place;
 @property (nonatomic, retain) NSDate * birthday;
 @property (nonatomic, retain) NSString * email_address;
-@property (nonatomic, retain) NSString * mobile_phone;
+@property (nonatomic, retain) NSString * phone_number;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * user_id;
-@property (nonatomic, retain) NSString * weibo_account;
+@property (nonatomic, retain) NSString * sina_weibo_name;
+@property (nonatomic, retain) NSString * gender;
+@property (nonatomic, retain) NSString * display_name;
+@property (nonatomic, retain) NSString * qq_number;
 @property (nonatomic, retain) NSSet *favor;
 @property (nonatomic, retain) NSSet *schedule;
 @end

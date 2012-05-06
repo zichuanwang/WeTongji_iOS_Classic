@@ -63,7 +63,6 @@
 - (void)configureDataSource {
     SettingInfoReader *reader = [[SettingInfoReader alloc] init];
     NSArray *sectionArray = [reader getSettingInfoSectionArray];
-    NSLog(@"sectionArray:%@", sectionArray);
     for(SettingInfoSection *section in sectionArray) {
         [self.dataSourceIndexArray addObject:section.sectionTitle];
         NSMutableArray *itemTitleArray = [NSMutableArray array];
@@ -94,11 +93,11 @@
         if(!vc)
             return;
         if([info.wayToPresentViewController isEqualToString:kModalViewController]) {
-            [[UIApplication sharedApplication].rootViewController presentModalViewController:vc animated:YES];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [[UIApplication sharedApplication].rootViewController presentModalViewController:nav animated:YES];
         }
         else if([info.wayToPresentViewController isEqualToString:kPushNavigationController]) {
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-            [self.delegate settingTableViewController:self pushViewController:nav];
+            [self.delegate settingTableViewController:self pushViewController:vc];
         }
     }
 }

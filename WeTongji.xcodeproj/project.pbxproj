@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E106199F1556A98700D4BE14 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E106199E1556A98700D4BE14 /* User.m */; };
+		E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A11556A99C00D4BE14 /* Student+Addition.m */; };
+		E10619A51556B43700D4BE14 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A41556B43700D4BE14 /* Student.m */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
 		E10A167D153617E300700A0E /* dock_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1668153617E200700A0E /* dock_bg.png */; };
 		E10A167E153617E300700A0E /* dock_btn_channel_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1669153617E200700A0E /* dock_btn_channel_hl.png */; };
@@ -70,7 +73,6 @@
 		E168FEA21553FAA900BEE141 /* dock_btn_treize.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE9E1553FAA800BEE141 /* dock_btn_treize.png */; };
 		E168FEA31553FAA900BEE141 /* dock_btn_treize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE9F1553FAA800BEE141 /* dock_btn_treize@2x.png */; };
 		E168FEA61554066200BEE141 /* User+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEA51554066200BEE141 /* User+Addition.m */; };
-		E168FEA915540A1700BEE141 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEA815540A1700BEE141 /* User.m */; };
 		E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */; };
 		E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */; };
 		E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */; };
@@ -130,7 +132,6 @@
 		E1A83713154497260086F62E /* paper_blue_seperator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A83711154497250086F62E /* paper_blue_seperator@2x.png */; };
 		E1AD1B8C155196C4003B7052 /* NewsOutlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B8A155196C4003B7052 /* NewsOutlineTableViewController.m */; };
 		E1AD1B8D155196C4003B7052 /* NewsOutlineTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AD1B8B155196C4003B7052 /* NewsOutlineTableViewController.xib */; };
-		E1AD1B911551A27A003B7052 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B901551A27A003B7052 /* Student.m */; };
 		E1AD1B941551A27B003B7052 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B931551A27B003B7052 /* News.m */; };
 		E1AD1B9A1551A27C003B7052 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B991551A27C003B7052 /* Channel.m */; };
 		E1AD1B9D1551A27C003B7052 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AD1B9C1551A27C003B7052 /* Activity.m */; };
@@ -260,6 +261,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E106199D1556A98700D4BE14 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E106199E1556A98700D4BE14 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E10619A01556A99C00D4BE14 /* Student+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Addition.h"; sourceTree = "<group>"; };
+		E10619A11556A99C00D4BE14 /* Student+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Addition.m"; sourceTree = "<group>"; };
+		E10619A31556B43700D4BE14 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E10619A41556B43700D4BE14 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E10A165C15360EC900700A0E /* WTDockButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
 		E10A165D15360EC900700A0E /* WTDockButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WTDockButton.m; path = Classes/WTDockButton.m; sourceTree = "<group>"; };
 		E10A1668153617E200700A0E /* dock_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_bg.png; sourceTree = "<group>"; };
@@ -331,8 +338,6 @@
 		E168FE9F1553FAA800BEE141 /* dock_btn_treize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_treize@2x.png"; sourceTree = "<group>"; };
 		E168FEA41554066200BEE141 /* User+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Addition.h"; sourceTree = "<group>"; };
 		E168FEA51554066200BEE141 /* User+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Addition.m"; sourceTree = "<group>"; };
-		E168FEA715540A1600BEE141 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E168FEA815540A1700BEE141 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E168FEAA15540D4C00BEE141 /* ChannelDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelDetailViewController.h; path = Classes/ChannelDetailViewController.h; sourceTree = "<group>"; };
 		E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelDetailViewController.m; path = Classes/ChannelDetailViewController.m; sourceTree = "<group>"; };
 		E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelDetailViewController.xib; path = Classes/ChannelDetailViewController.xib; sourceTree = "<group>"; };
@@ -414,8 +419,6 @@
 		E1AD1B89155196C4003B7052 /* NewsOutlineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsOutlineTableViewController.h; path = Classes/NewsOutlineTableViewController.h; sourceTree = "<group>"; };
 		E1AD1B8A155196C4003B7052 /* NewsOutlineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsOutlineTableViewController.m; path = Classes/NewsOutlineTableViewController.m; sourceTree = "<group>"; };
 		E1AD1B8B155196C4003B7052 /* NewsOutlineTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsOutlineTableViewController.xib; path = Classes/NewsOutlineTableViewController.xib; sourceTree = "<group>"; };
-		E1AD1B8F1551A27A003B7052 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		E1AD1B901551A27A003B7052 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E1AD1B921551A27B003B7052 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		E1AD1B931551A27B003B7052 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		E1AD1B981551A27C003B7052 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
@@ -1172,16 +1175,16 @@
 		E1E4837915487F1900814FA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1AD1B8F1551A27A003B7052 /* Student.h */,
-				E1AD1B901551A27A003B7052 /* Student.m */,
 				E1AD1B981551A27C003B7052 /* Channel.h */,
 				E1AD1B991551A27C003B7052 /* Channel.m */,
 				E1AD1B9B1551A27C003B7052 /* Activity.h */,
 				E1AD1B9C1551A27C003B7052 /* Activity.m */,
 				E1AD1B921551A27B003B7052 /* News.h */,
 				E1AD1B931551A27B003B7052 /* News.m */,
-				E168FEA715540A1600BEE141 /* User.h */,
-				E168FEA815540A1700BEE141 /* User.m */,
+				E106199D1556A98700D4BE14 /* User.h */,
+				E106199E1556A98700D4BE14 /* User.m */,
+				E10619A31556B43700D4BE14 /* Student.h */,
+				E10619A41556B43700D4BE14 /* Student.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1189,12 +1192,14 @@
 		E1E4837A15487F2400814FA4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				E1E4837B15487F4500814FA4 /* Channel+Addition.h */,
-				E1E4837C15487F4500814FA4 /* Channel+Addition.m */,
 				E1E483AE1549207700814FA4 /* Activity+Addition.h */,
 				E1E483AF1549207700814FA4 /* Activity+Addition.m */,
+				E1E4837B15487F4500814FA4 /* Channel+Addition.h */,
+				E1E4837C15487F4500814FA4 /* Channel+Addition.m */,
 				E1AD1B9E1551A304003B7052 /* News+Addition.h */,
 				E1AD1B9F1551A305003B7052 /* News+Addition.m */,
+				E10619A01556A99C00D4BE14 /* Student+Addition.h */,
+				E10619A11556A99C00D4BE14 /* Student+Addition.m */,
 				E168FEA41554066200BEE141 /* User+Addition.h */,
 				E168FEA51554066200BEE141 /* User+Addition.m */,
 			);
@@ -1559,7 +1564,6 @@
 				E1D38782154D458D006325E8 /* NewsViewController.m in Sources */,
 				E1D3879F154DA656006325E8 /* MetroInfoReader.m in Sources */,
 				E1AD1B8C155196C4003B7052 /* NewsOutlineTableViewController.m in Sources */,
-				E1AD1B911551A27A003B7052 /* Student.m in Sources */,
 				E1AD1B941551A27B003B7052 /* News.m in Sources */,
 				E1AD1B9A1551A27C003B7052 /* Channel.m in Sources */,
 				E1AD1B9D1551A27C003B7052 /* Activity.m in Sources */,
@@ -1570,13 +1574,15 @@
 				E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */,
 				E168FE9B1553F6F100BEE141 /* FavoriteOutlineViewController.m in Sources */,
 				E168FEA61554066200BEE141 /* User+Addition.m in Sources */,
-				E168FEA915540A1700BEE141 /* User.m in Sources */,
 				E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */,
 				E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */,
 				E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */,
 				E172F8191556493800D6F99C /* SettingInfoReader.m in Sources */,
 				E172F81F155653C600D6F99C /* UpdateUserAvatarViewController.m in Sources */,
 				E172F8241556545200D6F99C /* UpdateUserPasswordViewController.m in Sources */,
+				E106199F1556A98700D4BE14 /* User.m in Sources */,
+				E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */,
+				E10619A51556B43700D4BE14 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

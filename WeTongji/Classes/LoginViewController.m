@@ -17,15 +17,12 @@
 
 @interface LoginViewController ()
 
-@property (nonatomic, weak) UITextField *editingTextField;
-
 @end
 
 @implementation LoginViewController
 
 @synthesize bgImageView = _bgImageView;
 @synthesize mainBgView = _mainBgView;
-@synthesize editingTextField = _editingTextField;
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
 @synthesize passwordTextField = _passwordTextField;
@@ -130,10 +127,6 @@
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
 }
 
-- (void)dismissKeyboard {
-    [self.editingTextField resignFirstResponder];
-}
-
 #pragma mark -
 #pragma mark IBActions
 
@@ -149,10 +142,6 @@
 
 #pragma mark - 
 #pragma mark UITextField delegate
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.editingTextField = textField;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if(textField == self.passwordTextField) {

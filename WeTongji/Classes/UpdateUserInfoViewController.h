@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTNavigationViewController.h"
 
-@interface UpdateUserInfoViewController : UIViewController
+@interface UpdateUserInfoViewController : WTNavigationViewController
 
 @end

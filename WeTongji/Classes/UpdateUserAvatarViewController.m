@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self configureNavBar];
 }
 
 - (void)viewDidUnload
@@ -36,9 +37,22 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+#pragma mark -
+#pragma mark UI methods
+
+- (void)configureNavBar {
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"更新头像"];
+    self.navigationItem.titleView = titleLabel;
+    
+    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
+    self.navigationItem.leftBarButtonItem = finishButton;
+}
+
+#pragma mark - 
+#pragma mark IBActions 
+
+- (void)didClickFinishButton {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 @end

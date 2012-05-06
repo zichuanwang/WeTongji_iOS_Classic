@@ -10,6 +10,8 @@
 
 @interface User (Addition)
 
+- (void)initWithDict:(NSDictionary *)dict;
 + (User *)insertUser:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context;
++ (User *)userWithID:(NSString *)userID inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

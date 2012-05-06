@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTPostViewController.h"
 
-@interface UpdateUserPasswordViewController : UIViewController
+@interface UpdateUserPasswordViewController : WTPostViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) IBOutlet UILabel *paperTitleLabel;
+@property (nonatomic, strong) IBOutlet UITextField *oldPasswordTextField;
+@property (nonatomic, strong) IBOutlet UITextField *updatedPasswordTextField;
+@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @end

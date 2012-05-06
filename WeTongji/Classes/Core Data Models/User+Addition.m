@@ -7,8 +7,21 @@
 //
 
 #import "User+Addition.h"
+#import "NSString+Addition.h"
 
 @implementation User (Addition)
+
+- (void)initWithDict:(NSDictionary *)dict {
+    self.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Avatar"]];
+    self.display_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"DisplayName"]];
+    self.birthday = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Birthday"]] convertToDate];
+    self.gender = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Gender"]];
+    self.birth_place = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NativePlace"]];
+    self.qq_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"QQ"]];
+    self.phone_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Phone"]];
+    self.email_address = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Email"]];
+    self.sina_weibo_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SinaWeibo"]];
+}
 
 + (User *)insertUser:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
 {
@@ -22,11 +35,8 @@
     if (!result) {
         result = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     }
-    
     result.user_id = userID;
-    result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Avatar"]];
-    result.email_address = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Email"]];
-    
+    [result initWithDict:dict];
     return result;
 }
 
