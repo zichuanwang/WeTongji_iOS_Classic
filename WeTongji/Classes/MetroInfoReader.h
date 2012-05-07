@@ -21,5 +21,6 @@
 @property (nonatomic, strong) NSString *buttonImageFileName;
 @property (nonatomic, strong) NSString *buttonHighlightImageFileName;
 @property (nonatomic, strong) NSString *alertMessage;
+@property (nonatomic, assign) BOOL needLogin;
 
 @end

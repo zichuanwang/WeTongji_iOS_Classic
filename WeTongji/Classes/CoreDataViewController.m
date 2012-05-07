@@ -34,6 +34,14 @@ static User *currentUserInstance = nil;
     return currentUserInstance;
 }
 
++ (User *)getCurrentUser {
+    if(currentUserInstance == nil) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        currentUserInstance = [User currentUserInManagedObjectContext:appDelegate.managedObjectContext];
+    }
+    return currentUserInstance;
+}
+
 #pragma mark -
 #pragma mark Handle notifications
 

@@ -203,10 +203,10 @@ report_completion:
 #pragma mark -
 #pragma mark APIs
 
-- (void)getActivitesWithChannelIds:(NSString *)channelStatusStr page:(NSInteger)page {
+- (void)getActivitesWithChannelIds:(NSString *)channel_status_str page:(NSInteger)page {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
-    if(channelStatusStr) {
-        [self.params setObject:channelStatusStr forKey:@"Channel_Ids"];
+    if(channel_status_str) {
+        [self.params setObject:channel_status_str forKey:@"Channel_Ids"];
     }
     else {
         [self.params setObject:[NSString stringWithFormat:@"1,2,3,4"] forKey:@"Channel_Ids"];
@@ -280,6 +280,21 @@ report_completion:
     self.sessionRequired = YES;
     [self.params setObject:new forKey:@"New"];
     [self.params setObject:old forKey:@"Old"];
+    [self sendRequest];
+}
+
+- (void)setActivityFavored:(NSString *)activity_id {
+    [self.params setObject:@"Activity.Follow" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self sendRequest];
+
+}
+
+- (void)getFavoriteActivities {
+    [self.params setObject:@"Favorite.Get" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
     [self sendRequest];
 }
 

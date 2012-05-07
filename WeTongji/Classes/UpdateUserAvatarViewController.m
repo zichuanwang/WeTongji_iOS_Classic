@@ -44,14 +44,14 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"更新头像"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
-    self.navigationItem.leftBarButtonItem = finishButton;
+    UIBarButtonItem *cancelButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"取消" target:self action:@selector(didClickCancelButton)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
 }
 
 #pragma mark - 
 #pragma mark IBActions 
 
-- (void)didClickFinishButton {
+- (void)didClickCancelButton {
     [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 

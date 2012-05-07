@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) User *currentUser;
 
++ (User *)getCurrentUser;
+
 @end

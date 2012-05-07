@@ -29,7 +29,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
 
-- (void)getActivitesWithChannelIds:(NSString *)channelStatusStr page:(NSInteger)page;
+- (void)getActivitesWithChannelIds:(NSString *)channel_status_str page:(NSInteger)page;
 - (void)getNewsList:(NSInteger)page;
 - (void)activateUser:(NSString *)name stutentNum:(NSString *)num password:(NSString *)password;
 - (void)login:(NSString *)num password:(NSString *)password;

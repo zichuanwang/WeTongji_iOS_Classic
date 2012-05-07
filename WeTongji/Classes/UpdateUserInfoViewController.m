@@ -44,7 +44,7 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"更新资料"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *cancelButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickCancelButton)];
+    UIBarButtonItem *cancelButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"取消" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     
     UIBarButtonItem *sendButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"发送" target:self action:@selector(didClickSendButton)];

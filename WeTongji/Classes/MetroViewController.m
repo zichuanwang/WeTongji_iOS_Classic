@@ -15,6 +15,7 @@
 #import "ScheduleViewController.h"
 #import "MetroInfoReader.h"
 #import "UIApplication+Addition.h"
+#import "CoreDataViewController.h"
 
 #define BUTTON_WIDTH        70
 #define BUTTON_HEIGHT       70
@@ -236,7 +237,12 @@
 - (void)didClickMetroButton:(UIButton *)sender {
     NSUInteger index = [self.buttonHeap indexOfObject:sender];
     MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
-    NSLog(@"nib:%@", info.nibFileName);
+    if(info.needLogin) {
+        if([CoreDataViewController getCurrentUser] == nil) {
+            [UIApplication showAlertMessage:@"改功能需要配合个人账号才能使用，请登录微同济。" withTitle:@"出错啦"];
+            return;
+        }
+    }
     UIViewController *vc = [[NSClassFromString(info.nibFileName) alloc] initWithNibName:info.nibFileName bundle:nil];
     if(vc) {
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -247,7 +253,6 @@
 - (void)didTriggerAlertMessage:(UIButton *)sender {
     NSUInteger index = [self.buttonHeap indexOfObject:sender];
     MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
-    NSLog(@"message:%@", info.alertMessage);
     [UIApplication showAlertMessage:info.alertMessage withTitle:@"即将推出"];
 
 }
