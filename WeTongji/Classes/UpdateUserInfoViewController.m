@@ -48,7 +48,7 @@
     self.navigationItem.leftBarButtonItem = cancelButton;
     
     UIBarButtonItem *sendButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"发送" target:self action:@selector(didClickSendButton)];
-    self.navigationItem.leftBarButtonItem = sendButton;
+    self.navigationItem.rightBarButtonItem = sendButton;
 }
 
 #pragma mark - 

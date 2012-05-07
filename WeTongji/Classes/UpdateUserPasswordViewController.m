@@ -122,7 +122,8 @@
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
-
+    
+    [self.oldPasswordTextField becomeFirstResponder];
 }
 
 #pragma mark - 

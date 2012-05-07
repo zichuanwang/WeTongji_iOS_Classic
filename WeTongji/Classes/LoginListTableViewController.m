@@ -172,6 +172,7 @@
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
         User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSLog(@"delete user:%@", user.display_name);
         [self.managedObjectContext deleteObject:user];
         
         [UIView animateWithDuration:0.3f animations:^{
@@ -181,8 +182,18 @@
         } completion:^(BOOL finished) {
             if(_selectRow == indexPath.row) {
                 _selectRow = _selectRow - 1 < 0 ? 0 : _selectRow - 1;
-                [self.tableView reloadData];
+                if(self.numberOfRowsInFirstSection > 0) {
+                    User *newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:_selectRow inSection:0]];
+                    if(newUser)
+                        [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
+                    [self.tableView reloadData];
+                }
             }
+            User *currentUser = [CoreDataViewController getCurrentUser];
+            if(currentUser) {
+                NSLog(@"current user name：%@", currentUser.display_name);
+            }
+            [NSNotificationCenter postChangeCurrentUserNotification];
         }];
 	}
 }

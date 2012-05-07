@@ -13,6 +13,8 @@
 #import "UIBarButtonItem+WTBarButtonItem.h"
 #import "SettingTableViewController.h"
 #import "WTClient.h"
+#import "PromoteLoginViewController.h"
+#import "NSNotificationCenter+Addition.h"
 
 typedef enum {
     UserInfoTabBarViewController,
@@ -26,6 +28,7 @@ typedef enum {
 @property (nonatomic, strong) UserInfoTableViewController *userInfoViewController;
 @property (nonatomic, strong) ToDoListTableViewController *toDoListTableViewController;
 @property (nonatomic, strong) SettingTableViewController *settingViewController;
+@property (nonatomic, strong) PromoteLoginViewController *promoteLoginViewController;
 
 - (void)configureNavigationBar;
 - (void)configureTabBarButtons;
@@ -39,11 +42,13 @@ typedef enum {
 @synthesize settingButton = _settingButton;
 @synthesize tabBarView = _tabBarView;
 @synthesize headerCoverImageView = _headerCoverImageView;
+@synthesize tabBarContentView = _tabBarContentView;
 
 @synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 @synthesize userInfoViewController = _userInfoViewController;
 @synthesize toDoListTableViewController = _toDoListTableViewController;
 @synthesize settingViewController = _settingViewController;
+@synthesize promoteLoginViewController = _promoteLoginViewController;
 
 - (void)viewDidLoad
 {
@@ -53,6 +58,9 @@ typedef enum {
     [self configureNavigationBar];
     [self configureTabBarButtons];
     [self configureUserInfoTabBarViewController];
+    
+    [self updateUIAccordingToCurrentUserStatus];
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
 }
 
 - (void)viewDidUnload
@@ -65,8 +73,28 @@ typedef enum {
     self.settingButton = nil;
     self.checkButton = nil;
     self.headerCoverImageView = nil;
+    self.tabBarContentView = nil;
     [self clearAllTabBarSubview];
 }
+
+#pragma mark -
+#pragma mark Logic methods 
+
+- (void)updateUIAccordingToCurrentUserStatus {
+    if([CoreDataViewController getCurrentUser] == nil) {
+        if(self.promoteLoginViewController == nil) {
+            [self configurePromoteLoginView];
+        }
+        self.tabBarContentView.hidden = YES;
+    } else {
+        [self.promoteLoginViewController.view removeFromSuperview];
+        self.promoteLoginViewController = nil;
+        self.tabBarContentView.hidden = NO;
+    }
+}
+
+#pragma mark -
+#pragma mark UI methods
 
 - (void)configureNavigationBar {
     UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -108,7 +136,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.userInfoViewController = vc;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.tabBarContentView addSubview:vc.view];
 }
 
 - (void)configureToDoListTabBarViewController {
@@ -121,7 +149,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.toDoListTableViewController = vc;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.tabBarContentView addSubview:vc.view];
 }
 
 - (void)configureSettingTabBarViewController {
@@ -135,7 +163,7 @@ typedef enum {
     vc.view.frame = frame;
     self.settingViewController = vc;
     self.settingViewController.delegate = self;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.tabBarContentView addSubview:vc.view];
 }
 
 - (void)clearCurrentTabBarSubViewController {
@@ -151,6 +179,12 @@ typedef enum {
     self.toDoListTableViewController = nil;
     [self.settingViewController.view removeFromSuperview];
     self.settingViewController = nil;
+}
+
+- (void)configurePromoteLoginView {
+    self.promoteLoginViewController = [[PromoteLoginViewController alloc] init];
+    [self.view insertSubview:self.promoteLoginViewController.view belowSubview:self.navBarShadowImageView];
+    self.promoteLoginViewController.view.hidden = NO;
 }
 
 #pragma mark - 
@@ -176,6 +210,13 @@ typedef enum {
 
 - (void)settingTableViewController:(SettingTableViewController *)vc pushViewController:(UIViewController *)pushVc {
     [self.navigationController pushViewController:pushVc animated:YES];
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    [self updateUIAccordingToCurrentUserStatus];
 }
 
 @end

@@ -46,6 +46,9 @@
     
     UIBarButtonItem *cancelButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"取消" target:self action:@selector(didClickCancelButton)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UIBarButtonItem *sendButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"发送" target:self action:@selector(didClickSendButton)];
+    self.navigationItem.rightBarButtonItem = sendButton;
 }
 
 #pragma mark - 
@@ -53,6 +56,10 @@
 
 - (void)didClickCancelButton {
     [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)didClickSendButton {
+    
 }
 
 @end
