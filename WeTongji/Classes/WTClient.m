@@ -252,19 +252,19 @@ report_completion:
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
     NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
-    if (display_name != nil && ![display_name isEqualToString:@""]) {
+    if (display_name != nil) {
         [itemDict setObject:display_name forKey:@"DisplayName"];
     }
-    if (email != nil && ![email isEqualToString:@""]) {
+    if (email != nil) {
         [itemDict setObject:email forKey:@"Email"];
     }
-    if (weibo != nil && ![weibo isEqualToString:@""]) {
+    if (weibo != nil) {
         [itemDict setObject:weibo forKey:@"SinaWeibo"];
     }
-    if (phone != nil && ![phone isEqualToString:@""]) {
+    if (phone != nil) {
         [itemDict setObject:phone forKey:@"Phone"];
     }
-    if (qq != nil && ![qq isEqualToString:@""]) {
+    if (qq != nil) {
         [itemDict setObject:qq forKey:@"QQ"];
     }
     NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];

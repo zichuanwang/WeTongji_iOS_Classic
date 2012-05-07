@@ -66,13 +66,6 @@
 - (BOOL)isParameterValid {
     BOOL result = YES;
     //There's no limits here now.
-    if([self.phoneNumberTextField.text isEqualToString:@""] 
-       && [self.qqTextField.text isEqualToString:@""]
-       && [self.emailTextField.text isEqualToString:@""]
-       && [self.weiboTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请更改至少一项内容。" withVerticalPos:self.toastVerticalPos];
-        result = NO;
-    }
     return result;
 }
 
@@ -132,16 +125,16 @@
 - (void)configureTextFiledPlaceHolder {
     User *user = self.currentUser;
     if(user.phone_number && ![user.phone_number isEqualToString:@""]) {
-        self.phoneNumberTextField.placeholder = user.phone_number;
+        self.phoneNumberTextField.text = user.phone_number;
     }
     if(user.email_address && ![user.email_address isEqualToString:@""]) {
-        self.emailTextField.placeholder = user.email_address;
+        self.emailTextField.text = user.email_address;
     }
     if(user.qq_number && ![user.qq_number isEqualToString:@""]) {
-        self.qqTextField.placeholder = user.qq_number;
+        self.qqTextField.text = user.qq_number;
     }
     if(user.sina_weibo_name && ![user.sina_weibo_name isEqualToString:@""]) {
-        self.weiboTextField.placeholder = user.sina_weibo_name;
+        self.weiboTextField.text = user.sina_weibo_name;
     }
 }
 
@@ -162,6 +155,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if(textField == self.emailTextField) {
         [self.emailTextField becomeFirstResponder];
+    } else if(textField == self.qqTextField) {
+        [self.weiboTextField becomeFirstResponder];
     } else if(textField == self.weiboTextField) {
         [self updateInfo];
     }
