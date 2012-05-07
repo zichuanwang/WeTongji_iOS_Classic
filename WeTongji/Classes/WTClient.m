@@ -255,7 +255,22 @@ report_completion:
     [self.params setObject:@"User.Update" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
-    NSDictionary *itemDict = [NSDictionary dictionaryWithObjectsAndKeys:display_name, @"DisplayName", nil];
+    NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
+    if (display_name != nil) {
+        [itemDict setObject:display_name forKey:@"DisplayName"];
+    }
+    if (email != nil) {
+        [itemDict setObject:email forKey:@"Email"];
+    }
+    if (weibo != nil) {
+        [itemDict setObject:weibo forKey:@"SinaWeibo"];
+    }
+    if (phone != nil) {
+        [itemDict setObject:phone forKey:@"Phone"];
+    }
+    if (qq != nil) {
+        [itemDict setObject:qq forKey:@"QQ"];
+    }
     NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];
     NSString *userJSONStr = [userDict JSONRepresentation];
     NSLog(@"userJSONStr %@", userJSONStr);
