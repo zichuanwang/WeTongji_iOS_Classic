@@ -79,7 +79,9 @@
     NSDictionary *userInfo = [dict objectForKey:@"User"];
     Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
     user.has_login = [NSNumber numberWithBool:YES];
-    user.login_time = [NSDate date];
+    if(user.login_time == nil) {
+        user.login_time = [NSDate date];
+    }
     NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
     user.session = session;
     
@@ -87,7 +89,6 @@
     user.account = self.accountTextField.text;
     
     if(self.currentUser == nil) {
-        [NSUserDefaults setCurrentUserID:user.user_id];
         [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
         [NSNotificationCenter postCoreChangeCurrentUserNotification];
     }

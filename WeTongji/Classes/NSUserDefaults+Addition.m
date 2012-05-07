@@ -17,6 +17,7 @@ typedef enum {
 
 #define kUserDefaultsInitialized @"kUserDefaultsInitialized"
 #define kCurrentUserID @"kCurrentUserID"
+#define kCurrentUserSession @"kCurrentUserSession"
 
 @implementation NSUserDefaults (Addition)
 
@@ -125,16 +126,23 @@ typedef enum {
     return [userDefaults objectForKey:key];
 }
 
-+ (void)setCurrentUserID:(NSString *)userID {
++ (void)setCurrentUserID:(NSString *)userID session:(NSString *)session {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if(!userID || [userID isEqualToString:@""])
         return;
+    if(!session || [session isEqualToString:@""])
+        return;
     [userDefaults setObject:userID forKey:kCurrentUserID];
+    [userDefaults setObject:session forKey:kCurrentUserSession];
     [userDefaults synchronize];
 }
 
 + (NSString *)getCurrentUserID {
     return [NSUserDefaults getStringForKey:kCurrentUserID];
+}
+
++ (NSString *)getCurrentUserSession {
+    return [NSUserDefaults getStringForKey:kCurrentUserSession];
 }
 
 @end
