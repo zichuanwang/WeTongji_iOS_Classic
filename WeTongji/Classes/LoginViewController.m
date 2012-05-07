@@ -10,8 +10,9 @@
 #import "UIApplication+Addition.h"
 #import "SignInProtocolViewController.h"
 #import "WTClient.h"
-#import "User+Addition.h"
+#import "Student+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 #import "SignInMainViewController.h"
 
@@ -88,11 +89,14 @@
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
             NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
-            User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
+            Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
             user.has_login = [NSNumber numberWithBool:YES];
-            NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
-            [NSUserDefaults setCurrentUserID:user.user_id session:session];
-            NSLog(@"user id:%@, session:%@", user.user_id, session);
+            if(self.currentUser == nil) {
+                NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
+                [NSUserDefaults setCurrentUserID:user.user_id session:session];
+                [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
+                [NSNotificationCenter postChangeCurrentUserNotification];
+            }
             
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];

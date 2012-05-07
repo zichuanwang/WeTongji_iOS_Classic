@@ -99,6 +99,16 @@
 #pragma mark -
 #pragma mark CoreDataTableViewController methods to overwrite
 
+- (void)insertCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationTop];
+}
+
+- (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationTop];
+}
+
 - (NSString *)customCellClassName {
     return @"LoginListTableViewCell";
 }

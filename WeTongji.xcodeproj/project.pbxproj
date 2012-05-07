@@ -104,6 +104,8 @@
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
 		E1999ADF15577C0900CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999ADE15577C0900CD04EF /* User.m */; };
 		E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */; };
+		E1999AED1557927100CD04EF /* UserInfoReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AEC1557927100CD04EF /* UserInfoReader.m */; };
+		E1999AEF1557929000CD04EF /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1999AEE1557929000CD04EF /* UserInfo.plist */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -382,6 +384,9 @@
 		E1999ADE15577C0900CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E1999AE4155780BB00CD04EF /* NSNotificationCenter+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+Addition.h"; path = "Classes/NSNotificationCenter+Addition.h"; sourceTree = "<group>"; };
 		E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+Addition.m"; path = "Classes/NSNotificationCenter+Addition.m"; sourceTree = "<group>"; };
+		E1999AEB1557927100CD04EF /* UserInfoReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoReader.h; path = Classes/UserInfoReader.h; sourceTree = "<group>"; };
+		E1999AEC1557927100CD04EF /* UserInfoReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoReader.m; path = Classes/UserInfoReader.m; sourceTree = "<group>"; };
+		E1999AEE1557929000CD04EF /* UserInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -782,6 +787,9 @@
 				E1DF6F9B153761A0001C60EA /* UserInfoTableViewController.h */,
 				E1DF6F9C153761A0001C60EA /* UserInfoTableViewController.m */,
 				E1DF6F9D153761A0001C60EA /* UserInfoTableViewController.xib */,
+				E1999AEB1557927100CD04EF /* UserInfoReader.h */,
+				E1999AEC1557927100CD04EF /* UserInfoReader.m */,
+				E1999AEE1557929000CD04EF /* UserInfo.plist */,
 			);
 			name = user_info;
 			sourceTree = "<group>";
@@ -1493,6 +1501,7 @@
 				E172F81B1556494500D6F99C /* SettingInfo.plist in Resources */,
 				E172F820155653C600D6F99C /* UpdateUserAvatarViewController.xib in Resources */,
 				E172F8251556545200D6F99C /* UpdateUserPasswordViewController.xib in Resources */,
+				E1999AEF1557929000CD04EF /* UserInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1589,6 +1598,7 @@
 				E10619A51556B43700D4BE14 /* Student.m in Sources */,
 				E1999ADF15577C0900CD04EF /* User.m in Sources */,
 				E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */,
+				E1999AED1557927100CD04EF /* UserInfoReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

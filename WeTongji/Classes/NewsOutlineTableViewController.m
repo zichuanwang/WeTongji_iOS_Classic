@@ -84,7 +84,7 @@
         NewsOutlineTableViewCell *outlineCell = (NewsOutlineTableViewCell *)cell;
         News *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
         outlineCell.titleLabel.text = news.title;
-        outlineCell.timeLabel.text = [NSString stringWithFormat:@"发表于 %@", [NSString yearMonthDayTimeConvertFromDate:news.create_at]];
+        outlineCell.timeLabel.text = [NSString stringWithFormat:@"发表于 %@", [NSString yearMonthDayConvertFromDate:news.create_at]];
         outlineCell.categoryLabel.text = news.category;
     }
 }

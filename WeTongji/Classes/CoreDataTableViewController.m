@@ -55,7 +55,7 @@
 
 - (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                     withRowAnimation:UITableViewRowAnimationTop];
+                     withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {

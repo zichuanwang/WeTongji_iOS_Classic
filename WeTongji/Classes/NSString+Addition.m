@@ -22,7 +22,7 @@
     return date;
 }
 
-+ (NSString *)yearMonthDayTimeConvertFromDate:(NSDate *)date {
++ (NSString *)yearMonthDayConvertFromDate:(NSDate *)date {
     NSDateFormatter *form = [[NSDateFormatter alloc] init];
     [form setDateFormat:@"yyyy年MM月dd日"];
     NSString *result = [form stringFromDate:date];
@@ -32,7 +32,7 @@
 }
 
 + (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date {
-    NSString *result = [NSString yearMonthDayTimeConvertFromDate:date];
+    NSString *result = [NSString yearMonthDayConvertFromDate:date];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [[NSDateComponents alloc] init];

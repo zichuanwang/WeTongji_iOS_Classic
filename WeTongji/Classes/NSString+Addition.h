@@ -11,7 +11,7 @@
 @interface NSString (Addition)
 
 - (NSDate *)convertToDate;
-+ (NSString *)yearMonthDayTimeConvertFromDate:(NSDate *)date;
++ (NSString *)yearMonthDayConvertFromDate:(NSDate *)date;
 + (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date;
 + (NSString *)timeConvertFromDate:(NSDate *)date;
 + (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end;

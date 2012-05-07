@@ -31,6 +31,8 @@ static User *currentUserInstance = nil;
     if(currentUserInstance == nil) {
         currentUserInstance = [User currentUserInManagedObjectContext:self.managedObjectContext];
     }
+    if(currentUserInstance == nil)
+        NSLog(@"current user is nil");
     return currentUserInstance;
 }
 
@@ -39,6 +41,8 @@ static User *currentUserInstance = nil;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         currentUserInstance = [User currentUserInManagedObjectContext:appDelegate.managedObjectContext];
     }
+    if(currentUserInstance == nil)
+        NSLog(@"current user is nil");
     return currentUserInstance;
 }
 

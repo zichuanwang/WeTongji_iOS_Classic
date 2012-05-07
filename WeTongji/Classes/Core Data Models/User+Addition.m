@@ -55,14 +55,10 @@
 
 + (User *)currentUserInManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    
     [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"is_current_user == YES"]];
-    
     User *result = [[context executeFetchRequest:request error:NULL] lastObject];
-    
     return result;
-
 }
 
 + (NSArray *)allObjectsInManagedObjectContext:(NSManagedObjectContext *)context {
