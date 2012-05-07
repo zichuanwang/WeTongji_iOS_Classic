@@ -256,19 +256,19 @@ report_completion:
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
     NSMutableDictionary *itemDict = [[NSMutableDictionary alloc] init];
-    if (display_name != nil) {
+    if (display_name != nil && ![display_name isEqualToString:@""]) {
         [itemDict setObject:display_name forKey:@"DisplayName"];
     }
-    if (email != nil) {
+    if (email != nil && ![email isEqualToString:@""]) {
         [itemDict setObject:email forKey:@"Email"];
     }
-    if (weibo != nil) {
+    if (weibo != nil && ![weibo isEqualToString:@""]) {
         [itemDict setObject:weibo forKey:@"SinaWeibo"];
     }
-    if (phone != nil) {
+    if (phone != nil && ![phone isEqualToString:@""]) {
         [itemDict setObject:phone forKey:@"Phone"];
     }
-    if (qq != nil) {
+    if (qq != nil && ![qq isEqualToString:@""]) {
         [itemDict setObject:qq forKey:@"QQ"];
     }
     NSDictionary *userDict = [NSDictionary dictionaryWithObject:itemDict forKey:@"User"];

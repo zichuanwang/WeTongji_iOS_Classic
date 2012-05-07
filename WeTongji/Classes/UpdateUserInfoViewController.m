@@ -11,6 +11,8 @@
 #import "UIApplication+Addition.h"
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "Student+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 @interface UpdateUserInfoViewController ()
 
@@ -21,7 +23,7 @@
 @synthesize bgImageView = _bgImageView;
 @synthesize scrollView = _scrollView;
 @synthesize mainBgView = _mainBgView;
-@synthesize bigView = _bigView;
+@synthesize bgView = _bgView;
 @synthesize phoneNumberTextField = _phoneNumberTextField;
 @synthesize qqTextField = _qqTextField;
 @synthesize emailTextField = _emailTextField;
@@ -42,6 +44,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
     [self configureScrollView];
+    [self configureTextFiledPlaceHolder];
 }
 
 - (void)viewDidUnload
@@ -63,17 +66,20 @@
 - (BOOL)isParameterValid {
     BOOL result = YES;
     //There's no limits here now.
-    /*if([self.phoneNumberTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入旧密码。" withVerticalPos:self.toastVerticalPos];
+    if([self.phoneNumberTextField.text isEqualToString:@""] 
+       && [self.qqTextField.text isEqualToString:@""]
+       && [self.emailTextField.text isEqualToString:@""]
+       && [self.weiboTextField.text isEqualToString:@""]) {
+        [UIApplication presentAlertToast:@"请更改至少一项内容。" withVerticalPos:self.toastVerticalPos];
         result = NO;
-    } else if([self.emailTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入新密码。" withVerticalPos:self.toastVerticalPos];
-        result = NO;
-    } else if ([self.qqTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入旧密码。" withVerticalPos:self.toastVerticalPos];
-        result = NO;
-    }*/
+    }
     return result;
+}
+
+- (void)updateUser:(NSDictionary *)dict {
+    NSDictionary *userInfo = [dict objectForKey:@"User"];
+    [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
+    [NSNotificationCenter postChangeCurrentUserNotification];
 }
 
 - (void)updateInfo {
@@ -85,20 +91,15 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
-            User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
-            NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
-            NSLog(@"user id:%@, session:%@", user.user_id, session);
-            
-            [NSUserDefaults setCurrentUserID:user.user_id session:session];            
+            [self updateUser:client.responseData];            
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"更新资料成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
             [UIApplication presentAlertToast:@"更新资料失败。" withVerticalPos:self.toastVerticalPos];
+            self.sendingRequest = NO;
         }
         [self configureNavBar];
-        self.sendingRequest = NO;
     }];
     [client updateUserDisplayName:nil email:self.emailTextField.text weiboName:self.weiboTextField.text phoneNum:self.phoneNumberTextField.text qqAccount:self.qqTextField.text];
     self.sendingRequest = YES;
@@ -121,11 +122,27 @@
 
 - (void)configureScrollView {
     CGRect frame = self.scrollView.frame;
-    frame.size.height = self.bigView.frame.size.height;
+    frame.size.height = self.bgView.frame.size.height;
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
     [self.phoneNumberTextField becomeFirstResponder];
+}
+
+- (void)configureTextFiledPlaceHolder {
+    User *user = self.currentUser;
+    if(user.phone_number && ![user.phone_number isEqualToString:@""]) {
+        self.phoneNumberTextField.placeholder = user.phone_number;
+    }
+    if(user.email_address && ![user.email_address isEqualToString:@""]) {
+        self.emailTextField.placeholder = user.email_address;
+    }
+    if(user.qq_number && ![user.qq_number isEqualToString:@""]) {
+        self.qqTextField.placeholder = user.qq_number;
+    }
+    if(user.sina_weibo_name && ![user.sina_weibo_name isEqualToString:@""]) {
+        self.weiboTextField.placeholder = user.sina_weibo_name;
+    }
 }
 
 #pragma mark - 

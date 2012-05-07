@@ -18,6 +18,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *qqTextField;
 @property (nonatomic, strong) IBOutlet UITextField *weiboTextField;
 @property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIView *bigView;
+@property (nonatomic, strong) IBOutlet UIView *bgView;
 
 @end

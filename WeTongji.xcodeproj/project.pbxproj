@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A11556A99C00D4BE14 /* Student+Addition.m */; };
-		E10619A51556B43700D4BE14 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A41556B43700D4BE14 /* Student.m */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
 		E10A167D153617E300700A0E /* dock_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1668153617E200700A0E /* dock_bg.png */; };
 		E10A167E153617E300700A0E /* dock_btn_channel_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1669153617E200700A0E /* dock_btn_channel_hl.png */; };
@@ -107,7 +106,8 @@
 		E1999AEF1557929000CD04EF /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1999AEE1557929000CD04EF /* UserInfo.plist */; };
 		E1999AF31557A7C300CD04EF /* PromoteLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AF11557A7BD00CD04EF /* PromoteLoginViewController.m */; };
 		E1999AF41557A7C300CD04EF /* PromoteLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1999AF21557A7BF00CD04EF /* PromoteLoginViewController.xib */; };
-		E1999AF71557DEE300CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AF61557DEE300CD04EF /* User.m */; };
+		E1999AFA1557FAA700CD04EF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AF91557FAA600CD04EF /* Student.m */; };
+		E1999AFD1557FAAB00CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AFC1557FAAA00CD04EF /* User.m */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -268,8 +268,6 @@
 /* Begin PBXFileReference section */
 		E10619A01556A99C00D4BE14 /* Student+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Addition.h"; sourceTree = "<group>"; };
 		E10619A11556A99C00D4BE14 /* Student+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Addition.m"; sourceTree = "<group>"; };
-		E10619A31556B43700D4BE14 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		E10619A41556B43700D4BE14 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E10A165C15360EC900700A0E /* WTDockButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
 		E10A165D15360EC900700A0E /* WTDockButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WTDockButton.m; path = Classes/WTDockButton.m; sourceTree = "<group>"; };
 		E10A1668153617E200700A0E /* dock_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_bg.png; sourceTree = "<group>"; };
@@ -390,8 +388,10 @@
 		E1999AF01557A7B900CD04EF /* PromoteLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PromoteLoginViewController.h; path = Classes/PromoteLoginViewController.h; sourceTree = "<group>"; };
 		E1999AF11557A7BD00CD04EF /* PromoteLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PromoteLoginViewController.m; path = Classes/PromoteLoginViewController.m; sourceTree = "<group>"; };
 		E1999AF21557A7BF00CD04EF /* PromoteLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PromoteLoginViewController.xib; path = Classes/PromoteLoginViewController.xib; sourceTree = "<group>"; };
-		E1999AF51557DEE200CD04EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E1999AF61557DEE300CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1999AF81557FAA400CD04EF /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E1999AF91557FAA600CD04EF /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E1999AFB1557FAA900CD04EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E1999AFC1557FAAA00CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1202,10 +1202,10 @@
 				E1AD1B9C1551A27C003B7052 /* Activity.m */,
 				E1AD1B921551A27B003B7052 /* News.h */,
 				E1AD1B931551A27B003B7052 /* News.m */,
-				E10619A31556B43700D4BE14 /* Student.h */,
-				E10619A41556B43700D4BE14 /* Student.m */,
-				E1999AF51557DEE200CD04EF /* User.h */,
-				E1999AF61557DEE300CD04EF /* User.m */,
+				E1999AF81557FAA400CD04EF /* Student.h */,
+				E1999AF91557FAA600CD04EF /* Student.m */,
+				E1999AFB1557FAA900CD04EF /* User.h */,
+				E1999AFC1557FAAA00CD04EF /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1604,11 +1604,11 @@
 				E172F81F155653C600D6F99C /* UpdateUserAvatarViewController.m in Sources */,
 				E172F8241556545200D6F99C /* UpdateUserPasswordViewController.m in Sources */,
 				E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */,
-				E10619A51556B43700D4BE14 /* Student.m in Sources */,
 				E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */,
 				E1999AED1557927100CD04EF /* UserInfoReader.m in Sources */,
 				E1999AF31557A7C300CD04EF /* PromoteLoginViewController.m in Sources */,
-				E1999AF71557DEE300CD04EF /* User.m in Sources */,
+				E1999AFA1557FAA700CD04EF /* Student.m in Sources */,
+				E1999AFD1557FAAB00CD04EF /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

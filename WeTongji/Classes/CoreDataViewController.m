@@ -23,12 +23,13 @@ static CoreDataKernal *kernalInstance = nil;
 
 @synthesize managedObjectContext = _managedObjectContext;
 
-- (id)init {
-    self = [super init];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.managedObjectContext = appDelegate.managedObjectContext;
         [CoreDataKernal getKernalInstance];
+        NSLog(@"init core data view controller");
     }
     return self;
 }
