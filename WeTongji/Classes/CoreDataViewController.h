@@ -9,13 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "User+Addition.h"
 
-@interface CoreDataViewController : UIViewController {
-    NSManagedObjectContext *_managedObjectContext;
-}
+@interface CoreDataViewController : UIViewController
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) User *currentUser;
 
 + (User *)getCurrentUser;
+
+@end
+
+@interface CoreDataKernal : NSObject
+
+@property (nonatomic, strong) User *currentUser;
+
++ (CoreDataKernal *)getKernalInstance;
 
 @end

@@ -81,7 +81,7 @@ typedef enum {
 #pragma mark Logic methods 
 
 - (void)updateUIAccordingToCurrentUserStatus {
-    if([CoreDataViewController getCurrentUser] == nil) {
+    if(self.currentUser == nil) {
         if(self.promoteLoginViewController == nil) {
             [self configurePromoteLoginView];
         }

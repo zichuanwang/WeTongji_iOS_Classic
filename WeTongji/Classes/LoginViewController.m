@@ -95,7 +95,7 @@
                 NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
                 [NSUserDefaults setCurrentUserID:user.user_id session:session];
                 [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-                [NSNotificationCenter postChangeCurrentUserNotification];
+                [NSNotificationCenter postCoreChangeCurrentUserNotification];
             }
             
             [self.parentViewController dismissModalViewControllerAnimated:YES];

@@ -11,7 +11,13 @@
 #import "User+Addition.h"
 #import "NSNotificationCenter+Addition.h"
 
-static User *currentUserInstance = nil;
+static CoreDataKernal *kernalInstance = nil;
+
+@interface CoreDataViewController()
+
+@property (nonatomic, readonly) CoreDataKernal *kernal;
+
+@end
 
 @implementation CoreDataViewController
 
@@ -22,35 +28,51 @@ static User *currentUserInstance = nil;
     if(self) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.managedObjectContext = appDelegate.managedObjectContext;
-        [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
+        [CoreDataKernal getKernalInstance];
     }
     return self;
 }
 
+- (CoreDataKernal *)kernal {
+    return [CoreDataKernal getKernalInstance];
+}
+
 - (User *)currentUser {
-    if(currentUserInstance == nil) {
-        currentUserInstance = [User currentUserInManagedObjectContext:self.managedObjectContext];
-    }
-    if(currentUserInstance == nil)
-        NSLog(@"current user is nil");
-    return currentUserInstance;
+    return [CoreDataViewController getCurrentUser];
 }
 
 + (User *)getCurrentUser {
-    if(currentUserInstance == nil) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        currentUserInstance = [User currentUserInManagedObjectContext:appDelegate.managedObjectContext];
+    return [CoreDataKernal getKernalInstance].currentUser;
+}
+
+@end
+
+@implementation CoreDataKernal
+
+@synthesize currentUser = _currentUser;
+
+- (id)init {
+    self = [super init];
+    if(self) {
+        [NSNotificationCenter registerCoreChangeCurrentUserNotificationWithSelector:@selector(handleCoreChangeCurrentUserNotification:) target:self]; 
     }
-    if(currentUserInstance == nil)
-        NSLog(@"current user is nil");
-    return currentUserInstance;
+    return self;
+}
+
++ (CoreDataKernal *)getKernalInstance {
+    if(kernalInstance == nil) {
+        kernalInstance = [[CoreDataKernal alloc] init];
+    }
+    return kernalInstance;
 }
 
 #pragma mark -
 #pragma mark Handle notifications
 
-- (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
-    currentUserInstance = [User currentUserInManagedObjectContext:self.managedObjectContext];
+- (void)handleCoreChangeCurrentUserNotification:(NSNotification *)notification {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.currentUser = [User currentUserInManagedObjectContext:appDelegate.managedObjectContext];
+    [NSNotificationCenter postChangeCurrentUserNotification];
 }
 
 @end

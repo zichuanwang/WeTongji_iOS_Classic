@@ -9,6 +9,7 @@
 #import "NSNotificationCenter+Addition.h"
 
 #define kChangeCurrentUserNotification @"kChangeCurrentUserNotification"
+#define kCoreChangeCurrentUserNotification @"kCoreChangeCurrentUserNotification"
 
 @implementation NSNotificationCenter (Addition)
 
@@ -20,6 +21,17 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:aTarget selector:aSelector
                    name:kChangeCurrentUserNotification 
+                 object:nil];
+}
+
++ (void)postCoreChangeCurrentUserNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCoreChangeCurrentUserNotification object:nil userInfo:nil];
+}
+
++ (void)registerCoreChangeCurrentUserNotificationWithSelector:(SEL)aSelector target:(id)aTarget {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:aTarget selector:aSelector
+                   name:kCoreChangeCurrentUserNotification 
                  object:nil];
 }
 

@@ -149,7 +149,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-    [NSNotificationCenter postChangeCurrentUserNotification];
+    [NSNotificationCenter postCoreChangeCurrentUserNotification];
     _selectRow = indexPath.row;
     [self.tableView reloadData];
 }
@@ -172,7 +172,6 @@
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
         User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        NSLog(@"delete user:%@", user.display_name);
         [self.managedObjectContext deleteObject:user];
         
         [UIView animateWithDuration:0.3f animations:^{
@@ -189,11 +188,7 @@
                     [self.tableView reloadData];
                 }
             }
-            User *currentUser = [CoreDataViewController getCurrentUser];
-            if(currentUser) {
-                NSLog(@"current user name：%@", currentUser.display_name);
-            }
-            [NSNotificationCenter postChangeCurrentUserNotification];
+            [NSNotificationCenter postCoreChangeCurrentUserNotification];
         }];
 	}
 }

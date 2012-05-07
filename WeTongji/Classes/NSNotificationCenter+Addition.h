@@ -11,7 +11,9 @@
 @interface NSNotificationCenter (Addition)
 
 + (void)postChangeCurrentUserNotification;
++ (void)postCoreChangeCurrentUserNotification;
 
++ (void)registerCoreChangeCurrentUserNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
 + (void)registerChangeCurrentUserNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
 
 @end
