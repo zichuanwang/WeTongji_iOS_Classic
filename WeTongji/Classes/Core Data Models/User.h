@@ -27,6 +27,9 @@
 @property (nonatomic, retain) NSNumber * has_login;
 @property (nonatomic, retain) NSDate * login_time;
 @property (nonatomic, retain) NSNumber * is_current_user;
+@property (nonatomic, retain) NSString * password;
+@property (nonatomic, retain) NSString * account;
+@property (nonatomic, retain) NSString * session;
 @property (nonatomic, retain) NSSet *favor;
 @property (nonatomic, retain) NSSet *schedule;
 @end

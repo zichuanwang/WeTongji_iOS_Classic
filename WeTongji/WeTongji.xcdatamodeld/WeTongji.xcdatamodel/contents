@@ -45,6 +45,7 @@
         <attribute name="student_number" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="account" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birth_place" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
@@ -55,8 +56,10 @@
         <attribute name="is_current_user" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="login_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone_number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qq_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sina_weibo_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="favor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="favoredBy" inverseEntity="Activity" syncable="YES"/>
@@ -67,6 +70,6 @@
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="News" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="285"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="330"/>
     </elements>
 </model>

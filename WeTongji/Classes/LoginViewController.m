@@ -41,13 +41,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    UITapGestureRecognizer* gesture;
-//    gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-//    [self.bgImageView addGestureRecognizer:gesture];
-    
     [self configureNavBar];
     [self configureScrollView];
-    [self.accountTextField becomeFirstResponder];
 }
 
 - (void)viewDidUnload
@@ -80,31 +75,42 @@
     return result;
 }
 
+- (void)createUser:(NSDictionary *)dict {
+    NSDictionary *userInfo = [dict objectForKey:@"User"];
+    Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
+    user.has_login = [NSNumber numberWithBool:YES];
+    NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
+    user.session = session;
+    
+    user.password = self.passwordTextField.text;
+    user.account = self.accountTextField.text;
+    
+    if(self.currentUser == nil) {
+        [NSUserDefaults setCurrentUserID:user.user_id];
+        [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
+        [NSNotificationCenter postCoreChangeCurrentUserNotification];
+    }
+}
+
 - (void)login {
     if(!self.isParameterValid)
         return;
     if(self.isSendingRequest)
         return;
+    self.mainBgView.userInteractionEnabled = NO;
+    
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
-            Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
-            user.has_login = [NSNumber numberWithBool:YES];
-            if(self.currentUser == nil) {
-                NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
-                [NSUserDefaults setCurrentUserID:user.user_id session:session];
-                [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-                [NSNotificationCenter postCoreChangeCurrentUserNotification];
-            }
-            
+            [self createUser:client.responseData];
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
             [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:self.toastVerticalPos];
+            self.sendingRequest = NO;
+            self.mainBgView.userInteractionEnabled = YES;
         }
-        self.sendingRequest = NO;
     }];
     [client login:self.accountTextField.text password:self.passwordTextField.text];
     self.sendingRequest = YES;
@@ -130,6 +136,8 @@
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    
+    [self.accountTextField becomeFirstResponder];
 }
 
 #pragma mark -
@@ -142,6 +150,7 @@
 - (void)didClickSignInButton {
     //SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
     SignInMainViewController *vc = [[SignInMainViewController alloc] init];
+    vc.toastVerticalPos = self.toastVerticalPos;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

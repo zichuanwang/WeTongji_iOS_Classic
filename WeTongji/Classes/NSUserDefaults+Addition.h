@@ -26,8 +26,7 @@ typedef enum {
 + (ChannelSortMethod)getChannelSortMethod;
 + (NSArray *)getChannelNameArray;
 
-+ (void)setCurrentUserID:(NSString *)userID session:(NSString *)session;
++ (void)setCurrentUserID:(NSString *)userID;
 + (NSString *)getCurrentUserID;
-+ (NSString *)getCurrentUserSession;
 
 @end

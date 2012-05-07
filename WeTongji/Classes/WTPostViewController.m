@@ -22,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     }
     return self;
 }
@@ -30,8 +31,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
 }
 
 - (void)viewDidUnload
@@ -54,7 +53,7 @@
     NSDictionary *info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     self.toastVerticalPos = 480 - kbSize.height - 40;
-    //NSLog(@"keyboard changed, keyboard width = %f, height = %f", kbSize.width,kbSize.height);
+    NSLog(@"keyboard changed, keyboard width = %f, height = %f", kbSize.width,kbSize.height);
 }
 
 @end

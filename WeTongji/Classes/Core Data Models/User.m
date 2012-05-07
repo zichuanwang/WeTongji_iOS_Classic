@@ -26,6 +26,9 @@
 @dynamic has_login;
 @dynamic login_time;
 @dynamic is_current_user;
+@dynamic password;
+@dynamic account;
+@dynamic session;
 @dynamic favor;
 @dynamic schedule;
 

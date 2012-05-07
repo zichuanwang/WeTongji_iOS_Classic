@@ -10,6 +10,8 @@
 #import "JSON.h"
 #import "NSString+URLEncoding.h"
 #import "NSUserDefaults+Addition.h"
+#import "User+Addition.h"
+#import "AppDelegate.h"
 
 static NSString* const APIDomain = @"106.187.95.107:8080";
 
@@ -193,9 +195,13 @@ report_completion:
     
     if(self.isCurrentUserIDRequired)
         [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
-    if(self.isSessionRequired)
-        [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
-
+    
+    if(self.isSessionRequired) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        User *currentUser = [User userWithID:[NSUserDefaults getCurrentUserID] inManagedObjectContext:appDelegate.managedObjectContext];
+        [self.params setObject:currentUser.session forKey:@"S"];
+    }
+    
     [self buildURL];
     [self.request startAsynchronous];
 }

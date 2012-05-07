@@ -96,6 +96,10 @@
             
             else if(client.responseStatusCode == 3) 
                 [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:self.toastVerticalPos];
+            else {
+                NSLog(@"client responseStatusCode %d", client.responseStatusCode);
+                [UIApplication presentAlertToast:@"注册失败。" withVerticalPos:self.toastVerticalPos];
+            }
         }
         [self configureNavBar];
         self.sendingRequest = NO;

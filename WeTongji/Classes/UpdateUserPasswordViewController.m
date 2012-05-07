@@ -74,29 +74,36 @@
     return result;
 }
 
+- (void)updateUser:(NSDictionary *)dict {
+    NSDictionary *userInfo = [dict objectForKey:@"User"];
+    User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
+    NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
+    user.password = self.updatedPasswordTextField.text;
+    user.session = session;
+    NSLog(@"user id:%@, session:%@", user.user_id, session);
+}
+
 - (void)updatePassword {
     if(!self.isParameterValid)
         return;
     if(self.isSendingRequest)
         return;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem getActivityIndicatorButtonItem];
+    self.mainBgView.userInteractionEnabled = NO;
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
-            User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
-            NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
-            NSLog(@"user id:%@, session:%@", user.user_id, session);
-            
-            [NSUserDefaults setCurrentUserID:user.user_id session:session];            
+            [self updateUser:client.responseData];
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"更改密码成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
             [UIApplication presentAlertToast:@"更改密码失败。" withVerticalPos:self.toastVerticalPos];
+            self.sendingRequest = NO;
+            self.mainBgView.userInteractionEnabled = YES;
         }
         [self configureNavBar];
-        self.sendingRequest = NO;
+        
     }];
     [client updatePassword:self.updatedPasswordTextField.text withOldPassword:self.oldPasswordTextField.text];
     self.sendingRequest = YES;
