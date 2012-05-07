@@ -55,6 +55,9 @@ static CoreDataKernal *kernalInstance = nil;
 - (id)init {
     self = [super init];
     if(self) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.currentUser = [User currentUserInManagedObjectContext:appDelegate.managedObjectContext];
+        
         [NSNotificationCenter registerCoreChangeCurrentUserNotificationWithSelector:@selector(handleCoreChangeCurrentUserNotification:) target:self]; 
     }
     return self;

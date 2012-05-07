@@ -79,6 +79,7 @@
     NSDictionary *userInfo = [dict objectForKey:@"User"];
     Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
     user.has_login = [NSNumber numberWithBool:YES];
+    user.login_time = [NSDate date];
     NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
     user.session = session;
     

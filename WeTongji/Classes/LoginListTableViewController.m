@@ -10,8 +10,9 @@
 #import "LoginListTableViewCell.h"
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
-#import "User+Addition.h"
+#import "Student+Addition.h"
 #import "NSNotificationCenter+Addition.h"
+#import "WTClient.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    7
 
@@ -55,6 +56,13 @@
 
 #pragma mark -
 #pragma mark logic methods
+
+- (void)createUser:(NSDictionary *)dict {
+    NSDictionary *userInfo = [dict objectForKey:@"User"];
+    Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
+    NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
+    user.session = session;
+}
 
 #pragma mark -
 #pragma mark UI methods
@@ -114,15 +122,14 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == _selectRow) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
     LoginListTableViewCell *loginCell = (LoginListTableViewCell *)cell;
     User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if(user.is_current_user.boolValue == YES) {
+        _selectRow = indexPath.row;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     loginCell.avatarImageView.hidden = NO;
     loginCell.avatarImageView.image = [UIImage imageNamed:@"user_info_default_image.jpg"];
     loginCell.userNameLabel.text = user.name;
@@ -133,7 +140,7 @@
     [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"has_login == YES"];
     [request setPredicate:predicate];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"login_time" ascending:NO];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"login_time" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;
@@ -148,10 +155,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-    [NSNotificationCenter postCoreChangeCurrentUserNotification];
-    _selectRow = indexPath.row;
-    [self.tableView reloadData];
+    self.mainBgView.userInteractionEnabled = NO;
+    
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            [self createUser:client.responseData];
+            [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
+            
+            [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
+            [NSNotificationCenter postCoreChangeCurrentUserNotification];
+            _selectRow = indexPath.row;
+            [self.tableView reloadData];
+
+        } else {
+            [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:DefaultToastVerticalPosition];
+        }
+        self.mainBgView.userInteractionEnabled = YES;
+    }];
+    [client login:user.account password:user.password];    
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { 

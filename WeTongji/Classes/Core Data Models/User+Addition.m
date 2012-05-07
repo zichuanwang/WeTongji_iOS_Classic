@@ -83,4 +83,8 @@
     newUser.is_current_user = [NSNumber numberWithBool:YES];
 }
 
+- (BOOL)isEqualToUser:(User *)user {
+    return [self.user_id isEqualToString:user.user_id];
+}
+
 @end
