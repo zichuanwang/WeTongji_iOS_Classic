@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavigationViewController.h"
+#import "WTPostViewController.h"
 
-@interface UpdateUserInfoViewController : WTNavigationViewController
+@interface UpdateUserInfoViewController : WTPostViewController<UITextFieldDelegate>
+
+@property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UITextField *phoneNumberTextField;
+@property (nonatomic, strong) IBOutlet UITextField *emailTextField;
+@property (nonatomic, strong) IBOutlet UITextField *qqTextField;
+@property (nonatomic, strong) IBOutlet UITextField *weiboTextField;
+@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, strong) IBOutlet UIView *bigView;
 
 @end
