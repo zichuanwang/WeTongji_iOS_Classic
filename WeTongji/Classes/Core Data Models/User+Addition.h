@@ -13,5 +13,9 @@
 - (void)initWithDict:(NSDictionary *)dict;
 + (User *)insertUser:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context;
 + (User *)userWithID:(NSString *)userID inManagedObjectContext:(NSManagedObjectContext *)context;
++ (User *)currentUserInManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)allObjectsInManagedObjectContext:(NSManagedObjectContext *)context;
++ (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context;
++ (void)changeCurrentUser:(User *)newUser inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

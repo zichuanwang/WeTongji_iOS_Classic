@@ -48,6 +48,21 @@
     return nil;
 }
 
+- (void)insertCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                     withRowAnimation:UITableViewRowAnimationTop];
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    if(!_noAnimationFlag)
+        [self.tableView beginUpdates];
+}
+
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -104,18 +119,9 @@
 }
 
 - (void)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
+    [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath]
+                         atIndexPath:indexPath];
 }
-
-- (void)insertCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    if(!_noAnimationFlag)
-        [self.tableView beginUpdates];
-}
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
@@ -128,15 +134,12 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             //NSLog(@"did insert");
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
-            [self insertCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self insertCellAtIndexPath:newIndexPath];
             break;
             
         case NSFetchedResultsChangeDelete:
             // NSLog(@"did delete");
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                             withRowAnimation:UITableViewRowAnimationFade];
+            [self deleteCellAtIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeUpdate:

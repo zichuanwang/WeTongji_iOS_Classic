@@ -9,6 +9,7 @@
 #import "CoreDataViewController.h"
 #import "AppDelegate.h"
 #import "User+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 static User *currentUserInstance = nil;
 
@@ -21,16 +22,23 @@ static User *currentUserInstance = nil;
     if(self) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.managedObjectContext = appDelegate.managedObjectContext;
+        [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
     }
     return self;
 }
 
 - (User *)currentUser {
     if(currentUserInstance == nil) {
-        NSDictionary *dict = [NSDictionary dictionaryWithObject:@"092969" forKey:@"Id"];
-        currentUserInstance = [User insertUser:dict inManagedObjectContext:self.managedObjectContext];
+        currentUserInstance = [User currentUserInManagedObjectContext:self.managedObjectContext];
     }
     return currentUserInstance;
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    currentUserInstance = [User currentUserInManagedObjectContext:self.managedObjectContext];
 }
 
 @end

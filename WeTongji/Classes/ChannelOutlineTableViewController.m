@@ -108,7 +108,8 @@
     request.fetchBatchSize = 20;
 }
 
-- (void)insertCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)insertCellAtIndexPath:(NSIndexPath *)indexPath {
+    [super insertCellAtIndexPath:indexPath];
     [self configureTableViewFooter];
 }
 

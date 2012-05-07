@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E106199F1556A98700D4BE14 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E106199E1556A98700D4BE14 /* User.m */; };
 		E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A11556A99C00D4BE14 /* Student+Addition.m */; };
 		E10619A51556B43700D4BE14 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A41556B43700D4BE14 /* Student.m */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
@@ -103,6 +102,8 @@
 		E191772E15078188009FB941 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191772C15078188009FB941 /* MainViewController.xib */; };
 		E1917734150785ED009FB941 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1917733150785ED009FB941 /* MainWindow.xib */; };
 		E191773615078609009FB941 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E191773515078609009FB941 /* RootViewController.xib */; };
+		E1999ADF15577C0900CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999ADE15577C0900CD04EF /* User.m */; };
+		E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -261,8 +262,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E106199D1556A98700D4BE14 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E106199E1556A98700D4BE14 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E10619A01556A99C00D4BE14 /* Student+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Addition.h"; sourceTree = "<group>"; };
 		E10619A11556A99C00D4BE14 /* Student+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Addition.m"; sourceTree = "<group>"; };
 		E10619A31556B43700D4BE14 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -379,6 +378,10 @@
 		E191772C15078188009FB941 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
 		E1917733150785ED009FB941 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E191773515078609009FB941 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E1999ADD15577C0800CD04EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E1999ADE15577C0900CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1999AE4155780BB00CD04EF /* NSNotificationCenter+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+Addition.h"; path = "Classes/NSNotificationCenter+Addition.h"; sourceTree = "<group>"; };
+		E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+Addition.m"; path = "Classes/NSNotificationCenter+Addition.m"; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -689,6 +692,8 @@
 		E149831715346C0000734341 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E1999AE4155780BB00CD04EF /* NSNotificationCenter+Addition.h */,
+				E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */,
 				E1FD95701545B8CC00B39069 /* NSString+URLEncoding.h */,
 				E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */,
 				E149831815346C2A00734341 /* UIView+Addition.h */,
@@ -1181,10 +1186,10 @@
 				E1AD1B9C1551A27C003B7052 /* Activity.m */,
 				E1AD1B921551A27B003B7052 /* News.h */,
 				E1AD1B931551A27B003B7052 /* News.m */,
-				E106199D1556A98700D4BE14 /* User.h */,
-				E106199E1556A98700D4BE14 /* User.m */,
 				E10619A31556B43700D4BE14 /* Student.h */,
 				E10619A41556B43700D4BE14 /* Student.m */,
+				E1999ADD15577C0800CD04EF /* User.h */,
+				E1999ADE15577C0900CD04EF /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1580,9 +1585,10 @@
 				E172F8191556493800D6F99C /* SettingInfoReader.m in Sources */,
 				E172F81F155653C600D6F99C /* UpdateUserAvatarViewController.m in Sources */,
 				E172F8241556545200D6F99C /* UpdateUserPasswordViewController.m in Sources */,
-				E106199F1556A98700D4BE14 /* User.m in Sources */,
 				E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */,
 				E10619A51556B43700D4BE14 /* Student.m in Sources */,
+				E1999ADF15577C0900CD04EF /* User.m in Sources */,
+				E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,13 @@
 #import "LoginListTableViewCell.h"
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
+#import "User+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    7
 
 @interface LoginListTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *userListArray;
 @property (nonatomic, strong) UIView *tableViewHeaderView;
 @property (nonatomic, strong) UIView *tableViewFooterView;
 
@@ -24,7 +25,6 @@
 @implementation LoginListTableViewController
 
 @synthesize tableView = _tableView;
-@synthesize userListArray = _userListArray;
 @synthesize tableViewFooterView = _tableViewFooterView;
 @synthesize tableViewHeaderView = _tableViewHeaderView;
 @synthesize mainBgView = _mainBgView;
@@ -34,10 +34,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.userListArray = [[NSMutableArray alloc] initWithCapacity:10];
-        [self.userListArray addObject:[NSString stringWithFormat:@"王紫川"]];
-        [self.userListArray addObject:[NSString stringWithFormat:@"蔡思雨"]];
-        [self.userListArray addObject:[NSString stringWithFormat:@"杨俊哲"]];
     }
     return self;
 }
@@ -58,11 +54,14 @@
 }
 
 #pragma mark -
+#pragma mark logic methods
+
+#pragma mark -
 #pragma mark UI methods
 
 - (void)configureTableView{
     self.tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, -40 * TABLE_HEADER_FOOTER_CELL_NUM, 300, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
-    self.tableViewFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, [self numberOfRowsInTableView] * 40, 300, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
+    self.tableViewFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, self.numberOfRowsInFirstSection * 40, 300, 40 * TABLE_HEADER_FOOTER_CELL_NUM)];
     for(int i = 0; i < TABLE_HEADER_FOOTER_CELL_NUM; i++) {
         UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_single_line.png"]];
         UIImageView *footerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_single_line.png"]];
@@ -97,19 +96,8 @@
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
 }
 
-- (NSInteger)numberOfRowsInTableView {
-    return self.userListArray.count;
-}
-
 #pragma mark -
-#pragma mark UITableView data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self numberOfRowsInTableView];
-}
-
-#pragma mark -
-#pragma mark WTTableViewController methods to overwrite
+#pragma mark CoreDataTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
     return @"LoginListTableViewCell";
@@ -124,9 +112,21 @@
     }
     
     LoginListTableViewCell *loginCell = (LoginListTableViewCell *)cell;
-    loginCell.userNameLabel.text = [self.userListArray objectAtIndex:indexPath.row];
+    User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     loginCell.avatarImageView.hidden = NO;
     loginCell.avatarImageView.image = [UIImage imageNamed:@"user_info_default_image.jpg"];
+    loginCell.userNameLabel.text = user.name;
+}
+
+- (void)configureRequest:(NSFetchRequest *)request
+{
+    [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"has_login == YES"];
+    [request setPredicate:predicate];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"login_time" ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
+    [request setSortDescriptors:descriptors]; 
+    request.fetchBatchSize = 20;
 }
 
 #pragma mark -
@@ -137,10 +137,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row < self.userListArray.count) {
-        _selectRow = indexPath.row;
-        [self.tableView reloadData];
-    }
+    User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
+    [NSNotificationCenter postChangeCurrentUserNotification];
+    _selectRow = indexPath.row;
+    [self.tableView reloadData];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { 
@@ -160,8 +161,8 @@
 //                              delegate: self
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
-        [self.userListArray removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.managedObjectContext deleteObject:user];
         
         [UIView animateWithDuration:0.3f animations:^{
             CGRect frame = self.tableViewFooterView.frame;

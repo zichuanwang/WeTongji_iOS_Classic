@@ -12,6 +12,7 @@
 @implementation User (Addition)
 
 - (void)initWithDict:(NSDictionary *)dict {
+    self.name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Name"]];
     self.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Avatar"]];
     self.display_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"DisplayName"]];
     self.birthday = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Birthday"]] convertToDate];
@@ -52,31 +53,38 @@
     return result;
 }
 
-+ (NSArray *)allUsersInManagedObjectContext:(NSManagedObjectContext *)context {
++ (User *)currentUserInManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context]];
-    NSArray *result = [context executeFetchRequest:request error:NULL];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"is_current_user == YES"]];
     
+    User *result = [[context executeFetchRequest:request error:NULL] lastObject];
+    
+    return result;
+
+}
+
++ (NSArray *)allObjectsInManagedObjectContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];    
+    [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context]];
+    NSArray *result = [context executeFetchRequest:request error:NULL];
     return result;
 }
 
-+ (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context
-{
++ (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context]];
     NSArray *items = [context executeFetchRequest:fetchRequest error:NULL];
-    
-    for (NSManagedObject *managedObject in items) {
+    for (NSManagedObject *managedObject in items)
         [context deleteObject:managedObject];
-    }
 }
 
-- (BOOL)isEqualToUser:(User *)user
-{
-    return [self.user_id isEqualToString:user.user_id];
++ (void)changeCurrentUser:(User *)newUser inManagedObjectContext:(NSManagedObjectContext *)context {
+    NSArray *array = [User allObjectsInManagedObjectContext:context];
+    for(User *user in array)
+        user.is_current_user = [NSNumber numberWithBool:NO];
+    newUser.is_current_user = [NSNumber numberWithBool:YES];
 }
 
 @end

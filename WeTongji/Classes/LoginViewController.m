@@ -89,6 +89,7 @@
         if(!client.hasError) {
             NSDictionary *userInfo = [client.responseData objectForKey:@"User"];
             User *user = [User insertUser:userInfo inManagedObjectContext:self.managedObjectContext];
+            user.has_login = [NSNumber numberWithBool:YES];
             NSString *session = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"Session"]];
             [NSUserDefaults setCurrentUserID:user.user_id session:session];
             NSLog(@"user id:%@, session:%@", user.user_id, session);

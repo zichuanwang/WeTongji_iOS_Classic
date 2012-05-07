@@ -21,7 +21,8 @@ UITableViewDelegate, UITableViewDataSource> {
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)configureRequest:(NSFetchRequest *)request;
 - (void)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)insertCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)insertCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)customCellClassName;
 - (NSString *)customSectionNameKeyPath;
 

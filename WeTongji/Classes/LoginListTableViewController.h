@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTTabelViewController.h"
+#import "CoreDataTableViewController.h"
 
-@interface LoginListTableViewController : WTTabelViewController <UIAlertViewDelegate> {
+@interface LoginListTableViewController : CoreDataTableViewController <UIAlertViewDelegate> {
     NSInteger _selectRow;
 }
 

@@ -51,6 +51,9 @@
         <attribute name="display_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email_address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="has_login" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_current_user" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="login_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone_number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qq_number" optional="YES" attributeType="String" syncable="YES"/>
@@ -64,6 +67,6 @@
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="News" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="285"/>
     </elements>
 </model>
