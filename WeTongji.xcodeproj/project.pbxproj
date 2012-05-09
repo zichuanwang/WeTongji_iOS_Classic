@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */; };
+		E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */; };
+		E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021361155A67E0002FCCA6 /* crop_image_puller.png */; };
+		E1021364155A67E0002FCCA6 /* crop_image_puller@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021362155A67E0002FCCA6 /* crop_image_puller@2x.png */; };
+		E1021365155A8F57002FCCA6 /* CropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1021360155A6053002FCCA6 /* CropImageView.m */; };
+		E1021368155AAD82002FCCA6 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1021367155AAD82002FCCA6 /* UIImage+Addition.m */; };
 		E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A11556A99C00D4BE14 /* Student+Addition.m */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
 		E10A167D153617E300700A0E /* dock_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1668153617E200700A0E /* dock_bg.png */; };
@@ -270,6 +276,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAvatarViewController.h; path = Classes/EditAvatarViewController.h; sourceTree = "<group>"; };
+		E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAvatarViewController.m; path = Classes/EditAvatarViewController.m; sourceTree = "<group>"; };
+		E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditAvatarViewController.xib; path = Classes/EditAvatarViewController.xib; sourceTree = "<group>"; };
+		E102135F155A6053002FCCA6 /* CropImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CropImageView.h; path = Classes/CropImageView.h; sourceTree = "<group>"; };
+		E1021360155A6053002FCCA6 /* CropImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CropImageView.m; path = Classes/CropImageView.m; sourceTree = "<group>"; };
+		E1021361155A67E0002FCCA6 /* crop_image_puller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crop_image_puller.png; sourceTree = "<group>"; };
+		E1021362155A67E0002FCCA6 /* crop_image_puller@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop_image_puller@2x.png"; sourceTree = "<group>"; };
+		E1021366155AAD82002FCCA6 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Addition.h"; path = "Classes/UIImage+Addition.h"; sourceTree = "<group>"; };
+		E1021367155AAD82002FCCA6 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Addition.m"; path = "Classes/UIImage+Addition.m"; sourceTree = "<group>"; };
 		E10619A01556A99C00D4BE14 /* Student+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Addition.h"; sourceTree = "<group>"; };
 		E10619A11556A99C00D4BE14 /* Student+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Addition.m"; sourceTree = "<group>"; };
 		E10A165C15360EC900700A0E /* WTDockButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
@@ -715,22 +730,24 @@
 			children = (
 				E1999AE4155780BB00CD04EF /* NSNotificationCenter+Addition.h */,
 				E1999AE5155780BB00CD04EF /* NSNotificationCenter+Addition.m */,
-				E1FD95701545B8CC00B39069 /* NSString+URLEncoding.h */,
-				E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */,
-				E149831815346C2A00734341 /* UIView+Addition.h */,
-				E149831915346C2A00734341 /* UIView+Addition.m */,
-				E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */,
-				E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */,
-				E1538D49154708760076DDEC /* UILabel+Addition.h */,
-				E1538D4A154708760076DDEC /* UILabel+Addition.m */,
 				E1E483B61549434B00814FA4 /* NSString+Addition.h */,
 				E1E483B71549434C00814FA4 /* NSString+Addition.m */,
+				E1FD95701545B8CC00B39069 /* NSString+URLEncoding.h */,
+				E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */,
 				E1E04F5F154B28460036E2E1 /* NSUserDefaults+Addition.h */,
 				E1E04F60154B28460036E2E1 /* NSUserDefaults+Addition.m */,
 				E1999B0E155A3E6800CD04EF /* UIApplication+Addition.h */,
 				E1999B0F155A3E6A00CD04EF /* UIApplication+Addition.m */,
+				E174A971153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.h */,
+				E174A972153D87A600E7165A /* UIBarButtonItem+WTBarButtonItem.m */,
 				E1999B10155A3E8D00CD04EF /* UIImageView+Addition.h */,
 				E1999B11155A3E9000CD04EF /* UIImageView+Addition.m */,
+				E1538D49154708760076DDEC /* UILabel+Addition.h */,
+				E1538D4A154708760076DDEC /* UILabel+Addition.m */,
+				E149831815346C2A00734341 /* UIView+Addition.h */,
+				E149831915346C2A00734341 /* UIView+Addition.m */,
+				E1021366155AAD82002FCCA6 /* UIImage+Addition.h */,
+				E1021367155AAD82002FCCA6 /* UIImage+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -861,6 +878,8 @@
 		E1917732150783C9009FB941 /* user_info */ = {
 			isa = PBXGroup;
 			children = (
+				E1021361155A67E0002FCCA6 /* crop_image_puller.png */,
+				E1021362155A67E0002FCCA6 /* crop_image_puller@2x.png */,
 				E174A969153D832F00E7165A /* avatar_frame.png */,
 				E174A96A153D832F00E7165A /* avatar_frame@2x.png */,
 				E1999B14155A435000CD04EF /* user_info_default_avatar.png */,
@@ -1118,6 +1137,8 @@
 		E1DF6F9A1537615B001C60EA /* Accessories */ = {
 			isa = PBXGroup;
 			children = (
+				E102135F155A6053002FCCA6 /* CropImageView.h */,
+				E1021360155A6053002FCCA6 /* CropImageView.m */,
 				E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */,
 				E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */,
 				E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */,
@@ -1133,6 +1154,9 @@
 				E1E483B1154931AA00814FA4 /* EmptyTableViewCell.h */,
 				E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */,
 				E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */,
+				E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */,
+				E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */,
+				E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */,
 			);
 			name = Accessories;
 			sourceTree = "<group>";
@@ -1530,6 +1554,9 @@
 				E1999AF41557A7C300CD04EF /* PromoteLoginViewController.xib in Resources */,
 				E1999B16155A435100CD04EF /* user_info_default_avatar.png in Resources */,
 				E1999B17155A435100CD04EF /* user_info_default_avatar@2x.png in Resources */,
+				E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */,
+				E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */,
+				E1021364155A67E0002FCCA6 /* crop_image_puller@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1631,6 +1658,9 @@
 				E1999B0A155A3E0400CD04EF /* Image.m in Sources */,
 				E1999B12155A409000CD04EF /* UIImageView+Addition.m in Sources */,
 				E1999B13155A409400CD04EF /* UIApplication+Addition.m in Sources */,
+				E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */,
+				E1021365155A8F57002FCCA6 /* CropImageView.m in Sources */,
+				E1021368155AAD82002FCCA6 /* UIImage+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

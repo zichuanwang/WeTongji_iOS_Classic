@@ -31,7 +31,7 @@
 				</dict>
 				<dict>
 					<key>kItemTitle</key>
-					<string>更换头像</string>
+					<string>更新头像</string>
 					<key>kAccessoryType</key>
 					<string>kAccessoryTypeDisclosure</string>
 					<key>kNibFileName</key>

@@ -10,6 +10,8 @@
 
 @interface UIImageView (Addition)
 
+@property (nonatomic, assign, readonly) CGFloat contentScaleFactor;
+
 - (void)loadImageFromURL:(NSString *)urlString 
               completion:(void (^)(BOOL succeed))completion 
           cacheInContext:(NSManagedObjectContext *)context;
