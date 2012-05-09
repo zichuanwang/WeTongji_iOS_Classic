@@ -12,12 +12,17 @@
 #import "CoreDataViewController.h"
 #import "NSNotificationCenter+Addition.h"
 #import "NSString+Addition.h"
+#import "UIImageView+Addition.h"
 
 @interface UserInfoTableViewController ()
+
+@property (nonatomic, strong) UIImageView *avatarImageView;
 
 @end
 
 @implementation UserInfoTableViewController
+
+@synthesize avatarImageView = _avatarImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,10 +67,16 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
     
     UIImageView *avatarFrameImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_frame.png"]];
-    UIImageView *avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_info_default_image.jpg"]];
-    avatarImageView.frame = CGRectMake(17, 17, 66, 66);
     avatarFrameImageView.frame = CGRectMake(210, 46, 100, 100);
-    [avatarFrameImageView addSubview:avatarImageView];
+    
+    UIImageView *defaultAvatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_info_default_avatar.png"]];
+    defaultAvatarImageView.frame = CGRectMake(17, 17, 66, 66);
+    
+    self.avatarImageView = [[UIImageView alloc] initWithFrame:defaultAvatarImageView.frame];
+    [self.avatarImageView loadImageFromURL:self.currentUser.avatar_link cacheInContext:self.managedObjectContext];
+    
+    [avatarFrameImageView addSubview:defaultAvatarImageView];
+    [avatarFrameImageView addSubview:self.avatarImageView];
     [self.tableView addSubview:avatarFrameImageView];
 }
 
@@ -92,9 +103,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     UserInfoTableViewCell *userInfoCell = (UserInfoTableViewCell *)cell;
     UserInfo *info = [self getUserInfoAtIndexPath:indexPath];
-    User *currentUser = [CoreDataViewController getCurrentUser];
     userInfoCell.categoryLabel.text = info.itemTitle;
-    NSString *content = [currentUser valueForKey:info.contentName];
+    NSString *content = [self.currentUser valueForKey:info.contentName];
     if([content isKindOfClass:[NSNumber class]]) {
         content = ((NSNumber *)content).stringValue;
     } else if([content isKindOfClass:[NSDate class]]) {
@@ -107,6 +117,7 @@
 #pragma mark Handle notifications
 
 - (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    [self.avatarImageView loadImageFromURL:self.currentUser.avatar_link cacheInContext:self.managedObjectContext];
     [self.tableView reloadData];
 }
 

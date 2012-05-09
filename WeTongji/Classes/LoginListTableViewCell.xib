@@ -64,7 +64,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{-10, 0}, {320, 40}}</string>
 										<reference key="NSSuperview" ref="1060888640"/>
-										<reference key="NSNextKeyView" ref="1072926749"/>
+										<reference key="NSNextKeyView" ref="332522332"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -107,6 +107,20 @@
 											<int key="NSfFlags">16</int>
 										</object>
 									</object>
+									<object class="IBUIImageView" id="332522332">
+										<reference key="NSNextResponder" ref="1060888640"/>
+										<int key="NSvFlags">301</int>
+										<string key="NSFrame">{{18, 3}, {34, 34}}</string>
+										<reference key="NSSuperview" ref="1060888640"/>
+										<reference key="NSNextKeyView" ref="1072926749"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">user_info_default_avatar.png</string>
+										</object>
+									</object>
 									<object class="IBUIImageView" id="1072926749">
 										<reference key="NSNextResponder" ref="1060888640"/>
 										<int key="NSvFlags">301</int>
@@ -116,10 +130,6 @@
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<object class="NSCustomResource" key="IBUIImage">
-											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">user_info_default_image.jpg</string>
-										</object>
 									</object>
 								</array>
 								<string key="NSFrameSize">{300, 40}</string>
@@ -205,10 +215,11 @@
 						<int key="objectID">18</int>
 						<reference key="object" ref="1060888640"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="1072926749"/>
 							<reference ref="141452417"/>
 							<reference ref="364695429"/>
 							<reference ref="1013320696"/>
+							<reference ref="1072926749"/>
+							<reference ref="332522332"/>
 						</array>
 						<reference key="parent" ref="659482095"/>
 					</object>
@@ -232,6 +243,11 @@
 						<reference key="object" ref="1013320696"/>
 						<reference key="parent" ref="1060888640"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">22</int>
+						<reference key="object" ref="332522332"/>
+						<reference key="parent" ref="1060888640"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -243,6 +259,7 @@
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.CustomClassName">LoginListTableViewCell</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -251,7 +268,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">21</int>
+			<int key="maxID">22</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -265,7 +282,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="paper_blue_seperator.png">{320, 40}</string>
 			<string key="paper_single_line.png">{320, 40}</string>
-			<string key="user_info_default_image.jpg">{450, 450}</string>
+			<string key="user_info_default_avatar.png">{100, 100}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataViewController.h"
 
-@interface WTTabelViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WTTabelViewController : CoreDataViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 

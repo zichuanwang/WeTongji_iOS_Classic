@@ -13,6 +13,7 @@
 #import "Student+Addition.h"
 #import "WTClient.h"
 #import "NSNotificationCenter+Addition.h"
+#import "UIImageView+Addition.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    7
 
@@ -133,8 +134,7 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    loginCell.avatarImageView.hidden = NO;
-    loginCell.avatarImageView.image = [UIImage imageNamed:@"user_info_default_image.jpg"];
+    [loginCell.avatarImageView loadImageFromURL:user.avatar_link cacheInContext:self.managedObjectContext];
     loginCell.userNameLabel.text = user.name;
 }
 
