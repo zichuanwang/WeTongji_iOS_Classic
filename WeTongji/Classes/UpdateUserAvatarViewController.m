@@ -14,6 +14,10 @@
 
 @implementation UpdateUserAvatarViewController
 
+@synthesize scrollView = _scrollView;
+@synthesize mainBgView = _mainBgView;
+@synthesize paperTitleLabel = _paperTitleLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
+    [self configureScrollView];
 }
 
 - (void)viewDidUnload
@@ -35,6 +40,9 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.mainBgView = nil;
+    self.scrollView = nil;
+    self.paperTitleLabel = nil;
 }
 
 #pragma mark -
@@ -49,6 +57,15 @@
     
     UIBarButtonItem *sendButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"发送" target:self action:@selector(didClickSendButton)];
     self.navigationItem.rightBarButtonItem = sendButton;
+}
+
+- (void)configureScrollView {
+    CGRect frame = self.scrollView.frame;
+    frame.size.height += 1;
+    self.scrollView.contentSize = frame.size;
+    
+    self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    self.paperTitleLabel.text = [NSString stringWithFormat:@"您正在更新\"%@\"的头像", self.currentUser.name];
 }
 
 #pragma mark - 

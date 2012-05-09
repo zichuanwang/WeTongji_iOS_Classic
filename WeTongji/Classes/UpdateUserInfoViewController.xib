@@ -100,7 +100,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<object class="NSCustomResource" key="IBUIImage" id="964713984">
+												<object class="NSCustomResource" key="IBUIImage" id="492279884">
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">paper_single_line.png</string>
 												</object>
@@ -117,7 +117,7 @@
 												<int key="IBUIContentMode">7</int>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<string key="IBUIText">欢迎使用WeTongji</string>
+												<string key="IBUIText">请修改需要更新的信息</string>
 												<object class="NSColor" key="IBUITextColor">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MC4yAA</bytes>
@@ -161,7 +161,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<reference key="IBUIImage" ref="964713984"/>
+												<reference key="IBUIImage" ref="492279884"/>
 											</object>
 											<object class="IBUIImageView" id="874479557">
 												<reference key="NSNextResponder" ref="43991454"/>
@@ -172,7 +172,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<reference key="IBUIImage" ref="964713984"/>
+												<reference key="IBUIImage" ref="492279884"/>
 											</object>
 											<object class="IBUIImageView" id="536409537">
 												<reference key="NSNextResponder" ref="43991454"/>
@@ -183,20 +183,20 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<reference key="IBUIImage" ref="964713984"/>
+												<reference key="IBUIImage" ref="492279884"/>
 											</object>
 											<object class="IBUIImageView" id="856791628">
 												<reference key="NSNextResponder" ref="43991454"/>
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{0, 120}, {320, 40}}</string>
 												<reference key="NSSuperview" ref="43991454"/>
-												<reference key="NSNextKeyView" ref="60188316"/>
+												<reference key="NSNextKeyView" ref="650398315"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<reference key="IBUIImage" ref="964713984"/>
+												<reference key="IBUIImage" ref="492279884"/>
 											</object>
-											<object class="IBUIImageView" id="60188316">
+											<object class="IBUIImageView" id="650398315">
 												<reference key="NSNextResponder" ref="43991454"/>
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{10, 0}, {320, 160}}</string>
@@ -606,6 +606,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">paperTitleLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="539162473"/>
+					</object>
+					<int key="connectionID">44</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="130675650"/>
 						<reference key="destination" ref="372490531"/>
@@ -700,7 +708,7 @@
 							<reference ref="815565460"/>
 							<reference ref="846918418"/>
 							<reference ref="299953688"/>
-							<reference ref="60188316"/>
+							<reference ref="650398315"/>
 						</array>
 						<reference key="parent" ref="1049954255"/>
 					</object>
@@ -820,7 +828,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
-						<reference key="object" ref="60188316"/>
+						<reference key="object" ref="650398315"/>
 						<reference key="parent" ref="43991454"/>
 					</object>
 				</array>
@@ -861,7 +869,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">43</int>
+			<int key="maxID">44</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

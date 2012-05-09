@@ -11,8 +11,8 @@
 #import "LoginViewController.h"
 #import "UIApplication+Addition.h"
 #import "Student+Addition.h"
-#import "NSNotificationCenter+Addition.h"
 #import "WTClient.h"
+#import "NSNotificationCenter+Addition.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    7
 
@@ -44,6 +44,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib. 
     [self configureTableView];
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
 }
 
 - (void)viewDidUnload
@@ -62,6 +63,8 @@
     Student *user = [Student insertStudent:userInfo inManagedObjectContext:self.managedObjectContext];
     NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
     user.session = session;
+    NSLog(@"session:%@", session);
+    [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
 }
 
 #pragma mark -
@@ -155,23 +158,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    self.mainBgView.userInteractionEnabled = NO;
-    
+    [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
+    _selectRow = indexPath.row;
+    [self.tableView reloadData];
+        
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
             [self createUser:client.responseData];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
-            
-            [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-            [NSNotificationCenter postCoreChangeCurrentUserNotification];
-            _selectRow = indexPath.row;
-            [self.tableView reloadData];
-
         } else {
             [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:DefaultToastVerticalPosition];
         }
-        self.mainBgView.userInteractionEnabled = YES;
     }];
     [client login:user.account password:user.password];    
 }
@@ -208,9 +206,10 @@
                     if(newUser)
                         [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
                     [self.tableView reloadData];
+                } else {
+                    [User changeCurrentUser:nil inManagedObjectContext:self.managedObjectContext];
                 }
             }
-            [NSNotificationCenter postCoreChangeCurrentUserNotification];
         }];
 	}
 }
@@ -238,6 +237,13 @@
     LoginViewController *vc = [[LoginViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [[UIApplication sharedApplication].rootViewController presentModalViewController:nav animated:YES];
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    [self.tableView reloadData];
 }
 
 @end

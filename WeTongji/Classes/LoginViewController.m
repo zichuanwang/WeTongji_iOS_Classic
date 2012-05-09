@@ -90,7 +90,6 @@
     
     if(self.currentUser == nil) {
         [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-        [NSNotificationCenter postCoreChangeCurrentUserNotification];
     }
 }
 

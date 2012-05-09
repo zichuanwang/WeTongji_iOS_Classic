@@ -26,8 +26,6 @@
     NSDateFormatter *form = [[NSDateFormatter alloc] init];
     [form setDateFormat:@"yyyy年MM月dd日"];
     NSString *result = [form stringFromDate:date];
-    NSString *month = [result substringWithRange:NSMakeRange(5, 2)];
-    result = [result stringByReplacingCharactersInRange:NSMakeRange(5, 2) withString:[NSString stringWithFormat:@"%d", month.intValue]];
     return result;
 }
 

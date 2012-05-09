@@ -9,6 +9,7 @@
 #import "User+Addition.h"
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 @implementation User (Addition)
 
@@ -83,6 +84,7 @@
         user.is_current_user = [NSNumber numberWithBool:NO];
     newUser.is_current_user = [NSNumber numberWithBool:YES];
     [NSUserDefaults setCurrentUserID:newUser.user_id session:newUser.session];
+    [NSNotificationCenter postCoreChangeCurrentUserNotification];
 }
 
 - (BOOL)isEqualToUser:(User *)user {

@@ -28,6 +28,7 @@
 @synthesize qqTextField = _qqTextField;
 @synthesize emailTextField = _emailTextField;
 @synthesize weiboTextField = _weiboTextField;
+@synthesize paperTitleLabel = _paperTitleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +60,7 @@
     self.qqTextField = nil;
     self.emailTextField = nil;
     self.weiboTextField = nil;
+    self.paperTitleLabel = nil;
 }
 #pragma mark -
 #pragma mark Logic methods
@@ -89,7 +91,10 @@
             [UIApplication presentToast:@"更新资料成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
-            [UIApplication presentAlertToast:@"更新资料失败。" withVerticalPos:self.toastVerticalPos];
+            if(client.responseStatusCode == 5) 
+                [UIApplication presentAlertToast:@"未获得权限，请登录。" withVerticalPos:self.toastVerticalPos];
+            else 
+                [UIApplication presentAlertToast:@"更新资料失败。" withVerticalPos:self.toastVerticalPos];
             self.sendingRequest = NO;
         }
         [self configureNavBar];
@@ -120,6 +125,7 @@
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
     [self.phoneNumberTextField becomeFirstResponder];
+    self.paperTitleLabel.text = [NSString stringWithFormat:@"您正在更新\"%@\"的个人资料", self.currentUser.name];
 }
 
 - (void)configureTextFiledPlaceHolder {

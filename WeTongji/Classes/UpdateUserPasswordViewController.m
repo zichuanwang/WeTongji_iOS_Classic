@@ -131,6 +131,7 @@
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
     
     [self.oldPasswordTextField becomeFirstResponder];
+    self.paperTitleLabel.text = [NSString stringWithFormat:@"您正在更改\"%@\"的密码", self.currentUser.name];
 }
 
 #pragma mark - 

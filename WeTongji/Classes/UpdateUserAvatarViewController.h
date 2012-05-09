@@ -11,4 +11,8 @@
 
 @interface UpdateUserAvatarViewController : WTPostViewController
 
+@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UILabel *paperTitleLabel;
+
 @end
