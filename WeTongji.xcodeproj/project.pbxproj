@@ -13,6 +13,7 @@
 		E1021364155A67E0002FCCA6 /* crop_image_puller@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021362155A67E0002FCCA6 /* crop_image_puller@2x.png */; };
 		E1021365155A8F57002FCCA6 /* CropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1021360155A6053002FCCA6 /* CropImageView.m */; };
 		E1021368155AAD82002FCCA6 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1021367155AAD82002FCCA6 /* UIImage+Addition.m */; };
+		E102136B155AAFDC002FCCA6 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = E102136A155AAFD5002FCCA6 /* UIImage+ProportionalFill.m */; };
 		E10619A21556A99C00D4BE14 /* Student+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E10619A11556A99C00D4BE14 /* Student+Addition.m */; };
 		E10A165E15360ED400700A0E /* WTDockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E10A165D15360EC900700A0E /* WTDockButton.m */; };
 		E10A167D153617E300700A0E /* dock_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A1668153617E200700A0E /* dock_bg.png */; };
@@ -285,6 +286,8 @@
 		E1021362155A67E0002FCCA6 /* crop_image_puller@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crop_image_puller@2x.png"; sourceTree = "<group>"; };
 		E1021366155AAD82002FCCA6 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Addition.h"; path = "Classes/UIImage+Addition.h"; sourceTree = "<group>"; };
 		E1021367155AAD82002FCCA6 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Addition.m"; path = "Classes/UIImage+Addition.m"; sourceTree = "<group>"; };
+		E1021369155AAFD5002FCCA6 /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+ProportionalFill.h"; path = "Classes/UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
+		E102136A155AAFD5002FCCA6 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "Classes/UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		E10619A01556A99C00D4BE14 /* Student+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Addition.h"; sourceTree = "<group>"; };
 		E10619A11556A99C00D4BE14 /* Student+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Addition.m"; sourceTree = "<group>"; };
 		E10A165C15360EC900700A0E /* WTDockButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WTDockButton.h; path = Classes/WTDockButton.h; sourceTree = "<group>"; };
@@ -748,6 +751,8 @@
 				E149831915346C2A00734341 /* UIView+Addition.m */,
 				E1021366155AAD82002FCCA6 /* UIImage+Addition.h */,
 				E1021367155AAD82002FCCA6 /* UIImage+Addition.m */,
+				E1021369155AAFD5002FCCA6 /* UIImage+ProportionalFill.h */,
+				E102136A155AAFD5002FCCA6 /* UIImage+ProportionalFill.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1661,6 +1666,7 @@
 				E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */,
 				E1021365155A8F57002FCCA6 /* CropImageView.m in Sources */,
 				E1021368155AAD82002FCCA6 /* UIImage+Addition.m in Sources */,
+				E102136B155AAFDC002FCCA6 /* UIImage+ProportionalFill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

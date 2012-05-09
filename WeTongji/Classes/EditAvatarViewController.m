@@ -9,6 +9,7 @@
 #import "EditAvatarViewController.h"
 #import "UIImageView+Addition.h"
 #import "UIImage+Addition.h"
+#import "UIImage+ProportionalFill.h"
 
 @interface EditAvatarViewController ()
 
@@ -69,10 +70,10 @@
     CGRect cropImageRect = self.cropImageView.cropImageRect;
     CGFloat factor = 1 / self.cropImageBgView.contentScaleFactor;
     cropImageRect = CGRectMake(cropImageRect.origin.x * factor, cropImageRect.origin.y * factor, cropImageRect.size.width * factor, cropImageRect.size.height * factor);
-    self.cropImageBgView.image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(self.cropImageBgView.image.CGImage, cropImageRect)];
-    self.cropImageBgView.frame = self.cropImageView.cropEditRect;
-    
-    [self.delegate editAvatarViewDidFinishEdit:self.cropImageBgView.image];
+    UIImage *croppedImage = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(self.cropImageBgView.image.CGImage, cropImageRect)];
+    //self.cropImageBgView.frame = self.cropImageView.cropEditRect;
+    croppedImage = [croppedImage imageScaledToFitSize:CGSizeMake(100, 100)];
+    [self.delegate editAvatarViewDidFinishEdit:croppedImage];
 }
 
 - (IBAction)didClickCancelButton:(UIButton *)sender {
