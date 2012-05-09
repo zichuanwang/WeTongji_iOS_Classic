@@ -110,7 +110,8 @@
     } else if([content isKindOfClass:[NSDate class]]) {
         content = [NSString yearMonthDayConvertFromDate:(NSDate *)content];
     }
-    userInfoCell.contentLabel.text = content;
+    if(content && ![content isEqualToString:@"<null>"])
+        userInfoCell.contentLabel.text = content;
 }
 
 #pragma mark -

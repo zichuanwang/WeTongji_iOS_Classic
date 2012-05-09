@@ -13,9 +13,17 @@
 
 - (void)initWithDict:(NSDictionary *)dict {
     [super initWithDict:dict];
-    self.degree = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Degree"]] intValue]];
-    self.plan = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Plan"]] intValue]];
-     self.enroll_year = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Year"]] intValue]];
+    NSString *degreeStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Degree"]];
+    if(![degreeStr isEqualToString:@"<null>"])
+        self.degree = [NSNumber numberWithInt:[degreeStr intValue]];
+    
+    NSString *planStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Plan"]];
+    if(![planStr isEqualToString:@"<null>"])
+        self.plan = [NSNumber numberWithInt:[planStr intValue]];
+    NSString *enrollYearStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"YEAR"]];
+    if(![enrollYearStr isEqualToString:@"<null>"])
+        self.enroll_year = [NSNumber numberWithInt:[enrollYearStr intValue]];
+    
     self.department = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Department"]];
     self.major = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Major"]];
     self.student_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
