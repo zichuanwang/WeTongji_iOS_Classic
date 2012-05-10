@@ -112,6 +112,8 @@
     }
     if(content && ![content isEqualToString:@"<null>"])
         userInfoCell.contentLabel.text = content;
+    else 
+        userInfoCell.contentLabel.text = @"";
 }
 
 #pragma mark -

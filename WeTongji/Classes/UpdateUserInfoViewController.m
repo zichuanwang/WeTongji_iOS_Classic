@@ -160,7 +160,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if(textField == self.emailTextField) {
-        [self.emailTextField becomeFirstResponder];
+        [self.qqTextField becomeFirstResponder];
     } else if(textField == self.qqTextField) {
         [self.weiboTextField becomeFirstResponder];
     } else if(textField == self.weiboTextField) {
