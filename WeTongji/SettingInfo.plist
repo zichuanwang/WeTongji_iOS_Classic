@@ -64,6 +64,23 @@
 				</dict>
 			</array>
 		</dict>
+        <dict>
+			<key>kSectionName</key>
+			<string>界面设置</string>
+			<key>kSectionArray</key>
+			<array>
+				<dict>
+					<key>kItemTitle</key>
+					<string>界面风格</string>
+					<key>kAccessoryType</key>
+					<string>kAccessoryTypeDisclosure</string>
+					<key>kNibFileName</key>
+					<string>SettingUIStyleViewController</string>
+					<key>kWayToPresentViewController</key>
+					<string>kPushNavigationController</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

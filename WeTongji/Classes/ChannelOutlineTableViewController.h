@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "EGOTableViewController.h"
-#import "WTTabelViewController.h"
 #import "Activity.h"
 
 @protocol ChannelOutlineTableViewControllerDelegate;

@@ -58,6 +58,10 @@
 		E14983311534C22900734341 /* nav_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* nav_bar_bg.png */; };
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
+		E14F7C2B155B91BD00826009 /* SettingUIStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */; };
+		E14F7C2C155B91BD00826009 /* SettingUIStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */; };
+		E14F7C30155B961200826009 /* SettingUIStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C2F155B961100826009 /* SettingUIStyleTableViewCell.m */; };
+		E14F7C32155B966000826009 /* SettingUIStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C31155B966000826009 /* SettingUIStyleTableViewCell.xib */; };
 		E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1538D47154702890076DDEC /* LoginListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1538D45154702890076DDEC /* LoginListViewController.m */; };
 		E1538D48154702890076DDEC /* LoginListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1538D46154702890076DDEC /* LoginListViewController.xib */; };
@@ -337,6 +341,12 @@
 		E14983301534C22900734341 /* nav_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_bg.png; sourceTree = "<group>"; };
 		E14983321534C38400734341 /* nav_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_logo@2x.png"; sourceTree = "<group>"; };
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
+		E14F7C28155B91BD00826009 /* SettingUIStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUIStyleViewController.h; path = Classes/SettingUIStyleViewController.h; sourceTree = "<group>"; };
+		E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUIStyleViewController.m; path = Classes/SettingUIStyleViewController.m; sourceTree = "<group>"; };
+		E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingUIStyleViewController.xib; path = Classes/SettingUIStyleViewController.xib; sourceTree = "<group>"; };
+		E14F7C2E155B961100826009 /* SettingUIStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUIStyleTableViewCell.h; path = Classes/SettingUIStyleTableViewCell.h; sourceTree = "<group>"; };
+		E14F7C2F155B961100826009 /* SettingUIStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUIStyleTableViewCell.m; path = Classes/SettingUIStyleTableViewCell.m; sourceTree = "<group>"; };
+		E14F7C31155B966000826009 /* SettingUIStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingUIStyleTableViewCell.xib; path = Classes/SettingUIStyleTableViewCell.xib; sourceTree = "<group>"; };
 		E1538D44154702890076DDEC /* LoginListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginListViewController.h; path = Classes/LoginListViewController.h; sourceTree = "<group>"; };
 		E1538D45154702890076DDEC /* LoginListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginListViewController.m; path = Classes/LoginListViewController.m; sourceTree = "<group>"; };
 		E1538D46154702890076DDEC /* LoginListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginListViewController.xib; path = Classes/LoginListViewController.xib; sourceTree = "<group>"; };
@@ -805,15 +815,21 @@
 		E172F81515563CF900D6F99C /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				E1FD95761546557700B39069 /* SettingTableViewController.h */,
-				E1FD95771546557700B39069 /* SettingTableViewController.m */,
-				E1FD95781546557700B39069 /* SettingTableViewController.xib */,
+				E172F81A1556494500D6F99C /* SettingInfo.plist */,
+				E172F8171556493800D6F99C /* SettingInfoReader.h */,
+				E172F8181556493800D6F99C /* SettingInfoReader.m */,
 				E1FD957B15465EDF00B39069 /* SettingTableViewCell.h */,
 				E1FD957C15465EDF00B39069 /* SettingTableViewCell.m */,
 				E1FD957E15465EF900B39069 /* SettingTableViewCell.xib */,
-				E172F8171556493800D6F99C /* SettingInfoReader.h */,
-				E172F8181556493800D6F99C /* SettingInfoReader.m */,
-				E172F81A1556494500D6F99C /* SettingInfo.plist */,
+				E1FD95761546557700B39069 /* SettingTableViewController.h */,
+				E1FD95771546557700B39069 /* SettingTableViewController.m */,
+				E1FD95781546557700B39069 /* SettingTableViewController.xib */,
+				E14F7C28155B91BD00826009 /* SettingUIStyleViewController.h */,
+				E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */,
+				E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */,
+				E14F7C2E155B961100826009 /* SettingUIStyleTableViewCell.h */,
+				E14F7C2F155B961100826009 /* SettingUIStyleTableViewCell.m */,
+				E14F7C31155B966000826009 /* SettingUIStyleTableViewCell.xib */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -1562,6 +1578,8 @@
 				E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */,
 				E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */,
 				E1021364155A67E0002FCCA6 /* crop_image_puller@2x.png in Resources */,
+				E14F7C2C155B91BD00826009 /* SettingUIStyleViewController.xib in Resources */,
+				E14F7C32155B966000826009 /* SettingUIStyleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1667,6 +1685,8 @@
 				E1021365155A8F57002FCCA6 /* CropImageView.m in Sources */,
 				E1021368155AAD82002FCCA6 /* UIImage+Addition.m in Sources */,
 				E102136B155AAFDC002FCCA6 /* UIImage+ProportionalFill.m in Sources */,
+				E14F7C2B155B91BD00826009 /* SettingUIStyleViewController.m in Sources */,
+				E14F7C30155B961200826009 /* SettingUIStyleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
