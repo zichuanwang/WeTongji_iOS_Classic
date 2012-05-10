@@ -12,7 +12,9 @@
 @interface WTDockButton : WTButton
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *buttonCoverImageView;
 
 - (id)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage title:(NSString *)title;
+- (void)configureUIStyle;
 
 @end

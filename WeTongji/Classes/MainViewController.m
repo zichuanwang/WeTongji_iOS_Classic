@@ -102,8 +102,14 @@ typedef enum {
     UIStyle style = [NSUserDefaults getCurrentUIStyle];
     if(style == UIStyleBlackChocolate){
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+        [self.userInfoButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_user"] forState:UIControlStateNormal];
+        [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check"] forState:UIControlStateNormal];
+        [self.settingButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_setting"] forState:UIControlStateNormal];
     } else if(style == UIStyleWhiteChocolate) {
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+        [self.userInfoButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_user_white"] forState:UIControlStateNormal];
+        [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check_white"] forState:UIControlStateNormal];
+        [self.settingButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_setting_white"] forState:UIControlStateNormal];
     }
 }
 
@@ -147,7 +153,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.userInfoViewController = vc;
-    [self.tabBarContentView addSubview:vc.view];
+    [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
 - (void)configureToDoListTabBarViewController {
@@ -160,7 +166,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.toDoListTableViewController = vc;
-    [self.tabBarContentView addSubview:vc.view];
+    [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
 - (void)configureSettingTabBarViewController {
@@ -174,7 +180,7 @@ typedef enum {
     vc.view.frame = frame;
     self.settingViewController = vc;
     self.settingViewController.delegate = self;
-    [self.tabBarContentView addSubview:vc.view];
+    [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
 - (void)clearCurrentTabBarSubViewController {

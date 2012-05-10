@@ -52,7 +52,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureActivityView];
     [self configureTabBar];
-    [self configureTabBarBgImageView];
+    [self configureTabBarUIStyle];
 }
 
 - (void)viewDidUnload
@@ -88,12 +88,18 @@
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTabBarBgImageView {
+- (void)configureTabBarUIStyle {
     UIStyle style = [NSUserDefaults getCurrentUIStyle];
     if(style == UIStyleBlackChocolate){
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+        [self.favoriteButton setImage:[UIImage imageNamed:@"channel_btn_favorite"] forState:UIControlStateNormal];
+        [self.scheduleButton setImage:[UIImage imageNamed:@"channel_btn_schedule"] forState:UIControlStateNormal];
+        [self.likeButton setImage:[UIImage imageNamed:@"channel_btn_like"] forState:UIControlStateNormal];
     } else if(style == UIStyleWhiteChocolate) {
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+        [self.favoriteButton setImage:[UIImage imageNamed:@"channel_btn_favorite_white"] forState:UIControlStateNormal];
+        [self.scheduleButton setImage:[UIImage imageNamed:@"channel_btn_schedule_white"] forState:UIControlStateNormal];
+        [self.likeButton setImage:[UIImage imageNamed:@"channel_btn_like_white"] forState:UIControlStateNormal];
     }
 }
 

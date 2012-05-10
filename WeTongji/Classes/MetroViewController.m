@@ -42,8 +42,6 @@
 @property (nonatomic, strong) NSMutableArray *buttonInfoArray;
 @property (nonatomic, strong) NSArray *metroInfoArray;
 
-- (void)refreshScrollViewContentHeight;
-
 @end
 
 @implementation MetroViewController
@@ -89,12 +87,27 @@
     self.scrollBackgroundView = nil;
 }
 
-- (void)configureMetroButtonInfo {
-    
-}
-
 #pragma mark -
 #pragma mark UI methods
+
+- (void)configureMetroButtonUIStyle {
+    int index = 0;
+    for(WTDockButton *button in self.buttonHeap) {
+        [button configureUIStyle];
+        if(index < self.metroInfoArray.count) {
+            MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
+            UIStyle style = [NSUserDefaults getCurrentUIStyle];
+            if(style == UIStyleBlackChocolate){
+                [button setImage:[UIImage imageNamed:info.buttonImageFileName] forState:UIControlStateNormal];
+            } else if(style == UIStyleWhiteChocolate) {
+                NSString *whiteButtonImageFileName = info.buttonImageFileName;
+                whiteButtonImageFileName = [NSString stringWithFormat:@"%@_white", whiteButtonImageFileName];
+                [button setImage:[UIImage imageNamed:whiteButtonImageFileName] forState:UIControlStateNormal];
+            }
+        }
+        index++;
+    }
+}
 
 - (void)configureScrollView {
     CGRect frame = self.scrollBackgroundView.frame;
@@ -146,6 +159,7 @@
         [self.scrollView addSubview:button];
         [self.buttonHeap addObject:button];
     }
+    [self configureMetroButtonUIStyle];
 }
 
 - (void)refreshScrollViewContentHeight {
@@ -277,6 +291,7 @@
 
 - (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification {
     [self configureBgImageView];
+    [self configureMetroButtonUIStyle];
 }
 
 @end

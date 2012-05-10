@@ -25,9 +25,8 @@
 //
 
 #import "EGORefreshTableHeaderView.h"
+#import "NSUserDefaults+Addition.h"
 
-#define TEXT_COLOR  [UIColor whiteColor]
-#define SHADOW_COLOR  [UIColor blackColor]
 #define SHADOW_OFFSET CGSizeMake(0, 1)
 #define TEXT_FONT   [UIFont boldSystemFontOfSize:14.0f]
 #define CONTENT_INSET_TOP 60.0f
@@ -57,13 +56,13 @@
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - CONTENT_INSET_TOP, self.frame.size.width, LABEL_HEIGHT)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = TEXT_FONT;
-        label.textColor = TEXT_COLOR;
-        label.shadowColor = SHADOW_COLOR;
         label.shadowOffset = SHADOW_OFFSET;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
 		[self addSubview:label];
 		self.statusLabel = label;
+        
+        [self configureLableUIStyle];
 				
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         view.center = CGPointMake(35.0f, label.center.y);
@@ -75,6 +74,17 @@
 		
     }
     return self;
+}
+
+- (void)configureLableUIStyle {
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        self.statusLabel.textColor = [UIColor whiteColor];
+        self.statusLabel.shadowColor = [UIColor blackColor];
+    } else if(style == UIStyleWhiteChocolate) {
+        self.statusLabel.textColor = [UIColor darkGrayColor];
+        self.statusLabel.shadowColor = [UIColor whiteColor];
+    }
 }
 
 #pragma mark -

@@ -7,6 +7,8 @@
 //
 
 #import "WTGroupTableViewController.h"
+#import "NSUserDefaults+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 @interface WTGroupTableViewController ()
 
@@ -33,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
 }
 
 - (void)viewDidUnload
@@ -82,10 +85,17 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 40)];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    titleLabel.textColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.98f alpha:1];
-    titleLabel.shadowColor = [UIColor blackColor];
     titleLabel.shadowOffset = CGSizeMake(0, 1);
     titleLabel.text = title;
+    
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        titleLabel.textColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.98f alpha:1];
+        titleLabel.shadowColor = [UIColor blackColor];
+    } else if(style == UIStyleWhiteChocolate) {
+        titleLabel.textColor = [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1];
+        titleLabel.shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f];
+    }
     
     [headerView addSubview:headerImageView];
     [headerView addSubview:lineImageView];
@@ -107,6 +117,13 @@
 
 - (void)configureDataSource {
     
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification {
+    [self.tableView reloadData];
 }
 
 @end

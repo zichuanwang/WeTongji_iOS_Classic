@@ -44,8 +44,8 @@
     for(NSDictionary *dict in infoArray) {
         MetroInfo *info = [[MetroInfo alloc] init];
         NSString *imageFileName = [dict objectForKey:kButtonImageFileName];
-        info.buttonImageFileName = [NSString stringWithFormat:@"%@.png", imageFileName];
-        info.buttonHighlightImageFileName = [NSString stringWithFormat:@"%@_hl.png", imageFileName];
+        info.buttonImageFileName = [NSString stringWithFormat:@"%@", imageFileName];
+        info.buttonHighlightImageFileName = [NSString stringWithFormat:@"%@_hl", imageFileName];
         info.buttonTitle = [dict objectForKey:kButtonTitle];
         info.nibFileName = [dict objectForKey:kNibFileName];
         info.alertMessage = [dict objectForKey:kAlertMessage];

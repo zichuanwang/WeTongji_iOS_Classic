@@ -7,6 +7,7 @@
 //
 
 #import "WTDockButton.h"
+#import "NSUserDefaults+Addition.h"
 
 #define BUTTON_COVER_REAL_WIDTH   100
 #define BUTTON_COVER_REAL_HEIGHT  100
@@ -14,6 +15,7 @@
 @implementation WTDockButton
 
 @synthesize titleLabel = _titleLabel;
+@synthesize buttonCoverImageView = _buttonCoverImageView;
 
 - (id)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage title:(NSString *)title {
     self = [super initWithFrame:CGRectMake(0, 0, BUTTON_REAL_WIDTH, BUTTON_REAL_HEIGHT)];
@@ -25,25 +27,38 @@
         self.highlightedImageView.alpha = 0;
         
         UIImageView *buttonCoverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BUTTON_COVER_REAL_WIDTH, BUTTON_COVER_REAL_HEIGHT)];
-        
-        buttonCoverImageView.image = [UIImage imageNamed:@"dock_btn_cover.png"];
+                
         buttonCoverImageView.center = CGPointMake(BUTTON_REAL_WIDTH / 2, BUTTON_REAL_HEIGHT / 2);
+        self.buttonCoverImageView = buttonCoverImageView;
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BUTTON_REAL_WIDTH, 20)];
         self.titleLabel.center = CGPointMake(BUTTON_REAL_WIDTH / 2, BUTTON_REAL_HEIGHT * 4 / 5);
         self.titleLabel.text = title;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.textAlignment = UITextAlignmentCenter;
-        self.titleLabel.shadowColor = [UIColor blackColor];
         self.titleLabel.shadowOffset = CGSizeMake(0, 1);
+        
+        [self configureUIStyle];
         
         [self addSubview:self.highlightedImageView];
         [self addSubview:buttonCoverImageView];
         [self addSubview:self.titleLabel];
     }
     return self;
+}
+
+- (void)configureUIStyle {
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        self.buttonCoverImageView.image = [UIImage imageNamed:@"dock_btn_cover.png"];
+        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.shadowColor = [UIColor blackColor];
+    } else if(style == UIStyleWhiteChocolate) {
+        self.buttonCoverImageView.image = [UIImage imageNamed:@"dock_btn_cover_white.png"];
+        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.titleLabel.shadowColor = [UIColor whiteColor];
+    }
 }
 
 @end
