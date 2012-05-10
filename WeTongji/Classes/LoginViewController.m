@@ -14,8 +14,6 @@
 #import "NSUserDefaults+Addition.h"
 #import "NSNotificationCenter+Addition.h"
 
-#import "SignInMainViewController.h"
-
 @interface LoginViewController ()
 
 @end
@@ -148,8 +146,7 @@
 
 - (void)didClickSignInButton {
     //SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
-    SignInMainViewController *vc = [[SignInMainViewController alloc] init];
-    vc.toastVerticalPos = self.toastVerticalPos;
+    SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
