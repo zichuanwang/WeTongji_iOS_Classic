@@ -96,6 +96,10 @@
 		E14F7C74155BCD2F00826009 /* main_tab_bar_btn_setting_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C68155BCD2800826009 /* main_tab_bar_btn_setting_white@2x.png */; };
 		E14F7C75155BCD2F00826009 /* main_tab_bar_btn_user_white.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C69155BCD2E00826009 /* main_tab_bar_btn_user_white.png */; };
 		E14F7C76155BCD2F00826009 /* main_tab_bar_btn_user_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C6A155BCD2F00826009 /* main_tab_bar_btn_user_white@2x.png */; };
+		E14F7C7B155BD2B900826009 /* setting_black_chocolate.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C77155BD2B500826009 /* setting_black_chocolate.png */; };
+		E14F7C7C155BD2B900826009 /* setting_black_chocolate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C78155BD2B600826009 /* setting_black_chocolate@2x.png */; };
+		E14F7C7D155BD2B900826009 /* setting_white_chocolate.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C79155BD2B700826009 /* setting_white_chocolate.png */; };
+		E14F7C7E155BD2B900826009 /* setting_white_chocolate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C7A155BD2B800826009 /* setting_white_chocolate@2x.png */; };
 		E1538D421546C37E0076DDEC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95711545B8CC00B39069 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1538D47154702890076DDEC /* LoginListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1538D45154702890076DDEC /* LoginListViewController.m */; };
 		E1538D48154702890076DDEC /* LoginListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1538D46154702890076DDEC /* LoginListViewController.xib */; };
@@ -415,6 +419,10 @@
 		E14F7C68155BCD2800826009 /* main_tab_bar_btn_setting_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting_white@2x.png"; sourceTree = "<group>"; };
 		E14F7C69155BCD2E00826009 /* main_tab_bar_btn_user_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_tab_bar_btn_user_white.png; sourceTree = "<group>"; };
 		E14F7C6A155BCD2F00826009 /* main_tab_bar_btn_user_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_user_white@2x.png"; sourceTree = "<group>"; };
+		E14F7C77155BD2B500826009 /* setting_black_chocolate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_black_chocolate.png; sourceTree = "<group>"; };
+		E14F7C78155BD2B600826009 /* setting_black_chocolate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_black_chocolate@2x.png"; sourceTree = "<group>"; };
+		E14F7C79155BD2B700826009 /* setting_white_chocolate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_white_chocolate.png; sourceTree = "<group>"; };
+		E14F7C7A155BD2B800826009 /* setting_white_chocolate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_white_chocolate@2x.png"; sourceTree = "<group>"; };
 		E1538D44154702890076DDEC /* LoginListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginListViewController.h; path = Classes/LoginListViewController.h; sourceTree = "<group>"; };
 		E1538D45154702890076DDEC /* LoginListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginListViewController.m; path = Classes/LoginListViewController.m; sourceTree = "<group>"; };
 		E1538D46154702890076DDEC /* LoginListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginListViewController.xib; path = Classes/LoginListViewController.xib; sourceTree = "<group>"; };
@@ -747,6 +755,10 @@
 		E10A16631536171700700A0E /* main */ = {
 			isa = PBXGroup;
 			children = (
+				E14F7C77155BD2B500826009 /* setting_black_chocolate.png */,
+				E14F7C78155BD2B600826009 /* setting_black_chocolate@2x.png */,
+				E14F7C79155BD2B700826009 /* setting_white_chocolate.png */,
+				E14F7C7A155BD2B800826009 /* setting_white_chocolate@2x.png */,
 				E10A16921536182600700A0E /* main_bg.png */,
 				E1498334153555F000734341 /* main_bg@2x.png */,
 				E14F7C33155BA68500826009 /* main_bg_white.png */,
@@ -1716,6 +1728,10 @@
 				E14F7C74155BCD2F00826009 /* main_tab_bar_btn_setting_white@2x.png in Resources */,
 				E14F7C75155BCD2F00826009 /* main_tab_bar_btn_user_white.png in Resources */,
 				E14F7C76155BCD2F00826009 /* main_tab_bar_btn_user_white@2x.png in Resources */,
+				E14F7C7B155BD2B900826009 /* setting_black_chocolate.png in Resources */,
+				E14F7C7C155BD2B900826009 /* setting_black_chocolate@2x.png in Resources */,
+				E14F7C7D155BD2B900826009 /* setting_white_chocolate.png in Resources */,
+				E14F7C7E155BD2B900826009 /* setting_white_chocolate@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
