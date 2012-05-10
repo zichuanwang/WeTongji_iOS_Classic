@@ -62,16 +62,14 @@
 		[self addSubview:label];
 		self.statusLabel = label;
         
-        [self configureLableUIStyle];
-				
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         view.center = CGPointMake(35.0f, label.center.y);
 		[self addSubview:view];
 		self.activityView = view;
 		
-		
 		[self setState:EGOOPullRefreshNormal];
 		
+        [self configureLableUIStyle];
     }
     return self;
 }
@@ -81,9 +79,11 @@
     if(style == UIStyleBlackChocolate){
         self.statusLabel.textColor = [UIColor whiteColor];
         self.statusLabel.shadowColor = [UIColor blackColor];
+        self.activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     } else if(style == UIStyleWhiteChocolate) {
         self.statusLabel.textColor = [UIColor darkGrayColor];
         self.statusLabel.shadowColor = [UIColor whiteColor];
+        self.activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     }
 }
 
