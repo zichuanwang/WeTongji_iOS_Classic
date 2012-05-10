@@ -16,6 +16,8 @@
 #import "MetroInfoReader.h"
 #import "UIApplication+Addition.h"
 #import "CoreDataViewController.h"
+#import "NSUserDefaults+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 #define BUTTON_WIDTH        70
 #define BUTTON_HEIGHT       70
@@ -53,6 +55,7 @@
 @synthesize shrinking = _shrinking;
 @synthesize buttonInfoArray = _buttonInfoArray;
 @synthesize metroInfoArray = _metroInfoArray;
+@synthesize bgImageView = _bgImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,6 +76,9 @@
     [self configureMetroButton];
     [self configureScrollView];
     [self refreshScrollViewContentHeight];
+    [self configureBgImageView];
+    
+    [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
 }
 
 - (void)viewDidUnload
@@ -101,6 +107,15 @@
     [self.scrollView addSubview:headerView];
     
     self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
+}
+
+- (void)configureBgImageView {
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        self.bgImageView.image = [UIImage imageNamed:@"dock_bg.png"];
+    } else if(style == UIStyleWhiteChocolate) {
+        self.bgImageView.image = [UIImage imageNamed:@"dock_bg_white.png"];
+    }
 }
 
 - (void)configureMetroButton {
@@ -255,6 +270,13 @@
     MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
     [UIApplication showAlertMessage:info.alertMessage withTitle:@"即将推出"];
 
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification {
+    [self configureBgImageView];
 }
 
 @end

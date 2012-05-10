@@ -20,7 +20,6 @@
 
 @implementation UpdateUserInfoViewController
 
-@synthesize bgImageView = _bgImageView;
 @synthesize scrollView = _scrollView;
 @synthesize mainBgView = _mainBgView;
 @synthesize bgView = _bgView;
@@ -53,7 +52,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.bgImageView = nil;
     self.scrollView = nil;
     self.mainBgView = nil;
     self.phoneNumberTextField = nil;

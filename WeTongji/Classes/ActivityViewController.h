@@ -27,6 +27,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *likeLabel;
 @property (nonatomic, strong) IBOutlet UIView *middleView;
 @property (nonatomic, strong) IBOutlet UIView *bottomView;
+@property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
 
 - (id)initWithActivity:(Activity *)activity;
 - (IBAction)didClickFavoriteButton:(UIButton *)sender;

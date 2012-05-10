@@ -11,7 +11,6 @@
 
 @interface UpdateUserInfoViewController : WTPostViewController<UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UITextField *phoneNumberTextField;
 @property (nonatomic, strong) IBOutlet UITextField *emailTextField;

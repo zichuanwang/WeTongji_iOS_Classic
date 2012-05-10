@@ -13,6 +13,11 @@ typedef enum {
     ChannelSortByLikeCount = 1,
 } ChannelSortMethod;
 
+typedef enum {
+    UIStyleBlackChocolate = 0,
+    UIStyleWhiteChocolate = 1,
+} UIStyle;
+
 @interface NSUserDefaults (Addition)
 
 + (void)initialize;
@@ -29,5 +34,8 @@ typedef enum {
 + (void)setCurrentUserID:(NSString *)userID session:(NSString *)session;
 + (NSString *)getCurrentUserID;
 + (NSString *)getCurrentUserSession;
+
++ (UIStyle)getCurrentUIStyle;
++ (void)setCurrentUIStyle:(UIStyle)style;
 
 @end

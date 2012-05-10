@@ -43,6 +43,7 @@ typedef enum {
 @synthesize tabBarView = _tabBarView;
 @synthesize headerCoverImageView = _headerCoverImageView;
 @synthesize tabBarContentView = _tabBarContentView;
+@synthesize tabBarBgImageView = _tabBarBgImageView;
 
 @synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 @synthesize userInfoViewController = _userInfoViewController;
@@ -58,7 +59,7 @@ typedef enum {
     [self configureNavigationBar];
     [self configureTabBarButtons];
     [self configureUserInfoTabBarViewController];
-    
+    [self configureTabBarBgImageView];
     [self updateUIAccordingToCurrentUserStatus];
     [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
 }
@@ -74,6 +75,7 @@ typedef enum {
     self.checkButton = nil;
     self.headerCoverImageView = nil;
     self.tabBarContentView = nil;
+    self.tabBarBgImageView = nil;
     [self clearAllTabBarSubview];
 }
 
@@ -95,6 +97,15 @@ typedef enum {
 
 #pragma mark -
 #pragma mark UI methods
+
+- (void)configureTabBarBgImageView {
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+    } else if(style == UIStyleWhiteChocolate) {
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+    }
+}
 
 - (void)configureNavigationBar {
     UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -217,6 +228,11 @@ typedef enum {
 
 - (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
     [self updateUIAccordingToCurrentUserStatus];
+}
+
+- (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification {
+    [super handleChangeCurrentUIStyleNotification:notification];
+    [self configureTabBarBgImageView];
 }
 
 @end

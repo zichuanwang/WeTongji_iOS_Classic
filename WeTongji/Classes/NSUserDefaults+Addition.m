@@ -18,6 +18,7 @@ typedef enum {
 #define kUserDefaultsInitialized @"kUserDefaultsInitialized"
 #define kCurrentUserID @"kCurrentUserID"
 #define kCurrentUserSession @"kCurrentUserSession"
+#define kCurrentUIStyle @"kCurrentUIStyle"
 
 @implementation NSUserDefaults (Addition)
 
@@ -143,6 +144,18 @@ typedef enum {
 
 + (NSString *)getCurrentUserSession {
     return [NSUserDefaults getStringForKey:kCurrentUserSession];
+}
+
++ (UIStyle)getCurrentUIStyle {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    UIStyle style = [userDefaults integerForKey:kCurrentUIStyle];
+    return style;
+}
+
++ (void)setCurrentUIStyle:(UIStyle)style {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setInteger:style forKey:kCurrentUIStyle];
+    [userDefaults synchronize];
 }
 
 @end

@@ -33,6 +33,7 @@
 @synthesize likeLabel = _likeLabel;
 @synthesize middleView = _middleView;
 @synthesize bottomView = _bottomView;
+@synthesize tabBarBgImageView = _tabBarBgImageView;
 
 @synthesize activity = _activity;
 
@@ -51,6 +52,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureActivityView];
     [self configureTabBar];
+    [self configureTabBarBgImageView];
 }
 
 - (void)viewDidUnload
@@ -72,6 +74,7 @@
     self.likeLabel = nil;
     self.middleView = nil;
     self.bottomView = nil;
+    self.tabBarBgImageView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -84,6 +87,15 @@
 
 #pragma mark -
 #pragma mark UI methods
+
+- (void)configureTabBarBgImageView {
+    UIStyle style = [NSUserDefaults getCurrentUIStyle];
+    if(style == UIStyleBlackChocolate){
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+    } else if(style == UIStyleWhiteChocolate) {
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+    }
+}
 
 - (void)configureActivityView {
     self.titleLabel.text = self.activity.title;

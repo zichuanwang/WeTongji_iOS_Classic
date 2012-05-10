@@ -8,6 +8,8 @@
 
 #import "SettingUIStyleViewController.h"
 #import "SettingUIStyleTableViewCell.h"
+#import "NSUserDefaults+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 
 @interface SettingUIStyleViewController ()
 
@@ -68,6 +70,8 @@
     [footerView addSubview:footerImageView];
     self.tableView.tableHeaderView = headerView;
     self.tableView.tableFooterView = footerView;
+    
+    _selectRow = [NSUserDefaults getCurrentUIStyle];
 }
 
 - (void)configureCell:(SettingUIStyleTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -120,7 +124,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     _selectRow = indexPath.row;
-    [self.tableView reloadData];
+    UIStyle formerStyle = [NSUserDefaults getCurrentUIStyle];
+    if(_selectRow != formerStyle) {
+        [NSUserDefaults setCurrentUIStyle:_selectRow];
+        [NSNotificationCenter postChangeCurrentUIStyleNotification:_selectRow];
+        [self.tableView reloadData];
+    }
 }
 
 

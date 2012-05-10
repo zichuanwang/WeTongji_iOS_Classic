@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSUserDefaults+Addition.h"
 
 @interface NSNotificationCenter (Addition)
 
@@ -15,5 +16,8 @@
 
 + (void)registerCoreChangeCurrentUserNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
 + (void)registerChangeCurrentUserNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
+
++ (void)postChangeCurrentUIStyleNotification:(UIStyle)style;
++ (void)registerChangeCurrentUIStyleNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
 
 @end

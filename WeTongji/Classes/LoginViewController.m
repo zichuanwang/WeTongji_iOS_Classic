@@ -22,7 +22,6 @@
 
 @implementation LoginViewController
 
-@synthesize bgImageView = _bgImageView;
 @synthesize mainBgView = _mainBgView;
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
@@ -50,7 +49,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.bgImageView = nil;
     self.mainBgView = nil;
     self.scrollView = nil;
     self.accountTextField = nil;

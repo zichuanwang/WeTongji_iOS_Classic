@@ -10,6 +10,7 @@
 
 #define kChangeCurrentUserNotification @"kChangeCurrentUserNotification"
 #define kCoreChangeCurrentUserNotification @"kCoreChangeCurrentUserNotification"
+#define kChangeCurrentUIStyleNotification @"kChangeCurrentUIStyleNotification"
 
 @implementation NSNotificationCenter (Addition)
 
@@ -32,6 +33,17 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:aTarget selector:aSelector
                    name:kCoreChangeCurrentUserNotification 
+                 object:nil];
+}
+
++ (void)postChangeCurrentUIStyleNotification:(UIStyle)style {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kChangeCurrentUIStyleNotification object:[NSNumber numberWithInt:style] userInfo:nil];
+}
+
++ (void)registerChangeCurrentUIStyleNotificationWithSelector:(SEL)aSelector target:(id)aTarget {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:aTarget selector:aSelector
+                   name:kChangeCurrentUIStyleNotification 
                  object:nil];
 }
 
