@@ -19,4 +19,6 @@
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
 
+- (IBAction)didClickTabBarButton:(UIButton *)sender;
+
 @end

@@ -97,4 +97,17 @@
     [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)didClickTabBarButton:(UIButton *)sender {
+    NSArray *buttonArray = [NSArray arrayWithObjects:self.dayButton, self.weekButton, self.monthButton, nil];
+    [buttonArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UIButton *btn = obj;
+        if(btn == sender) {
+            [btn setSelected:YES];
+        }
+        else {
+            [btn setSelected:NO];
+        }
+    }];
+}
+
 @end
