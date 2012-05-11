@@ -20,6 +20,10 @@
 - (void)awakeFromNib {
     CGRect frame = self.frame;
     frame.origin = CGPointMake(0, 0);
+    
+    self.showsTouchWhenHighlighted = NO;
+    self.adjustsImageWhenHighlighted = NO;
+    
     self.highlightedImageView = [[UIImageView alloc] initWithFrame:frame];
     self.highlightedImageView.alpha = 0;
     [self addSubview:self.highlightedImageView];
