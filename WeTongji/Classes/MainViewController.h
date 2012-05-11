@@ -21,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UIView *tabBarContentView;
 @property (nonatomic, strong) IBOutlet UIImageView *headerCoverImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 

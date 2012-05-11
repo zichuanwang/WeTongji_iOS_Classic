@@ -39,6 +39,8 @@
 			<string>dock_btn_schedule</string>
 			<key>kButtonTitle</key>
 			<string>日程</string>
+            <key>kNibFileName</key>
+			<string>ScheduleViewController</string>
             <key>kNeedLogin</key>
 			<true/>
 		</dict>

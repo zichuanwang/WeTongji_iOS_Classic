@@ -44,6 +44,7 @@ typedef enum {
 @synthesize headerCoverImageView = _headerCoverImageView;
 @synthesize tabBarContentView = _tabBarContentView;
 @synthesize tabBarBgImageView = _tabBarBgImageView;
+@synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
 @synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 @synthesize userInfoViewController = _userInfoViewController;
@@ -59,7 +60,7 @@ typedef enum {
     [self configureNavigationBar];
     [self configureTabBarButtons];
     [self configureUserInfoTabBarViewController];
-    [self configureTabBarBgImageView];
+    [self configureTabBarUIStyle];
     [self updateUIAccordingToCurrentUserStatus];
     [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
 }
@@ -76,6 +77,7 @@ typedef enum {
     self.headerCoverImageView = nil;
     self.tabBarContentView = nil;
     self.tabBarBgImageView = nil;
+    self.tabBarSeperatorImageView = nil;
     [self clearAllTabBarSubview];
 }
 
@@ -98,15 +100,17 @@ typedef enum {
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTabBarBgImageView {
+- (void)configureTabBarUIStyle {
     UIStyle style = [NSUserDefaults getCurrentUIStyle];
     if(style == UIStyleBlackChocolate){
-        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg"];
+        self.tabBarSeperatorImageView.image = [UIImage imageNamed:@"main_tab_bar_three_interval_seperator"];
         [self.userInfoButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_user"] forState:UIControlStateNormal];
         [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check"] forState:UIControlStateNormal];
         [self.settingButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_setting"] forState:UIControlStateNormal];
     } else if(style == UIStyleWhiteChocolate) {
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+        self.tabBarSeperatorImageView.image = [UIImage imageNamed:@"main_tab_bar_three_interval_seperator_white"];
         [self.userInfoButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_user_white"] forState:UIControlStateNormal];
         [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check_white"] forState:UIControlStateNormal];
         [self.settingButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_setting_white"] forState:UIControlStateNormal];
@@ -238,7 +242,7 @@ typedef enum {
 
 - (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification {
     [super handleChangeCurrentUIStyleNotification:notification];
-    [self configureTabBarBgImageView];
+    [self configureTabBarUIStyle];
 }
 
 @end

@@ -84,6 +84,11 @@
         user.is_current_user = [NSNumber numberWithBool:NO];
     newUser.is_current_user = [NSNumber numberWithBool:YES];
     [NSUserDefaults setCurrentUserID:newUser.user_id session:newUser.session];
+    NSLog(@"current user id:%@, session:%@", [NSUserDefaults getCurrentUserID], [NSUserDefaults getCurrentUserSession]);
+    User *currentUser = [User currentUserInManagedObjectContext:context];
+    if(currentUser == nil) {
+        NSLog(@"no current user");
+    }
     [NSNotificationCenter postCoreChangeCurrentUserNotification];
 }
 

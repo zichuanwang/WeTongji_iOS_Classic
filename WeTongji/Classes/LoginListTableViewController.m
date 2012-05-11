@@ -92,7 +92,7 @@
     UIButton *newAccountButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
     newAccountButton.backgroundColor = [UIColor clearColor];
     [newAccountButton setTitle:@"点此新增一个账户" forState:UIControlStateNormal];
-    [newAccountButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [newAccountButton setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1] forState:UIControlStateNormal];
     [newAccountButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
     newAccountButton.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
     newAccountButton.titleLabel.shadowOffset = CGSizeMake(0, 1);
@@ -118,7 +118,7 @@
 
 - (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                          withRowAnimation:UITableViewRowAnimationTop];
+                          withRowAnimation:UITableViewRowAnimationRight];
 }
 
 - (NSString *)customCellClassName {
@@ -191,30 +191,33 @@
 //                              delegate: self
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
+        NSUInteger totalRow = self.numberOfRowsInFirstSection - 1;
         User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.managedObjectContext deleteObject:user];
+        
+        if(totalRow > 0) {
+            if(_selectRow == indexPath.row) {
+                _selectRow = _selectRow - 1 < 0 ? 0 : _selectRow - 1;
+                User *newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:_selectRow inSection:0]];
+                if(newUser)
+                    [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
+            }
+        } else {         
+            [User changeCurrentUser:nil inManagedObjectContext:self.managedObjectContext];
+        }
         
         [UIView animateWithDuration:0.3f animations:^{
             CGRect frame = self.tableViewFooterView.frame;
             frame.origin.y -= 40;
             self.tableViewFooterView.frame = frame;
         } completion:^(BOOL finished) {
-            if(_selectRow == indexPath.row) {
-                _selectRow = _selectRow - 1 < 0 ? 0 : _selectRow - 1;
-                if(self.numberOfRowsInFirstSection > 0) {
-                    User *newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:_selectRow inSection:0]];
-                    if(newUser)
-                        [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
-                    [self.tableView reloadData];
-                } else {
-                    [User changeCurrentUser:nil inManagedObjectContext:self.managedObjectContext];
-                }
-            }
+            NSLog(@"login user num:%d", self.numberOfRowsInFirstSection);
+            [self.tableView reloadData];
         }];
 	}
 }
 
--(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath { 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath { 
     return YES; 
 } 
 

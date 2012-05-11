@@ -34,6 +34,7 @@
 @synthesize middleView = _middleView;
 @synthesize bottomView = _bottomView;
 @synthesize tabBarBgImageView = _tabBarBgImageView;
+@synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
 @synthesize activity = _activity;
 
@@ -75,6 +76,7 @@
     self.middleView = nil;
     self.bottomView = nil;
     self.tabBarBgImageView = nil;
+    self.tabBarSeperatorImageView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -92,11 +94,13 @@
     UIStyle style = [NSUserDefaults getCurrentUIStyle];
     if(style == UIStyleBlackChocolate){
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg.png"];
+        self.tabBarSeperatorImageView.image = [UIImage imageNamed:@"main_tab_bar_three_interval_seperator"];
         [self.favoriteButton setImage:[UIImage imageNamed:@"channel_btn_favorite"] forState:UIControlStateNormal];
         [self.scheduleButton setImage:[UIImage imageNamed:@"channel_btn_schedule"] forState:UIControlStateNormal];
         [self.likeButton setImage:[UIImage imageNamed:@"channel_btn_like"] forState:UIControlStateNormal];
     } else if(style == UIStyleWhiteChocolate) {
         self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+        self.tabBarSeperatorImageView.image = [UIImage imageNamed:@"main_tab_bar_three_interval_seperator_white"];
         [self.favoriteButton setImage:[UIImage imageNamed:@"channel_btn_favorite_white"] forState:UIControlStateNormal];
         [self.scheduleButton setImage:[UIImage imageNamed:@"channel_btn_schedule_white"] forState:UIControlStateNormal];
         [self.likeButton setImage:[UIImage imageNamed:@"channel_btn_like_white"] forState:UIControlStateNormal];

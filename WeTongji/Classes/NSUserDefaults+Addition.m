@@ -129,10 +129,6 @@ typedef enum {
 
 + (void)setCurrentUserID:(NSString *)userID session:(NSString *)session {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if(!userID || [userID isEqualToString:@""])
-        return;
-    if(!session || [session isEqualToString:@""])
-        return;
     [userDefaults setObject:userID forKey:kCurrentUserID];
     [userDefaults setObject:session forKey:kCurrentUserSession];
     [userDefaults synchronize];
