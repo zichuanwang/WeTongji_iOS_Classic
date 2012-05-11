@@ -21,6 +21,8 @@
     self = [super initWithFrame:CGRectMake(0, 0, BUTTON_REAL_WIDTH, BUTTON_REAL_HEIGHT)];
     if(self) {        
         [self setImage:image forState:UIControlStateNormal];
+        self.showsTouchWhenHighlighted = NO;
+        self.adjustsImageWhenHighlighted = NO;
         
         self.highlightedImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BUTTON_REAL_WIDTH, BUTTON_REAL_HEIGHT)];
         self.highlightedImageView.image = highlightedImage;
@@ -56,7 +58,7 @@
         self.titleLabel.shadowColor = [UIColor blackColor];
     } else if(style == UIStyleWhiteChocolate) {
         self.buttonCoverImageView.image = [UIImage imageNamed:@"dock_btn_cover_white.png"];
-        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.titleLabel.textColor = [UIColor grayColor];
         self.titleLabel.shadowColor = [UIColor whiteColor];
     }
 }
