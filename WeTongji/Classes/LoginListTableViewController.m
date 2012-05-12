@@ -192,27 +192,30 @@
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
         NSUInteger totalRow = self.numberOfRowsInFirstSection - 1;
-        User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.managedObjectContext deleteObject:user];
-        
+        User *newUser = nil;
         if(totalRow > 0) {
             if(_selectRow == indexPath.row) {
-                _selectRow = _selectRow - 1 < 0 ? 0 : _selectRow - 1;
-                User *newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:_selectRow inSection:0]];
-                if(newUser)
-                    [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
+                _selectRow = _selectRow - 1;
+                if(_selectRow < 0) {
+                    _selectRow = 0;
+                    newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                }
+                else 
+                    newUser = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:_selectRow inSection:0]];
             }
-        } else {         
-            [User changeCurrentUser:nil inManagedObjectContext:self.managedObjectContext];
         }
+        User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.managedObjectContext deleteObject:user];
         
         [UIView animateWithDuration:0.3f animations:^{
             CGRect frame = self.tableViewFooterView.frame;
             frame.origin.y -= 40;
             self.tableViewFooterView.frame = frame;
         } completion:^(BOOL finished) {
-            NSLog(@"login user num:%d", self.numberOfRowsInFirstSection);
-            [self.tableView reloadData];
+            if(newUser != nil) 
+                [User changeCurrentUser:newUser inManagedObjectContext:self.managedObjectContext];
+            else if(totalRow == 0)
+                [User changeCurrentUser:nil inManagedObjectContext:self.managedObjectContext];
         }];
 	}
 }

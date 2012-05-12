@@ -13,7 +13,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *whenLabel;
 @property (nonatomic, strong) IBOutlet UILabel *whatLabel;
 @property (nonatomic, strong) IBOutlet UILabel *whereLabel;
-
 @property (nonatomic, strong) IBOutlet UIImageView *pointImageView;
 
 @end

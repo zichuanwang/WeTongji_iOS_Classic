@@ -16,7 +16,7 @@
         //NSLog(@"touch x:%f, touch y:%f", point.x, point.y);
         [[self subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             UIView *view = obj;
-            if(view.tag == ROOT_USER_INFO_VIEW_TAG) {
+            if(view.tag == ROOT_MAIN_VIEW_TAG) {
                 subview = view;
                 *stop = YES;
             }

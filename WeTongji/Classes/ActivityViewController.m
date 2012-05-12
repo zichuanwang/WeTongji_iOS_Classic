@@ -88,6 +88,16 @@
 }
 
 #pragma mark -
+#pragma mark Logic methods
+
+- (BOOL)isCurrentUserValid {
+    BOOL result = (self.currentUser != nil);
+    if(result == NO)
+        [UIApplication showAlertMessage:@"该功能需要配合个人账号才能使用，请登录微同济。" withTitle:@"出错啦"];
+    return result;
+}
+
+#pragma mark -
 #pragma mark UI methods
 
 - (void)configureTabBarUIStyle {
@@ -160,24 +170,47 @@
 #pragma mark IBActions 
 
 - (IBAction)didClickFavoriteButton:(UIButton *)sender {
+    if(![self isCurrentUserValid])
+        return;
     BOOL select = !sender.selected;
     [self.favoriteButton setSelected:select];
     if(select) {
         [self.currentUser addFavorObject:self.activity];
-        [UIApplication presentToast:@"已添加收藏。" withVerticalPos:DefaultToastVerticalPosition];
+        [UIApplication presentToast:@"已添加到收藏。" withVerticalPos:DefaultToastVerticalPosition];
     }
     else {
         [self.currentUser removeFavorObject:self.activity];
-        [UIApplication presentToast:@"已取消收藏。" withVerticalPos:DefaultToastVerticalPosition];
+        [UIApplication presentToast:@"已移出收藏。" withVerticalPos:DefaultToastVerticalPosition];
     }
 }
 
 - (IBAction)didClickLikeButton:(UIButton *)sender {
-    [self.likeButton setSelected:!sender.selected];
-    //[UIApplication presentToast:@"请先登录微同济。" withVerticalPos:DefaultToastVerticalPosition];
+    if(![self isCurrentUserValid])
+        return;
+    BOOL select = !sender.selected;
+    [self.likeButton setSelected:select];
+    if(select) {
+        [self.currentUser addFavorObject:self.activity];
+        [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+    }
+    else {
+        [self.currentUser removeFavorObject:self.activity];
+        [UIApplication presentToast:@"你取消赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+    }
 }
 - (IBAction)didClickScheduleButton:(UIButton *)sender {
-    [self.scheduleButton setSelected:!sender.selected];
+    if(![self isCurrentUserValid])
+        return;
+    BOOL select = !sender.selected;
+    [self.scheduleButton setSelected:select];
+    if(select) {
+        [self.currentUser addFavorObject:self.activity];
+        [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
+    }
+    else {
+        [self.currentUser removeFavorObject:self.activity];
+        [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
+    }
 }
 
 @end

@@ -46,6 +46,9 @@
 		E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F77D155E341F008494D8 /* ScheduleMonthViewController.xib */; };
 		E135F783155E4224008494D8 /* ScheduleWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F781155E4224008494D8 /* ScheduleWeekViewController.m */; };
 		E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */; };
+		E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */; };
+		E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */; };
+		E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */; };
 		E149830B15343BCB00734341 /* WTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E149830A15343BCA00734341 /* WTButton.m */; };
 		E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830D15343D4A00734341 /* dock_btn_collect@2x.png */; };
 		E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830F1534497300734341 /* dock_btn_mail@2x.png */; };
@@ -176,10 +179,6 @@
 		E1A836F4154473880086F62E /* ChannelSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836F2154473880086F62E /* ChannelSettingTableViewController.xib */; };
 		E1A836F7154476EE0086F62E /* ChannelSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836F6154476ED0086F62E /* ChannelSettingTableViewCell.m */; };
 		E1A836FB1544777C0086F62E /* ChannelSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A836FA1544777A0086F62E /* ChannelSettingTableViewCell.xib */; };
-		E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */; };
-		E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */; };
-		E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */; };
-		E1A8370515447C720086F62E /* PaperHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */; };
 		E1A837091544957C0086F62E /* ChannelOutlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A837071544957A0086F62E /* ChannelOutlineTableViewController.m */; };
 		E1A8370A1544957C0086F62E /* ChannelOutlineTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A837081544957B0086F62E /* ChannelOutlineTableViewController.xib */; };
 		E1A8370D1544962B0086F62E /* ChannelOutlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8370C154496290086F62E /* ChannelOutlineTableViewCell.m */; };
@@ -398,6 +397,11 @@
 		E135F780155E4224008494D8 /* ScheduleWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekViewController.h; path = Classes/ScheduleWeekViewController.h; sourceTree = "<group>"; };
 		E135F781155E4224008494D8 /* ScheduleWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekViewController.m; path = Classes/ScheduleWeekViewController.m; sourceTree = "<group>"; };
 		E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleWeekViewController.xib; path = Classes/ScheduleWeekViewController.xib; sourceTree = "<group>"; };
+		E135F7F3155E8B35008494D8 /* ScheduleDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewCell.h; path = Classes/ScheduleDayTableViewCell.h; sourceTree = "<group>"; };
+		E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewCell.m; path = Classes/ScheduleDayTableViewCell.m; sourceTree = "<group>"; };
+		E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleDayTableViewCell.xib; path = Classes/ScheduleDayTableViewCell.xib; sourceTree = "<group>"; };
+		E135F7FB155E92CB008494D8 /* WTTableViewHeaderFooterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTTableViewHeaderFooterFactory.h; path = Classes/WTTableViewHeaderFooterFactory.h; sourceTree = "<group>"; };
+		E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTTableViewHeaderFooterFactory.m; path = Classes/WTTableViewHeaderFooterFactory.m; sourceTree = "<group>"; };
 		E149830915343BCA00734341 /* WTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTButton.h; path = Classes/WTButton.h; sourceTree = "<group>"; };
 		E149830A15343BCA00734341 /* WTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTButton.m; path = Classes/WTButton.m; sourceTree = "<group>"; };
 		E149830D15343D4A00734341 /* dock_btn_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect@2x.png"; sourceTree = "<group>"; };
@@ -561,12 +565,6 @@
 		E1A836F5154476EB0086F62E /* ChannelSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelSettingTableViewCell.h; path = Classes/ChannelSettingTableViewCell.h; sourceTree = "<group>"; };
 		E1A836F6154476ED0086F62E /* ChannelSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelSettingTableViewCell.m; path = Classes/ChannelSettingTableViewCell.m; sourceTree = "<group>"; };
 		E1A836FA1544777A0086F62E /* ChannelSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelSettingTableViewCell.xib; path = Classes/ChannelSettingTableViewCell.xib; sourceTree = "<group>"; };
-		E1A836FC15447BE80086F62E /* PaperHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperHeaderTableViewCell.h; path = Classes/PaperHeaderTableViewCell.h; sourceTree = "<group>"; };
-		E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaperHeaderTableViewCell.m; path = Classes/PaperHeaderTableViewCell.m; sourceTree = "<group>"; };
-		E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaperFooterTableViewCell.h; path = Classes/PaperFooterTableViewCell.h; sourceTree = "<group>"; };
-		E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaperFooterTableViewCell.m; path = Classes/PaperFooterTableViewCell.m; sourceTree = "<group>"; };
-		E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaperFooterTableViewCell.xib; path = Classes/PaperFooterTableViewCell.xib; sourceTree = "<group>"; };
-		E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaperHeaderTableViewCell.xib; path = Classes/PaperHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E1A83706154495790086F62E /* ChannelOutlineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelOutlineTableViewController.h; path = Classes/ChannelOutlineTableViewController.h; sourceTree = "<group>"; };
 		E1A837071544957A0086F62E /* ChannelOutlineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelOutlineTableViewController.m; path = Classes/ChannelOutlineTableViewController.m; sourceTree = "<group>"; };
 		E1A837081544957B0086F62E /* ChannelOutlineTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelOutlineTableViewController.xib; path = Classes/ChannelOutlineTableViewController.xib; sourceTree = "<group>"; };
@@ -1199,6 +1197,10 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
+				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
+				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
+				E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */,
 				E1DC6453155D4A0700F07C63 /* schedule_btn_day.png */,
 				E1DC6454155D4A0700F07C63 /* schedule_btn_day@2x.png */,
 				E1DC6457155D4C4200F07C63 /* schedule_btn_day_hl.png */,
@@ -1309,10 +1311,6 @@
 				E1E483971548977100814FA4 /* paper_wide_main@2x.png */,
 				E1E4839E1548988700814FA4 /* paper_wide_single_line.png */,
 				E1E4839F1548988700814FA4 /* paper_wide_single_line@2x.png */,
-				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
-				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
-				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
-				E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */,
 			);
 			name = paper;
 			sourceTree = "<group>";
@@ -1361,12 +1359,6 @@
 			children = (
 				E102135F155A6053002FCCA6 /* CropImageView.h */,
 				E1021360155A6053002FCCA6 /* CropImageView.m */,
-				E1A836FF15447C030086F62E /* PaperFooterTableViewCell.h */,
-				E1A8370015447C030086F62E /* PaperFooterTableViewCell.m */,
-				E1A8370215447C710086F62E /* PaperFooterTableViewCell.xib */,
-				E1A836FC15447BE80086F62E /* PaperHeaderTableViewCell.h */,
-				E1A836FD15447BE80086F62E /* PaperHeaderTableViewCell.m */,
-				E1A8370315447C710086F62E /* PaperHeaderTableViewCell.xib */,
 				E11965471507B2F200AE32E0 /* RootView.h */,
 				E11965481507B2F200AE32E0 /* RootView.m */,
 				E149830915343BCA00734341 /* WTButton.h */,
@@ -1379,6 +1371,8 @@
 				E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */,
 				E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */,
 				E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */,
+				E135F7FB155E92CB008494D8 /* WTTableViewHeaderFooterFactory.h */,
+				E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */,
 			);
 			name = Accessories;
 			sourceTree = "<group>";
@@ -1436,6 +1430,9 @@
 		E1DF6FF71539B8C8001C60EA /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E135F7F3155E8B35008494D8 /* ScheduleDayTableViewCell.h */,
+				E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */,
+				E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */,
 				E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */,
 				E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */,
 				E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */,
@@ -1714,8 +1711,6 @@
 				E1A836EF154473390086F62E /* LoginListTableViewCell.xib in Resources */,
 				E1A836F4154473880086F62E /* ChannelSettingTableViewController.xib in Resources */,
 				E1A836FB1544777C0086F62E /* ChannelSettingTableViewCell.xib in Resources */,
-				E1A8370415447C720086F62E /* PaperFooterTableViewCell.xib in Resources */,
-				E1A8370515447C720086F62E /* PaperHeaderTableViewCell.xib in Resources */,
 				E1A8370A1544957C0086F62E /* ChannelOutlineTableViewController.xib in Resources */,
 				E1A8370F1544964D0086F62E /* ChannelOutlineTableViewCell.xib in Resources */,
 				E1A83712154497260086F62E /* paper_blue_seperator.png in Resources */,
@@ -1855,6 +1850,7 @@
 				E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */,
 				E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */,
 				E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */,
+				E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1890,8 +1886,6 @@
 				E1A836EE154473360086F62E /* LoginListTableViewCell.m in Sources */,
 				E1A836F3154473880086F62E /* ChannelSettingTableViewController.m in Sources */,
 				E1A836F7154476EE0086F62E /* ChannelSettingTableViewCell.m in Sources */,
-				E1A836FE15447BE80086F62E /* PaperHeaderTableViewCell.m in Sources */,
-				E1A8370115447C030086F62E /* PaperFooterTableViewCell.m in Sources */,
 				E1A837091544957C0086F62E /* ChannelOutlineTableViewController.m in Sources */,
 				E1A8370D1544962B0086F62E /* ChannelOutlineTableViewCell.m in Sources */,
 				E1FD952D1545A4CA00B39069 /* WTClient.m in Sources */,
@@ -1965,6 +1959,8 @@
 				E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */,
 				E135F77E155E341F008494D8 /* ScheduleMonthViewController.m in Sources */,
 				E135F783155E4224008494D8 /* ScheduleWeekViewController.m in Sources */,
+				E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */,
+				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
