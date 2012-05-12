@@ -109,7 +109,7 @@ typedef enum {
         [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check"] forState:UIControlStateNormal];
         [self.settingButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_setting"] forState:UIControlStateNormal];
     } else if(style == UIStyleWhiteChocolate) {
-        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white.png"];
+        self.tabBarBgImageView.image = [UIImage imageNamed:@"main_tab_bar_bg_white"];
         self.tabBarSeperatorImageView.image = [UIImage imageNamed:@"main_tab_bar_three_interval_seperator_white"];
         [self.userInfoButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_user_white"] forState:UIControlStateNormal];
         [self.checkButton setImage:[UIImage imageNamed:@"main_tab_bar_btn_check_white"] forState:UIControlStateNormal];

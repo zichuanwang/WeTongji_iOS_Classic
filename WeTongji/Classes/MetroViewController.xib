@@ -78,21 +78,23 @@
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 												<string key="IBUIText">WeTongji 1.0.0</string>
-												<object class="NSColor" key="IBUITextColor" id="599558366">
+												<object class="NSColor" key="IBUITextColor">
 													<int key="NSColorSpace">3</int>
-													<bytes key="NSWhite">MC41AA</bytes>
+													<bytes key="NSWhite">MC41IDAuNQA</bytes>
 												</object>
 												<nil key="IBUIHighlightedColor"/>
 												<string key="IBUIShadowOffset">{0, 1}</string>
 												<int key="IBUIBaselineAdjustment">0</int>
 												<float key="IBUIMinimumFontSize">10</float>
 												<int key="IBUITextAlignment">1</int>
-												<object class="IBUIFontDescription" key="IBUIFontDescription" id="40971406">
-													<int key="type">1</int>
+												<object class="IBUIFontDescription" key="IBUIFontDescription" id="459620965">
+													<string key="name">HelveticaNeue-Light</string>
+													<string key="family">Helvetica Neue</string>
+													<int key="traits">0</int>
 													<double key="pointSize">12</double>
 												</object>
-												<object class="NSFont" key="IBUIFont" id="192662475">
-													<string key="NSName">Helvetica</string>
+												<object class="NSFont" key="IBUIFont" id="545248870">
+													<string key="NSName">HelveticaNeue-Medium</string>
 													<double key="NSSize">12</double>
 													<int key="NSfFlags">16</int>
 												</object>
@@ -100,7 +102,7 @@
 											<object class="IBUILabel" id="699095866">
 												<reference key="NSNextResponder" ref="414342954"/>
 												<int key="NSvFlags">1316</int>
-												<string key="NSFrame">{{0, 30}, {320, 24}}</string>
+												<string key="NSFrame">{{0, 27}, {320, 24}}</string>
 												<reference key="NSSuperview" ref="414342954"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView"/>
@@ -110,18 +112,21 @@
 												<int key="IBUIContentMode">7</int>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<string key="IBUIText">Copyright © 2012 Tongji University.</string>
-												<reference key="IBUITextColor" ref="599558366"/>
+												<string key="IBUIText">Copyright © 2012 Tongji University</string>
+												<object class="NSColor" key="IBUITextColor">
+													<int key="NSColorSpace">3</int>
+													<bytes key="NSWhite">MC41IDAuNQA</bytes>
+												</object>
 												<nil key="IBUIHighlightedColor"/>
 												<string key="IBUIShadowOffset">{0, 1}</string>
 												<int key="IBUIBaselineAdjustment">0</int>
 												<float key="IBUIMinimumFontSize">10</float>
 												<int key="IBUITextAlignment">1</int>
-												<reference key="IBUIFontDescription" ref="40971406"/>
-												<reference key="IBUIFont" ref="192662475"/>
+												<reference key="IBUIFontDescription" ref="459620965"/>
+												<reference key="IBUIFont" ref="545248870"/>
 											</object>
 										</array>
-										<string key="NSFrame">{{0, 480}, {320, 200}}</string>
+										<string key="NSFrame">{{0, 500}, {320, 200}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="557153398"/>
