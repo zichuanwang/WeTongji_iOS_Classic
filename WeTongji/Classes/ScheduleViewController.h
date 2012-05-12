@@ -18,7 +18,9 @@
 @property (nonatomic, strong) IBOutlet WTButton *monthButton;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
+@property (nonatomic, strong) IBOutlet UIView *tabBarView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
+- (IBAction)didClickTodayButton:(UIButton *)sender;
 
 @end

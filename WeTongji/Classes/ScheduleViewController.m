@@ -8,8 +8,15 @@
 
 #import "ScheduleViewController.h"
 #import "NSUserDefaults+Addition.h"
+#import "ScheduleDayTableViewController.h"
+#import "ScheduleWeekViewController.h"
+#import "ScheduleMonthViewController.h"
 
 @interface ScheduleViewController ()
+
+@property (nonatomic, strong) ScheduleDayTableViewController *dayViewController;
+@property (nonatomic, strong) ScheduleWeekViewController *weekViewController;
+@property (nonatomic, strong) ScheduleMonthViewController *monthViewController;
 
 @end
 
@@ -21,6 +28,11 @@
 @synthesize todayButton = _todayButton;
 @synthesize tabBarBgImageView = _tabBarBgImageView;
 @synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
+@synthesize tabBarView = _tabBarView;
+
+@synthesize dayViewController = _dayViewController;
+@synthesize weekViewController = _weekViewController;
+@synthesize monthViewController = _monthViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +50,7 @@
     [self configureNavBar];
     [self configureTabBar];
     [self configureTabBarUIStyle];
+    [self configureDayTabBarViewController];
 }
 
 - (void)viewDidUnload
@@ -51,6 +64,7 @@
     self.monthButton = nil;
     self.tabBarSeperatorImageView = nil;
     self.tabBarBgImageView = nil;
+    [self clearAllTabBarSubview];
 }
 
 #pragma mark -
@@ -88,6 +102,56 @@
     self.dayButton.highlightedImageView.image = [UIImage imageNamed:@"schedule_btn_day_hl"];
     self.weekButton.highlightedImageView.image = [UIImage imageNamed:@"schedule_btn_week_hl"];
     self.monthButton.highlightedImageView.image = [UIImage imageNamed:@"schedule_btn_month_hl"];
+    
+    [self.dayButton setSelected:YES];
+}
+
+- (void)configureDayTabBarViewController {
+    if(self.dayViewController) {
+        self.dayViewController.view.hidden = NO;
+        return;
+    }
+    ScheduleDayTableViewController *vc = [[ScheduleDayTableViewController alloc] init];
+    CGRect frame =  vc.view.frame;
+    frame.origin = CGPointMake(0, 44);
+    vc.view.frame = frame;
+    self.dayViewController = vc;
+    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+}
+
+- (void)configureWeekTabBarViewController {
+    if(self.weekViewController) {
+        self.weekViewController.view.hidden = NO;
+        return;
+    }
+    ScheduleWeekViewController *vc = [[ScheduleWeekViewController alloc] init];
+    CGRect frame =  vc.view.frame;
+    frame.origin = CGPointMake(0, 44);
+    vc.view.frame = frame;
+    self.weekViewController = vc;
+    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+}
+
+- (void)configureMonthTabBarViewController {
+    if(self.monthViewController) {
+        self.monthViewController.view.hidden = NO;
+        return;
+    }
+    ScheduleMonthViewController *vc = [[ScheduleMonthViewController alloc] init];
+    CGRect frame =  vc.view.frame;
+    frame.origin = CGPointMake(0, 44);
+    vc.view.frame = frame;
+    self.monthViewController = vc;
+    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+}
+
+- (void)clearAllTabBarSubview {
+    [self.dayViewController.view removeFromSuperview];
+    self.dayViewController = nil;
+    [self.weekViewController.view removeFromSuperview];
+    self.weekViewController = nil;
+    [self.monthViewController.view removeFromSuperview];
+    self.monthViewController = nil;
 }
 
 #pragma mark -
