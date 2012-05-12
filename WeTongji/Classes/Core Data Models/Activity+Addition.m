@@ -32,6 +32,8 @@
     result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
+    result.begin_day = [NSString yearMonthDayConvertFromDate:result.begin_time];
+    NSLog(@"begin_day:%@", result.begin_day);
     result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
     result.channel_id = [NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue] - 1];
     result.like_count = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];

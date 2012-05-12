@@ -8,6 +8,9 @@
 
 #import "ScheduleDayTableViewController.h"
 #import "WTTableViewHeaderFooterFactory.h"
+#import "ScheduleDayTableViewCell.h"
+#import "Activity+Addition.h"
+#import "NSString+Addition.h"
 
 @interface ScheduleDayTableViewController ()
 
@@ -67,7 +70,16 @@
     return @"ScheduleDayTableViewCell";
 }
 
+- (NSString *)customSectionNameKeyPath {
+    return @"begin_day";
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ScheduleDayTableViewCell *dayCell = (ScheduleDayTableViewCell *)cell;
+    dayCell.whatLabel.text = activity.title;
+    dayCell.whenLabel.text = [NSString timeConvertFromDate:activity.begin_time];
+    dayCell.whereLabel.text = activity.location;
 }
 
 - (void)configureRequest:(NSFetchRequest *)request
@@ -84,6 +96,30 @@
 - (void)insertCellAtIndexPath:(NSIndexPath *)indexPath {
     [super insertCellAtIndexPath:indexPath];
     [self configureTableViewFooter];
+}
+
+#pragma mark -
+#pragma mark UITableView delegates
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
+    headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_wide_main"]];
+    
+    NSString *section_name = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 320, 22)];
+    label.text = section_name;
+    label.font = [UIFont boldSystemFontOfSize:14.0f];
+    label.textColor = [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1];
+    label.shadowColor = [UIColor whiteColor];
+    label.shadowOffset = CGSizeMake(0, 1.0f);
+    label.backgroundColor = [UIColor clearColor];
+    
+    UIImageView *singleLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_single_line"]];
+    singleLine.center = CGPointMake(singleLine.frame.size.width / 2, 2);
+    
+    [headerView addSubview:label];
+    [headerView addSubview:singleLine];
+    return headerView;
 }
 
 @end

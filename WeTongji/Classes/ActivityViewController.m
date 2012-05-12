@@ -148,6 +148,9 @@
     if([self.currentUser.favor containsObject:self.activity]) {
         [self.favoriteButton setSelected:YES];
     }
+    if([self.currentUser.schedule containsObject:self.activity]) {
+        [self.scheduleButton setSelected:YES];
+    }
 }
 
 - (void)refreshViewLayout {
@@ -190,11 +193,9 @@
     BOOL select = !sender.selected;
     [self.likeButton setSelected:select];
     if(select) {
-        [self.currentUser addFavorObject:self.activity];
         [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
     }
     else {
-        [self.currentUser removeFavorObject:self.activity];
         [UIApplication presentToast:@"你取消赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
     }
 }
@@ -204,11 +205,11 @@
     BOOL select = !sender.selected;
     [self.scheduleButton setSelected:select];
     if(select) {
-        [self.currentUser addFavorObject:self.activity];
+        [self.currentUser addScheduleObject:self.activity];
         [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
     }
     else {
-        [self.currentUser removeFavorObject:self.activity];
+        [self.currentUser removeScheduleObject:self.activity];
         [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
     }
 }
