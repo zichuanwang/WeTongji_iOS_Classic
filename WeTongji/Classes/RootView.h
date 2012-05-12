@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define ROOT_METRO_SCROLL_HEADER_VIEW_TAG 1002
-#define ROOT_USER_INFO_VIEW_TAG 1001
+#define ROOT_MAIN_VIEW_TAG 1001
 
 @interface RootView : UIView
 
