@@ -44,7 +44,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" parentEntity="User" syncable="YES">
-        <attribute name="degree" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="department" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="enroll_year" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
@@ -75,10 +74,10 @@
     <elements>
         <element name="Activity" positionX="160" positionY="192" width="128" height="345"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Curriculum" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Image" positionX="160" positionY="192" width="128" height="90"/>
         <element name="News" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
         <element name="User" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Curriculum" positionX="160" positionY="192" width="128" height="45"/>
     </elements>
 </model>

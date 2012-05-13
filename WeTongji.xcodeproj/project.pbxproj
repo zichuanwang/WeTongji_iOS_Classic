@@ -155,7 +155,6 @@
 		E1999AEF1557929000CD04EF /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1999AEE1557929000CD04EF /* UserInfo.plist */; };
 		E1999AF31557A7C300CD04EF /* PromoteLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AF11557A7BD00CD04EF /* PromoteLoginViewController.m */; };
 		E1999AF41557A7C300CD04EF /* PromoteLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1999AF21557A7BF00CD04EF /* PromoteLoginViewController.xib */; };
-		E1999AFA1557FAA700CD04EF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AF91557FAA600CD04EF /* Student.m */; };
 		E1999AFD1557FAAB00CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AFC1557FAAA00CD04EF /* User.m */; };
 		E1999B07155A3D1600CD04EF /* Image+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B06155A3D1400CD04EF /* Image+Addition.m */; };
 		E1999B0A155A3E0400CD04EF /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B09155A3E0300CD04EF /* Image.m */; };
@@ -320,6 +319,7 @@
 		E1E483B3154931AA00814FA4 /* EmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */; };
 		E1E483B5154931C500814FA4 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */; };
 		E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B71549434C00814FA4 /* NSString+Addition.m */; };
+		E1FA74FE156018FA001029B0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FA74FD156018FA001029B0 /* Student.m */; };
 		E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */; };
 		E1FD952D1545A4CA00B39069 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD952C1545A4CA00B39069 /* WTClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1FD95461545A51A00B39069 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95311545A51A00B39069 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -530,8 +530,6 @@
 		E1999AF01557A7B900CD04EF /* PromoteLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PromoteLoginViewController.h; path = Classes/PromoteLoginViewController.h; sourceTree = "<group>"; };
 		E1999AF11557A7BD00CD04EF /* PromoteLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PromoteLoginViewController.m; path = Classes/PromoteLoginViewController.m; sourceTree = "<group>"; };
 		E1999AF21557A7BF00CD04EF /* PromoteLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PromoteLoginViewController.xib; path = Classes/PromoteLoginViewController.xib; sourceTree = "<group>"; };
-		E1999AF81557FAA400CD04EF /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		E1999AF91557FAA600CD04EF /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E1999AFB1557FAA900CD04EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1999AFC1557FAAA00CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E1999B05155A3D1000CD04EF /* Image+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+Addition.h"; sourceTree = "<group>"; };
@@ -742,6 +740,8 @@
 		E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyTableViewCell.xib; path = Classes/EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		E1E483B61549434B00814FA4 /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Addition.h"; path = "Classes/NSString+Addition.h"; sourceTree = "<group>"; };
 		E1E483B71549434C00814FA4 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Addition.m"; path = "Classes/NSString+Addition.m"; sourceTree = "<group>"; };
+		E1FA74FC156018FA001029B0 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E1FA74FD156018FA001029B0 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_user_indicator@2x.png"; sourceTree = "<group>"; };
 		E1FD952B1545A4C900B39069 /* WTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTClient.h; path = Classes/WTClient.h; sourceTree = "<group>"; };
 		E1FD952C1545A4CA00B39069 /* WTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTClient.m; path = Classes/WTClient.m; sourceTree = "<group>"; };
@@ -1466,14 +1466,14 @@
 				E1AD1B991551A27C003B7052 /* Channel.m */,
 				E1AD1B921551A27B003B7052 /* News.h */,
 				E1AD1B931551A27B003B7052 /* News.m */,
-				E1999AF81557FAA400CD04EF /* Student.h */,
-				E1999AF91557FAA600CD04EF /* Student.m */,
 				E1999AFB1557FAA900CD04EF /* User.h */,
 				E1999AFC1557FAAA00CD04EF /* User.m */,
 				E1999B08155A3E0200CD04EF /* Image.h */,
 				E1999B09155A3E0300CD04EF /* Image.m */,
 				E135F808155EACDA008494D8 /* Activity.h */,
 				E135F809155EACDA008494D8 /* Activity.m */,
+				E1FA74FC156018FA001029B0 /* Student.h */,
+				E1FA74FD156018FA001029B0 /* Student.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1943,7 +1943,6 @@
 				E1999AE61557817700CD04EF /* NSNotificationCenter+Addition.m in Sources */,
 				E1999AED1557927100CD04EF /* UserInfoReader.m in Sources */,
 				E1999AF31557A7C300CD04EF /* PromoteLoginViewController.m in Sources */,
-				E1999AFA1557FAA700CD04EF /* Student.m in Sources */,
 				E1999AFD1557FAAB00CD04EF /* User.m in Sources */,
 				E1999B07155A3D1600CD04EF /* Image+Addition.m in Sources */,
 				E1999B0A155A3E0400CD04EF /* Image.m in Sources */,
@@ -1961,6 +1960,7 @@
 				E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */,
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 				E135F80A155EACDA008494D8 /* Activity.m in Sources */,
+				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,9 +21,17 @@
     self.gender = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Gender"]];
     self.birth_place = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NativePlace"]];
     self.qq_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"QQ"]];
+    if([self.qq_number isEqualToString:@"<null>"])
+        self.qq_number = @"";
     self.phone_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Phone"]];
+    if([self.phone_number isEqualToString:@"<null>"])
+        self.phone_number = @"";
     self.email_address = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Email"]];
+    if([self.email_address isEqualToString:@"<null>"])
+        self.email_address = @"";
     self.sina_weibo_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SinaWeibo"]];
+    if([self.sina_weibo_name isEqualToString:@"<null>"])
+        self.sina_weibo_name = @"";
 }
 
 + (User *)insertUser:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context

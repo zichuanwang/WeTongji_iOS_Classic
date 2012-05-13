@@ -13,16 +13,14 @@
 
 - (void)initWithDict:(NSDictionary *)dict {
     [super initWithDict:dict];
-    NSString *degreeStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Degree"]];
-    if(![degreeStr isEqualToString:@"<null>"])
-        self.degree = [NSNumber numberWithInt:[degreeStr intValue]];
     
     NSString *planStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Plan"]];
     if(![planStr isEqualToString:@"<null>"])
         self.plan = [NSNumber numberWithInt:[planStr intValue]];
-    NSString *enrollYearStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"YEAR"]];
+    NSString *enrollYearStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Year"]];
     if(![enrollYearStr isEqualToString:@"<null>"])
         self.enroll_year = [NSNumber numberWithInt:[enrollYearStr intValue]];
+    NSLog(@"enroll_year:%d", self.enroll_year.integerValue);
     
     self.department = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Department"]];
     self.major = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Major"]];

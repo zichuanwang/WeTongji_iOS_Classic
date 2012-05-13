@@ -17,6 +17,12 @@
 				</dict>
                 <dict>
 					<key>kItemTitle</key>
+					<string>学号</string>
+					<key>kContentName</key>
+					<string>student_number</string>
+				</dict>
+                <dict>
+					<key>kItemTitle</key>
 					<string>性别</string>
 					<key>kContentName</key>
 					<string>gender</string>
