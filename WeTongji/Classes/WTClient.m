@@ -215,6 +215,11 @@ report_completion:
     }
     if(page <= 0)
         page = 1;
+    NSString *currentUserID = [NSUserDefaults getCurrentUserID];
+    if(currentUserID) {
+        self.currentUserIDRequired = YES;
+        self.sessionRequired = YES;
+    }
     [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
     [self sendRequest];
 }
@@ -312,6 +317,54 @@ report_completion:
     [self.params setObject:@"Favorite.Get" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
+    [self sendRequest];
+}
+
+- (void)likeActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.Like" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)scheduleActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.Schedule" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)favoriteActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.Favorite" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)unlikeActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.UnLike" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)unscheduleActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.UnSchedule" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)unfavoriteActivity:(NSString *)activity_id {
+    [self.params setObject:@"Activity.UnFavorite" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:activity_id forKey:@"Id"];
     [self sendRequest];
 }
 

@@ -5,17 +5,17 @@
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="begin_day" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="can_follow" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="can_hot" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="can_like" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="can_schedule" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="channel_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="hot_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="favorite_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="like_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedule_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sub_organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,7 +28,7 @@
         <attribute name="follow_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Curriculum" parentEntity="Activity" syncable="YES"/>
+    <entity name="Course" parentEntity="Activity" syncable="YES"/>
     <entity name="Image" representedClassName="Image" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="update_date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -74,7 +74,7 @@
     <elements>
         <element name="Activity" positionX="160" positionY="192" width="128" height="345"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Curriculum" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="Course" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Image" positionX="160" positionY="192" width="128" height="90"/>
         <element name="News" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>

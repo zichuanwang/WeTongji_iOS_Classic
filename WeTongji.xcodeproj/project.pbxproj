@@ -49,7 +49,6 @@
 		E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */; };
 		E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */; };
 		E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */; };
-		E135F80A155EACDA008494D8 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F809155EACDA008494D8 /* Activity.m */; };
 		E149830B15343BCB00734341 /* WTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E149830A15343BCA00734341 /* WTButton.m */; };
 		E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830D15343D4A00734341 /* dock_btn_collect@2x.png */; };
 		E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830F1534497300734341 /* dock_btn_mail@2x.png */; };
@@ -320,6 +319,7 @@
 		E1E483B5154931C500814FA4 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */; };
 		E1E483B81549434C00814FA4 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E483B71549434C00814FA4 /* NSString+Addition.m */; };
 		E1FA74FE156018FA001029B0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FA74FD156018FA001029B0 /* Student.m */; };
+		E1FA750215601F5E001029B0 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FA750115601F5E001029B0 /* Activity.m */; };
 		E1FD951D154537B200B39069 /* paper_user_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */; };
 		E1FD952D1545A4CA00B39069 /* WTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD952C1545A4CA00B39069 /* WTClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E1FD95461545A51A00B39069 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD95311545A51A00B39069 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -402,8 +402,6 @@
 		E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleDayTableViewCell.xib; path = Classes/ScheduleDayTableViewCell.xib; sourceTree = "<group>"; };
 		E135F7FB155E92CB008494D8 /* WTTableViewHeaderFooterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTTableViewHeaderFooterFactory.h; path = Classes/WTTableViewHeaderFooterFactory.h; sourceTree = "<group>"; };
 		E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTTableViewHeaderFooterFactory.m; path = Classes/WTTableViewHeaderFooterFactory.m; sourceTree = "<group>"; };
-		E135F808155EACDA008494D8 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E135F809155EACDA008494D8 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E149830915343BCA00734341 /* WTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTButton.h; path = Classes/WTButton.h; sourceTree = "<group>"; };
 		E149830A15343BCA00734341 /* WTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTButton.m; path = Classes/WTButton.m; sourceTree = "<group>"; };
 		E149830D15343D4A00734341 /* dock_btn_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect@2x.png"; sourceTree = "<group>"; };
@@ -742,6 +740,8 @@
 		E1E483B71549434C00814FA4 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Addition.m"; path = "Classes/NSString+Addition.m"; sourceTree = "<group>"; };
 		E1FA74FC156018FA001029B0 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		E1FA74FD156018FA001029B0 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E1FA750015601F5E001029B0 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E1FA750115601F5E001029B0 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E1FD951C154537B200B39069 /* paper_user_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_user_indicator@2x.png"; sourceTree = "<group>"; };
 		E1FD952B1545A4C900B39069 /* WTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTClient.h; path = Classes/WTClient.h; sourceTree = "<group>"; };
 		E1FD952C1545A4CA00B39069 /* WTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTClient.m; path = Classes/WTClient.m; sourceTree = "<group>"; };
@@ -1470,10 +1470,10 @@
 				E1999AFC1557FAAA00CD04EF /* User.m */,
 				E1999B08155A3E0200CD04EF /* Image.h */,
 				E1999B09155A3E0300CD04EF /* Image.m */,
-				E135F808155EACDA008494D8 /* Activity.h */,
-				E135F809155EACDA008494D8 /* Activity.m */,
 				E1FA74FC156018FA001029B0 /* Student.h */,
 				E1FA74FD156018FA001029B0 /* Student.m */,
+				E1FA750015601F5E001029B0 /* Activity.h */,
+				E1FA750115601F5E001029B0 /* Activity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1959,8 +1959,8 @@
 				E135F783155E4224008494D8 /* ScheduleWeekViewController.m in Sources */,
 				E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */,
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
-				E135F80A155EACDA008494D8 /* Activity.m in Sources */,
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
+				E1FA750215601F5E001029B0 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,5 +41,11 @@ typedef void (^WTCompletionBlock)(WTClient *client);
                     qqAccount:(NSString *)qq;
 - (void)updateUserAvatar:(UIImage *)image;
 - (void)updatePassword:(NSString *)new withOldPassword:(NSString *)old;
+- (void)likeActivity:(NSString *)activity_id;
+- (void)scheduleActivity:(NSString *)activity_id;
+- (void)favoriteActivity:(NSString *)activity_id;
+- (void)unlikeActivity:(NSString *)activity_id;
+- (void)unscheduleActivity:(NSString *)activity_id;
+- (void)unfavoriteActivity:(NSString *)activity_id;
 
 @end

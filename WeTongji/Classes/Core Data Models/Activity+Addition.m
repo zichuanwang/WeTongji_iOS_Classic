@@ -33,12 +33,14 @@
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.begin_day = [NSString yearMonthDayWeekConvertFromDate:result.begin_time];
-    NSLog(@"begin_day:%@", result.begin_day);
     result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
     result.channel_id = [NSNumber numberWithInt:[[dict objectForKey:@"Channel_Id"] intValue] - 1];
     result.like_count = [NSNumber numberWithInt:[[dict objectForKey:@"Like"] intValue]];
-    result.hot_count = [NSNumber numberWithInt:[[dict objectForKey:@"Hot"] intValue]];
-    result.follow_count = [NSNumber numberWithInt:[[dict objectForKey:@"Follow"] intValue]];
+    result.favorite_count = [NSNumber numberWithInt:[[dict objectForKey:@"Favorite"] intValue]];
+    result.schedule_count = [NSNumber numberWithInt:[[dict objectForKey:@"Schedule"] intValue]];
+    result.can_favorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
+    result.can_like = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
+    result.can_schedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
     return result;
 }
 

@@ -10,6 +10,7 @@
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
 #import "UIApplication+Addition.h"
+#import "WTClient.h"
 
 @interface ActivityViewController ()
 
@@ -145,11 +146,14 @@
 }
 
 - (void)configureTabBar {
-    if([self.currentUser.favor containsObject:self.activity]) {
+    if(self.activity.can_favorite.boolValue == NO && self.currentUser) {
         [self.favoriteButton setSelected:YES];
     }
-    if([self.currentUser.schedule containsObject:self.activity]) {
+    if(self.activity.can_schedule.boolValue == NO && self.currentUser) {
         [self.scheduleButton setSelected:YES];
+    }
+    if(self.activity.can_like.boolValue == NO && self.currentUser) {
+        [self.likeButton setSelected:YES];
     }
 }
 
@@ -177,13 +181,34 @@
         return;
     BOOL select = !sender.selected;
     [self.favoriteButton setSelected:select];
+    
+    WTClient *client = [WTClient client];
+    sender.userInteractionEnabled = NO;
     if(select) {
-        [self.currentUser addFavorObject:self.activity];
-        [UIApplication presentToast:@"已添加到收藏。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [self.currentUser addFavorObject:self.activity];
+                [UIApplication presentToast:@"已添加到收藏。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.favoriteButton setSelected:NO];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client favoriteActivity:self.activity.activity_id];
     }
     else {
-        [self.currentUser removeFavorObject:self.activity];
-        [UIApplication presentToast:@"已移出收藏。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [self.currentUser removeFavorObject:self.activity];
+                [UIApplication presentToast:@"已移出收藏。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.favoriteButton setSelected:YES];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client unfavoriteActivity:self.activity.activity_id];
     }
 }
 
@@ -192,11 +217,32 @@
         return;
     BOOL select = !sender.selected;
     [self.likeButton setSelected:select];
+    
+    WTClient *client = [WTClient client];
+    sender.userInteractionEnabled = NO;
     if(select) {
-        [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.likeButton setSelected:NO];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client likeActivity:self.activity.activity_id];
     }
     else {
-        [UIApplication presentToast:@"你取消赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [UIApplication presentToast:@"你取消赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.likeButton setSelected:YES];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client unlikeActivity:self.activity.activity_id];
     }
 }
 - (IBAction)didClickScheduleButton:(UIButton *)sender {
@@ -204,13 +250,34 @@
         return;
     BOOL select = !sender.selected;
     [self.scheduleButton setSelected:select];
+    
+    WTClient *client = [WTClient client];
+    sender.userInteractionEnabled = NO;
     if(select) {
-        [self.currentUser addScheduleObject:self.activity];
-        [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [self.currentUser addScheduleObject:self.activity];
+                [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.scheduleButton setSelected:NO];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client scheduleActivity:self.activity.activity_id];
     }
     else {
-        [self.currentUser removeScheduleObject:self.activity];
-        [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
+        [client setCompletionBlock:^(WTClient *client) {
+            if(!client.hasError) {
+                [self.currentUser removeScheduleObject:self.activity];
+                [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
+            } else {
+                [self.scheduleButton setSelected:YES];
+                [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];
+            }
+            sender.userInteractionEnabled = YES;
+        }];
+        [client unscheduleActivity:self.activity.activity_id];
     }
 }
 
