@@ -29,7 +29,7 @@
     return result;
 }
 
-+ (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date {
++ (NSString *)yearMonthDayWeekConvertFromDate:(NSDate *)date {
     NSString *result = [NSString yearMonthDayConvertFromDate:date];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -65,9 +65,15 @@
         default:
             break;
     }
-        
-    result = [NSString stringWithFormat:@"%@(%@)%@", result, weekdayStr, [NSString timeConvertFromDate:date]];
     
+    result = [NSString stringWithFormat:@"%@(%@)", result, weekdayStr];
+    
+    return result;
+}
+
++ (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date {
+    NSString *result = [NSString yearMonthDayWeekConvertFromDate:date];
+    result = [NSString stringWithFormat:@"%@%@", result, [NSString timeConvertFromDate:date]];
     return result;
 }
 
