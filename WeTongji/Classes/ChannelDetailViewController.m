@@ -58,7 +58,7 @@
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"活动"];
     self.navigationItem.titleView = titleLabel;
     
-    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"频道" target:self action:@selector(didClickBackButton)];
+    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
     self.navigationItem.leftBarButtonItem = backButton;
 }
 

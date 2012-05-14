@@ -56,4 +56,11 @@
     return result;
 }
 
++ (NSArray *)allActivitiesInManagedObjectContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:context]];
+    NSArray *result = [context executeFetchRequest:request error:NULL];
+    return result;
+}
+
 @end

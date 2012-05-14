@@ -94,8 +94,10 @@
 - (void)configureRequest:(NSFetchRequest *)request
 {
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"channel_id IN %@", [NSUserDefaults getFollowedChannelArray]];
-    [request setPredicate:predicate];
+    NSPredicate *channelPredicate = [NSPredicate predicateWithFormat:@"channel_id IN %@", [NSUserDefaults getFollowedChannelArray]];
+    NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
+    NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:channelPredicate, hiddenPredicate, nil]];
+    [request setPredicate:compoundPredicate];
     NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
     NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
     ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
@@ -121,18 +123,22 @@
     [self loadMoreData];
 }
 
-- (void)clearData
-{
-    
+- (void)clearData {
+    NSArray *activitiesArray = [Activity allActivitiesInManagedObjectContext:self.managedObjectContext];
+    for(Activity *activity in activitiesArray) {
+        activity.hidden = [NSNumber numberWithBool:YES];
+    }
 }
 
 - (void)loadMoreData {
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
+            [self clearData];
             NSArray *array = [client.responseData objectForKey:@"Activities"];
             for(NSDictionary *activityDict in array) {
-                [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
+                Activity *activity = [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
+                activity.hidden = [NSNumber numberWithBool:NO];
             }
         }
         [self doneLoadingTableViewData];

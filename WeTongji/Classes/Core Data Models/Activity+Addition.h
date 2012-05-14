@@ -12,5 +12,6 @@
 
 + (Activity *)insertActivity:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context;
 + (Activity *)activityWithID:(NSString *)channelID inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)allActivitiesInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

@@ -89,9 +89,10 @@
     }
 }
 
-- (void)configureRequest:(NSFetchRequest *)request
-{
+- (void)configureRequest:(NSFetchRequest *)request {
     [request setEntity:[NSEntityDescription entityForName:@"News" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
+    [request setPredicate:hiddenPredicate];
     NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"create_at" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:sortByBegin, nil];
     [request setSortDescriptors:descriptors]; 
@@ -111,18 +112,23 @@
     [self loadMoreData];
 }
 
-- (void)clearData
-{
-    
+- (void)clearData {
+    NSArray *activitiesArray = [News allNewsInManagedObjectContext:self.managedObjectContext];
+    for(News *news in activitiesArray) {
+        news.hidden = [NSNumber numberWithBool:YES];
+    }
+
 }
 
 - (void)loadMoreData {
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
+            [self clearData];
             NSArray *array = [client.responseData objectForKey:@"News"];
             for(NSDictionary *newsDict in array) {
-                [News insertNews:newsDict inManagedObjectContext:self.managedObjectContext];
+                News *news = [News insertNews:newsDict inManagedObjectContext:self.managedObjectContext];
+                news.hidden = [NSNumber numberWithBool:NO];
             }
         }
         [self doneLoadingTableViewData];

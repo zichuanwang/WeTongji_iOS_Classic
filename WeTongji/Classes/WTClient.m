@@ -191,10 +191,10 @@ report_completion:
         return;
     }
     
-    if(self.isCurrentUserIDRequired)
+    if(self.isCurrentUserIDRequired && [NSUserDefaults getCurrentUserID])
         [self.params setObject:[NSUserDefaults getCurrentUserID] forKey:@"U"];
     
-    if(self.isSessionRequired) {
+    if(self.isSessionRequired && [NSUserDefaults getCurrentUserSession]) {
         [self.params setObject:[NSUserDefaults getCurrentUserSession] forKey:@"S"];
     }
     
@@ -365,6 +365,21 @@ report_completion:
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
     [self.params setObject:activity_id forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)getFavotiteList:(NSInteger)page {
+    [self.params setObject:@"Favorite.Get" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"Page"];
+    [self sendRequest];
+}
+
+- (void)getCourse {
+    [self.params setObject:@"TimeTable.Get" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
     [self sendRequest];
 }
 

@@ -12,5 +12,7 @@
 
 + (News *)insertNews:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context;
 + (News *)newsWithID:(NSString *)newsID inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)allNewsInManagedObjectContext:(NSManagedObjectContext *)context;
++ (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

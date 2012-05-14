@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * sub_organizer;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * hidden;
 @property (nonatomic, retain) User *favoredBy;
 @property (nonatomic, retain) User *scheduledBy;
 

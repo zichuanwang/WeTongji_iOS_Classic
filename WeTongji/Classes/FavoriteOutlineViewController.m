@@ -7,6 +7,7 @@
 //
 
 #import "FavoriteOutlineViewController.h"
+#import "WTClient.h"
 
 @interface FavoriteOutlineViewController ()
 
@@ -64,19 +65,15 @@
 }
 
 - (void)loadMoreData {
-//    WTClient *client = [WTClient client];
-//    [client setCompletionBlock:^(WTClient *client) {
-//        if(!client.hasError) {
-//            NSDictionary *dict = client.responseJSONObject;
-//            NSDictionary *data = [dict objectForKey:@"Data"];
-//            NSArray *array = [data objectForKey:@"Activities"];
-//            for(NSDictionary *activityDict in array) {
-//                [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
-//            }
-//        }
-//        [self doneLoadingTableViewData];
-//    }];
-//    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:1];
+    return;
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            
+        }
+        [self doneLoadingTableViewData];
+    }];
+    [client getFavotiteList:1];
 }
 
 @end

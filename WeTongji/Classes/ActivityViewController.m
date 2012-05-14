@@ -136,13 +136,17 @@
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
+    [self updateLikeLabel];
+    
+    [self refreshViewLayout];
+}
+
+- (void)updateLikeLabel {
     int likeCount = self.activity.like_count.intValue;
     if(likeCount > 0)
         self.likeLabel.text = [NSString stringWithFormat:@"%d 人喜欢这个活动", likeCount];
     else 
         self.likeLabel.text = [NSString stringWithFormat:@"喜欢这个活动就为它投一票吧！"];
-    
-    [self refreshViewLayout];
 }
 
 - (void)configureTabBar {
@@ -223,6 +227,8 @@
     if(select) {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.like_count = [NSNumber numberWithInt:self.activity.like_count.intValue + 1];
+                [self updateLikeLabel];
                 [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
                 [self.likeButton setSelected:NO];
@@ -235,7 +241,9 @@
     else {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
-                [UIApplication presentToast:@"你取消赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
+                self.activity.like_count = [NSNumber numberWithInt:self.activity.like_count.intValue - 1];
+                [self updateLikeLabel];
+                [UIApplication presentToast:@"你取消了赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
                 [self.likeButton setSelected:YES];
                 [UIApplication presentAlertToast:@"操作失败。" withVerticalPos:DefaultToastVerticalPosition];

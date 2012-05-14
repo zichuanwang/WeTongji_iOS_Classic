@@ -47,4 +47,24 @@
     return result;
 }
 
++ (NSArray *)allNewsInManagedObjectContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"News" inManagedObjectContext:context]];
+    NSArray *result = [context executeFetchRequest:request error:NULL];
+    return result;
+}
+
++ (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"News" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSArray *items = [context executeFetchRequest:fetchRequest error:NULL];
+    
+    for (NSManagedObject *managedObject in items) {
+        [context deleteObject:managedObject];
+    }
+}
+
 @end

@@ -30,6 +30,7 @@
 @dynamic status;
 @dynamic sub_organizer;
 @dynamic title;
+@dynamic hidden;
 @dynamic favoredBy;
 @dynamic scheduledBy;
 

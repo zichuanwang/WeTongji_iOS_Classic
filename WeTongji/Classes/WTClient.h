@@ -47,5 +47,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)unlikeActivity:(NSString *)activity_id;
 - (void)unscheduleActivity:(NSString *)activity_id;
 - (void)unfavoriteActivity:(NSString *)activity_id;
+- (void)getFavotiteList:(NSInteger)page;
+- (void)getCourse;
 
 @end

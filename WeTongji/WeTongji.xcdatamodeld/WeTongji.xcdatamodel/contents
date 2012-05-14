@@ -12,6 +12,7 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="favorite_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="like_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,6 +40,7 @@
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="create_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="news_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="read_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -72,11 +74,11 @@
         <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="scheduledBy" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="345"/>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="360"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Image" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="News" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="News" positionX="160" positionY="192" width="128" height="165"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
         <element name="User" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
