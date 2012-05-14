@@ -191,6 +191,7 @@
     if(select) {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_favorite = [NSNumber numberWithBool:!self.activity.can_favorite.boolValue];
                 [self.currentUser addFavorObject:self.activity];
                 [UIApplication presentToast:@"已添加到收藏。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
@@ -204,6 +205,7 @@
     else {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_favorite = [NSNumber numberWithBool:!self.activity.can_favorite.boolValue];
                 [self.currentUser removeFavorObject:self.activity];
                 [UIApplication presentToast:@"已移出收藏。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
@@ -227,6 +229,7 @@
     if(select) {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_like = [NSNumber numberWithBool:!self.activity.can_like.boolValue];
                 self.activity.like_count = [NSNumber numberWithInt:self.activity.like_count.intValue + 1];
                 [self updateLikeLabel];
                 [UIApplication presentToast:@"你赞了这个活动。" withVerticalPos:DefaultToastVerticalPosition];
@@ -241,6 +244,7 @@
     else {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_like = [NSNumber numberWithBool:!self.activity.can_like.boolValue];
                 self.activity.like_count = [NSNumber numberWithInt:self.activity.like_count.intValue - 1];
                 [self updateLikeLabel];
                 [UIApplication presentToast:@"你取消了赞这个活动。" withVerticalPos:DefaultToastVerticalPosition];
@@ -264,6 +268,7 @@
     if(select) {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_schedule = [NSNumber numberWithBool:!self.activity.can_schedule.boolValue];
                 [self.currentUser addScheduleObject:self.activity];
                 [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
@@ -277,6 +282,7 @@
     else {
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
+                self.activity.can_schedule = [NSNumber numberWithBool:!self.activity.can_schedule.boolValue];
                 [self.currentUser removeScheduleObject:self.activity];
                 [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
