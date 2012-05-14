@@ -15,9 +15,10 @@
 @dynamic category;
 @dynamic content;
 @dynamic create_at;
+@dynamic hidden;
 @dynamic news_id;
 @dynamic read_count;
 @dynamic title;
-@dynamic hidden;
+@dynamic update_date;
 
 @end

@@ -24,8 +24,8 @@
     [NSUserDefaults initialize];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
-    //WTClient *client = [WTClient client];
-    //[client getCourse];
+    WTClient *client = [WTClient client];
+    [client getCourse];
     //[client updateUserDisplayName:@"王二"];
     //[client updatePassword:@"123456" withOldPassword:@"123456"];
     return YES;

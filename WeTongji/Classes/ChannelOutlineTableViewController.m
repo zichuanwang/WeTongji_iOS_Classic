@@ -98,14 +98,15 @@
     NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
     NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:channelPredicate, hiddenPredicate, nil]];
     [request setPredicate:compoundPredicate];
+    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"update_date" ascending:YES];
     NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
     NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
     ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
     NSArray *descriptors = nil;
     if(methodCode == ChannelSortByLikeCount)
-        descriptors = [NSArray arrayWithObjects:sortByLike, sortByBegin, nil];
+        descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByLike, sortByBegin, nil];
     else 
-        descriptors = [NSArray arrayWithObjects:sortByBegin, sortByLike, nil];
+        descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByBegin, sortByLike, nil];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;
 }

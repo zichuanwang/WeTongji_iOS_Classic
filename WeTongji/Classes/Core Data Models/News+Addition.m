@@ -32,6 +32,7 @@
     NSString *readCountStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Read"]];
     if(readCountStr)
         result.read_count = [NSNumber numberWithInt:[readCountStr intValue]]; 
+    result.update_date = [NSDate date];
     return result;
 }
 

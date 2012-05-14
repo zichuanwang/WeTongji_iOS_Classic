@@ -16,9 +16,10 @@
 @property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSDate * create_at;
+@property (nonatomic, retain) NSNumber * hidden;
 @property (nonatomic, retain) NSString * news_id;
 @property (nonatomic, retain) NSNumber * read_count;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * hidden;
+@property (nonatomic, retain) NSDate * update_date;
 
 @end

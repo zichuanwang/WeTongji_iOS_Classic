@@ -93,8 +93,8 @@
     [request setEntity:[NSEntityDescription entityForName:@"News" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
     [request setPredicate:hiddenPredicate];
-    NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"create_at" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObjects:sortByBegin, nil];
+    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"update_date" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObjects:sortByUpdate, nil];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;
 }

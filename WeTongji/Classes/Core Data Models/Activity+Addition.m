@@ -41,6 +41,8 @@
     result.can_favorite = [NSNumber numberWithInt:[[dict objectForKey:@"CanFavorite"] intValue]];
     result.can_like = [NSNumber numberWithInt:[[dict objectForKey:@"CanLike"] intValue]];
     result.can_schedule = [NSNumber numberWithInt:[[dict objectForKey:@"CanSchedule"] intValue]];
+    
+    result.update_date = [NSDate date];
     return result;
 }
 
