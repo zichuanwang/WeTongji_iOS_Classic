@@ -46,20 +46,6 @@
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTableViewFooter {
-    if(self.numberOfRowsInFirstSection == 0) {
-        [self configureTableViewFooterWithType:EGOTableViewFooterEmptyWithHint];
-    }
-    else {
-        [self configureTableViewFooterWithType:EGOTableViewFooterEmpty];
-    }
-}
-
-- (void)configureTableViewHeaderFooter {
-    [self configureTableViewHeader];
-    [self configureTableViewFooter];
-}
-
 #pragma mark -
 #pragma mark UITableView delegate
 
@@ -130,10 +116,13 @@
                 News *news = [News insertNews:newsDict inManagedObjectContext:self.managedObjectContext];
                 news.hidden = [NSNumber numberWithBool:NO];
             }
+            
+            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPage"]] intValue];
+            [self configureTableViewFooter];
         }
         [self doneLoadingTableViewData];
     }];
-    [client getNewsList:1];
+    [client getNewsList:self.nextPage];
 }
 
 @end

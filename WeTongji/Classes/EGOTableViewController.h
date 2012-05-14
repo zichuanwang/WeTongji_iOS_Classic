@@ -22,14 +22,17 @@ typedef enum {
 
 @property (nonatomic, strong) EGORefreshTableHeaderView *egoHeaderView;
 @property (nonatomic, strong) UIButton *loadMoreDataButton;
+@property (nonatomic, assign) NSInteger nextPage;
 
 - (void)doneLoadingTableViewData;
 - (void)showLoadMoreDataButton;
 - (void)hideLoadMoreDataButton;
 - (void)startLoading;
 - (void)stopLoading;
-- (void)configureTableViewFooterWithType:(EGORefreshTableViewFooterType)type;
+
+- (void)configureTableViewFooter;
 - (void)configureTableViewHeader;
+- (void)configureTableViewHeaderFooter;
 
 //to override
 - (void)loadMoreData;

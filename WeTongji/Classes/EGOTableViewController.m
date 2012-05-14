@@ -22,6 +22,32 @@
 @synthesize egoHeaderView = _egoHeaderView;
 @synthesize loadMoreDataButton = _loadMoreDataButton;
 @synthesize activityView = _activityView;
+@synthesize nextPage = _nextPage;
+
+- (id)init {
+    self = [super init];
+    if(self) {
+        self.nextPage = 1;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    //NSLog(@"bound width:%f, bound height:%f", self.tableView.bounds.size.width,self.tableView.bounds.size.height);
+    self.egoHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 
+                                                                                     0.0f - self.tableView.bounds.size.height, 
+                                                                                     self.tableView.frame.size.width, 
+                                                                                     self.tableView.bounds.size.height)];
+    self.egoHeaderView.delegate = self;
+    [self.tableView addSubview:self.egoHeaderView];
+    
+    _reloadingFlag = NO;
+    _loadingFlag = NO;
+}
+
+#pragma mark - 
+#pragma mark EGO methods
 
 - (UIButton *)loadMoreDataButton
 {
@@ -32,11 +58,6 @@
         [button setTitle:text forState:UIControlStateNormal];
         [button setTitle:text forState:UIControlStateHighlighted];
         button.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-        
-        UIImageView *devideLineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dividing_line@2x.png"]];
-        devideLineView.frame = CGRectMake(0, 0, 290.0f, 1.0f);
-        devideLineView.center = CGPointMake(self.tableView.frame.size.width / 2, 0);
-        [button addSubview:devideLineView];
         
         [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         button.showsTouchWhenHighlighted=YES;
@@ -62,34 +83,18 @@
 }
 
 - (void)showLoadMoreDataButton {
-    [self.tableView setTableFooterView:self.loadMoreDataButton];
+    [self configureTableViewFooterWithType:EGOTableViewFooterLoadMore];
 }
 
 - (void)hideLoadMoreDataButton {
-    [self.tableView setTableFooterView:nil];
+    [self configureTableViewFooterWithType:EGOTableViewFooterEmpty];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    //NSLog(@"bound width:%f, bound height:%f", self.tableView.bounds.size.width,self.tableView.bounds.size.height);
-    self.egoHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 
-                                                                                 0.0f - self.tableView.bounds.size.height, 
-                                                                                 self.tableView.frame.size.width, 
-                                                                                 self.tableView.bounds.size.height)];
-    self.egoHeaderView.delegate = self;
-    [self.tableView addSubview:self.egoHeaderView];
-    
-    _reloadingFlag = NO;
-    _loadingFlag = NO;
-}
-
-- (void)loadMoreData
-{
+- (void)loadMoreData {
     
 }
 
-- (void)refresh
-{
+- (void)refresh {
     
 }
 
@@ -126,6 +131,9 @@
 	[self.egoHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
+#pragma mark -
+#pragma mark UI methods
+
 - (void)configureTableViewFooterWithType:(EGORefreshTableViewFooterType)type {
     if(type == EGOTableViewFooterEmptyWithHint) {
         UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooterWithHint];
@@ -134,12 +142,30 @@
     else if(type == EGOTableViewFooterEmpty) {
         UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooter];
         self.tableView.tableFooterView = footerView;
+    } else if(type == EGOTableViewFooterLoadMore) {
+        
     }
 }
 
 - (void)configureTableViewHeader {
     UIView *headerView = [WTTableViewHeaderFooterFactory getWideWTTableViewHeader];
     self.tableView.tableHeaderView = headerView;
+}
+
+- (void)configureTableViewFooter {
+    if(self.numberOfRowsInFirstSection == 0) {
+        [self configureTableViewFooterWithType:EGOTableViewFooterEmptyWithHint];
+    }
+    else if(self.nextPage == 0) {
+        [self configureTableViewFooterWithType:EGOTableViewFooterEmpty];
+    } else {
+        [self configureTableViewFooterWithType:EGOTableViewFooterLoadMore];
+    }
+}
+
+- (void)configureTableViewHeaderFooter {
+    [self configureTableViewHeader];
+    [self configureTableViewFooter];
 }
 
 @end

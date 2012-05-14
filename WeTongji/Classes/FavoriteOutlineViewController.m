@@ -75,11 +75,13 @@
                 [self.currentUser addFavorObject:activity];
                 activity.favorite_update_date = [NSDate date];
             }
+            
+            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPage"]] intValue];
             [self configureTableViewFooter];
         }
         [self doneLoadingTableViewData];
     }];
-    [client getFavotiteList:1];
+    [client getFavotiteList:self.nextPage];
 }
 
 @end

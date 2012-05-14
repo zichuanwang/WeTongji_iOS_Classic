@@ -192,7 +192,6 @@
         [client setCompletionBlock:^(WTClient *client) {
             if(!client.hasError) {
                 self.activity.can_favorite = [NSNumber numberWithBool:!self.activity.can_favorite.boolValue];
-                [self.currentUser addFavorObject:self.activity];
                 [UIApplication presentToast:@"已添加到收藏。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
                 [self.favoriteButton setSelected:NO];

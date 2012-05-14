@@ -48,20 +48,6 @@
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTableViewFooter {
-    if(self.numberOfRowsInFirstSection == 0) {
-        [self configureTableViewFooterWithType:EGOTableViewFooterEmptyWithHint];
-    }
-    else {
-        [self configureTableViewFooterWithType:EGOTableViewFooterEmpty];
-    }
-}
-
-- (void)configureTableViewHeaderFooter {
-    [self configureTableViewHeader];
-    [self configureTableViewFooter];
-}
-
 #pragma mark -
 #pragma mark UITableView delegate
 
@@ -125,6 +111,7 @@
 }
 
 - (void)clearData {
+    self.nextPage = 1;
     NSArray *activitiesArray = [Activity allActivitiesInManagedObjectContext:self.managedObjectContext];
     for(Activity *activity in activitiesArray) {
         activity.hidden = [NSNumber numberWithBool:YES];
@@ -142,10 +129,13 @@
                 activity.hidden = [NSNumber numberWithBool:NO];
                 activity.channel_update_date = [NSDate date];
             }
+            
+            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPage"]] intValue];
+            [self configureTableViewFooter];
         }
         [self doneLoadingTableViewData];
     }];
-    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:1];
+    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:self.nextPage];
 }
 
 @end
