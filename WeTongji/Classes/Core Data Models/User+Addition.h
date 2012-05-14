@@ -17,5 +17,6 @@
 + (NSArray *)allObjectsInManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)deleteAllObjectsInManagedObjectContext:(NSManagedObjectContext *)context;
 + (void)changeCurrentUser:(User *)newUser inManagedObjectContext:(NSManagedObjectContext *)context;
+- (BOOL)isEqualToUser:(User *)user;
 
 @end

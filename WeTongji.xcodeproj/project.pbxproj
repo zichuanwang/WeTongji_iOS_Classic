@@ -68,7 +68,7 @@
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
 		E14BA6841561760F00EB7CB6 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6831561760F00EB7CB6 /* News.m */; };
-		E14BA6881561761000EB7CB6 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6871561761000EB7CB6 /* Activity.m */; };
+		E14BA68B15617AAC00EB7CB6 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA68A15617AAC00EB7CB6 /* Activity.m */; };
 		E14F7C2B155B91BD00826009 /* SettingUIStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */; };
 		E14F7C2C155B91BD00826009 /* SettingUIStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */; };
 		E14F7C30155B961200826009 /* SettingUIStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C2F155B961100826009 /* SettingUIStyleTableViewCell.m */; };
@@ -424,8 +424,8 @@
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
 		E14BA6821561760F00EB7CB6 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		E14BA6831561760F00EB7CB6 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		E14BA6861561761000EB7CB6 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E14BA6871561761000EB7CB6 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E14BA68915617AAC00EB7CB6 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E14BA68A15617AAC00EB7CB6 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E14F7C28155B91BD00826009 /* SettingUIStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUIStyleViewController.h; path = Classes/SettingUIStyleViewController.h; sourceTree = "<group>"; };
 		E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUIStyleViewController.m; path = Classes/SettingUIStyleViewController.m; sourceTree = "<group>"; };
 		E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingUIStyleViewController.xib; path = Classes/SettingUIStyleViewController.xib; sourceTree = "<group>"; };
@@ -1470,8 +1470,8 @@
 				E1FA74FD156018FA001029B0 /* Student.m */,
 				E14BA6821561760F00EB7CB6 /* News.h */,
 				E14BA6831561760F00EB7CB6 /* News.m */,
-				E14BA6861561761000EB7CB6 /* Activity.h */,
-				E14BA6871561761000EB7CB6 /* Activity.m */,
+				E14BA68915617AAC00EB7CB6 /* Activity.h */,
+				E14BA68A15617AAC00EB7CB6 /* Activity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1968,7 +1968,7 @@
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
 				E14BA6841561760F00EB7CB6 /* News.m in Sources */,
-				E14BA6881561761000EB7CB6 /* Activity.m in Sources */,
+				E14BA68B15617AAC00EB7CB6 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,7 +31,8 @@
 @dynamic status;
 @dynamic sub_organizer;
 @dynamic title;
-@dynamic update_date;
+@dynamic channel_update_date;
+@dynamic favorite_update_date;
 @dynamic favoredBy;
 @dynamic scheduledBy;
 

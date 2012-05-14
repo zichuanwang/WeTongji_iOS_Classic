@@ -45,7 +45,7 @@
     [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.favor];
     [request setPredicate:predicate];
-    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"update_date" ascending:YES];
+    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"favorite_update_date" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:sortByUpdate, nil];
     [request setSortDescriptors:descriptors]; 
     request.fetchBatchSize = 20;
@@ -73,6 +73,7 @@
             for(NSDictionary *activityDict in array) {
                 Activity *activity = [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addFavorObject:activity];
+                activity.favorite_update_date = [NSDate date];
             }
             [self configureTableViewFooter];
         }

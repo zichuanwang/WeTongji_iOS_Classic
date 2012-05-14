@@ -32,7 +32,8 @@
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * sub_organizer;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSDate * update_date;
+@property (nonatomic, retain) NSDate * channel_update_date;
+@property (nonatomic, retain) NSDate * favorite_update_date;
 @property (nonatomic, retain) User *favoredBy;
 @property (nonatomic, retain) User *scheduledBy;
 

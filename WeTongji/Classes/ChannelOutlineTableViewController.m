@@ -98,7 +98,7 @@
     NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
     NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:channelPredicate, hiddenPredicate, nil]];
     [request setPredicate:compoundPredicate];
-    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"update_date" ascending:YES];
+    NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"channel_update_date" ascending:YES];
     NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
     NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
     ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
@@ -140,6 +140,7 @@
             for(NSDictionary *activityDict in array) {
                 Activity *activity = [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
                 activity.hidden = [NSNumber numberWithBool:NO];
+                activity.channel_update_date = [NSDate date];
             }
         }
         [self doneLoadingTableViewData];

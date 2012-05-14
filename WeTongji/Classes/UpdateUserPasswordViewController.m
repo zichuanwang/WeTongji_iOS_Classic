@@ -11,6 +11,7 @@
 #import "UIApplication+Addition.h"
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "User+Addition.h"
 
 @interface UpdateUserPasswordViewController ()
 
@@ -80,6 +81,8 @@
     NSString *session = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Session"]];
     user.password = self.updatedPasswordTextField.text;
     user.session = session;
+    if([user isEqualToUser:self.currentUser])
+        [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
     NSLog(@"user id:%@, session:%@", user.user_id, session);
 }
 
