@@ -119,7 +119,7 @@
 }
 
 - (void)configureActivityView {
-    self.titleLabel.text = self.activity.title;
+    self.titleLabel.text = self.activity.what;
     self.descriptionLabel.text = self.activity.content;
     [self.descriptionLabel sizeToFit];
     CGRect rect = self.descriptionLabel.frame;
@@ -128,7 +128,7 @@
     self.organizerNameLabel.text = self.activity.organizer;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
     self.timeLabel.text = [NSString timeConvertFromBeginDate:self.activity.begin_time endDate:self.activity.end_time];
-    self.placeLabel.text = self.activity.location;
+    self.placeLabel.text = self.activity.where;
     self.subOrganizerNameLabel.text = self.activity.sub_organizer;
     NSArray *channelNames = [NSUserDefaults getChannelNameArray];
     self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];

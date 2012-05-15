@@ -71,8 +71,8 @@
     if([cell isMemberOfClass:[ChannelOutlineTableViewCell class]]) {
         ChannelOutlineTableViewCell *outlineCell = (ChannelOutlineTableViewCell *)cell;
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        outlineCell.titleLabel.text = activity.title;
-        outlineCell.locationLabel.text = activity.location;
+        outlineCell.titleLabel.text = activity.what;
+        outlineCell.locationLabel.text = activity.where;
         outlineCell.timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
     }
 }

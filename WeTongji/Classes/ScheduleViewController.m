@@ -11,6 +11,9 @@
 #import "ScheduleDayTableViewController.h"
 #import "ScheduleWeekViewController.h"
 #import "ScheduleMonthViewController.h"
+#import "Course+Addition.h"
+#import "WTClient.h"
+#import "NSString+Addition.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -59,6 +62,7 @@ typedef enum {
     [self configureTabBar];
     [self configureTabBarUIStyle];
     [self configureDayTabBarViewController];
+    [self configureInitialCourseData];
 }
 
 - (void)viewDidUnload
@@ -73,6 +77,33 @@ typedef enum {
     self.tabBarSeperatorImageView = nil;
     self.tabBarBgImageView = nil;
     [self clearAllTabBarSubview];
+}
+
+#pragma mark -
+#pragma mark Logic methods 
+
+- (void)configureInitialCourseData {
+    for(Event *event in self.currentUser.schedule)
+        if([event isMemberOfClass:[Course class]])
+            return;
+    
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            NSString *semesterBeginString = @"2012-02-20T00:00:00+08:00";
+            NSDate *semesterBeginDate = [semesterBeginString convertToDate];
+            NSArray *courses = [client.responseData objectForKey:@"Courses"];
+            for(NSDictionary *dict in courses) {
+                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate inManagedObjectContext:self.managedObjectContext];
+                [self.currentUser addSchedule:courses];
+                NSLog(@"name:%@", [dict objectForKey:@"Name"]);
+                NSLog(@"weekday:%@", [dict objectForKey:@"WeekDay"]);
+                NSLog(@"weektype:%@", [dict objectForKey:@"WeekType"]);
+                NSLog(@"required:%@", [dict objectForKey:@"Required"]);
+            }
+        }
+    }];
+    [client getCourse];
 }
 
 #pragma mark -

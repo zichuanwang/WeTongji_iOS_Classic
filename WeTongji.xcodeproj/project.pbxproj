@@ -70,7 +70,11 @@
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
 		E14BA6841561760F00EB7CB6 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6831561760F00EB7CB6 /* News.m */; };
-		E14BA68B15617AAC00EB7CB6 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA68A15617AAC00EB7CB6 /* Activity.m */; };
+		E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA69F1562884D00EB7CB6 /* Teacher.m */; };
+		E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A51562890D00EB7CB6 /* Course+Addition.m */; };
+		E14BA6A91562954B00EB7CB6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A81562954B00EB7CB6 /* Course.m */; };
+		E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6B81562A33700EB7CB6 /* Activity.m */; };
+		E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6BB1562A33A00EB7CB6 /* Event.m */; };
 		E14F7C2B155B91BD00826009 /* SettingUIStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */; };
 		E14F7C2C155B91BD00826009 /* SettingUIStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */; };
 		E14F7C30155B961200826009 /* SettingUIStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C2F155B961100826009 /* SettingUIStyleTableViewCell.m */; };
@@ -429,8 +433,16 @@
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
 		E14BA6821561760F00EB7CB6 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		E14BA6831561760F00EB7CB6 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		E14BA68915617AAC00EB7CB6 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E14BA68A15617AAC00EB7CB6 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E14BA69E1562884D00EB7CB6 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		E14BA69F1562884D00EB7CB6 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		E14BA6A41562890D00EB7CB6 /* Course+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+Addition.h"; sourceTree = "<group>"; };
+		E14BA6A51562890D00EB7CB6 /* Course+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+Addition.m"; sourceTree = "<group>"; };
+		E14BA6A71562954A00EB7CB6 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		E14BA6A81562954B00EB7CB6 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		E14BA6B71562A33600EB7CB6 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E14BA6B81562A33700EB7CB6 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E14BA6BA1562A33900EB7CB6 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		E14BA6BB1562A33A00EB7CB6 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		E14F7C28155B91BD00826009 /* SettingUIStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUIStyleViewController.h; path = Classes/SettingUIStyleViewController.h; sourceTree = "<group>"; };
 		E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUIStyleViewController.m; path = Classes/SettingUIStyleViewController.m; sourceTree = "<group>"; };
 		E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingUIStyleViewController.xib; path = Classes/SettingUIStyleViewController.xib; sourceTree = "<group>"; };
@@ -1478,8 +1490,14 @@
 				E1FA74FD156018FA001029B0 /* Student.m */,
 				E14BA6821561760F00EB7CB6 /* News.h */,
 				E14BA6831561760F00EB7CB6 /* News.m */,
-				E14BA68915617AAC00EB7CB6 /* Activity.h */,
-				E14BA68A15617AAC00EB7CB6 /* Activity.m */,
+				E14BA69E1562884D00EB7CB6 /* Teacher.h */,
+				E14BA69F1562884D00EB7CB6 /* Teacher.m */,
+				E14BA6A71562954A00EB7CB6 /* Course.h */,
+				E14BA6A81562954B00EB7CB6 /* Course.m */,
+				E14BA6B71562A33600EB7CB6 /* Activity.h */,
+				E14BA6B81562A33700EB7CB6 /* Activity.m */,
+				E14BA6BA1562A33900EB7CB6 /* Event.h */,
+				E14BA6BB1562A33A00EB7CB6 /* Event.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1499,6 +1517,8 @@
 				E168FEA51554066200BEE141 /* User+Addition.m */,
 				E1999B05155A3D1000CD04EF /* Image+Addition.h */,
 				E1999B06155A3D1400CD04EF /* Image+Addition.m */,
+				E14BA6A41562890D00EB7CB6 /* Course+Addition.h */,
+				E14BA6A51562890D00EB7CB6 /* Course+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1977,8 +1997,12 @@
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
 				E14BA6841561760F00EB7CB6 /* News.m in Sources */,
-				E14BA68B15617AAC00EB7CB6 /* Activity.m in Sources */,
 				5CC2A67515627C310046B49E /* ScheduleMonthDateViewCell.m in Sources */,
+				E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */,
+				E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */,
+				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
+				E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */,
+				E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
