@@ -12,11 +12,18 @@
 #import "ScheduleWeekViewController.h"
 #import "ScheduleMonthViewController.h"
 
+typedef enum {
+    DayTabBarViewController,
+    WeekTabBarViewController,
+    MonthTabBarViewController,
+} TabBarViewControllerName;
+
 @interface ScheduleViewController ()
 
 @property (nonatomic, strong) ScheduleDayTableViewController *dayViewController;
 @property (nonatomic, strong) ScheduleWeekViewController *weekViewController;
 @property (nonatomic, strong) ScheduleMonthViewController *monthViewController;
+@property (nonatomic, assign) TabBarViewControllerName currentTabBarSubViewControllerName;
 
 @end
 
@@ -33,6 +40,7 @@
 @synthesize dayViewController = _dayViewController;
 @synthesize weekViewController = _weekViewController;
 @synthesize monthViewController = _monthViewController;
+@synthesize currentTabBarSubViewControllerName = _currentTabBarSubViewControllerName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -145,6 +153,12 @@
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
+- (void)clearCurrentTabBarSubViewController {
+    self.dayViewController.view.hidden = YES;
+    self.weekViewController.view.hidden = YES;
+    self.monthViewController.view.hidden = YES;
+}
+
 - (void)clearAllTabBarSubview {
     [self.dayViewController.view removeFromSuperview];
     self.dayViewController = nil;
@@ -152,6 +166,22 @@
     self.weekViewController = nil;
     [self.monthViewController.view removeFromSuperview];
     self.monthViewController = nil;
+}
+
+- (void)configureTabBarSubViewController:(TabBarViewControllerName)viewControllerName {
+    if(self.currentTabBarSubViewControllerName == viewControllerName)
+        return;
+    [self clearCurrentTabBarSubViewController];
+    self.currentTabBarSubViewControllerName = viewControllerName;
+    if(viewControllerName == DayTabBarViewController) {
+        [self configureDayTabBarViewController];
+    }
+    else if(viewControllerName == WeekTabBarViewController) {
+        [self configureWeekTabBarViewController];
+    }
+    else if(viewControllerName == MonthTabBarViewController) {
+        [self configureMonthTabBarViewController];
+    }
 }
 
 #pragma mark -
@@ -167,6 +197,7 @@
         UIButton *btn = obj;
         if(btn == sender) {
             [btn setSelected:YES];
+            [self configureTabBarSubViewController:idx];
         }
         else {
             [btn setSelected:NO];
