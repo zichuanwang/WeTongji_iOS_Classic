@@ -24,6 +24,8 @@
     
     self.department = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Department"]];
     self.major = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Major"]];
+    self.major = [self.major stringByReplacingOccurrencesOfString:@"（" withString:@"("];
+    self.major = [self.major stringByReplacingOccurrencesOfString:@"）" withString:@")"];
     self.student_number = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
 }
 
