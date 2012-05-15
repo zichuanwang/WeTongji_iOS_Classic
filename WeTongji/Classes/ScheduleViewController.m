@@ -90,16 +90,20 @@ typedef enum {
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
+            
+            NSFetchRequest *request = [[NSFetchRequest alloc] init];
+            [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
+            [request setPredicate:[NSPredicate predicateWithFormat:@"SELF in %@", self.currentUser.schedule]];            
+            NSArray *items = [self.managedObjectContext executeFetchRequest:request error:NULL];
+            for(NSManagedObject *object in items)
+                [self.managedObjectContext deleteObject:object];
+            
             NSString *semesterBeginString = @"2012-02-20T00:00:00+08:00";
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
             NSArray *courses = [client.responseData objectForKey:@"Courses"];
             for(NSDictionary *dict in courses) {
                 NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
-                NSLog(@"name:%@", [dict objectForKey:@"Name"]);
-                NSLog(@"weekday:%@", [dict objectForKey:@"WeekDay"]);
-                NSLog(@"weektype:%@", [dict objectForKey:@"WeekType"]);
-                NSLog(@"required:%@", [dict objectForKey:@"Required"]);
             }
         }
     }];

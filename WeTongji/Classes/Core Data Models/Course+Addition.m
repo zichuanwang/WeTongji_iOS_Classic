@@ -61,7 +61,6 @@
     NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
     NSNumber *weekDay = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]] weekDayStringCovertToNumber];
-    [Course clearCourseWithID:courseID weekday:weekDay beginSection:beginSection inManagedObjectContext:context];
     NSMutableSet *result = [NSMutableSet set];
     for(int i = 0; i < 17; i++) {
         NSString *weekType = [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekType"]];
@@ -94,21 +93,6 @@
         [result addObject:course];
     }
     return result;
-}
-    
-+ (void)clearCourseWithID:(NSString *)courseID weekday:(NSNumber *)weekDay beginSection:(NSNumber *)beginSection inManagedObjectContext:(NSManagedObjectContext *)context {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    
-    [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
-    NSPredicate *courseIDPredicate = [NSPredicate predicateWithFormat:@"course_id == %@", courseID];
-    NSPredicate *weekdayPredicate = [NSPredicate predicateWithFormat:@"week_day == %@", weekDay];
-    NSPredicate *beginSectionPredicate = [NSPredicate predicateWithFormat:@"begin_section == %@", beginSection];
-    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:courseIDPredicate, weekdayPredicate, beginSectionPredicate, nil]]];
-    
-    NSArray *items = [context executeFetchRequest:request error:NULL];
-    for (NSManagedObject *managedObject in items) {
-        [context deleteObject:managedObject];
-    }
 }
 
 @end
