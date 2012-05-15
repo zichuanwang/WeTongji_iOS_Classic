@@ -46,7 +46,7 @@
 
 - (void)configureTableViewFooter {
     if(self.numberOfRowsInFirstSection == 0) {
-        self.tableView.tableFooterView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooterWithHint];
+        self.tableView.tableFooterView = [WTTableViewHeaderFooterFactory getWideWTTableViewFooterWithNoDataHint];
     }
     else {
         self.tableView.tableFooterView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooter];

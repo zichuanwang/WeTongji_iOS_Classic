@@ -27,7 +27,7 @@
 - (id)init {
     self = [super init];
     if(self) {
-        self.nextPage = 1;
+        self.nextPage = 0;
     }
     return self;
 }
@@ -53,14 +53,14 @@
 {
     if (!_loadMoreDataButton) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 0, self.tableView.frame.size.width, 60);
+        button.frame = CGRectMake(0, 0, self.tableView.frame.size.width, 40);
         NSString *text = NSLocalizedString(@"点击加载更多。", nil);
         [button setTitle:text forState:UIControlStateNormal];
-        [button setTitle:text forState:UIControlStateHighlighted];
         button.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+        button.titleLabel.shadowOffset = CGSizeMake(0, 1);
+        [button setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1] forState:UIControlStateNormal];     
+        [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
-        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        button.showsTouchWhenHighlighted=YES;
         [button addTarget:self action:@selector(loadMoreData) forControlEvents:UIControlEventTouchUpInside];
         self.loadMoreDataButton = button;
     }
@@ -136,14 +136,16 @@
 
 - (void)configureTableViewFooterWithType:(EGORefreshTableViewFooterType)type {
     if(type == EGOTableViewFooterEmptyWithHint) {
-        UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooterWithHint];
+        UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewFooterWithNoDataHint];
         self.tableView.tableFooterView = footerView;
     }
     else if(type == EGOTableViewFooterEmpty) {
         UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewEmptyFooter];
         self.tableView.tableFooterView = footerView;
     } else if(type == EGOTableViewFooterLoadMore) {
-        
+        UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewFooterWithBlank];
+        [footerView addSubview:self.loadMoreDataButton];
+        self.tableView.tableFooterView = footerView;
     }
 }
 
