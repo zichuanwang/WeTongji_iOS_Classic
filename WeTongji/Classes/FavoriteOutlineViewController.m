@@ -55,7 +55,7 @@
 #pragma mark EGORefresh Method
 
 - (void)refresh {
-    //[self hideLoadMoreDataButton];
+    self.nextPage = 0;
     [self loadMoreData];
 }
 
@@ -68,7 +68,8 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            [self clearData];
+            if(self.nextPage == 0)
+                [self clearData];
             NSArray *array = [client.responseData objectForKey:@"Activities"];
             for(NSDictionary *activityDict in array) {
                 Activity *activity = [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
@@ -76,7 +77,7 @@
                 activity.favorite_update_date = [NSDate date];
             }
             
-            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPage"]] intValue];
+            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPager"]] intValue];
             [self configureTableViewFooter];
         }
         [self doneLoadingTableViewData];

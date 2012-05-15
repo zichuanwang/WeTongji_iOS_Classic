@@ -94,7 +94,7 @@
 #pragma mark EGORefresh Method
 
 - (void)refresh {
-    //[self hideLoadMoreDataButton];
+    self.nextPage = 0;    
     [self loadMoreData];
 }
 
@@ -110,14 +110,15 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            [self clearData];
+            if(self.nextPage == 0)
+                [self clearData];
             NSArray *array = [client.responseData objectForKey:@"News"];
             for(NSDictionary *newsDict in array) {
                 News *news = [News insertNews:newsDict inManagedObjectContext:self.managedObjectContext];
                 news.hidden = [NSNumber numberWithBool:NO];
             }
             
-            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPage"]] intValue];
+            self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPager"]] intValue];
             [self configureTableViewFooter];
         }
         [self doneLoadingTableViewData];
