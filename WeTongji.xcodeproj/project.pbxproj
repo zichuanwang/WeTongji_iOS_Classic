@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CC2A665156246E60046B49E /* MonthScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2A664156246E60046B49E /* MonthScheduleView.m */; };
 		E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */; };
 		E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */; };
 		E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021361155A67E0002FCCA6 /* crop_image_puller.png */; };
@@ -348,6 +349,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CC2A663156246E60046B49E /* MonthScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonthScheduleView.h; path = Classes/MonthScheduleView.h; sourceTree = "<group>"; };
+		5CC2A664156246E60046B49E /* MonthScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MonthScheduleView.m; path = Classes/MonthScheduleView.m; sourceTree = "<group>"; };
 		E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAvatarViewController.h; path = Classes/EditAvatarViewController.h; sourceTree = "<group>"; };
 		E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAvatarViewController.m; path = Classes/EditAvatarViewController.m; sourceTree = "<group>"; };
 		E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditAvatarViewController.xib; path = Classes/EditAvatarViewController.xib; sourceTree = "<group>"; };
@@ -1443,6 +1446,8 @@
 				E135F780155E4224008494D8 /* ScheduleWeekViewController.h */,
 				E135F781155E4224008494D8 /* ScheduleWeekViewController.m */,
 				E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */,
+				5CC2A663156246E60046B49E /* MonthScheduleView.h */,
+				5CC2A664156246E60046B49E /* MonthScheduleView.m */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -1969,6 +1974,7 @@
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
 				E14BA6841561760F00EB7CB6 /* News.m in Sources */,
 				E14BA68B15617AAC00EB7CB6 /* Activity.m in Sources */,
+				5CC2A665156246E60046B49E /* MonthScheduleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
