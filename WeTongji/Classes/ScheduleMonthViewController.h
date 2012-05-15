@@ -10,4 +10,10 @@
 
 @interface ScheduleMonthViewController : UIViewController
 
+@property CFGregorianDate currentMonthDate;
+@property CFGregorianDate currentSelectDate;
+@property CFAbsoluteTime  currentTime;
+
+@property (nonatomic, strong) IBOutlet UILabel *headTitle;
+
 @end
