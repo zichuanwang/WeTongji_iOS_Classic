@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
+#import "Event.h"
+
+@protocol ScheduleDayTableViewControllerDelegate;
 
 @interface ScheduleDayTableViewController : CoreDataTableViewController
+
+@property (nonatomic, weak) id<ScheduleDayTableViewControllerDelegate> delegate;
+
+@end
+
+@protocol ScheduleDayTableViewControllerDelegate <NSObject>
+
+- (void)scheduleDayTableViewDidSelectEvent:(Event *)event;
 
 @end

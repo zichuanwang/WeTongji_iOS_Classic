@@ -18,6 +18,8 @@
 
 @implementation ScheduleDayTableViewController
 
+@synthesize delegate = _delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -120,6 +122,11 @@
     [headerView addSubview:label];
     [headerView addSubview:singleLine];
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate scheduleDayTableViewDidSelectEvent:event];
 }
 
 @end

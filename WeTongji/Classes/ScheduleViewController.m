@@ -8,12 +8,13 @@
 
 #import "ScheduleViewController.h"
 #import "NSUserDefaults+Addition.h"
-#import "ScheduleDayTableViewController.h"
 #import "ScheduleWeekViewController.h"
 #import "ScheduleMonthViewController.h"
 #import "Course+Addition.h"
+#import "Activity+Addition.h"
 #import "WTClient.h"
 #import "NSString+Addition.h"
+#import "ChannelDetailViewController.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -159,6 +160,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.dayViewController = vc;
+    vc.delegate = self;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
@@ -242,6 +244,18 @@ typedef enum {
 
 - (IBAction)didClickTodayButton:(UIButton *)sender {
     
+}
+
+#pragma mark -
+#pragma mark ScheduleDayTableViewController delegate
+
+- (void)scheduleDayTableViewDidSelectEvent:(Event *)event {
+    if([event isMemberOfClass:[Activity class]]) {
+        ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:(Activity *)event];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([event isMemberOfClass:[Course class]]) {
+        
+    }
 }
 
 @end

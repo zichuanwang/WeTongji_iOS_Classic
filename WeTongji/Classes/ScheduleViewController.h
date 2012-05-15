@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WTNavigationViewController.h"
 #import "WTButton.h"
+#import "ScheduleDayTableViewController.h"
 
-@interface ScheduleViewController : WTNavigationViewController
+@interface ScheduleViewController : WTNavigationViewController<ScheduleDayTableViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet WTButton *todayButton;
 @property (nonatomic, strong) IBOutlet WTButton *dayButton;
