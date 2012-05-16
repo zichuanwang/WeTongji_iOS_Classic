@@ -13,5 +13,6 @@
 @property (nonatomic, strong) UILabel  *label;
 
 - (void)setDay:(int)day;
+- (void)setGray;
 
 @end

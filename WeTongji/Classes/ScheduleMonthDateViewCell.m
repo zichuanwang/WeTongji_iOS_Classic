@@ -18,8 +18,9 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 46, 10)];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 20, 20)];
         self.label.textAlignment = UITextAlignmentCenter;
+        self.label.adjustsFontSizeToFitWidth = YES;
         self.label.text = @"";
         [self addSubview:self.label];
         
@@ -29,7 +30,10 @@
 
 - (void)setDay:(int)day{
     self.label.text = [NSString stringWithFormat:@"%d",day];
-    
+}
+
+- (void)setGray{
+    self.label.textColor = [UIColor grayColor];
 }
 
 /*
