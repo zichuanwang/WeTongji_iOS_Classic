@@ -162,6 +162,7 @@ typedef enum {
 
 - (void)configureToDoListTabBarViewController {
     if(self.toDoListTableViewController) {
+        [self.toDoListTableViewController refresh];
         self.toDoListTableViewController.view.hidden = NO;
         return;
     }

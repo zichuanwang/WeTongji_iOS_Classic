@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) User *currentUser;
 
 + (User *)getCurrentUser;
+- (void)saveContext;
 
 @end
 

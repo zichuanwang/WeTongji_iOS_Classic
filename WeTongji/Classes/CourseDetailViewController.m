@@ -63,7 +63,7 @@
 }
 
 - (void)configureCourseView {
-    [self.view addSubview:self.courseViewController.view];
+    [self.view insertSubview:self.courseViewController.view belowSubview:self.navBarShadowImageView];
 }
 
 #pragma mark - 

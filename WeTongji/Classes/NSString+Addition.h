@@ -19,5 +19,6 @@
 - (BOOL)isSuitableForPassword;
 - (NSNumber *)weekDayStringCovertToNumber;
 + (NSString *)getTodayBeginDayFormatString;
++ (NSString *)getTomorrowBeginDayFormatString;
 
 @end

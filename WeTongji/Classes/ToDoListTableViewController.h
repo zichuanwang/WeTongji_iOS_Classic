@@ -11,4 +11,6 @@
 
 @interface ToDoListTableViewController : WTGroupTableViewController
 
+- (void)refresh;
+
 @end
