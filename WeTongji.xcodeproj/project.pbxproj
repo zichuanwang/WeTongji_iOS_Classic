@@ -168,6 +168,7 @@
 		E1999B13155A409400CD04EF /* UIApplication+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B0F155A3E6A00CD04EF /* UIApplication+Addition.m */; };
 		E1999B16155A435100CD04EF /* user_info_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = E1999B14155A435000CD04EF /* user_info_default_avatar.png */; };
 		E1999B17155A435100CD04EF /* user_info_default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1999B15155A435100CD04EF /* user_info_default_avatar@2x.png */; };
+		E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1E91E1563877600BDEC2E /* Event+Addition.m */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -559,6 +560,8 @@
 		E1999B11155A3E9000CD04EF /* UIImageView+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Addition.m"; path = "Classes/UIImageView+Addition.m"; sourceTree = "<group>"; };
 		E1999B14155A435000CD04EF /* user_info_default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_info_default_avatar.png; sourceTree = "<group>"; };
 		E1999B15155A435100CD04EF /* user_info_default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_info_default_avatar@2x.png"; sourceTree = "<group>"; };
+		E1A1E91D1563877600BDEC2E /* Event+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+Addition.h"; sourceTree = "<group>"; };
+		E1A1E91E1563877600BDEC2E /* Event+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Addition.m"; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1516,6 +1519,8 @@
 				E1999B06155A3D1400CD04EF /* Image+Addition.m */,
 				E14BA6A41562890D00EB7CB6 /* Course+Addition.h */,
 				E14BA6A51562890D00EB7CB6 /* Course+Addition.m */,
+				E1A1E91D1563877600BDEC2E /* Event+Addition.h */,
+				E1A1E91E1563877600BDEC2E /* Event+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1999,6 +2004,7 @@
 				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
 				E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */,
 				E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */,
+				E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

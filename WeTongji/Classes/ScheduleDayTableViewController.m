@@ -11,6 +11,8 @@
 #import "ScheduleDayTableViewCell.h"
 #import "Activity+Addition.h"
 #import "NSString+Addition.h"
+#import "WTTableViewHeaderFooterFactory.h"
+#import "Event+Addition.h"
 
 @interface ScheduleDayTableViewController ()
 
@@ -34,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
+    [self configureTodayCell];
+    [self didClickTodayButton];
 }
 
 - (void)viewDidUnload
@@ -41,6 +45,33 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+#pragma mark -
+#pragma mark Logic methods
+
+- (Event *)getTodayFirstEvent {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_day == %@", [NSString getTodayBeginDayFormatString]];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF in %@", self.currentUser.schedule];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:beginPredicate, ownerPredicate, nil]]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
+    [request setSortDescriptors:descriptors];
+    Event *result = [[self.managedObjectContext executeFetchRequest:request error:NULL] lastObject];
+    return result;
+}
+
+- (void)configureTodayCell {
+    [Event clearEmptyEventInManagedObjectContext:self.managedObjectContext];
+    Event *todayEvent = [self getTodayFirstEvent];
+    if(todayEvent == nil) {
+        Event *tempEvent = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+        tempEvent.begin_day = [NSString getTodayBeginDayFormatString];
+        tempEvent.begin_time = [NSDate date];
+        [self.currentUser addScheduleObject:tempEvent];
+    }
 }
 
 #pragma mark -
@@ -76,12 +107,22 @@
     return @"begin_day";
 }
 
+- (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationNone];
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ScheduleDayTableViewCell *dayCell = (ScheduleDayTableViewCell *)cell;
-    dayCell.whatLabel.text = activity.what;
-    dayCell.whenLabel.text = [NSString timeConvertFromDate:activity.begin_time];
-    dayCell.whereLabel.text = activity.where;
+    if(event.what != nil) {
+        [dayCell setAsNormalCell];
+        dayCell.whatLabel.text = event.what;
+        dayCell.whenLabel.text = [NSString timeConvertFromDate:event.begin_time];
+        dayCell.whereLabel.text = event.where;
+    } else {
+        [dayCell setAsTodayTempCell];
+    }
 }
 
 - (void)configureRequest:(NSFetchRequest *)request
@@ -127,6 +168,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.delegate scheduleDayTableViewDidSelectEvent:event];
+}
+
+#pragma mark - 
+#pragma mark IBActions
+
+- (void)didClickTodayButton {
+    NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:[self getTodayFirstEvent]];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 @end

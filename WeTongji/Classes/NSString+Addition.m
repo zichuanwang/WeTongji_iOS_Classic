@@ -124,4 +124,8 @@
     return result;
 }
 
++ (NSString *)getTodayBeginDayFormatString {
+    return [NSString yearMonthDayWeekConvertFromDate:[NSDate date]];
+}
+
 @end

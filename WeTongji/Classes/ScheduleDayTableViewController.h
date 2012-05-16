@@ -16,6 +16,9 @@
 
 @property (nonatomic, weak) id<ScheduleDayTableViewControllerDelegate> delegate;
 
+- (void)didClickTodayButton;
+- (void)configureTodayCell;
+
 @end
 
 @protocol ScheduleDayTableViewControllerDelegate <NSObject>

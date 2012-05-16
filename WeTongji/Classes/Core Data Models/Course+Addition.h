@@ -10,6 +10,6 @@
 
 @interface Course (Addition)
 
-+ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

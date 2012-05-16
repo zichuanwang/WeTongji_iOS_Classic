@@ -57,7 +57,7 @@
     return result;
 }
 
-+ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount inManagedObjectContext:(NSManagedObjectContext *)context {
     NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
     NSNumber *endSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
@@ -67,7 +67,7 @@
     [Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType inManagedObjectContext:context];
     
     NSMutableSet *result = [NSMutableSet set];
-    for(int i = 0; i < 17; i++) {
+    for(int i = 0; i < semesterWeekCount; i++) {
         if(i % 2 == 1 && [weekType isEqualToString:@"单"])
             continue;
         if(i % 2 == 0 && [weekType isEqualToString:@"双"])

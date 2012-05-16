@@ -12,6 +12,7 @@
 #import "NSUserDefaults+Addition.h"
 
 static NSString* const APIDomain = @"106.187.95.107:8080";
+//static NSString* const APIDomain = @"we.tongji.edu.cn";
 
 @interface WTClient()
 
