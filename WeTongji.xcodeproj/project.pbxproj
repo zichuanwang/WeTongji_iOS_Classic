@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5CC2A67515627C310046B49E /* ScheduleMonthDateViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */; };
-		5CC2A67715627C570046B49E /* ScheduleMonthDateViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC2A67615627C550046B49E /* ScheduleMonthDateViewCell.xib */; };
 		E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */; };
 		E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */; };
 		E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021361155A67E0002FCCA6 /* crop_image_puller.png */; };
@@ -352,7 +351,6 @@
 /* Begin PBXFileReference section */
 		5CC2A67315627C2E0046B49E /* ScheduleMonthDateViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthDateViewCell.h; path = Classes/ScheduleMonthDateViewCell.h; sourceTree = "<group>"; };
 		5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthDateViewCell.m; path = Classes/ScheduleMonthDateViewCell.m; sourceTree = "<group>"; };
-		5CC2A67615627C550046B49E /* ScheduleMonthDateViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleMonthDateViewCell.xib; sourceTree = "<group>"; };
 		E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAvatarViewController.h; path = Classes/EditAvatarViewController.h; sourceTree = "<group>"; };
 		E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAvatarViewController.m; path = Classes/EditAvatarViewController.m; sourceTree = "<group>"; };
 		E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditAvatarViewController.xib; path = Classes/EditAvatarViewController.xib; sourceTree = "<group>"; };
@@ -1444,7 +1442,6 @@
 				E135F77D155E341F008494D8 /* ScheduleMonthViewController.xib */,
 				5CC2A67315627C2E0046B49E /* ScheduleMonthDateViewCell.h */,
 				5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */,
-				5CC2A67615627C550046B49E /* ScheduleMonthDateViewCell.xib */,
 				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
 				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
 				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
@@ -1867,7 +1864,6 @@
 				E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */,
 				E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */,
 				E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */,
-				5CC2A67715627C570046B49E /* ScheduleMonthDateViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

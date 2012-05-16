@@ -10,4 +10,8 @@
 
 @interface ScheduleMonthDateViewCell : UIView
 
+@property (nonatomic, strong) UILabel  *label;
+
+- (void)setDay:(int)day;
+
 @end
