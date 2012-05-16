@@ -37,7 +37,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
     [self configureTodayCell];
-    [self didClickTodayButton];
+    [self performSelector:@selector(didClickTodayButton) withObject:nil afterDelay:0.7f];
 }
 
 - (void)viewDidUnload

@@ -14,7 +14,7 @@
 #import "Activity+Addition.h"
 #import "WTClient.h"
 #import "NSString+Addition.h"
-#import "ChannelDetailViewController.h"
+#import "ActivityDetailViewController.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -259,7 +259,7 @@ typedef enum {
     if(event.what == nil)
         return;
     if([event isMemberOfClass:[Activity class]]) {
-        ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:(Activity *)event];
+        ActivityDetailViewController *vc = [[ActivityDetailViewController alloc] initWithActivity:(Activity *)event];
         [self.navigationController pushViewController:vc animated:YES];
     } else if([event isMemberOfClass:[Course class]]) {
         

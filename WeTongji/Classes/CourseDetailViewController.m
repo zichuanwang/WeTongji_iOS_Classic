@@ -1,23 +1,23 @@
 //
-//  ChannelDetailViewController.m
+//  CourseDetailViewController.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-4.
+//  Created by 紫川 王 on 12-5-16.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChannelDetailViewController.h"
-#import "ActivityViewController.h"
+#import "CourseDetailViewController.h"
+#import "CourseViewController.h"
 
-@interface ChannelDetailViewController ()
+@interface CourseDetailViewController ()
 
-@property (nonatomic, strong) ActivityViewController *activityViewController;
+@property (nonatomic, strong) CourseViewController *courseViewController;
 
 @end
 
-@implementation ChannelDetailViewController
+@implementation CourseDetailViewController
 
-@synthesize activityViewController = _activityViewController;
+@synthesize courseViewController = _courseViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
-    [self configureActivityView];
+    [self configureCourseView];
 }
 
 - (void)viewDidUnload
@@ -43,10 +43,10 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (id)initWithActivity:(Activity *)activity {
+- (id)initWithCourse:(Course *)course {
     self = [super init];
     if(self) {
-        self.activityViewController = [[ActivityViewController alloc] initWithActivity:activity];
+        self.courseViewController = [[CourseViewController alloc] initWithCourse:course];
     }
     return self;
 }
@@ -55,15 +55,15 @@
 #pragma mark UI methods
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"活动"];
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"课程"];
     self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
     self.navigationItem.leftBarButtonItem = backButton;
 }
 
-- (void)configureActivityView {
-    [self.view addSubview:self.activityViewController.view];
+- (void)configureCourseView {
+    [self.view addSubview:self.courseViewController.view];
 }
 
 #pragma mark - 
