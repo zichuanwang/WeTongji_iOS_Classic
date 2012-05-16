@@ -37,7 +37,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
     [self configureTodayCell];
-    [self performSelector:@selector(didClickTodayButton) withObject:nil afterDelay:0.7f];
+    [self scrollToTodayAnimated:NO];
 }
 
 - (void)viewDidUnload
@@ -72,6 +72,14 @@
         tempEvent.begin_time = [NSDate date];
         [self.currentUser addScheduleObject:tempEvent];
     }
+}
+
+#pragma mark -
+#pragma mark Animation
+
+- (void)scrollToTodayAnimated:(BOOL)animated {
+    NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:[self getTodayFirstEvent]];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:animated];
 }
 
 #pragma mark -
@@ -148,12 +156,20 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
     headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_wide_main"]];
     
-    NSString *section_name = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    NSString *sectionName = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 320, 22)];
-    label.text = section_name;
+    label.text = sectionName;
     label.font = [UIFont boldSystemFontOfSize:14.0f];
-    label.textColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:1];
-    label.shadowColor = [UIColor whiteColor];
+    
+    NSString *todaySectionName = [NSString yearMonthDayWeekConvertFromDate:[NSDate date]];
+    if([sectionName isEqualToString:todaySectionName]) {
+        label.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
+        label.shadowColor = [UIColor whiteColor];
+    } else {
+        label.textColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:1];
+        label.shadowColor = [UIColor whiteColor];
+    }
+    
     label.shadowOffset = CGSizeMake(0, 1.0f);
     label.backgroundColor = [UIColor clearColor];
     
@@ -174,8 +190,7 @@
 #pragma mark IBActions
 
 - (void)didClickTodayButton {
-    NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:[self getTodayFirstEvent]];
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self scrollToTodayAnimated:YES];
 }
 
 @end

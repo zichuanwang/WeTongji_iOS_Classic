@@ -15,6 +15,7 @@
 #import "WTClient.h"
 #import "NSString+Addition.h"
 #import "ActivityDetailViewController.h"
+#import "CourseDetailViewController.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -262,7 +263,8 @@ typedef enum {
         ActivityDetailViewController *vc = [[ActivityDetailViewController alloc] initWithActivity:(Activity *)event];
         [self.navigationController pushViewController:vc animated:YES];
     } else if([event isMemberOfClass:[Course class]]) {
-        
+        CourseDetailViewController *vc = [[CourseDetailViewController alloc] initWithCourse:(Course *)event];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
