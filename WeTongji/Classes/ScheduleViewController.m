@@ -14,7 +14,9 @@
 #import "Activity+Addition.h"
 #import "WTClient.h"
 #import "NSString+Addition.h"
-#import "ChannelDetailViewController.h"
+#import "ActivityDetailViewController.h"
+#import "CourseDetailViewController.h"
+#import "NSNotificationCenter+Addition.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -94,18 +96,23 @@ typedef enum {
             
             NSFetchRequest *request = [[NSFetchRequest alloc] init];
             [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
-            [request setPredicate:[NSPredicate predicateWithFormat:@"SELF in %@", self.currentUser.schedule]];            
+            [request setPredicate:[NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule]];            
             NSArray *items = [self.managedObjectContext executeFetchRequest:request error:NULL];
             for(NSManagedObject *object in items)
                 [self.managedObjectContext deleteObject:object];
             
-            NSString *semesterBeginString = @"2012-02-20T00:00:00+08:00";
+            NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearStartAt"]];
+            //semesterBeginString = @"2012-02-20T00:00:00+08:00";
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
             NSArray *courses = [client.responseData objectForKey:@"Courses"];
+            NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+            NSLog(@"semesterBeginString:%@, semesterWeekCount:%d", semesterBeginString, semesterWeekCount);
             for(NSDictionary *dict in courses) {
-                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate inManagedObjectContext:self.managedObjectContext];
+                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
             }
+            [NSNotificationCenter postChangeScheduleNotification];
+            [self.dayViewController configureTodayCell];
         }
     }];
     [client getCourse];
@@ -243,18 +250,23 @@ typedef enum {
 }
 
 - (IBAction)didClickTodayButton:(UIButton *)sender {
-    
+    if(self.currentTabBarSubViewControllerName == DayTabBarViewController) {
+        [self.dayViewController didClickTodayButton];
+    }
 }
 
 #pragma mark -
 #pragma mark ScheduleDayTableViewController delegate
 
 - (void)scheduleDayTableViewDidSelectEvent:(Event *)event {
+    if(event.what == nil)
+        return;
     if([event isMemberOfClass:[Activity class]]) {
-        ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:(Activity *)event];
+        ActivityDetailViewController *vc = [[ActivityDetailViewController alloc] initWithActivity:(Activity *)event];
         [self.navigationController pushViewController:vc animated:YES];
     } else if([event isMemberOfClass:[Course class]]) {
-        
+        CourseDetailViewController *vc = [[CourseDetailViewController alloc] initWithCourse:(Course *)event];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -8,7 +8,7 @@
 
 #import "FavoriteViewController.h"
 #import "FavoriteOutlineViewController.h"
-#import "ChannelDetailViewController.h"
+#import "ActivityDetailViewController.h"
 
 @interface FavoriteViewController ()
 
@@ -74,7 +74,7 @@
 #pragma mark ChannelOutlineTableViewController delegate
 
 - (void)channelOutlineTableViewDidSelectActivity:(Activity *)activity {
-    ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:activity];
+    ActivityDetailViewController *vc = [[ActivityDetailViewController alloc] initWithActivity:activity];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

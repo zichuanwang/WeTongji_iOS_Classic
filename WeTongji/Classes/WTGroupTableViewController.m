@@ -26,7 +26,6 @@
         // Custom initialization
         self.dataSourceIndexArray = [NSMutableArray arrayWithCapacity:10];
         self.dataSourceDictionary = [NSMutableDictionary dictionaryWithCapacity:10];
-        [self configureDataSource];
     }
     return self;
 }
@@ -35,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self configureDataSource];
     [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
 }
 

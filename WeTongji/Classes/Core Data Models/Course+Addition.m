@@ -57,20 +57,24 @@
     return result;
 }
 
-+ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount inManagedObjectContext:(NSManagedObjectContext *)context {
     NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
+    NSNumber *endSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
+    NSString *weekType = [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekType"]];
     NSNumber *weekDay = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]] weekDayStringCovertToNumber];
+    
+    [Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType inManagedObjectContext:context];
+    
     NSMutableSet *result = [NSMutableSet set];
-    for(int i = 0; i < 17; i++) {
-        NSString *weekType = [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekType"]];
+    for(int i = 0; i < semesterWeekCount; i++) {
         if(i % 2 == 1 && [weekType isEqualToString:@"单"])
             continue;
         if(i % 2 == 0 && [weekType isEqualToString:@"双"])
             continue;
         Course *course = [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
         course.begin_section = beginSection;
-        course.end_section = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
+        course.end_section = endSection;
         
         course.begin_time = [semesterBeginTime dateByAddingTimeInterval:DAY_TIME_INTERVAL * (7 * i + weekDay.integerValue) + [Course getDayTimeIntervalFromSection:course.begin_section.integerValue]];      
         course.begin_day = [NSString yearMonthDayWeekConvertFromDate:course.begin_time];
@@ -78,8 +82,6 @@
         
         course.course_id = courseID;
         course.week_day = weekDay;
-        course.begin_section = beginSection;
-        course.end_section = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
         
         course.credit_hours = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Hours"]] intValue]];
         course.credit_points = [NSNumber numberWithFloat:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Point"]] floatValue]];
@@ -93,6 +95,23 @@
         [result addObject:course];
     }
     return result;
+}
+
++ (void)clearCoursesWithID:(NSString *)courseID beginSection:(NSNumber *)beginSection endSection:(NSNumber *)endSection weekDay:(NSNumber *)weekDay weekType:(NSString *)weekType inManagedObjectContext:(NSManagedObjectContext *)context{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
+    NSPredicate *courseIDPredicate = [NSPredicate predicateWithFormat:@"course_id == %@", courseID];
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_section == %@", beginSection];
+    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"end_section == %@", endSection];
+    NSPredicate *weekDayPredicate = [NSPredicate predicateWithFormat:@"week_day == %@", weekDay];
+    NSPredicate *weekTypePredicate = [NSPredicate predicateWithFormat:@"week_type == %@", weekType];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:courseIDPredicate, beginPredicate, endPredicate, weekDayPredicate, weekTypePredicate, nil]]];
+    
+    NSArray *items = [context executeFetchRequest:request error:NULL];
+    for(Course *course in items) {
+        [context deleteObject:course];
+    }
+
 }
 
 @end

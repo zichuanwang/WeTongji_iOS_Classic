@@ -128,8 +128,8 @@
 		E168FEA21553FAA900BEE141 /* dock_btn_treize.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE9E1553FAA800BEE141 /* dock_btn_treize.png */; };
 		E168FEA31553FAA900BEE141 /* dock_btn_treize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E168FE9F1553FAA800BEE141 /* dock_btn_treize@2x.png */; };
 		E168FEA61554066200BEE141 /* User+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEA51554066200BEE141 /* User+Addition.m */; };
-		E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */; };
-		E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */; };
+		E168FEAD15540D4F00BEE141 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEAB15540D4D00BEE141 /* ActivityDetailViewController.m */; };
+		E168FEAE15540D4F00BEE141 /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEAC15540D4E00BEE141 /* ActivityDetailViewController.xib */; };
 		E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */; };
 		E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */; };
 		E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FEC0155555BB00BEE141 /* WTPostViewController.m */; };
@@ -168,6 +168,13 @@
 		E1999B13155A409400CD04EF /* UIApplication+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B0F155A3E6A00CD04EF /* UIApplication+Addition.m */; };
 		E1999B16155A435100CD04EF /* user_info_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = E1999B14155A435000CD04EF /* user_info_default_avatar.png */; };
 		E1999B17155A435100CD04EF /* user_info_default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1999B15155A435100CD04EF /* user_info_default_avatar@2x.png */; };
+		E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1E91E1563877600BDEC2E /* Event+Addition.m */; };
+		E1A1E92415639F6800BDEC2E /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1E92215639F6700BDEC2E /* CourseViewController.m */; };
+		E1A1E92515639F6800BDEC2E /* CourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92315639F6700BDEC2E /* CourseViewController.xib */; };
+		E1A1E92915639F8B00BDEC2E /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1E92715639F8900BDEC2E /* CourseDetailViewController.m */; };
+		E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */; };
+		E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */; };
+		E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -501,9 +508,9 @@
 		E168FE9F1553FAA800BEE141 /* dock_btn_treize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_treize@2x.png"; sourceTree = "<group>"; };
 		E168FEA41554066200BEE141 /* User+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Addition.h"; sourceTree = "<group>"; };
 		E168FEA51554066200BEE141 /* User+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Addition.m"; sourceTree = "<group>"; };
-		E168FEAA15540D4C00BEE141 /* ChannelDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelDetailViewController.h; path = Classes/ChannelDetailViewController.h; sourceTree = "<group>"; };
-		E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelDetailViewController.m; path = Classes/ChannelDetailViewController.m; sourceTree = "<group>"; };
-		E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChannelDetailViewController.xib; path = Classes/ChannelDetailViewController.xib; sourceTree = "<group>"; };
+		E168FEAA15540D4C00BEE141 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityDetailViewController.h; path = Classes/ActivityDetailViewController.h; sourceTree = "<group>"; };
+		E168FEAB15540D4D00BEE141 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityDetailViewController.m; path = Classes/ActivityDetailViewController.m; sourceTree = "<group>"; };
+		E168FEAC15540D4E00BEE141 /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityDetailViewController.xib; path = Classes/ActivityDetailViewController.xib; sourceTree = "<group>"; };
 		E168FEB91555408D00BEE141 /* UpdateUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateUserInfoViewController.h; path = Classes/UpdateUserInfoViewController.h; sourceTree = "<group>"; };
 		E168FEBA1555408D00BEE141 /* UpdateUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateUserInfoViewController.m; path = Classes/UpdateUserInfoViewController.m; sourceTree = "<group>"; };
 		E168FEBB1555408D00BEE141 /* UpdateUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UpdateUserInfoViewController.xib; path = Classes/UpdateUserInfoViewController.xib; sourceTree = "<group>"; };
@@ -559,6 +566,16 @@
 		E1999B11155A3E9000CD04EF /* UIImageView+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Addition.m"; path = "Classes/UIImageView+Addition.m"; sourceTree = "<group>"; };
 		E1999B14155A435000CD04EF /* user_info_default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_info_default_avatar.png; sourceTree = "<group>"; };
 		E1999B15155A435100CD04EF /* user_info_default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_info_default_avatar@2x.png"; sourceTree = "<group>"; };
+		E1A1E91D1563877600BDEC2E /* Event+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+Addition.h"; sourceTree = "<group>"; };
+		E1A1E91E1563877600BDEC2E /* Event+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Addition.m"; sourceTree = "<group>"; };
+		E1A1E92115639F6600BDEC2E /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseViewController.h; path = Classes/CourseViewController.h; sourceTree = "<group>"; };
+		E1A1E92215639F6700BDEC2E /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseViewController.m; path = Classes/CourseViewController.m; sourceTree = "<group>"; };
+		E1A1E92315639F6700BDEC2E /* CourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseViewController.xib; path = Classes/CourseViewController.xib; sourceTree = "<group>"; };
+		E1A1E92615639F8800BDEC2E /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseDetailViewController.h; path = Classes/CourseDetailViewController.h; sourceTree = "<group>"; };
+		E1A1E92715639F8900BDEC2E /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseDetailViewController.m; path = Classes/CourseDetailViewController.m; sourceTree = "<group>"; };
+		E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseDetailViewController.xib; path = Classes/CourseDetailViewController.xib; sourceTree = "<group>"; };
+		E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
+		E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1068,6 +1085,19 @@
 			name = user_info;
 			sourceTree = "<group>";
 		};
+		E1A1E92B15639F8F00BDEC2E /* course */ = {
+			isa = PBXGroup;
+			children = (
+				E1A1E92615639F8800BDEC2E /* CourseDetailViewController.h */,
+				E1A1E92715639F8900BDEC2E /* CourseDetailViewController.m */,
+				E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */,
+				E1A1E92115639F6600BDEC2E /* CourseViewController.h */,
+				E1A1E92215639F6700BDEC2E /* CourseViewController.m */,
+				E1A1E92315639F6700BDEC2E /* CourseViewController.xib */,
+			);
+			name = course;
+			sourceTree = "<group>";
+		};
 		E1C8773E1505F41700592954 = {
 			isa = PBXGroup;
 			children = (
@@ -1212,6 +1242,8 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */,
+				E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */,
 				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
 				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
 				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
@@ -1333,6 +1365,7 @@
 		E1DF6F981537612E001C60EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1A1E92B15639F8F00BDEC2E /* course */,
 				E1FA750715615BDF001029B0 /* activity */,
 				E1DF6FF11539B836001C60EA /* channel */,
 				E1E4839115488D9700814FA4 /* favorite */,
@@ -1415,9 +1448,6 @@
 		E1DF6FF11539B836001C60EA /* channel */ = {
 			isa = PBXGroup;
 			children = (
-				E168FEAA15540D4C00BEE141 /* ChannelDetailViewController.h */,
-				E168FEAB15540D4D00BEE141 /* ChannelDetailViewController.m */,
-				E168FEAC15540D4E00BEE141 /* ChannelDetailViewController.xib */,
 				E1A8370B154496270086F62E /* ChannelOutlineTableViewCell.h */,
 				E1A8370C154496290086F62E /* ChannelOutlineTableViewCell.m */,
 				E1A8370E154496470086F62E /* ChannelOutlineTableViewCell.xib */,
@@ -1516,6 +1546,8 @@
 				E1999B06155A3D1400CD04EF /* Image+Addition.m */,
 				E14BA6A41562890D00EB7CB6 /* Course+Addition.h */,
 				E14BA6A51562890D00EB7CB6 /* Course+Addition.m */,
+				E1A1E91D1563877600BDEC2E /* Event+Addition.h */,
+				E1A1E91E1563877600BDEC2E /* Event+Addition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1535,6 +1567,9 @@
 		E1FA750715615BDF001029B0 /* activity */ = {
 			isa = PBXGroup;
 			children = (
+				E168FEAA15540D4C00BEE141 /* ActivityDetailViewController.h */,
+				E168FEAB15540D4D00BEE141 /* ActivityDetailViewController.m */,
+				E168FEAC15540D4E00BEE141 /* ActivityDetailViewController.xib */,
 				E1E4838C1548850A00814FA4 /* ActivityViewController.h */,
 				E1E4838D1548850D00814FA4 /* ActivityViewController.m */,
 				E1E4838E1548850F00814FA4 /* ActivityViewController.xib */,
@@ -1800,7 +1835,7 @@
 				E168FEA11553FAA900BEE141 /* dock_btn_treize_hl@2x.png in Resources */,
 				E168FEA21553FAA900BEE141 /* dock_btn_treize.png in Resources */,
 				E168FEA31553FAA900BEE141 /* dock_btn_treize@2x.png in Resources */,
-				E168FEAE15540D4F00BEE141 /* ChannelDetailViewController.xib in Resources */,
+				E168FEAE15540D4F00BEE141 /* ActivityDetailViewController.xib in Resources */,
 				E168FEBD1555408D00BEE141 /* UpdateUserInfoViewController.xib in Resources */,
 				E172F81B1556494500D6F99C /* SettingInfo.plist in Resources */,
 				E172F820155653C600D6F99C /* UpdateUserAvatarViewController.xib in Resources */,
@@ -1884,6 +1919,10 @@
 				E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */,
 				E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */,
 				E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */,
+				E1A1E92515639F6800BDEC2E /* CourseViewController.xib in Resources */,
+				E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */,
+				E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */,
+				E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1965,7 +2004,7 @@
 				E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */,
 				E168FE9B1553F6F100BEE141 /* FavoriteOutlineViewController.m in Sources */,
 				E168FEA61554066200BEE141 /* User+Addition.m in Sources */,
-				E168FEAD15540D4F00BEE141 /* ChannelDetailViewController.m in Sources */,
+				E168FEAD15540D4F00BEE141 /* ActivityDetailViewController.m in Sources */,
 				E168FEBC1555408D00BEE141 /* UpdateUserInfoViewController.m in Sources */,
 				E168FEC1155555BB00BEE141 /* WTPostViewController.m in Sources */,
 				E172F8191556493800D6F99C /* SettingInfoReader.m in Sources */,
@@ -1999,6 +2038,9 @@
 				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
 				E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */,
 				E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */,
+				E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */,
+				E1A1E92415639F6800BDEC2E /* CourseViewController.m in Sources */,
+				E1A1E92915639F8B00BDEC2E /* CourseDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

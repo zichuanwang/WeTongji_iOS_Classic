@@ -15,6 +15,8 @@
 @synthesize whereLabel = _whereLabel;
 @synthesize whatLabel = _whatLabel;
 @synthesize pointImageView = _pointImageView;
+@synthesize mainView = _mainView;
+@synthesize noDataHintLabel = _noDataHintLabel;
 
 - (void)awakeFromNib {
     self.whenLabel.text = @"";
@@ -38,12 +40,26 @@
     // Configure the view for the selected state
 }
 
-- (void)setActivityType:(ActivityType)type {
-    if(type == ActivityTypeActivity) {
+- (void)setEventType:(EventType)type {
+    if(type == EventTypeActivity) {
+        self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_yellow"];
+    } else if(type == EventTypeRequiredCurriculum) {
         self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_blue"];
-    } else if(type == ActivityTypeCurriculum) {
+    } else if(type == EventTypeOptionalCurriculum) {
         self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_green"];
     }
+}
+
+- (void)setAsNormalCell {
+    self.mainView.hidden = NO;
+    self.noDataHintLabel.hidden = YES;
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
+
+- (void)setAsTodayTempCell {
+    self.mainView.hidden = YES;
+    self.noDataHintLabel.hidden = NO;
+    self.accessoryType = UITableViewCellAccessoryNone;
 }
 
 @end

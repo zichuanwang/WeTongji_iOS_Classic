@@ -11,6 +11,7 @@
 #define kChangeCurrentUserNotification @"kChangeCurrentUserNotification"
 #define kCoreChangeCurrentUserNotification @"kCoreChangeCurrentUserNotification"
 #define kChangeCurrentUIStyleNotification @"kChangeCurrentUIStyleNotification"
+#define kChangeScheduleNotification @"kChangeScheduleNotification"
 
 @implementation NSNotificationCenter (Addition)
 
@@ -44,6 +45,17 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:aTarget selector:aSelector
                    name:kChangeCurrentUIStyleNotification 
+                 object:nil];
+}
+
++ (void)postChangeScheduleNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kChangeScheduleNotification object:nil userInfo:nil];
+}
+
++ (void)registerChangeScheduleNotificationWithSelector:(SEL)aSelector target:(id)aTarget {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:aTarget selector:aSelector
+                   name:kChangeScheduleNotification 
                  object:nil];
 }
 

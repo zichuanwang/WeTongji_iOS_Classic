@@ -124,4 +124,12 @@
     return result;
 }
 
++ (NSString *)getTodayBeginDayFormatString {
+    return [NSString yearMonthDayWeekConvertFromDate:[NSDate date]];
+}
+
++ (NSString *)getTomorrowBeginDayFormatString {
+    return [NSString yearMonthDayWeekConvertFromDate:[[NSDate date] dateByAddingTimeInterval:60 * 60 * 24]];
+}
+
 @end

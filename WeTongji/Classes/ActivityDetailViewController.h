@@ -1,5 +1,5 @@
 //
-//  ChannelDetailViewController.h
+//  ActivityDetailViewController.h
 //  WeTongji
 //
 //  Created by 紫川 王 on 12-5-4.
@@ -10,7 +10,7 @@
 #import "WTNavigationViewController.h"
 #import "Activity.h"
 
-@interface ChannelDetailViewController : WTNavigationViewController
+@interface ActivityDetailViewController : WTNavigationViewController
 
 - (id)initWithActivity:(Activity *)activity;
 

@@ -20,4 +20,7 @@
 + (void)postChangeCurrentUIStyleNotification:(UIStyle)style;
 + (void)registerChangeCurrentUIStyleNotificationWithSelector:(SEL)aSelector target:(id)aTarget;
 
++ (void)postChangeScheduleNotification;
++ (void)registerChangeScheduleNotificationWithSelector:(SEL)aSelector target:(id)aTarget; 
+
 @end

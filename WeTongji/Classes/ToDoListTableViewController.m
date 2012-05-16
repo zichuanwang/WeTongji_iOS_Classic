@@ -8,6 +8,11 @@
 
 #import "ToDoListTableViewController.h"
 #import "ToDoListTableViewCell.h"
+#import "NSNotificationCenter+Addition.h"
+#import "NSString+Addition.h"
+#import "Event+Addition.h"
+#import "Course+Addition.h"
+#import "Activity+Addition.h"
 
 @interface ToDoListTableViewController ()
 
@@ -28,7 +33,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [self configureTableView];
+    
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self];
+    [NSNotificationCenter registerChangeScheduleNotificationWithSelector:@selector(handleChangeScheduleNotification:) target:self];
+    
 }
 
 - (void)viewDidUnload
@@ -39,6 +48,52 @@
 }
 
 #pragma mark -
+#pragma mark Logic methods 
+
+- (NSFetchRequest *)getToDoListFetchRequest {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
+    [request setSortDescriptors:descriptors];
+    request.fetchBatchSize = 20;
+    return request;
+}
+
+- (NSArray *)getTodayToDoList {
+    NSFetchRequest *request = [self getToDoListFetchRequest];
+    NSPredicate *todayPredicate = [NSPredicate predicateWithFormat:@"begin_day == %@", [NSString getTodayBeginDayFormatString]];
+    NSPredicate *timePredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", [NSDate date]];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, todayPredicate, timePredicate, nil]]];
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    return result;
+}
+
+- (NSArray *)getTomorrowToDoList {
+    NSFetchRequest *request = [self getToDoListFetchRequest];
+    NSPredicate *tomorrowPredicate = [NSPredicate predicateWithFormat:@"begin_day == %@", [NSString getTomorrowBeginDayFormatString]];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, tomorrowPredicate, nil]]];
+
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    return result;
+}
+
+- (void)refresh {
+    [self configureDataSource];
+    [self.tableView reloadData];
+
+}
+
+#pragma mark -
+#pragma mark UI methods 
+
+- (void)configureTableView {
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+}
+
+#pragma mark -
 #pragma mark WTGroupTableViewController methods to overwrite
 
 - (NSString *)customCellClassName {
@@ -46,32 +101,74 @@
 }
 
 - (void)configureDataSource {
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"当前"]];
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"稍后"]];
     
-    NSArray *now = [NSArray arrayWithObjects:
-                      [NSArray arrayWithObjects:[NSString stringWithString:@"8:00"], [NSString stringWithString:@"高等数学"], [NSString stringWithString:@"南楼 101"], nil], nil];
+    [self.dataSourceDictionary removeAllObjects];
+    [self.dataSourceIndexArray removeAllObjects];
     
-    NSArray *later = [NSArray arrayWithObjects:
-                    [NSArray arrayWithObjects:[NSString stringWithString:@"10:00"], [NSString stringWithString:@"C语言程序设计"], [NSString stringWithString:@"机房"], nil],
-                     [NSArray arrayWithObjects:[NSString stringWithString:@"15:20"], [NSString stringWithString:@"社会学"], [NSString stringWithString:@"北楼 310"], nil], nil];
+    NSArray *todayToDoList = [self getTodayToDoList];
+    NSArray *tomorrowToDoList = [self getTomorrowToDoList];
     
-    [self.dataSourceDictionary setValue:now forKey:[self.dataSourceIndexArray objectAtIndex:0]];
-    [self.dataSourceDictionary setValue:later forKey:[self.dataSourceIndexArray objectAtIndex:1]];
+    if(todayToDoList.count > 0) {
+        if(todayToDoList.count > 1)
+            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"当前"]];
+        else 
+            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"今天"]];
+        [self.dataSourceDictionary setValue:[NSArray arrayWithObject:[todayToDoList objectAtIndex:0]] forKey:[self.dataSourceIndexArray objectAtIndex:0]];
+        if(todayToDoList.count > 1) {
+            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"稍后"]];
+            NSArray *todayLaterToDoList = [todayToDoList subarrayWithRange:NSMakeRange(1, todayToDoList.count - 1)];
+            [self.dataSourceDictionary setValue:todayLaterToDoList forKey:[self.dataSourceIndexArray objectAtIndex:1]];
+        }
+    } else {
+        [self.dataSourceIndexArray addObject:[NSString stringWithString:@"今天"]];
+        NSObject *temp = [[NSObject alloc] init];
+        [self.dataSourceDictionary setValue:[NSArray arrayWithObject:temp] forKey:[self.dataSourceIndexArray objectAtIndex:0]];
+    }
+    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"明天"]];
+    if(tomorrowToDoList.count > 0) {
+        [self.dataSourceDictionary setValue:tomorrowToDoList forKey:[self.dataSourceIndexArray objectAtIndex:self.dataSourceIndexArray.count - 1]];
+    } else {
+        NSObject *temp = [[NSObject alloc] init];
+        [self.dataSourceDictionary setValue:[NSArray arrayWithObject:temp] forKey:[self.dataSourceIndexArray objectAtIndex:self.dataSourceIndexArray.count - 1]];
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     ToDoListTableViewCell *toDoListCell = (ToDoListTableViewCell *)cell;
     NSString *key = [self.dataSourceIndexArray objectAtIndex:indexPath.section];
     NSArray *value = [self.dataSourceDictionary objectForKey:key];
-    NSArray *data = [value objectAtIndex:indexPath.row];
+    Event *event = [value objectAtIndex:indexPath.row];
     
-    if(indexPath.section == 1 && indexPath.row == 1)
-        toDoListCell.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_green.png"];
-    
-    toDoListCell.whenLabel.text = [data objectAtIndex:0];
-    toDoListCell.whatLabel.text = [data objectAtIndex:1];
-    toDoListCell.whereLabel.text = [data objectAtIndex:2];
+    if(![event isKindOfClass:[Event class]]) {
+        [toDoListCell setAsEmptyCell];
+    } else {
+        [toDoListCell setAsNormalCell];
+        toDoListCell.whenLabel.text = [NSString timeConvertFromDate:event.begin_time];
+        toDoListCell.whatLabel.text = event.what;
+        toDoListCell.whereLabel.text = event.where;
+        
+        if([event isMemberOfClass:[Course class]]) {
+            Course *course = (Course *)event;
+            if([course.require_type isEqualToString:@"必修"]) {
+                [toDoListCell setEventType:EventTypeRequiredCurriculum];
+            } else {
+                [toDoListCell setEventType:EventTypeOptionalCurriculum];
+            }
+        } else if([event isMemberOfClass:[Activity class]]) {
+            [toDoListCell setEventType:EventTypeActivity];
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Handle notifications
+
+- (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    [self refresh];
+}
+
+- (void)handleChangeScheduleNotification:(NSNotification *)notification {
+    [self refresh];
 }
 
 @end

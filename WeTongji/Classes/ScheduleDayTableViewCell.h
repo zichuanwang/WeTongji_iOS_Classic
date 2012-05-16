@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    ActivityTypeActivity,
-    ActivityTypeCurriculum,
-} ActivityType;
+    EventTypeActivity,
+    EventTypeRequiredCurriculum,
+    EventTypeOptionalCurriculum,
+} EventType;
 
 @interface ScheduleDayTableViewCell : UITableViewCell
 
@@ -19,7 +20,11 @@ typedef enum {
 @property (nonatomic, strong) IBOutlet UILabel *whatLabel;
 @property (nonatomic, strong) IBOutlet UILabel *whereLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *pointImageView;
+@property (nonatomic, strong) IBOutlet UIView *mainView;
+@property (nonatomic, strong) IBOutlet UILabel *noDataHintLabel;
 
-- (void)setActivityType:(ActivityType)type;
+- (void)setEventType:(EventType)type;
+- (void)setAsNormalCell;
+- (void)setAsTodayTempCell;
 
 @end
