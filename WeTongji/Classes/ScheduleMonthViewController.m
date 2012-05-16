@@ -20,9 +20,7 @@
 @implementation ScheduleMonthViewController
 
 @synthesize currentDate = _currentDate;
-@synthesize currentMonthDate = _currentMonthDate;
 @synthesize currentSelectDate = _currentSelectDate;
-@synthesize currentTime = _currentTime;
 @synthesize lastMonth = _lastMonth;
 
 @synthesize scheduleMonthDateView = _scheduleMonthDateView;
@@ -43,6 +41,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.currentDate = [NSDate date]; 
     [self configureHeadView];
     [self configureDateView];
     [self configureEventView];
@@ -56,8 +55,6 @@
 }
 
 - (void)configureHeadView{
-    self.currentDate = [NSDate date]; 
-    
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
     NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;  
@@ -65,29 +62,25 @@
     
 	NSString *title_Month   = [[NSString alloc] initWithFormat:@"%d年%d月",[dd year],[dd month]];
     self.headTitle.text = title_Month;
-    
-    
-	self.currentTime=CFAbsoluteTimeGetCurrent();
-	self.currentMonthDate=CFAbsoluteTimeGetGregorianDate(self.currentTime,CFTimeZoneCopyDefault());
 
 }
 
 - (void)configureDateView{
-    self.currentDate = [NSDate date]; 
-    
-    self.scheduleMonthDateView.frame = CGRectMake(0, 60, 320, 46*[self getLineNumberOfMonth:self.currentMonthDate]);
-    for (int i=0; i<[self getLineNumberOfMonth:self.currentMonthDate]; i++) {
+    self.scheduleMonthDateView.frame = CGRectMake(0, 60, 320, 46*[self getLineNumberOfMonth:self.currentDate]);
+    NSLog(@"%f",self.scheduleMonthDateView.frame.size.height);
+    for (int i=0; i<[self getLineNumberOfMonth:self.currentDate]; i++) {
         for(int j=0;j<7;j++){
             ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(j*46, i*46, 46, 46)];
             [self.scheduleMonthDateView addSubview:tmpCell];
         }
     }
-    int dayCount=[self getDayCountOfaMonth:self.currentMonthDate];
+    
+    int dayCount=[self getDayCountOfMonth:self.currentDate];
 	int day=0;
 	int x=0;
 	int y=0;
-	int curr_Weekday=[self getMonthWeekday:self.currentMonthDate];
-    int lastWeekday = [self getLastMonthWeekday:self.currentMonthDate];
+	int curr_Weekday=[self getMonthWeekday:self.currentDate];
+    int lastWeekday = [self getLastMonthWeekday:self.currentDate];
     
     //draw the dates of current month
 	for(int i=1;i<dayCount+1;i++)
@@ -118,7 +111,7 @@
     //draw the dates of next month
     if (lastWeekday != 6) {
         for (int i=0; i<6-lastWeekday; i++) {
-            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake((lastWeekday+1+i)*46, ([self getLineNumberOfMonth:self.currentMonthDate]-1)*46, 46, 46)];
+            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake((lastWeekday+1+i)*46, ([self getLineNumberOfMonth:self.currentDate]-1)*46, 46, 46)];
             [tmpCell setDay:(i+1)];
             [self.scheduleMonthDateView addSubview:tmpCell];
         }
@@ -126,6 +119,9 @@
 }
 
 - (void)configureEventView{
+    self.scheduleMonthEventView.frame = CGRectMake(0, 60+46*[self getLineNumberOfMonth:self.currentDate], 320, 400-46*[self getLineNumberOfMonth:self.currentDate]);
+    NSLog(@"y:%f",self.scheduleMonthEventView.frame.origin.y);
+    NSLog(@"height:%f",self.scheduleMonthEventView.frame.size.height);
     self.scheduleMonthEventView.backgroundColor = [UIColor grayColor];
 }
 
@@ -136,31 +132,6 @@
 
 #pragma mark
 #pragma mark -- Logic methods
-- (int)getDayCountOfaMonth:(CFGregorianDate)date{ 
-	switch (date.month) {
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			return 31;
-		case 2:
-			if(date.year%4==0 && date.year%100!=0)
-				return 29;
-			else
-				return 28;
-		case 4:
-		case 6:
-		case 9:		
-		case 11:
-			return 30;
-		default:
-			return 31;
-	}
-}
-
 - (int)getDayCountOfMonth:(NSDate *)date{ 
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSMonthCalendarUnit;  
@@ -189,37 +160,43 @@
 	}
 }
 
-- (int)getLineNumberOfMonth:(CFGregorianDate)date{
-    int row_count = 0;
-    if ([self getMonthWeekday:self.currentMonthDate] != 7) {
-        row_count = ([self getDayCountOfaMonth:self.currentMonthDate]+[self getMonthWeekday:self.currentMonthDate]-1)/7+1;
+- (int)getLineNumberOfMonth:(NSDate *)date{
+    int rowCount = 0;
+    if ([self getMonthWeekday:self.currentDate] != 7) {
+        rowCount = ([self getDayCountOfMonth:self.currentDate]+[self getMonthWeekday:self.currentDate]-1)/7+1;
     }else {
-        row_count = ([self getDayCountOfaMonth:self.currentMonthDate])/7+1;
+        rowCount = ([self getDayCountOfMonth:self.currentDate])/7+1;
     }
-    return row_count;
+    return rowCount;
 }
 
-- (int)getMonthWeekday:(CFGregorianDate)date{
-	CFTimeZoneRef tz = CFTimeZoneCopyDefault();
-	CFGregorianDate month_date;
-	month_date.year=date.year;
-	month_date.month=date.month;
-	month_date.day=1;
-	month_date.hour=0;
-	month_date.minute=0;
-	month_date.second=1;
-	return (int)CFAbsoluteTimeGetDayOfWeek(CFGregorianDateGetAbsoluteTime(month_date,tz),tz);
+- (int)getMonthWeekday:(NSDate *)date{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
+    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit; 
+    NSDateComponents *dd = [cal components:unitFlags fromDate:date];
+    
+    [dd setDay:1];
+    [dd setHour:0];
+    [dd setMinute:0];
+    [dd setSecond:1];
+    NSDate *tmpDate  = [cal dateFromComponents:dd];
+    dd = [cal components:unitFlags fromDate:tmpDate];
+    return [dd weekday]-1;
 }
-- (int)getLastMonthWeekday:(CFGregorianDate)date{
-	CFTimeZoneRef tz = CFTimeZoneCopyDefault();
-	CFGregorianDate month_date;
-	month_date.year=date.year;
-	month_date.month=date.month;
-	month_date.day=[self getDayCountOfaMonth:date];
-	month_date.hour=0;
-	month_date.minute=0;
-	month_date.second=1;
-	return (int)CFAbsoluteTimeGetDayOfWeek(CFGregorianDateGetAbsoluteTime(month_date,tz),tz);
+- (int)getLastMonthWeekday:(NSDate *)date{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
+    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit; 
+    NSDateComponents *dd = [cal components:unitFlags fromDate:date];
+    
+    [dd setDay:[self getDayCountOfMonth:date]];
+    [dd setHour:0];
+    [dd setMinute:0];
+    [dd setSecond:1];
+    NSDate *tmpDate  = [cal dateFromComponents:dd];
+    dd = [cal components:unitFlags fromDate:tmpDate];
+    return [dd weekday]-1;
 }
 
 - (int)getDayCountsOfLastMonth:(NSDate *)date{
@@ -230,6 +207,34 @@
     NSDate *resDate  = [cal dateFromComponents:dd];
     
     return [self getDayCountOfMonth:resDate];
+}
+
+#pragma mark
+#pragma mark --- IBActions
+- (void)movePrev:(UIButton *)sender{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
+    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit; 
+    NSDateComponents *dd = [cal components:unitFlags fromDate:self.currentDate];
+    [dd setMonth:([dd month]-1)];
+    self.currentDate = [cal dateFromComponents:dd];
+    
+    [self configureDateView];
+    [self configureEventView];
+    [self configureHeadView];
+}
+
+- (void)moveNext:(UIButton *)sender{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
+    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit; 
+    NSDateComponents *dd = [cal components:unitFlags fromDate:self.currentDate];
+    [dd setMonth:([dd month]+1)];
+    self.currentDate = [cal dateFromComponents:dd];
+    
+    [self configureDateView];
+    [self configureEventView];
+    [self configureHeadView];
 }
 
 @end

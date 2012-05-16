@@ -12,11 +12,12 @@
 
 @property (nonatomic, strong) NSDate *currentDate;
 
-@property CFGregorianDate currentMonthDate;
 @property CFGregorianDate currentSelectDate;
 @property CFGregorianDate lastMonth;
-@property CFAbsoluteTime  currentTime;
 
 @property (nonatomic, strong) IBOutlet UILabel *headTitle;
+
+- (IBAction)movePrev:(UIButton *)sender;
+- (IBAction)moveNext:(UIButton *)sender;
 
 @end
