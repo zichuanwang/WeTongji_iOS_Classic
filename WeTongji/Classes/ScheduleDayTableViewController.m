@@ -9,10 +9,10 @@
 #import "ScheduleDayTableViewController.h"
 #import "WTTableViewHeaderFooterFactory.h"
 #import "ScheduleDayTableViewCell.h"
-#import "Activity+Addition.h"
 #import "NSString+Addition.h"
-#import "WTTableViewHeaderFooterFactory.h"
 #import "Event+Addition.h"
+#import "Course+Addition.h"
+#import "Activity+Addition.h"
 
 @interface ScheduleDayTableViewController ()
 
@@ -128,6 +128,16 @@
         dayCell.whatLabel.text = event.what;
         dayCell.whenLabel.text = [NSString timeConvertFromDate:event.begin_time];
         dayCell.whereLabel.text = event.where;
+        if([event isMemberOfClass:[Course class]]) {
+            Course *course = (Course *)event;
+            if([course.require_type isEqualToString:@"必修"]) {
+                [dayCell setEventType:EventTypeRequiredCurriculum];
+            } else {
+                [dayCell setEventType:EventTypeOptionalCurriculum];
+            }
+        } else if([event isMemberOfClass:[Activity class]]) {
+            [dayCell setEventType:EventTypeActivity];
+        }
     } else {
         [dayCell setAsTodayTempCell];
     }

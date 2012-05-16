@@ -173,6 +173,8 @@
 		E1A1E92515639F6800BDEC2E /* CourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92315639F6700BDEC2E /* CourseViewController.xib */; };
 		E1A1E92915639F8B00BDEC2E /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1E92715639F8900BDEC2E /* CourseDetailViewController.m */; };
 		E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */; };
+		E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */; };
+		E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -572,6 +574,8 @@
 		E1A1E92615639F8800BDEC2E /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseDetailViewController.h; path = Classes/CourseDetailViewController.h; sourceTree = "<group>"; };
 		E1A1E92715639F8900BDEC2E /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseDetailViewController.m; path = Classes/CourseDetailViewController.m; sourceTree = "<group>"; };
 		E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseDetailViewController.xib; path = Classes/CourseDetailViewController.xib; sourceTree = "<group>"; };
+		E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
+		E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1238,6 +1242,8 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */,
+				E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */,
 				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
 				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
 				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
@@ -1915,6 +1921,8 @@
 				E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */,
 				E1A1E92515639F6800BDEC2E /* CourseViewController.xib in Resources */,
 				E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */,
+				E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */,
+				E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

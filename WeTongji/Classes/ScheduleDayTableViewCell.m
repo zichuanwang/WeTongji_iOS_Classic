@@ -42,8 +42,10 @@
 
 - (void)setEventType:(EventType)type {
     if(type == EventTypeActivity) {
+        self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_yellow"];
+    } else if(type == EventTypeRequiredCurriculum) {
         self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_blue"];
-    } else if(type == EventTypeCurriculum) {
+    } else if(type == EventTypeOptionalCurriculum) {
         self.pointImageView.image = [UIImage imageNamed:@"to_do_list_point_green"];
     }
 }

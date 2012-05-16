@@ -10,7 +10,8 @@
 
 typedef enum {
     EventTypeActivity,
-    EventTypeCurriculum,
+    EventTypeRequiredCurriculum,
+    EventTypeOptionalCurriculum,
 } EventType;
 
 @interface ScheduleDayTableViewCell : UITableViewCell
