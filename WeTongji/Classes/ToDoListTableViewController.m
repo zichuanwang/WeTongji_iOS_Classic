@@ -35,7 +35,9 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableView];
     
-    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self];
+    [NSNotificationCenter registerChangeScheduleNotificationWithSelector:@selector(handleChangeScheduleNotification:) target:self];
+    
 }
 
 - (void)viewDidUnload
@@ -162,6 +164,10 @@
 #pragma mark Handle notifications
 
 - (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
+    [self refresh];
+}
+
+- (void)handleChangeScheduleNotification:(NSNotification *)notification {
     [self refresh];
 }
 

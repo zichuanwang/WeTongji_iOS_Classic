@@ -16,6 +16,7 @@
 #import "NSString+Addition.h"
 #import "ActivityDetailViewController.h"
 #import "CourseDetailViewController.h"
+#import "NSNotificationCenter+Addition.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -110,6 +111,7 @@ typedef enum {
                 NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
             }
+            [NSNotificationCenter postChangeScheduleNotification];
             [self.dayViewController configureTodayCell];
         }
     }];

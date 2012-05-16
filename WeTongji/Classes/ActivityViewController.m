@@ -10,6 +10,7 @@
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
 #import "UIApplication+Addition.h"
+#import "NSNotificationCenter+Addition.h"
 #import "WTClient.h"
 
 @interface ActivityViewController ()
@@ -269,6 +270,7 @@
             if(!client.hasError) {
                 self.activity.can_schedule = [NSNumber numberWithBool:!self.activity.can_schedule.boolValue];
                 [self.currentUser addScheduleObject:self.activity];
+                [NSNotificationCenter postChangeScheduleNotification];
                 [UIApplication presentToast:@"已添加到日程。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
                 [self.scheduleButton setSelected:NO];
@@ -283,6 +285,7 @@
             if(!client.hasError) {
                 self.activity.can_schedule = [NSNumber numberWithBool:!self.activity.can_schedule.boolValue];
                 [self.currentUser removeScheduleObject:self.activity];
+                [NSNotificationCenter postChangeScheduleNotification];
                 [UIApplication presentToast:@"已移出日程。" withVerticalPos:DefaultToastVerticalPosition];
             } else {
                 [self.scheduleButton setSelected:YES];
