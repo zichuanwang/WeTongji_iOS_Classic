@@ -17,5 +17,6 @@
 + (NSString *)timeConvertFromDate:(NSDate *)date;
 + (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end;
 - (BOOL)isSuitableForPassword;
+- (NSNumber *)weekDayStringCovertToNumber;
 
 @end

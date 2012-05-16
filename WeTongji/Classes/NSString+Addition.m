@@ -103,4 +103,25 @@
     return result;
 }
 
+- (NSNumber *)weekDayStringCovertToNumber {
+    NSNumber *result = nil;
+    NSInteger weekDay = -1;
+    if([self isEqualToString:@"星期一"]) 
+        weekDay = 0;
+    else if([self isEqualToString:@"星期二"])
+        weekDay = 1;
+    else if([self isEqualToString:@"星期三"])
+        weekDay = 2;
+    else if([self isEqualToString:@"星期四"])
+        weekDay = 3;
+    else if([self isEqualToString:@"星期五"])
+        weekDay = 4;
+    else if([self isEqualToString:@"星期六"])
+        weekDay = 5;
+    else if([self isEqualToString:@"星期日"])
+        weekDay = 6;
+    result = [NSNumber numberWithInteger:weekDay];
+    return result;
+}
+
 @end

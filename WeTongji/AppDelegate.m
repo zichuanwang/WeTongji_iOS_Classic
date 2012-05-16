@@ -24,16 +24,7 @@
     [NSUserDefaults initialize];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
-    WTClient *client = [WTClient client];
-    [client setCompletionBlock:^(WTClient *client) {
-        if(!client.hasError) {
-            NSArray *courses = [client.responseData objectForKey:@"Courses"];
-            for(NSDictionary *dict in courses) {
-                NSLog(@"name:%@", [dict objectForKey:@"Name"]);
-            }
-        }
-    }];
-    [client getCourse];
+    
     //[client updateUserDisplayName:@"王二"];
     //[client updatePassword:@"123456" withOldPassword:@"123456"];
     return YES;

@@ -25,9 +25,9 @@
     }
     
     result.activity_id = activityID;
-    result.title = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
+    result.what = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
     result.content = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
-    result.location = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
+    result.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];

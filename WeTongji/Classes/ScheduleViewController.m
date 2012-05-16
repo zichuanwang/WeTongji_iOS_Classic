@@ -8,9 +8,13 @@
 
 #import "ScheduleViewController.h"
 #import "NSUserDefaults+Addition.h"
-#import "ScheduleDayTableViewController.h"
 #import "ScheduleWeekViewController.h"
 #import "ScheduleMonthViewController.h"
+#import "Course+Addition.h"
+#import "Activity+Addition.h"
+#import "WTClient.h"
+#import "NSString+Addition.h"
+#import "ChannelDetailViewController.h"
 
 typedef enum {
     DayTabBarViewController,
@@ -59,6 +63,7 @@ typedef enum {
     [self configureTabBar];
     [self configureTabBarUIStyle];
     [self configureDayTabBarViewController];
+    [self configureInitialCourseData];
 }
 
 - (void)viewDidUnload
@@ -73,6 +78,37 @@ typedef enum {
     self.tabBarSeperatorImageView = nil;
     self.tabBarBgImageView = nil;
     [self clearAllTabBarSubview];
+}
+
+#pragma mark -
+#pragma mark Logic methods 
+
+- (void)configureInitialCourseData {
+    for(Event *event in self.currentUser.schedule)
+        if([event isMemberOfClass:[Course class]])
+            return;
+    
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            
+            NSFetchRequest *request = [[NSFetchRequest alloc] init];
+            [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
+            [request setPredicate:[NSPredicate predicateWithFormat:@"SELF in %@", self.currentUser.schedule]];            
+            NSArray *items = [self.managedObjectContext executeFetchRequest:request error:NULL];
+            for(NSManagedObject *object in items)
+                [self.managedObjectContext deleteObject:object];
+            
+            NSString *semesterBeginString = @"2012-02-20T00:00:00+08:00";
+            NSDate *semesterBeginDate = [semesterBeginString convertToDate];
+            NSArray *courses = [client.responseData objectForKey:@"Courses"];
+            for(NSDictionary *dict in courses) {
+                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate inManagedObjectContext:self.managedObjectContext];
+                [self.currentUser addSchedule:courses];
+            }
+        }
+    }];
+    [client getCourse];
 }
 
 #pragma mark -
@@ -124,6 +160,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.dayViewController = vc;
+    vc.delegate = self;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
@@ -207,6 +244,18 @@ typedef enum {
 
 - (IBAction)didClickTodayButton:(UIButton *)sender {
     
+}
+
+#pragma mark -
+#pragma mark ScheduleDayTableViewController delegate
+
+- (void)scheduleDayTableViewDidSelectEvent:(Event *)event {
+    if([event isMemberOfClass:[Activity class]]) {
+        ChannelDetailViewController *vc = [[ChannelDetailViewController alloc] initWithActivity:(Activity *)event];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([event isMemberOfClass:[Course class]]) {
+        
+    }
 }
 
 @end

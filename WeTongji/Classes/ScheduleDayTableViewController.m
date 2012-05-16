@@ -18,6 +18,8 @@
 
 @implementation ScheduleDayTableViewController
 
+@synthesize delegate = _delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -77,14 +79,14 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ScheduleDayTableViewCell *dayCell = (ScheduleDayTableViewCell *)cell;
-    dayCell.whatLabel.text = activity.title;
+    dayCell.whatLabel.text = activity.what;
     dayCell.whenLabel.text = [NSString timeConvertFromDate:activity.begin_time];
-    dayCell.whereLabel.text = activity.location;
+    dayCell.whereLabel.text = activity.where;
 }
 
 - (void)configureRequest:(NSFetchRequest *)request
 {
-    [request setEntity:[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext]];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
     [request setPredicate:predicate];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
@@ -120,6 +122,11 @@
     [headerView addSubview:label];
     [headerView addSubview:singleLine];
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate scheduleDayTableViewDidSelectEvent:event];
 }
 
 @end
