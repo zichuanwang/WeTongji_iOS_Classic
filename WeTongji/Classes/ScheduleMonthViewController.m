@@ -9,6 +9,9 @@
 #import "ScheduleMonthViewController.h"
 #import "ScheduleMonthDateViewCell.h"
 
+#define HEADER_HEIGHT 50
+#define MONTH_DATE_CELL_HEIGHT 45
+
 @interface ScheduleMonthViewController ()
 
 @property (nonatomic, strong) IBOutlet UIView *scheduleMonthHeadView;
@@ -55,6 +58,8 @@
 }
 
 - (void)configureHeadView{
+    self.scheduleMonthHeadView.frame = CGRectMake(0, 0, 320, HEADER_HEIGHT);
+    
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
     NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;  
@@ -102,9 +107,10 @@
     int dayCountsOfLastMonth = [self getDayCountsOfLastMonth:self.currentDate];
     if (curr_Weekday != 7) {
         for (int i=0; i<curr_Weekday; i++) {
-            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(i*46, 0, 46, 46)];
+            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(i*46, 0, 46, 36)];
             [tmpCell setDay:dayCountsOfLastMonth-(curr_Weekday-i-1)];
             [self.scheduleMonthDateView addSubview:tmpCell];
+            [tmpCell setGray];
         }
     }
     
@@ -114,6 +120,7 @@
             ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake((lastWeekday+1+i)*46, ([self getLineNumberOfMonth:self.currentDate]-1)*46, 46, 46)];
             [tmpCell setDay:(i+1)];
             [self.scheduleMonthDateView addSubview:tmpCell];
+            [tmpCell setGray];
         }
     }
 }
