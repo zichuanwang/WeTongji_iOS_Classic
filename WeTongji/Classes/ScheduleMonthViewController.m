@@ -234,9 +234,6 @@
     return 3;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return Nil;
-}
 
 #pragma mark
 #pragma mark --- IBActions
