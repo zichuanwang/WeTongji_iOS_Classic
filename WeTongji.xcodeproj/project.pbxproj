@@ -122,7 +122,6 @@
 		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
 		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
 		E16365B01564CA37006477C9 /* TKCalendarDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */; };
-		E16365B11564CA37006477C9 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */; };
 		E16365B21564CA37006477C9 /* TKCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */; };
 		E16365B31564CA37006477C9 /* TKCalendarMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365AC1564CA37006477C9 /* TKCalendarMonthViewController.m */; };
 		E16365BC1564CBDC006477C9 /* TKGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365BB1564CBB1006477C9 /* TKGlobal.m */; };
@@ -130,8 +129,21 @@
 		E16365BE1564CBE2006477C9 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365B71564CB8D006477C9 /* NSDate+TKCategory.m */; };
 		E16365C11564CBFB006477C9 /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365C01564CBF8006477C9 /* UIView+TKCategory.m */; };
 		E16365C21564CC0F006477C9 /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365B51564CB7B006477C9 /* TapDetectingView.m */; };
-		E16365C41564CC5E006477C9 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */; };
 		E16365C61564D924006477C9 /* ScheduleMonthTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */; };
+		E16365C91564F7EC006477C9 /* schedule_month_top_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365C71564F7EC006477C9 /* schedule_month_top_bar_bg.png */; };
+		E16365CA1564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365C81564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png */; };
+		E16365CE156510BA006477C9 /* schedule_month_view_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365CC156510B9006477C9 /* schedule_month_view_shadow.png */; };
+		E16365D3156511F3006477C9 /* schedule_month_left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365CF156511F2006477C9 /* schedule_month_left_arrow.png */; };
+		E16365D4156511F3006477C9 /* schedule_month_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365D0156511F2006477C9 /* schedule_month_left_arrow@2x.png */; };
+		E16365DD1565148E006477C9 /* schedule_month_gray_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365D71565148C006477C9 /* schedule_month_gray_tile.png */; };
+		E16365DE1565148E006477C9 /* schedule_month_tile_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365D81565148D006477C9 /* schedule_month_tile_hl.png */; };
+		E16365DF1565148E006477C9 /* schedule_month_tile_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */; };
+		E16365E01565148E006477C9 /* schedule_month_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365DA1565148D006477C9 /* schedule_month_tile.png */; };
+		E16365E11565148E006477C9 /* schedule_month_today_tile_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365DB1565148E006477C9 /* schedule_month_today_tile_hl.png */; };
+		E16365E21565148E006477C9 /* schedule_month_today_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365DC1565148E006477C9 /* schedule_month_today_tile.png */; };
+		E16365E4156516BA006477C9 /* schedule_month_view_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365E3156516BA006477C9 /* schedule_month_view_shadow@2x.png */; };
+		E16365E715651780006477C9 /* schedule_month_right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365E51565177F006477C9 /* schedule_month_right_arrow.png */; };
+		E16365E815651780006477C9 /* schedule_month_right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16365E615651780006477C9 /* schedule_month_right_arrow@2x.png */; };
 		E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FE951553DCC400BEE141 /* SignInMainViewController.m */; };
 		E168FE981553DCC400BEE141 /* SignInMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FE961553DCC400BEE141 /* SignInMainViewController.xib */; };
 		E168FE9B1553F6F100BEE141 /* FavoriteOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FE9A1553F6F100BEE141 /* FavoriteOutlineViewController.m */; };
@@ -514,8 +526,6 @@
 		E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayTimelineView.m; sourceTree = "<group>"; };
 		E16365A51564CA37006477C9 /* TKCalendarDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayViewController.h; sourceTree = "<group>"; };
 		E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayViewController.m; sourceTree = "<group>"; };
-		E16365A71564CA37006477C9 /* TKCalendarMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthTableViewController.h; sourceTree = "<group>"; };
-		E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthTableViewController.m; sourceTree = "<group>"; };
 		E16365A91564CA37006477C9 /* TKCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthView.h; sourceTree = "<group>"; };
 		E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthView.m; sourceTree = "<group>"; };
 		E16365AB1564CA37006477C9 /* TKCalendarMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthViewController.h; sourceTree = "<group>"; };
@@ -530,8 +540,21 @@
 		E16365BB1564CBB1006477C9 /* TKGlobal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGlobal.m; sourceTree = "<group>"; };
 		E16365BF1564CBF7006477C9 /* UIView+TKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
 		E16365C01564CBF8006477C9 /* UIView+TKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
-		E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
 		E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleMonthTableViewController.xib; path = Classes/ScheduleMonthTableViewController.xib; sourceTree = "<group>"; };
+		E16365C71564F7EC006477C9 /* schedule_month_top_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_top_bar_bg.png; sourceTree = "<group>"; };
+		E16365C81564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_top_bar_bg@2x.png"; sourceTree = "<group>"; };
+		E16365CC156510B9006477C9 /* schedule_month_view_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_view_shadow.png; sourceTree = "<group>"; };
+		E16365CF156511F2006477C9 /* schedule_month_left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_left_arrow.png; sourceTree = "<group>"; };
+		E16365D0156511F2006477C9 /* schedule_month_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_left_arrow@2x.png"; sourceTree = "<group>"; };
+		E16365D71565148C006477C9 /* schedule_month_gray_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_gray_tile.png; sourceTree = "<group>"; };
+		E16365D81565148D006477C9 /* schedule_month_tile_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_tile_hl.png; sourceTree = "<group>"; };
+		E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_tile_hl@2x.png"; sourceTree = "<group>"; };
+		E16365DA1565148D006477C9 /* schedule_month_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_tile.png; sourceTree = "<group>"; };
+		E16365DB1565148E006477C9 /* schedule_month_today_tile_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_today_tile_hl.png; sourceTree = "<group>"; };
+		E16365DC1565148E006477C9 /* schedule_month_today_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_today_tile.png; sourceTree = "<group>"; };
+		E16365E3156516BA006477C9 /* schedule_month_view_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_view_shadow@2x.png"; sourceTree = "<group>"; };
+		E16365E51565177F006477C9 /* schedule_month_right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_month_right_arrow.png; sourceTree = "<group>"; };
+		E16365E615651780006477C9 /* schedule_month_right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_right_arrow@2x.png"; sourceTree = "<group>"; };
 		E168FE941553DCC300BEE141 /* SignInMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInMainViewController.h; path = Classes/SignInMainViewController.h; sourceTree = "<group>"; };
 		E168FE951553DCC400BEE141 /* SignInMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInMainViewController.m; path = Classes/SignInMainViewController.m; sourceTree = "<group>"; };
 		E168FE961553DCC400BEE141 /* SignInMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInMainViewController.xib; path = Classes/SignInMainViewController.xib; sourceTree = "<group>"; };
@@ -1002,8 +1025,6 @@
 				E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */,
 				E16365A51564CA37006477C9 /* TKCalendarDayViewController.h */,
 				E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */,
-				E16365A71564CA37006477C9 /* TKCalendarMonthTableViewController.h */,
-				E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */,
 				E16365A91564CA37006477C9 /* TKCalendarMonthView.h */,
 				E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */,
 				E16365AB1564CA37006477C9 /* TKCalendarMonthViewController.h */,
@@ -1236,7 +1257,6 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */,
 				E1DC6446155D3FB100F07C63 /* schedule */,
 				E1D5503C15509D2800068824 /* toast */,
 				E1D387A3154DC801006325E8 /* channel */,
@@ -1308,6 +1328,20 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E16365D71565148C006477C9 /* schedule_month_gray_tile.png */,
+				E16365D81565148D006477C9 /* schedule_month_tile_hl.png */,
+				E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */,
+				E16365DA1565148D006477C9 /* schedule_month_tile.png */,
+				E16365DB1565148E006477C9 /* schedule_month_today_tile_hl.png */,
+				E16365DC1565148E006477C9 /* schedule_month_today_tile.png */,
+				E16365CF156511F2006477C9 /* schedule_month_left_arrow.png */,
+				E16365D0156511F2006477C9 /* schedule_month_left_arrow@2x.png */,
+				E16365E51565177F006477C9 /* schedule_month_right_arrow.png */,
+				E16365E615651780006477C9 /* schedule_month_right_arrow@2x.png */,
+				E16365CC156510B9006477C9 /* schedule_month_view_shadow.png */,
+				E16365E3156516BA006477C9 /* schedule_month_view_shadow@2x.png */,
+				E16365C71564F7EC006477C9 /* schedule_month_top_bar_bg.png */,
+				E16365C81564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png */,
 				E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */,
 				E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */,
 				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
@@ -1988,8 +2022,21 @@
 				E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */,
 				E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */,
 				E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */,
-				E16365C41564CC5E006477C9 /* TapkuLibrary.bundle in Resources */,
 				E16365C61564D924006477C9 /* ScheduleMonthTableViewController.xib in Resources */,
+				E16365C91564F7EC006477C9 /* schedule_month_top_bar_bg.png in Resources */,
+				E16365CA1564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png in Resources */,
+				E16365CE156510BA006477C9 /* schedule_month_view_shadow.png in Resources */,
+				E16365D3156511F3006477C9 /* schedule_month_left_arrow.png in Resources */,
+				E16365D4156511F3006477C9 /* schedule_month_left_arrow@2x.png in Resources */,
+				E16365DD1565148E006477C9 /* schedule_month_gray_tile.png in Resources */,
+				E16365DE1565148E006477C9 /* schedule_month_tile_hl.png in Resources */,
+				E16365DF1565148E006477C9 /* schedule_month_tile_hl@2x.png in Resources */,
+				E16365E01565148E006477C9 /* schedule_month_tile.png in Resources */,
+				E16365E11565148E006477C9 /* schedule_month_today_tile_hl.png in Resources */,
+				E16365E21565148E006477C9 /* schedule_month_today_tile.png in Resources */,
+				E16365E4156516BA006477C9 /* schedule_month_view_shadow@2x.png in Resources */,
+				E16365E715651780006477C9 /* schedule_month_right_arrow.png in Resources */,
+				E16365E815651780006477C9 /* schedule_month_right_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2111,7 +2158,6 @@
 				E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */,
 				E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */,
 				E16365B01564CA37006477C9 /* TKCalendarDayViewController.m in Sources */,
-				E16365B11564CA37006477C9 /* TKCalendarMonthTableViewController.m in Sources */,
 				E16365B21564CA37006477C9 /* TKCalendarMonthView.m in Sources */,
 				E16365B31564CA37006477C9 /* TKCalendarMonthViewController.m in Sources */,
 				E16365BC1564CBDC006477C9 /* TKGlobal.m in Sources */,

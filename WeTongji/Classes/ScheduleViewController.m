@@ -195,7 +195,7 @@ typedef enum {
     vc.view.frame = frame;
     self.monthViewController = vc;
     vc.tableViewController.delegate = self;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.view insertSubview:vc.view aboveSubview:self.tabBarView];
 }
 
 - (void)clearCurrentTabBarSubViewController {

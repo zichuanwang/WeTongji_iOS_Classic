@@ -123,6 +123,7 @@
 
 
 #pragma mark -
+
 @interface TKCalendarMonthTiles : UIView {
 	
 	id target;
@@ -141,6 +142,7 @@
 	UIImageView *selectedImageView;
 	BOOL startOnSunday;
 }
+
 @property (strong,nonatomic) NSDate *monthDate;
 
 - (id) initWithMonth:(NSDate*)date marks:(NSArray*)marks startDayOnSunday:(BOOL)sunday;
@@ -284,21 +286,21 @@
 	today = dateInfo.month == todayInfo.month && dateInfo.year == todayInfo.year ? todayInfo.day : -5;
 	
 	int preDayCnt = [prev daysBetweenDate:monthDate];		
-	if(firstWeekday>1 && sunday){
+	if(firstWeekday > 1 && sunday) {
 		firstOfPrev = preDayCnt - firstWeekday+2;
 		lastOfPrev = preDayCnt;
-	}else if(!sunday && firstWeekday != 2){
+	} else if(!sunday && firstWeekday != 2) {
 		
-		if(firstWeekday ==1){
+		if(firstWeekday == 1) {
 			firstOfPrev = preDayCnt - 5;
-		}else{
-			firstOfPrev = preDayCnt - firstWeekday+3;
+		} else {
+			firstOfPrev = preDayCnt - firstWeekday + 3;
 		}
 		lastOfPrev = preDayCnt;
 	}
 	
 	
-	self.frame = CGRectMake(0, 1.0, 320.0f, h+1);
+	self.frame = CGRectMake(0, 1, 320.0f, h + 1);
 	
 	[self.selectedImageView addSubview:self.currentDay];
 	[self.selectedImageView addSubview:self.dot];
@@ -343,26 +345,26 @@
 	
 	
 }
-- (void) drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect {
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	UIImage *tile = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Date Tile.png")];
+	UIImage *tile = [UIImage imageNamed:@"schedule_month_tile"];
 	CGRect r = CGRectMake(0, 0, 46, 44);
 	CGContextDrawTiledImage(context, r, tile.CGImage);
 	
 	if(today > 0){
 		int pre = firstOfPrev > 0 ? lastOfPrev - firstOfPrev + 1 : 0;
-		int index = today +  pre-1;
+		int index = today + pre - 1;
 		CGRect r =[self rectForCellAtIndex:index];
 		r.origin.y -= 7;
-		[[UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Today Tile.png")] drawInRect:r];
+		[[UIImage imageNamed:@"schedule_month_today_tile"] drawInRect:r];
 	}
 	
 	int index = 0;
 	
 	UIFont *font = [UIFont boldSystemFontOfSize:dateFontSize];
 	UIFont *font2 =[UIFont boldSystemFontOfSize:dotFontSize];
-	UIColor *color = [UIColor grayColor];
+	UIColor *color = [UIColor colorWithRed:152/255. green:161/255. blue:171/255. alpha:1];
 	
 	if(firstOfPrev>0){
 		[color set];
@@ -377,9 +379,9 @@
 	}
 	
 	
-	color = [UIColor colorWithRed:59/255. green:73/255. blue:88/255. alpha:1];
+	color = [UIColor colorWithRed:73/255. green:90/255. blue:109/255. alpha:1];
 	[color set];
-	for(int i=1; i <= daysInMonth; i++){
+	for(int i = 1; i <= daysInMonth; i++){
 		
 		r = [self rectForCellAtIndex:index];
 		if(today == i) [[UIColor whiteColor] set];
@@ -392,7 +394,9 @@
 		index++;
 	}
 	
-	[[UIColor grayColor] set];
+	color = [UIColor colorWithRed:152/255. green:161/255. blue:171/255. alpha:1];
+	[color set];
+
 	int i = 1;
 	while(index % 7 != 0){
 		r = [self rectForCellAtIndex:index] ;
@@ -407,7 +411,7 @@
 	
 }
 
-- (void) selectDay:(int)day{
+- (void)selectDay:(int)day{
 	
 	int pre = firstOfPrev < 0 ?  0 : lastOfPrev - firstOfPrev + 1;
 	
@@ -418,16 +422,15 @@
 	selectedDay = day;
 	selectedPortion = 1;
 	
-	if(day == today)
-    {
+	if(day == today) {
         self.dot.shadowOffset = CGSizeMake(0, 1);
         self.currentDay.shadowOffset = CGSizeMake(0, 1);
-		self.selectedImageView.image = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Today Selected Tile.png")];
+		self.selectedImageView.image = [UIImage imageNamed:@"schedule_month_today_tile_hl"];
 		markWasOnToday = YES;
 	} else if(markWasOnToday){
         self.dot.shadowOffset = CGSizeMake(0, -1);
         self.currentDay.shadowOffset = CGSizeMake(0, -1);
-		self.selectedImageView.image = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Date Tile Selected.png")];
+		self.selectedImageView.image = [UIImage imageNamed:@"schedule_month_tile_hl"];
 		markWasOnToday = NO;
 	}
 	
@@ -443,7 +446,7 @@
 		}
 		
 		
-	}else{
+	} else {
 		[self.dot removeFromSuperview];
 	}
 	
@@ -453,15 +456,11 @@
 	}
 	
 	CGRect r = self.selectedImageView.frame;
-	r.origin.x = (column*46);
-	r.origin.y = (row*44)-1;
+	r.origin.x = (column * 46);
+	r.origin.y = (row * 44) - 1;
 	self.selectedImageView.frame = r;
-	
-	
-	
-	
 }
-- (NSDate*) dateSelected{
+- (NSDate*)dateSelected {
 	if(selectedDay < 1 || selectedPortion != 1) return nil;
 	
 	TKDateInformation info = [monthDate dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
@@ -470,36 +469,36 @@
 	info.second = 0;
 	info.day = selectedDay;
 	NSDate *d = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-	
-		
-	
 	return d;
-	
 }
 
 
-- (void) reactToTouch:(UITouch*)touch down:(BOOL)down{
+- (void)reactToTouch:(UITouch*)touch down:(BOOL)down{
 	
 	CGPoint p = [touch locationInView:self];
-	if(p.y > self.bounds.size.height || p.y < 0) return;
+	if(p.y > self.bounds.size.height || p.y < 0) 
+        return;
 	
 	int column = p.x / 46, row = p.y / 44;
 	int day = 1, portion = 0;
 	
-	if(row == (int) (self.bounds.size.height / 44)) row --;
+	if(row == (int) (self.bounds.size.height / 44)) 
+        row--;
 	
 	int fir = firstWeekday - 1;
 	if(!startOnSunday && fir == 0) fir = 7;
 	if(!startOnSunday) fir--;
 	
 	
-	if(row==0 && column < fir){
+	if(row == 0 && column < fir) {
 		day = firstOfPrev + column;
-	}else{
+	} else {
 		portion = 1;
-		day = row * 7 + column  - firstWeekday+2;
-		if(!startOnSunday) day++;
-		if(!startOnSunday && fir==6) day -= 7;
+		day = row * 7 + column - firstWeekday + 2;
+		if(!startOnSunday) 
+            day++;
+		if(!startOnSunday && fir == 6) 
+            day -= 7;
 
 	}
 	if(portion > 0 && day > daysInMonth){
@@ -509,17 +508,17 @@
 	
 	
 	if(portion != 1){
-		self.selectedImageView.image = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Date Tile Gray.png")];
+		self.selectedImageView.image = [UIImage imageNamed:@"schedule_month_gray_tile"];
 		markWasOnToday = YES;
-	}else if(portion==1 && day == today){
+	} else if(portion == 1 && day == today){
 		self.currentDay.shadowOffset = CGSizeMake(0, 1);
 		self.dot.shadowOffset = CGSizeMake(0, 1);
-		self.selectedImageView.image = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Today Selected Tile.png")];
+		self.selectedImageView.image = [UIImage imageNamed:@"schedule_month_today_tile_hl"];
 		markWasOnToday = YES;
-	}else if(markWasOnToday){
+	} else if(markWasOnToday) {
 		self.dot.shadowOffset = CGSizeMake(0, -1);
 		self.currentDay.shadowOffset = CGSizeMake(0, -1);
-		self.selectedImageView.image = [UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Date Tile Selected.png")];
+		self.selectedImageView.image = [UIImage imageNamed:@"schedule_month_tile_hl"];
 		markWasOnToday = NO;
 	}
 	
@@ -534,19 +533,14 @@
 	}else{
 		[self.dot removeFromSuperview];
 	}
-	
-
-	
-	
+		
 	CGRect r = self.selectedImageView.frame;
 	r.origin.x = (column*46);
 	r.origin.y = (row*44)-1;
 	self.selectedImageView.frame = r;
 	
 	if(day == selectedDay && selectedPortion == portion) return;
-	
-	
-	
+
 	if(portion == 1){
 		selectedDay = day;
 		selectedPortion = portion;
@@ -570,7 +564,7 @@
 	[self reactToTouch:[touches anyObject] down:YES];
 }
 
-- (UILabel *) currentDay{
+- (UILabel *)currentDay{
 	if(currentDay==nil){
 		CGRect r = self.selectedImageView.bounds;
 		r.origin.y -= 2;
@@ -585,7 +579,7 @@
 	}
 	return currentDay;
 }
-- (UILabel *) dot{
+- (UILabel *)dot{
 	if(dot==nil){
 		CGRect r = self.selectedImageView.bounds;
 		r.origin.y += 29;
@@ -602,9 +596,9 @@
 	}
 	return dot;
 }
-- (UIImageView *) selectedImageView{
+- (UIImageView *)selectedImageView{
 	if(selectedImageView==nil){
-		selectedImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamedTK:@"TapkuLibrary.bundle/Images/calendar/Month Calendar Date Tile Selected"]];
+		selectedImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"schedule_month_tile_hl"]];
 	}
 	return selectedImageView;
 }
@@ -704,11 +698,11 @@
 		[self addSubview:label];
 		label.text = s;
 		label.textAlignment = UITextAlignmentCenter;
-		label.shadowColor = [UIColor whiteColor];
+		label.shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5f];
 		label.shadowOffset = CGSizeMake(0, 1);
-		label.font = [UIFont systemFontOfSize:11];
+		label.font = [UIFont systemFontOfSize:10];
 		label.backgroundColor = [UIColor clearColor];
-		label.textColor = [UIColor colorWithRed:59/255. green:73/255. blue:88/255. alpha:1];
+		label.textColor = [UIColor colorWithRed:84/255. green:84/255. blue:84/255. alpha:1];
 		i++;
 	}
 	
@@ -939,13 +933,13 @@
 #pragma mark Properties
 - (UIImageView *) topBackground{
 	if(topBackground==nil){
-		topBackground = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Grid Top Bar.png")]];
+		topBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"schedule_month_top_bar_bg"]];
 	}
 	return topBackground;
 }
 - (UILabel *) monthYear{
 	if(monthYear==nil){
-		monthYear = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tileBox.frame.size.width, 32)];
+		monthYear = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tileBox.frame.size.width, 28)];
 		
 		monthYear.textAlignment = UITextAlignmentCenter;
 		monthYear.backgroundColor = [UIColor clearColor];
@@ -961,8 +955,8 @@
 		leftArrow = [UIButton buttonWithType:UIButtonTypeCustom];
 		leftArrow.tag = 0;
 		[leftArrow addTarget:self action:@selector(changeMonth:) forControlEvents:UIControlEventTouchUpInside];
-		[leftArrow setImage:[UIImage imageNamedTK:@"TapkuLibrary.bundle/Images/calendar/Month Calendar Left Arrow"] forState:0];
-		leftArrow.frame = CGRectMake(0, -3, 48, 38);
+		[leftArrow setImage:[UIImage imageNamed:@"schedule_month_left_arrow"] forState:0];
+		leftArrow.frame = CGRectMake(0, -3, 48, 36);
 	}
 	return leftArrow;
 }
@@ -971,8 +965,8 @@
 		rightArrow = [UIButton buttonWithType:UIButtonTypeCustom];
 		rightArrow.tag = 1;
 		[rightArrow addTarget:self action:@selector(changeMonth:) forControlEvents:UIControlEventTouchUpInside];
-		rightArrow.frame = CGRectMake(320-45, -3, 48, 38);
-		[rightArrow setImage:[UIImage imageNamedTK:@"TapkuLibrary.bundle/Images/calendar/Month Calendar Right Arrow"] forState:0];
+		rightArrow.frame = CGRectMake(320 - 45, -3, 48, 36);
+		[rightArrow setImage:[UIImage imageNamed:@"schedule_month_right_arrow"] forState:0];
 	}
 	return rightArrow;
 }
@@ -983,9 +977,8 @@
 	return tileBox;
 }
 - (UIImageView *) shadow{
-	if(shadow==nil){
-		shadow = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:TKBUNDLE(@"TapkuLibrary.bundle/Images/calendar/Month Calendar Shadow.png")]];
-        shadow.alpha = 0.3f;
+	if(shadow == nil){
+		shadow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"schedule_month_view_shadow"]];
 	}
 	return shadow;
 }
