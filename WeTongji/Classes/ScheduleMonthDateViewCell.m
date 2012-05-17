@@ -22,6 +22,7 @@
         self.label.textAlignment = UITextAlignmentCenter;
         self.label.adjustsFontSizeToFitWidth = YES;
         self.label.text = @"";
+        self.label.backgroundColor = [UIColor clearColor];
         [self addSubview:self.label];
         
     }
@@ -34,6 +35,10 @@
 
 - (void)setGray{
     self.label.textColor = [UIColor grayColor];
+}
+
+- (void)setSelected{
+    self.backgroundColor = [UIColor grayColor];
 }
 
 /*

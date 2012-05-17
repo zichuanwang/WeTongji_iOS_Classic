@@ -14,5 +14,6 @@
 
 - (void)setDay:(int)day;
 - (void)setGray;
+- (void)setSelected;
 
 @end

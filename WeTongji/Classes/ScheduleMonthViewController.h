@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScheduleMonthViewController : UIViewController
+@interface ScheduleMonthViewController : UIViewController<UITableViewDelegate, 
+                            UITableViewDataSource>
 
 @property (nonatomic, strong) NSDate *currentDate;
+@property (nonatomic, strong) NSDate *selectDate;
 
 @property CFGregorianDate currentSelectDate;
 @property CFGregorianDate lastMonth;

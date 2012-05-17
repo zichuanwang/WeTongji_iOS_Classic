@@ -9,26 +9,28 @@
 #import "ScheduleMonthViewController.h"
 #import "ScheduleMonthDateViewCell.h"
 
-#define HEADER_HEIGHT 50
-#define MONTH_DATE_CELL_HEIGHT 45
+#define MONTH_DATE_CELL_HEIGHT 44
 
 @interface ScheduleMonthViewController ()
 
 @property (nonatomic, strong) IBOutlet UIView *scheduleMonthHeadView;
 @property (nonatomic, strong) IBOutlet UIView *scheduleMonthDateView;
 @property (nonatomic, strong) IBOutlet UIView *scheduleMonthEventView;
+@property (nonatomic, strong) IBOutlet UITableView *scheduleMonthEventTableView;
 
 @end
 
 @implementation ScheduleMonthViewController
 
 @synthesize currentDate = _currentDate;
+@synthesize selectDate = _selectDate;
 @synthesize currentSelectDate = _currentSelectDate;
 @synthesize lastMonth = _lastMonth;
 
 @synthesize scheduleMonthDateView = _scheduleMonthDateView;
 @synthesize scheduleMonthHeadView = _scheduleMonthHeadView;
 @synthesize scheduleMonthEventView = _scheduleMonthEventView;
+@synthesize scheduleMonthEventTableView = _scheduleMonthEventTableView;
 @synthesize headTitle = _headTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,6 +47,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.currentDate = [NSDate date]; 
+    self.selectDate = self.currentDate;
     [self configureHeadView];
     [self configureDateView];
     [self configureEventView];
@@ -58,8 +61,6 @@
 }
 
 - (void)configureHeadView{
-    self.scheduleMonthHeadView.frame = CGRectMake(0, 0, 320, HEADER_HEIGHT);
-    
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |  
     NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;  
@@ -71,14 +72,7 @@
 }
 
 - (void)configureDateView{
-    self.scheduleMonthDateView.frame = CGRectMake(0, 60, 320, 46*[self getLineNumberOfMonth:self.currentDate]);
-    NSLog(@"%f",self.scheduleMonthDateView.frame.size.height);
-    for (int i=0; i<[self getLineNumberOfMonth:self.currentDate]; i++) {
-        for(int j=0;j<7;j++){
-            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(j*46, i*46, 46, 46)];
-            [self.scheduleMonthDateView addSubview:tmpCell];
-        }
-    }
+    self.scheduleMonthDateView.frame = CGRectMake(0, 48, 320, MONTH_DATE_CELL_HEIGHT*[self getLineNumberOfMonth:self.currentDate]);
     
     int dayCount=[self getDayCountOfMonth:self.currentDate];
 	int day=0;
@@ -86,6 +80,12 @@
 	int y=0;
 	int curr_Weekday=[self getMonthWeekday:self.currentDate];
     int lastWeekday = [self getLastMonthWeekday:self.currentDate];
+    
+    NSDate *today = [NSDate date];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit;
+    NSDateComponents *todayDate = [cal components:unitFlags fromDate:today];
+    NSDateComponents *currentDate = [cal components:unitFlags fromDate:self.currentDate];
     
     //draw the dates of current month
 	for(int i=1;i<dayCount+1;i++)
@@ -97,17 +97,23 @@
         }else {
             y =day / 7 - 1;
         }
+        NSLog(@"today: %d", [todayDate day]);
+        NSLog(@"current: %d",[currentDate day]);
 		NSString *date=[[NSString alloc] initWithFormat:@"%2d",i];
-        ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(x*46, y*46, 46, 46)];
+        ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(x*46, y*MONTH_DATE_CELL_HEIGHT, 46, MONTH_DATE_CELL_HEIGHT)];
         [tmpCell setDay:[date intValue]];
         [self.scheduleMonthDateView addSubview:tmpCell];
+        if ([currentDate day] == [date intValue] && [todayDate month] ==  [currentDate month] &&
+            [todayDate year] == [currentDate year]) {
+            [tmpCell setSelected];
+        }
 	}
     
     //draw the dates of last month
     int dayCountsOfLastMonth = [self getDayCountsOfLastMonth:self.currentDate];
     if (curr_Weekday != 7) {
         for (int i=0; i<curr_Weekday; i++) {
-            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(i*46, 0, 46, 36)];
+            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake(i*46, 0, 46, MONTH_DATE_CELL_HEIGHT)];
             [tmpCell setDay:dayCountsOfLastMonth-(curr_Weekday-i-1)];
             [self.scheduleMonthDateView addSubview:tmpCell];
             [tmpCell setGray];
@@ -117,7 +123,7 @@
     //draw the dates of next month
     if (lastWeekday != 6) {
         for (int i=0; i<6-lastWeekday; i++) {
-            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake((lastWeekday+1+i)*46, ([self getLineNumberOfMonth:self.currentDate]-1)*46, 46, 46)];
+            ScheduleMonthDateViewCell *tmpCell = [[ScheduleMonthDateViewCell alloc] initWithFrame:CGRectMake((lastWeekday+1+i)*46, ([self getLineNumberOfMonth:self.currentDate]-1)*MONTH_DATE_CELL_HEIGHT, 46, MONTH_DATE_CELL_HEIGHT)];
             [tmpCell setDay:(i+1)];
             [self.scheduleMonthDateView addSubview:tmpCell];
             [tmpCell setGray];
@@ -126,10 +132,16 @@
 }
 
 - (void)configureEventView{
-    self.scheduleMonthEventView.frame = CGRectMake(0, 60+46*[self getLineNumberOfMonth:self.currentDate], 320, 400-46*[self getLineNumberOfMonth:self.currentDate]);
-    NSLog(@"y:%f",self.scheduleMonthEventView.frame.origin.y);
-    NSLog(@"height:%f",self.scheduleMonthEventView.frame.size.height);
+    self.scheduleMonthEventView.frame = CGRectMake(0, 48+MONTH_DATE_CELL_HEIGHT*[self getLineNumberOfMonth:self.currentDate], 320, 400-MONTH_DATE_CELL_HEIGHT*[self getLineNumberOfMonth:self.currentDate]);
     self.scheduleMonthEventView.backgroundColor = [UIColor grayColor];
+    
+    NSLog(@"%d",MONTH_DATE_CELL_HEIGHT*[self getLineNumberOfMonth:self.currentDate]);
+    self.scheduleMonthEventTableView.frame = CGRectMake(0, 0, 320, 412 - MONTH_DATE_CELL_HEIGHT*[self getLineNumberOfMonth:self.currentDate]);
+    
+}
+
+- (void)selectDay{
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -214,6 +226,16 @@
     NSDate *resDate  = [cal dateFromComponents:dd];
     
     return [self getDayCountOfMonth:resDate];
+}
+
+#pragma mark
+#pragma mark --- UITableView delegates
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return Nil;
 }
 
 #pragma mark
