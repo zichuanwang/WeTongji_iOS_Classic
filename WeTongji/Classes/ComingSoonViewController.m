@@ -17,6 +17,8 @@
 @synthesize mainBgView = _mainBgView;
 @synthesize placeHolderImageView = _placeHolderImageView;
 @synthesize scrollView = _scrollView;
+@synthesize comingSoonLabel = _comingSoonLabel;
+@synthesize descriptionLabel = _descriptionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +45,8 @@
     self.mainBgView = nil;
     self.placeHolderImageView = nil;
     self.scrollView = nil;
+    self.comingSoonLabel = nil;
+    self.descriptionLabel = nil;
 }
 
 #pragma mark -

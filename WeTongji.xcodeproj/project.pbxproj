@@ -241,6 +241,10 @@
 		E1B609A6154C67BE00F659F7 /* EGOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */; };
 		E1C1191A15654FFE00FCB3F8 /* coming_soon_treize.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */; };
 		E1C1191B15654FFE00FCB3F8 /* coming_soon_treize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */; };
+		E1C119211565580000FCB3F8 /* coming_soon_circles.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191D1565580000FCB3F8 /* coming_soon_circles.png */; };
+		E1C119221565580000FCB3F8 /* coming_soon_circles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191E1565580000FCB3F8 /* coming_soon_circles@2x.png */; };
+		E1C119231565580000FCB3F8 /* coming_soon_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191F1565580000FCB3F8 /* coming_soon_mail.png */; };
+		E1C119241565580000FCB3F8 /* coming_soon_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C119201565580000FCB3F8 /* coming_soon_mail@2x.png */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
 		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
 		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
@@ -702,6 +706,10 @@
 		E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGOTableViewController.m; path = Classes/EGOTableViewController.m; sourceTree = "<group>"; };
 		E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_treize.png; sourceTree = "<group>"; };
 		E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon_treize@2x.png"; sourceTree = "<group>"; };
+		E1C1191D1565580000FCB3F8 /* coming_soon_circles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_circles.png; sourceTree = "<group>"; };
+		E1C1191E1565580000FCB3F8 /* coming_soon_circles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon_circles@2x.png"; sourceTree = "<group>"; };
+		E1C1191F1565580000FCB3F8 /* coming_soon_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_mail.png; sourceTree = "<group>"; };
+		E1C119201565580000FCB3F8 /* coming_soon_mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon_mail@2x.png"; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1043,6 +1051,10 @@
 			children = (
 				E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */,
 				E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */,
+				E1C1191D1565580000FCB3F8 /* coming_soon_circles.png */,
+				E1C1191E1565580000FCB3F8 /* coming_soon_circles@2x.png */,
+				E1C1191F1565580000FCB3F8 /* coming_soon_mail.png */,
+				E1C119201565580000FCB3F8 /* coming_soon_mail@2x.png */,
 			);
 			name = coming_soon;
 			sourceTree = "<group>";
@@ -2109,6 +2121,10 @@
 				E14742011565433B00812C9D /* ComingSoonViewController.xib in Resources */,
 				E1C1191A15654FFE00FCB3F8 /* coming_soon_treize.png in Resources */,
 				E1C1191B15654FFE00FCB3F8 /* coming_soon_treize@2x.png in Resources */,
+				E1C119211565580000FCB3F8 /* coming_soon_circles.png in Resources */,
+				E1C119221565580000FCB3F8 /* coming_soon_circles@2x.png in Resources */,
+				E1C119231565580000FCB3F8 /* coming_soon_mail.png in Resources */,
+				E1C119241565580000FCB3F8 /* coming_soon_mail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

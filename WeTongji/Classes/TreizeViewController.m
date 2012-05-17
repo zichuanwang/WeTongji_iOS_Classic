@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
-    [self configurePlaceHolderImage];
+    [self configurePlaceHolder];
 }
 
 - (void)viewDidUnload
@@ -49,8 +49,10 @@
     self.navigationItem.rightBarButtonItem = nextButton;
 }
 
-- (void)configurePlaceHolderImage {
+- (void)configurePlaceHolder {
     self.placeHolderImageView.image = [UIImage imageNamed:@"coming_soon_treize"];
+    self.comingSoonLabel.hidden = YES;
+    self.descriptionLabel.hidden = YES;
 }
 
 #pragma mark -

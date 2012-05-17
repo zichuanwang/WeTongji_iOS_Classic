@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configureNavBar];
-    [self configurePlaceHolderImage];
+    [self configurePlaceHolder];
 }
 
 - (void)viewDidUnload
@@ -46,7 +46,8 @@
     self.navigationItem.titleView = titleLabel;
 }
 
-- (void)configurePlaceHolderImage {
-    self.placeHolderImageView.image = [UIImage imageNamed:@"coming_soon_treize"];
+- (void)configurePlaceHolder {
+    self.placeHolderImageView.image = [UIImage imageNamed:@"coming_soon_circles"];
+    self.descriptionLabel.text = @"群发通知 交换名片 关注好友动态";
 }
 @end

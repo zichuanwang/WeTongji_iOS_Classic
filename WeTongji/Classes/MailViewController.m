@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self configureNavBar];
-    [self configurePlaceHolderImage];
+    [self configurePlaceHolder];
 }
 
 - (void)viewDidUnload
@@ -45,8 +45,9 @@
     self.navigationItem.titleView = titleLabel;
 }
 
-- (void)configurePlaceHolderImage {
-    self.placeHolderImageView.image = [UIImage imageNamed:@"coming_soon_treize"];
+- (void)configurePlaceHolder {
+    self.placeHolderImageView.image = [UIImage imageNamed:@"coming_soon_mail"];
+    self.descriptionLabel.text = @"整合@tongji.edu.cn电子邮箱";
 }
 
 @end

@@ -14,5 +14,7 @@
 @property (nonatomic, strong) IBOutlet UIView *mainBgView;
 @property (nonatomic, strong) IBOutlet UIImageView *placeHolderImageView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UILabel *comingSoonLabel;
+@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 
 @end
