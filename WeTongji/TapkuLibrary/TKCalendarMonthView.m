@@ -939,7 +939,7 @@
 }
 - (UILabel *) monthYear{
 	if(monthYear==nil){
-		monthYear = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tileBox.frame.size.width, 28)];
+		monthYear = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tileBox.frame.size.width, 30)];
 		
 		monthYear.textAlignment = UITextAlignmentCenter;
 		monthYear.backgroundColor = [UIColor clearColor];
@@ -956,7 +956,7 @@
 		leftArrow.tag = 0;
 		[leftArrow addTarget:self action:@selector(changeMonth:) forControlEvents:UIControlEventTouchUpInside];
 		[leftArrow setImage:[UIImage imageNamed:@"schedule_month_left_arrow"] forState:0];
-		leftArrow.frame = CGRectMake(0, -3, 48, 36);
+		leftArrow.frame = CGRectMake(0, -3, 48, 37);
 	}
 	return leftArrow;
 }
@@ -965,7 +965,7 @@
 		rightArrow = [UIButton buttonWithType:UIButtonTypeCustom];
 		rightArrow.tag = 1;
 		[rightArrow addTarget:self action:@selector(changeMonth:) forControlEvents:UIControlEventTouchUpInside];
-		rightArrow.frame = CGRectMake(320 - 45, -3, 48, 36);
+		rightArrow.frame = CGRectMake(320 - 45, -3, 48, 37);
 		[rightArrow setImage:[UIImage imageNamed:@"schedule_month_right_arrow"] forState:0];
 	}
 	return rightArrow;

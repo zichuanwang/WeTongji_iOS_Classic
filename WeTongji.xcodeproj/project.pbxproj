@@ -1224,7 +1224,6 @@
 				E1917733150785ED009FB941 /* MainWindow.xib */,
 				E1C877A61505FB5600592954 /* Classes */,
 				E1C877561505F41700592954 /* Supporting Files */,
-				E16365A01564CA37006477C9 /* TapkuLibrary */,
 				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 			);
 			path = WeTongji;
@@ -1573,6 +1572,7 @@
 		E1DF6FF71539B8C8001C60EA /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E16365A01564CA37006477C9 /* TapkuLibrary */,
 				E135F7F3155E8B35008494D8 /* ScheduleDayTableViewCell.h */,
 				E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */,
 				E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */,

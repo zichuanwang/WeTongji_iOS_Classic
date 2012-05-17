@@ -10,7 +10,7 @@
 #import "NSString+Addition.h"
 
 #define DAY_TIME_INTERVAL   (60 * 60 * 24)
-#define HOUR_TIME_INTERVAL  (60 * 24)
+#define HOUR_TIME_INTERVAL  (60 * 60)
 
 @interface ScheduleMonthViewController ()
 
@@ -87,25 +87,28 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.tableViewController.managedObjectContext]];
     NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.tableViewController.currentUser.schedule];
-    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", startDate];
-    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"end_time <= %@", lastDate];
+    NSTimeInterval timeIntervalOffset = -8 * HOUR_TIME_INTERVAL;
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [startDate dateByAddingTimeInterval:timeIntervalOffset]];
+    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [lastDate dateByAddingTimeInterval:timeIntervalOffset]];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, beginPredicate, endPredicate, nil]]];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
-    [request setSortDescriptors:descriptors];
     
     NSArray *items = [self.tableViewController.managedObjectContext executeFetchRequest:request error:NULL];
     NSMutableArray *result = [NSMutableArray array];
     NSTimeInterval interval = [lastDate timeIntervalSinceDate:startDate]; 
     int dayCount = interval / DAY_TIME_INTERVAL + 1;
-    NSTimeInterval timeIntervalOffset = -8 * HOUR_TIME_INTERVAL;
+    
     for(int i = 0; i < dayCount ; i++) {
-        NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * i + timeIntervalOffset]];  
-        NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"end_time <= %@", [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * (i + 1) + timeIntervalOffset]];
+        NSDate *beginDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * i + timeIntervalOffset];
+        NSDate *endDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * (i + 1) + timeIntervalOffset];
+        NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", beginDate];
+        NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", endDate];
         BOOL hasEvent = NO;
         NSArray *filteredItmes = [items filteredArrayUsingPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:beginPredicate, endPredicate, nil]]];
         if(filteredItmes.count > 0)
             hasEvent = YES;
+        else {
+            NSLog(@"begin:%@, end:%@", [NSString yearMonthDayWeekTimeConvertFromDate:beginDate], [NSString yearMonthDayWeekTimeConvertFromDate:endDate]);
+        }
         [result addObject:[NSNumber numberWithBool:hasEvent]];
     }
     return result;
