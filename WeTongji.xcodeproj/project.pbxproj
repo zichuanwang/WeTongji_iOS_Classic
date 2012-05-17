@@ -48,6 +48,11 @@
 		E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */; };
 		E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */; };
 		E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */; };
+		E14742001565433B00812C9D /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E14741FE1565433B00812C9D /* ComingSoonViewController.m */; };
+		E14742011565433B00812C9D /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14741FF1565433B00812C9D /* ComingSoonViewController.xib */; };
+		E1474209156544BF00812C9D /* CirclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1474207156544BF00812C9D /* CirclesViewController.m */; };
+		E147420E156544D700812C9D /* TreizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E147420C156544D700812C9D /* TreizeViewController.m */; };
+		E1474212156544EB00812C9D /* MailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1474211156544EB00812C9D /* MailViewController.m */; };
 		E149830B15343BCB00734341 /* WTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E149830A15343BCA00734341 /* WTButton.m */; };
 		E149830E15343D4A00734341 /* dock_btn_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830D15343D4A00734341 /* dock_btn_collect@2x.png */; };
 		E14983101534497300734341 /* dock_btn_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E149830F1534497300734341 /* dock_btn_mail@2x.png */; };
@@ -234,6 +239,8 @@
 		E1B0BC451507D27D0085D9AB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B0BC441507D27D0085D9AB /* Icon@2x.png */; };
 		E1B609A5154C67BC00F659F7 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B609A2154C65BD00F659F7 /* EGORefreshTableHeaderView.m */; };
 		E1B609A6154C67BE00F659F7 /* EGOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */; };
+		E1C1191A15654FFE00FCB3F8 /* coming_soon_treize.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */; };
+		E1C1191B15654FFE00FCB3F8 /* coming_soon_treize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */; };
 		E1C8774E1505F41700592954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774D1505F41700592954 /* UIKit.framework */; };
 		E1C877501505F41700592954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C8774F1505F41700592954 /* Foundation.framework */; };
 		E1C877521505F41700592954 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C877511505F41700592954 /* CoreGraphics.framework */; };
@@ -437,6 +444,15 @@
 		E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleDayTableViewCell.xib; path = Classes/ScheduleDayTableViewCell.xib; sourceTree = "<group>"; };
 		E135F7FB155E92CB008494D8 /* WTTableViewHeaderFooterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTTableViewHeaderFooterFactory.h; path = Classes/WTTableViewHeaderFooterFactory.h; sourceTree = "<group>"; };
 		E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTTableViewHeaderFooterFactory.m; path = Classes/WTTableViewHeaderFooterFactory.m; sourceTree = "<group>"; };
+		E14741FD1565433B00812C9D /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComingSoonViewController.h; path = Classes/ComingSoonViewController.h; sourceTree = "<group>"; };
+		E14741FE1565433B00812C9D /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComingSoonViewController.m; path = Classes/ComingSoonViewController.m; sourceTree = "<group>"; };
+		E14741FF1565433B00812C9D /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComingSoonViewController.xib; path = Classes/ComingSoonViewController.xib; sourceTree = "<group>"; };
+		E1474206156544BF00812C9D /* CirclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CirclesViewController.h; path = Classes/CirclesViewController.h; sourceTree = "<group>"; };
+		E1474207156544BF00812C9D /* CirclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesViewController.m; path = Classes/CirclesViewController.m; sourceTree = "<group>"; };
+		E147420B156544D700812C9D /* TreizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreizeViewController.h; path = Classes/TreizeViewController.h; sourceTree = "<group>"; };
+		E147420C156544D700812C9D /* TreizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreizeViewController.m; path = Classes/TreizeViewController.m; sourceTree = "<group>"; };
+		E1474210156544EB00812C9D /* MailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailViewController.h; path = Classes/MailViewController.h; sourceTree = "<group>"; };
+		E1474211156544EB00812C9D /* MailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailViewController.m; path = Classes/MailViewController.m; sourceTree = "<group>"; };
 		E149830915343BCA00734341 /* WTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTButton.h; path = Classes/WTButton.h; sourceTree = "<group>"; };
 		E149830A15343BCA00734341 /* WTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTButton.m; path = Classes/WTButton.m; sourceTree = "<group>"; };
 		E149830D15343D4A00734341 /* dock_btn_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_collect@2x.png"; sourceTree = "<group>"; };
@@ -684,6 +700,8 @@
 		E1B609A2154C65BD00F659F7 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = Classes/EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		E1B609A3154C65BD00F659F7 /* EGOTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EGOTableViewController.h; path = Classes/EGOTableViewController.h; sourceTree = "<group>"; };
 		E1B609A4154C65BD00F659F7 /* EGOTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGOTableViewController.m; path = Classes/EGOTableViewController.m; sourceTree = "<group>"; };
+		E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coming_soon_treize.png; sourceTree = "<group>"; };
+		E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon_treize@2x.png"; sourceTree = "<group>"; };
 		E1C877491505F41700592954 /* WeTongji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTongji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8774D1505F41700592954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1C8774F1505F41700592954 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -983,6 +1001,52 @@
 			name = default;
 			sourceTree = "<group>";
 		};
+		E14741FB1565430C00812C9D /* coming_soon */ = {
+			isa = PBXGroup;
+			children = (
+				E14741FD1565433B00812C9D /* ComingSoonViewController.h */,
+				E14741FE1565433B00812C9D /* ComingSoonViewController.m */,
+				E14741FF1565433B00812C9D /* ComingSoonViewController.xib */,
+			);
+			name = coming_soon;
+			sourceTree = "<group>";
+		};
+		E14742021565448600812C9D /* mail */ = {
+			isa = PBXGroup;
+			children = (
+				E1474210156544EB00812C9D /* MailViewController.h */,
+				E1474211156544EB00812C9D /* MailViewController.m */,
+			);
+			name = mail;
+			sourceTree = "<group>";
+		};
+		E14742031565449600812C9D /* treize */ = {
+			isa = PBXGroup;
+			children = (
+				E147420B156544D700812C9D /* TreizeViewController.h */,
+				E147420C156544D700812C9D /* TreizeViewController.m */,
+			);
+			name = treize;
+			sourceTree = "<group>";
+		};
+		E14742041565449D00812C9D /* circles */ = {
+			isa = PBXGroup;
+			children = (
+				E1474206156544BF00812C9D /* CirclesViewController.h */,
+				E1474207156544BF00812C9D /* CirclesViewController.m */,
+			);
+			name = circles;
+			sourceTree = "<group>";
+		};
+		E147421315654A3800812C9D /* coming_soon */ = {
+			isa = PBXGroup;
+			children = (
+				E1C1191815654FFE00FCB3F8 /* coming_soon_treize.png */,
+				E1C1191915654FFE00FCB3F8 /* coming_soon_treize@2x.png */,
+			);
+			name = coming_soon;
+			sourceTree = "<group>";
+		};
 		E149831715346C0000734341 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1256,6 +1320,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E147421315654A3800812C9D /* coming_soon */,
 				E1DC6446155D3FB100F07C63 /* schedule */,
 				E1D5503C15509D2800068824 /* toast */,
 				E1D387A3154DC801006325E8 /* channel */,
@@ -1464,16 +1529,20 @@
 		E1DF6F981537612E001C60EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E1A1E92B15639F8F00BDEC2E /* course */,
 				E1FA750715615BDF001029B0 /* activity */,
 				E1DF6FF11539B836001C60EA /* channel */,
+				E14742041565449D00812C9D /* circles */,
+				E14741FB1565430C00812C9D /* coming_soon */,
+				E1A1E92B15639F8F00BDEC2E /* course */,
 				E1E4839115488D9700814FA4 /* favorite */,
 				E174A99E153E7FC800E7165A /* login */,
+				E14742021565448600812C9D /* mail */,
 				E1DF6FF01539B801001C60EA /* main */,
 				E1D38784154D45ED006325E8 /* metro */,
 				E174A9D415406D0B00E7165A /* news */,
 				E1DF6FF71539B8C8001C60EA /* schedule */,
 				E168FEBE155542D500BEE141 /* sign_in */,
+				E14742031565449600812C9D /* treize */,
 				E168FEB71555406600BEE141 /* update_user_info */,
 			);
 			name = ViewControllers;
@@ -2037,6 +2106,9 @@
 				E16365E4156516BA006477C9 /* schedule_month_view_shadow@2x.png in Resources */,
 				E16365E715651780006477C9 /* schedule_month_right_arrow.png in Resources */,
 				E16365E815651780006477C9 /* schedule_month_right_arrow@2x.png in Resources */,
+				E14742011565433B00812C9D /* ComingSoonViewController.xib in Resources */,
+				E1C1191A15654FFE00FCB3F8 /* coming_soon_treize.png in Resources */,
+				E1C1191B15654FFE00FCB3F8 /* coming_soon_treize@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2165,6 +2237,10 @@
 				E16365BE1564CBE2006477C9 /* NSDate+TKCategory.m in Sources */,
 				E16365C11564CBFB006477C9 /* UIView+TKCategory.m in Sources */,
 				E16365C21564CC0F006477C9 /* TapDetectingView.m in Sources */,
+				E14742001565433B00812C9D /* ComingSoonViewController.m in Sources */,
+				E1474209156544BF00812C9D /* CirclesViewController.m in Sources */,
+				E147420E156544D700812C9D /* TreizeViewController.m in Sources */,
+				E1474212156544EB00812C9D /* MailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

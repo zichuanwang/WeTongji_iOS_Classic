@@ -18,7 +18,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"ChannelOutlineTableViewController" bundle:nil];;
+    self = [super initWithNibName:@"ChannelOutlineTableViewController" bundle:nil];
     if (self) {
         // Custom initialization
     }

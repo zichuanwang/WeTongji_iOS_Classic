@@ -49,28 +49,27 @@
 			<string>dock_btn_circles</string>
 			<key>kButtonTitle</key>
 			<string>圈子</string>
-			<key>kAlertMessage</key>
-			<string>想要轻松结识同专业、同社团的朋友吗？想要即时了解大牛们的活动安排吗？圈子功能，即将推出。</string>
+			<key>kNibFileName</key>
+			<string>CirclesViewController</string>
             <key>kNeedLogin</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
 			<string>dock_btn_mail</string>
 			<key>kButtonTitle</key>
 			<string>邮箱</string>
-			<key>kAlertMessage</key>
-			<string>同济学子的专属邮箱@tongji.edu.cn即将与微同济无缝整合，敬请期待。</string>
+			<key>kNibFileName</key>
+			<string>MailViewController</string>
             <key>kNeedLogin</key>
-			<true/>
-		</dict>
+			<false/>		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
 			<string>dock_btn_treize</string>
 			<key>kButtonTitle</key>
 			<string>treize</string>
-			<key>kAlertMessage</key>
-			<string>treize来袭！</string>
+			<key>kNibFileName</key>
+			<string>TreizeViewController</string>
             <key>kNeedLogin</key>
 			<false/>
 		</dict>
