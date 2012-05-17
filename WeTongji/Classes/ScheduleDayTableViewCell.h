@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event+Addition.h"
 
 typedef enum {
     EventTypeActivity,
@@ -23,8 +24,6 @@ typedef enum {
 @property (nonatomic, strong) IBOutlet UIView *mainView;
 @property (nonatomic, strong) IBOutlet UILabel *noDataHintLabel;
 
-- (void)setEventType:(EventType)type;
-- (void)setAsNormalCell;
-- (void)setAsTodayTempCell;
+- (void)configureCell:(Event *)event;
 
 @end

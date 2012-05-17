@@ -8,6 +8,9 @@
 //
 
 #import "ScheduleDayTableViewCell.h"
+#import "Course+Addition.h"
+#import "Activity+Addition.h"
+#import "NSString+Addition.h"
 
 @implementation ScheduleDayTableViewCell
 
@@ -60,6 +63,27 @@
     self.mainView.hidden = YES;
     self.noDataHintLabel.hidden = NO;
     self.accessoryType = UITableViewCellAccessoryNone;
+}
+
+- (void)configureCell:(Event *)event {
+    if(event.what != nil) {
+        [self setAsNormalCell];
+        self.whatLabel.text = event.what;
+        self.whenLabel.text = [NSString timeConvertFromDate:event.begin_time];
+        self.whereLabel.text = event.where;
+        if([event isMemberOfClass:[Course class]]) {
+            Course *course = (Course *)event;
+            if([course.require_type isEqualToString:@"必修"]) {
+                [self setEventType:EventTypeRequiredCurriculum];
+            } else {
+                [self setEventType:EventTypeOptionalCurriculum];
+            }
+        } else if([event isMemberOfClass:[Activity class]]) {
+            [self setEventType:EventTypeActivity];
+        }
+    } else {
+        [self setAsTodayTempCell];
+    }
 }
 
 @end

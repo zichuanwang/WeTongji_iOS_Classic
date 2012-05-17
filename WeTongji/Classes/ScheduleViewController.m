@@ -194,6 +194,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.monthViewController = vc;
+    vc.tableViewController.delegate = self;
     [self.view insertSubview:vc.view belowSubview:self.tabBarView];
 }
 
@@ -252,6 +253,8 @@ typedef enum {
 - (IBAction)didClickTodayButton:(UIButton *)sender {
     if(self.currentTabBarSubViewControllerName == DayTabBarViewController) {
         [self.dayViewController didClickTodayButton];
+    } else if(self.currentTabBarSubViewControllerName == MonthTabBarViewController) {
+        [self.monthViewController didClickTodayButton];
     }
 }
 

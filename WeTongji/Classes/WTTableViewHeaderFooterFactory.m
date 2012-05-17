@@ -60,11 +60,15 @@
     return label;
 }
 
-+ (UIView *)getWideWTTableViewFooterWithNoDataHint {
++ (UIView *)getWideWTTableViewFooterWithHint:(NSString *)hint {
     UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewFooterWithBlank];
-    UILabel *hintLabel = [WTTableViewHeaderFooterFactory getWideWTTableViewHintLabel:@"无内容。"];
+    UILabel *hintLabel = [WTTableViewHeaderFooterFactory getWideWTTableViewHintLabel:hint];
     [footerView addSubview:hintLabel];
-        
+    return footerView;
+}
+
++ (UIView *)getWideWTTableViewFooterWithNoDataHint {
+    UIView *footerView = [WTTableViewHeaderFooterFactory getWideWTTableViewFooterWithHint:@"无内容。"];
     return footerView;
     
 }

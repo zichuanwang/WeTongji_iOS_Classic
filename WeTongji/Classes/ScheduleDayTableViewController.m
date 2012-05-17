@@ -11,8 +11,6 @@
 #import "ScheduleDayTableViewCell.h"
 #import "NSString+Addition.h"
 #import "Event+Addition.h"
-#import "Course+Addition.h"
-#import "Activity+Addition.h"
 
 @interface ScheduleDayTableViewController ()
 
@@ -123,24 +121,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ScheduleDayTableViewCell *dayCell = (ScheduleDayTableViewCell *)cell;
-    if(event.what != nil) {
-        [dayCell setAsNormalCell];
-        dayCell.whatLabel.text = event.what;
-        dayCell.whenLabel.text = [NSString timeConvertFromDate:event.begin_time];
-        dayCell.whereLabel.text = event.where;
-        if([event isMemberOfClass:[Course class]]) {
-            Course *course = (Course *)event;
-            if([course.require_type isEqualToString:@"必修"]) {
-                [dayCell setEventType:EventTypeRequiredCurriculum];
-            } else {
-                [dayCell setEventType:EventTypeOptionalCurriculum];
-            }
-        } else if([event isMemberOfClass:[Activity class]]) {
-            [dayCell setEventType:EventTypeActivity];
-        }
-    } else {
-        [dayCell setAsTodayTempCell];
-    }
+    [dayCell configureCell:event];
 }
 
 - (void)configureRequest:(NSFetchRequest *)request

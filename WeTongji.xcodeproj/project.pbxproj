@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CC2A67515627C310046B49E /* ScheduleMonthDateViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */; };
 		E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */; };
 		E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */; };
 		E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021361155A67E0002FCCA6 /* crop_image_puller.png */; };
@@ -44,7 +43,6 @@
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
 		E135F77E155E341F008494D8 /* ScheduleMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F77C155E341F008494D8 /* ScheduleMonthViewController.m */; };
-		E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F77D155E341F008494D8 /* ScheduleMonthViewController.xib */; };
 		E135F783155E4224008494D8 /* ScheduleWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F781155E4224008494D8 /* ScheduleWeekViewController.m */; };
 		E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */; };
 		E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */; };
@@ -120,6 +118,20 @@
 		E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */; };
 		E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */; };
 		E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */; };
+		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
+		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
+		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
+		E16365B01564CA37006477C9 /* TKCalendarDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */; };
+		E16365B11564CA37006477C9 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */; };
+		E16365B21564CA37006477C9 /* TKCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */; };
+		E16365B31564CA37006477C9 /* TKCalendarMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365AC1564CA37006477C9 /* TKCalendarMonthViewController.m */; };
+		E16365BC1564CBDC006477C9 /* TKGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365BB1564CBB1006477C9 /* TKGlobal.m */; };
+		E16365BD1564CBDF006477C9 /* UIImage+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365B91564CB9D006477C9 /* UIImage+TKCategory.m */; };
+		E16365BE1564CBE2006477C9 /* NSDate+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365B71564CB8D006477C9 /* NSDate+TKCategory.m */; };
+		E16365C11564CBFB006477C9 /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365C01564CBF8006477C9 /* UIView+TKCategory.m */; };
+		E16365C21564CC0F006477C9 /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365B51564CB7B006477C9 /* TapDetectingView.m */; };
+		E16365C41564CC5E006477C9 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */; };
+		E16365C61564D924006477C9 /* ScheduleMonthTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */; };
 		E168FE971553DCC400BEE141 /* SignInMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FE951553DCC400BEE141 /* SignInMainViewController.m */; };
 		E168FE981553DCC400BEE141 /* SignInMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E168FE961553DCC400BEE141 /* SignInMainViewController.xib */; };
 		E168FE9B1553F6F100BEE141 /* FavoriteOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E168FE9A1553F6F100BEE141 /* FavoriteOutlineViewController.m */; };
@@ -360,8 +372,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5CC2A67315627C2E0046B49E /* ScheduleMonthDateViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthDateViewCell.h; path = Classes/ScheduleMonthDateViewCell.h; sourceTree = "<group>"; };
-		5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthDateViewCell.m; path = Classes/ScheduleMonthDateViewCell.m; sourceTree = "<group>"; };
 		E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAvatarViewController.h; path = Classes/EditAvatarViewController.h; sourceTree = "<group>"; };
 		E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAvatarViewController.m; path = Classes/EditAvatarViewController.m; sourceTree = "<group>"; };
 		E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditAvatarViewController.xib; path = Classes/EditAvatarViewController.xib; sourceTree = "<group>"; };
@@ -407,7 +417,6 @@
 		E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleDayTableViewController.xib; path = Classes/ScheduleDayTableViewController.xib; sourceTree = "<group>"; };
 		E135F77B155E341F008494D8 /* ScheduleMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthViewController.h; path = Classes/ScheduleMonthViewController.h; sourceTree = "<group>"; };
 		E135F77C155E341F008494D8 /* ScheduleMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthViewController.m; path = Classes/ScheduleMonthViewController.m; sourceTree = "<group>"; };
-		E135F77D155E341F008494D8 /* ScheduleMonthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleMonthViewController.xib; path = Classes/ScheduleMonthViewController.xib; sourceTree = "<group>"; };
 		E135F780155E4224008494D8 /* ScheduleWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekViewController.h; path = Classes/ScheduleWeekViewController.h; sourceTree = "<group>"; };
 		E135F781155E4224008494D8 /* ScheduleWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekViewController.m; path = Classes/ScheduleWeekViewController.m; sourceTree = "<group>"; };
 		E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleWeekViewController.xib; path = Classes/ScheduleWeekViewController.xib; sourceTree = "<group>"; };
@@ -497,6 +506,32 @@
 		E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back_hl@2x.png"; sourceTree = "<group>"; };
 		E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back.png; sourceTree = "<group>"; };
 		E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back@2x.png"; sourceTree = "<group>"; };
+		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
+		E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthTableViewController.m; path = Classes/ScheduleMonthTableViewController.m; sourceTree = "<group>"; };
+		E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
+		E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayEventView.m; sourceTree = "<group>"; };
+		E16365A31564CA37006477C9 /* TKCalendarDayTimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayTimelineView.h; sourceTree = "<group>"; };
+		E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayTimelineView.m; sourceTree = "<group>"; };
+		E16365A51564CA37006477C9 /* TKCalendarDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayViewController.h; sourceTree = "<group>"; };
+		E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarDayViewController.m; sourceTree = "<group>"; };
+		E16365A71564CA37006477C9 /* TKCalendarMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthTableViewController.h; sourceTree = "<group>"; };
+		E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthTableViewController.m; sourceTree = "<group>"; };
+		E16365A91564CA37006477C9 /* TKCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthView.h; sourceTree = "<group>"; };
+		E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthView.m; sourceTree = "<group>"; };
+		E16365AB1564CA37006477C9 /* TKCalendarMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarMonthViewController.h; sourceTree = "<group>"; };
+		E16365AC1564CA37006477C9 /* TKCalendarMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthViewController.m; sourceTree = "<group>"; };
+		E16365B41564CB7B006477C9 /* TapDetectingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
+		E16365B51564CB7B006477C9 /* TapDetectingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapDetectingView.m; sourceTree = "<group>"; };
+		E16365B61564CB8D006477C9 /* NSDate+TKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TKCategory.h"; sourceTree = "<group>"; };
+		E16365B71564CB8D006477C9 /* NSDate+TKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TKCategory.m"; sourceTree = "<group>"; };
+		E16365B81564CB9D006477C9 /* UIImage+TKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TKCategory.h"; sourceTree = "<group>"; };
+		E16365B91564CB9D006477C9 /* UIImage+TKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TKCategory.m"; sourceTree = "<group>"; };
+		E16365BA1564CBB1006477C9 /* TKGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGlobal.h; sourceTree = "<group>"; };
+		E16365BB1564CBB1006477C9 /* TKGlobal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGlobal.m; sourceTree = "<group>"; };
+		E16365BF1564CBF7006477C9 /* UIView+TKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
+		E16365C01564CBF8006477C9 /* UIView+TKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
+		E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
+		E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleMonthTableViewController.xib; path = Classes/ScheduleMonthTableViewController.xib; sourceTree = "<group>"; };
 		E168FE941553DCC300BEE141 /* SignInMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInMainViewController.h; path = Classes/SignInMainViewController.h; sourceTree = "<group>"; };
 		E168FE951553DCC400BEE141 /* SignInMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInMainViewController.m; path = Classes/SignInMainViewController.m; sourceTree = "<group>"; };
 		E168FE961553DCC400BEE141 /* SignInMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInMainViewController.xib; path = Classes/SignInMainViewController.xib; sourceTree = "<group>"; };
@@ -954,6 +989,35 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		E16365A01564CA37006477C9 /* TapkuLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				E16365B61564CB8D006477C9 /* NSDate+TKCategory.h */,
+				E16365B71564CB8D006477C9 /* NSDate+TKCategory.m */,
+				E16365B41564CB7B006477C9 /* TapDetectingView.h */,
+				E16365B51564CB7B006477C9 /* TapDetectingView.m */,
+				E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */,
+				E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */,
+				E16365A31564CA37006477C9 /* TKCalendarDayTimelineView.h */,
+				E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */,
+				E16365A51564CA37006477C9 /* TKCalendarDayViewController.h */,
+				E16365A61564CA37006477C9 /* TKCalendarDayViewController.m */,
+				E16365A71564CA37006477C9 /* TKCalendarMonthTableViewController.h */,
+				E16365A81564CA37006477C9 /* TKCalendarMonthTableViewController.m */,
+				E16365A91564CA37006477C9 /* TKCalendarMonthView.h */,
+				E16365AA1564CA37006477C9 /* TKCalendarMonthView.m */,
+				E16365AB1564CA37006477C9 /* TKCalendarMonthViewController.h */,
+				E16365AC1564CA37006477C9 /* TKCalendarMonthViewController.m */,
+				E16365BA1564CBB1006477C9 /* TKGlobal.h */,
+				E16365BB1564CBB1006477C9 /* TKGlobal.m */,
+				E16365B81564CB9D006477C9 /* UIImage+TKCategory.h */,
+				E16365B91564CB9D006477C9 /* UIImage+TKCategory.m */,
+				E16365BF1564CBF7006477C9 /* UIView+TKCategory.h */,
+				E16365C01564CBF8006477C9 /* UIView+TKCategory.m */,
+			);
+			path = TapkuLibrary;
+			sourceTree = "<group>";
+		};
 		E168FEB71555406600BEE141 /* update_user_info */ = {
 			isa = PBXGroup;
 			children = (
@@ -1134,12 +1198,13 @@
 		E1C877551505F41700592954 /* WeTongji */ = {
 			isa = PBXGroup;
 			children = (
-				E1917733150785ED009FB941 /* MainWindow.xib */,
 				E1C8775E1505F41700592954 /* AppDelegate.h */,
 				E1C8775F1505F41700592954 /* AppDelegate.m */,
-				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
+				E1917733150785ED009FB941 /* MainWindow.xib */,
 				E1C877A61505FB5600592954 /* Classes */,
 				E1C877561505F41700592954 /* Supporting Files */,
+				E16365A01564CA37006477C9 /* TapkuLibrary */,
+				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 			);
 			path = WeTongji;
 			sourceTree = "<group>";
@@ -1171,6 +1236,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E16365C31564CC5E006477C9 /* TapkuLibrary.bundle */,
 				E1DC6446155D3FB100F07C63 /* schedule */,
 				E1D5503C15509D2800068824 /* toast */,
 				E1D387A3154DC801006325E8 /* channel */,
@@ -1408,18 +1474,18 @@
 			children = (
 				E102135F155A6053002FCCA6 /* CropImageView.h */,
 				E1021360155A6053002FCCA6 /* CropImageView.m */,
+				E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */,
+				E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */,
+				E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */,
+				E1E483B1154931AA00814FA4 /* EmptyTableViewCell.h */,
+				E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */,
+				E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */,
 				E11965471507B2F200AE32E0 /* RootView.h */,
 				E11965481507B2F200AE32E0 /* RootView.m */,
 				E149830915343BCA00734341 /* WTButton.h */,
 				E149830A15343BCA00734341 /* WTButton.m */,
 				E10A165C15360EC900700A0E /* WTDockButton.h */,
 				E10A165D15360EC900700A0E /* WTDockButton.m */,
-				E1E483B1154931AA00814FA4 /* EmptyTableViewCell.h */,
-				E1E483B2154931AA00814FA4 /* EmptyTableViewCell.m */,
-				E1E483B4154931C500814FA4 /* EmptyTableViewCell.xib */,
-				E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */,
-				E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */,
-				E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */,
 				E135F7FB155E92CB008494D8 /* WTTableViewHeaderFooterFactory.h */,
 				E135F7FC155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m */,
 			);
@@ -1479,11 +1545,11 @@
 				E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */,
 				E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */,
 				E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */,
+				E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */,
+				E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */,
+				E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */,
 				E135F77B155E341F008494D8 /* ScheduleMonthViewController.h */,
 				E135F77C155E341F008494D8 /* ScheduleMonthViewController.m */,
-				E135F77D155E341F008494D8 /* ScheduleMonthViewController.xib */,
-				5CC2A67315627C2E0046B49E /* ScheduleMonthDateViewCell.h */,
-				5CC2A67415627C2F0046B49E /* ScheduleMonthDateViewCell.m */,
 				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
 				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
 				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
@@ -1916,13 +1982,14 @@
 				E1DC6475155D5B5E00F07C63 /* schedule_btn_month.png in Resources */,
 				E1DC6476155D5B5E00F07C63 /* schedule_btn_month@2x.png in Resources */,
 				E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */,
-				E135F77F155E341F008494D8 /* ScheduleMonthViewController.xib in Resources */,
 				E135F784155E4224008494D8 /* ScheduleWeekViewController.xib in Resources */,
 				E135F7F7155E8B5D008494D8 /* ScheduleDayTableViewCell.xib in Resources */,
 				E1A1E92515639F6800BDEC2E /* CourseViewController.xib in Resources */,
 				E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */,
 				E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */,
 				E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */,
+				E16365C41564CC5E006477C9 /* TapkuLibrary.bundle in Resources */,
+				E16365C61564D924006477C9 /* ScheduleMonthTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2032,7 +2099,6 @@
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
 				E14BA6841561760F00EB7CB6 /* News.m in Sources */,
-				5CC2A67515627C310046B49E /* ScheduleMonthDateViewCell.m in Sources */,
 				E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */,
 				E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */,
 				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
@@ -2041,6 +2107,18 @@
 				E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */,
 				E1A1E92415639F6800BDEC2E /* CourseViewController.m in Sources */,
 				E1A1E92915639F8B00BDEC2E /* CourseDetailViewController.m in Sources */,
+				E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */,
+				E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */,
+				E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */,
+				E16365B01564CA37006477C9 /* TKCalendarDayViewController.m in Sources */,
+				E16365B11564CA37006477C9 /* TKCalendarMonthTableViewController.m in Sources */,
+				E16365B21564CA37006477C9 /* TKCalendarMonthView.m in Sources */,
+				E16365B31564CA37006477C9 /* TKCalendarMonthViewController.m in Sources */,
+				E16365BC1564CBDC006477C9 /* TKGlobal.m in Sources */,
+				E16365BD1564CBDF006477C9 /* UIImage+TKCategory.m in Sources */,
+				E16365BE1564CBE2006477C9 /* NSDate+TKCategory.m in Sources */,
+				E16365C11564CBFB006477C9 /* UIView+TKCategory.m in Sources */,
+				E16365C21564CC0F006477C9 /* TapDetectingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2108,7 +2186,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/WeTongji\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;
@@ -2120,7 +2204,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "WeTongji/WeTongji-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/WeTongji\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;

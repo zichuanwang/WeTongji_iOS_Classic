@@ -14,6 +14,6 @@
 + (UIView *)getWideWTTableViewEmptyFooter;
 + (UIView *)getWideWTTableViewFooterWithBlank;
 + (UIView *)getWideWTTableViewFooterWithNoDataHint;
-+ (UILabel *)getWideWTTableViewHintLabel:(NSString *)text;
++ (UIView *)getWideWTTableViewFooterWithHint:(NSString *)hint;
 
 @end

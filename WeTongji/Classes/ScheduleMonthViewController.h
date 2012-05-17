@@ -7,19 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKCalendarMonthViewController.h"
+#import "ScheduleMonthTableViewController.h"
 
-@interface ScheduleMonthViewController : UIViewController<UITableViewDelegate, 
-                            UITableViewDataSource>
+@interface ScheduleMonthViewController : TKCalendarMonthViewController
 
-@property (nonatomic, strong) NSDate *currentDate;
-@property (nonatomic, strong) NSDate *selectDate;
+@property (nonatomic, strong) ScheduleMonthTableViewController *tableViewController;
 
-@property CFGregorianDate currentSelectDate;
-@property CFGregorianDate lastMonth;
-
-@property (nonatomic, strong) IBOutlet UILabel *headTitle;
-
-- (IBAction)movePrev:(UIButton *)sender;
-- (IBAction)moveNext:(UIButton *)sender;
+- (void)didClickTodayButton;
 
 @end

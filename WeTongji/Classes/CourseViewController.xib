@@ -70,7 +70,7 @@
 												<string key="NSFrame">{{0, 30}, {320, 40}}</string>
 												<reference key="NSSuperview" ref="15105873"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="247188057"/>
+												<reference key="NSNextKeyView" ref="289239923"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -112,7 +112,7 @@
 												<string key="NSFrame">{{20, 27}, {50, 50}}</string>
 												<reference key="NSSuperview" ref="15105873"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="687437751"/>
+												<reference key="NSNextKeyView" ref="247188057"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -124,10 +124,10 @@
 											<object class="IBUILabel" id="247188057">
 												<reference key="NSNextResponder" ref="15105873"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{80, 31}, {185, 20}}</string>
+												<string key="NSFrame">{{80.5, 31}, {225, 20}}</string>
 												<reference key="NSSuperview" ref="15105873"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="289239923"/>
+												<reference key="NSNextKeyView" ref="687437751"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<bool key="IBUIClipsSubviews">YES</bool>
@@ -146,7 +146,7 @@
 												</object>
 												<string key="IBUIShadowOffset">{0, 1}</string>
 												<int key="IBUIBaselineAdjustment">0</int>
-												<float key="IBUIMinimumFontSize">14</float>
+												<float key="IBUIMinimumFontSize">15</float>
 												<object class="IBUIFontDescription" key="IBUIFontDescription">
 													<int key="type">2</int>
 													<double key="pointSize">17</double>
