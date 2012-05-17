@@ -32,13 +32,13 @@
 }
 
 + (UIView *)getWideWTTableViewFooterWithBlank {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, TABLE_VIEW_CELL_HEIGHT + 30)];
     UIImageView *footerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_footer.png"]];
-    footerImageView.center = CGPointMake(160, 60);
+    footerImageView.frame = CGRectMake(0, TABLE_VIEW_CELL_HEIGHT, footerImageView.frame.size.width, footerImageView.frame.size.height);
     UIImageView *mainImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_main.png"]];
-    mainImageView.center = CGPointMake(160, 20);
+    mainImageView.frame = CGRectMake(0, 0, 320, TABLE_VIEW_CELL_HEIGHT);
     UIImageView *lineImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper_wide_single_line.png"]];
-    lineImageView.center = CGPointMake(160, 20);
+    lineImageView.frame = CGRectMake(0, TABLE_VIEW_CELL_HEIGHT - lineImageView.frame.size.height, lineImageView.frame.size.width, lineImageView.frame.size.height);
     
     [footerView addSubview:footerImageView];
     [footerView addSubview:mainImageView];
@@ -48,7 +48,7 @@
 }
 
 + (UILabel *)getWideWTTableViewHintLabel:(NSString *)text {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, TABLE_VIEW_CELL_HEIGHT)];
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont boldSystemFontOfSize:14.0f];
     label.textColor = [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1];

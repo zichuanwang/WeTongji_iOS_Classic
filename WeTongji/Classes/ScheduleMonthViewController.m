@@ -8,6 +8,7 @@
 
 #import "ScheduleMonthViewController.h"
 #import "NSString+Addition.h"
+#import "Event+Addition.h"
 
 #define DAY_TIME_INTERVAL   (60 * 60 * 24)
 #define HOUR_TIME_INTERVAL  (60 * 60)
@@ -104,10 +105,10 @@
         NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", endDate];
         BOOL hasEvent = NO;
         NSArray *filteredItmes = [items filteredArrayUsingPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:beginPredicate, endPredicate, nil]]];
-        if(filteredItmes.count > 0)
-            hasEvent = YES;
-        else {
-            NSLog(@"begin:%@, end:%@", [NSString yearMonthDayWeekTimeConvertFromDate:beginDate], [NSString yearMonthDayWeekTimeConvertFromDate:endDate]);
+        if(filteredItmes.count > 0) {
+            Event *event = filteredItmes.lastObject;
+            if(event.what != nil)
+                hasEvent = YES;
         }
         [result addObject:[NSNumber numberWithBool:hasEvent]];
     }

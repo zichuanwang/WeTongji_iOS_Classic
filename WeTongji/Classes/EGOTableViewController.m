@@ -53,7 +53,7 @@
 {
     if (!_loadMoreDataButton) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 0, self.tableView.frame.size.width, 40);
+        button.frame = CGRectMake(0, 0, self.tableView.frame.size.width, TABLE_VIEW_CELL_HEIGHT);
         NSString *text = NSLocalizedString(@"点击加载更多。", nil);
         [button setTitle:text forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];

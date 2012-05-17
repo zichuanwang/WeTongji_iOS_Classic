@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+#define TABLE_VIEW_CELL_HEIGHT 44
+
 #import <Foundation/Foundation.h>
 
 @interface WTTableViewHeaderFooterFactory : NSObject
