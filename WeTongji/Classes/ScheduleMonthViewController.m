@@ -77,7 +77,6 @@
 	if(animated) {
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationDuration:0.3f];
-		[UIView setAnimationDelay:0.1f];
 	}
 	[self updateTableViewFrame];
 	if(animated) 

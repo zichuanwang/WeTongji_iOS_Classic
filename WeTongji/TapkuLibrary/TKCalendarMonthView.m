@@ -637,10 +637,10 @@
 	CGRect r = CGRectMake(0, 0, self.tileBox.bounds.size.width, self.tileBox.bounds.size.height + self.tileBox.frame.origin.y);
 	self.frame = r;
 	
-	[self addSubview:self.topBackground];
 	[self.tileBox addSubview:currentTile];
 	[self addSubview:self.tileBox];
-	
+	[self addSubview:self.topBackground];
+    
 	NSDate *date = [NSDate date];
 	self.monthYear.text = [NSString stringWithFormat:@"%@ %@",[date monthString],[date yearString]];
 	[self addSubview:self.monthYear];
@@ -698,9 +698,9 @@
 		[self addSubview:label];
 		label.text = s;
 		label.textAlignment = UITextAlignmentCenter;
-		label.shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5f];
+		label.shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f];
 		label.shadowOffset = CGSizeMake(0, 1);
-		label.font = [UIFont systemFontOfSize:10];
+		label.font = [UIFont boldSystemFontOfSize:10];
 		label.backgroundColor = [UIColor clearColor];
 		label.textColor = [UIColor colorWithRed:84/255. green:84/255. blue:84/255. alpha:1];
 		i++;
