@@ -835,7 +835,8 @@
 	return [currentTile monthDate];
 }
 - (void) selectDate:(NSDate*)date{
-	TKDateInformation info = [date dateInformationWithTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+	TKDateInformation info = [date dateInformationWithTimeZone:[NSTimeZone systemTimeZone]];
+    //NSLog(@"select time info:%d,%d,%d,%d", info.year, info.weekday, info.day, info.hour);
 	NSDate *month = [date firstOfMonth];
 	
 	if([month isEqualToDate:[currentTile monthDate]]){
@@ -861,7 +862,7 @@
 		[self.tileBox addSubview:currentTile];
 		self.tileBox.frame = CGRectMake(0, 44, newTile.frame.size.width, newTile.frame.size.height);
 		self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.bounds.size.width, self.tileBox.frame.size.height+self.tileBox.frame.origin.y);
-
+        
 		self.shadow.frame = CGRectMake(0, self.frame.size.height-self.shadow.frame.size.height+21, self.shadow.frame.size.width, self.shadow.frame.size.height);
 		self.monthYear.text = [NSString stringWithFormat:@"%@ %@",[date monthString],[date yearString]];
 		[currentTile selectDay:info.day];
@@ -915,7 +916,7 @@
 		TKDateInformation info = [[currentTile monthDate] dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 		info.day = day;
         
-        NSDate *dateForMonth = [NSDate dateFromDateInformation:info  timeZone:[NSTimeZone timeZoneWithName:@"GMT"]]; 
+        NSDate *dateForMonth = [NSDate dateFromDateInformation:info  timeZone:[NSTimeZone systemTimeZone]]; 
 		[currentTile selectDay:day];
 		
 		

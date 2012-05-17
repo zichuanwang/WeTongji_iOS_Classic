@@ -88,9 +88,16 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.tableViewController.managedObjectContext]];
     NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.tableViewController.currentUser.schedule];
-    NSTimeInterval timeIntervalOffset = -8 * HOUR_TIME_INTERVAL;
-    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [startDate dateByAddingTimeInterval:timeIntervalOffset]];
-    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [lastDate dateByAddingTimeInterval:timeIntervalOffset]];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone systemTimeZone];
+    NSTimeZone* destinationTimeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:[NSDate date]];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:[NSDate date]];
+    NSTimeInterval timeZoneIntervalOffset = destinationGMTOffset - sourceGMTOffset;
+    
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [startDate dateByAddingTimeInterval:timeZoneIntervalOffset]];
+    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [lastDate dateByAddingTimeInterval:timeZoneIntervalOffset]];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, beginPredicate, endPredicate, nil]]];
     
     NSArray *items = [self.tableViewController.managedObjectContext executeFetchRequest:request error:NULL];
@@ -99,10 +106,11 @@
     int dayCount = interval / DAY_TIME_INTERVAL + 1;
     
     for(int i = 0; i < dayCount ; i++) {
-        NSDate *beginDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * i + timeIntervalOffset];
-        NSDate *endDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * (i + 1) + timeIntervalOffset];
+        NSDate *beginDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * i + timeZoneIntervalOffset];
+        NSDate *endDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * (i + 1) + timeZoneIntervalOffset];
         NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", beginDate];
         NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", endDate];
+        NSLog(@"begin:%@, end:%@", [NSString yearMonthDayWeekTimeConvertFromDate:beginDate], [NSString yearMonthDayWeekTimeConvertFromDate:endDate]);
         BOOL hasEvent = NO;
         NSArray *filteredItmes = [items filteredArrayUsingPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:beginPredicate, endPredicate, nil]]];
         if(filteredItmes.count > 0) {
