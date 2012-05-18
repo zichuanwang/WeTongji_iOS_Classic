@@ -13,6 +13,7 @@
 @synthesize titleLabel = _titleLabel;
 @synthesize timeLabel = _timeLabel;
 @synthesize locationLabel = _locationLabel;
+@synthesize avatarImageView = _avatarImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

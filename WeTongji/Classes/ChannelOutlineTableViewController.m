@@ -12,6 +12,7 @@
 #import "Activity+Addition.h"
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "UIImageView+Addition.h"
 
 @interface ChannelOutlineTableViewController ()
 
@@ -36,6 +37,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
     [self loadMoreData];
+    [self loadExtraDataForOnscreenRows];
 }
 
 - (void)viewDidUnload
@@ -142,6 +144,37 @@
     if(methodCode == ChannelSortByLikeCount)
         sortType = GetActivitySortTypeLikeDesc;
     [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage];
+}
+
+#pragma mark -
+#pragma mark Load avater
+
+- (void)loadAvatarAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.tableView.dragging || self.tableView.decelerating || _reloadingFlag)
+        return;
+    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ChannelOutlineTableViewCell *cell = (ChannelOutlineTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.avatarImageView loadImageFromURL:activity.avatar_link cacheInContext:self.managedObjectContext];
+}
+
+- (void)loadExtraDataForOnscreenRows  {
+    NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+    for (NSIndexPath *indexPath in visiblePaths) {
+        [self loadAvatarAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark -
+#pragma mark UIScrollView delegate
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [super scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    if (!decelerate) {
+        [self loadExtraDataForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self loadExtraDataForOnscreenRows];
 }
 
 @end
