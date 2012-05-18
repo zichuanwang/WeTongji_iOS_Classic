@@ -13,10 +13,12 @@
 #import "NSNotificationCenter+Addition.h"
 #import "WTClient.h"
 #import "UIImageView+Addition.h"
+#import "DetailImageViewController.h"
 
 @interface ActivityViewController ()
 
 @property (nonatomic, strong) Activity *activity;
+@property (nonatomic, strong) DetailImageViewController *detailImageViewController;
 
 @end
 
@@ -37,10 +39,12 @@
 @synthesize middleView = _middleView;
 @synthesize bottomView = _bottomView;
 @synthesize avatarImageView = _avatarImageView;
+@synthesize activityImageView = _activityImageView;
 @synthesize tabBarBgImageView = _tabBarBgImageView;
 @synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
 @synthesize activity = _activity;
+@synthesize detailImageViewController = _detailImageViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,6 +86,7 @@
     self.tabBarBgImageView = nil;
     self.tabBarSeperatorImageView = nil;
     self.avatarImageView = nil;
+    self.activityImageView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -91,6 +96,9 @@
     }
     return self;
 }
+
+#pragma mark -
+#pragma mark custom setter & getter
 
 #pragma mark -
 #pragma mark Logic methods
@@ -122,6 +130,29 @@
     }
 }
 
+- (void)configureActivityImage {
+    if(self.activity.image_link) {
+        [self.activityImageView loadImageFromURL:self.activity.image_link completion:^(BOOL succeed) {
+            if(succeed) {
+                CGSize imageSize = self.activityImageView.image.size;
+                //NSLog(@"imageSize width:%f, height:%f", imageSize.width, imageSize.height);
+                CGSize imageViewSize = self.activityImageView.frame.size;
+                imageViewSize.height = imageViewSize.width / imageSize.width * imageSize.height;
+                //NSLog(@"imageViewSize width:%f height:%f", imageViewSize.width, imageViewSize.height);
+                CGRect imageViewFrame = self.activityImageView.frame;
+                imageViewFrame.size = imageViewSize;
+                self.activityImageView.frame = imageViewFrame; 
+                
+                UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapActivityImageView)];
+                [self.activityImageView addGestureRecognizer:gr];
+                
+                [self.activityImageView configureShadow];
+                [self refreshViewLayout];
+            }
+        } cacheInContext:self.managedObjectContext];
+    }
+}
+
 - (void)configureActivityView {
     self.titleLabel.text = self.activity.what;
     self.descriptionLabel.text = self.activity.content;
@@ -143,6 +174,8 @@
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
     [self updateLikeLabel];
+    
+    [self configureActivityImage];
     
     [self refreshViewLayout];
 }
@@ -169,7 +202,15 @@
 
 - (void)refreshViewLayout {
     CGRect middleFrame = self.middleView.frame;
-    middleFrame.size.height = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 15;
+    middleFrame.size.height = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height;
+    if(self.activityImageView.image != nil) {
+        CGRect imageViewFrame = self.activityImageView.frame;
+        imageViewFrame.origin.y = middleFrame.size.height + 10;
+        middleFrame.size.height += imageViewFrame.size.height + 25;
+        self.activityImageView.frame = imageViewFrame;
+    } else {
+        middleFrame.size.height += 15;
+    }
     self.middleView.frame = middleFrame;
     
     self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
@@ -300,6 +341,10 @@
         }];
         [client unscheduleActivity:self.activity.activity_id];
     }
+}
+
+- (void)didTapActivityImageView {
+    self.detailImageViewController = [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
 }
 
 @end

@@ -12,6 +12,8 @@
         <attribute name="favorite_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="favorite_update_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="image_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="image_link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="like_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schedule_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -96,11 +98,11 @@
         <element name="Activity" positionX="160" positionY="192" width="128" height="285"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Image" positionX="160" positionY="192" width="128" height="90"/>
         <element name="News" positionX="160" positionY="192" width="128" height="165"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Event" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Teacher" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

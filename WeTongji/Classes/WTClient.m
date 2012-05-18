@@ -14,7 +14,7 @@
 //static NSString* const APIDomain = @"106.187.95.107:8080";
 static NSString* const APIDomain = @"we.tongji.edu.cn";
 
-#define GetActivitySortMethodLikeDesc @"'like' DESC"
+#define GetActivitySortMethodLikeDesc @"`like` DESC"
 
 @interface WTClient()
 

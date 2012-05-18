@@ -20,5 +20,6 @@
 - (NSNumber *)weekDayStringCovertToNumber;
 + (NSString *)getTodayBeginDayFormatString;
 + (NSString *)getTomorrowBeginDayFormatString;
+- (BOOL)isGifURL;
 
 @end

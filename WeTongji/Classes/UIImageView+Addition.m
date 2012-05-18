@@ -9,6 +9,7 @@
 #import "UIImageView+Addition.h"
 #import "Image+Addition.h"
 #import "UIView+Addition.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIImageView (Addition)
 
@@ -19,6 +20,9 @@
     if(image) {
         UIImage *img = [UIImage imageWithData:image.data];
         self.image = img;
+        if(completion) {
+            completion(YES);
+        }
         return;
     }
     
@@ -67,6 +71,15 @@
         return MAX(widthScale, heightScale);
     }
     return 1.0;
+}
+
+- (void)configureShadow {
+    [self.layer setShadowOffset:CGSizeMake(0, 0)];
+    [self.layer setShadowRadius:3.0f];
+    [self.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.layer setShadowOpacity:0.4f];
+    [self.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.layer setBorderWidth:2.0f];
 }
   
 @end

@@ -28,6 +28,7 @@
 @property (nonatomic, strong) IBOutlet WTButton *likeButton;
 @property (nonatomic, strong) IBOutlet WTButton *scheduleButton;
 @property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *activityImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
 

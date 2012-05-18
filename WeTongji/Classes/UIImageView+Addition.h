@@ -18,4 +18,6 @@
 
 - (void)loadImageFromURL:(NSString *)urlString cacheInContext:(NSManagedObjectContext *)context;
 
+- (void)configureShadow;
+
 @end

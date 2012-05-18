@@ -75,7 +75,6 @@
 		E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA69F1562884D00EB7CB6 /* Teacher.m */; };
 		E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A51562890D00EB7CB6 /* Course+Addition.m */; };
 		E14BA6A91562954B00EB7CB6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A81562954B00EB7CB6 /* Course.m */; };
-		E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6B81562A33700EB7CB6 /* Activity.m */; };
 		E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6BB1562A33A00EB7CB6 /* Event.m */; };
 		E14F7C2B155B91BD00826009 /* SettingUIStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F7C29155B91BD00826009 /* SettingUIStyleViewController.m */; };
 		E14F7C2C155B91BD00826009 /* SettingUIStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E14F7C2A155B91BD00826009 /* SettingUIStyleViewController.xib */; };
@@ -317,6 +316,11 @@
 		E1DC6475155D5B5E00F07C63 /* schedule_btn_month.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC646F155D5B5D00F07C63 /* schedule_btn_month.png */; };
 		E1DC6476155D5B5E00F07C63 /* schedule_btn_month@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */; };
 		E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */; };
+		E1DDCC081566C3EC006317C0 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCC071566C3EB006317C0 /* Activity.m */; };
+		E1DDCC0F1566C6DF006317C0 /* DetailImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */; };
+		E1DDCC101566C6E4006317C0 /* DetailImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */; };
+		E1DDCC141566C74D006317C0 /* btn_detail_image_save.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DDCC121566C74C006317C0 /* btn_detail_image_save.png */; };
+		E1DDCC151566C74D006317C0 /* btn_detail_image_save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DDCC131566C74C006317C0 /* btn_detail_image_save@2x.png */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
 		E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */; };
 		E1DF6F9515376124001C60EA /* paper_footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6F9215376124001C60EA /* paper_footer@2x.png */; };
@@ -486,8 +490,6 @@
 		E14BA6A51562890D00EB7CB6 /* Course+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+Addition.m"; sourceTree = "<group>"; };
 		E14BA6A71562954A00EB7CB6 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		E14BA6A81562954B00EB7CB6 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		E14BA6B71562A33600EB7CB6 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E14BA6B81562A33700EB7CB6 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E14BA6BA1562A33900EB7CB6 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		E14BA6BB1562A33A00EB7CB6 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		E14F7C28155B91BD00826009 /* SettingUIStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUIStyleViewController.h; path = Classes/SettingUIStyleViewController.h; sourceTree = "<group>"; };
@@ -793,6 +795,13 @@
 		E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month@2x.png"; sourceTree = "<group>"; };
 		E1DDCBFB156649ED006317C0 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = Classes/EventDetailViewController.h; sourceTree = "<group>"; };
 		E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = Classes/EventDetailViewController.m; sourceTree = "<group>"; };
+		E1DDCC061566C3EB006317C0 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E1DDCC071566C3EB006317C0 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E1DDCC0C1566C6D7006317C0 /* DetailImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailImageViewController.h; path = Classes/DetailImageViewController.h; sourceTree = "<group>"; };
+		E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailImageViewController.m; path = Classes/DetailImageViewController.m; sourceTree = "<group>"; };
+		E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailImageViewController.xib; path = Classes/DetailImageViewController.xib; sourceTree = "<group>"; };
+		E1DDCC121566C74C006317C0 /* btn_detail_image_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_detail_image_save.png; sourceTree = "<group>"; };
+		E1DDCC131566C74C006317C0 /* btn_detail_image_save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_detail_image_save@2x.png"; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
 		E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_cover@2x.png"; sourceTree = "<group>"; };
 		E1DF6F9215376124001C60EA /* paper_footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_footer@2x.png"; sourceTree = "<group>"; };
@@ -1303,7 +1312,6 @@
 				E1917733150785ED009FB941 /* MainWindow.xib */,
 				E1C877A61505FB5600592954 /* Classes */,
 				E1C877561505F41700592954 /* Supporting Files */,
-				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 			);
 			path = WeTongji;
 			sourceTree = "<group>";
@@ -1335,6 +1343,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E1DDCC111566C744006317C0 /* other */,
 				E147421315654A3800812C9D /* coming_soon */,
 				E1DC6446155D3FB100F07C63 /* schedule */,
 				E1D5503C15509D2800068824 /* toast */,
@@ -1455,6 +1464,15 @@
 			name = schedule;
 			sourceTree = "<group>";
 		};
+		E1DDCC111566C744006317C0 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				E1DDCC121566C74C006317C0 /* btn_detail_image_save.png */,
+				E1DDCC131566C74C006317C0 /* btn_detail_image_save@2x.png */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		E1DEA593150E261B003F51B5 /* dock */ = {
 			isa = PBXGroup;
 			children = (
@@ -1566,6 +1584,9 @@
 		E1DF6F9915376145001C60EA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E1DDCC0C1566C6D7006317C0 /* DetailImageViewController.h */,
+				E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */,
+				E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */,
 				E1E4838615487FF200814FA4 /* CoreDataTableViewController.h */,
 				E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */,
 				E1E4838815487FF400814FA4 /* CoreDataViewController.h */,
@@ -1683,6 +1704,7 @@
 		E1E4836F15487D6700814FA4 /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 				E1E4837A15487F2400814FA4 /* Categories */,
 				E1E4837915487F1900814FA4 /* Models */,
 			);
@@ -1707,10 +1729,10 @@
 				E14BA69F1562884D00EB7CB6 /* Teacher.m */,
 				E14BA6A71562954A00EB7CB6 /* Course.h */,
 				E14BA6A81562954B00EB7CB6 /* Course.m */,
-				E14BA6B71562A33600EB7CB6 /* Activity.h */,
-				E14BA6B81562A33700EB7CB6 /* Activity.m */,
 				E14BA6BA1562A33900EB7CB6 /* Event.h */,
 				E14BA6BB1562A33A00EB7CB6 /* Event.m */,
+				E1DDCC061566C3EB006317C0 /* Activity.h */,
+				E1DDCC071566C3EB006317C0 /* Activity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2130,6 +2152,9 @@
 				E1C119221565580000FCB3F8 /* coming_soon_circles@2x.png in Resources */,
 				E1C119231565580000FCB3F8 /* coming_soon_mail.png in Resources */,
 				E1C119241565580000FCB3F8 /* coming_soon_mail@2x.png in Resources */,
+				E1DDCC101566C6E4006317C0 /* DetailImageViewController.xib in Resources */,
+				E1DDCC141566C74D006317C0 /* btn_detail_image_save.png in Resources */,
+				E1DDCC151566C74D006317C0 /* btn_detail_image_save@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2242,7 +2267,6 @@
 				E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */,
 				E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */,
 				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
-				E14BA6B91562A33700EB7CB6 /* Activity.m in Sources */,
 				E14BA6BC1562A33B00EB7CB6 /* Event.m in Sources */,
 				E1A1E91F1563877600BDEC2E /* Event+Addition.m in Sources */,
 				E1A1E92415639F6800BDEC2E /* CourseViewController.m in Sources */,
@@ -2263,6 +2287,8 @@
 				E147420E156544D700812C9D /* TreizeViewController.m in Sources */,
 				E1474212156544EB00812C9D /* MailViewController.m in Sources */,
 				E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */,
+				E1DDCC081566C3EC006317C0 /* Activity.m in Sources */,
+				E1DDCC0F1566C6DF006317C0 /* DetailImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2391,7 +2417,8 @@
 				E1C877621505F41700592954 /* WeTongji.xcdatamodel */,
 			);
 			currentVersion = E1C877621505F41700592954 /* WeTongji.xcdatamodel */;
-			path = WeTongji.xcdatamodeld;
+			name = WeTongji.xcdatamodeld;
+			path = ../../WeTongji.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

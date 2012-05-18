@@ -2,7 +2,7 @@
 //  Activity.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-15.
+//  Created by 紫川 王 on 12-5-19.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -27,5 +27,7 @@
 @dynamic schedule_count;
 @dynamic status;
 @dynamic sub_organizer;
+@dynamic image_count;
+@dynamic image_link;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ActivityDetailViewController.h"
 #import "ActivityViewController.h"
+#import "DetailImageViewController.h"
 
 @interface ActivityDetailViewController ()
 
@@ -50,6 +51,7 @@
     }
     return self;
 }
+
 
 #pragma mark -
 #pragma mark UI methods

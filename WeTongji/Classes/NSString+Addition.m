@@ -132,4 +132,12 @@
     return [NSString yearMonthDayWeekConvertFromDate:[[NSDate date] dateByAddingTimeInterval:60 * 60 * 24]];
 }
 
+- (BOOL)isGifURL {
+    BOOL result = NO;
+    NSString* extName = [self substringFromIndex:([self length] - 3)];
+    if ([extName compare:@"gif"] == NSOrderedSame)
+        result =  YES;
+    return result;
+}
+
 @end

@@ -2,7 +2,7 @@
 //  Activity.h
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-15.
+//  Created by 紫川 王 on 12-5-19.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -29,5 +29,7 @@
 @property (nonatomic, retain) NSNumber * schedule_count;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSString * sub_organizer;
+@property (nonatomic, retain) NSNumber * image_count;
+@property (nonatomic, retain) NSString * image_link;
 
 @end
