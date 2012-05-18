@@ -176,6 +176,9 @@
         vc = [[CourseDetailViewController alloc] initWithCourse:(Course *)event];
     else if([event isKindOfClass:[Activity class]])
         vc = [[ActivityDetailViewController alloc] initWithActivity:(Activity *)event];
+    else 
+        return;
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [[UIApplication sharedApplication].rootViewController presentModalViewController:nav animated:YES];
 }

@@ -43,11 +43,13 @@
 - (void)setAsNormalCell {
     self.mainView.hidden = NO;
     self.noDataHintLabel.hidden = YES;
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
 - (void)setAsEmptyCell {
     self.mainView.hidden = YES;
     self.noDataHintLabel.hidden = NO;
+    self.accessoryType = UITableViewCellAccessoryNone;
 }
 
 @end
