@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavigationViewController.h"
+#import "EventDetailViewController.h"
 #import "Activity.h"
 
-@interface ActivityDetailViewController : WTNavigationViewController
+@interface ActivityDetailViewController : EventDetailViewController
 
 - (id)initWithActivity:(Activity *)activity;
 

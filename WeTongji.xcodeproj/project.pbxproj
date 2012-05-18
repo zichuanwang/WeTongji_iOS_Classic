@@ -316,6 +316,7 @@
 		E1DC6474155D5B5E00F07C63 /* schedule_btn_month_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC646E155D5B5C00F07C63 /* schedule_btn_month_white@2x.png */; };
 		E1DC6475155D5B5E00F07C63 /* schedule_btn_month.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC646F155D5B5D00F07C63 /* schedule_btn_month.png */; };
 		E1DC6476155D5B5E00F07C63 /* schedule_btn_month@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */; };
+		E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */; };
 		E1DEA597150E262D003F51B5 /* dock_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA595150E262D003F51B5 /* dock_bg@2x.png */; };
 		E1DEA598150E262D003F51B5 /* dock_btn_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */; };
 		E1DF6F9515376124001C60EA /* paper_footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DF6F9215376124001C60EA /* paper_footer@2x.png */; };
@@ -790,6 +791,8 @@
 		E1DC646E155D5B5C00F07C63 /* schedule_btn_month_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month_white@2x.png"; sourceTree = "<group>"; };
 		E1DC646F155D5B5D00F07C63 /* schedule_btn_month.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_btn_month.png; sourceTree = "<group>"; };
 		E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month@2x.png"; sourceTree = "<group>"; };
+		E1DDCBFB156649ED006317C0 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = Classes/EventDetailViewController.h; sourceTree = "<group>"; };
+		E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = Classes/EventDetailViewController.m; sourceTree = "<group>"; };
 		E1DEA595150E262D003F51B5 /* dock_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_bg@2x.png"; sourceTree = "<group>"; };
 		E1DEA596150E262D003F51B5 /* dock_btn_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_cover@2x.png"; sourceTree = "<group>"; };
 		E1DF6F9215376124001C60EA /* paper_footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper_footer@2x.png"; sourceTree = "<group>"; };
@@ -1579,6 +1582,8 @@
 				E1A836E915446FEB0086F62E /* WTTabelViewController.m */,
 				E168FEBF155555BB00BEE141 /* WTPostViewController.h */,
 				E168FEC0155555BB00BEE141 /* WTPostViewController.m */,
+				E1DDCBFB156649ED006317C0 /* EventDetailViewController.h */,
+				E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -2257,6 +2262,7 @@
 				E1474209156544BF00812C9D /* CirclesViewController.m in Sources */,
 				E147420E156544D700812C9D /* TreizeViewController.m in Sources */,
 				E1474212156544EB00812C9D /* MailViewController.m in Sources */,
+				E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WTGroupTableViewController.h"
+#import "Event+Addition.h"
 
 @interface ToDoListTableViewController : WTGroupTableViewController
 

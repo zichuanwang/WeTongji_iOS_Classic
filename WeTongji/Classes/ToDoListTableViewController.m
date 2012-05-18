@@ -13,6 +13,9 @@
 #import "Event+Addition.h"
 #import "Course+Addition.h"
 #import "Activity+Addition.h"
+#import "CourseDetailViewController.h"
+#import "ActivityDetailViewController.h"
+#import "UIApplication+Addition.h"
 
 @interface ToDoListTableViewController ()
 
@@ -158,6 +161,23 @@
             [toDoListCell setEventType:EventTypeActivity];
         }
     }
+}
+
+#pragma mark -
+#pragma mark UITableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *key = [self.dataSourceIndexArray objectAtIndex:indexPath.section];
+    NSArray *value = [self.dataSourceDictionary objectForKey:key];
+    Event *event = [value objectAtIndex:indexPath.row];
+    //[self.delegate toDoListTableViewController:self didSelectEvent:event];
+    EventDetailViewController *vc = nil;
+    if([event isKindOfClass:[Course class]])
+        vc = [[CourseDetailViewController alloc] initWithCourse:(Course *)event];
+    else if([event isKindOfClass:[Activity class]])
+        vc = [[ActivityDetailViewController alloc] initWithActivity:(Activity *)event];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [[UIApplication sharedApplication].rootViewController presentModalViewController:nav animated:YES];
 }
 
 #pragma mark -

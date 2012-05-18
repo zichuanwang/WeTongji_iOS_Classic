@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavigationViewController.h"
+#import "EventDetailViewController.h"
 #import "Course+Addition.h"
 
-@interface CourseDetailViewController : WTNavigationViewController
+@interface CourseDetailViewController : EventDetailViewController
 
 - (id)initWithCourse:(Course *)course;
 

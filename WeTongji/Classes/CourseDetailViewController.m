@@ -56,21 +56,11 @@
 
 - (void)configureNavBar {
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"课程"];
-    self.navigationItem.titleView = titleLabel;
-    
-    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
-    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.titleView = titleLabel;    
 }
 
 - (void)configureCourseView {
     [self.view insertSubview:self.courseViewController.view belowSubview:self.navBarShadowImageView];
-}
-
-#pragma mark - 
-#pragma mark IBActions 
-
-- (void)didClickBackButton {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

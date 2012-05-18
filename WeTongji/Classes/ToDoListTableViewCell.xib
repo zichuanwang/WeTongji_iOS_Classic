@@ -186,7 +186,6 @@
 										<string key="NSFrame">{{80, 19}, {200, 20}}</string>
 										<reference key="NSSuperview" ref="234125310"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -259,6 +258,7 @@
 				<reference key="NSNextKeyView" ref="632109872"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<int key="IBUISelectionStyle">0</int>
 				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="632109872"/>
 				<string key="IBUIReuseIdentifier">ToDoListTableViewCell</string>

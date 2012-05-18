@@ -57,20 +57,10 @@
 - (void)configureNavBar {
     UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"活动"];
     self.navigationItem.titleView = titleLabel;
-    
-    UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
-    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)configureActivityView {
     [self.view addSubview:self.activityViewController.view];
-}
-
-#pragma mark - 
-#pragma mark IBActions 
-
-- (void)didClickBackButton {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
