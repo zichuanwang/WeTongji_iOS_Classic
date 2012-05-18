@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
 
+typedef enum {
+    GetActivitySortTypeBeginAsc,
+    GetActivitySortTypeLikeDesc,
+} GetActivitySortType;
+
 @class WTClient;
 
 typedef void (^WTCompletionBlock)(WTClient *client);
@@ -29,7 +34,9 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 // return an autoreleased object, while gets released after one of following calls complete
 + (id)client;
 
-- (void)getActivitesWithChannelIds:(NSString *)channel_status_str page:(NSInteger)page;
+- (void)getActivitesWithChannelIds:(NSString *)channel_status_str 
+                              sortType:(GetActivitySortType)type
+                              page:(NSInteger)page;
 - (void)getNewsList:(NSInteger)page;
 - (void)activateUser:(NSString *)name stutentNum:(NSString *)num password:(NSString *)password;
 - (void)login:(NSString *)num password:(NSString *)password;

@@ -124,10 +124,11 @@
             if(self.nextPage == 0)
                 [self clearData];
             NSArray *array = [client.responseData objectForKey:@"Activities"];
+            NSDate *updateDate = [NSDate date];
             for(NSDictionary *activityDict in array) {
                 Activity *activity = [Activity insertActivity:activityDict inManagedObjectContext:self.managedObjectContext];
                 activity.hidden = [NSNumber numberWithBool:NO];
-                activity.channel_update_date = [NSDate date];
+                activity.channel_update_date = updateDate;
             }
             
             self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPager"]] intValue];
@@ -136,7 +137,11 @@
         }
         [self doneLoadingTableViewData];
     }];
-    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] page:self.nextPage];
+    ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
+    GetActivitySortType sortType = GetActivitySortTypeBeginAsc;
+    if(methodCode == ChannelSortByLikeCount)
+        sortType = GetActivitySortTypeLikeDesc;
+    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage];
 }
 
 @end

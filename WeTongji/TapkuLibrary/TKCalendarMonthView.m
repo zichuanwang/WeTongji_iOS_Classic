@@ -916,7 +916,7 @@
 		TKDateInformation info = [[currentTile monthDate] dateInformationWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 		info.day = day;
         
-        NSDate *dateForMonth = [NSDate dateFromDateInformation:info  timeZone:[NSTimeZone systemTimeZone]]; 
+        NSDate *dateForMonth = [NSDate dateFromDateInformation:info  timeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]]; 
 		[currentTile selectDay:day];
 		
 		

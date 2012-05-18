@@ -97,7 +97,7 @@
     return result;
 }
 
-+ (void)clearCoursesWithID:(NSString *)courseID beginSection:(NSNumber *)beginSection endSection:(NSNumber *)endSection weekDay:(NSNumber *)weekDay weekType:(NSString *)weekType inManagedObjectContext:(NSManagedObjectContext *)context{
++ (void)clearCoursesWithID:(NSString *)courseID beginSection:(NSNumber *)beginSection endSection:(NSNumber *)endSection weekDay:(NSNumber *)weekDay weekType:(NSString *)weekType inManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
     NSPredicate *courseIDPredicate = [NSPredicate predicateWithFormat:@"course_id == %@", courseID];

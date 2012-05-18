@@ -63,7 +63,7 @@
 - (NSArray *)getTodayToDoList {
     NSFetchRequest *request = [self getToDoListFetchRequest];
     NSPredicate *todayPredicate = [NSPredicate predicateWithFormat:@"begin_day == %@", [NSString getTodayBeginDayFormatString]];
-    NSPredicate *timePredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", [NSDate date]];
+    NSPredicate *timePredicate = [NSPredicate predicateWithFormat:@"end_time > %@", [NSDate date]];
     NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
     [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, todayPredicate, timePredicate, nil]]];
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];

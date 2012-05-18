@@ -110,7 +110,7 @@
         NSDate *endDate = [startDate dateByAddingTimeInterval:DAY_TIME_INTERVAL * (i + 1) + timeZoneIntervalOffset];
         NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", beginDate];
         NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", endDate];
-        NSLog(@"begin:%@, end:%@", [NSString yearMonthDayWeekTimeConvertFromDate:beginDate], [NSString yearMonthDayWeekTimeConvertFromDate:endDate]);
+        //NSLog(@"begin:%@, end:%@", [NSString yearMonthDayWeekTimeConvertFromDate:beginDate], [NSString yearMonthDayWeekTimeConvertFromDate:endDate]);
         BOOL hasEvent = NO;
         NSArray *filteredItmes = [items filteredArrayUsingPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:beginPredicate, endPredicate, nil]]];
         if(filteredItmes.count > 0) {

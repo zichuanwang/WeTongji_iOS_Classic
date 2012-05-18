@@ -14,6 +14,8 @@
 //static NSString* const APIDomain = @"106.187.95.107:8080";
 static NSString* const APIDomain = @"we.tongji.edu.cn";
 
+#define GetActivitySortMethodLikeDesc @"Like DESC"
+
 @interface WTClient()
 
 @property (nonatomic, retain) NSMutableDictionary *params;
@@ -206,7 +208,7 @@ report_completion:
 #pragma mark -
 #pragma mark APIs
 
-- (void)getActivitesWithChannelIds:(NSString *)channel_status_str page:(NSInteger)page {
+- (void)getActivitesWithChannelIds:(NSString *)channel_status_str sortType:(GetActivitySortType)type page:(NSInteger)page {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
     if(channel_status_str) {
         [self.params setObject:channel_status_str forKey:@"Channel_Ids"];
@@ -216,6 +218,9 @@ report_completion:
     }
     if(page <= 0)
         page = 1;
+    if(type == GetActivitySortTypeLikeDesc) {
+        [self.params setObject:GetActivitySortMethodLikeDesc forKey:@"Sort"];
+    }
     NSString *currentUserID = [NSUserDefaults getCurrentUserID];
     if(currentUserID) {
         self.currentUserIDRequired = YES;
