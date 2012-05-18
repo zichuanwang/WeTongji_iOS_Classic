@@ -16,6 +16,8 @@
 + (NSString *)yearMonthDayWeekTimeConvertFromDate:(NSDate *)date;
 + (NSString *)timeConvertFromDate:(NSDate *)date;
 + (NSString *)timeConvertFromBeginDate:(NSDate *)begin endDate:(NSDate *)end;
++ (NSString *)standardDateStringCovertFromDate:(NSDate *)date;
+
 - (BOOL)isSuitableForPassword;
 - (NSNumber *)weekDayStringCovertToNumber;
 + (NSString *)getTodayBeginDayFormatString;

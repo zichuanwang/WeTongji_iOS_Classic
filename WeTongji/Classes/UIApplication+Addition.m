@@ -36,7 +36,15 @@ static BOOL _isShowingToast;
     return (UIViewController *)appDelegate.window.rootViewController;
 }
 
-- (void)presentModalViewController:(UIViewController *)vc
++ (void)presentModalViewController:(UIViewController *)vc animated:(BOOL)animated {
+    [[UIApplication sharedApplication] presentModalViewController:vc animated:animated];
+}
+
++ (void)dismissModalViewController {
+    [[UIApplication sharedApplication] dismissModalViewController];
+}
+
+- (void)presentModalViewController:(UIViewController *)vc animated:(BOOL)animated
 {
     if (_modalViewController)
         return;
@@ -47,19 +55,27 @@ static BOOL _isShowingToast;
 	_backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
 	_backView.backgroundColor = [UIColor clearColor];
     
-    CGRect frame = vc.view.frame;
-    frame.origin.x = 0;
-    frame.origin.y = 460;
-    vc.view.frame = frame;
+	[self.keyWindow addSubview:_backView];
+	[self.keyWindow addSubview:vc.view];
     
-	[[self rootView] addSubview:_backView];
-	[[self rootView] addSubview:vc.view];
-	
-    [UIView animateWithDuration:DefaultModelViewControllerAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    if(animated) {
+        CGRect frame = vc.view.frame;
+        frame.origin.x = 0;
+        frame.origin.y = 480;
+        vc.view.frame = frame;
+        
+        [UIView animateWithDuration:DefaultModelViewControllerAnimationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            CGRect frame = vc.view.frame;
+            frame.origin.y = 0;
+            vc.view.frame = frame;
+        } completion:nil];
+    }
+    else {
         CGRect frame = vc.view.frame;
         frame.origin.y = 0;
         vc.view.frame = frame;
-    } completion:^(BOOL finished) {}];
+    }
+        
 }
 
 - (void)dismissModalViewController

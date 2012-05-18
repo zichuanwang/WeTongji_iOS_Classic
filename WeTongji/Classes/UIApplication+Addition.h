@@ -15,8 +15,8 @@
 
 @property (nonatomic, readonly) UIViewController *rootViewController;
 
-- (void)presentModalViewController:(UIViewController *)vc;
-- (void)dismissModalViewController;
++ (void)presentModalViewController:(UIViewController *)vc animated:(BOOL)animated;
++ (void)dismissModalViewController;
 + (void)presentToast:(NSString *)text withVerticalPos:(CGFloat)y;
 + (void)presentAlertToast:(NSString *)text withVerticalPos:(CGFloat)y;
 + (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title;

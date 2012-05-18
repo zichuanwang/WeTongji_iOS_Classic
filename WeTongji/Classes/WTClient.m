@@ -10,6 +10,7 @@
 #import "JSON.h"
 #import "NSString+URLEncoding.h"
 #import "NSUserDefaults+Addition.h"
+#import "NSString+Addition.h"
 
 //static NSString* const APIDomain = @"106.187.95.107:8080";
 static NSString* const APIDomain = @"we.tongji.edu.cn";
@@ -386,6 +387,15 @@ report_completion:
     [self.params setObject:@"TimeTable.Get" forKey:@"M"];
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
+    [self sendRequest];
+}
+
+- (void)getScheduleWithBeginDate:(NSDate *)begin endDate:(NSDate *)end {
+    [self.params setObject:@"Schedule.Get" forKey:@"M"];
+    self.currentUserIDRequired = YES;
+    self.sessionRequired = YES;
+    [self.params setObject:[NSString standardDateStringCovertFromDate:begin] forKey:@"Begin"];
+    [self.params setObject:[NSString standardDateStringCovertFromDate:end] forKey:@"End"];
     [self sendRequest];
 }
 

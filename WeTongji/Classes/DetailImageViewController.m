@@ -125,7 +125,7 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.view.alpha = 0;
     } completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
+        [UIApplication dismissModalViewController];
         if(self.delegate && [self.delegate respondsToSelector:@selector(detailImageViewControllerDidFinishShow)]) {
             [self.delegate detailImageViewControllerDidFinishShow];
         }
@@ -193,7 +193,7 @@
 
 - (void)show {
     self.view.alpha = 0;
-    [[UIApplication sharedApplication].keyWindow addSubview:self.view];
+    [UIApplication presentModalViewController:self animated:NO];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     [UIView animateWithDuration:0.7f animations:^{
         self.view.alpha = 1;

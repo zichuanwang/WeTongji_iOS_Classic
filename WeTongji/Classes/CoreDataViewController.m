@@ -29,7 +29,7 @@ static CoreDataKernal *kernalInstance = nil;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.managedObjectContext = appDelegate.managedObjectContext;
         [CoreDataKernal getKernalInstance];
-        NSLog(@"init core data view controller");
+        //NSLog(@"init core data view controller");
     }
     return self;
 }

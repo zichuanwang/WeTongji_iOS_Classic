@@ -28,7 +28,7 @@
     result.what = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
     result.content = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Description"]];
     result.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
-    result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Avatar"]];
+    result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"OrganizerAvatar"]];
     result.image_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Image"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
     result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];

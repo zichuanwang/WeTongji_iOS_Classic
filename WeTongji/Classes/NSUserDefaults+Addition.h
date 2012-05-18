@@ -38,4 +38,8 @@ typedef enum {
 + (UIStyle)getCurrentUIStyle;
 + (void)setCurrentUIStyle:(UIStyle)style;
 
++ (void)setCurrentSemesterBeginTime:(NSDate *)begin endTime:(NSDate *)end;
++ (NSDate *)getCurrentSemesterBeginDate;
++ (NSDate *)getCurrentSemesterEndsDate;
+
 @end

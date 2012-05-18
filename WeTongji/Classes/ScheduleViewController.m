@@ -65,7 +65,8 @@ typedef enum {
     [self configureTabBar];
     [self configureTabBarUIStyle];
     [self configureDayTabBarViewController];
-    [self configureInitialCourseData];
+    [self configureCourseData];
+    [self configureActivityData];
 }
 
 - (void)viewDidUnload
@@ -85,10 +86,29 @@ typedef enum {
 #pragma mark -
 #pragma mark Logic methods 
 
-- (void)configureInitialCourseData {
-    for(Event *event in self.currentUser.schedule)
-        if([event isMemberOfClass:[Course class]])
-            return;
+- (void)configureActivityData {
+    NSDate *beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
+    NSDate *endDate = [NSUserDefaults getCurrentSemesterEndsDate];
+    if(beginDate == nil || endDate == nil)
+        return;
+    WTClient *client = [WTClient client];
+    [client setCompletionBlock:^(WTClient *client) {
+        if(!client.hasError) {
+            NSArray *activites = [client.responseData objectForKey:@"Activities"];
+            for(NSDictionary *dict in activites) {
+                Activity *activity = [Activity insertActivity:dict inManagedObjectContext:self.managedObjectContext];
+                [self.currentUser addScheduleObject:activity];
+            }
+        }
+    }];
+    
+    [client getScheduleWithBeginDate:beginDate endDate:endDate];
+}
+
+- (void)configureCourseData {
+    NSDate *todayDate = [NSDate date];
+    if([todayDate compare:[NSUserDefaults getCurrentSemesterEndsDate]] == NSOrderedAscending)
+        return;
     
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
@@ -106,7 +126,9 @@ typedef enum {
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
             NSArray *courses = [client.responseData objectForKey:@"Courses"];
             NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
-            NSLog(@"semesterBeginString:%@, semesterWeekCount:%d", semesterBeginString, semesterWeekCount);
+            NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
+            [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
+            NSLog(@"semesterBeginString:%@, semesterWeekCount:%d, semesterEndString:%@", semesterBeginString, semesterWeekCount, [NSString yearMonthDayWeekConvertFromDate:semesterEndDate]);
             for(NSDictionary *dict in courses) {
                 NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];

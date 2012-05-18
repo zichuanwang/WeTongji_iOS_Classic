@@ -18,7 +18,6 @@
 @interface ActivityViewController ()
 
 @property (nonatomic, strong) Activity *activity;
-@property (nonatomic, strong) DetailImageViewController *detailImageViewController;
 
 @end
 
@@ -44,7 +43,6 @@
 @synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
 @synthesize activity = _activity;
-@synthesize detailImageViewController = _detailImageViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -344,7 +342,7 @@
 }
 
 - (void)didTapActivityImageView {
-    self.detailImageViewController = [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
+    [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
 }
 
 @end

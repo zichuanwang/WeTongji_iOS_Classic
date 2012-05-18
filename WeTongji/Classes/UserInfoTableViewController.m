@@ -13,6 +13,7 @@
 #import "NSNotificationCenter+Addition.h"
 #import "NSString+Addition.h"
 #import "UIImageView+Addition.h"
+#import "DetailImageViewController.h"
 
 @interface UserInfoTableViewController ()
 
@@ -60,24 +61,40 @@
     return info;
 }
 
+- (void)loadAvatarImageView {
+    [self.avatarImageView loadImageFromURL:self.currentUser.avatar_link completion:^(BOOL succeed) {
+        if(succeed)
+            self.avatarImageView.userInteractionEnabled = YES;
+        else 
+            self.avatarImageView.userInteractionEnabled = NO;
+    } cacheInContext:self.managedObjectContext];
+}
+
 #pragma mark -
 #pragma mark UI methods
 
-- (void)configureTableView {
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-    
+- (void)configureAvatarImageView {
     UIImageView *avatarFrameImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar_frame.png"]];
     avatarFrameImageView.frame = CGRectMake(210, 46, 100, 100);
+    avatarFrameImageView.userInteractionEnabled = YES;
     
     UIImageView *defaultAvatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_info_default_avatar.png"]];
     defaultAvatarImageView.frame = CGRectMake(17, 17, 66, 66);
     
     self.avatarImageView = [[UIImageView alloc] initWithFrame:defaultAvatarImageView.frame];
-    [self.avatarImageView loadImageFromURL:self.currentUser.avatar_link cacheInContext:self.managedObjectContext];
-    
+    [self loadAvatarImageView];
+        
     [avatarFrameImageView addSubview:defaultAvatarImageView];
     [avatarFrameImageView addSubview:self.avatarImageView];
     [self.tableView addSubview:avatarFrameImageView];
+    
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAvatarImageView)];
+    [self.avatarImageView addGestureRecognizer:gr];
+}
+
+- (void)configureTableView {
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [self configureAvatarImageView];
 }
 
 #pragma mark -
@@ -117,10 +134,17 @@
 }
 
 #pragma mark -
+#pragma mark IBActions 
+
+- (void)didTapAvatarImageView {
+    [DetailImageViewController showDetailImageWithImage:self.avatarImageView.image];
+}
+
+#pragma mark -
 #pragma mark Handle notifications
 
 - (void)handleChangeCurrentUserNotification:(NSNotification *)notification {
-    [self.avatarImageView loadImageFromURL:self.currentUser.avatar_link cacheInContext:self.managedObjectContext];
+    [self loadAvatarImageView];
     [self.tableView reloadData];
 }
 

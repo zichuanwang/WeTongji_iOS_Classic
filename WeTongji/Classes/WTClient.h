@@ -56,5 +56,7 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)unfavoriteActivity:(NSString *)activity_id;
 - (void)getFavotiteList:(NSInteger)page;
 - (void)getCourse;
+- (void)getScheduleWithBeginDate:(NSDate *)begin 
+                         endDate:(NSDate *)end;
 
 @end

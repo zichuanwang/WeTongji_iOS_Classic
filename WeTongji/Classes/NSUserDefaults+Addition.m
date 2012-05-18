@@ -15,10 +15,12 @@ typedef enum {
     ChannelEnterprise = 3,
 } ChannelName;
 
-#define kUserDefaultsInitialized @"kUserDefaultsInitialized"
-#define kCurrentUserID @"kCurrentUserID"
-#define kCurrentUserSession @"kCurrentUserSession"
-#define kCurrentUIStyle @"kCurrentUIStyle"
+#define kUserDefaultsInitialized    @"kUserDefaultsInitialized"
+#define kCurrentUserID              @"kCurrentUserID"
+#define kCurrentUserSession         @"kCurrentUserSession"
+#define kCurrentUIStyle             @"kCurrentUIStyle"
+#define kCurrentSemesterBeginTime   @"kCurrentSemesterBeginTime"
+#define kCurrentSemesterEndTime     @"kCurrentSemesterEndTime"
 
 @implementation NSUserDefaults (Addition)
 
@@ -152,6 +154,23 @@ typedef enum {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setInteger:style forKey:kCurrentUIStyle];
     [userDefaults synchronize];
+}
+
++ (void)setCurrentSemesterBeginTime:(NSDate *)begin endTime:(NSDate *)end {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:begin forKey:kCurrentSemesterBeginTime];
+    [userDefaults setObject:end forKey:kCurrentSemesterEndTime];
+    [userDefaults synchronize];
+}
+
++ (NSDate *)getCurrentSemesterBeginDate {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:kCurrentSemesterBeginTime];
+}
+
++ (NSDate *)getCurrentSemesterEndsDate {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:kCurrentSemesterEndTime];
 }
 
 @end
