@@ -12,6 +12,7 @@
 #import "UIApplication+Addition.h"
 #import "NSNotificationCenter+Addition.h"
 #import "WTClient.h"
+#import "UIImageView+Addition.h"
 
 @interface ActivityViewController ()
 
@@ -35,6 +36,7 @@
 @synthesize likeLabel = _likeLabel;
 @synthesize middleView = _middleView;
 @synthesize bottomView = _bottomView;
+@synthesize avatarImageView = _avatarImageView;
 @synthesize tabBarBgImageView = _tabBarBgImageView;
 @synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
@@ -79,6 +81,7 @@
     self.bottomView = nil;
     self.tabBarBgImageView = nil;
     self.tabBarSeperatorImageView = nil;
+    self.avatarImageView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -125,6 +128,8 @@
     [self.descriptionLabel sizeToFit];
     CGRect rect = self.descriptionLabel.frame;
     self.descriptionLabel.frame = rect;
+    
+    [self.avatarImageView loadImageFromURL:self.activity.avatar_link cacheInContext:self.managedObjectContext];
     
     self.organizerNameLabel.text = self.activity.organizer;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
