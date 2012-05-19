@@ -59,7 +59,7 @@ typedef enum {
     //self.navigationController.navigationBar.hidden = NO;
     [self configureNavigationBar];
     [self configureTabBarButtons];
-    [self configureUserInfoTabBarViewController];
+    [self configureToDoListTabBarViewController];
     [self configureTabBarUIStyle];
     [self updateUIAccordingToCurrentUserStatus];
     [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
@@ -128,7 +128,7 @@ typedef enum {
     self.checkButton.highlightedImageView.image = [UIImage imageNamed:@"main_tab_bar_btn_check_hl"];
     self.settingButton.highlightedImageView.image = [UIImage imageNamed:@"main_tab_bar_btn_setting_hl"];
     
-    [self.userInfoButton setSelected:YES];
+    [self.checkButton setSelected:YES];
 }
 
 - (void)configureTabBarSubViewController:(TabBarViewControllerName)viewControllerName {

@@ -1054,6 +1054,49 @@
 			name = default;
 			sourceTree = "<group>";
 		};
+		E11B6F3F156746AB00B33118 /* day */ = {
+			isa = PBXGroup;
+			children = (
+				E135F7F3155E8B35008494D8 /* ScheduleDayTableViewCell.h */,
+				E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */,
+				E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */,
+				E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */,
+				E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */,
+				E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */,
+			);
+			name = day;
+			sourceTree = "<group>";
+		};
+		E11B6F40156746B700B33118 /* week */ = {
+			isa = PBXGroup;
+			children = (
+				E11B6F24156729D000B33118 /* ScheduleWeekLeftTableViewCell.h */,
+				E11B6F25156729D100B33118 /* ScheduleWeekLeftTableViewCell.m */,
+				E11B6F2915672A4000B33118 /* ScheduleWeekLeftTableViewCell.xib */,
+				E11B6F0E1567096700B33118 /* ScheduleWeekRightTableViewCell.h */,
+				E11B6F0F1567096700B33118 /* ScheduleWeekRightTableViewCell.m */,
+				E11B6F2715672A1F00B33118 /* ScheduleWeekRightTableViewCell.xib */,
+				E11B6F2F1567447B00B33118 /* ScheduleWeekRightTableViewCellContentView.h */,
+				E11B6F301567447F00B33118 /* ScheduleWeekRightTableViewCellContentView.m */,
+				E135F780155E4224008494D8 /* ScheduleWeekViewController.h */,
+				E135F781155E4224008494D8 /* ScheduleWeekViewController.m */,
+				E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */,
+			);
+			name = week;
+			sourceTree = "<group>";
+		};
+		E11B6F41156746C200B33118 /* month */ = {
+			isa = PBXGroup;
+			children = (
+				E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */,
+				E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */,
+				E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */,
+				E135F77B155E341F008494D8 /* ScheduleMonthViewController.h */,
+				E135F77C155E341F008494D8 /* ScheduleMonthViewController.m */,
+			);
+			name = month;
+			sourceTree = "<group>";
+		};
 		E14741FB1565430C00812C9D /* coming_soon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1307,6 +1350,7 @@
 		E1C8773E1505F41700592954 = {
 			isa = PBXGroup;
 			children = (
+				E1C877A61505FB5600592954 /* Classes */,
 				E1C877551505F41700592954 /* WeTongji */,
 				E1C8774C1505F41700592954 /* Frameworks */,
 				E1C8774A1505F41700592954 /* Products */,
@@ -1343,8 +1387,8 @@
 				E1C8775E1505F41700592954 /* AppDelegate.h */,
 				E1C8775F1505F41700592954 /* AppDelegate.m */,
 				E1917733150785ED009FB941 /* MainWindow.xib */,
-				E1C877A61505FB5600592954 /* Classes */,
 				E1C877561505F41700592954 /* Supporting Files */,
+				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 			);
 			path = WeTongji;
 			sourceTree = "<group>";
@@ -1371,6 +1415,7 @@
 				E1DF6F981537612E001C60EA /* ViewControllers */,
 			);
 			name = Classes;
+			path = WeTongji;
 			sourceTree = "<group>";
 		};
 		E1C877BE15064B6300592954 /* Resources */ = {
@@ -1722,32 +1767,13 @@
 		E1DF6FF71539B8C8001C60EA /* schedule */ = {
 			isa = PBXGroup;
 			children = (
-				E135F7F3155E8B35008494D8 /* ScheduleDayTableViewCell.h */,
-				E135F7F4155E8B37008494D8 /* ScheduleDayTableViewCell.m */,
-				E135F7F6155E8B5C008494D8 /* ScheduleDayTableViewCell.xib */,
-				E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */,
-				E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */,
-				E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */,
-				E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */,
-				E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */,
-				E16365C51564D924006477C9 /* ScheduleMonthTableViewController.xib */,
-				E135F77B155E341F008494D8 /* ScheduleMonthViewController.h */,
-				E135F77C155E341F008494D8 /* ScheduleMonthViewController.m */,
 				E1AE08841531826F006964B8 /* ScheduleViewController.h */,
 				E1AE08851531826F006964B8 /* ScheduleViewController.m */,
 				E1AE08861531826F006964B8 /* ScheduleViewController.xib */,
-				E11B6F24156729D000B33118 /* ScheduleWeekLeftTableViewCell.h */,
-				E11B6F25156729D100B33118 /* ScheduleWeekLeftTableViewCell.m */,
-				E11B6F2915672A4000B33118 /* ScheduleWeekLeftTableViewCell.xib */,
-				E11B6F0E1567096700B33118 /* ScheduleWeekRightTableViewCell.h */,
-				E11B6F0F1567096700B33118 /* ScheduleWeekRightTableViewCell.m */,
-				E11B6F2715672A1F00B33118 /* ScheduleWeekRightTableViewCell.xib */,
-				E11B6F2F1567447B00B33118 /* ScheduleWeekRightTableViewCellContentView.h */,
-				E11B6F301567447F00B33118 /* ScheduleWeekRightTableViewCellContentView.m */,
-				E135F780155E4224008494D8 /* ScheduleWeekViewController.h */,
-				E135F781155E4224008494D8 /* ScheduleWeekViewController.m */,
-				E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */,
+				E11B6F3F156746AB00B33118 /* day */,
+				E11B6F41156746C200B33118 /* month */,
 				E16365A01564CA37006477C9 /* TapkuLibrary */,
+				E11B6F40156746B700B33118 /* week */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -1755,7 +1781,6 @@
 		E1E4836F15487D6700814FA4 /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1C877611505F41700592954 /* WeTongji.xcdatamodeld */,
 				E1E4837A15487F2400814FA4 /* Categories */,
 				E1E4837915487F1900814FA4 /* Models */,
 			);
@@ -2483,8 +2508,7 @@
 				E1C877621505F41700592954 /* WeTongji.xcdatamodel */,
 			);
 			currentVersion = E1C877621505F41700592954 /* WeTongji.xcdatamodel */;
-			name = WeTongji.xcdatamodeld;
-			path = ../../WeTongji.xcdatamodeld;
+			path = WeTongji.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
