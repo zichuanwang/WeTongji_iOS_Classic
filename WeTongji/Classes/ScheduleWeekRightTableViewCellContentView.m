@@ -56,9 +56,15 @@
     float startPosition = 280.0f;
     float height = 80.0f;
     if (startPosition >= -height && startPosition <=  self.frame.size.height) {
-        addRoundedRectToPath(context, CGRectMake(0, startPosition-self.verticalOffset, 85.0f, height), 4.0f, 4.0f);
+        addRoundedRectToPath(context, CGRectMake(0, startPosition - self.verticalOffset, 85.0f, height), 6.0f, 6.0f);
     }
     CGContextDrawPath(context, kCGPathEOFillStroke);
+    
+    [[UIColor whiteColor] set];
+    NSString *courseName = @"操作系统dafdasf";
+	UIFont *weekfont=[UIFont boldSystemFontOfSize:14];
+	[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
+    
 }
 
 - (void)setVerticalOffset:(CGFloat)verticalOffset {
@@ -89,14 +95,28 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
     CGContextRestoreGState(context); // 13
 }
 
-- (int)timeConvertFromDate:(NSDate *)date {
+- (int)startTimeConvertFromDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
     NSDateComponents *comps  = [calendar components:unitFlags fromDate:date];
-    
     int hour = [comps hour];  
     int minute = [comps minute];
+    
     return (hour-7)*60 + minute;
+}
+
+- (int)heightConvertFromTime:(NSDate *)beginTime ToTime:(NSDate *)endTime {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
+    NSDateComponents *comps  = [calendar components:unitFlags fromDate:beginTime];
+    int beginHour = [comps hour];  
+    int beginMinute = [comps minute];
+    
+    comps  = [calendar components:unitFlags fromDate:endTime];
+    int endHour = [comps hour];  
+    int endMinute = [comps minute];
+    
+    return (endHour - beginHour)*60 + (endMinute - beginMinute);
 }
 
 
