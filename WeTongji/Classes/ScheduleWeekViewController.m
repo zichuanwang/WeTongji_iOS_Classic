@@ -76,14 +76,20 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     if([cell isKindOfClass:[ScheduleWeekLeftTableViewCell class]]) {
-        NSInteger hour = indexPath.row + BEGIN_TIME;
+        NSInteger hour = indexPath.row + BEGIN_HOUR;
         NSString *hourString = nil;
         if(hour < 10)
             hourString = [NSString stringWithFormat:@"0%d:00", hour];
         else
             hourString = [NSString stringWithFormat:@"%d:00", hour];
+        
         ScheduleWeekLeftTableViewCell *leftCell = (ScheduleWeekLeftTableViewCell *)cell;
         leftCell.hourLabel.text = hourString;
+        if(hour == END_HOUR) 
+            leftCell.separatorImageView.hidden = YES;
+        else
+            leftCell.separatorImageView.hidden = NO;
+        
     } else {
         NSInteger weekDay = (indexPath.row + 1) % 7 + 1;
         NSString *weekDayString = [NSString weekDayConvertFromInteger:weekDay];

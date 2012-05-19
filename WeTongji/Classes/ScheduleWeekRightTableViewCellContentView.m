@@ -34,7 +34,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBStrokeColor(context, 0.8f, 0.8f, 0.8f, 0.7f);
     CGContextSetLineWidth(context, 1.0f);
-    for (int i = 1; i <= LEFT_TABLE_VIEW_ROW_COUNT; i++) {
+    for (int i = 1; i < LEFT_TABLE_VIEW_ROW_COUNT; i++) {
         //draw horizontal lines
         CGFloat leftCellHeight = 40.0f;
         CGFloat rightCellWidth = 85.0f;

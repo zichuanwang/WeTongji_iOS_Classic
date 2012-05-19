@@ -11,5 +11,6 @@
 @interface ScheduleWeekLeftTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *hourLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *separatorImageView;
 
 @end

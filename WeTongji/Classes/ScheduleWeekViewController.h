@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataViewController.h"
 
-#define BEGIN_TIME  7
-#define END_TIME    22
-#define LEFT_TABLE_VIEW_ROW_COUNT   (END_TIME - BEGIN_TIME + 1)
+#define BEGIN_HOUR  7
+#define END_HOUR    22
+#define LEFT_TABLE_VIEW_ROW_COUNT   (END_HOUR - BEGIN_HOUR + 1)
 
 @interface ScheduleWeekViewController : CoreDataViewController<UITableViewDataSource, UITableViewDelegate>
 
