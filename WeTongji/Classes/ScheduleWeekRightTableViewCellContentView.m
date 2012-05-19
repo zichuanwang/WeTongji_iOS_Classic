@@ -61,7 +61,7 @@
     CGContextDrawPath(context, kCGPathEOFillStroke);
     
     [[UIColor whiteColor] set];
-    NSString *courseName = @"操作系统dafdasf";
+    NSString *courseName = @"操作系统";
 	UIFont *weekfont=[UIFont boldSystemFontOfSize:14];
 	[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
     
