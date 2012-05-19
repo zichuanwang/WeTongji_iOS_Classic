@@ -86,11 +86,11 @@
         } else 
             continue;
         
-        NSLog(@"event name:%@", event.what);
+        //NSLog(@"event name:%@", event.what);
         float startPosition = [self startPosConvertFromDate:event.begin_time];
         float height = [self heightConvertFromTime:event.begin_time ToTime:event.end_time];
         
-        if (startPosition >= -height && startPosition <= self.frame.size.height) {
+        if (startPosition - self.verticalOffset >= -height && startPosition - self.verticalOffset <= self.frame.size.height) {
             addRoundedRectToPath(context, CGRectMake(2, startPosition - self.verticalOffset + 2, 80, height - 4), 8.0f, 8.0f);
         }
         CGContextDrawPath(context, kCGPathEOFillStroke);

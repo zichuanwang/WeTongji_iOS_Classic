@@ -137,7 +137,7 @@ typedef enum {
             NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
             NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
             [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
-            NSLog(@"semesterBeginString:%@, semesterWeekCount:%d, semesterEndString:%@", semesterBeginString, semesterWeekCount, [NSString yearMonthDayWeekConvertFromDate:semesterEndDate]);
+            //NSLog(@"semesterBeginString:%@, semesterWeekCount:%d, semesterEndString:%@", semesterBeginString, semesterWeekCount, [NSString yearMonthDayWeekConvertFromDate:semesterEndDate]);
             for(NSDictionary *dict in courses) {
                 NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
