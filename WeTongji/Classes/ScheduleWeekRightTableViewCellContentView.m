@@ -8,6 +8,10 @@
 
 #import "ScheduleWeekRightTableViewCellContentView.h"
 #import "ScheduleWeekViewController.h"
+#import "Course+Addition.h"
+#import "Activity+Addition.h"
+
+#define MINUTE_TO_HEIGHT_RATIO (40. / 60 )
 
 @implementation ScheduleWeekRightTableViewCellContentView
 
@@ -32,6 +36,12 @@
     }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawHorizontalLines:context];
+    [self drawVerticalLine:context];
+    [self drawEvents:context];
+}
+
+- (void)drawHorizontalLines:(CGContextRef)context {
     CGContextSetRGBStrokeColor(context, 0.8f, 0.8f, 0.8f, 0.7f);
     CGContextSetLineWidth(context, 1.0f);
     for (int i = 1; i < LEFT_TABLE_VIEW_ROW_COUNT; i++) {
@@ -39,14 +49,14 @@
         CGFloat leftCellHeight = 40.0f;
         CGFloat rightCellWidth = 85.0f;
         CGFloat verticalPos = i * leftCellHeight - self.verticalOffset;
-        if (verticalPos >= 0 && verticalPos <=  self.frame.size.height) {
+        if (verticalPos >= 0 && verticalPos <= self.frame.size.height) {
             CGContextMoveToPoint(context, 0, verticalPos);
             CGContextAddLineToPoint(context, rightCellWidth, verticalPos);
         }
     }
     CGContextStrokePath(context);
-    
-    //draw vertical line
+}
+- (void)drawVerticalLine:(CGContextRef)context {
     CGContextSetLineWidth(context, 2.0f);
     CGContextMoveToPoint(context, 85.0, 0);
     CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
@@ -59,19 +69,36 @@
 
 - (void)drawEvents:(CGContextRef)context {
     //draw events rect
-    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
-    CGContextSetRGBFillColor(context, 85 / 255., 198.0 / 255., 54 / 255., 0.8f);
-    float startPosition = 280.0f;
-    float height = 80.0f;
-    if (startPosition >= -height && startPosition <=  self.frame.size.height) {
-        addRoundedRectToPath(context, CGRectMake(0, startPosition - self.verticalOffset, 85.0f, height), 6.0f, 6.0f);
+    CGFloat alpha = 0.6f;
+    for(Event * event in self.dataArray) {
+        if([event isMemberOfClass:[Course class]]) {
+            Course *course = (Course *)event;
+            if([course.require_type isEqualToString:@"必修"]) {
+                CGContextSetRGBStrokeColor(context, 87 / 255., 142 / 255., 195 / 255., alpha);
+                CGContextSetRGBFillColor(context, 121 / 255., 181 / 255., 240 / 255., alpha);
+            } else {
+                CGContextSetRGBStrokeColor(context, 79 / 255., 178 / 255., 43 / 255., alpha);
+                CGContextSetRGBFillColor(context, 135 / 255., 200 / 255., 76 / 255., alpha);
+            }
+        } else if([event isMemberOfClass:[Activity class]]) {
+            CGContextSetRGBStrokeColor(context, 253 / 255., 186 / 255., 81 / 255., alpha);
+            CGContextSetRGBFillColor(context, 255 / 255., 208 / 255., 52 / 255., alpha);
+        } else 
+            continue;
+        
+        NSLog(@"event name:%@", event.what);
+        float startPosition = [self startPosConvertFromDate:event.begin_time];
+        float height = [self heightConvertFromTime:event.begin_time ToTime:event.end_time];
+        
+        if (startPosition >= -height && startPosition <= self.frame.size.height) {
+            addRoundedRectToPath(context, CGRectMake(2, startPosition - self.verticalOffset + 2, 80, height - 4), 8.0f, 8.0f);
+        }
+        CGContextDrawPath(context, kCGPathEOFillStroke);
+        
+        [[UIColor whiteColor] set];
+        CGSize stringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:14] constrainedToSize:CGSizeMake(85 - 6, height)];
+        [event.what drawInRect:CGRectMake(3, startPosition - self.verticalOffset + (height - stringSize.height) / 2, 85 - 6, stringSize.height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
     }
-    CGContextDrawPath(context, kCGPathEOFillStroke);
-    
-    [[UIColor whiteColor] set];
-    NSString *courseName = @"操作系统操作系统操作系统操作系统操作系统操作系统操作系统";
-	//[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
-    [courseName drawInRect:CGRectMake(0, startPosition - self.verticalOffset, 85, height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
 }
 
 - (void)setVerticalOffset:(CGFloat)verticalOffset {
@@ -81,47 +108,39 @@
 
 static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight) {
     float fw, fh;
-    if (ovalWidth == 0 || ovalHeight == 0) { // 1
+    if (ovalWidth == 0 || ovalHeight == 0) {
         CGContextAddRect(context, rect);
         return;
     }
-    CGContextSaveGState(context); // 2
-    CGContextTranslateCTM (context, CGRectGetMinX(rect), // 3
-                           CGRectGetMinY(rect));
-    CGContextScaleCTM (context, ovalWidth, ovalHeight); // 4
-    fw = CGRectGetWidth (rect) / ovalWidth; // 5
-    fh = CGRectGetHeight (rect) / ovalHeight; // 6
-    CGContextMoveToPoint(context, fw, fh/2); // 7
-    CGContextAddArcToPoint(context, fw, fh, fw/2, fh, 1); // 8
-    CGContextAddArcToPoint(context, 0, fh, 0, fh/2, 1); // 9
-    CGContextAddArcToPoint(context, 0, 0, fw/2, 0, 1); // 10
-    CGContextAddArcToPoint(context, fw, 0, fw, fh/2, 1); // 11
-    CGContextClosePath(context); // 12
-    CGContextRestoreGState(context); // 13
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, CGRectGetMinX(rect), CGRectGetMinY(rect));
+    CGContextScaleCTM(context, ovalWidth, ovalHeight);
+    fw = CGRectGetWidth(rect) / ovalWidth;
+    fh = CGRectGetHeight(rect) / ovalHeight;
+    CGContextMoveToPoint(context, fw, fh / 2);
+    CGContextAddArcToPoint(context, fw, fh, fw / 2, fh, 1);
+    CGContextAddArcToPoint(context, 0, fh, 0, fh / 2, 1);
+    CGContextAddArcToPoint(context, 0, 0, fw / 2, 0, 1);
+    CGContextAddArcToPoint(context, fw, 0, fw, fh / 2, 1);
+    CGContextClosePath(context);
+    CGContextRestoreGState(context);
 }
 
-- (int)startTimeConvertFromDate:(NSDate *)date {
+- (int)startPosConvertFromDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
-    NSDateComponents *comps  = [calendar components:unitFlags fromDate:date];
-    int hour = [comps hour];  
+    NSDateComponents *comps = [calendar components:unitFlags fromDate:date];
+    int hour = [comps hour];
     int minute = [comps minute];
-    
-    return (hour - 7) * 60 + minute;
+    int result = (hour - BEGIN_HOUR) * 60 + minute + 30;
+    result *= MINUTE_TO_HEIGHT_RATIO;
+    return result;
 }
 
 - (int)heightConvertFromTime:(NSDate *)beginTime ToTime:(NSDate *)endTime {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
-    NSInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
-    NSDateComponents *comps  = [calendar components:unitFlags fromDate:beginTime];
-    int beginHour = [comps hour];  
-    int beginMinute = [comps minute];
-    
-    comps  = [calendar components:unitFlags fromDate:endTime];
-    int endHour = [comps hour];  
-    int endMinute = [comps minute];
-    
-    return (endHour - beginHour) * 60 + (endMinute - beginMinute);
+    NSTimeInterval timeInterval = [endTime timeIntervalSinceDate:beginTime];   
+    int result = timeInterval / 60 * MINUTE_TO_HEIGHT_RATIO;
+    return result;
 }
 
 

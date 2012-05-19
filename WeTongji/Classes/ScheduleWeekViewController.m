@@ -12,6 +12,8 @@
 #import "NSUserDefaults+Addition.h"
 #import "NSString+Addition.h"
 
+#define DAY_TIME_INTERVAL (60 * 60 * 24)
+
 @interface ScheduleWeekViewController ()
 
 @end
@@ -54,8 +56,22 @@
 - (NSInteger)getTodayRowInRightTableView {
     NSDate *today = [NSDate date];
     NSTimeInterval timeIntervalSinceSemesterBegin = [today timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]];
-    NSInteger todayRow = timeIntervalSinceSemesterBegin / 60 / 60 / 24;
+    NSInteger todayRow = timeIntervalSinceSemesterBegin / DAY_TIME_INTERVAL;
     return todayRow;
+}
+
+- (NSArray *)getRightCellDataArrayAtIndexPath:(NSIndexPath *)indexPath {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
+    NSDate *semesterBegin = [NSUserDefaults getCurrentSemesterBeginDate];
+    NSTimeInterval timeInterval = indexPath.row * DAY_TIME_INTERVAL;
+    NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time >= %@", [semesterBegin dateByAddingTimeInterval:timeInterval]];
+    NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [semesterBegin dateByAddingTimeInterval:timeInterval + DAY_TIME_INTERVAL]];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, beginPredicate, endPredicate, nil]]];
+        
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+    return result;
 }
 
 #pragma mark -
@@ -112,7 +128,7 @@
         if([self getTodayRowInRightTableView] == indexPath.row)
             rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
         
-        [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y row:indexPath.row dataArray:nil];
+        [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y row:indexPath.row dataArray:[self getRightCellDataArrayAtIndexPath:indexPath]];
     }
 }
 
