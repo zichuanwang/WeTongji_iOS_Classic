@@ -14,4 +14,6 @@
 @property (nonatomic, strong) IBOutlet UITableView *rightTableView;
 @property (nonatomic, strong) IBOutlet UITableView *leftTableView;
 
+- (void)didClickTodayButton;
+
 @end

@@ -62,6 +62,7 @@
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
     NSNumber *endSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
     NSString *weekType = [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekType"]];
+    NSLog(@"course week day:%@", [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]]);
     NSNumber *weekDay = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]] weekDayStringCovertToNumber];
     
     [Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType inManagedObjectContext:context];

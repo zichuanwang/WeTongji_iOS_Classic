@@ -10,6 +10,7 @@
 #import "ScheduleWeekRightTableViewCell.h"
 #import "ScheduleWeekLeftTableViewCell.h"
 #import "NSUserDefaults+Addition.h"
+#import "NSString+Addition.h"
 
 #define BEGIN_TIME  7
 #define END_TIME    22
@@ -38,6 +39,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureRightTableView];
     [self configureView];
+    [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload
@@ -47,6 +49,16 @@
     // e.g. self.myOutlet = nil;
     self.leftTableView = nil;
     self.rightTableView = nil;
+}
+
+#pragma mark -
+#pragma mark Logic methods 
+
+- (NSInteger)getTodayRowInRightTableView {
+    NSDate *today = [NSDate date];
+    NSTimeInterval timeIntervalSinceSemesterBegin = [today timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]];
+    NSInteger todayRow = timeIntervalSinceSemesterBegin / 60 / 60 / 24;
+    return todayRow;
 }
 
 #pragma mark -
@@ -77,7 +89,26 @@
         ScheduleWeekLeftTableViewCell *leftCell = (ScheduleWeekLeftTableViewCell *)cell;
         leftCell.hourLabel.text = hourString;
     } else {
+        NSInteger weekDay = (indexPath.row + 1) % 7 + 1;
+        NSString *weekDayString = [NSString weekDayConvertFromInteger:weekDay];
         
+        NSInteger week = indexPath.row / 7;
+        if(weekDay == 2) {
+            NSArray *weekStringArray = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"七", @"八", @"九", @"十", nil];
+            NSString *weekString = nil;
+            if(week < 10)
+                weekString = [NSString stringWithFormat:@"第%@周", [weekStringArray objectAtIndex:week]];
+            else {
+                weekString = [NSString stringWithFormat:@"第十%@周", [weekStringArray objectAtIndex:week - 10]];
+            }
+            weekDayString = weekString;
+        }
+        
+        ScheduleWeekRightTableViewCell *rightCell = (ScheduleWeekRightTableViewCell *)cell;
+        rightCell.weekDayLabel.text = weekDayString;
+        
+        if([self getTodayRowInRightTableView] == indexPath.row)
+            rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
     }
 }
 
@@ -88,7 +119,10 @@
     if(tableView == self.rightTableView) {
         NSDate *begin = [NSUserDefaults getCurrentSemesterBeginDate];
         NSDate *end = [NSUserDefaults getCurrentSemesterEndDate];
-        return 100;
+        NSTimeInterval timeInterval = [end timeIntervalSinceDate:begin]; 
+        NSInteger result = timeInterval / 60 / 60 / 24;
+        NSLog(@"right num:%d", result);
+        return result;
     } else {
         return END_TIME - BEGIN_TIME + 1;
     }
@@ -106,6 +140,13 @@
     
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+#pragma mark -
+#pragma mark IBActions
+
+- (void)didClickTodayButton {
+    [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 @end

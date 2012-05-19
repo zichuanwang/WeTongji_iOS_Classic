@@ -29,6 +29,37 @@
     return result;
 }
 
++ (NSString *)weekDayConvertFromInteger:(NSInteger)weekday {
+    NSString *weekdayStr = nil;
+    switch (weekday) {
+        case 1:
+            weekdayStr = @"周日";
+            break;
+        case 2:
+            weekdayStr = @"周一";
+            break;
+        case 3:
+            weekdayStr = @"周二";
+            break;
+        case 4:
+            weekdayStr = @"周三";
+            break;
+        case 5:
+            weekdayStr = @"周四";
+            break;
+        case 6:
+            weekdayStr = @"周五";
+            break;
+        case 7:
+            weekdayStr = @"周六";
+            break;
+            
+        default:
+            break;
+    }
+    return weekdayStr;
+}
+
 + (NSString *)yearMonthDayWeekConvertFromDate:(NSDate *)date {
     NSString *result = [NSString yearMonthDayConvertFromDate:date];
     
@@ -38,34 +69,7 @@
     comps = [calendar components:unitFlags fromDate:date];
     int weekday = [comps weekday];
     
-    NSString *weekdayStr = nil;
-    switch (weekday) {
-        case 1:
-            weekdayStr = @"星期日";
-            break;
-        case 2:
-            weekdayStr = @"星期一";
-            break;
-        case 3:
-            weekdayStr = @"星期二";
-            break;
-        case 4:
-            weekdayStr = @"星期三";
-            break;
-        case 5:
-            weekdayStr = @"星期四";
-            break;
-        case 6:
-            weekdayStr = @"星期五";
-            break;
-        case 7:
-            weekdayStr = @"星期六";
-            break;
-            
-        default:
-            break;
-    }
-    
+    NSString *weekdayStr = [NSString weekDayConvertFromInteger:weekday];
     result = [NSString stringWithFormat:@"%@(%@)", result, weekdayStr];
     
     return result;

@@ -107,8 +107,17 @@ typedef enum {
 
 - (void)configureCourseData {
     NSDate *todayDate = [NSDate date];
-    if([todayDate compare:[NSUserDefaults getCurrentSemesterEndDate]] == NSOrderedAscending)
-        return;
+    if([NSUserDefaults getCurrentSemesterEndDate] != nil && [todayDate compare:[NSUserDefaults getCurrentSemesterEndDate]] == NSOrderedAscending) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
+        NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
+        NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", [NSUserDefaults getCurrentSemesterBeginDate]];
+        NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"begin_time < %@", [NSUserDefaults getCurrentSemesterEndDate]];
+        [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, beginPredicate, endPredicate, nil]]];
+        NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+        if(result.count > 0)
+            return;
+    }
     
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
@@ -277,6 +286,8 @@ typedef enum {
         [self.dayViewController didClickTodayButton];
     } else if(self.currentTabBarSubViewControllerName == MonthTabBarViewController) {
         [self.monthViewController didClickTodayButton];
+    } else if(self.currentTabBarSubViewControllerName == WeekTabBarViewController) {
+        [self.weekViewController didClickTodayButton];
     }
 }
 
