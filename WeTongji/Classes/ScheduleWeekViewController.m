@@ -36,7 +36,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureRightTableView];
     [self configureView];
-    //[self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload
@@ -106,7 +106,7 @@
         if([self getTodayRowInRightTableView] == indexPath.row)
             rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
         
-        rightCell.contentVerticalOffset = self.leftTableView.contentOffset.y;
+        [rightCell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y row:indexPath.row dataArray:nil];
     }
 }
 
@@ -153,7 +153,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(scrollView == self.leftTableView) {
         for(ScheduleWeekRightTableViewCell *cell in self.rightTableView.visibleCells) {
-            cell.contentVerticalOffset = self.leftTableView.contentOffset.y;
+            [cell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y];
         }
     }
 }

@@ -12,7 +12,6 @@
 
 @synthesize weekDayLabel = _weekDayLabel;
 @synthesize drawView = _drawView;
-@synthesize contentVerticalOffset = _contentVerticalOffset;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,9 +33,14 @@
     // Configure the view for the selected state
 }
 
-- (void)setContentVerticalOffset:(CGFloat)contentVerticalOffset {
-    _contentVerticalOffset = contentVerticalOffset;
-    self.drawView.verticalOffset = contentVerticalOffset;
+- (void)setDrawViewVerticalOffset:(CGFloat)offset row:(NSInteger)row dataArray:(NSArray *)array {
+    self.drawView.row = row;
+    self.drawView.dataArray = array;
+    self.drawView.verticalOffset = offset;
+}
+
+- (void)setDrawViewVerticalOffset:(CGFloat)offset {
+    self.drawView.verticalOffset = offset;
 }
 
 @end

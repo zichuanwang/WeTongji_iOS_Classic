@@ -12,7 +12,8 @@
 @implementation ScheduleWeekRightTableViewCellContentView
 
 @synthesize verticalOffset = _verticalOffset;
-@synthesize isOdd = _isOdd;
+@synthesize row = _row;
+@synthesize dataArray = _dataArray;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -25,31 +26,39 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
-    CGContextSetLineWidth(context, 1.0f);
-    
-    for (int i = 0; i < LEFT_TABLE_VIEW_ROW_COUNT; i++) {
-        if (!self.isOdd) {
-            //CGContextAddRect(context, CGRectMake(10.0, 30.0, 100.0, 100.0));  
-        }
-        
-        //draw horizontal lines
-        if ((i * 40.0 - self.verticalOffset) >= 0 && (i * 40.0 - self.verticalOffset) <=  self.frame.size.height) {
-            CGContextMoveToPoint(context, 0, i * 40.0 - self.verticalOffset);
-            CGContextAddLineToPoint(context, 85.0, i * 40.0 - self.verticalOffset);
-        }
-        
-        //draw vertical lines
-        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
-        CGContextSetLineWidth(context, 0.5f);
-        CGContextMoveToPoint(context, 85.0, i * 40.0);
-        CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
-        CGContextStrokePath(context);
+    if (self.row % 2) {
+        [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.04f] setFill];
+        UIRectFill(rect); 
     }
     
-    //draw course rects
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, 0.8f, 0.8f, 0.8f, 0.7f);
+    CGContextSetLineWidth(context, 1.0f);
+    for (int i = 1; i <= LEFT_TABLE_VIEW_ROW_COUNT; i++) {
+        //draw horizontal lines
+        CGFloat leftCellHeight = 40.0f;
+        CGFloat rightCellWidth = 85.0f;
+        CGFloat verticalPos = i * leftCellHeight - self.verticalOffset;
+        if (verticalPos >= 0 && verticalPos <=  self.frame.size.height) {
+            CGContextMoveToPoint(context, 0, verticalPos);
+            CGContextAddLineToPoint(context, rightCellWidth, verticalPos);
+        }
+    }
+    CGContextStrokePath(context);
+    
+    //draw vertical line
+    CGContextSetLineWidth(context, 2.0f);
+    CGContextMoveToPoint(context, 85.0, 0);
+    CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
+    if(self.row == 0) {
+        CGContextMoveToPoint(context, 0, 0);
+        CGContextAddLineToPoint(context, 0, self.frame.size.height);
+    }
+    CGContextStrokePath(context);
+}
+
+- (void)drawEvents:(CGContextRef)context {
+    //draw events rect
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
     CGContextSetRGBFillColor(context, 85 / 255., 198.0 / 255., 54 / 255., 0.8f);
     float startPosition = 280.0f;
@@ -63,7 +72,6 @@
     NSString *courseName = @"操作系统操作系统操作系统操作系统操作系统操作系统操作系统";
 	//[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
     [courseName drawInRect:CGRectMake(0, startPosition - self.verticalOffset, 85, height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
-    
 }
 
 - (void)setVerticalOffset:(CGFloat)verticalOffset {
@@ -71,9 +79,7 @@
     [self setNeedsDisplay];
 }
 
-static void addRoundedRectToPath(CGContextRef context, CGRect rect,
-                                 float ovalWidth,float ovalHeight)
-{
+static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight) {
     float fw, fh;
     if (ovalWidth == 0 || ovalHeight == 0) { // 1
         CGContextAddRect(context, rect);

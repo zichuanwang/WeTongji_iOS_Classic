@@ -11,6 +11,7 @@
 @interface ScheduleWeekRightTableViewCellContentView : UIView
 
 @property (nonatomic, assign) CGFloat verticalOffset;
-@property (nonatomic, assign) BOOL isOdd;
+@property (nonatomic, assign) NSInteger row;
+@property (nonatomic, strong) NSArray *dataArray;
 
 @end
