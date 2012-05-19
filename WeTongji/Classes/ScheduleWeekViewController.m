@@ -39,6 +39,8 @@
     [self configureRightTableView];
     [self configureView];
     [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    
+    [self.leftTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getNowRowInLeftTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload
@@ -52,6 +54,16 @@
 
 #pragma mark -
 #pragma mark Logic methods 
+
+- (NSInteger)getNowRowInLeftTableView {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
+    NSInteger unitFlags = NSHourCalendarUnit;
+    NSDateComponents *comps = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSInteger hour = [comps hour];
+    NSInteger result = hour - BEGIN_HOUR;
+    NSLog(@"left now row:%d", result);
+    return result;
+}
 
 - (NSInteger)getTodayRowInRightTableView {
     NSDate *today = [NSDate date];
@@ -167,6 +179,7 @@
 
 - (void)didClickTodayButton {
     [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self.leftTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getNowRowInLeftTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 #pragma mark -
