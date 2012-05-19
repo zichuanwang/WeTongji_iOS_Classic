@@ -36,7 +36,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureRightTableView];
     [self configureView];
-    [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    //[self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void)viewDidUnload
@@ -68,9 +68,8 @@
 - (void)configureRightTableView {
     CGRect frame =  self.rightTableView.frame;
     self.rightTableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
-    frame.size.width = LEFT_TABLE_VIEW_ROW_COUNT * 30;
-    frame.size.height = self.rightTableView.frame.size.width;
-    NSLog(@"frame origin:%f, %f", frame.origin.x, frame.origin.y);
+    frame.size.height = LEFT_TABLE_VIEW_ROW_COUNT * 40;
+    NSLog(@"frame:%f,%f,%f,%f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     self.rightTableView.frame = frame;
     self.rightTableView.contentInset = UIEdgeInsetsMake(65.0f, 0, 0, 0);
 }
