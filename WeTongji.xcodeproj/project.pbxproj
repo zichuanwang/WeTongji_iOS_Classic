@@ -54,6 +54,10 @@
 		E11B6F2D15672DEF00B33118 /* schedule_week_left_cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */; };
 		E11B6F2E15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */; };
 		E11B6F311567448400B33118 /* ScheduleWeekRightTableViewCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11B6F301567447F00B33118 /* ScheduleWeekRightTableViewCellContentView.m */; };
+		E11B6F471567BA8500B33118 /* schedule_month_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F461567BA8500B33118 /* schedule_month_tile@2x.png */; };
+		E11B6F491567BDF200B33118 /* schedule_month_gray_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F481567BDF200B33118 /* schedule_month_gray_tile@2x.png */; };
+		E11B6F4C1567C09200B33118 /* schedule_month_today_tile_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F4A1567C09100B33118 /* schedule_month_today_tile_hl@2x.png */; };
+		E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */; };
 		E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E132A4D3154B0FFC00136836 /* paper_user_indicator.png */; };
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
@@ -472,6 +476,10 @@
 		E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_cell_bg@2x.png"; sourceTree = "<group>"; };
 		E11B6F2F1567447B00B33118 /* ScheduleWeekRightTableViewCellContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekRightTableViewCellContentView.h; path = Classes/ScheduleWeekRightTableViewCellContentView.h; sourceTree = "<group>"; };
 		E11B6F301567447F00B33118 /* ScheduleWeekRightTableViewCellContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekRightTableViewCellContentView.m; path = Classes/ScheduleWeekRightTableViewCellContentView.m; sourceTree = "<group>"; };
+		E11B6F461567BA8500B33118 /* schedule_month_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_tile@2x.png"; sourceTree = "<group>"; };
+		E11B6F481567BDF200B33118 /* schedule_month_gray_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_gray_tile@2x.png"; sourceTree = "<group>"; };
+		E11B6F4A1567C09100B33118 /* schedule_month_today_tile_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile_hl@2x.png"; sourceTree = "<group>"; };
+		E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile@2x.png"; sourceTree = "<group>"; };
 		E132A4D3154B0FFC00136836 /* paper_user_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_user_indicator.png; sourceTree = "<group>"; };
 		E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewController.h; path = Classes/ScheduleDayTableViewController.h; sourceTree = "<group>"; };
 		E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewController.m; path = Classes/ScheduleDayTableViewController.m; sourceTree = "<group>"; };
@@ -1494,34 +1502,6 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
-				E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */,
-				E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */,
-				E11B6F1C156722E900B33118 /* schedule_week_left_bar_shadow.png */,
-				E11B6F1D156722E900B33118 /* schedule_week_left_bar_shadow@2x.png */,
-				E11B6F1815671FBE00B33118 /* schedule_week_left_bar_bg.png */,
-				E11B6F1915671FBE00B33118 /* schedule_week_left_bar_bg@2x.png */,
-				E11B6F1415671AB600B33118 /* schedule_week_top_bar_bg.png */,
-				E11B6F1515671AB600B33118 /* schedule_week_top_bar_bg@2x.png */,
-				E16365D71565148C006477C9 /* schedule_month_gray_tile.png */,
-				E16365D81565148D006477C9 /* schedule_month_tile_hl.png */,
-				E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */,
-				E16365DA1565148D006477C9 /* schedule_month_tile.png */,
-				E16365DB1565148E006477C9 /* schedule_month_today_tile_hl.png */,
-				E16365DC1565148E006477C9 /* schedule_month_today_tile.png */,
-				E16365CF156511F2006477C9 /* schedule_month_left_arrow.png */,
-				E16365D0156511F2006477C9 /* schedule_month_left_arrow@2x.png */,
-				E16365E51565177F006477C9 /* schedule_month_right_arrow.png */,
-				E16365E615651780006477C9 /* schedule_month_right_arrow@2x.png */,
-				E16365CC156510B9006477C9 /* schedule_month_view_shadow.png */,
-				E16365E3156516BA006477C9 /* schedule_month_view_shadow@2x.png */,
-				E16365C71564F7EC006477C9 /* schedule_month_top_bar_bg.png */,
-				E16365C81564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png */,
-				E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */,
-				E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */,
-				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
-				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
-				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
-				E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */,
 				E1DC6453155D4A0700F07C63 /* schedule_btn_day.png */,
 				E1DC6454155D4A0700F07C63 /* schedule_btn_day@2x.png */,
 				E1DC6457155D4C4200F07C63 /* schedule_btn_day_hl.png */,
@@ -1546,8 +1526,40 @@
 				E1DC6460155D547100F07C63 /* schedule_btn_week_hl@2x.png */,
 				E1DC6461155D547100F07C63 /* schedule_btn_week_white.png */,
 				E1DC6462155D547100F07C63 /* schedule_btn_week_white@2x.png */,
+				E16365D71565148C006477C9 /* schedule_month_gray_tile.png */,
+				E11B6F481567BDF200B33118 /* schedule_month_gray_tile@2x.png */,
+				E16365CF156511F2006477C9 /* schedule_month_left_arrow.png */,
+				E16365D0156511F2006477C9 /* schedule_month_left_arrow@2x.png */,
+				E16365E51565177F006477C9 /* schedule_month_right_arrow.png */,
+				E16365E615651780006477C9 /* schedule_month_right_arrow@2x.png */,
+				E16365DA1565148D006477C9 /* schedule_month_tile.png */,
+				E11B6F461567BA8500B33118 /* schedule_month_tile@2x.png */,
+				E16365D81565148D006477C9 /* schedule_month_tile_hl.png */,
+				E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */,
+				E16365DC1565148E006477C9 /* schedule_month_today_tile.png */,
+				E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */,
+				E16365DB1565148E006477C9 /* schedule_month_today_tile_hl.png */,
+				E11B6F4A1567C09100B33118 /* schedule_month_today_tile_hl@2x.png */,
+				E16365C71564F7EC006477C9 /* schedule_month_top_bar_bg.png */,
+				E16365C81564F7EC006477C9 /* schedule_month_top_bar_bg@2x.png */,
+				E16365CC156510B9006477C9 /* schedule_month_view_shadow.png */,
+				E16365E3156516BA006477C9 /* schedule_month_view_shadow@2x.png */,
+				E11B6F1815671FBE00B33118 /* schedule_week_left_bar_bg.png */,
+				E11B6F1915671FBE00B33118 /* schedule_week_left_bar_bg@2x.png */,
+				E11B6F1C156722E900B33118 /* schedule_week_left_bar_shadow.png */,
+				E11B6F1D156722E900B33118 /* schedule_week_left_bar_shadow@2x.png */,
+				E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */,
+				E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */,
+				E11B6F1415671AB600B33118 /* schedule_week_top_bar_bg.png */,
+				E11B6F1515671AB600B33118 /* schedule_week_top_bar_bg@2x.png */,
 				E11B6F20156726E600B33118 /* schedule_week_top_bar_shadow.png */,
 				E11B6F21156726E600B33118 /* schedule_week_top_bar_shadow@2x.png */,
+				E1DF6FE81539986D001C60EA /* to_do_list_point_blue.png */,
+				E1DF6FE91539986D001C60EA /* to_do_list_point_blue@2x.png */,
+				E1DF6FEA1539986D001C60EA /* to_do_list_point_green.png */,
+				E1DF6FEB1539986D001C60EA /* to_do_list_point_green@2x.png */,
+				E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */,
+				E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -2243,6 +2255,10 @@
 				E11B6F2A15672A4200B33118 /* ScheduleWeekLeftTableViewCell.xib in Resources */,
 				E11B6F2D15672DEF00B33118 /* schedule_week_left_cell_bg.png in Resources */,
 				E11B6F2E15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png in Resources */,
+				E11B6F471567BA8500B33118 /* schedule_month_tile@2x.png in Resources */,
+				E11B6F491567BDF200B33118 /* schedule_month_gray_tile@2x.png in Resources */,
+				E11B6F4C1567C09200B33118 /* schedule_month_today_tile_hl@2x.png in Resources */,
+				E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

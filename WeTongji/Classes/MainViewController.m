@@ -59,7 +59,7 @@ typedef enum {
     //self.navigationController.navigationBar.hidden = NO;
     [self configureNavigationBar];
     [self configureTabBarButtons];
-    [self configureToDoListTabBarViewController];
+    [self configureTabBarSubViewController:ToDoListTabBarViewController];
     [self configureTabBarUIStyle];
     [self updateUIAccordingToCurrentUserStatus];
     [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 

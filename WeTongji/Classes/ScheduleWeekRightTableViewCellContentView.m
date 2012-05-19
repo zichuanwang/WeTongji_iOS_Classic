@@ -22,7 +22,6 @@
     return self;
 }
 
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
@@ -37,22 +36,22 @@
         }
         
         //draw horizontal lines
-        if ((i*40.0 - self.verticalOffset) >= 0 && (i*40.0 - self.verticalOffset) <=  self.frame.size.height) {
-            CGContextMoveToPoint(context, 0, i*40.0-self.verticalOffset);
-            CGContextAddLineToPoint(context, 85.0, i*40.0-self.verticalOffset);
+        if ((i * 40.0 - self.verticalOffset) >= 0 && (i * 40.0 - self.verticalOffset) <=  self.frame.size.height) {
+            CGContextMoveToPoint(context, 0, i * 40.0 - self.verticalOffset);
+            CGContextAddLineToPoint(context, 85.0, i * 40.0 - self.verticalOffset);
         }
         
         //draw vertical lines
         CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
         CGContextSetLineWidth(context, 0.5f);
-        CGContextMoveToPoint(context, 85.0, i*40.0);
+        CGContextMoveToPoint(context, 85.0, i * 40.0);
         CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
         CGContextStrokePath(context);
     }
     
     //draw course rects
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
-    CGContextSetRGBFillColor(context, 85.0/256, 198.0/256, 54.0/256, 0.8f);
+    CGContextSetRGBFillColor(context, 85 / 255., 198.0 / 255., 54 / 255., 0.8f);
     float startPosition = 280.0f;
     float height = 80.0f;
     if (startPosition >= -height && startPosition <=  self.frame.size.height) {
@@ -61,9 +60,9 @@
     CGContextDrawPath(context, kCGPathEOFillStroke);
     
     [[UIColor whiteColor] set];
-    NSString *courseName = @"操作系统";
-	UIFont *weekfont=[UIFont boldSystemFontOfSize:14];
-	[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
+    NSString *courseName = @"操作系统操作系统操作系统操作系统操作系统操作系统操作系统";
+	//[courseName drawAtPoint:CGPointMake(5, startPosition - self.verticalOffset + 7) withFont:weekfont];
+    [courseName drawInRect:CGRectMake(0, startPosition - self.verticalOffset, 85, height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
     
 }
 
@@ -102,7 +101,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
     int hour = [comps hour];  
     int minute = [comps minute];
     
-    return (hour-7)*60 + minute;
+    return (hour - 7) * 60 + minute;
 }
 
 - (int)heightConvertFromTime:(NSDate *)beginTime ToTime:(NSDate *)endTime {
@@ -116,7 +115,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
     int endHour = [comps hour];  
     int endMinute = [comps minute];
     
-    return (endHour - beginHour)*60 + (endMinute - beginMinute);
+    return (endHour - beginHour) * 60 + (endMinute - beginMinute);
 }
 
 
