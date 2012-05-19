@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body 
+{
+	background-color:#f4f4f2;
+	width:300px;
+	font:Helvetica;
+}
+
+#title 
+{
+    padding-top:10px;
+    padding-left:5px;
+	padding-right:5px;
+	font-size:20px;
+    font-weight:bold;
+	text-align:center;
+	width:300px;
+    color:#0a0a0a;
+	word-break:break-all;
+}
+
+#content 
+{
+	line-height:120%;
+	font-size:16px;
+	width:300px;
+	color:#181818;
+	word-break:break-all;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+img
+{
+    border:0;
+    margin:0;
+    padding:0; 
+    max-width:300px;
+    height:auto;
+}
+
+

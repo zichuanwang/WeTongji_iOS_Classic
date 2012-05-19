@@ -152,4 +152,16 @@
     return result;
 }
 
+- (NSString*)setContentHTMLString:(NSString*)content {
+    NSArray* array = [self componentsSeparatedByString:@"@#Content#@"];
+    NSString* returnString = [[NSString alloc] initWithFormat:@"%@%@%@", [array objectAtIndex:0], content, [array objectAtIndex:1]];
+    return returnString;
+}
+
+- (NSString*)setTitleHTMLString:(NSString*)title {
+    NSArray* array = [self componentsSeparatedByString:@"@#Title#@"];
+    NSString* returnString = [[NSString alloc] initWithFormat:@"%@%@%@",[array objectAtIndex:0], title, [array objectAtIndex:1]];
+    return returnString;
+}
+
 @end

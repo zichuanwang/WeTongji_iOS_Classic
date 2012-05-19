@@ -60,6 +60,8 @@
 		E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */; };
 		E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11B6F501567E42900B33118 /* NewsDetailViewController.m */; };
 		E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */; };
+		E11B6F591567FD6100B33118 /* wetongji.css in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F581567FD6100B33118 /* wetongji.css */; };
+		E11B6F631567FFD000B33118 /* newsdetail.html in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F621567FFD000B33118 /* newsdetail.html */; };
 		E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E132A4D3154B0FFC00136836 /* paper_user_indicator.png */; };
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
@@ -485,6 +487,8 @@
 		E11B6F4F1567E42900B33118 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsDetailViewController.h; path = Classes/NewsDetailViewController.h; sourceTree = "<group>"; };
 		E11B6F501567E42900B33118 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsDetailViewController.m; path = Classes/NewsDetailViewController.m; sourceTree = "<group>"; };
 		E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsDetailViewController.xib; path = Classes/NewsDetailViewController.xib; sourceTree = "<group>"; };
+		E11B6F581567FD6100B33118 /* wetongji.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = wetongji.css; sourceTree = "<group>"; };
+		E11B6F621567FFD000B33118 /* newsdetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = newsdetail.html; sourceTree = "<group>"; };
 		E132A4D3154B0FFC00136836 /* paper_user_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_user_indicator.png; sourceTree = "<group>"; };
 		E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewController.h; path = Classes/ScheduleDayTableViewController.h; sourceTree = "<group>"; };
 		E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewController.m; path = Classes/ScheduleDayTableViewController.m; sourceTree = "<group>"; };
@@ -1575,6 +1579,8 @@
 		E1DDCC111566C744006317C0 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				E11B6F621567FFD000B33118 /* newsdetail.html */,
+				E11B6F581567FD6100B33118 /* wetongji.css */,
 				E1DDCC121566C74C006317C0 /* btn_detail_image_save.png */,
 				E1DDCC131566C74C006317C0 /* btn_detail_image_save@2x.png */,
 			);
@@ -2268,6 +2274,8 @@
 				E11B6F4C1567C09200B33118 /* schedule_month_today_tile_hl@2x.png in Resources */,
 				E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */,
 				E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */,
+				E11B6F591567FD6100B33118 /* wetongji.css in Resources */,
+				E11B6F631567FFD000B33118 /* newsdetail.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

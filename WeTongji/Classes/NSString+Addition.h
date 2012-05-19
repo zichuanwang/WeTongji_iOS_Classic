@@ -25,4 +25,7 @@
 + (NSString *)getTomorrowBeginDayFormatString;
 - (BOOL)isGifURL;
 
+- (NSString*)setContentHTMLString:(NSString*)content;
+- (NSString*)setTitleHTMLString:(NSString*)title;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "NewsDetailViewController.h"
+#import "NSString+Addition.h"
 
 @interface NewsDetailViewController ()
 
@@ -56,7 +57,7 @@
 #pragma mark UI methods
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:self.news.title];
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"新闻详情"];
     self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
@@ -64,7 +65,13 @@
 }
 
 - (void)configureWebView {
-    [self.webView loadHTMLString:self.news.content baseURL:nil];
+    
+    NSString *infoSouceFile = [[NSBundle mainBundle] pathForResource:@"newsdetail" ofType:@"html"];
+    NSString *infoText = [[NSString alloc] initWithContentsOfFile:infoSouceFile encoding:NSUTF8StringEncoding error:nil];
+    infoText = [infoText setTitleHTMLString:self.news.title];
+    infoText = [infoText setContentHTMLString:self.news.content];
+    NSLog(@"info text:%@", infoText);
+    [self.webView loadHTMLString:infoText baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
 }
 
 #pragma mark - 
