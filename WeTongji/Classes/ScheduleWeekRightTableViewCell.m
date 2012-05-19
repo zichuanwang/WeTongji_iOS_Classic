@@ -11,6 +11,7 @@
 @implementation ScheduleWeekRightTableViewCell
 
 @synthesize weekDayLabel = _weekDayLabel;
+@synthesize contentVerticalOffset = _contentVerticalOffset;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -30,6 +31,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setContentVerticalOffset:(CGFloat)contentVerticalOffset {
+    _contentVerticalOffset = contentVerticalOffset;
 }
 
 @end

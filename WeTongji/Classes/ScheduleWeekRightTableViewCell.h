@@ -11,5 +11,6 @@
 @interface ScheduleWeekRightTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *weekDayLabel;
+@property (nonatomic, assign) CGFloat contentVerticalOffset;
 
 @end

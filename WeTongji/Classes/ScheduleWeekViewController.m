@@ -12,9 +12,6 @@
 #import "NSUserDefaults+Addition.h"
 #import "NSString+Addition.h"
 
-#define BEGIN_TIME  7
-#define END_TIME    22
-
 @interface ScheduleWeekViewController ()
 
 @end
@@ -71,7 +68,7 @@
 - (void)configureRightTableView {
     CGRect frame =  self.rightTableView.frame;
     self.rightTableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
-    frame.size.width = self.rightTableView.frame.size.height;
+    frame.size.width = LEFT_TABLE_VIEW_ROW_COUNT * 30;
     frame.size.height = self.rightTableView.frame.size.width;
     NSLog(@"frame origin:%f, %f", frame.origin.x, frame.origin.y);
     self.rightTableView.frame = frame;
@@ -121,10 +118,9 @@
         NSDate *end = [NSUserDefaults getCurrentSemesterEndDate];
         NSTimeInterval timeInterval = [end timeIntervalSinceDate:begin]; 
         NSInteger result = timeInterval / 60 / 60 / 24;
-        NSLog(@"right num:%d", result);
         return result;
     } else {
-        return END_TIME - BEGIN_TIME + 1;
+        return LEFT_TABLE_VIEW_ROW_COUNT;
     }
 }
 
@@ -147,6 +143,15 @@
 
 - (void)didClickTodayButton {
     [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+#pragma mark -
+#pragma mark UIScrollView delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(scrollView == self.leftTableView) {
+        
+    }
 }
 
 @end
