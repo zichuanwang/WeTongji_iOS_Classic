@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleWeekRightTableViewCellContentView.h"
 
 @interface ScheduleWeekRightTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *weekDayLabel;
+@property (nonatomic, strong) IBOutlet ScheduleWeekRightTableViewCellContentView *drawView;
 @property (nonatomic, assign) CGFloat contentVerticalOffset;
 
 @end

@@ -11,6 +11,7 @@
 @implementation ScheduleWeekRightTableViewCell
 
 @synthesize weekDayLabel = _weekDayLabel;
+@synthesize drawView = _drawView;
 @synthesize contentVerticalOffset = _contentVerticalOffset;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -35,6 +36,7 @@
 
 - (void)setContentVerticalOffset:(CGFloat)contentVerticalOffset {
     _contentVerticalOffset = contentVerticalOffset;
+    self.drawView.verticalOffset = contentVerticalOffset;
 }
 
 @end

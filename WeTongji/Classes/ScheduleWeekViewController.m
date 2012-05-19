@@ -106,6 +106,8 @@
         
         if([self getTodayRowInRightTableView] == indexPath.row)
             rightCell.weekDayLabel.textColor = [UIColor colorWithRed:0 green:0.37f blue:0.66f alpha:1];
+        
+        rightCell.contentVerticalOffset = self.leftTableView.contentOffset.y;
     }
 }
 
@@ -118,6 +120,7 @@
         NSDate *end = [NSUserDefaults getCurrentSemesterEndDate];
         NSTimeInterval timeInterval = [end timeIntervalSinceDate:begin]; 
         NSInteger result = timeInterval / 60 / 60 / 24;
+        NSLog(@"right row:%d", result);
         return result;
     } else {
         return LEFT_TABLE_VIEW_ROW_COUNT;
@@ -150,7 +153,9 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(scrollView == self.leftTableView) {
-        
+        for(ScheduleWeekRightTableViewCell *cell in self.rightTableView.visibleCells) {
+            cell.contentVerticalOffset = self.leftTableView.contentOffset.y;
+        }
     }
 }
 
