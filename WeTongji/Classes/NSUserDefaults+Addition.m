@@ -168,7 +168,7 @@ typedef enum {
     return [userDefaults objectForKey:kCurrentSemesterBeginTime];
 }
 
-+ (NSDate *)getCurrentSemesterEndsDate {
++ (NSDate *)getCurrentSemesterEndDate {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults objectForKey:kCurrentSemesterEndTime];
 }

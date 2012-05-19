@@ -88,7 +88,7 @@ typedef enum {
 
 - (void)configureActivityData {
     NSDate *beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
-    NSDate *endDate = [NSUserDefaults getCurrentSemesterEndsDate];
+    NSDate *endDate = [NSUserDefaults getCurrentSemesterEndDate];
     if(beginDate == nil || endDate == nil)
         return;
     WTClient *client = [WTClient client];
@@ -107,7 +107,7 @@ typedef enum {
 
 - (void)configureCourseData {
     NSDate *todayDate = [NSDate date];
-    if([todayDate compare:[NSUserDefaults getCurrentSemesterEndsDate]] == NSOrderedAscending)
+    if([todayDate compare:[NSUserDefaults getCurrentSemesterEndDate]] == NSOrderedAscending)
         return;
     
     WTClient *client = [WTClient client];
@@ -203,7 +203,7 @@ typedef enum {
     frame.origin = CGPointMake(0, 44);
     vc.view.frame = frame;
     self.weekViewController = vc;
-    [self.view insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.view insertSubview:vc.view aboveSubview:self.tabBarView];
 }
 
 - (void)configureMonthTabBarViewController {

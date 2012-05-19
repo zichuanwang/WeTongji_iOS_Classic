@@ -40,6 +40,6 @@ typedef enum {
 
 + (void)setCurrentSemesterBeginTime:(NSDate *)begin endTime:(NSDate *)end;
 + (NSDate *)getCurrentSemesterBeginDate;
-+ (NSDate *)getCurrentSemesterEndsDate;
++ (NSDate *)getCurrentSemesterEndDate;
 
 @end

@@ -39,6 +39,20 @@
 		E10A1691153617E300700A0E /* nav_bar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A167C153617E300700A0E /* nav_bar_logo.png */; };
 		E10A16931536182600700A0E /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E10A16921536182600700A0E /* main_bg.png */; };
 		E11965491507B2F200AE32E0 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11965481507B2F200AE32E0 /* RootView.m */; };
+		E11B6F101567096800B33118 /* ScheduleWeekRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E11B6F0F1567096700B33118 /* ScheduleWeekRightTableViewCell.m */; };
+		E11B6F1615671AB600B33118 /* schedule_week_top_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1415671AB600B33118 /* schedule_week_top_bar_bg.png */; };
+		E11B6F1715671AB600B33118 /* schedule_week_top_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1515671AB600B33118 /* schedule_week_top_bar_bg@2x.png */; };
+		E11B6F1A15671FBE00B33118 /* schedule_week_left_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1815671FBE00B33118 /* schedule_week_left_bar_bg.png */; };
+		E11B6F1B15671FBE00B33118 /* schedule_week_left_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1915671FBE00B33118 /* schedule_week_left_bar_bg@2x.png */; };
+		E11B6F1E156722E900B33118 /* schedule_week_left_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1C156722E900B33118 /* schedule_week_left_bar_shadow.png */; };
+		E11B6F1F156722E900B33118 /* schedule_week_left_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F1D156722E900B33118 /* schedule_week_left_bar_shadow@2x.png */; };
+		E11B6F22156726E600B33118 /* schedule_week_top_bar_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F20156726E600B33118 /* schedule_week_top_bar_shadow.png */; };
+		E11B6F23156726E600B33118 /* schedule_week_top_bar_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F21156726E600B33118 /* schedule_week_top_bar_shadow@2x.png */; };
+		E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E11B6F25156729D100B33118 /* ScheduleWeekLeftTableViewCell.m */; };
+		E11B6F2815672A2100B33118 /* ScheduleWeekRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2715672A1F00B33118 /* ScheduleWeekRightTableViewCell.xib */; };
+		E11B6F2A15672A4200B33118 /* ScheduleWeekLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2915672A4000B33118 /* ScheduleWeekLeftTableViewCell.xib */; };
+		E11B6F2D15672DEF00B33118 /* schedule_week_left_cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */; };
+		E11B6F2E15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */; };
 		E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E132A4D3154B0FFC00136836 /* paper_user_indicator.png */; };
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
@@ -439,6 +453,22 @@
 		E10A16921536182600700A0E /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
 		E11965471507B2F200AE32E0 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootView.h; path = Classes/RootView.h; sourceTree = "<group>"; };
 		E11965481507B2F200AE32E0 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootView.m; path = Classes/RootView.m; sourceTree = "<group>"; };
+		E11B6F0E1567096700B33118 /* ScheduleWeekRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekRightTableViewCell.h; path = Classes/ScheduleWeekRightTableViewCell.h; sourceTree = "<group>"; };
+		E11B6F0F1567096700B33118 /* ScheduleWeekRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekRightTableViewCell.m; path = Classes/ScheduleWeekRightTableViewCell.m; sourceTree = "<group>"; };
+		E11B6F1415671AB600B33118 /* schedule_week_top_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_top_bar_bg.png; sourceTree = "<group>"; };
+		E11B6F1515671AB600B33118 /* schedule_week_top_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_top_bar_bg@2x.png"; sourceTree = "<group>"; };
+		E11B6F1815671FBE00B33118 /* schedule_week_left_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_bar_bg.png; sourceTree = "<group>"; };
+		E11B6F1915671FBE00B33118 /* schedule_week_left_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_bar_bg@2x.png"; sourceTree = "<group>"; };
+		E11B6F1C156722E900B33118 /* schedule_week_left_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_bar_shadow.png; sourceTree = "<group>"; };
+		E11B6F1D156722E900B33118 /* schedule_week_left_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_bar_shadow@2x.png"; sourceTree = "<group>"; };
+		E11B6F20156726E600B33118 /* schedule_week_top_bar_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_top_bar_shadow.png; sourceTree = "<group>"; };
+		E11B6F21156726E600B33118 /* schedule_week_top_bar_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_top_bar_shadow@2x.png"; sourceTree = "<group>"; };
+		E11B6F24156729D000B33118 /* ScheduleWeekLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekLeftTableViewCell.h; path = Classes/ScheduleWeekLeftTableViewCell.h; sourceTree = "<group>"; };
+		E11B6F25156729D100B33118 /* ScheduleWeekLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekLeftTableViewCell.m; path = Classes/ScheduleWeekLeftTableViewCell.m; sourceTree = "<group>"; };
+		E11B6F2715672A1F00B33118 /* ScheduleWeekRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleWeekRightTableViewCell.xib; path = Classes/ScheduleWeekRightTableViewCell.xib; sourceTree = "<group>"; };
+		E11B6F2915672A4000B33118 /* ScheduleWeekLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleWeekLeftTableViewCell.xib; path = Classes/ScheduleWeekLeftTableViewCell.xib; sourceTree = "<group>"; };
+		E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule_week_left_cell_bg.png; sourceTree = "<group>"; };
+		E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_week_left_cell_bg@2x.png"; sourceTree = "<group>"; };
 		E132A4D3154B0FFC00136836 /* paper_user_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_user_indicator.png; sourceTree = "<group>"; };
 		E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewController.h; path = Classes/ScheduleDayTableViewController.h; sourceTree = "<group>"; };
 		E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewController.m; path = Classes/ScheduleDayTableViewController.m; sourceTree = "<group>"; };
@@ -1416,6 +1446,14 @@
 		E1DC6446155D3FB100F07C63 /* schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E11B6F2B15672DEF00B33118 /* schedule_week_left_cell_bg.png */,
+				E11B6F2C15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png */,
+				E11B6F1C156722E900B33118 /* schedule_week_left_bar_shadow.png */,
+				E11B6F1D156722E900B33118 /* schedule_week_left_bar_shadow@2x.png */,
+				E11B6F1815671FBE00B33118 /* schedule_week_left_bar_bg.png */,
+				E11B6F1915671FBE00B33118 /* schedule_week_left_bar_bg@2x.png */,
+				E11B6F1415671AB600B33118 /* schedule_week_top_bar_bg.png */,
+				E11B6F1515671AB600B33118 /* schedule_week_top_bar_bg@2x.png */,
 				E16365D71565148C006477C9 /* schedule_month_gray_tile.png */,
 				E16365D81565148D006477C9 /* schedule_month_tile_hl.png */,
 				E16365D91565148D006477C9 /* schedule_month_tile_hl@2x.png */,
@@ -1460,6 +1498,8 @@
 				E1DC6460155D547100F07C63 /* schedule_btn_week_hl@2x.png */,
 				E1DC6461155D547100F07C63 /* schedule_btn_week_white.png */,
 				E1DC6462155D547100F07C63 /* schedule_btn_week_white@2x.png */,
+				E11B6F20156726E600B33118 /* schedule_week_top_bar_shadow.png */,
+				E11B6F21156726E600B33118 /* schedule_week_top_bar_shadow@2x.png */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -1697,6 +1737,12 @@
 				E135F780155E4224008494D8 /* ScheduleWeekViewController.h */,
 				E135F781155E4224008494D8 /* ScheduleWeekViewController.m */,
 				E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */,
+				E11B6F0E1567096700B33118 /* ScheduleWeekRightTableViewCell.h */,
+				E11B6F0F1567096700B33118 /* ScheduleWeekRightTableViewCell.m */,
+				E11B6F2715672A1F00B33118 /* ScheduleWeekRightTableViewCell.xib */,
+				E11B6F24156729D000B33118 /* ScheduleWeekLeftTableViewCell.h */,
+				E11B6F25156729D100B33118 /* ScheduleWeekLeftTableViewCell.m */,
+				E11B6F2915672A4000B33118 /* ScheduleWeekLeftTableViewCell.xib */,
 			);
 			name = schedule;
 			sourceTree = "<group>";
@@ -2155,6 +2201,18 @@
 				E1DDCC101566C6E4006317C0 /* DetailImageViewController.xib in Resources */,
 				E1DDCC141566C74D006317C0 /* btn_detail_image_save.png in Resources */,
 				E1DDCC151566C74D006317C0 /* btn_detail_image_save@2x.png in Resources */,
+				E11B6F1615671AB600B33118 /* schedule_week_top_bar_bg.png in Resources */,
+				E11B6F1715671AB600B33118 /* schedule_week_top_bar_bg@2x.png in Resources */,
+				E11B6F1A15671FBE00B33118 /* schedule_week_left_bar_bg.png in Resources */,
+				E11B6F1B15671FBE00B33118 /* schedule_week_left_bar_bg@2x.png in Resources */,
+				E11B6F1E156722E900B33118 /* schedule_week_left_bar_shadow.png in Resources */,
+				E11B6F1F156722E900B33118 /* schedule_week_left_bar_shadow@2x.png in Resources */,
+				E11B6F22156726E600B33118 /* schedule_week_top_bar_shadow.png in Resources */,
+				E11B6F23156726E600B33118 /* schedule_week_top_bar_shadow@2x.png in Resources */,
+				E11B6F2815672A2100B33118 /* ScheduleWeekRightTableViewCell.xib in Resources */,
+				E11B6F2A15672A4200B33118 /* ScheduleWeekLeftTableViewCell.xib in Resources */,
+				E11B6F2D15672DEF00B33118 /* schedule_week_left_cell_bg.png in Resources */,
+				E11B6F2E15672DEF00B33118 /* schedule_week_left_cell_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2289,6 +2347,8 @@
 				E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */,
 				E1DDCC081566C3EC006317C0 /* Activity.m in Sources */,
 				E1DDCC0F1566C6DF006317C0 /* DetailImageViewController.m in Sources */,
+				E11B6F101567096800B33118 /* ScheduleWeekRightTableViewCell.m in Sources */,
+				E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
