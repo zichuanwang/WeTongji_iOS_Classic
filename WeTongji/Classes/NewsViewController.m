@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "WTClient.h"
 #import "NewsOutlineTableViewController.h"
+#import "NewsDetailViewController.h"
 
 @interface NewsViewController ()
 
@@ -73,7 +74,8 @@
 #pragma mark NewsOutlineTableViewController delegate
 
 - (void)newsOutlineTableViewDidSelectNews:(News *)news {
-    
+    NewsDetailViewController *vc = [[NewsDetailViewController alloc] initWithNews:news];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

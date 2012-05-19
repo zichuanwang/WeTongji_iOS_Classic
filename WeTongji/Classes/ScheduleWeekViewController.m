@@ -61,7 +61,10 @@
     NSDateComponents *comps = [calendar components:unitFlags fromDate:[NSDate date]];
     NSInteger hour = [comps hour];
     NSInteger result = hour - BEGIN_HOUR;
-    NSLog(@"left now row:%d", result);
+    if(result < 0)
+        result = 0;
+    if(result > LEFT_TABLE_VIEW_ROW_COUNT - 1)
+        result = LEFT_TABLE_VIEW_ROW_COUNT - 1;
     return result;
 }
 

@@ -58,6 +58,8 @@
 		E11B6F491567BDF200B33118 /* schedule_month_gray_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F481567BDF200B33118 /* schedule_month_gray_tile@2x.png */; };
 		E11B6F4C1567C09200B33118 /* schedule_month_today_tile_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F4A1567C09100B33118 /* schedule_month_today_tile_hl@2x.png */; };
 		E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */; };
+		E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11B6F501567E42900B33118 /* NewsDetailViewController.m */; };
+		E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */; };
 		E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E132A4D3154B0FFC00136836 /* paper_user_indicator.png */; };
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
@@ -480,6 +482,9 @@
 		E11B6F481567BDF200B33118 /* schedule_month_gray_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_gray_tile@2x.png"; sourceTree = "<group>"; };
 		E11B6F4A1567C09100B33118 /* schedule_month_today_tile_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile_hl@2x.png"; sourceTree = "<group>"; };
 		E11B6F4B1567C09100B33118 /* schedule_month_today_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_month_today_tile@2x.png"; sourceTree = "<group>"; };
+		E11B6F4F1567E42900B33118 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsDetailViewController.h; path = Classes/NewsDetailViewController.h; sourceTree = "<group>"; };
+		E11B6F501567E42900B33118 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsDetailViewController.m; path = Classes/NewsDetailViewController.m; sourceTree = "<group>"; };
+		E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsDetailViewController.xib; path = Classes/NewsDetailViewController.xib; sourceTree = "<group>"; };
 		E132A4D3154B0FFC00136836 /* paper_user_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_user_indicator.png; sourceTree = "<group>"; };
 		E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewController.h; path = Classes/ScheduleDayTableViewController.h; sourceTree = "<group>"; };
 		E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewController.m; path = Classes/ScheduleDayTableViewController.m; sourceTree = "<group>"; };
@@ -1325,6 +1330,9 @@
 				E1AD1BA11551A4ED003B7052 /* NewsOutlineTableViewCell.h */,
 				E1AD1BA21551A4ED003B7052 /* NewsOutlineTableViewCell.m */,
 				E1AD1BA41551A509003B7052 /* NewsOutlineTableViewCell.xib */,
+				E11B6F4F1567E42900B33118 /* NewsDetailViewController.h */,
+				E11B6F501567E42900B33118 /* NewsDetailViewController.m */,
+				E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */,
 			);
 			name = news;
 			sourceTree = "<group>";
@@ -2259,6 +2267,7 @@
 				E11B6F491567BDF200B33118 /* schedule_month_gray_tile@2x.png in Resources */,
 				E11B6F4C1567C09200B33118 /* schedule_month_today_tile_hl@2x.png in Resources */,
 				E11B6F4D1567C09200B33118 /* schedule_month_today_tile@2x.png in Resources */,
+				E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2396,6 +2405,7 @@
 				E11B6F101567096800B33118 /* ScheduleWeekRightTableViewCell.m in Sources */,
 				E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */,
 				E11B6F311567448400B33118 /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
+				E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
