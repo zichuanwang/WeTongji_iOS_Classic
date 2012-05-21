@@ -26,6 +26,7 @@
 - (BOOL)isGifURL;
 
 - (NSString*)setContentHTMLString:(NSString*)content;
+- (NSString*)setPublishTimeHTMLString:(NSDate *)date;
 - (NSString*)setTitleHTMLString:(NSString*)title;
 
 @end

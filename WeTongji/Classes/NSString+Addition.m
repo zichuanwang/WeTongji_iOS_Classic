@@ -152,6 +152,13 @@
     return result;
 }
 
+- (NSString*)setPublishTimeHTMLString:(NSDate *)date {
+    NSArray* array = [self componentsSeparatedByString:@"@#PublishTime#@"];
+    NSString *time = [NSString yearMonthDayConvertFromDate:date];
+    NSString* returnString = [[NSString alloc] initWithFormat:@"%@发表于 %@%@", [array objectAtIndex:0], time, [array objectAtIndex:1]];
+    return returnString;
+}
+
 - (NSString*)setContentHTMLString:(NSString*)content {
     NSArray* array = [self componentsSeparatedByString:@"@#Content#@"];
     NSString* returnString = [[NSString alloc] initWithFormat:@"%@%@%@", [array objectAtIndex:0], content, [array objectAtIndex:1]];

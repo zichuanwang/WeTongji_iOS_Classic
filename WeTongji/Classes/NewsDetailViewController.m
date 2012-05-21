@@ -69,6 +69,7 @@
     NSString *infoSouceFile = [[NSBundle mainBundle] pathForResource:@"newsdetail" ofType:@"html"];
     NSString *infoText = [[NSString alloc] initWithContentsOfFile:infoSouceFile encoding:NSUTF8StringEncoding error:nil];
     infoText = [infoText setTitleHTMLString:self.news.title];
+    infoText = [infoText setPublishTimeHTMLString:self.news.create_at];
     infoText = [infoText setContentHTMLString:self.news.content];
     NSLog(@"info text:%@", infoText);
     [self.webView loadHTMLString:infoText baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];

@@ -84,9 +84,7 @@
     user.password = self.passwordTextField.text;
     user.account = self.accountTextField.text;
     
-    if(self.currentUser == nil) {
-        [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
-    }
+    [User changeCurrentUser:user inManagedObjectContext:self.managedObjectContext];
 }
 
 - (void)login {
