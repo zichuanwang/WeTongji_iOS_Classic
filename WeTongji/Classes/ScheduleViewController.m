@@ -139,7 +139,7 @@ typedef enum {
             [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
             //NSLog(@"semesterBeginString:%@, semesterWeekCount:%d, semesterEndString:%@", semesterBeginString, semesterWeekCount, [NSString yearMonthDayWeekConvertFromDate:semesterEndDate]);
             for(NSDictionary *dict in courses) {
-                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount inManagedObjectContext:self.managedObjectContext];
+                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount owner:self.currentUser inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
             }
             [NSNotificationCenter postChangeScheduleNotification];

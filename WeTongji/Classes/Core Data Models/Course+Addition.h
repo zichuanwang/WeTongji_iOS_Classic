@@ -7,9 +7,10 @@
 //
 
 #import "Course.h"
+#import "User.h"
 
 @interface Course (Addition)
 
-+ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount owner:(User *)owner inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

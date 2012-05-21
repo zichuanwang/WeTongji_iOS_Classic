@@ -48,9 +48,13 @@
         <relationship name="scheduledBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="schedule" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES">
-        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="update_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imageData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="owner" inverseEntity="ImageData" syncable="YES"/>
+    </entity>
+    <entity name="ImageData" representedClassName="ImageData" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="owner" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="imageData" inverseEntity="Image" syncable="YES"/>
     </entity>
     <entity name="News" representedClassName="News" syncable="YES">
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
@@ -104,5 +108,6 @@
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Teacher" positionX="160" positionY="192" width="128" height="60"/>
         <element name="User" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ImageData" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

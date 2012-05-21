@@ -214,7 +214,6 @@
 		E1999AF41557A7C300CD04EF /* PromoteLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1999AF21557A7BF00CD04EF /* PromoteLoginViewController.xib */; };
 		E1999AFD1557FAAB00CD04EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999AFC1557FAAA00CD04EF /* User.m */; };
 		E1999B07155A3D1600CD04EF /* Image+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B06155A3D1400CD04EF /* Image+Addition.m */; };
-		E1999B0A155A3E0400CD04EF /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B09155A3E0300CD04EF /* Image.m */; };
 		E1999B12155A409000CD04EF /* UIImageView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B11155A3E9000CD04EF /* UIImageView+Addition.m */; };
 		E1999B13155A409400CD04EF /* UIApplication+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1999B0F155A3E6A00CD04EF /* UIApplication+Addition.m */; };
 		E1999B16155A435100CD04EF /* user_info_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = E1999B14155A435000CD04EF /* user_info_default_avatar.png */; };
@@ -226,6 +225,8 @@
 		E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */; };
 		E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */; };
 		E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */; };
+		E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A38F78156AC1CA00E11F58 /* ImageData.m */; };
+		E1A38F7D156AC1D000E11F58 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A38F7C156AC1CE00E11F58 /* Image.m */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -689,8 +690,6 @@
 		E1999AFC1557FAAA00CD04EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E1999B05155A3D1000CD04EF /* Image+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+Addition.h"; sourceTree = "<group>"; };
 		E1999B06155A3D1400CD04EF /* Image+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+Addition.m"; sourceTree = "<group>"; };
-		E1999B08155A3E0200CD04EF /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		E1999B09155A3E0300CD04EF /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		E1999B0E155A3E6800CD04EF /* UIApplication+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIApplication+Addition.h"; path = "Classes/UIApplication+Addition.h"; sourceTree = "<group>"; };
 		E1999B0F155A3E6A00CD04EF /* UIApplication+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Addition.m"; path = "Classes/UIApplication+Addition.m"; sourceTree = "<group>"; };
 		E1999B10155A3E8D00CD04EF /* UIImageView+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Addition.h"; path = "Classes/UIImageView+Addition.h"; sourceTree = "<group>"; };
@@ -707,6 +706,10 @@
 		E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseDetailViewController.xib; path = Classes/CourseDetailViewController.xib; sourceTree = "<group>"; };
 		E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
 		E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
+		E1A38F77156AC1CA00E11F58 /* ImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageData.h; sourceTree = "<group>"; };
+		E1A38F78156AC1CA00E11F58 /* ImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageData.m; sourceTree = "<group>"; };
+		E1A38F7B156AC1CD00E11F58 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		E1A38F7C156AC1CE00E11F58 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1821,8 +1824,6 @@
 				E1AD1B991551A27C003B7052 /* Channel.m */,
 				E1999AFB1557FAA900CD04EF /* User.h */,
 				E1999AFC1557FAAA00CD04EF /* User.m */,
-				E1999B08155A3E0200CD04EF /* Image.h */,
-				E1999B09155A3E0300CD04EF /* Image.m */,
 				E1FA74FC156018FA001029B0 /* Student.h */,
 				E1FA74FD156018FA001029B0 /* Student.m */,
 				E14BA6821561760F00EB7CB6 /* News.h */,
@@ -1835,6 +1836,10 @@
 				E14BA6BB1562A33A00EB7CB6 /* Event.m */,
 				E1DDCC061566C3EB006317C0 /* Activity.h */,
 				E1DDCC071566C3EB006317C0 /* Activity.m */,
+				E1A38F7B156AC1CD00E11F58 /* Image.h */,
+				E1A38F7C156AC1CE00E11F58 /* Image.m */,
+				E1A38F77156AC1CA00E11F58 /* ImageData.h */,
+				E1A38F78156AC1CA00E11F58 /* ImageData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2369,7 +2374,6 @@
 				E1999AF31557A7C300CD04EF /* PromoteLoginViewController.m in Sources */,
 				E1999AFD1557FAAB00CD04EF /* User.m in Sources */,
 				E1999B07155A3D1600CD04EF /* Image+Addition.m in Sources */,
-				E1999B0A155A3E0400CD04EF /* Image.m in Sources */,
 				E1999B12155A409000CD04EF /* UIImageView+Addition.m in Sources */,
 				E1999B13155A409400CD04EF /* UIApplication+Addition.m in Sources */,
 				E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */,
@@ -2414,6 +2418,8 @@
 				E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */,
 				E11B6F311567448400B33118 /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */,
+				E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */,
+				E1A38F7D156AC1D000E11F58 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

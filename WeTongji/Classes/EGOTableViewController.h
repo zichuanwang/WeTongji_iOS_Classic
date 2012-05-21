@@ -9,6 +9,8 @@
 #import "CoreDataTableViewController.h"
 #import "EGORefreshTableHeaderView.h"
 
+#define TABLE_VIEW_VISIBLE_ROW_COUNT    7
+
 typedef enum {
     EGOTableViewFooterEmpty,
     EGOTableViewFooterEmptyWithHint,

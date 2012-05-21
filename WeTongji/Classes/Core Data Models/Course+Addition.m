@@ -57,7 +57,7 @@
     return result;
 }
 
-+ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount owner:(User *)owner inManagedObjectContext:(NSManagedObjectContext *)context {
     NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
     NSNumber *endSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionEnd"]] intValue]];
@@ -65,7 +65,7 @@
     NSLog(@"course week day:%@", [NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]]);
     NSNumber *weekDay = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"WeekDay"]] weekDayStringCovertToNumber];
     
-    //[Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType inManagedObjectContext:context];
+    [Course clearCoursesWithID:courseID beginSection:beginSection endSection:endSection weekDay:weekDay weekType:weekType owner:owner inManagedObjectContext:context];
     
     NSMutableSet *result = [NSMutableSet set];
     for(int i = 0; i < semesterWeekCount; i++) {
@@ -98,7 +98,7 @@
     return result;
 }
 
-+ (void)clearCoursesWithID:(NSString *)courseID beginSection:(NSNumber *)beginSection endSection:(NSNumber *)endSection weekDay:(NSNumber *)weekDay weekType:(NSString *)weekType inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSArray *)clearCoursesWithID:(NSString *)courseID beginSection:(NSNumber *)beginSection endSection:(NSNumber *)endSection weekDay:(NSNumber *)weekDay weekType:(NSString *)weekType owner:(User *)owner inManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
     NSPredicate *courseIDPredicate = [NSPredicate predicateWithFormat:@"course_id == %@", courseID];
@@ -106,13 +106,14 @@
     NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"end_section == %@", endSection];
     NSPredicate *weekDayPredicate = [NSPredicate predicateWithFormat:@"week_day == %@", weekDay];
     NSPredicate *weekTypePredicate = [NSPredicate predicateWithFormat:@"week_type == %@", weekType];
-    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:courseIDPredicate, beginPredicate, endPredicate, weekDayPredicate, weekTypePredicate, nil]]];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", owner.schedule];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:courseIDPredicate, beginPredicate, endPredicate, weekDayPredicate, weekTypePredicate, ownerPredicate, nil]]];
     
     NSArray *items = [context executeFetchRequest:request error:NULL];
-    for(Course *course in items) {
-        [context deleteObject:course];
+    for(Course *item in items) {
+        [context deleteObject:item];
     }
-
+    return items;
 }
 
 @end

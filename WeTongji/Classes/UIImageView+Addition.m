@@ -17,8 +17,8 @@
               completion:(void (^)(BOOL succeed))completion 
           cacheInContext:(NSManagedObjectContext *)context {	
     Image *image = [Image imageWithURL:urlString inManagedObjectContext:context];
-    if(image) {
-        UIImage *img = [UIImage imageWithData:image.data];
+    if(image.imageData) {
+        UIImage *img = [UIImage imageWithData:image.imageData.data];
         if(self.image == nil) {
             self.image = img;
             [self fadeIn];
@@ -51,7 +51,6 @@
             if (completion) {
                 completion(YES);
             }			
-            
         });
     });
     dispatch_release(downloadQueue);

@@ -38,7 +38,6 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
     [self loadMoreData];
-    [self performSelector:@selector(loadExtraDataForOnscreenRows) withObject:nil afterDelay:0.7f];
 }
 
 - (void)viewDidUnload
@@ -77,9 +76,15 @@
         outlineCell.titleLabel.text = activity.what;
         outlineCell.locationLabel.text = activity.where;
         outlineCell.timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
-        Image *avatarImage = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
-        if(avatarImage)
-            outlineCell.avatarImageView.image = [UIImage imageWithData:avatarImage.data];
+        
+        Image *image = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
+        if(image) {
+            outlineCell.avatarImageView.image = [UIImage imageWithData:image.imageData.data];
+        } else {
+            if(indexPath.row < TABLE_VIEW_VISIBLE_ROW_COUNT)
+                [self loadAvatarAtIndexPath:indexPath];
+        }
+        
     }
 }
 
@@ -162,9 +167,15 @@
 }
 
 - (void)loadExtraDataForOnscreenRows  {
+    NSLog(@"load extra");
     NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
     for (NSIndexPath *indexPath in visiblePaths) {
-        [self loadAvatarAtIndexPath:indexPath];
+        Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        Image *image = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
+        if (image == nil)
+        {
+            [self loadAvatarAtIndexPath:indexPath];
+        }
     }
 }
 
