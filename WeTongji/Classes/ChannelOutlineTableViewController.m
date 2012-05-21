@@ -13,6 +13,7 @@
 #import "NSString+Addition.h"
 #import "NSUserDefaults+Addition.h"
 #import "UIImageView+Addition.h"
+#import "Image+Addition.h"
 
 @interface ChannelOutlineTableViewController ()
 
@@ -37,7 +38,7 @@
     // Do any additional setup after loading the view from its nib.
     [self configureTableViewHeaderFooter];
     [self loadMoreData];
-    [self loadExtraDataForOnscreenRows];
+    [self performSelector:@selector(loadExtraDataForOnscreenRows) withObject:nil afterDelay:0.7f];
 }
 
 - (void)viewDidUnload
@@ -76,6 +77,9 @@
         outlineCell.titleLabel.text = activity.what;
         outlineCell.locationLabel.text = activity.where;
         outlineCell.timeLabel.text = [NSString timeConvertFromBeginDate:activity.begin_time endDate:activity.end_time];
+        Image *avatarImage = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
+        if(avatarImage)
+            outlineCell.avatarImageView.image = [UIImage imageWithData:avatarImage.data];
     }
 }
 

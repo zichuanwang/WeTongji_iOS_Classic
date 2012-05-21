@@ -19,7 +19,11 @@
     Image *image = [Image imageWithURL:urlString inManagedObjectContext:context];
     if(image) {
         UIImage *img = [UIImage imageWithData:image.data];
-        self.image = img;
+        if(self.image == nil) {
+            self.image = img;
+            [self fadeIn];
+        } else 
+            self.image = img;
         if(completion) {
             completion(YES);
         }
