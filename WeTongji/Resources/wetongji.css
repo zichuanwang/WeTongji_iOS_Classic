@@ -52,7 +52,9 @@ img
     border:0;
     margin:0;
     padding:0;
-    max-width:304px;
+    border:2px solid #ffffff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    max-width:300px;
     height:auto;
 }
 
