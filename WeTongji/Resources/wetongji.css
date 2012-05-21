@@ -4,19 +4,19 @@
 body 
 {
 	background-color:#f4f4f2;
-	width:300px;
+	width:304px;
 	font:Times;
 }
 
 #title 
 {
     padding-top:10px;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left:0px;
+    padding-right:8px;
 	font-size:24px;
     font-weight:bold;
 	text-align:left;
-	width:300px;
+	width:304px;
     color:#0a0a0a;
 	word-break:word_wrap;
 }
@@ -24,12 +24,12 @@ body
 #publish_time 
 {
     padding-top:10px;
-    padding-left:5px;
-	padding-right:5px;
+    padding-left:0px;
+	padding-right:8px;
 	font-size:16px;
     font-weight:bold;
 	text-align:left;
-	width:300px;
+	width:304px;
     color:#a80a13;
 	word-break:word_wrap;
 }
@@ -37,10 +37,10 @@ body
 #content 
 {
     padding-top:10px;
-	padding-left:5px;
-	padding-right:5px;
+	padding-left:0px;
+	padding-right:8px;
 	line-height:120%;
-	width:300px;
+	width:304px;
 	color:#181818;
     font-size:18px;
     font-weight:regular;
@@ -51,8 +51,8 @@ img
 {
     border:0;
     margin:0;
-    padding:0; 
-    max-width:300px;
+    padding:0;
+    max-width:304px;
     height:auto;
 }
 
