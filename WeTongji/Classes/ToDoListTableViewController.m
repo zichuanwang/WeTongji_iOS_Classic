@@ -108,8 +108,12 @@
     [self.dataSourceDictionary removeAllObjects];
     [self.dataSourceIndexArray removeAllObjects];
     
-    NSArray *todayToDoList = [self getTodayToDoList];
-    NSArray *tomorrowToDoList = [self getTomorrowToDoList];
+    NSArray *todayToDoList = [NSArray array];
+    NSArray *tomorrowToDoList = [NSArray array];
+    if(self.currentUser) {
+        todayToDoList = [self getTodayToDoList];
+        tomorrowToDoList = [self getTomorrowToDoList];
+    }
     
     if(todayToDoList.count > 0) {
         if(todayToDoList.count > 1)
