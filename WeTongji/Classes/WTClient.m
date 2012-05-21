@@ -122,6 +122,9 @@ static NSString* const APIDomain = @"we.tongji.edu.cn";
             NSLog(@"Server responsed error code:%d\n\
                   desc: %@\n", self.responseStatusCode, self.errorDesc);
         }
+    } else {
+        self.hasError = YES;
+        self.responseStatusCode = 1000;
     }
     
 report_completion:

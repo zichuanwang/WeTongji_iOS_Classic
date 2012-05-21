@@ -102,7 +102,10 @@
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
             
         } else {
-            [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:self.toastVerticalPos];
+            if(client.responseStatusCode == 11)
+                [UIApplication presentAlertToast:@"账户未激活。" withVerticalPos:self.toastVerticalPos];
+            else
+                [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:self.toastVerticalPos];
             self.sendingRequest = NO;
             self.mainBgView.userInteractionEnabled = YES;
         }
