@@ -176,7 +176,7 @@
 										<reference key="IBUIShadowColor" ref="141096588"/>
 										<string key="IBUIShadowOffset">{0, 1}</string>
 										<int key="IBUIBaselineAdjustment">0</int>
-										<float key="IBUIMinimumFontSize">10</float>
+										<float key="IBUIMinimumFontSize">14</float>
 										<reference key="IBUIFontDescription" ref="1052844468"/>
 										<reference key="IBUIFont" ref="418721262"/>
 									</object>
