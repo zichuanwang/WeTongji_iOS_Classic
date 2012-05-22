@@ -197,6 +197,8 @@
 		E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */; };
 		E174A9A2153E800400E7165A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A9A0153E800400E7165A /* LoginViewController.m */; };
 		E174A9A3153E800400E7165A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A9A1153E800400E7165A /* LoginViewController.xib */; };
+		E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17816C5156BB85300637470 /* AppInfoViewController.m */; };
+		E17816C8156BB85300637470 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17816C6156BB85300637470 /* AppInfoViewController.xib */; };
 		E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */; };
 		E180639015360BAD00460F8B /* main_tab_bar_btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */; };
 		E180639115360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638B15360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png */; };
@@ -667,6 +669,9 @@
 		E174A99F153E800400E7165A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
 		E174A9A0153E800400E7165A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
 		E174A9A1153E800400E7165A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
+		E17816C4156BB85300637470 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppInfoViewController.h; path = Classes/AppInfoViewController.h; sourceTree = "<group>"; };
+		E17816C5156BB85300637470 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppInfoViewController.m; path = Classes/AppInfoViewController.m; sourceTree = "<group>"; };
+		E17816C6156BB85300637470 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppInfoViewController.xib; path = Classes/AppInfoViewController.xib; sourceTree = "<group>"; };
 		E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_check@2x.png"; sourceTree = "<group>"; };
 		E180638A15360BAD00460F8B /* main_tab_bar_btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting@2x.png"; sourceTree = "<group>"; };
 		E180638B15360BAD00460F8B /* main_tab_bar_btn_setting_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_tab_bar_btn_setting_hl@2x.png"; sourceTree = "<group>"; };
@@ -1344,6 +1349,16 @@
 			name = news;
 			sourceTree = "<group>";
 		};
+		E17816C2156BB83400637470 /* app_info */ = {
+			isa = PBXGroup;
+			children = (
+				E17816C4156BB85300637470 /* AppInfoViewController.h */,
+				E17816C5156BB85300637470 /* AppInfoViewController.m */,
+				E17816C6156BB85300637470 /* AppInfoViewController.xib */,
+			);
+			name = app_info;
+			sourceTree = "<group>";
+		};
 		E1917732150783C9009FB941 /* user_info */ = {
 			isa = PBXGroup;
 			children = (
@@ -1679,6 +1694,7 @@
 		E1DF6F981537612E001C60EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E17816C2156BB83400637470 /* app_info */,
 				E1FA750715615BDF001029B0 /* activity */,
 				E1DF6FF11539B836001C60EA /* channel */,
 				E14742041565449D00812C9D /* circles */,
@@ -2281,6 +2297,7 @@
 				E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */,
 				E11B6F591567FD6100B33118 /* wetongji.css in Resources */,
 				E11B6F631567FFD000B33118 /* newsdetail.html in Resources */,
+				E17816C8156BB85300637470 /* AppInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2420,6 +2437,7 @@
 				E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */,
 				E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */,
 				E1A38F7D156AC1D000E11F58 /* Image.m in Sources */,
+				E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
