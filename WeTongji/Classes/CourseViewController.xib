@@ -969,6 +969,7 @@
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="7.CustomClassName">UIImageView</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -988,7 +989,7 @@
 						<string key="courseTypeLabel">UILabel</string>
 						<string key="creditHoursLabel">UILabel</string>
 						<string key="creditPointsLabel">UILabel</string>
-						<string key="middleView">UIView</string>
+						<string key="middleView">UIImageView</string>
 						<string key="scrollView">UIScrollView</string>
 						<string key="teacherNameLabel">UILabel</string>
 						<string key="whenLabel">UILabel</string>
@@ -1013,7 +1014,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="middleView">
 							<string key="name">middleView</string>
-							<string key="candidateClassName">UIView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="scrollView">
 							<string key="name">scrollView</string>

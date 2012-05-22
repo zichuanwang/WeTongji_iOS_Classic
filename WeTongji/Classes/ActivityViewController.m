@@ -211,7 +211,8 @@
     }
     self.middleView.frame = middleFrame;
     
-    self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    //self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
+    self.middleView.image = [[UIImage imageNamed:@"paper_main"] resizableImageWithCapInsets:UIEdgeInsetsZero];
     
     CGRect bottomFrame = self.bottomView.frame;
     bottomFrame.origin.y = middleFrame.origin.y + middleFrame.size.height;

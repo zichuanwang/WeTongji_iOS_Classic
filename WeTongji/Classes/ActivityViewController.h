@@ -22,7 +22,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *activityCategoryLabel;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UILabel *likeLabel;
-@property (nonatomic, strong) IBOutlet UIView *middleView;
+@property (nonatomic, strong) IBOutlet UIImageView *middleView;
 @property (nonatomic, strong) IBOutlet UIView *bottomView;
 @property (nonatomic, strong) IBOutlet WTButton *favoriteButton;
 @property (nonatomic, strong) IBOutlet WTButton *likeButton;

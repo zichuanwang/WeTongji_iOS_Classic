@@ -18,7 +18,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *creditPointsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *creditHoursLabel;
 @property (nonatomic, strong) IBOutlet UILabel *courseTypeLabel;
-@property (nonatomic, strong) IBOutlet UIView *middleView;
+@property (nonatomic, strong) IBOutlet UIImageView *middleView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 - (id)initWithCourse:(Course *)course;
