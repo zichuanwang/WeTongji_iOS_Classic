@@ -139,7 +139,8 @@ typedef enum {
             if(semesterWeekCount == 0)
                 semesterWeekCount = 19;
             
-            semesterWeekCount = 100;
+            semesterWeekCount = 19;
+            
             
             NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
             if(semesterCourseWeekCount == 0)
