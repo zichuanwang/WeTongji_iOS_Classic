@@ -53,19 +53,6 @@
 		</dict>
 		<dict>
 			<key>kSectionName</key>
-			<string>应用设置</string>
-			<key>kSectionArray</key>
-			<array>
-				<dict>
-					<key>kItemTitle</key>
-					<string>自动同步课表</string>
-					<key>kAccessoryType</key>
-					<string>kAccessoryTypeSwitch</string>
-				</dict>
-			</array>
-		</dict>
-        <dict>
-			<key>kSectionName</key>
 			<string>界面设置</string>
 			<key>kSectionArray</key>
 			<array>

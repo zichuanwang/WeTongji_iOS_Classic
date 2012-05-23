@@ -2511,6 +2511,8 @@
 		E1C877671505F41700592954 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
@@ -2521,6 +2523,8 @@
 					"\"$(SRCROOT)/WeTongji\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2529,6 +2533,8 @@
 		E1C877681505F41700592954 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeTongji/WeTongji-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
@@ -2539,6 +2545,9 @@
 					"\"$(SRCROOT)/WeTongji\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;
 			};
