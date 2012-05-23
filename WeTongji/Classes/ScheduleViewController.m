@@ -134,12 +134,23 @@ typedef enum {
             //semesterBeginString = @"2012-02-20T00:00:00+08:00";
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
             NSArray *courses = [client.responseData objectForKey:@"Courses"];
-            NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+            
+            NSInteger semesterWeekCount = 19;
+            NSString *semesterWeekCountString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]];
+            if(semesterWeekCountString)
+                semesterWeekCount = [semesterWeekCountString integerValue];
+            
+            NSInteger semesterCourseWeekCount = 17;
+            NSString *semesterCourseWeekCountString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]];
+                if(semesterCourseWeekCountString)
+                    semesterCourseWeekCount = [semesterCourseWeekCountString integerValue];
+            
             NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
             [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
             //NSLog(@"semesterBeginString:%@, semesterWeekCount:%d, semesterEndString:%@", semesterBeginString, semesterWeekCount, [NSString yearMonthDayWeekConvertFromDate:semesterEndDate]);
+            
             for(NSDictionary *dict in courses) {
-                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterWeekCount owner:self.currentUser inManagedObjectContext:self.managedObjectContext];
+                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount owner:self.currentUser inManagedObjectContext:self.managedObjectContext];
                 [self.currentUser addSchedule:courses];
             }
             [NSNotificationCenter postChangeScheduleNotification];
