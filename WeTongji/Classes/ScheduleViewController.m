@@ -135,15 +135,15 @@ typedef enum {
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
             NSArray *courses = [client.responseData objectForKey:@"Courses"];
             
-            NSInteger semesterWeekCount = 19;
-            NSString *semesterWeekCountString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]];
-            if(semesterWeekCountString)
-                semesterWeekCount = [semesterWeekCountString integerValue];
+            NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+            if(semesterWeekCount == 0)
+                semesterWeekCount = 19;
             
-            NSInteger semesterCourseWeekCount = 17;
-            NSString *semesterCourseWeekCountString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]];
-                if(semesterCourseWeekCountString)
-                    semesterCourseWeekCount = [semesterCourseWeekCountString integerValue];
+            semesterWeekCount = 100;
+            
+            NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
+            if(semesterCourseWeekCount == 0)
+                semesterCourseWeekCount = 17;
             
             NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
             [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];

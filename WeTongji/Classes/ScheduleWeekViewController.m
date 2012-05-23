@@ -127,12 +127,23 @@
         
         NSInteger week = indexPath.row / 7;
         if(weekDay == 2) {
-            NSArray *weekStringArray = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"七", @"八", @"九", @"十", nil];
+            NSArray *weekStringArray = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"七", @"八", @"九", nil];
             NSString *weekString = nil;
-            if(week < 10)
-                weekString = [NSString stringWithFormat:@"第%@周", [weekStringArray objectAtIndex:week]];
-            else {
-                weekString = [NSString stringWithFormat:@"第十%@周", [weekStringArray objectAtIndex:week - 10]];
+            
+            if(week >= 99) {
+                weekString = @"第??周";
+            } else if(week % 10 == 9) {
+                if(week < 10)
+                    weekString = [NSString stringWithFormat:@"第十周"];
+                else 
+                    weekString = [NSString stringWithFormat:@"第%@十周", [weekStringArray objectAtIndex:week / 10]];
+            } else {
+                if(week < 10)
+                    weekString = [NSString stringWithFormat:@"第%@周", [weekStringArray objectAtIndex:week]];
+                else if(week < 20)
+                    weekString = [NSString stringWithFormat:@"第十%@周", [weekStringArray objectAtIndex:week % 10]];
+                else 
+                    weekString = [NSString stringWithFormat:@"第%@十%@周", [weekStringArray objectAtIndex:week / 10 - 1], [weekStringArray objectAtIndex:week % 10]];
             }
             weekDayString = weekString;
         }
