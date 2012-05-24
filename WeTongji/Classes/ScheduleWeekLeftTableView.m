@@ -94,7 +94,7 @@
     [_timer invalidate];
     
     _speedX = _distanceX / _timeCountX;
-    _speedY = _distanceY / _timeCountY;
+    _speedY = _distanceY / _timeCountY / 2;
     NSLog(@"speedX:%f, speedY:%f", _speedX, _speedY);
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleDecelerate:) userInfo:nil repeats:YES];
 }
