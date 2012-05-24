@@ -101,8 +101,18 @@
         CGContextDrawPath(context, kCGPathEOFillStroke);
         
         [strokeColor set];
-        CGSize stringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:14] constrainedToSize:CGSizeMake(85 - 6, height)];
-        [event.what drawInRect:CGRectMake(4, startPosition - self.verticalOffset + (height - stringSize.height) / 2, 85 - 8, stringSize.height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
+        
+        CGFloat stringWidth = 77;
+        CGFloat stringHorizontalOffset = (85 - stringWidth) / 2;
+        CGFloat stringVerticalOffset = 3;
+        
+        CGSize whatStringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:12] constrainedToSize:CGSizeMake(stringWidth, height)];
+        CGSize whereStringSize = [event.where sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(stringWidth, height)];
+        whatStringSize.height = whatStringSize.height + whereStringSize.height + stringVerticalOffset > height ? height - whereStringSize.height - stringVerticalOffset : whatStringSize.height;
+        
+        [event.what drawInRect:CGRectMake(stringHorizontalOffset, startPosition - self.verticalOffset + stringVerticalOffset, stringWidth, whatStringSize.height) withFont:[UIFont boldSystemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+        
+        [event.where drawInRect:CGRectMake(stringHorizontalOffset, startPosition - self.verticalOffset + whatStringSize.height + stringVerticalOffset, stringWidth, whereStringSize.height) withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
     }
 }
 
