@@ -108,7 +108,14 @@
         
         CGSize whatStringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:12] constrainedToSize:CGSizeMake(stringWidth, height)];
         CGSize whereStringSize = [event.where sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(stringWidth, height)];
+        CGFloat minStringHeight = 15;
         whatStringSize.height = whatStringSize.height + whereStringSize.height + stringVerticalOffset > height ? height - whereStringSize.height - stringVerticalOffset : whatStringSize.height;
+        whatStringSize.height = whatStringSize.height < minStringHeight ? minStringHeight : whatStringSize.height;
+        whereStringSize.height = whereStringSize.height + whatStringSize.height + stringVerticalOffset > height ? height - whatStringSize.height - stringVerticalOffset : whereStringSize.height;
+        if(whereStringSize.height < minStringHeight) {
+            whereStringSize.height += stringVerticalOffset;
+            stringVerticalOffset = 0;
+        }
         
         [event.what drawInRect:CGRectMake(stringHorizontalOffset, startPosition - self.verticalOffset + stringVerticalOffset, stringWidth, whatStringSize.height) withFont:[UIFont boldSystemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
         

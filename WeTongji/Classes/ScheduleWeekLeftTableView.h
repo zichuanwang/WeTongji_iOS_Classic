@@ -10,9 +10,17 @@
 
 @protocol ScheduleWeekLeftTableViewDelegate;
 
-@interface ScheduleWeekLeftTableView : UITableView
+@interface ScheduleWeekLeftTableView : UITableView {
+    NSTimer *_timer;
+    CGFloat _speedX, _speedY;
+    CGFloat _distanceX, _distanceY;
+    NSInteger _timeCountX, _timeCountY;
+    NSInteger _freezeCountX, _freezeCountY;
+}
 
 @property (nonatomic, weak) IBOutlet id<ScheduleWeekLeftTableViewDelegate> swipeDelegate;
+@property (nonatomic, assign) CGFloat speedX;
+@property (nonatomic, assign) CGFloat speedY;
 
 @end
 

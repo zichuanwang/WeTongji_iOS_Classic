@@ -215,10 +215,16 @@
     CGPoint rightPoint = CGPointMake(self.rightTableView.contentOffset.x, self.rightTableView.contentOffset.y + x);
     if(rightPoint.y > 0 && rightPoint.y < self.rightTableView.contentSize.height - self.rightTableView.frame.size.width && fabsf(x) > 1) 
         [self.rightTableView setContentOffset:rightPoint animated:NO];
+    else {
+        self.leftTableView.speedX = 0;
+    }
     
     CGPoint leftPoint = CGPointMake(self.leftTableView.contentOffset.x, self.leftTableView.contentOffset.y + y);
     if(leftPoint.y > 0 && leftPoint.y < self.leftTableView.contentSize.height - self.leftTableView.frame.size.height && fabsf(y) > 1)
         [self.leftTableView setContentOffset:leftPoint animated:NO];
+    else {
+        self.leftTableView.speedY = 0;
+    }
 }
 
 @end
