@@ -199,6 +199,7 @@
 		E174A978153DAA1E00E7165A /* LoginListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A976153DAA1D00E7165A /* LoginListTableViewController.xib */; };
 		E174A9A2153E800400E7165A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E174A9A0153E800400E7165A /* LoginViewController.m */; };
 		E174A9A3153E800400E7165A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E174A9A1153E800400E7165A /* LoginViewController.xib */; };
+		E176B2B7156E36D90044CD50 /* ScheduleWeekLeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E176B2B6156E36D90044CD50 /* ScheduleWeekLeftTableView.m */; };
 		E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17816C5156BB85300637470 /* AppInfoViewController.m */; };
 		E17816C8156BB85300637470 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17816C6156BB85300637470 /* AppInfoViewController.xib */; };
 		E180638F15360BAD00460F8B /* main_tab_bar_btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E180638915360BAD00460F8B /* main_tab_bar_btn_check@2x.png */; };
@@ -673,6 +674,8 @@
 		E174A99F153E800400E7165A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
 		E174A9A0153E800400E7165A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
 		E174A9A1153E800400E7165A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
+		E176B2B5156E36D80044CD50 /* ScheduleWeekLeftTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleWeekLeftTableView.h; path = Classes/ScheduleWeekLeftTableView.h; sourceTree = "<group>"; };
+		E176B2B6156E36D90044CD50 /* ScheduleWeekLeftTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleWeekLeftTableView.m; path = Classes/ScheduleWeekLeftTableView.m; sourceTree = "<group>"; };
 		E17816C4156BB85300637470 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppInfoViewController.h; path = Classes/AppInfoViewController.h; sourceTree = "<group>"; };
 		E17816C5156BB85300637470 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppInfoViewController.m; path = Classes/AppInfoViewController.m; sourceTree = "<group>"; };
 		E17816C6156BB85300637470 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppInfoViewController.xib; path = Classes/AppInfoViewController.xib; sourceTree = "<group>"; };
@@ -1112,6 +1115,8 @@
 				E135F780155E4224008494D8 /* ScheduleWeekViewController.h */,
 				E135F781155E4224008494D8 /* ScheduleWeekViewController.m */,
 				E135F782155E4224008494D8 /* ScheduleWeekViewController.xib */,
+				E176B2B5156E36D80044CD50 /* ScheduleWeekLeftTableView.h */,
+				E176B2B6156E36D90044CD50 /* ScheduleWeekLeftTableView.m */,
 			);
 			name = week;
 			sourceTree = "<group>";
@@ -2446,6 +2451,7 @@
 				E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */,
 				E1A38F7D156AC1D000E11F58 /* Image.m in Sources */,
 				E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */,
+				E176B2B7156E36D90044CD50 /* ScheduleWeekLeftTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

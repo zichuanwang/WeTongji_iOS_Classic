@@ -97,7 +97,7 @@
         
         [[UIColor whiteColor] set];
         CGSize stringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:14] constrainedToSize:CGSizeMake(85 - 6, height)];
-        [event.what drawInRect:CGRectMake(3, startPosition - self.verticalOffset + (height - stringSize.height) / 2, 85 - 6, stringSize.height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
+        [event.what drawInRect:CGRectMake(4, startPosition - self.verticalOffset + (height - stringSize.height) / 2, 85 - 8, stringSize.height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
     }
 }
 
