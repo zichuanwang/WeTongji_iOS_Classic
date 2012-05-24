@@ -11,7 +11,7 @@
 #import "Course+Addition.h"
 #import "Activity+Addition.h"
 
-#define MINUTE_TO_HEIGHT_RATIO (40. / 60 )
+#define MINUTE_TO_HEIGHT_RATIO (LEFT_CELL_HEIGHT / 60.)
 
 @implementation ScheduleWeekRightTableViewCellContentView
 
@@ -46,7 +46,7 @@
     CGContextSetLineWidth(context, 1.0f);
     for (int i = 1; i < LEFT_TABLE_VIEW_ROW_COUNT; i++) {
         //draw horizontal lines
-        CGFloat leftCellHeight = 40.0f;
+        CGFloat leftCellHeight = LEFT_CELL_HEIGHT;
         CGFloat rightCellWidth = 85.0f;
         CGFloat verticalPos = i * leftCellHeight - self.verticalOffset;
         if (verticalPos >= 0 && verticalPos <= self.frame.size.height) {
@@ -56,6 +56,7 @@
     }
     CGContextStrokePath(context);
 }
+
 - (void)drawVerticalLine:(CGContextRef)context {
     CGContextSetLineWidth(context, 2.0f);
     CGContextMoveToPoint(context, 85.0, 0);
@@ -87,8 +88,8 @@
             continue;
         
         //NSLog(@"event name:%@", event.what);
-        float startPosition = [self startPosConvertFromDate:event.begin_time];
-        float height = [self heightConvertFromTime:event.begin_time ToTime:event.end_time];
+        float startPosition = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:event.begin_time];
+        float height = [ScheduleWeekRightTableViewCellContentView heightConvertFromTime:event.begin_time ToTime:event.end_time];
         
         if (startPosition - self.verticalOffset >= -height && startPosition - self.verticalOffset <= self.frame.size.height) {
             addRoundedRectToPath(context, CGRectMake(2, startPosition - self.verticalOffset + 2, 80, height - 4), 8.0f, 8.0f);
@@ -126,7 +127,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     CGContextRestoreGState(context);
 }
 
-- (int)startPosConvertFromDate:(NSDate *)date {
++ (int)startPosConvertFromDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];  
     NSInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:date];
@@ -137,7 +138,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     return result;
 }
 
-- (int)heightConvertFromTime:(NSDate *)beginTime ToTime:(NSDate *)endTime {
++ (int)heightConvertFromTime:(NSDate *)beginTime ToTime:(NSDate *)endTime {
     NSTimeInterval timeInterval = [endTime timeIntervalSinceDate:beginTime];   
     int result = timeInterval / 60 * MINUTE_TO_HEIGHT_RATIO;
     return result;

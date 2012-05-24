@@ -14,7 +14,7 @@
 #define END_HOUR    22
 #define LEFT_TABLE_VIEW_ROW_COUNT   (END_HOUR - BEGIN_HOUR + 1)
 
-@interface ScheduleWeekViewController : CoreDataViewController<UITableViewDataSource, UITableViewDelegate, ScheduleWeekLeftTableViewDelegate>
+@interface ScheduleWeekViewController : CoreDataViewController<UITableViewDataSource, UITableViewDelegate, ScheduleWeekLeftTableViewDelegate> 
 
 @property (nonatomic, strong) IBOutlet UITableView *rightTableView;
 @property (nonatomic, strong) IBOutlet ScheduleWeekLeftTableView *leftTableView;

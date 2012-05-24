@@ -99,7 +99,7 @@
 - (void)configureRightTableView {
     CGRect frame =  self.rightTableView.frame;
     self.rightTableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
-    frame.size.height = LEFT_TABLE_VIEW_ROW_COUNT * 40;
+    frame.size.height = LEFT_TABLE_VIEW_ROW_COUNT * LEFT_CELL_HEIGHT;
     NSLog(@"frame:%f,%f,%f,%f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     self.rightTableView.frame = frame;
     self.rightTableView.contentInset = UIEdgeInsetsMake(65.0f, 0, 0, 0);
@@ -204,6 +204,7 @@
         for(ScheduleWeekRightTableViewCell *cell in self.rightTableView.visibleCells) {
             [cell setDrawViewVerticalOffset:self.leftTableView.contentOffset.y];
         }
+        [scrollView setNeedsDisplay];
     }
 }
 

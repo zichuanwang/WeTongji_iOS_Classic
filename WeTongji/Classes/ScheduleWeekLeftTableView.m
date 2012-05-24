@@ -7,6 +7,7 @@
 //
 
 #import "ScheduleWeekLeftTableView.h"
+#import "ScheduleWeekRightTableViewCellContentView.h"
 
 @implementation ScheduleWeekLeftTableView
 
@@ -21,14 +22,26 @@
     return self;
 }
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    [super drawRect:rect];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawCurrentTimeLine:context];
 }
-*/
+
+- (void)drawCurrentTimeLine:(CGContextRef)context {
+    CGContextSetRGBStrokeColor(context, 253 / 255., 53 / 255., 71 / 255., 0.6f);
+    CGContextSetLineWidth(context, 1.0f);
+    CGFloat verticalPos = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:[NSDate date]];
+    NSLog(@"current line:%f", verticalPos);
+    CGContextMoveToPoint(context, 65.0, verticalPos);
+    CGContextAddLineToPoint(context, 320.0f, verticalPos);
+    CGContextStrokePath(context);
+}
 
 - (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view  
 {  
@@ -49,8 +62,10 @@
     
     CGFloat distanceX = formerPoint.x - point.x;
     CGFloat distanceY = formerPoint.y - point.y;
-    distanceX = distanceX > 20 ? 20 : distanceX;
-    distanceY = distanceY > 20 ? 20 : distanceY;
+    
+    //distanceY = distanceY > 20 ? 20 : distanceY;
+    //distanceX *= 1.2f;
+    
     [self.swipeDelegate scheduleWeekLeftTableView:self didSwipeHorizontally:distanceX swipeVertically:distanceY];
 }
 
