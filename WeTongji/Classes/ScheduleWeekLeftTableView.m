@@ -34,7 +34,7 @@
 }
 
 - (void)drawCurrentTimeLine:(CGContextRef)context {
-    CGContextSetRGBStrokeColor(context, 253 / 255., 53 / 255., 71 / 255., 0.6f);
+    CGContextSetRGBStrokeColor(context, 253 / 255., 53 / 255., 71 / 255., 0.4f);
     CGContextSetLineWidth(context, 1.0f);
     CGFloat verticalPos = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:[NSDate date]];
     NSLog(@"current line:%f", verticalPos);

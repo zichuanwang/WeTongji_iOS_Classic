@@ -70,33 +70,37 @@
 
 - (void)drawEvents:(CGContextRef)context {
     //draw events rect
+    CGContextSetLineWidth(context, 1.0f);
     CGFloat alpha = 0.6f;
     for(Event * event in self.dataArray) {
+        UIColor *strokeColor = nil;
         if([event isMemberOfClass:[Course class]]) {
             Course *course = (Course *)event;
             if([course.require_type isEqualToString:@"必修"]) {
-                CGContextSetRGBStrokeColor(context, 87 / 255., 142 / 255., 195 / 255., alpha);
+                strokeColor = [UIColor colorWithRed:87 / 255. green:142 / 255. blue:195 / 255. alpha:1];
                 CGContextSetRGBFillColor(context, 121 / 255., 181 / 255., 240 / 255., alpha);
             } else {
-                CGContextSetRGBStrokeColor(context, 79 / 255., 178 / 255., 43 / 255., alpha);
+                strokeColor = [UIColor colorWithRed:79 / 255. green:178 / 255. blue:43 / 255. alpha:1];
                 CGContextSetRGBFillColor(context, 135 / 255., 200 / 255., 76 / 255., alpha);
             }
         } else if([event isMemberOfClass:[Activity class]]) {
-            CGContextSetRGBStrokeColor(context, 253 / 255., 186 / 255., 81 / 255., alpha);
+            strokeColor = [UIColor colorWithRed:253 / 255. green:186 / 255. blue:81 / 255. alpha:1];
             CGContextSetRGBFillColor(context, 255 / 255., 208 / 255., 52 / 255., alpha);
         } else 
             continue;
+        
+        CGContextSetStrokeColorWithColor(context, strokeColor.CGColor);
         
         //NSLog(@"event name:%@", event.what);
         float startPosition = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:event.begin_time];
         float height = [ScheduleWeekRightTableViewCellContentView heightConvertFromTime:event.begin_time ToTime:event.end_time];
         
         if (startPosition - self.verticalOffset >= -height && startPosition - self.verticalOffset <= self.frame.size.height) {
-            addRoundedRectToPath(context, CGRectMake(2, startPosition - self.verticalOffset + 2, 80, height - 4), 8.0f, 8.0f);
+            addRoundedRectToPath(context, CGRectMake(1, startPosition - self.verticalOffset, 82, height), 4.0f, 4.0f);
         }
         CGContextDrawPath(context, kCGPathEOFillStroke);
         
-        [[UIColor whiteColor] set];
+        [strokeColor set];
         CGSize stringSize = [event.what sizeWithFont:[UIFont boldSystemFontOfSize:14] constrainedToSize:CGSizeMake(85 - 6, height)];
         [event.what drawInRect:CGRectMake(4, startPosition - self.verticalOffset + (height - stringSize.height) / 2, 85 - 8, stringSize.height) withFont:[UIFont boldSystemFontOfSize:14] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
     }
