@@ -153,9 +153,11 @@
 
 - (void)configureActivityView {
     self.titleLabel.text = self.activity.what;
+    [self.titleLabel sizeToFit];
     self.descriptionLabel.text = self.activity.content;
     [self.descriptionLabel sizeToFit];
     CGRect rect = self.descriptionLabel.frame;
+    rect.origin.y = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height + 10;
     self.descriptionLabel.frame = rect;
     
     [self.avatarImageView loadImageFromURL:self.activity.avatar_link cacheInContext:self.managedObjectContext];
