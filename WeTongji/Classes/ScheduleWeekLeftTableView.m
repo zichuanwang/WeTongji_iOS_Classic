@@ -29,8 +29,7 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     // Drawing code
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -133,7 +132,7 @@
 - (void)handleDecelerate:(NSTimer *)timer {
     
     _speedX *= 0.95f;
-    _speedY *= 0.9f;
+    _speedY *= 0.95f;
     
     if(fabsf(_speedX) < 0.2)
         _speedX = 0;

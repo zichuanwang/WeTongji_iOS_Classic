@@ -194,6 +194,8 @@
 - (void)didClickTodayButton {
     [self.rightTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getTodayRowInRightTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     [self.leftTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self getNowRowInLeftTableView] inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    self.leftTableView.speedX = 0;
+    self.leftTableView.speedY = 0;
 }
 
 #pragma mark -
