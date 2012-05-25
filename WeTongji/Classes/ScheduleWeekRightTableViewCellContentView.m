@@ -12,10 +12,10 @@
 #import "Activity+Addition.h"
 
 #define MINUTE_TO_HEIGHT_RATIO (LEFT_CELL_HEIGHT / 60.)
+#define VERTICAL_OFFSET (self.frame.size.height / 4)
 
 @implementation ScheduleWeekRightTableViewCellContentView
 
-@synthesize verticalOffset = _verticalOffset;
 @synthesize row = _row;
 @synthesize dataArray = _dataArray;
 
@@ -32,7 +32,7 @@
 - (void)drawRect:(CGRect)rect {
     if (self.row % 2) {
         [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.04f] setFill];
-        UIRectFill(rect); 
+        UIRectFill(CGRectMake(0, -self.frame.size.height / 2, self.frame.size.width, self.frame.size.height * 2)); 
     }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -48,11 +48,10 @@
         //draw horizontal lines
         CGFloat leftCellHeight = LEFT_CELL_HEIGHT;
         CGFloat rightCellWidth = 85.0f;
-        CGFloat verticalPos = i * leftCellHeight - self.verticalOffset;
-        if (verticalPos >= 0 && verticalPos <= self.frame.size.height) {
-            CGContextMoveToPoint(context, 0, verticalPos);
-            CGContextAddLineToPoint(context, rightCellWidth, verticalPos);
-        }
+        CGFloat verticalPos = i * leftCellHeight + VERTICAL_OFFSET;
+            
+        CGContextMoveToPoint(context, 0, verticalPos);
+        CGContextAddLineToPoint(context, rightCellWidth, verticalPos);
     }
     CGContextStrokePath(context);
 }
@@ -61,8 +60,8 @@
     CGContextSetLineWidth(context, 2.0f);
     CGContextMoveToPoint(context, 85.0, 0);
     CGContextAddLineToPoint(context, 85.0, self.frame.size.height); 
-    if(self.row == 0) {
-        CGContextMoveToPoint(context, 0, 0);
+    if(self.row == 0) { 
+        CGContextMoveToPoint(context, 0, self.frame.size.height);
         CGContextAddLineToPoint(context, 0, self.frame.size.height);
     }
     CGContextStrokePath(context);
@@ -92,12 +91,10 @@
         CGContextSetStrokeColorWithColor(context, strokeColor.CGColor);
         
         //NSLog(@"event name:%@", event.what);
-        float startPosition = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:event.begin_time];
+        float startPosition = [ScheduleWeekRightTableViewCellContentView startPosConvertFromDate:event.begin_time] + VERTICAL_OFFSET;
         float height = [ScheduleWeekRightTableViewCellContentView heightConvertFromTime:event.begin_time ToTime:event.end_time];
         
-        if (startPosition - self.verticalOffset >= -height && startPosition - self.verticalOffset <= self.frame.size.height) {
-            addRoundedRectToPath(context, CGRectMake(1, startPosition - self.verticalOffset, 82, height), 4.0f, 4.0f);
-        }
+            addRoundedRectToPath(context, CGRectMake(1, startPosition, 82, height), 4.0f, 4.0f);
         CGContextDrawPath(context, kCGPathEOFillStroke);
         
         [strokeColor set];
@@ -117,15 +114,10 @@
             stringVerticalOffset = 0;
         }
         
-        [event.what drawInRect:CGRectMake(stringHorizontalOffset, startPosition - self.verticalOffset + stringVerticalOffset, stringWidth, whatStringSize.height) withFont:[UIFont boldSystemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+        [event.what drawInRect:CGRectMake(stringHorizontalOffset, startPosition + stringVerticalOffset, stringWidth, whatStringSize.height) withFont:[UIFont boldSystemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
         
-        [event.where drawInRect:CGRectMake(stringHorizontalOffset, startPosition - self.verticalOffset + whatStringSize.height + stringVerticalOffset, stringWidth, whereStringSize.height) withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+        [event.where drawInRect:CGRectMake(stringHorizontalOffset, startPosition + whatStringSize.height + stringVerticalOffset, stringWidth, whereStringSize.height) withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
     }
-}
-
-- (void)setVerticalOffset:(CGFloat)verticalOffset {
-    _verticalOffset = verticalOffset;
-    [self setNeedsDisplay];
 }
 
 static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWidth, float ovalHeight) {

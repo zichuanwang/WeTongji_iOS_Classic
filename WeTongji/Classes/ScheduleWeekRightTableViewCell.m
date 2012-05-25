@@ -36,11 +36,15 @@
 - (void)setDrawViewVerticalOffset:(CGFloat)offset row:(NSInteger)row dataArray:(NSArray *)array {
     self.drawView.row = row;
     self.drawView.dataArray = array;
-    self.drawView.verticalOffset = offset;
+    CGRect frame = self.drawView.frame;
+    frame.origin.y = -frame.size.height / 4 - offset;
+    self.drawView.frame = frame;
 }
 
 - (void)setDrawViewVerticalOffset:(CGFloat)offset {
-    self.drawView.verticalOffset = offset;
+    CGRect frame = self.drawView.frame;
+    frame.origin.y = -frame.size.height / 4 - offset;
+    self.drawView.frame = frame;
 }
 
 @end

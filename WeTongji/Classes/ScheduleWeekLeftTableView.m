@@ -48,26 +48,27 @@
 
 - (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view  
 {  
-    [_timer invalidate];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleTimeCount:) userInfo:nil repeats:YES];
-    
-    _timeCountX = 1;
-    _timeCountY = 1;
-    
-    _distanceX = 0;
-    _distanceY = 0;
-    
-    _freezeCountX = 0;
-    _freezeCountY = 0;
-    
     return YES;  
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch * touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
-    if(point.x > 65)
+    if(point.x > 65) {
         self.scrollEnabled = NO;
+        
+        [_timer invalidate];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleTimeCount:) userInfo:nil repeats:YES];
+        
+        _timeCountX = 1;
+        _timeCountY = 1;
+        
+        _distanceX = 0;
+        _distanceY = 0;
+        
+        _freezeCountX = 0;
+        _freezeCountY = 0;
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -93,8 +94,8 @@
     self.scrollEnabled = YES;
     [_timer invalidate];
     
-    _speedX = _distanceX / _timeCountX;
-    _speedY = _distanceY / _timeCountY / 2;
+    _speedX = _distanceX / _timeCountX * 0.7;
+    _speedY = _distanceY / _timeCountY * 0.7;
     NSLog(@"speedX:%f, speedY:%f", _speedX, _speedY);
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleDecelerate:) userInfo:nil repeats:YES];
 }
