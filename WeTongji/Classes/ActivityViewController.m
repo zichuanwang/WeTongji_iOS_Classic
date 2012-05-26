@@ -139,10 +139,7 @@
                 //NSLog(@"imageViewSize width:%f height:%f", imageViewSize.width, imageViewSize.height);
                 CGRect imageViewFrame = self.activityImageView.frame;
                 imageViewFrame.size = imageViewSize;
-                self.activityImageView.frame = imageViewFrame; 
-                
-                UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapActivityImageView)];
-                [self.activityImageView addGestureRecognizer:gr];
+                self.activityImageView.frame = imageViewFrame;
                 
                 [self.activityImageView configureShadow];
                 [self refreshViewLayout];
@@ -176,6 +173,8 @@
     [self updateLikeLabel];
     
     [self configureActivityImage];
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapScrollView:)];
+    [self.scrollView addGestureRecognizer:gr];
     
     [self refreshViewLayout];
 }
@@ -344,8 +343,20 @@
     }
 }
 
-- (void)didTapActivityImageView {
-    [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
+- (void)didTapScrollView:(UIGestureRecognizer *)gestureRecognizer {
+    if(self.activityImageView.image != nil) {
+        CGPoint touchPoint = [gestureRecognizer locationInView:self.scrollView];
+        CGRect frame = self.activityImageView.frame;
+        frame.origin.y += self.middleView.frame.origin.y;
+        if(CGRectContainsPoint(frame, touchPoint)) {
+            [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
+        }
+//        NSLog(@"tap %f, %f", touchPoint.x, touchPoint.y);
+//        NSLog(@"image view %f, %f, %f, %f", frame.origin.x,
+//              frame.origin.y,
+//              frame.size.width + frame.origin.x,
+//              frame.size.height + frame.origin.y);
+    }
 }
 
 @end

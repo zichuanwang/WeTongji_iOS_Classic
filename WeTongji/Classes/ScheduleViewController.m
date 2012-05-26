@@ -156,6 +156,8 @@ typedef enum {
             }
             [NSNotificationCenter postChangeScheduleNotification];
             [self.dayViewController configureTodayCell];
+            
+            [self saveContext];
         }
     }];
     [client getCourse];

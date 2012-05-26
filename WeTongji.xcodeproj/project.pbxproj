@@ -147,6 +147,8 @@
 		E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */; };
 		E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */; };
 		E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */; };
+		E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF815704D2C00E35EC1 /* dock_shadow.png */; };
+		E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */; };
 		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
 		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
 		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
@@ -599,6 +601,8 @@
 		E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back_hl@2x.png"; sourceTree = "<group>"; };
 		E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back.png; sourceTree = "<group>"; };
 		E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back@2x.png"; sourceTree = "<group>"; };
+		E159CCF815704D2C00E35EC1 /* dock_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_shadow.png; sourceTree = "<group>"; };
+		E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_shadow@2x.png"; sourceTree = "<group>"; };
 		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
 		E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthTableViewController.m; path = Classes/ScheduleMonthTableViewController.m; sourceTree = "<group>"; };
 		E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
@@ -1669,6 +1673,8 @@
 				E168FE9D1553FAA800BEE141 /* dock_btn_treize_hl@2x.png */,
 				E14F7C57155BC92300826009 /* dock_btn_treize_white.png */,
 				E14F7C49155BC8FE00826009 /* dock_btn_treize_white@2x.png */,
+				E159CCF815704D2C00E35EC1 /* dock_shadow.png */,
+				E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */,
 			);
 			name = dock;
 			sourceTree = "<group>";
@@ -2311,6 +2317,8 @@
 				E17816C8156BB85300637470 /* AppInfoViewController.xib in Resources */,
 				E11263DA156BE85600E2C486 /* Icon-Small.png in Resources */,
 				E11263DB156BE85600E2C486 /* Icon-Small@2x.png in Resources */,
+				E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */,
+				E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

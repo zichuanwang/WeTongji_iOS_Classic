@@ -51,13 +51,29 @@
 										<string key="NSFrame">{{0, -30}, {320, 950}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="414342954"/>
+										<reference key="NSNextKeyView" ref="140519920"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<object class="NSCustomResource" key="IBUIImage">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">dock_bg.png</string>
+										</object>
+									</object>
+									<object class="IBUIImageView" id="140519920">
+										<reference key="NSNextResponder" ref="828519302"/>
+										<int key="NSvFlags">1316</int>
+										<string key="NSFrame">{{0, -33}, {320, 30}}</string>
+										<reference key="NSSuperview" ref="828519302"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="414342954"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<float key="IBUIAlpha">0.20000000298023224</float>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">dock_shadow.png</string>
 										</object>
 									</object>
 									<object class="IBUIView" id="414342954">
@@ -139,10 +155,6 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="537018411"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4yIDAuMiAwLjIAA</bytes>
-								</object>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -207,6 +219,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">shadowImageView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="140519920"/>
+					</object>
+					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="6442943"/>
 						<reference key="destination" ref="372490531"/>
@@ -255,6 +275,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="537018411"/>
 							<reference ref="414342954"/>
+							<reference ref="140519920"/>
 						</array>
 						<reference key="parent" ref="6442943"/>
 					</object>
@@ -282,6 +303,11 @@
 						<reference key="object" ref="699095866"/>
 						<reference key="parent" ref="414342954"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">46</int>
+						<reference key="object" ref="140519920"/>
+						<reference key="parent" ref="828519302"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -298,12 +324,13 @@
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="46.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">44</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -314,6 +341,7 @@
 						<string key="bgImageView">UIImageView</string>
 						<string key="scrollBackgroundView">UIImageView</string>
 						<string key="scrollView">UIScrollView</string>
+						<string key="shadowImageView">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="bgImageView">
@@ -327,6 +355,10 @@
 						<object class="IBToOneOutletInfo" key="scrollView">
 							<string key="name">scrollView</string>
 							<string key="candidateClassName">UIScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shadowImageView">
+							<string key="name">shadowImageView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -344,10 +376,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">dock_bg.png</string>
-			<string key="NS.object.0">{320, 950}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="dock_bg.png">{320, 950}</string>
+			<string key="dock_shadow.png">{320, 30}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

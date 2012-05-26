@@ -54,6 +54,7 @@
 @synthesize buttonInfoArray = _buttonInfoArray;
 @synthesize metroInfoArray = _metroInfoArray;
 @synthesize bgImageView = _bgImageView;
+@synthesize shadowImageView = _shadowImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,6 +86,7 @@
     // Release any retained subviews of the main view.
     self.scrollView = nil;
     self.scrollBackgroundView = nil;
+    self.shadowImageView = nil;
 }
 
 #pragma mark -
@@ -126,8 +128,10 @@
     UIStyle style = [NSUserDefaults getCurrentUIStyle];
     if(style == UIStyleBlackChocolate){
         self.bgImageView.image = [UIImage imageNamed:@"dock_bg.png"];
+        self.shadowImageView.alpha = 0.7f;
     } else if(style == UIStyleWhiteChocolate) {
         self.bgImageView.image = [UIImage imageNamed:@"dock_bg_white.png"];
+        self.shadowImageView.alpha = 0.2f;
     }
 }
 
