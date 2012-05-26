@@ -19,6 +19,6 @@
 @property (nonatomic, strong) IBOutlet UIImageView *scrollBackgroundView;
 @property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *shadowImageView;
-
+@property (nonatomic, strong) IBOutlet UIView *blackBgView;
 
 @end

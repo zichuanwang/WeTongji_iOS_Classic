@@ -13,7 +13,7 @@
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     __block UIView *subview = [super hitTest:point withEvent:event];
     if(subview.tag == ROOT_METRO_SCROLL_HEADER_VIEW_TAG) {
-        //NSLog(@"touch x:%f, touch y:%f", point.x, point.y);
+        NSLog(@"touch x:%f, touch y:%f", point.x, point.y);
         [[self subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             UIView *view = obj;
             if(view.tag == ROOT_MAIN_VIEW_TAG) {

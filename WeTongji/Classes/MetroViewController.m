@@ -33,6 +33,8 @@
 #define SCROLL_VIEW_SPREAD_POS_Y    100
 #define SCROLL_HEADER_VIEW_HEIGHT   (460 - BUTTON_HEIGHT - BUTTON_VERTICAL_OFFSET - BUTTON_VERTICAL_INTERVAL)
 
+#define SCROLL_HEADER_VIEW_MAX_ALPHA 0.8f
+
 @interface MetroViewController ()
 
 @property (nonatomic, strong) NSMutableArray *buttonHeap;
@@ -55,6 +57,7 @@
 @synthesize metroInfoArray = _metroInfoArray;
 @synthesize bgImageView = _bgImageView;
 @synthesize shadowImageView = _shadowImageView;
+@synthesize blackBgView = _blackBgView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -117,8 +120,8 @@
     self.scrollBackgroundView.frame = frame;
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, SCROLL_HEADER_VIEW_HEIGHT)];
-    headerView.backgroundColor = [UIColor clearColor];
     headerView.tag = ROOT_METRO_SCROLL_HEADER_VIEW_TAG;
+    headerView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:headerView];
     
     self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
@@ -245,8 +248,15 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat posY = scrollView.contentOffset.y;
     _isScrollingDownward = posY < _lastScrollContentOffsetY;
-    //NSLog(@"posY:%f, last:%f", posY, _lastScrollContentOffsetY);
     _lastScrollContentOffsetY = posY;
+    
+    CGFloat alpha = posY / SCROLL_HEADER_VIEW_HEIGHT;
+    alpha = alpha < 1 ? alpha : 1;
+    alpha = alpha > 0 ? alpha : 0;
+    alpha *= M_PI / 2;
+    alpha = sinf(alpha) * SCROLL_HEADER_VIEW_MAX_ALPHA;
+    self.blackBgView.alpha = alpha;
+    
     if(posY > SCROLL_HEADER_VIEW_HEIGHT && !self.shrink && self.isShrinking && !_scrollViewStartTouch) {
         self.scrollView.contentOffset = CGPointMake(0, SCROLL_HEADER_VIEW_HEIGHT);
     }
