@@ -58,8 +58,8 @@
         self.titleLabel.shadowColor = [UIColor blackColor];
     } else if(style == UIStyleWhiteChocolate) {
         self.buttonCoverImageView.image = [UIImage imageNamed:@"dock_btn_cover_white.png"];
-        self.titleLabel.textColor = [UIColor blackColor];
-        self.titleLabel.shadowColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
+        self.titleLabel.shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f];
     }
 }
 

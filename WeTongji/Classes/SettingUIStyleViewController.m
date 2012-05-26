@@ -76,10 +76,10 @@
 
 - (void)configureCell:(SettingUIStyleTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
-        cell.titleLable.text = @"黑巧克力";
+        cell.titleLable.text = @"黑";
         cell.styleImageView.image = [UIImage imageNamed:@"setting_black_chocolate"];
     } else {
-        cell.titleLable.text = @"白巧克力";
+        cell.titleLable.text = @"卡其";
         cell.styleImageView.image = [UIImage imageNamed:@"setting_white_chocolate"];
     }
     if(_selectRow == indexPath.row) {
