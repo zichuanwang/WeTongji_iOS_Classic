@@ -47,7 +47,7 @@
 #pragma mark UI methods
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"界面风格"];
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"色彩"];
     self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *backButton = [UIBarButtonItem getBackButtonItemWithTitle:@"返回" target:self action:@selector(didClickBackButton)];
@@ -76,10 +76,10 @@
 
 - (void)configureCell:(SettingUIStyleTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
-        cell.titleLable.text = @"黑";
+        cell.titleLable.text = @"黑色";
         cell.styleImageView.image = [UIImage imageNamed:@"setting_black_chocolate"];
     } else {
-        cell.titleLable.text = @"卡其";
+        cell.titleLable.text = @"米色";
         cell.styleImageView.image = [UIImage imageNamed:@"setting_white_chocolate"];
     }
     if(_selectRow == indexPath.row) {

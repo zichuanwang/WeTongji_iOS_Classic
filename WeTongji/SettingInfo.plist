@@ -58,7 +58,7 @@
 			<array>
 				<dict>
 					<key>kItemTitle</key>
-					<string>界面风格</string>
+					<string>色彩</string>
 					<key>kAccessoryType</key>
 					<string>kAccessoryTypeDisclosure</string>
 					<key>kNibFileName</key>
