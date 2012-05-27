@@ -14,10 +14,12 @@
 #import "WTClient.h"
 #import "UIImageView+Addition.h"
 #import "DetailImageViewController.h"
+#import "UIImage+Addition.h"
 
 @interface ActivityViewController ()
 
 @property (nonatomic, strong) Activity *activity;
+@property (nonatomic, strong) UIImage *activityOriginalImage;
 
 @end
 
@@ -43,6 +45,7 @@
 @synthesize tabBarSeperatorImageView = _tabBarSeperatorImageView;
 
 @synthesize activity = _activity;
+@synthesize activityOriginalImage = _activityOriginalImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -140,6 +143,9 @@
                 CGRect imageViewFrame = self.activityImageView.frame;
                 imageViewFrame.size = imageViewSize;
                 self.activityImageView.frame = imageViewFrame;
+                
+                self.activityOriginalImage = self.activityImageView.image;
+                self.activityImageView.image = [self.activityImageView.image compressImage];
                 
                 [self.activityImageView configureShadow];
                 [self refreshViewLayout];
@@ -303,6 +309,7 @@
         [client unlikeActivity:self.activity.activity_id];
     }
 }
+
 - (IBAction)didClickScheduleButton:(UIButton *)sender {
     if(![self isCurrentUserValid])
         return;
@@ -349,13 +356,8 @@
         CGRect frame = self.activityImageView.frame;
         frame.origin.y += self.middleView.frame.origin.y;
         if(CGRectContainsPoint(frame, touchPoint)) {
-            [DetailImageViewController showDetailImageWithImage:self.activityImageView.image];
+            [DetailImageViewController showDetailImageWithImage:self.activityOriginalImage];
         }
-//        NSLog(@"tap %f, %f", touchPoint.x, touchPoint.y);
-//        NSLog(@"image view %f, %f, %f, %f", frame.origin.x,
-//              frame.origin.y,
-//              frame.size.width + frame.origin.x,
-//              frame.size.height + frame.origin.y);
     }
 }
 

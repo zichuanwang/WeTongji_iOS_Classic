@@ -8,6 +8,8 @@
 
 #import "UIImage+Addition.h"
 
+#define COMPRESS_IMAGE_MAX_WIDTH 280
+
 @implementation UIImage (Addition)
 
 - (UIImage *)rotateAdjustImage {  
@@ -104,6 +106,25 @@
     
     NSLog(@"imageCopy orientation:%d", imageCopy.imageOrientation);
     return imageCopy;
+}
+
+- (UIImage *)compressImage {
+    NSLog(@"original image size:%f, %f", self.size.width, self.size.height);
+    if(self.size.width < COMPRESS_IMAGE_MAX_WIDTH) {
+        return self;
+    }
+    UIImage *result = nil;
+    CGRect compressFrame = CGRectMake(0, 0, 
+                                      COMPRESS_IMAGE_MAX_WIDTH,
+                                      COMPRESS_IMAGE_MAX_WIDTH / self.size.width * self.size.height);
+    
+    UIGraphicsBeginImageContext(compressFrame.size); // this will crop
+    [self drawInRect:compressFrame];
+    result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+        
+    NSLog(@"compressed image size:%f, %f", result.size.width, result.size.height);
+    return result;
 }
 
 @end

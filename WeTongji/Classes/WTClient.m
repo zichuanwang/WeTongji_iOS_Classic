@@ -402,4 +402,10 @@ report_completion:
     [self sendRequest];
 }
 
+- (void)readNews:(NSString *)newsID {
+    [self.params setObject:@"News.Read" forKey:@"M"];
+    [self.params setObject:newsID forKey:@"Id"];
+    [self sendRequest];
+}
+
 @end

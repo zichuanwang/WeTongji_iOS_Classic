@@ -108,7 +108,7 @@
 												<int key="IBUIContentMode">7</int>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<string key="IBUIText">微同济内测版 版本号0.9.1 发行日12.5.25</string>
+												<string key="IBUIText">微同济内测版 版本号0.9.2 发行日12.5.27</string>
 												<object class="NSColor" key="IBUITextColor">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MC41IDAuNQA</bytes>

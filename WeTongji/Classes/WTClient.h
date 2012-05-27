@@ -58,5 +58,6 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)getCourse;
 - (void)getScheduleWithBeginDate:(NSDate *)begin 
                          endDate:(NSDate *)end;
+- (void)readNews:(NSString *)newsID;
 
 @end

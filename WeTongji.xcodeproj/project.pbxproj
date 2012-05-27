@@ -1734,9 +1734,6 @@
 		E1DF6F9915376145001C60EA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E1DDCC0C1566C6D7006317C0 /* DetailImageViewController.h */,
-				E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */,
-				E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */,
 				E1E4838615487FF200814FA4 /* CoreDataTableViewController.h */,
 				E1E4838715487FF300814FA4 /* CoreDataTableViewController.m */,
 				E1E4838815487FF400814FA4 /* CoreDataViewController.h */,
@@ -1762,6 +1759,9 @@
 		E1DF6F9A1537615B001C60EA /* Accessories */ = {
 			isa = PBXGroup;
 			children = (
+				E1DDCC0C1566C6D7006317C0 /* DetailImageViewController.h */,
+				E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */,
+				E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */,
 				E102135F155A6053002FCCA6 /* CropImageView.h */,
 				E1021360155A6053002FCCA6 /* CropImageView.m */,
 				E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */,

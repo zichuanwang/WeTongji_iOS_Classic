@@ -87,7 +87,7 @@ typedef enum {
 #pragma mark Logic methods 
 
 - (void)configureActivityData {
-    NSDate *beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
+    NSDate *beginDate = [NSDate date];
     NSDate *endDate = [NSUserDefaults getCurrentSemesterEndDate];
     if(beginDate == nil || endDate == nil)
         return;

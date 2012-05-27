@@ -74,6 +74,9 @@
 #pragma mark NewsOutlineTableViewController delegate
 
 - (void)newsOutlineTableViewDidSelectNews:(News *)news {
+    WTClient *client = [WTClient client];
+    [client readNews:news.news_id];
+    
     NewsDetailViewController *vc = [[NewsDetailViewController alloc] initWithNews:news];
     [self.navigationController pushViewController:vc animated:YES];
 }

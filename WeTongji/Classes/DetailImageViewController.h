@@ -10,10 +10,9 @@
 
 @protocol DetailImageViewControllerDelegate;
 
-@interface DetailImageViewController : UIViewController<UIScrollViewDelegate, UIWebViewDelegate>
+@interface DetailImageViewController : UIViewController<UIScrollViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIButton *saveButton;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityView;
@@ -21,7 +20,7 @@
 
 - (IBAction)didClickSaveButton:(id)sender;
 
-+ (DetailImageViewController *)showDetailImageWithURL:(NSString*)bigURL context:(NSManagedObjectContext *)context;
++ (DetailImageViewController *)showDetailImageWithURL:(NSString*)url context:(NSManagedObjectContext *)context;
 + (DetailImageViewController *)showDetailImageWithImage:(UIImage *)image;
 
 @end

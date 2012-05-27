@@ -32,7 +32,6 @@
 @synthesize saveButton = _saveButton;
 @synthesize activityView = _activityView;
 @synthesize delegate = _delegate;
-@synthesize webView = _webView;
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -40,7 +39,6 @@
     self.scrollView = nil;
     self.saveButton = nil; 
     self.activityView = nil;
-    self.webView = nil;
 }
 
 - (void)viewDidLoad {
@@ -125,10 +123,10 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.view.alpha = 0;
     } completion:^(BOOL finished) {
-        [UIApplication dismissModalViewController];
         if(self.delegate && [self.delegate respondsToSelector:@selector(detailImageViewControllerDidFinishShow)]) {
             [self.delegate detailImageViewControllerDidFinishShow];
         }
+        [UIApplication dismissModalViewController];
     }];
 }
 
@@ -173,22 +171,13 @@
 }
 
 - (void)loadImageWithURL:(NSString *)url context:(NSManagedObjectContext *)context {
-    if([url isGifURL]) {
-        [self.imageView setHidden:YES];
-        [self.saveButton setHidden:YES];
-        NSString* htmlStr = [NSString stringWithFormat:@"<html><head><link href=\"pocketsocial.css\" rel=\"stylesheet\" type=\"text/css\"/></head><body><div id=\"gifImg\"><span><img src=\"%@\" alt=""/></span></div></body></html>", url];
-        [self.webView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
-    }
-    else {
-        [self.webView setHidden:YES];
-        [self showActivityView];
-        [self.imageView loadImageFromURL:url completion:^(BOOL succeed) {
-            if(succeed) {
-                [self setImage:self.imageView.image];
-            }
-            [self hideActivityView];
-        } cacheInContext:context];
-    }
+    [self showActivityView];
+    [self.imageView loadImageFromURL:url completion:^(BOOL succeed) {
+        if(succeed) {
+            [self setImage:self.imageView.image];
+        }
+        [self hideActivityView];
+    } cacheInContext:context];
 }
 
 - (void)show {
@@ -200,12 +189,12 @@
     }];
 }
 
-+ (DetailImageViewController *)showDetailImageWithURL:(NSString*)bigURL context:(NSManagedObjectContext *)context {
-    if(!bigURL)
++ (DetailImageViewController *)showDetailImageWithURL:(NSString*)url context:(NSManagedObjectContext *)context {
+    if(!url)
         return nil;
     DetailImageViewController *vc = [[DetailImageViewController alloc] init];
     [vc show];
-    [vc loadImageWithURL:bigURL context:context];
+    [vc loadImageWithURL:url context:context];
     return vc;
 }
 
@@ -216,26 +205,6 @@
     [vc show];
     [vc setImage:image];
     return vc;
-}
-
-#pragma mark -
-#pragma mark UIWebView delegate
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    [self.webView setHidden:YES];
-    [self showActivityView];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [self.webView setHidden:NO];
-    self.webView.alpha = 0;
-    [UIView animateWithDuration:0.3f animations:^{
-        self.webView.alpha = 1;
-    }];
-    [self hideActivityView];
-    self.webView.scrollView.contentOffset = CGPointMake((self.webView.scrollView.contentSize.width - 320.0f), (self.webView.scrollView.contentSize.height - 480.0f) / 2);
 }
 
 @end

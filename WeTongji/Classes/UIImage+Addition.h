@@ -11,5 +11,6 @@
 @interface UIImage (Addition)
 
 - (UIImage *)rotateAdjustImage;
+- (UIImage *)compressImage;
 
 @end

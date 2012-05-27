@@ -134,7 +134,7 @@
         self.shadowImageView.alpha = 0.7f;
     } else if(style == UIStyleWhiteChocolate) {
         self.bgImageView.image = [UIImage imageNamed:@"dock_bg_white.png"];
-        self.shadowImageView.alpha = 0.2f;
+        self.shadowImageView.alpha = 0.4f;
     }
 }
 

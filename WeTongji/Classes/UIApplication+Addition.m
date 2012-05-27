@@ -88,9 +88,8 @@ static BOOL _isShowingToast;
     } completion:^(BOOL finished) {
         if (finished) {
 			[_backView removeFromSuperview];
-            //[_backView release];
             _backView = nil;
-			//[_modalViewController release];
+			[_modalViewController.view removeFromSuperview];
             _modalViewController = nil;
 		}
     }];
