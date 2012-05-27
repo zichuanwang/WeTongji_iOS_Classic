@@ -57,6 +57,53 @@
     return result;
 }
 
++ (Course *)insertExam:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context {
+    
+    NSString *examID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Id"]];
+    
+    if (!examID || [examID isEqualToString:@""]) {
+        return nil;
+    }
+    examID = [examID stringByAppendingFormat:@"_exam"];
+    
+    Course *result = [Course courseWithID:examID inManagedObjectContext:context];
+    if (!result) {
+        result = [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
+    }
+    
+    result.course_id = examID;
+    result.what = [NSString stringWithFormat:@"%@(考试)", [dict objectForKey:@"Name"]];
+    result.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
+    
+    result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
+    result.begin_day = [NSString yearMonthDayWeekConvertFromDate:result.begin_time];
+    result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
+    
+    return result;
+}
+
++ (Course *)courseWithID:(NSString *)examID inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"course_id == %@", examID]];
+    
+    Course *result = [[context executeFetchRequest:request error:NULL] lastObject];
+    
+    return result;
+}
+
+- (void)configureCourseInfo:(NSDictionary *)dict {
+    self.credit_hours = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Hours"]] intValue]];
+    self.credit_points = [NSNumber numberWithFloat:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Point"]] floatValue]];
+    self.require_type = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Required"]];
+    self.teacher_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Teacher"]];
+    
+    self.what = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Name"]];
+    self.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
+}
+
 + (NSSet *)insertCourse:(NSDictionary *)dict withSemesterBeginTime:(NSDate *)semesterBeginTime semesterWeekCount:(NSInteger)semesterWeekCount owner:(User *)owner inManagedObjectContext:(NSManagedObjectContext *)context {
     NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     NSNumber *beginSection = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"SectionStart"]] intValue]];
@@ -83,15 +130,9 @@
         
         course.course_id = courseID;
         course.week_day = weekDay;
-        
-        course.credit_hours = [NSNumber numberWithInt:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Hours"]] intValue]];
-        course.credit_points = [NSNumber numberWithFloat:[[NSString stringWithFormat:@"%@", [dict objectForKey:@"Point"]] floatValue]];
-        course.require_type = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Required"]];
-        course.teacher_name = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Teacher"]];
         course.week_type = weekType;
         
-        course.what = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Name"]];
-        course.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
+        [course configureCourseInfo:dict];
         
         [result addObject:course];
     }

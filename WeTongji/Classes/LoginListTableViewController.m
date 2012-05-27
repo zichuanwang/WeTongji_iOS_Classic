@@ -136,7 +136,6 @@
     }
     [loginCell.avatarImageView loadImageFromURL:user.avatar_link cacheInContext:self.managedObjectContext];
     loginCell.userNameLabel.text = user.name;
-    NSLog(@"name:%@, student NO:%@, password:%@", user.name, ((Student *)user).student_number, user.password);
 }
 
 - (void)configureRequest:(NSFetchRequest *)request

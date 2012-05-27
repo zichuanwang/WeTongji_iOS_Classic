@@ -123,7 +123,6 @@
     result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
         
-    NSLog(@"compressed image size:%f, %f", result.size.width, result.size.height);
     return result;
 }
 
