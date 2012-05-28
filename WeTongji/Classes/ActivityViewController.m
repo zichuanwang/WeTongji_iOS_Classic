@@ -16,6 +16,8 @@
 #import "DetailImageViewController.h"
 #import "UIImage+Addition.h"
 
+#define ORGANIZER_NAME_LABEL_MAX_HEIGHT 38
+
 @interface ActivityViewController ()
 
 @property (nonatomic, strong) Activity *activity;
@@ -25,6 +27,7 @@
 
 @implementation ActivityViewController
 
+@synthesize organizerView = _organizerView;
 @synthesize organizerNameLabel = _organizerNameLabel;
 @synthesize timeLabel = _timeLabel;
 @synthesize placeLabel = _placeLabel;
@@ -32,7 +35,6 @@
 @synthesize activityCategoryLabel = _activityCategoryLabel;
 @synthesize titleLabel = _titleLabel;
 @synthesize scrollView = _scrollView;
-@synthesize subOrganizerNameLabel = _subOrganizerNameLabel;
 @synthesize favoriteButton = _favoriteButton;
 @synthesize likeButton = _likeButton;
 @synthesize scheduleButton = _scheduleButton;
@@ -77,7 +79,6 @@
     self.activityCategoryLabel = nil;
     self.titleLabel = nil;
     self.scrollView = nil;
-    self.subOrganizerNameLabel = nil;
     self.favoriteButton = nil;
     self.likeButton = nil;
     self.scheduleButton = nil;
@@ -88,6 +89,7 @@
     self.tabBarSeperatorImageView = nil;
     self.avatarImageView = nil;
     self.activityImageView = nil;
+    self.organizerView = nil;
 }
 
 - (id)initWithActivity:(Activity *)activity {
@@ -154,7 +156,7 @@
     }
 }
 
-- (void)configureActivityView {
+- (void)configureActivityMiddleView {
     self.titleLabel.text = self.activity.what;
     [self.titleLabel sizeToFit];
     self.descriptionLabel.text = self.activity.content;
@@ -163,24 +165,54 @@
     rect.origin.y = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height + 10;
     self.descriptionLabel.frame = rect;
     
+    [self configureActivityImage];
+    
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapScrollView:)];
+    [self.scrollView addGestureRecognizer:gr];
+}
+
+- (void)configureActivityTopView {
     [self.avatarImageView loadImageFromURL:self.activity.avatar_link cacheInContext:self.managedObjectContext];
     
     self.organizerNameLabel.text = self.activity.organizer;
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
+    [self.organizerNameLabel sizeToFit];
+    NSArray *channelNames = [NSUserDefaults getChannelNameArray];
+    self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表 %@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
+    [self.activityCategoryLabel sizeToFit];
+    
+    CGFloat organizerLabelHeight = self.organizerNameLabel.frame.size.height;
+    organizerLabelHeight = organizerLabelHeight > ORGANIZER_NAME_LABEL_MAX_HEIGHT ?  ORGANIZER_NAME_LABEL_MAX_HEIGHT : organizerLabelHeight;
+    CGRect organizerNameFrame = self.organizerNameLabel.frame;
+    organizerNameFrame.size.height = organizerLabelHeight;
+    self.organizerNameLabel.frame = organizerNameFrame;
+    
+    CGRect categoryFrame = self.activityCategoryLabel.frame;
+    
+    CGRect organizerViewFrame = self.organizerView.frame;
+    if(organizerViewFrame.size.height < organizerNameFrame.size.height + categoryFrame.size.height) {
+        organizerViewFrame.size.height = organizerNameFrame.size.height + categoryFrame.size.height + 3;
+        self.organizerView.frame = organizerViewFrame;
+    }
+    
+    categoryFrame.origin.y = organizerViewFrame.size.height - categoryFrame.size.height;
+    self.activityCategoryLabel.frame = categoryFrame;
+}
+
+- (void)configureActivityBottomView {
     self.timeLabel.text = [NSString timeConvertFromBeginDate:self.activity.begin_time endDate:self.activity.end_time];
     self.placeLabel.text = self.activity.where;
-    self.subOrganizerNameLabel.text = self.activity.sub_organizer;
-    NSArray *channelNames = [NSUserDefaults getChannelNameArray];
-    self.activityCategoryLabel.text = [NSString stringWithFormat:@"发表%@", [channelNames objectAtIndex:self.activity.channel_id.intValue]];
     
+    [self updateLikeLabel];
+}
+
+- (void)configureActivityView {
+    [self configureActivityTopView];
+    [self configureActivityMiddleView];
+    [self configureActivityBottomView];
+        
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
-    [self updateLikeLabel];
-    
-    [self configureActivityImage];
-    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapScrollView:)];
-    [self.scrollView addGestureRecognizer:gr];
     
     [self refreshViewLayout];
 }
@@ -218,7 +250,6 @@
     }
     self.middleView.frame = middleFrame;
     
-    //self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
     self.middleView.image = [[UIImage imageNamed:@"paper_main"] resizableImageWithCapInsets:UIEdgeInsetsZero];
     
     CGRect bottomFrame = self.bottomView.frame;

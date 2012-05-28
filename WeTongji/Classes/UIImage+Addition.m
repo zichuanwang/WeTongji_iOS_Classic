@@ -8,7 +8,8 @@
 
 #import "UIImage+Addition.h"
 
-#define COMPRESS_IMAGE_MAX_WIDTH 280
+#define COMPRESS_IMAGE_MAX_WIDTH    280
+#define COMPRESS_IMAGE_MAX_HEIGHT   300
 
 @implementation UIImage (Addition)
 
@@ -113,10 +114,17 @@
     if(self.size.width < COMPRESS_IMAGE_MAX_WIDTH) {
         return self;
     }
+    
     UIImage *result = nil;
     CGRect compressFrame = CGRectMake(0, 0, 
                                       COMPRESS_IMAGE_MAX_WIDTH,
                                       COMPRESS_IMAGE_MAX_WIDTH / self.size.width * self.size.height);
+    
+    NSLog(@"height:%f", compressFrame.size.height);
+    
+    if(compressFrame.size.height > COMPRESS_IMAGE_MAX_HEIGHT) {
+        compressFrame.size = CGSizeMake(COMPRESS_IMAGE_MAX_HEIGHT / self.size.height * self.size.width, COMPRESS_IMAGE_MAX_HEIGHT);
+    }
     
     UIGraphicsBeginImageContext(compressFrame.size); // this will crop
     [self drawInRect:compressFrame];
