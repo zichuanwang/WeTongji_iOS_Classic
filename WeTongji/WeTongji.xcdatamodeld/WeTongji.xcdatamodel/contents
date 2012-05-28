@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Activity" representedClassName="Activity" parentEntity="Event" syncable="YES">
         <attribute name="activity_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +18,6 @@
         <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schedule_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sub_organizer" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES">
         <attribute name="channel_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -62,6 +61,7 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="create_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="image_link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="news_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="read_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -99,15 +99,15 @@
         <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="scheduledBy" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="160" positionY="192" width="128" height="285"/>
+        <element name="Activity" positionX="160" positionY="192" width="128" height="300"/>
         <element name="Channel" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Course" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Event" positionX="160" positionY="192" width="128" height="150"/>
         <element name="Image" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="News" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="ImageData" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="News" positionX="160" positionY="192" width="128" height="195"/>
         <element name="Student" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Teacher" positionX="160" positionY="192" width="128" height="60"/>
         <element name="User" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="ImageData" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

@@ -31,7 +31,6 @@
     result.avatar_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"OrganizerAvatar"]];
     result.image_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Image"]];
     result.organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Organizer"]];
-    result.sub_organizer = [NSString stringWithFormat:@"%@", [dict objectForKey:@"SubOrganizer"]];
     result.status = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Status"]];
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.begin_day = [NSString yearMonthDayWeekConvertFromDate:result.begin_time];

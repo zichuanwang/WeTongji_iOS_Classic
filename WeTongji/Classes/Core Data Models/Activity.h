@@ -2,8 +2,8 @@
 //  Activity.h
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-19.
-//  Copyright (c) 2012年 Tongji Apple Club. All rights reserved.
+//  Created by 紫川 王 on 12-5-29.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -24,12 +24,11 @@
 @property (nonatomic, retain) NSNumber * favorite_count;
 @property (nonatomic, retain) NSDate * favorite_update_date;
 @property (nonatomic, retain) NSNumber * hidden;
+@property (nonatomic, retain) NSNumber * image_count;
+@property (nonatomic, retain) NSString * image_link;
 @property (nonatomic, retain) NSNumber * like_count;
 @property (nonatomic, retain) NSString * organizer;
 @property (nonatomic, retain) NSNumber * schedule_count;
 @property (nonatomic, retain) NSString * status;
-@property (nonatomic, retain) NSString * sub_organizer;
-@property (nonatomic, retain) NSNumber * image_count;
-@property (nonatomic, retain) NSString * image_link;
 
 @end

@@ -17,9 +17,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *organizerNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *activityCategoryLabel;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *placeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UILabel *likeLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *middleView;

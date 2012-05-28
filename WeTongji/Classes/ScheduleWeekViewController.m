@@ -100,7 +100,6 @@
     CGRect frame =  self.rightTableView.frame;
     self.rightTableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
     frame.size.height = LEFT_TABLE_VIEW_ROW_COUNT * LEFT_CELL_HEIGHT;
-    NSLog(@"frame:%f,%f,%f,%f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     self.rightTableView.frame = frame;
     self.rightTableView.contentInset = UIEdgeInsetsMake(65.0f, 0, 0, 0);
 }
@@ -167,7 +166,7 @@
         NSDate *end = [NSUserDefaults getCurrentSemesterEndDate];
         NSTimeInterval timeInterval = [end timeIntervalSinceDate:begin]; 
         NSInteger result = timeInterval / 60 / 60 / 24;
-        NSLog(@"right row:%d", result);
+        //NSLog(@"right row:%d", result);
         return result;
     } else {
         return LEFT_TABLE_VIEW_ROW_COUNT;

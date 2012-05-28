@@ -81,7 +81,7 @@
     _distanceX += distanceX;
     _distanceY += distanceY;
     
-    NSLog(@"distanceX:%f, _distanceX:%f", distanceX, _distanceX);
+    //NSLog(@"distanceX:%f, _distanceX:%f", distanceX, _distanceX);
     
     //distanceY = distanceY > 20 ? 20 : distanceY;
     //distanceX *= 1.2f;
@@ -95,7 +95,7 @@
     
     _speedX = _distanceX / _timeCountX * 0.7;
     _speedY = _distanceY / _timeCountY * 0.7;
-    NSLog(@"speedX:%f, speedY:%f", _speedX, _speedY);
+    //NSLog(@"speedX:%f, speedY:%f", _speedX, _speedY);
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleDecelerate:) userInfo:nil repeats:YES];
 }
 
@@ -111,10 +111,9 @@
             _distanceX = 0;
             _timeCountX = 1;
             _freezeCountX = 0;
-            NSLog(@"freeze");
+            //NSLog(@"freeze");
         }
     }
-    NSLog(@"freezeX:%f", fabsf(formerDistanceX - _distanceX));
     
     if(fabsf(formerDistanceY - _distanceY) < 1) {
         _freezeCountY++;

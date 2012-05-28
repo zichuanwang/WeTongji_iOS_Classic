@@ -96,7 +96,6 @@
 		E14983311534C22900734341 /* nav_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983301534C22900734341 /* nav_bar_bg.png */; };
 		E14983331534C38400734341 /* nav_bar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14983321534C38400734341 /* nav_bar_logo@2x.png */; };
 		E1498335153555F000734341 /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1498334153555F000734341 /* main_bg@2x.png */; };
-		E14BA6841561760F00EB7CB6 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6831561760F00EB7CB6 /* News.m */; };
 		E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA69F1562884D00EB7CB6 /* Teacher.m */; };
 		E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A51562890D00EB7CB6 /* Course+Addition.m */; };
 		E14BA6A91562954B00EB7CB6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = E14BA6A81562954B00EB7CB6 /* Course.m */; };
@@ -147,6 +146,8 @@
 		E1538D5115470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */; };
 		E1538D5215470D2A0076DDEC /* nav_bar_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */; };
 		E1538D5315470D2A0076DDEC /* nav_bar_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */; };
+		E156DFA11573E8A2004DA1CA /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E156DFA01573E8A2004DA1CA /* Activity.m */; };
+		E156DFA51573E8A3004DA1CA /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E156DFA41573E8A3004DA1CA /* News.m */; };
 		E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF815704D2C00E35EC1 /* dock_shadow.png */; };
 		E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */; };
 		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
@@ -347,7 +348,6 @@
 		E1DC6475155D5B5E00F07C63 /* schedule_btn_month.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC646F155D5B5D00F07C63 /* schedule_btn_month.png */; };
 		E1DC6476155D5B5E00F07C63 /* schedule_btn_month@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */; };
 		E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */; };
-		E1DDCC081566C3EC006317C0 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCC071566C3EB006317C0 /* Activity.m */; };
 		E1DDCC0F1566C6DF006317C0 /* DetailImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */; };
 		E1DDCC101566C6E4006317C0 /* DetailImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */; };
 		E1DDCC141566C74D006317C0 /* btn_detail_image_save.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DDCC121566C74C006317C0 /* btn_detail_image_save.png */; };
@@ -542,8 +542,6 @@
 		E14983301534C22900734341 /* nav_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_bg.png; sourceTree = "<group>"; };
 		E14983321534C38400734341 /* nav_bar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_logo@2x.png"; sourceTree = "<group>"; };
 		E1498334153555F000734341 /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_bg@2x.png"; sourceTree = "<group>"; };
-		E14BA6821561760F00EB7CB6 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
-		E14BA6831561760F00EB7CB6 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		E14BA69E1562884D00EB7CB6 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		E14BA69F1562884D00EB7CB6 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		E14BA6A41562890D00EB7CB6 /* Course+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+Addition.h"; sourceTree = "<group>"; };
@@ -601,6 +599,10 @@
 		E1538D4D15470D2A0076DDEC /* nav_bar_btn_back_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back_hl@2x.png"; sourceTree = "<group>"; };
 		E1538D4E15470D2A0076DDEC /* nav_bar_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar_btn_back.png; sourceTree = "<group>"; };
 		E1538D4F15470D2A0076DDEC /* nav_bar_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar_btn_back@2x.png"; sourceTree = "<group>"; };
+		E156DF9F1573E8A2004DA1CA /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E156DFA01573E8A2004DA1CA /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E156DFA31573E8A3004DA1CA /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		E156DFA41573E8A3004DA1CA /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		E159CCF815704D2C00E35EC1 /* dock_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_shadow.png; sourceTree = "<group>"; };
 		E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_shadow@2x.png"; sourceTree = "<group>"; };
 		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
@@ -864,8 +866,6 @@
 		E1DC6470155D5B5E00F07C63 /* schedule_btn_month@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule_btn_month@2x.png"; sourceTree = "<group>"; };
 		E1DDCBFB156649ED006317C0 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = Classes/EventDetailViewController.h; sourceTree = "<group>"; };
 		E1DDCBFC156649ED006317C0 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = Classes/EventDetailViewController.m; sourceTree = "<group>"; };
-		E1DDCC061566C3EB006317C0 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		E1DDCC071566C3EB006317C0 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E1DDCC0C1566C6D7006317C0 /* DetailImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailImageViewController.h; path = Classes/DetailImageViewController.h; sourceTree = "<group>"; };
 		E1DDCC0D1566C6D7006317C0 /* DetailImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailImageViewController.m; path = Classes/DetailImageViewController.m; sourceTree = "<group>"; };
 		E1DDCC0E1566C6D7006317C0 /* DetailImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailImageViewController.xib; path = Classes/DetailImageViewController.xib; sourceTree = "<group>"; };
@@ -1859,20 +1859,20 @@
 				E1999AFC1557FAAA00CD04EF /* User.m */,
 				E1FA74FC156018FA001029B0 /* Student.h */,
 				E1FA74FD156018FA001029B0 /* Student.m */,
-				E14BA6821561760F00EB7CB6 /* News.h */,
-				E14BA6831561760F00EB7CB6 /* News.m */,
 				E14BA69E1562884D00EB7CB6 /* Teacher.h */,
 				E14BA69F1562884D00EB7CB6 /* Teacher.m */,
 				E14BA6A71562954A00EB7CB6 /* Course.h */,
 				E14BA6A81562954B00EB7CB6 /* Course.m */,
 				E14BA6BA1562A33900EB7CB6 /* Event.h */,
 				E14BA6BB1562A33A00EB7CB6 /* Event.m */,
-				E1DDCC061566C3EB006317C0 /* Activity.h */,
-				E1DDCC071566C3EB006317C0 /* Activity.m */,
 				E1A38F7B156AC1CD00E11F58 /* Image.h */,
 				E1A38F7C156AC1CE00E11F58 /* Image.m */,
 				E1A38F77156AC1CA00E11F58 /* ImageData.h */,
 				E1A38F78156AC1CA00E11F58 /* ImageData.m */,
+				E156DF9F1573E8A2004DA1CA /* Activity.h */,
+				E156DFA01573E8A2004DA1CA /* Activity.m */,
+				E156DFA31573E8A3004DA1CA /* News.h */,
+				E156DFA41573E8A3004DA1CA /* News.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2426,7 +2426,6 @@
 				E135F7F5155E8B38008494D8 /* ScheduleDayTableViewCell.m in Sources */,
 				E135F7FD155E92CB008494D8 /* WTTableViewHeaderFooterFactory.m in Sources */,
 				E1FA74FE156018FA001029B0 /* Student.m in Sources */,
-				E14BA6841561760F00EB7CB6 /* News.m in Sources */,
 				E14BA6A01562884D00EB7CB6 /* Teacher.m in Sources */,
 				E14BA6A61562890D00EB7CB6 /* Course+Addition.m in Sources */,
 				E14BA6A91562954B00EB7CB6 /* Course.m in Sources */,
@@ -2450,7 +2449,6 @@
 				E147420E156544D700812C9D /* TreizeViewController.m in Sources */,
 				E1474212156544EB00812C9D /* MailViewController.m in Sources */,
 				E1DDCBFD156649ED006317C0 /* EventDetailViewController.m in Sources */,
-				E1DDCC081566C3EC006317C0 /* Activity.m in Sources */,
 				E1DDCC0F1566C6DF006317C0 /* DetailImageViewController.m in Sources */,
 				E11B6F101567096800B33118 /* ScheduleWeekRightTableViewCell.m in Sources */,
 				E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */,
@@ -2460,6 +2458,8 @@
 				E1A38F7D156AC1D000E11F58 /* Image.m in Sources */,
 				E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */,
 				E176B2B7156E36D90044CD50 /* ScheduleWeekLeftTableView.m in Sources */,
+				E156DFA11573E8A2004DA1CA /* Activity.m in Sources */,
+				E156DFA51573E8A3004DA1CA /* News.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

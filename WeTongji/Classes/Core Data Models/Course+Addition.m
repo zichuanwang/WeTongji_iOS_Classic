@@ -72,8 +72,9 @@
     }
     
     result.course_id = examID;
+    [result configureCourseInfo:dict];
+    
     result.what = [NSString stringWithFormat:@"%@(考试)", [dict objectForKey:@"Name"]];
-    result.where = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Location"]];
     
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.begin_day = [NSString yearMonthDayWeekConvertFromDate:result.begin_time];

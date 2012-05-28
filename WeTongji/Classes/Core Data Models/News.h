@@ -2,8 +2,8 @@
 //  News.h
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-15.
-//  Copyright (c) 2012年 Tongji Apple Club. All rights reserved.
+//  Created by 紫川 王 on 12-5-29.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,5 +21,6 @@
 @property (nonatomic, retain) NSNumber * read_count;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSDate * update_date;
+@property (nonatomic, retain) NSString * image_link;
 
 @end

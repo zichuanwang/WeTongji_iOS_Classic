@@ -27,6 +27,7 @@
     result.news_id = newsID;
     result.title = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Title"]];
     result.content = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Context"]];
+    result.image_link = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Image"]];
     result.category = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Category"]];
     result.create_at = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"CreatedAt"]] convertToDate];
     NSString *readCountStr = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Read"]];

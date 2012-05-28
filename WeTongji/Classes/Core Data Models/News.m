@@ -2,8 +2,8 @@
 //  News.m
 //  WeTongji
 //
-//  Created by 紫川 王 on 12-5-15.
-//  Copyright (c) 2012年 Tongji Apple Club. All rights reserved.
+//  Created by 紫川 王 on 12-5-29.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "News.h"
@@ -20,5 +20,6 @@
 @dynamic read_count;
 @dynamic title;
 @dynamic update_date;
+@dynamic image_link;
 
 @end
