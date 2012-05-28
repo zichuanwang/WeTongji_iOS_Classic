@@ -9,6 +9,8 @@
 #import "CourseViewController.h"
 #import "NSString+Addition.h"
 
+#define COURSE_NAME_LABEL_MAX_HEIGHT 38
+
 @interface CourseViewController ()
 
 @property (nonatomic, strong) Course *course;
@@ -27,6 +29,7 @@
 @synthesize middleView = _middleView;
 @synthesize scrollView = _scrollView;
 @synthesize courseIDLabel = _courseIDLabel;
+@synthesize titleView = _titleView;
 
 @synthesize course = _course;
 
@@ -61,6 +64,7 @@
     self.middleView = nil;
     self.scrollView = nil;
     self.courseIDLabel = nil;
+    self.titleView = nil;
 }
 
 - (id)initWithCourse:(Course *)course {
@@ -74,13 +78,37 @@
 #pragma mark - 
 #pragma mark UI methods 
 
+- (void)configreTitleView {
+    self.courseNameLabel.text = self.course.what;
+    [self.courseNameLabel sizeToFit];
+    self.teacherNameLabel.text = self.course.teacher_name;
+    [self.teacherNameLabel sizeToFit];
+    
+    CGFloat courseNameLabelHeight = self.courseNameLabel.frame.size.height;
+    courseNameLabelHeight = courseNameLabelHeight > COURSE_NAME_LABEL_MAX_HEIGHT ?  COURSE_NAME_LABEL_MAX_HEIGHT : courseNameLabelHeight;
+    CGRect courseNameFrame = self.courseNameLabel.frame;
+    courseNameFrame.size.height = courseNameLabelHeight;
+    self.courseNameLabel.frame = courseNameFrame;
+    
+    CGRect teacherNameFrame = self.teacherNameLabel.frame;
+    
+    CGRect titleViewFrame = self.titleView.frame;
+    if(titleViewFrame.size.height < courseNameFrame.size.height + teacherNameFrame.size.height) {
+        titleViewFrame.size.height = courseNameFrame.size.height + teacherNameFrame.size.height + 3;
+        self.titleView.frame = titleViewFrame;
+    }
+    
+    teacherNameFrame.origin.y = titleViewFrame.size.height - teacherNameFrame.size.height;
+    self.teacherNameLabel.frame = teacherNameFrame;
+}
+
 - (void)configureIBOutlets {
     //self.middleView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main"]];
     self.middleView.image = [[UIImage imageNamed:@"paper_main"] resizableImageWithCapInsets:UIEdgeInsetsZero];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 1);
     
-    self.courseNameLabel.text = self.course.what;
-    self.teacherNameLabel.text = self.course.teacher_name;
+    [self configreTitleView];
+
     self.whenLabel.text = [NSString timeConvertFromBeginDate:self.course.begin_time endDate:self.course.end_time];
     self.courseIDLabel.text = self.course.course_id;
     self.whereLabel.text = self.course.where;

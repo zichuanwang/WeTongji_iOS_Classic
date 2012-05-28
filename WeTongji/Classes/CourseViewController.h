@@ -21,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *courseTypeLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *middleView;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIView *titleView;
 
 - (id)initWithCourse:(Course *)course;
 
