@@ -26,6 +26,7 @@
 @synthesize courseTypeLabel = _courseTypeLabel;
 @synthesize middleView = _middleView;
 @synthesize scrollView = _scrollView;
+@synthesize courseIDLabel = _courseIDLabel;
 
 @synthesize course = _course;
 
@@ -59,6 +60,7 @@
     self.courseTypeLabel = nil;
     self.middleView = nil;
     self.scrollView = nil;
+    self.courseIDLabel = nil;
 }
 
 - (id)initWithCourse:(Course *)course {
@@ -80,6 +82,7 @@
     self.courseNameLabel.text = self.course.what;
     self.teacherNameLabel.text = self.course.teacher_name;
     self.whenLabel.text = [NSString timeConvertFromBeginDate:self.course.begin_time endDate:self.course.end_time];
+    self.courseIDLabel.text = self.course.course_id;
     self.whereLabel.text = self.course.where;
     self.creditPointsLabel.text = [NSString stringWithFormat:@"%0.1f", self.course.credit_points.floatValue];
     self.creditHoursLabel.text = [self.course.credit_hours stringValue];

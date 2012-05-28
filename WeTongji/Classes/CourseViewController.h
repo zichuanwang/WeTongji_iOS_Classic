@@ -15,6 +15,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *teacherNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *whenLabel;
 @property (nonatomic, strong) IBOutlet UILabel *whereLabel;
+@property (nonatomic, strong) IBOutlet UILabel *courseIDLabel;
 @property (nonatomic, strong) IBOutlet UILabel *creditPointsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *creditHoursLabel;
 @property (nonatomic, strong) IBOutlet UILabel *courseTypeLabel;

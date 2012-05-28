@@ -94,7 +94,7 @@
     
     CGFloat titleHeight = self.titleLabel.frame.size.height;
     CGFloat otherHeight = self.titleView.frame.size.height - self.newsCategoryLabel.frame.origin.y;
-    CGFloat titleViewHeight = titleHeight + otherHeight + 5;
+    CGFloat titleViewHeight = titleHeight + otherHeight + 3;
     CGRect titleViewFrame = self.titleView.frame;
     titleViewFrame.size.height = titleViewHeight;
     self.titleView.frame = titleViewFrame;

@@ -59,23 +59,21 @@
 
 + (Course *)insertExam:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context {
     
-    NSString *examID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Id"]];
+    NSString *courseID = [NSString stringWithFormat:@"%@", [dict objectForKey:@"NO"]];
     
-    if (!examID || [examID isEqualToString:@""]) {
+    if (!courseID || [courseID isEqualToString:@""]) {
         return nil;
     }
-    examID = [examID stringByAppendingFormat:@"_exam"];
-    
-    Course *result = [Course courseWithID:examID inManagedObjectContext:context];
+    NSString *examName = [NSString stringWithFormat:@"%@(考试)", [dict objectForKey:@"Name"]];
+    Course *result = [Course examWithCourseID:courseID name:examName inManagedObjectContext:context];
     if (!result) {
         result = [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
     }
     
-    result.course_id = examID;
+    result.course_id = courseID;
     [result configureCourseInfo:dict];
     
-    result.what = [NSString stringWithFormat:@"%@(考试)", [dict objectForKey:@"Name"]];
-    
+    result.what = examName;
     result.begin_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"Begin"]] convertToDate];
     result.begin_day = [NSString yearMonthDayWeekConvertFromDate:result.begin_time];
     result.end_time = [[NSString stringWithFormat:@"%@", [dict objectForKey:@"End"]] convertToDate];
@@ -83,12 +81,14 @@
     return result;
 }
 
-+ (Course *)courseWithID:(NSString *)examID inManagedObjectContext:(NSManagedObjectContext *)context
++ (Course *)examWithCourseID:(NSString *)courseID name:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:context]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"course_id == %@", examID]];
+    NSPredicate *courseIDPredicate = [NSPredicate predicateWithFormat:@"course_id == %@", courseID];
+    NSPredicate *namePredicate = [NSPredicate predicateWithFormat:@"what == %@", name];
+    [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:courseIDPredicate, namePredicate, nil]]];
     
     Course *result = [[context executeFetchRequest:request error:NULL] lastObject];
     
