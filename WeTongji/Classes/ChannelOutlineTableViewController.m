@@ -144,7 +144,7 @@
             
             self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPager"]] intValue];
             NSLog(@"next:%d", self.nextPage);
-            [self configureTableViewFooter];
+            [self performSelector:@selector(configureTableViewFooter) withObject:nil afterDelay:0.3f];
         }
         [self doneLoadingTableViewData];
     }];
@@ -152,7 +152,7 @@
     GetActivitySortType sortType = GetActivitySortTypeBeginAsc;
     if(methodCode == ChannelSortByLikeCount)
         sortType = GetActivitySortTypeLikeDesc;
-    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage];
+    [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage showExpire:[NSUserDefaults getShowExpireActivitiesParam]];
 }
 
 #pragma mark -

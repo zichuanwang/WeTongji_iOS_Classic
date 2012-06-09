@@ -119,7 +119,7 @@
             }
             
             self.nextPage = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"NextPager"]] intValue];
-            [self configureTableViewFooter];
+            [self performSelector:@selector(configureTableViewFooter) withObject:nil afterDelay:0.3f];
         }
         [self doneLoadingTableViewData];
     }];

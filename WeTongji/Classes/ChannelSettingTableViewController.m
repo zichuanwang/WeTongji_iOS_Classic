@@ -83,13 +83,15 @@
 - (void)configureDataSource {    
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"频道筛选"]];
     [self.dataSourceIndexArray addObject:[NSString stringWithString:@"阅读顺序"]];
+    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"过滤条件"]];
     
     NSArray *channel = [NSUserDefaults getChannelNameArray];
-    
     NSArray *sort = [NSArray arrayWithObjects:@"按活动开始时间排序", @"按好评数排序", nil];
+    NSArray *expire = [NSArray arrayWithObjects:@"过滤过期活动", nil];
     
     [self.dataSourceDictionary setValue:channel forKey:[self.dataSourceIndexArray objectAtIndex:0]];
     [self.dataSourceDictionary setValue:sort forKey:[self.dataSourceIndexArray objectAtIndex:1]];
+    [self.dataSourceDictionary setValue:expire forKey:[self.dataSourceIndexArray objectAtIndex:2]];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -101,20 +103,21 @@
     
     if(indexPath.section == 0) {
         settingCell.delegate = self;
+        settingCell.itemSwitch.hidden = NO;
         BOOL follow = ((NSNumber *)[self.followChannelNumArray objectAtIndex:indexPath.row]).boolValue;
-        if(follow)
-            settingCell.itemSwitch.on = YES;
-        else
-            settingCell.itemSwitch.on = NO;
-            }
-    else if(indexPath.section == 1) {
+        settingCell.itemSwitch.on = follow;
+    } else if(indexPath.section == 1) {
         settingCell.itemSwitch.hidden = YES;
         BOOL choose = ((NSNumber *)[self.sortChannelMethodArray objectAtIndex:indexPath.row]).boolValue;
         if(choose)
             settingCell.accessoryType = UITableViewCellAccessoryCheckmark;
         else
             settingCell.accessoryType = UITableViewCellAccessoryNone;
-
+    } else if(indexPath.section == 2) {
+        settingCell.itemSwitch.hidden = NO;
+        settingCell.delegate = self;
+        BOOL showExpire = [NSUserDefaults getShowExpireActivitiesParam];
+        settingCell.itemSwitch.on = !showExpire;
     }
 }
 
@@ -127,6 +130,9 @@
         BOOL follow = ((NSNumber *)[self.followChannelNumArray objectAtIndex:indexPath.row]).boolValue;
         [self.followChannelNumArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:!follow]];
         [NSUserDefaults setChannelFollowStatus:self.followChannelNumArray];
+    } else if(indexPath.section == 2) {
+        BOOL showExpire = ![NSUserDefaults getShowExpireActivitiesParam];
+        [NSUserDefaults setShowExpireActivitiesParam:showExpire];
     }
     [self.tableView reloadData];
 }

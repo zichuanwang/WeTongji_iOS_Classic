@@ -15,16 +15,35 @@ typedef enum {
     ChannelEnterprise = 3,
 } ChannelName;
 
-#define kUserDefaultsInitialized    @"kUserDefaultsInitialized"
+#define kUserDefaultsInitialized            @"kUserDefaultsInitialized"
+#define kUserDefaultsInitialized_1_1_0      @"kUserDefaultsInitialized_1_1_0"
+
 #define kCurrentUserID              @"kCurrentUserID"
 #define kCurrentUserSession         @"kCurrentUserSession"
 #define kCurrentUIStyle             @"kCurrentUIStyle"
 #define kCurrentSemesterBeginTime   @"kCurrentSemesterBeginTime"
 #define kCurrentSemesterEndTime     @"kCurrentSemesterEndTime"
+#define kShowExpireActivities     @"kShowExpireActivities"
 
 @implementation NSUserDefaults (Addition)
 
 + (void)initialize {
+    [NSUserDefaults initialize_1_0_0];
+    [NSUserDefaults initialize_1_1_0];
+}
+
++ (void)initialize_1_1_0 {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasInit = [userDefaults boolForKey:kUserDefaultsInitialized_1_1_0];
+    if(hasInit)
+        return;
+    [userDefaults setBool:YES forKey:kUserDefaultsInitialized_1_1_0];
+    [userDefaults setBool:YES forKey:kShowExpireActivities];
+    
+    [userDefaults synchronize];
+}
+
++ (void)initialize_1_0_0 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL hasInit = [userDefaults boolForKey:kUserDefaultsInitialized];
     if(hasInit)
@@ -41,6 +60,7 @@ typedef enum {
     [userDefaults setBool:YES forKey:@"sort_channel_0"];
     
     [userDefaults synchronize];
+ 
 }
 
 + (void)setChannelFollowStatus:(NSArray *)channelsStatus {
@@ -88,6 +108,17 @@ typedef enum {
     }
     NSLog(@"channel follow str:%@", result);
     return result;
+}
+
++ (void)setShowExpireActivitiesParam:(BOOL)ignore {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:ignore forKey:kShowExpireActivities];
+    [userDefaults synchronize];
+}
+
++ (BOOL)getShowExpireActivitiesParam {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults boolForKey:kShowExpireActivities];
 }
 
 + (void)setChannelSortMethodArray:(NSArray *)sortMethods {

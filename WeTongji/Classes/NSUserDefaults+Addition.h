@@ -30,6 +30,8 @@ typedef enum {
 + (NSArray *)getChannelSortMethodArray;
 + (ChannelSortMethod)getChannelSortMethod;
 + (NSArray *)getChannelNameArray;
++ (void)setShowExpireActivitiesParam:(BOOL)ignore;
++ (BOOL)getShowExpireActivitiesParam;
 
 + (void)setCurrentUserID:(NSString *)userID session:(NSString *)session;
 + (NSString *)getCurrentUserID;

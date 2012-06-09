@@ -212,7 +212,7 @@ report_completion:
 #pragma mark -
 #pragma mark APIs
 
-- (void)getActivitesWithChannelIds:(NSString *)channel_status_str sortType:(GetActivitySortType)type page:(NSInteger)page {
+- (void)getActivitesWithChannelIds:(NSString *)channel_status_str sortType:(GetActivitySortType)type page:(NSInteger)page showExpire:(BOOL)showExpire {
     [self.params setObject:@"Activities.Get" forKey:@"M"];
     if(channel_status_str) {
         [self.params setObject:channel_status_str forKey:@"Channel_Ids"];
@@ -230,6 +230,7 @@ report_completion:
         self.currentUserIDRequired = YES;
         self.sessionRequired = YES;
     }
+    [self.params setObject:[NSString stringWithFormat:@"%d", showExpire] forKey:@"Expire"];
     [self.params setObject:[NSString stringWithFormat:@"%d", page] forKey:@"P"];
     [self sendRequest];
 }

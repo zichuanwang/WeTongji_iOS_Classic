@@ -11,6 +11,8 @@
 #import "UIImage+Addition.h"
 #import "UIImage+ProportionalFill.h"
 
+#define CROP_AVATAR_SIZE CGSizeMake(100, 100)
+
 @interface EditAvatarViewController ()
 
 @property (nonatomic, strong) UIImage *originImage;
@@ -72,7 +74,7 @@
     cropImageRect = CGRectMake(cropImageRect.origin.x * factor, cropImageRect.origin.y * factor, cropImageRect.size.width * factor, cropImageRect.size.height * factor);
     UIImage *croppedImage = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(self.cropImageBgView.image.CGImage, cropImageRect)];
     //self.cropImageBgView.frame = self.cropImageView.cropEditRect;
-    croppedImage = [croppedImage imageScaledToFitSize:CGSizeMake(100, 100)];
+    croppedImage = [croppedImage imageScaledToFitSize:CROP_AVATAR_SIZE];
     [self.delegate editAvatarViewDidFinishEdit:croppedImage];
 }
 

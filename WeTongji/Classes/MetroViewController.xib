@@ -42,7 +42,6 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="6442943"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -65,7 +64,6 @@
 										<int key="NSvFlags">1316</int>
 										<string key="NSFrame">{{0, -30}, {320, 950}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="414342954"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -80,7 +78,6 @@
 										<int key="NSvFlags">1316</int>
 										<string key="NSFrame">{{0, -33}, {320, 30}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="537018411"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<float key="IBUIAlpha">0.20000000298023224</float>
@@ -100,7 +97,6 @@
 												<int key="NSvFlags">1316</int>
 												<string key="NSFrame">{{0, 10}, {320, 24}}</string>
 												<reference key="NSSuperview" ref="414342954"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="699095866"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
@@ -108,7 +104,7 @@
 												<int key="IBUIContentMode">7</int>
 												<bool key="IBUIUserInteractionEnabled">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-												<string key="IBUIText">微同济 1.0.0</string>
+												<string key="IBUIText">微同济 1.1.0</string>
 												<object class="NSColor" key="IBUITextColor">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MC41IDAuNQA</bytes>
@@ -135,7 +131,6 @@
 												<int key="NSvFlags">1316</int>
 												<string key="NSFrame">{{0, 27}, {320, 24}}</string>
 												<reference key="NSSuperview" ref="414342954"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
@@ -159,7 +154,6 @@
 										</array>
 										<string key="NSFrame">{{0, 500}, {320, 200}}</string>
 										<reference key="NSSuperview" ref="828519302"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="557153398"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -168,7 +162,6 @@
 								</array>
 								<string key="NSFrameSize">{320, 460}</string>
 								<reference key="NSSuperview" ref="6442943"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="140519920"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -179,7 +172,6 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="828519302"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="735849946">
 							<int key="NSColorSpace">3</int>
@@ -193,7 +185,6 @@
 				</array>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="846081579"/>
 				<reference key="IBUIBackgroundColor" ref="735849946"/>
 				<int key="IBUITag">999</int>
@@ -364,47 +355,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">49</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">MetroViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="bgImageView">UIImageView</string>
-						<string key="blackBgView">UIView</string>
-						<string key="scrollBackgroundView">UIImageView</string>
-						<string key="scrollView">UIScrollView</string>
-						<string key="shadowImageView">UIImageView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="bgImageView">
-							<string key="name">bgImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="blackBgView">
-							<string key="name">blackBgView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="scrollBackgroundView">
-							<string key="name">scrollBackgroundView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="scrollView">
-							<string key="name">scrollView</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="shadowImageView">
-							<string key="name">shadowImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MetroViewController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
