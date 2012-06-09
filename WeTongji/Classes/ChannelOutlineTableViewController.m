@@ -95,10 +95,13 @@
     NSPredicate *hiddenPredicate = [NSPredicate predicateWithFormat:@"hidden == NO"];
     NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:channelPredicate, hiddenPredicate, nil]];
     [request setPredicate:compoundPredicate];
+    
+    ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
     NSSortDescriptor *sortByUpdate = [[NSSortDescriptor alloc] initWithKey:@"channel_update_date" ascending:YES];
     NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
-    NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
-    ChannelSortMethod methodCode = [NSUserDefaults getChannelSortMethod];
+    BOOL sortByBeginAscending = (methodCode != ChannelSortByActivityBeginTimeDesc);
+    NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:sortByBeginAscending];
+
     NSArray *descriptors = nil;
     if(methodCode == ChannelSortByLikeCount)
         descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByLike, sortByBegin, nil];
@@ -152,6 +155,8 @@
     GetActivitySortType sortType = GetActivitySortTypeBeginAsc;
     if(methodCode == ChannelSortByLikeCount)
         sortType = GetActivitySortTypeLikeDesc;
+    else if(methodCode == ChannelSortByActivityBeginTimeDesc)
+        sortType = GetActivitySortTypeBeginDesc;
     [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage showExpire:[NSUserDefaults getShowExpireActivitiesParam]];
 }
 

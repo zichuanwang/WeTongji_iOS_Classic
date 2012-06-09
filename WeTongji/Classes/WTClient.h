@@ -11,6 +11,7 @@
 
 typedef enum {
     GetActivitySortTypeBeginAsc,
+    GetActivitySortTypeBeginDesc,
     GetActivitySortTypeLikeDesc,
 } GetActivitySortType;
 

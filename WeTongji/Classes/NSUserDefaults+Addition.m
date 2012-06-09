@@ -23,7 +23,7 @@ typedef enum {
 #define kCurrentUIStyle             @"kCurrentUIStyle"
 #define kCurrentSemesterBeginTime   @"kCurrentSemesterBeginTime"
 #define kCurrentSemesterEndTime     @"kCurrentSemesterEndTime"
-#define kShowExpireActivities     @"kShowExpireActivities"
+#define kShowExpireActivities       @"kShowExpireActivities"
 
 @implementation NSUserDefaults (Addition)
 
@@ -134,7 +134,7 @@ typedef enum {
 + (NSArray *)getChannelSortMethodArray {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:2];
-    for(int i = 0; i < 2; i++) {
+    for(int i = 0; i < ChannelSortMethodCount; i++) {
         NSString *channelSortKey = [NSString stringWithFormat:@"sort_channel_%d", i];
         [result addObject:[NSNumber numberWithBool:[userDefaults boolForKey:channelSortKey]]];
     }
@@ -143,7 +143,7 @@ typedef enum {
 
 + (ChannelSortMethod)getChannelSortMethod {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    for(int i = 0; i < 2; i++) {
+    for(int i = 0; i < ChannelSortMethodCount; i++) {
         NSString *channelSortKey = [NSString stringWithFormat:@"sort_channel_%d", i];
         if([userDefaults boolForKey:channelSortKey])
             return i;

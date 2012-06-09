@@ -10,8 +10,11 @@
 
 typedef enum {
     ChannelSortByActivityBeginTime = 0,
-    ChannelSortByLikeCount = 1,
+    ChannelSortByActivityBeginTimeDesc = 1,
+    ChannelSortByLikeCount = 2,
 } ChannelSortMethod;
+
+#define ChannelSortMethodCount 3
 
 typedef enum {
     UIStyleBlackChocolate = 0,
