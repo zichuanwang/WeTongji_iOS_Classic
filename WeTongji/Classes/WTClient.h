@@ -61,5 +61,6 @@ typedef void (^WTCompletionBlock)(WTClient *client);
 - (void)getScheduleWithBeginDate:(NSDate *)begin 
                          endDate:(NSDate *)end;
 - (void)readNews:(NSString *)newsID;
+- (void)resetPasswordWithUserName:(NSString *)name studentNumber:(NSString *)num;
 
 @end

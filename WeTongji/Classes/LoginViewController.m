@@ -13,6 +13,7 @@
 #import "Student+Addition.h"
 #import "NSUserDefaults+Addition.h"
 #import "NSNotificationCenter+Addition.h"
+#import "LoginForgetPasswordViewController.h"
 
 @interface LoginViewController ()
 
@@ -24,6 +25,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize accountTextField = _accountTextField;
 @synthesize passwordTextField = _passwordTextField;
+@synthesize bgView = _bgView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +53,7 @@
     self.scrollView = nil;
     self.accountTextField = nil;
     self.passwordTextField = nil;
+    self.bgView = nil;
 }
 
 #pragma mark -
@@ -130,7 +133,7 @@
 
 - (void)configureScrollView {
     CGRect frame = self.scrollView.frame;
-    frame.size.height += 1;
+    frame.size.height = self.bgView.frame.size.height;
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
@@ -149,6 +152,15 @@
 - (void)didClickSignInButton {
     //SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
     SignInProtocolViewController *vc = [[SignInProtocolViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)didClickLoginButton:(UIButton *)sender {
+    [self login];
+}
+
+- (IBAction)didClickForgetPasswordButton:(UIButton *)sender {
+    LoginForgetPasswordViewController *vc = [[LoginForgetPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

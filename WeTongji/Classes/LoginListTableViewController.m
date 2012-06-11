@@ -14,6 +14,7 @@
 #import "WTClient.h"
 #import "NSNotificationCenter+Addition.h"
 #import "UIImageView+Addition.h"
+#import "Image+Addition.h"
 
 #define TABLE_HEADER_FOOTER_CELL_NUM    7
 
@@ -134,8 +135,13 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    [loginCell.avatarImageView loadImageFromURL:user.avatar_link cacheInContext:self.managedObjectContext];
+    
     loginCell.userNameLabel.text = user.name;
+    Image *image = [Image imageWithURL:user.avatar_link inManagedObjectContext:self.managedObjectContext];
+    if(image)
+        loginCell.avatarImageView.image = image.image;
+    else 
+        [loginCell.avatarImageView loadImageFromURL:user.avatar_link cacheInContext:self.managedObjectContext];
 }
 
 - (void)configureRequest:(NSFetchRequest *)request

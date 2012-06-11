@@ -151,6 +151,8 @@
 		E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF815704D2C00E35EC1 /* dock_shadow.png */; };
 		E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */; };
 		E161A41815863BA800227785 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A41715863BA800227785 /* Image.m */; };
+		E161A42015864DC400227785 /* LoginForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A41E15864DC300227785 /* LoginForgetPasswordViewController.m */; };
+		E161A42115864DC400227785 /* LoginForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E161A41F15864DC300227785 /* LoginForgetPasswordViewController.xib */; };
 		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
 		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
 		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
@@ -607,6 +609,9 @@
 		E161A40E1586334A00227785 /* WeTongji 1.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WeTongji 1.1.0.xcdatamodel"; sourceTree = "<group>"; };
 		E161A41615863BA800227785 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		E161A41715863BA800227785 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		E161A41D15864DC200227785 /* LoginForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginForgetPasswordViewController.h; path = Classes/LoginForgetPasswordViewController.h; sourceTree = "<group>"; };
+		E161A41E15864DC300227785 /* LoginForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForgetPasswordViewController.m; path = Classes/LoginForgetPasswordViewController.m; sourceTree = "<group>"; };
+		E161A41F15864DC300227785 /* LoginForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginForgetPasswordViewController.xib; path = Classes/LoginForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
 		E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthTableViewController.m; path = Classes/ScheduleMonthTableViewController.m; sourceTree = "<group>"; };
 		E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
@@ -1339,6 +1344,9 @@
 				E174A99F153E800400E7165A /* LoginViewController.h */,
 				E174A9A0153E800400E7165A /* LoginViewController.m */,
 				E174A9A1153E800400E7165A /* LoginViewController.xib */,
+				E161A41D15864DC200227785 /* LoginForgetPasswordViewController.h */,
+				E161A41E15864DC300227785 /* LoginForgetPasswordViewController.m */,
+				E161A41F15864DC300227785 /* LoginForgetPasswordViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -2315,6 +2323,7 @@
 				E11263DB156BE85600E2C486 /* Icon-Small@2x.png in Resources */,
 				E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */,
 				E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */,
+				E161A42115864DC400227785 /* LoginForgetPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2455,6 +2464,7 @@
 				E156DFA11573E8A2004DA1CA /* Activity.m in Sources */,
 				E156DFA51573E8A3004DA1CA /* News.m in Sources */,
 				E161A41815863BA800227785 /* Image.m in Sources */,
+				E161A42015864DC400227785 /* LoginForgetPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -170,11 +170,11 @@ report_completion:
         NSString *name = [sortedNames objectAtIndex:i];
         NSString *parameter = [self.params objectForKey:name];
         [result appendString:[NSString stringWithFormat:@"%@=%@", [name URLEncodedString], 
-                           [parameter URLEncodedString]]];
+                              [parameter URLEncodedString]]];
     }
     NSString *hash = [self hashQueryString:result];
     [result appendFormat:@"%@", hash];
-        
+    
     return result;
 }
 
@@ -323,7 +323,7 @@ report_completion:
     self.currentUserIDRequired = YES;
     self.sessionRequired = YES;
     [self sendRequest];
-
+    
 }
 
 - (void)getFavoriteActivities {
@@ -408,6 +408,13 @@ report_completion:
 - (void)readNews:(NSString *)newsID {
     [self.params setObject:@"News.Read" forKey:@"M"];
     [self.params setObject:newsID forKey:@"Id"];
+    [self sendRequest];
+}
+
+- (void)resetPasswordWithUserName:(NSString *)name studentNumber:(NSString *)num  {
+    [self.params setObject:@"User.Reset.Password" forKey:@"M"];
+    [self.params setObject:name forKey:@"Name"];
+    [self.params setObject:num forKey:@"NO"];
     [self sendRequest];
 }
 
