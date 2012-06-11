@@ -17,7 +17,6 @@
 @property (nonatomic, strong) IBOutlet UIView *mainBgView;
 @property (nonatomic, strong) IBOutlet UIView *bgView;
 
-- (IBAction)didClickLoginButton:(UIButton *)sender;
 - (IBAction)didClickForgetPasswordButton:(UIButton *)sender;
 
 @end

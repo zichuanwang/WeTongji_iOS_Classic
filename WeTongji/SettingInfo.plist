@@ -68,6 +68,23 @@
 				</dict>
 			</array>
 		</dict>
+        <dict>
+			<key>kSectionName</key>
+			<string>应用信息</string>
+			<key>kSectionArray</key>
+			<array>
+				<dict>
+					<key>kItemTitle</key>
+					<string>版本信息</string>
+					<key>kAccessoryType</key>
+					<string>kAccessoryTypeDisclosure</string>
+					<key>kNibFileName</key>
+					<string>AppInfoViewController</string>
+					<key>kWayToPresentViewController</key>
+					<string>kModalViewController</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

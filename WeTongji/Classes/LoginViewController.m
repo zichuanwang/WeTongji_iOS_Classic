@@ -155,10 +155,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)didClickLoginButton:(UIButton *)sender {
-    [self login];
-}
-
 - (IBAction)didClickForgetPasswordButton:(UIButton *)sender {
     LoginForgetPasswordViewController *vc = [[LoginForgetPasswordViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

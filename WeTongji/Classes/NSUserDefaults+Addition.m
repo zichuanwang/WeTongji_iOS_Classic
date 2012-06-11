@@ -38,7 +38,7 @@ typedef enum {
     if(hasInit)
         return;
     [userDefaults setBool:YES forKey:kUserDefaultsInitialized_1_1_0];
-    [userDefaults setBool:YES forKey:kShowExpireActivities];
+    [userDefaults setBool:NO forKey:kShowExpireActivities];
     
     [userDefaults synchronize];
 }

@@ -153,6 +153,11 @@
 		E161A41815863BA800227785 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A41715863BA800227785 /* Image.m */; };
 		E161A42015864DC400227785 /* LoginForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A41E15864DC300227785 /* LoginForgetPasswordViewController.m */; };
 		E161A42115864DC400227785 /* LoginForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E161A41F15864DC300227785 /* LoginForgetPasswordViewController.xib */; };
+		E161A42D1586803100227785 /* DeveloperInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A42B1586803100227785 /* DeveloperInfoViewController.m */; };
+		E161A42E1586803100227785 /* DeveloperInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E161A42C1586803100227785 /* DeveloperInfoViewController.xib */; };
+		E161A4321586820A00227785 /* app_info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E161A4301586820A00227785 /* app_info_icon@2x.png */; };
+		E161A4331586820A00227785 /* app_info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E161A4311586820A00227785 /* app_info_icon.png */; };
+		E161A4361586860B00227785 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E161A4351586860B00227785 /* MessageUI.framework */; };
 		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
 		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
 		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
@@ -612,6 +617,12 @@
 		E161A41D15864DC200227785 /* LoginForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginForgetPasswordViewController.h; path = Classes/LoginForgetPasswordViewController.h; sourceTree = "<group>"; };
 		E161A41E15864DC300227785 /* LoginForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginForgetPasswordViewController.m; path = Classes/LoginForgetPasswordViewController.m; sourceTree = "<group>"; };
 		E161A41F15864DC300227785 /* LoginForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginForgetPasswordViewController.xib; path = Classes/LoginForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		E161A42A1586803100227785 /* DeveloperInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeveloperInfoViewController.h; path = Classes/DeveloperInfoViewController.h; sourceTree = "<group>"; };
+		E161A42B1586803100227785 /* DeveloperInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeveloperInfoViewController.m; path = Classes/DeveloperInfoViewController.m; sourceTree = "<group>"; };
+		E161A42C1586803100227785 /* DeveloperInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeveloperInfoViewController.xib; path = Classes/DeveloperInfoViewController.xib; sourceTree = "<group>"; };
+		E161A4301586820A00227785 /* app_info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_info_icon@2x.png"; sourceTree = "<group>"; };
+		E161A4311586820A00227785 /* app_info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_info_icon.png; sourceTree = "<group>"; };
+		E161A4351586860B00227785 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
 		E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthTableViewController.m; path = Classes/ScheduleMonthTableViewController.m; sourceTree = "<group>"; };
 		E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
@@ -999,6 +1010,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E161A4361586860B00227785 /* MessageUI.framework in Frameworks */,
 				E1FD956F1545AAF900B39069 /* MobileCoreServices.framework in Frameworks */,
 				E1FD956D1545AAD600B39069 /* libz.1.2.5.dylib in Frameworks */,
 				E1FD956B1545AAB600B39069 /* SystemConfiguration.framework in Frameworks */,
@@ -1219,6 +1231,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		E161A4341586821100227785 /* app_info */ = {
+			isa = PBXGroup;
+			children = (
+				E161A4301586820A00227785 /* app_info_icon@2x.png */,
+				E161A4311586820A00227785 /* app_info_icon.png */,
+			);
+			name = app_info;
+			sourceTree = "<group>";
+		};
 		E16365A01564CA37006477C9 /* TapkuLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1376,6 +1397,9 @@
 				E17816C4156BB85300637470 /* AppInfoViewController.h */,
 				E17816C5156BB85300637470 /* AppInfoViewController.m */,
 				E17816C6156BB85300637470 /* AppInfoViewController.xib */,
+				E161A42A1586803100227785 /* DeveloperInfoViewController.h */,
+				E161A42B1586803100227785 /* DeveloperInfoViewController.m */,
+				E161A42C1586803100227785 /* DeveloperInfoViewController.xib */,
 			);
 			name = app_info;
 			sourceTree = "<group>";
@@ -1428,11 +1452,12 @@
 		E1C8774C1505F41700592954 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1FD956C1545AAD500B39069 /* libz.1.2.5.dylib */,
 				E1FD95681545AA3C00B39069 /* CFNetwork.framework */,
 				E1C877531505F41700592954 /* CoreData.framework */,
 				E1C877511505F41700592954 /* CoreGraphics.framework */,
 				E1C8774F1505F41700592954 /* Foundation.framework */,
+				E1FD956C1545AAD500B39069 /* libz.1.2.5.dylib */,
+				E161A4351586860B00227785 /* MessageUI.framework */,
 				E1FD956E1545AAF900B39069 /* MobileCoreServices.framework */,
 				E1FD956A1545AAB600B39069 /* SystemConfiguration.framework */,
 				E1C8774D1505F41700592954 /* UIKit.framework */,
@@ -1480,6 +1505,7 @@
 		E1C877BE15064B6300592954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E161A4341586821100227785 /* app_info */,
 				E1DDCC111566C744006317C0 /* other */,
 				E147421315654A3800812C9D /* coming_soon */,
 				E1DC6446155D3FB100F07C63 /* schedule */,
@@ -2324,6 +2350,9 @@
 				E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */,
 				E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */,
 				E161A42115864DC400227785 /* LoginForgetPasswordViewController.xib in Resources */,
+				E161A42E1586803100227785 /* DeveloperInfoViewController.xib in Resources */,
+				E161A4321586820A00227785 /* app_info_icon@2x.png in Resources */,
+				E161A4331586820A00227785 /* app_info_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2465,6 +2494,7 @@
 				E156DFA51573E8A3004DA1CA /* News.m in Sources */,
 				E161A41815863BA800227785 /* Image.m in Sources */,
 				E161A42015864DC400227785 /* LoginForgetPasswordViewController.m in Sources */,
+				E161A42D1586803100227785 /* DeveloperInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
