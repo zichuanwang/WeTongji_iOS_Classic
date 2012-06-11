@@ -8,6 +8,8 @@
 
 #import "Image+Addition.h"
 
+#define MAX_CACHE_IMAGE_SIZE 200
+
 @implementation Image (Addition)
 
 + (Image *)imageWithURL:(NSString *)url inManagedObjectContext:(NSManagedObjectContext *)context {
@@ -31,11 +33,33 @@
     if (!image) {
         image = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:context];
     }
-    
     image.image = [UIImage imageWithData:data];
     image.url = url;
     image.update_date = [NSDate date];
+    
+    [self clearCacheInContext:context];
+    
     return image;
+}
+
++ (void)clearCacheInContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Image" inManagedObjectContext:context]];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"update_date"
+                                                                     ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSArray *resultArray = [context executeFetchRequest:request error:NULL];
+    
+    if (resultArray.count > MAX_CACHE_IMAGE_SIZE) {
+        [resultArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [context deleteObject:obj];
+            if (idx > MAX_CACHE_IMAGE_SIZE / 2) {
+                *stop = YES;
+            }
+        }];
+    }
 }
 
 @end
