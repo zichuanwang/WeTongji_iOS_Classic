@@ -25,5 +25,6 @@ UITableViewDelegate, UITableViewDataSource> {
 - (void)deleteCellAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)customCellClassName;
 - (NSString *)customSectionNameKeyPath;
+- (NSString *)customCacheName;
 
 @end

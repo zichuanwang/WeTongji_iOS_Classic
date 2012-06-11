@@ -44,6 +44,11 @@
     return nil;
 }
 
+- (NSString *)customCacheName
+{
+    return nil;
+}
+
 - (NSString *)customSectionNameKeyPath {
     return nil;
 }
@@ -76,7 +81,7 @@
     
     [self configureRequest:fetchRequest];
 
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:[self customSectionNameKeyPath] cacheName:nil];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:[self customSectionNameKeyPath] cacheName:[self customCacheName]];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     

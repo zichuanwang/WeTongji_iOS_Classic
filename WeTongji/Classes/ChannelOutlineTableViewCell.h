@@ -14,5 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *locationLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *avatarPlaceHolderImageView;
 
 @end

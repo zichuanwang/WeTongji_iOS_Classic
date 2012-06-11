@@ -69,6 +69,10 @@
     return @"ChannelOutlineTableViewCell";
 }
 
+- (NSString *)customCacheName {
+    return @"ChannelOutlineTableViewCache";
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if([cell isMemberOfClass:[ChannelOutlineTableViewCell class]]) {
         ChannelOutlineTableViewCell *outlineCell = (ChannelOutlineTableViewCell *)cell;
@@ -79,12 +83,13 @@
         
         Image *image = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
         if(image) {
-            outlineCell.avatarImageView.image = [UIImage imageWithData:image.imageData.data];
+            outlineCell.avatarImageView.image = image.image;
+            outlineCell.avatarPlaceHolderImageView.hidden = YES;
         } else {
             if(indexPath.row < TABLE_VIEW_VISIBLE_ROW_COUNT)
                 [self loadAvatarAtIndexPath:indexPath];
+            outlineCell.avatarPlaceHolderImageView.hidden = NO;
         }
-        
     }
 }
 
@@ -108,7 +113,6 @@
     else 
         descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByBegin, sortByLike, nil];
     [request setSortDescriptors:descriptors]; 
-    request.fetchBatchSize = 20;
 }
 
 - (void)insertCellAtIndexPath:(NSIndexPath *)indexPath {

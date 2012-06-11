@@ -150,6 +150,7 @@
 		E156DFA51573E8A3004DA1CA /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = E156DFA41573E8A3004DA1CA /* News.m */; };
 		E159CCFA15704D2C00E35EC1 /* dock_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF815704D2C00E35EC1 /* dock_shadow.png */; };
 		E159CCFB15704D2C00E35EC1 /* dock_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */; };
+		E161A41815863BA800227785 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E161A41715863BA800227785 /* Image.m */; };
 		E163656C1564BA3C006477C9 /* ScheduleMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */; };
 		E16365AE1564CA37006477C9 /* TKCalendarDayEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A21564CA37006477C9 /* TKCalendarDayEventView.m */; };
 		E16365AF1564CA37006477C9 /* TKCalendarDayTimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16365A41564CA37006477C9 /* TKCalendarDayTimelineView.m */; };
@@ -233,8 +234,6 @@
 		E1A1E92A15639F8B00BDEC2E /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */; };
 		E1A1E92E1563CCEB00BDEC2E /* to_do_list_point_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */; };
 		E1A1E92F1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */; };
-		E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A38F78156AC1CA00E11F58 /* ImageData.m */; };
-		E1A38F7D156AC1D000E11F58 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A38F7C156AC1CE00E11F58 /* Image.m */; };
 		E1A6DC03155371BE00DBB589 /* SignInProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */; };
 		E1A6DC04155371BE00DBB589 /* SignInProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */; };
 		E1A6DC0915538BBB00DBB589 /* SignInMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DC0715538BB900DBB589 /* SignInMailViewController.m */; };
@@ -605,6 +604,9 @@
 		E156DFA41573E8A3004DA1CA /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		E159CCF815704D2C00E35EC1 /* dock_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_shadow.png; sourceTree = "<group>"; };
 		E159CCF915704D2C00E35EC1 /* dock_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_shadow@2x.png"; sourceTree = "<group>"; };
+		E161A40E1586334A00227785 /* WeTongji 1.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WeTongji 1.1.0.xcdatamodel"; sourceTree = "<group>"; };
+		E161A41615863BA800227785 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		E161A41715863BA800227785 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		E16365691564BA3B006477C9 /* ScheduleMonthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleMonthTableViewController.h; path = Classes/ScheduleMonthTableViewController.h; sourceTree = "<group>"; };
 		E163656A1564BA3C006477C9 /* ScheduleMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleMonthTableViewController.m; path = Classes/ScheduleMonthTableViewController.m; sourceTree = "<group>"; };
 		E16365A11564CA37006477C9 /* TKCalendarDayEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCalendarDayEventView.h; sourceTree = "<group>"; };
@@ -724,10 +726,6 @@
 		E1A1E92815639F8A00BDEC2E /* CourseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseDetailViewController.xib; path = Classes/CourseDetailViewController.xib; sourceTree = "<group>"; };
 		E1A1E92C1563CCEB00BDEC2E /* to_do_list_point_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to_do_list_point_yellow.png; sourceTree = "<group>"; };
 		E1A1E92D1563CCEB00BDEC2E /* to_do_list_point_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "to_do_list_point_yellow@2x.png"; sourceTree = "<group>"; };
-		E1A38F77156AC1CA00E11F58 /* ImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageData.h; sourceTree = "<group>"; };
-		E1A38F78156AC1CA00E11F58 /* ImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageData.m; sourceTree = "<group>"; };
-		E1A38F7B156AC1CD00E11F58 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		E1A38F7C156AC1CE00E11F58 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		E1A6DC00155371BD00DBB589 /* SignInProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInProtocolViewController.h; path = Classes/SignInProtocolViewController.h; sourceTree = "<group>"; };
 		E1A6DC01155371BD00DBB589 /* SignInProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInProtocolViewController.m; path = Classes/SignInProtocolViewController.m; sourceTree = "<group>"; };
 		E1A6DC02155371BE00DBB589 /* SignInProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInProtocolViewController.xib; path = Classes/SignInProtocolViewController.xib; sourceTree = "<group>"; };
@@ -1865,14 +1863,12 @@
 				E14BA6A81562954B00EB7CB6 /* Course.m */,
 				E14BA6BA1562A33900EB7CB6 /* Event.h */,
 				E14BA6BB1562A33A00EB7CB6 /* Event.m */,
-				E1A38F7B156AC1CD00E11F58 /* Image.h */,
-				E1A38F7C156AC1CE00E11F58 /* Image.m */,
-				E1A38F77156AC1CA00E11F58 /* ImageData.h */,
-				E1A38F78156AC1CA00E11F58 /* ImageData.m */,
 				E156DF9F1573E8A2004DA1CA /* Activity.h */,
 				E156DFA01573E8A2004DA1CA /* Activity.m */,
 				E156DFA31573E8A3004DA1CA /* News.h */,
 				E156DFA41573E8A3004DA1CA /* News.m */,
+				E161A41615863BA800227785 /* Image.h */,
+				E161A41715863BA800227785 /* Image.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2454,12 +2450,11 @@
 				E11B6F26156729D300B33118 /* ScheduleWeekLeftTableViewCell.m in Sources */,
 				E11B6F311567448400B33118 /* ScheduleWeekRightTableViewCellContentView.m in Sources */,
 				E11B6F511567E42900B33118 /* NewsDetailViewController.m in Sources */,
-				E1A38F79156AC1CB00E11F58 /* ImageData.m in Sources */,
-				E1A38F7D156AC1D000E11F58 /* Image.m in Sources */,
 				E17816C7156BB85300637470 /* AppInfoViewController.m in Sources */,
 				E176B2B7156E36D90044CD50 /* ScheduleWeekLeftTableView.m in Sources */,
 				E156DFA11573E8A2004DA1CA /* Activity.m in Sources */,
 				E156DFA51573E8A3004DA1CA /* News.m in Sources */,
+				E161A41815863BA800227785 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2594,9 +2589,10 @@
 		E1C877611505F41700592954 /* WeTongji.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E161A40E1586334A00227785 /* WeTongji 1.1.0.xcdatamodel */,
 				E1C877621505F41700592954 /* WeTongji.xcdatamodel */,
 			);
-			currentVersion = E1C877621505F41700592954 /* WeTongji.xcdatamodel */;
+			currentVersion = E161A40E1586334A00227785 /* WeTongji 1.1.0.xcdatamodel */;
 			path = WeTongji.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

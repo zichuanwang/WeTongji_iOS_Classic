@@ -17,8 +17,8 @@
               completion:(void (^)(BOOL succeed))completion 
           cacheInContext:(NSManagedObjectContext *)context {	
     Image *image = [Image imageWithURL:urlString inManagedObjectContext:context];
-    if(image.imageData) {
-        UIImage *img = [UIImage imageWithData:image.imageData.data];
+    if(image.image) {
+        UIImage *img = image.image;
         if(self.image == nil) {
             self.image = img;
             [self fadeIn];

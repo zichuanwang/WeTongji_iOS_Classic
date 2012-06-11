@@ -157,6 +157,8 @@ typedef enum {
             [self.dayViewController configureTodayCell];
             
             [self saveContext];
+            
+            [self configureScheduleData];
         }
     }];
     [client getCourse];

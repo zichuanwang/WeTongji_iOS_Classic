@@ -30,12 +30,10 @@
     
     if (!image) {
         image = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:context];
-        ImageData *imageData = [NSEntityDescription insertNewObjectForEntityForName:@"ImageData" inManagedObjectContext:context];
-        image.imageData = imageData;
     }
     
+    image.image = [UIImage imageWithData:data];
     image.url = url;
-    image.imageData.data = data;
     image.update_date = [NSDate date];
     return image;
 }
