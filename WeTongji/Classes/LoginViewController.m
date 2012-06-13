@@ -103,7 +103,7 @@
             [self createUser:client.responseData];
             [self.parentViewController dismissModalViewControllerAnimated:YES];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
-            
+            [self saveContext];
         } else {
             if(client.responseStatusCode == 11)
                 [UIApplication presentAlertToast:@"账户未激活。" withVerticalPos:self.toastVerticalPos];

@@ -127,6 +127,7 @@ typedef enum {
             return;
     }
     
+    self.view.userInteractionEnabled = NO;
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
@@ -160,6 +161,7 @@ typedef enum {
             
             [self configureScheduleData];
         }
+        self.view.userInteractionEnabled = YES;
     }];
     [client getCourse];
 }
