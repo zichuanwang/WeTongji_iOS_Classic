@@ -173,6 +173,8 @@
 
 - (void)configureActivityTopView {
     [self.avatarImageView loadImageFromURL:self.activity.avatar_link cacheInContext:self.managedObjectContext];
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAvatarImageView:)];
+    [self.avatarImageView addGestureRecognizer:gr];
     
     self.organizerNameLabel.text = self.activity.organizer;
     [self.organizerNameLabel sizeToFit];
@@ -209,7 +211,7 @@
     [self configureActivityTopView];
     [self configureActivityMiddleView];
     [self configureActivityBottomView];
-        
+    
     self.likeButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_like_hl.png"];
     self.favoriteButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_favorite_hl.png"];
     self.scheduleButton.highlightedImageView.image = [UIImage imageNamed:@"channel_btn_schedule_hl.png"];
@@ -389,6 +391,12 @@
         if(CGRectContainsPoint(frame, touchPoint)) {
             [DetailImageViewController showDetailImageWithImage:self.activityOriginalImage];
         }
+    }
+}
+
+- (void)didTapAvatarImageView:(UIGestureRecognizer *)gestureRecognizer {
+    if(self.avatarImageView.image != nil) {
+        [DetailImageViewController showDetailImageWithImage:self.avatarImageView.image];
     }
 }
 
