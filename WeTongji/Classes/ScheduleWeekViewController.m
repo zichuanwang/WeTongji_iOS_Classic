@@ -72,6 +72,8 @@
     NSDate *today = [NSDate date];
     NSTimeInterval timeIntervalSinceSemesterBegin = [today timeIntervalSinceDate:[NSUserDefaults getCurrentSemesterBeginDate]];
     NSInteger todayRow = timeIntervalSinceSemesterBegin / DAY_TIME_INTERVAL;
+    NSInteger numberOfRows = [self.rightTableView numberOfRowsInSection:0];
+    todayRow = todayRow < numberOfRows ? todayRow : numberOfRows - 1;
     return todayRow;
 }
 

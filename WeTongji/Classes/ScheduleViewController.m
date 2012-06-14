@@ -132,34 +132,37 @@ typedef enum {
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
             
-            NSFetchRequest *request = [[NSFetchRequest alloc] init];
-            [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
-            [request setPredicate:[NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule]];            
-            NSArray *items = [self.managedObjectContext executeFetchRequest:request error:NULL];
-            for(NSManagedObject *object in items)
-                [self.managedObjectContext deleteObject:object];
-            
             NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearStartAt"]];
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
-            NSArray *courses = [client.responseData objectForKey:@"Courses"];
-            
-            NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
-            
-            NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
-            
-            NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
-            [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
-            
-            for(NSDictionary *dict in courses) {
-                NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount owner:self.currentUser inManagedObjectContext:self.managedObjectContext];
-                [self.currentUser addSchedule:courses];
+            if([todayDate compare:semesterBeginDate] != NSOrderedDescending) {
+                
+                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
+                [request setPredicate:[NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule]];            
+                NSArray *items = [self.managedObjectContext executeFetchRequest:request error:NULL];
+                for(NSManagedObject *object in items)
+                    [self.managedObjectContext deleteObject:object];
+                
+                NSArray *courses = [client.responseData objectForKey:@"Courses"];
+                
+                NSInteger semesterWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearWeekCount"]] integerValue];
+                
+                NSInteger semesterCourseWeekCount = [[NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearCourseWeekCount"]] integerValue];
+                
+                NSDate *semesterEndDate = [semesterBeginDate dateByAddingTimeInterval:60 * 60 * 24 * 7 * semesterWeekCount];
+                [NSUserDefaults setCurrentSemesterBeginTime:semesterBeginDate endTime:semesterEndDate];
+                
+                for(NSDictionary *dict in courses) {
+                    NSSet *courses = [Course insertCourse:dict withSemesterBeginTime:semesterBeginDate semesterWeekCount:semesterCourseWeekCount owner:self.currentUser inManagedObjectContext:self.managedObjectContext];
+                    [self.currentUser addSchedule:courses];
+                }
+                [NSNotificationCenter postChangeScheduleNotification];
+                [self.dayViewController configureTodayCell];
+                
+                [self saveContext];
+                
+                [self configureScheduleData];
             }
-            [NSNotificationCenter postChangeScheduleNotification];
-            [self.dayViewController configureTodayCell];
-            
-            [self saveContext];
-            
-            [self configureScheduleData];
         }
         self.view.userInteractionEnabled = YES;
     }];
