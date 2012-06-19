@@ -114,6 +114,7 @@ typedef enum {
 }
 
 - (void)configureCourseData {
+    BOOL hasCurrentSemesterResult = NO;
     NSDate *todayDate = [NSDate date];
     if([NSUserDefaults getCurrentSemesterEndDate] != nil && [todayDate compare:[NSUserDefaults getCurrentSemesterEndDate]] == NSOrderedAscending) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -125,6 +126,8 @@ typedef enum {
         NSArray *result = [self.managedObjectContext executeFetchRequest:request error:NULL];
         if(result.count > 0)
             return;
+        else 
+            hasCurrentSemesterResult = YES;
     }
     
     self.view.userInteractionEnabled = NO;
@@ -134,7 +137,8 @@ typedef enum {
             
             NSString *semesterBeginString = [NSString stringWithFormat:@"%@", [client.responseData objectForKey:@"SchoolYearStartAt"]];
             NSDate *semesterBeginDate = [semesterBeginString convertToDate];
-            if([todayDate compare:semesterBeginDate] != NSOrderedDescending) {
+            NSDate *storedSemesterBeginDate = [NSUserDefaults getCurrentSemesterBeginDate];
+            if(!storedSemesterBeginDate || [storedSemesterBeginDate compare:semesterBeginDate] != NSOrderedSame || hasCurrentSemesterResult) {
                 
                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                 [request setEntity:[NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext]];
