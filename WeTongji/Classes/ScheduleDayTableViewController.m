@@ -11,6 +11,7 @@
 #import "ScheduleDayTableViewCell.h"
 #import "NSString+Addition.h"
 #import "Event+Addition.h"
+#import "NSUserDefaults+Addition.h"
 
 @interface ScheduleDayTableViewController ()
 
@@ -68,6 +69,7 @@
         Event *tempEvent = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
         tempEvent.begin_day = [NSString getTodayBeginDayFormatString];
         tempEvent.begin_time = [NSDate date];
+        tempEvent.end_time = [NSDate date];
         [self.currentUser addScheduleObject:tempEvent];
     }
 }
@@ -127,8 +129,15 @@
 - (void)configureRequest:(NSFetchRequest *)request
 {
     [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext]];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
-    [request setPredicate:predicate];
+    NSPredicate *ownerPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.currentUser.schedule];
+    NSDate *beginDate = [NSUserDefaults getCurrentSemesterBeginDate];
+    NSDate *endDate = [NSUserDefaults getCurrentSemesterEndDate];
+    if(beginDate && endDate) {
+        NSPredicate *beginPredicate = [NSPredicate predicateWithFormat:@"begin_time > %@", beginDate];
+        NSPredicate *endPredicate = [NSPredicate predicateWithFormat:@"end_time < %@", endDate];
+        [request setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:ownerPredicate, beginPredicate, endPredicate, nil]]];
+    } else
+        [request setPredicate:ownerPredicate];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObjects:sort, nil];
     [request setSortDescriptors:descriptors];
