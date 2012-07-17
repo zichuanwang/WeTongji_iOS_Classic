@@ -62,6 +62,8 @@ typedef enum {
     [self configureTabBarSubViewController:ToDoListTabBarViewController];
     [self configureTabBarUIStyle];
     [self updateUIAccordingToCurrentUserStatus];
+    
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
 }
 
 - (void)viewDidUnload
@@ -78,16 +80,6 @@ typedef enum {
     self.tabBarBgImageView = nil;
     self.tabBarSeperatorImageView = nil;
     [self clearAllTabBarSubview];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self]; 
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [[NSNotificationCenter defaultCenter] removeObject:self];
 }
 
 #pragma mark -
