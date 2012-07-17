@@ -90,7 +90,7 @@
 }
 
 #pragma mark -
-#pragma mark Save image methos
+#pragma mark Save image methods
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     if(!error) {

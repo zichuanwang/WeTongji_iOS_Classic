@@ -79,8 +79,6 @@
     [self configureScrollView];
     [self refreshScrollViewContentHeight];
     [self configureBgImageView];
-    
-    [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
 }
 
 - (void)viewDidUnload
@@ -90,6 +88,16 @@
     self.scrollView = nil;
     self.scrollBackgroundView = nil;
     self.shadowImageView = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] removeObject:self];
 }
 
 #pragma mark -

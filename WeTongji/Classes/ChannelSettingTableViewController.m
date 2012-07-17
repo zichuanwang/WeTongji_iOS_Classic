@@ -26,6 +26,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.followChannelNumArray = [NSMutableArray arrayWithArray:[NSUserDefaults getChannelFollowStatusArray]];
+        self.sortChannelMethodArray = [NSMutableArray arrayWithArray:[NSUserDefaults getChannelSortMethodArray]];
     }
     return self;
 }
@@ -34,8 +36,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.followChannelNumArray = [NSMutableArray arrayWithArray:[NSUserDefaults getChannelFollowStatusArray]];
-    self.sortChannelMethodArray = [NSMutableArray arrayWithArray:[NSUserDefaults getChannelSortMethodArray]];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    footerView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = footerView;
 }
 
 - (void)viewDidUnload
@@ -81,9 +84,9 @@
 
 
 - (void)configureDataSource {    
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"频道筛选"]];
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"阅读顺序"]];
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"过滤条件"]];
+    [self.dataSourceIndexArray addObject:@"频道筛选"];
+    [self.dataSourceIndexArray addObject:@"阅读顺序"];
+    [self.dataSourceIndexArray addObject:@"过滤条件"];
     
     NSArray *channel = [NSUserDefaults getChannelNameArray];
     NSArray *sort = [NSArray arrayWithObjects:@"按活动开始时间正序", @"按活动开始时间逆序", @"按好评数逆序", nil];

@@ -12,7 +12,7 @@
 
 + (Channel *)insertChannel:(NSDictionary *)dict inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSString *channelID = [NSString stringWithFormat:@"@",[dict objectForKey:@"Id"]];
+    NSString *channelID = [NSString stringWithFormat:@"%@",[dict objectForKey:@"Id"]];
     
     if (!channelID || [channelID isEqualToString:@""]) {
         return nil;

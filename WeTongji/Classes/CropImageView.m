@@ -75,6 +75,8 @@ typedef enum {
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 
+#pragma mark - Draw methods
+
 - (void)drawShadow {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, CGColorCreateCopyWithAlpha([UIColor blackColor].CGColor, 0.6f));

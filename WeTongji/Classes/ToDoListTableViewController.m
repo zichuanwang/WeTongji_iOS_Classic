@@ -36,11 +36,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self configureTableView];
-    
-    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self];
-    [NSNotificationCenter registerChangeScheduleNotificationWithSelector:@selector(handleChangeScheduleNotification:) target:self];
-    
+    [self configureTableView];    
 }
 
 - (void)viewDidUnload
@@ -48,6 +44,17 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [NSNotificationCenter registerChangeCurrentUserNotificationWithSelector:@selector(handleChangeCurrentUserNotification:) target:self];
+    [NSNotificationCenter registerChangeScheduleNotificationWithSelector:@selector(handleChangeScheduleNotification:) target:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] removeObject:self];
 }
 
 #pragma mark -
@@ -117,21 +124,21 @@
     
     if(todayToDoList.count > 0) {
         if(todayToDoList.count > 1)
-            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"当前"]];
-        else 
-            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"今天"]];
+            [self.dataSourceIndexArray addObject:@"当前"];
+       else 
+            [self.dataSourceIndexArray addObject:@"今天"];
         [self.dataSourceDictionary setValue:[NSArray arrayWithObject:[todayToDoList objectAtIndex:0]] forKey:[self.dataSourceIndexArray objectAtIndex:0]];
         if(todayToDoList.count > 1) {
-            [self.dataSourceIndexArray addObject:[NSString stringWithString:@"稍后"]];
+            [self.dataSourceIndexArray addObject:@"稍后"];
             NSArray *todayLaterToDoList = [todayToDoList subarrayWithRange:NSMakeRange(1, todayToDoList.count - 1)];
             [self.dataSourceDictionary setValue:todayLaterToDoList forKey:[self.dataSourceIndexArray objectAtIndex:1]];
         }
     } else {
-        [self.dataSourceIndexArray addObject:[NSString stringWithString:@"今天"]];
+        [self.dataSourceIndexArray addObject:@"今天"];
         NSObject *temp = [[NSObject alloc] init];
         [self.dataSourceDictionary setValue:[NSArray arrayWithObject:temp] forKey:[self.dataSourceIndexArray objectAtIndex:0]];
     }
-    [self.dataSourceIndexArray addObject:[NSString stringWithString:@"明天"]];
+    [self.dataSourceIndexArray addObject:@"明天"];
     if(tomorrowToDoList.count > 0) {
         [self.dataSourceDictionary setValue:tomorrowToDoList forKey:[self.dataSourceIndexArray objectAtIndex:self.dataSourceIndexArray.count - 1]];
     } else {
