@@ -10,8 +10,8 @@
 
 @interface PromoteLoginViewController : UIViewController 
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
 
 - (IBAction)didClickLoginButton:(UIButton *)sender;
 

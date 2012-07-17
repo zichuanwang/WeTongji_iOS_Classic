@@ -11,8 +11,8 @@
 
 @interface ScheduleWeekRightTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *weekDayLabel;
-@property (nonatomic, strong) IBOutlet ScheduleWeekRightTableViewCellContentView *drawView;
+@property (nonatomic, weak) IBOutlet UILabel *weekDayLabel;
+@property (nonatomic, weak) IBOutlet ScheduleWeekRightTableViewCellContentView *drawView;
 
 - (void)setDrawViewVerticalOffset:(CGFloat)offset row:(NSInteger)row dataArray:(NSArray *)array;
 - (void)setDrawViewVerticalOffset:(CGFloat)offset;

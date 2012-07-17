@@ -10,7 +10,7 @@
 
 @interface SettingTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *itemTitleLabel;
-@property (nonatomic, strong) IBOutlet UISwitch *itemSwitch;
+@property (nonatomic, weak) IBOutlet UILabel *itemTitleLabel;
+@property (nonatomic, weak) IBOutlet UISwitch *itemSwitch;
 
 @end

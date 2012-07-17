@@ -11,9 +11,9 @@
 
 @interface SignInMailViewController : WTNavigationViewController
 
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
 - (IBAction)didClickMailButton:(UIButton *)sender;
 

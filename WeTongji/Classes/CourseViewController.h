@@ -11,17 +11,17 @@
 
 @interface CourseViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *courseNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *teacherNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *whenLabel;
-@property (nonatomic, strong) IBOutlet UILabel *whereLabel;
-@property (nonatomic, strong) IBOutlet UILabel *courseIDLabel;
-@property (nonatomic, strong) IBOutlet UILabel *creditPointsLabel;
-@property (nonatomic, strong) IBOutlet UILabel *creditHoursLabel;
-@property (nonatomic, strong) IBOutlet UILabel *courseTypeLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *middleView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIView *titleView;
+@property (nonatomic, weak) IBOutlet UILabel *courseNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *teacherNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *whenLabel;
+@property (nonatomic, weak) IBOutlet UILabel *whereLabel;
+@property (nonatomic, weak) IBOutlet UILabel *courseIDLabel;
+@property (nonatomic, weak) IBOutlet UILabel *creditPointsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *creditHoursLabel;
+@property (nonatomic, weak) IBOutlet UILabel *courseTypeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *middleView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIView *titleView;
 
 - (id)initWithCourse:(Course *)course;
 

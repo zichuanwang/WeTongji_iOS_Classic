@@ -13,24 +13,24 @@
 
 @interface ActivityViewController : CoreDataViewController
 
-@property (nonatomic, strong) IBOutlet UIView *organizerView;
-@property (nonatomic, strong) IBOutlet UILabel *organizerNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *activityCategoryLabel;
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, strong) IBOutlet UILabel *timeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *placeLabel;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UILabel *likeLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *middleView;
-@property (nonatomic, strong) IBOutlet UIView *bottomView;
-@property (nonatomic, strong) IBOutlet WTButton *favoriteButton;
-@property (nonatomic, strong) IBOutlet WTButton *likeButton;
-@property (nonatomic, strong) IBOutlet WTButton *scheduleButton;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *activityImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
+@property (nonatomic, weak) IBOutlet UIView *organizerView;
+@property (nonatomic, weak) IBOutlet UILabel *organizerNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *activityCategoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *placeLabel;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *likeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *middleView;
+@property (nonatomic, weak) IBOutlet UIView *bottomView;
+@property (nonatomic, weak) IBOutlet WTButton *favoriteButton;
+@property (nonatomic, weak) IBOutlet WTButton *likeButton;
+@property (nonatomic, weak) IBOutlet WTButton *scheduleButton;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *activityImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarBgImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarSeperatorImageView;
 
 - (id)initWithActivity:(Activity *)activity;
 - (IBAction)didClickFavoriteButton:(UIButton *)sender;

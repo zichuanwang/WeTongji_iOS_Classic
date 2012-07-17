@@ -15,10 +15,10 @@
     BOOL _scrollViewStartTouch;
 }
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIImageView *scrollBackgroundView;
-@property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *shadowImageView;
-@property (nonatomic, strong) IBOutlet UIView *blackBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIImageView *scrollBackgroundView;
+@property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *shadowImageView;
+@property (nonatomic, weak) IBOutlet UIView *blackBgView;
 
 @end

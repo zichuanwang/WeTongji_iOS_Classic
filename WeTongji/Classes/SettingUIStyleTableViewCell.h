@@ -10,7 +10,7 @@
 
 @interface SettingUIStyleTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLable;
-@property (nonatomic, strong) IBOutlet UIImageView *styleImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLable;
+@property (nonatomic, weak) IBOutlet UIImageView *styleImageView;
 
 @end

@@ -12,8 +12,8 @@
 
 @interface ChannelSettingTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *categoryLabel;
-@property (nonatomic, strong) IBOutlet UISwitch *itemSwitch;
+@property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
+@property (nonatomic, weak) IBOutlet UISwitch *itemSwitch;
 @property (nonatomic, weak) id<ChannelSettingTableViewCellDelegate> delegate;
 
 - (IBAction)didCLickSwitch:(UISwitch *)sender;

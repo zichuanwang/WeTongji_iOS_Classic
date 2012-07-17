@@ -11,9 +11,9 @@
 
 @interface SignInProtocolViewController : WTNavigationViewController <UIAlertViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIView *bottomBgView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UILabel *protocolLabel;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIView *bottomBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *protocolLabel;
 
 @end

@@ -14,8 +14,8 @@
 @interface EditAvatarViewController : UIViewController
 
 @property (nonatomic, weak) id<EditAvatarViewControllerDelegate> delegate;
-@property (nonatomic, strong) IBOutlet CropImageView *cropImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *cropImageBgView;
+@property (nonatomic, weak) IBOutlet CropImageView *cropImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *cropImageBgView;
 
 - (id)initWithImage:(UIImage *)image;
 

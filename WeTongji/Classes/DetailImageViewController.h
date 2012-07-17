@@ -12,10 +12,10 @@
 
 @interface DetailImageViewController : UIViewController<UIScrollViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) IBOutlet UIButton *saveButton;
-@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIButton *saveButton;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic, weak) id<DetailImageViewControllerDelegate> delegate;
 
 - (IBAction)didClickSaveButton:(id)sender;

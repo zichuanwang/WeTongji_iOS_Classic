@@ -13,15 +13,15 @@
 
 @interface MainViewController : WTNavigationViewController <SettingTableViewControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet WTButton *userInfoButton;
-@property (nonatomic, strong) IBOutlet WTButton *checkButton;
-@property (nonatomic, strong) IBOutlet WTButton *settingButton;
+@property (nonatomic, weak) IBOutlet WTButton *userInfoButton;
+@property (nonatomic, weak) IBOutlet WTButton *checkButton;
+@property (nonatomic, weak) IBOutlet WTButton *settingButton;
 
-@property (nonatomic, strong) IBOutlet UIView *tabBarView;
-@property (nonatomic, strong) IBOutlet UIView *tabBarContentView;
-@property (nonatomic, strong) IBOutlet UIImageView *headerCoverImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
+@property (nonatomic, weak) IBOutlet UIView *tabBarView;
+@property (nonatomic, weak) IBOutlet UIView *tabBarContentView;
+@property (nonatomic, weak) IBOutlet UIImageView *headerCoverImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarBgImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarSeperatorImageView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 

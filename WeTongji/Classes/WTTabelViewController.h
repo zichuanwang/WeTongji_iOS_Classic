@@ -11,7 +11,7 @@
 
 @interface WTTabelViewController : CoreDataViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 - (NSString *)customCellClassName;
 - (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath;

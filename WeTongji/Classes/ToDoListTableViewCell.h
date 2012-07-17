@@ -11,12 +11,12 @@
 
 @interface ToDoListTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *whenLabel;
-@property (nonatomic, strong) IBOutlet UILabel *whatLabel;
-@property (nonatomic, strong) IBOutlet UILabel *whereLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *pointImageView;
-@property (nonatomic, strong) IBOutlet UIView *mainView;
-@property (nonatomic, strong) IBOutlet UILabel *noDataHintLabel;
+@property (nonatomic, weak) IBOutlet UILabel *whenLabel;
+@property (nonatomic, weak) IBOutlet UILabel *whatLabel;
+@property (nonatomic, weak) IBOutlet UILabel *whereLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *pointImageView;
+@property (nonatomic, weak) IBOutlet UIView *mainView;
+@property (nonatomic, weak) IBOutlet UILabel *noDataHintLabel;
 
 - (void)setEventType:(EventType)type;
 - (void)setAsNormalCell;

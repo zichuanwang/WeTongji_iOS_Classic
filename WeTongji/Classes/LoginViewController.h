@@ -11,11 +11,11 @@
 
 @interface LoginViewController : WTPostViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UITextField *accountTextField;
-@property (nonatomic, strong) IBOutlet UITextField *passwordTextField;
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIView *bgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UITextField *accountTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIView *bgView;
 
 - (IBAction)didClickForgetPasswordButton:(UIButton *)sender;
 

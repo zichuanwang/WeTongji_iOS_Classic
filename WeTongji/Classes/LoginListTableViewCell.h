@@ -10,7 +10,7 @@
 
 @interface LoginListTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *userNameLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
 
 @end

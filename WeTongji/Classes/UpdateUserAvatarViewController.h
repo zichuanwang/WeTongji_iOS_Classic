@@ -12,10 +12,10 @@
 
 @interface UpdateUserAvatarViewController : WTPostViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, EditAvatarViewControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UILabel *paperTitleLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *paperTitleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
 
 - (IBAction)didClickAvatarButton:(UIButton *)sender;
 

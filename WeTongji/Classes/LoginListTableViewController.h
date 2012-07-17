@@ -13,6 +13,6 @@
     NSInteger _selectRow;
 }
 
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
 
 @end

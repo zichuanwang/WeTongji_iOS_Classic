@@ -10,9 +10,9 @@
 
 @interface NewsOutlineTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *categoryLabel;
-@property (nonatomic, strong) IBOutlet UILabel *timeLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
 
 @end

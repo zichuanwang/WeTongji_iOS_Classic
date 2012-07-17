@@ -13,8 +13,8 @@
 
 @interface WTNavigationViewController : CoreDataViewController
 
-@property (nonatomic, strong) IBOutlet UIImageView *navBarShadowImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *bgImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *navBarShadowImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
 
 - (void)handleChangeCurrentUIStyleNotification:(NSNotification *)notification;
 

@@ -12,15 +12,15 @@
 
 @interface NewsDetailViewController : WTNavigationViewController
 
-@property (nonatomic, strong) IBOutlet UIImageView *middleView;
-@property (nonatomic, strong) IBOutlet UIView *bottomView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIView *titleView;
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, strong) IBOutlet UILabel *publicationTimeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *newsCategoryLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *newsImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *middleView;
+@property (nonatomic, weak) IBOutlet UIView *bottomView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIView *titleView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *publicationTimeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *newsCategoryLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *newsImageView;
 
 - (id)initWithNews:(News *)news;
 

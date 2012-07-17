@@ -11,10 +11,10 @@
 
 @interface ComingSoonViewController : WTNavigationViewController
 
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIImageView *placeHolderImageView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UILabel *comingSoonLabel;
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIImageView *placeHolderImageView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *comingSoonLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
 @end

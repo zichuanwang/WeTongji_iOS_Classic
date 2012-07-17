@@ -14,7 +14,7 @@ UITableViewDelegate, UITableViewDataSource> {
 }
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, readonly) NSInteger numberOfRowsInFirstSection;
 
 //methods to override

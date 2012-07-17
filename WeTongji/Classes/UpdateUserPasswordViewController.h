@@ -11,10 +11,10 @@
 
 @interface UpdateUserPasswordViewController : WTPostViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UILabel *paperTitleLabel;
-@property (nonatomic, strong) IBOutlet UITextField *oldPasswordTextField;
-@property (nonatomic, strong) IBOutlet UITextField *updatedPasswordTextField;
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UILabel *paperTitleLabel;
+@property (nonatomic, weak) IBOutlet UITextField *oldPasswordTextField;
+@property (nonatomic, weak) IBOutlet UITextField *updatedPasswordTextField;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 @end

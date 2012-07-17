@@ -16,8 +16,8 @@
 
 @interface ScheduleWeekViewController : CoreDataViewController<UITableViewDataSource, UITableViewDelegate, ScheduleWeekLeftTableViewDelegate> 
 
-@property (nonatomic, strong) IBOutlet UITableView *rightTableView;
-@property (nonatomic, strong) IBOutlet ScheduleWeekLeftTableView *leftTableView;
+@property (nonatomic, weak) IBOutlet UITableView *rightTableView;
+@property (nonatomic, weak) IBOutlet ScheduleWeekLeftTableView *leftTableView;
 
 - (void)didClickTodayButton;
 

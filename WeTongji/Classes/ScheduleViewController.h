@@ -13,13 +13,13 @@
 
 @interface ScheduleViewController : WTNavigationViewController<ScheduleDayTableViewControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet WTButton *todayButton;
-@property (nonatomic, strong) IBOutlet WTButton *dayButton;
-@property (nonatomic, strong) IBOutlet WTButton *weekButton;
-@property (nonatomic, strong) IBOutlet WTButton *monthButton;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarBgImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *tabBarSeperatorImageView;
-@property (nonatomic, strong) IBOutlet UIView *tabBarView;
+@property (nonatomic, weak) IBOutlet WTButton *todayButton;
+@property (nonatomic, weak) IBOutlet WTButton *dayButton;
+@property (nonatomic, weak) IBOutlet WTButton *weekButton;
+@property (nonatomic, weak) IBOutlet WTButton *monthButton;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarBgImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *tabBarSeperatorImageView;
+@property (nonatomic, weak) IBOutlet UIView *tabBarView;
 
 - (IBAction)didClickTabBarButton:(UIButton *)sender;
 - (IBAction)didClickTodayButton:(UIButton *)sender;

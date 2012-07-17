@@ -10,7 +10,7 @@
 
 @interface ScheduleWeekLeftTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *hourLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *separatorImageView;
+@property (nonatomic, weak) IBOutlet UILabel *hourLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *separatorImageView;
 
 @end

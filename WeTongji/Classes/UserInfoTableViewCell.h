@@ -10,7 +10,7 @@
 
 @interface UserInfoTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *categoryLabel;
-@property (nonatomic, strong) IBOutlet UILabel *contentLabel;
+@property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel *contentLabel;
 
 @end

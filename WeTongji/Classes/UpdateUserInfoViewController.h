@@ -11,13 +11,13 @@
 
 @interface UpdateUserInfoViewController : WTPostViewController<UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UITextField *phoneNumberTextField;
-@property (nonatomic, strong) IBOutlet UITextField *emailTextField;
-@property (nonatomic, strong) IBOutlet UITextField *qqTextField;
-@property (nonatomic, strong) IBOutlet UITextField *weiboTextField;
-@property (nonatomic, strong) IBOutlet UIView *mainBgView;
-@property (nonatomic, strong) IBOutlet UIView *bgView;
-@property (nonatomic, strong) IBOutlet UILabel *paperTitleLabel;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UITextField *phoneNumberTextField;
+@property (nonatomic, weak) IBOutlet UITextField *emailTextField;
+@property (nonatomic, weak) IBOutlet UITextField *qqTextField;
+@property (nonatomic, weak) IBOutlet UITextField *weiboTextField;
+@property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIView *bgView;
+@property (nonatomic, weak) IBOutlet UILabel *paperTitleLabel;
 
 @end
