@@ -54,7 +54,7 @@ static NSString* const APIDomain = @"we.tongji.edu.cn";
 }
 
 - (void)dealloc {
-    NSLog(@"WeiboClient dealloc");
+    NSLog(@"WTClient dealloc");
     [_errorDesc release];
     [_completionBlock release];
     [_params release];
