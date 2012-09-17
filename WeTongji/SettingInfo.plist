@@ -6,12 +6,12 @@
 	<array>
 		<dict>
 			<key>kSectionName</key>
-			<string>账号设置</string>
+			<string>帐号设置</string>
 			<key>kSectionArray</key>
 			<array>
 				<dict>
 					<key>kItemTitle</key>
-					<string>切换账号</string>
+					<string>切换帐号</string>
 					<key>kAccessoryType</key>
 					<string>kAccessoryTypeDisclosure</string>
 					<key>kNibFileName</key>
@@ -68,7 +68,7 @@
 				</dict>
 			</array>
 		</dict>
-        <dict>
+		<dict>
 			<key>kSectionName</key>
 			<string>应用信息</string>
 			<key>kSectionArray</key>

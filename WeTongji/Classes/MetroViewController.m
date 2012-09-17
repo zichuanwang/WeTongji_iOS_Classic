@@ -282,7 +282,7 @@
     MetroInfo *info = [self.metroInfoArray objectAtIndex:index];
     if(info.needLogin) {
         if([CoreDataViewController getCurrentUser] == nil) {
-            [UIApplication showAlertMessage:@"该功能需要配合个人账号才能使用，请登录微同济。" withTitle:@"出错啦"];
+            [UIApplication showAlertMessage:@"该功能需要配合个人帐号才能使用，请登录微同济。" withTitle:@"出错啦"];
             return;
         }
     }

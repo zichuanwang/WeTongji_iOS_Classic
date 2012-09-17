@@ -62,7 +62,7 @@
 - (BOOL)isParameterValid {
     BOOL result = YES;
     if([self.accountTextField.text isEqualToString:@""]) {
-        [UIApplication presentAlertToast:@"请输入账号。" withVerticalPos:self.toastVerticalPos];
+        [UIApplication presentAlertToast:@"请输入帐号。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     } else if([self.passwordTextField.text isEqualToString:@""]) {
         [UIApplication presentAlertToast:@"请输入密码。" withVerticalPos:self.toastVerticalPos];

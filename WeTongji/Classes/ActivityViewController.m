@@ -109,7 +109,7 @@
 - (BOOL)isCurrentUserValid {
     BOOL result = (self.currentUser != nil);
     if(result == NO)
-        [UIApplication showAlertMessage:@"该功能需要配合个人账号才能使用，请登录微同济。" withTitle:@"出错啦"];
+        [UIApplication showAlertMessage:@"该功能需要配合个人帐号才能使用，请登录微同济。" withTitle:@"出错啦"];
     return result;
 }
 
