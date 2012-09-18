@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *studentNumberTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UITextField *confirmTextField;
 @property (nonatomic, weak) IBOutlet UIView *mainBgView;
 @property (nonatomic, weak) IBOutlet UIView *bgView;
 
