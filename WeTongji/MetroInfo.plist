@@ -76,9 +76,9 @@
 		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
-			<string>dock_btn_treize</string>
+			<string>dock_btn_guide</string>
 			<key>kButtonTitle</key>
-			<string>guide</string>
+			<string>新生指南</string>
 			<key>kNibFileName</key>
 			<string>RookieGuideViewController</string>
 			<key>kNeedLogin</key>

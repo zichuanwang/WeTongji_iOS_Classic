@@ -10,5 +10,6 @@
 #import "ComingSoonViewController.h"
 
 @interface RookieGuideViewController : ComingSoonViewController
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 - (IBAction)seeDetail:(id)sender;
 @end

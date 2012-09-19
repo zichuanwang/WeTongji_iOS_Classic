@@ -15,6 +15,7 @@
 @end
 
 @implementation RookieGuideViewController
+@synthesize startButton = _startButton;
 @synthesize guidePhotos = _guidePhotos;
 @synthesize browser = _browser;
 
@@ -60,6 +61,9 @@
 {
     [super viewDidLoad];
     self.title = @"新生指南";
+    [[self.startButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    [[self.startButton layer] setBorderWidth:2.0f];
+    [[self.startButton layer] setCornerRadius:8.0f];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -68,6 +72,7 @@
 {
     self.browser = nil;
     self.guidePhotos = nil;
+    [self setStartButton:nil];
     [super viewDidUnload];
 }
 
