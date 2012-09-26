@@ -21,7 +21,7 @@
 			<string>新闻</string>
 			<key>kNibFileName</key>
 			<string>NewsViewController</string>
-            <key>kNeedLogin</key>
+			<key>kNeedLogin</key>
 			<false/>
 		</dict>
 		<dict>
@@ -31,7 +31,7 @@
 			<string>收藏</string>
 			<key>kNibFileName</key>
 			<string>FavoriteViewController</string>
-            <key>kNeedLogin</key>
+			<key>kNeedLogin</key>
 			<true/>
 		</dict>
 		<dict>
@@ -39,9 +39,9 @@
 			<string>dock_btn_schedule</string>
 			<key>kButtonTitle</key>
 			<string>日程</string>
-            <key>kNibFileName</key>
+			<key>kNibFileName</key>
 			<string>ScheduleViewController</string>
-            <key>kNeedLogin</key>
+			<key>kNeedLogin</key>
 			<true/>
 		</dict>
 		<dict>
@@ -51,7 +51,7 @@
 			<string>圈子</string>
 			<key>kNibFileName</key>
 			<string>CirclesViewController</string>
-            <key>kNeedLogin</key>
+			<key>kNeedLogin</key>
 			<false/>
 		</dict>
 		<dict>
@@ -61,8 +61,9 @@
 			<string>邮箱</string>
 			<key>kNibFileName</key>
 			<string>MailViewController</string>
-            <key>kNeedLogin</key>
-			<false/>		</dict>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
 			<string>dock_btn_treize</string>
@@ -70,7 +71,17 @@
 			<string>treize</string>
 			<key>kNibFileName</key>
 			<string>TreizeViewController</string>
-            <key>kNeedLogin</key>
+			<key>kNeedLogin</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>kButtonImageFileName</key>
+			<string>dock_btn_guide</string>
+			<key>kButtonTitle</key>
+			<string>新生指南</string>
+			<key>kNibFileName</key>
+			<string>RookieGuideViewController</string>
+			<key>kNeedLogin</key>
 			<false/>
 		</dict>
 	</array>

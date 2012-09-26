@@ -22,6 +22,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize studentNumberTextField = _studentNumberTextField;
 @synthesize passwordTextField = _passwordTextField;
+@synthesize confirmTextField = _confirmTextField;
 @synthesize bgView = _bgView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -73,6 +74,9 @@
         result = NO;
     } else if(self.passwordTextField.text.length < 6) {
         [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:self.toastVerticalPos];
+        result = NO;
+    } else if (![self.confirmTextField.text isEqualToString:self.passwordTextField.text]) {
+        [UIApplication presentAlertToast:@"请确认两次密码一致。" withVerticalPos:self.toastVerticalPos];
         result = NO;
     }
     return result;
