@@ -66,16 +66,6 @@
 		</dict>
 		<dict>
 			<key>kButtonImageFileName</key>
-			<string>dock_btn_treize</string>
-			<key>kButtonTitle</key>
-			<string>treize</string>
-			<key>kNibFileName</key>
-			<string>TreizeViewController</string>
-			<key>kNeedLogin</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>kButtonImageFileName</key>
 			<string>dock_btn_guide</string>
 			<key>kButtonTitle</key>
 			<string>新生指南</string>
