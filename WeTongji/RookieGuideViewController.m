@@ -64,10 +64,6 @@
 {
     [super viewDidLoad];
     
-    [[self.startButton layer] setBorderColor:[UIColor whiteColor].CGColor];
-    [[self.startButton layer] setBorderWidth:2.0f];
-    [[self.startButton layer] setCornerRadius:8.0f];
-    
     [self configureNavBar];
 }
 

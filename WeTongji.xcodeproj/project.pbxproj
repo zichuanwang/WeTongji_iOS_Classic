@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C49D547161498A6007E7897 /* dock_btn_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C49D543161498A6007E7897 /* dock_btn_guide@2x.png */; };
+		5C49D548161498A6007E7897 /* dock_btn_guide.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C49D544161498A6007E7897 /* dock_btn_guide.png */; };
+		5C49D549161498A6007E7897 /* dock_btn_guide_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C49D545161498A6007E7897 /* dock_btn_guide_hl@2x.png */; };
+		5C49D54A161498A6007E7897 /* dock_btn_guide_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C49D546161498A6007E7897 /* dock_btn_guide_hl.png */; };
 		E102135D155A5E34002FCCA6 /* EditAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */; };
 		E102135E155A5E34002FCCA6 /* EditAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */; };
 		E1021363155A67E0002FCCA6 /* crop_image_puller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1021361155A67E0002FCCA6 /* crop_image_puller.png */; };
@@ -447,10 +451,6 @@
 		E526288B161348F500580115 /* 9-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E526287A161348F500580115 /* 9-1.jpg */; };
 		E526288C161348F500580115 /* 10-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E526287B161348F500580115 /* 10-1.jpg */; };
 		E526288D161348F500580115 /* 11-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E526287C161348F500580115 /* 11-1.jpg */; };
-		E526288E161348F500580115 /* dock_btn_guide_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = E526287D161348F500580115 /* dock_btn_guide_hl.png */; };
-		E526288F161348F500580115 /* dock_btn_guide_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E526287E161348F500580115 /* dock_btn_guide_hl@2x.png */; };
-		E5262890161348F500580115 /* dock_btn_guide.png in Resources */ = {isa = PBXBuildFile; fileRef = E526287F161348F500580115 /* dock_btn_guide.png */; };
-		E5262891161348F500580115 /* dock_btn_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5262880161348F500580115 /* dock_btn_guide@2x.png */; };
 		E5262892161348F500580115 /* firstpage.png in Resources */ = {isa = PBXBuildFile; fileRef = E5262881161348F500580115 /* firstpage.png */; };
 		E5262893161348F500580115 /* firstpage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5262882161348F500580115 /* firstpage@2x.png */; };
 		E52628C51613490B00580115 /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E52628971613490B00580115 /* MWCaptionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -487,6 +487,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C49D543161498A6007E7897 /* dock_btn_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_guide@2x.png"; sourceTree = "<group>"; };
+		5C49D544161498A6007E7897 /* dock_btn_guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_btn_guide.png; sourceTree = "<group>"; };
+		5C49D545161498A6007E7897 /* dock_btn_guide_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_guide_hl@2x.png"; sourceTree = "<group>"; };
+		5C49D546161498A6007E7897 /* dock_btn_guide_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_btn_guide_hl.png; sourceTree = "<group>"; };
 		E102135A155A5E34002FCCA6 /* EditAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditAvatarViewController.h; path = Classes/EditAvatarViewController.h; sourceTree = "<group>"; };
 		E102135B155A5E34002FCCA6 /* EditAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditAvatarViewController.m; path = Classes/EditAvatarViewController.m; sourceTree = "<group>"; };
 		E102135C155A5E34002FCCA6 /* EditAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditAvatarViewController.xib; path = Classes/EditAvatarViewController.xib; sourceTree = "<group>"; };
@@ -1066,10 +1070,6 @@
 		E526287A161348F500580115 /* 9-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9-1.jpg"; sourceTree = "<group>"; };
 		E526287B161348F500580115 /* 10-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-1.jpg"; sourceTree = "<group>"; };
 		E526287C161348F500580115 /* 11-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11-1.jpg"; sourceTree = "<group>"; };
-		E526287D161348F500580115 /* dock_btn_guide_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_btn_guide_hl.png; sourceTree = "<group>"; };
-		E526287E161348F500580115 /* dock_btn_guide_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_guide_hl@2x.png"; sourceTree = "<group>"; };
-		E526287F161348F500580115 /* dock_btn_guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dock_btn_guide.png; sourceTree = "<group>"; };
-		E5262880161348F500580115 /* dock_btn_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dock_btn_guide@2x.png"; sourceTree = "<group>"; };
 		E5262881161348F500580115 /* firstpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstpage.png; sourceTree = "<group>"; };
 		E5262882161348F500580115 /* firstpage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firstpage@2x.png"; sourceTree = "<group>"; };
 		E52628961613490B00580115 /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
@@ -2150,6 +2150,10 @@
 		E5262871161348E100580115 /* guide */ = {
 			isa = PBXGroup;
 			children = (
+				5C49D543161498A6007E7897 /* dock_btn_guide@2x.png */,
+				5C49D544161498A6007E7897 /* dock_btn_guide.png */,
+				5C49D545161498A6007E7897 /* dock_btn_guide_hl@2x.png */,
+				5C49D546161498A6007E7897 /* dock_btn_guide_hl.png */,
 				E5262872161348F500580115 /* 1-1.jpg */,
 				E5262873161348F500580115 /* 2-1.jpg */,
 				E5262874161348F500580115 /* 3-1.jpg */,
@@ -2161,10 +2165,6 @@
 				E526287A161348F500580115 /* 9-1.jpg */,
 				E526287B161348F500580115 /* 10-1.jpg */,
 				E526287C161348F500580115 /* 11-1.jpg */,
-				E526287D161348F500580115 /* dock_btn_guide_hl.png */,
-				E526287E161348F500580115 /* dock_btn_guide_hl@2x.png */,
-				E526287F161348F500580115 /* dock_btn_guide.png */,
-				E5262880161348F500580115 /* dock_btn_guide@2x.png */,
 				E5262881161348F500580115 /* firstpage.png */,
 				E5262882161348F500580115 /* firstpage@2x.png */,
 			);
@@ -2620,10 +2620,6 @@
 				E526288B161348F500580115 /* 9-1.jpg in Resources */,
 				E526288C161348F500580115 /* 10-1.jpg in Resources */,
 				E526288D161348F500580115 /* 11-1.jpg in Resources */,
-				E526288E161348F500580115 /* dock_btn_guide_hl.png in Resources */,
-				E526288F161348F500580115 /* dock_btn_guide_hl@2x.png in Resources */,
-				E5262890161348F500580115 /* dock_btn_guide.png in Resources */,
-				E5262891161348F500580115 /* dock_btn_guide@2x.png in Resources */,
 				E5262892161348F500580115 /* firstpage.png in Resources */,
 				E5262893161348F500580115 /* firstpage@2x.png in Resources */,
 				E52628CC1613490B00580115 /* README.mdown in Resources */,
@@ -2633,6 +2629,10 @@
 				E52628E11613492C00580115 /* RookieGuideViewController.xib in Resources */,
 				E12F7CAE1614619B000D9480 /* channel_avatar_cover.png in Resources */,
 				E12F7CAF1614619B000D9480 /* channel_avatar_cover@2x.png in Resources */,
+				5C49D547161498A6007E7897 /* dock_btn_guide@2x.png in Resources */,
+				5C49D548161498A6007E7897 /* dock_btn_guide.png in Resources */,
+				5C49D549161498A6007E7897 /* dock_btn_guide_hl@2x.png in Resources */,
+				5C49D54A161498A6007E7897 /* dock_btn_guide_hl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
