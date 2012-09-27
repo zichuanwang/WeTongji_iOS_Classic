@@ -20,5 +20,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *shadowImageView;
 @property (nonatomic, weak) IBOutlet UIView *blackBgView;
+@property (nonatomic, weak) IBOutlet UILabel *appNameVersionLabel;
 
 @end

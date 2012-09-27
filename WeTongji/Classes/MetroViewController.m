@@ -58,6 +58,7 @@
 @synthesize bgImageView = _bgImageView;
 @synthesize shadowImageView = _shadowImageView;
 @synthesize blackBgView = _blackBgView;
+@synthesize appNameVersionLabel = _appNameVersionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,6 +80,9 @@
     [self configureScrollView];
     [self refreshScrollViewContentHeight];
     [self configureBgImageView];
+    
+    NSString *currentBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    self.appNameVersionLabel.text = [NSString stringWithFormat:@"微同济 %@", currentBundleVersion];
     
     [NSNotificationCenter registerChangeCurrentUIStyleNotificationWithSelector:@selector(handleChangeCurrentUIStyleNotification:) target:self];
 }

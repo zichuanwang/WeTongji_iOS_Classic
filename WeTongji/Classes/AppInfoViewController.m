@@ -23,6 +23,7 @@
 @synthesize iconImageView = _iconImageView;
 @synthesize scrollView = _scrollView;
 @synthesize mainBgView = _mainBgView;
+@synthesize appVersionLabel = _appVersionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +40,9 @@
     // Do any additional setup after loading the view from its nib.
     [self configureScrollView];
     [self configureNavBar];
+    
+    NSString *currentBundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    self.appVersionLabel.text = currentBundleVersion;
 }
 
 - (void)viewDidUnload

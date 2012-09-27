@@ -9,9 +9,12 @@
 #import "RookieGuideViewController.h"
 #import "MWPhotoBrowser.h"
 #import "UIViewController+RECurtainViewController.h"
+
 @interface RookieGuideViewController ()<MWPhotoBrowserDelegate>
+
 @property (nonatomic ,strong) NSArray *guidePhotos;
 @property (nonatomic ,strong) MWPhotoBrowser *browser;
+
 @end
 
 @implementation RookieGuideViewController
@@ -60,12 +63,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"新生指南";
+    
     [[self.startButton layer] setBorderColor:[UIColor whiteColor].CGColor];
     [[self.startButton layer] setBorderWidth:2.0f];
     [[self.startButton layer] setCornerRadius:8.0f];
     
-    // Do any additional setup after loading the view from its nib.
+    [self configureNavBar];
+}
+
+- (void)configureNavBar {
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"频道"];
+    self.navigationItem.titleView = titleLabel;
+    
+    UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
+    self.navigationItem.leftBarButtonItem = finishButton;
 }
 
 - (void)viewDidUnload
@@ -76,9 +87,10 @@
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+#pragma mark - IBActions
+
+- (void)didClickFinishButton {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - MWPhotoBrowserDelegate

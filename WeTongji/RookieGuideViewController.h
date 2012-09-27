@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComingSoonViewController.h"
+#import "WTNavigationViewController.h"
 
-@interface RookieGuideViewController : ComingSoonViewController
+@interface RookieGuideViewController : WTNavigationViewController
+
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+
 - (IBAction)seeDetail:(id)sender;
+
 @end

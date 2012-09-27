@@ -12,9 +12,10 @@
 
 @interface AppInfoViewController : WTNavigationViewController<MFMailComposeViewControllerDelegate>
 
-@property (nonatomic, retain) IBOutlet UIImageView *iconImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *iconImageView;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UILabel *appVersionLabel;
 
 - (IBAction)didClickFeedbackButton:(UIButton *)sender;
 - (IBAction)didClickFollowUsButton:(UIButton *)sender;
