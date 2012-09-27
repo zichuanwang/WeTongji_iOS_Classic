@@ -64,6 +64,8 @@
 		E11B6F531567E58E00B33118 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */; };
 		E11B6F591567FD6100B33118 /* wetongji.css in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F581567FD6100B33118 /* wetongji.css */; };
 		E11B6F631567FFD000B33118 /* newsdetail.html in Resources */ = {isa = PBXBuildFile; fileRef = E11B6F621567FFD000B33118 /* newsdetail.html */; };
+		E12F7CAE1614619B000D9480 /* channel_avatar_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = E12F7CAC1614619B000D9480 /* channel_avatar_cover.png */; };
+		E12F7CAF1614619B000D9480 /* channel_avatar_cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12F7CAD1614619B000D9480 /* channel_avatar_cover@2x.png */; };
 		E132A4D4154B0FFC00136836 /* paper_user_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E132A4D3154B0FFC00136836 /* paper_user_indicator.png */; };
 		E135F773155E33C4008494D8 /* ScheduleDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */; };
 		E135F774155E33C4008494D8 /* ScheduleDayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E135F772155E33C4008494D8 /* ScheduleDayTableViewController.xib */; };
@@ -553,6 +555,8 @@
 		E11B6F521567E58E00B33118 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsDetailViewController.xib; path = Classes/NewsDetailViewController.xib; sourceTree = "<group>"; };
 		E11B6F581567FD6100B33118 /* wetongji.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = wetongji.css; sourceTree = "<group>"; };
 		E11B6F621567FFD000B33118 /* newsdetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = newsdetail.html; sourceTree = "<group>"; };
+		E12F7CAC1614619B000D9480 /* channel_avatar_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_avatar_cover.png; sourceTree = "<group>"; };
+		E12F7CAD1614619B000D9480 /* channel_avatar_cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "channel_avatar_cover@2x.png"; sourceTree = "<group>"; };
 		E132A4D3154B0FFC00136836 /* paper_user_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_user_indicator.png; sourceTree = "<group>"; };
 		E135F770155E33C4008494D8 /* ScheduleDayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDayTableViewController.h; path = Classes/ScheduleDayTableViewController.h; sourceTree = "<group>"; };
 		E135F771155E33C4008494D8 /* ScheduleDayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDayTableViewController.m; path = Classes/ScheduleDayTableViewController.m; sourceTree = "<group>"; };
@@ -1651,6 +1655,8 @@
 		E1D387A3154DC801006325E8 /* channel */ = {
 			isa = PBXGroup;
 			children = (
+				E12F7CAC1614619B000D9480 /* channel_avatar_cover.png */,
+				E12F7CAD1614619B000D9480 /* channel_avatar_cover@2x.png */,
 				E1D387A6154DC80B006325E8 /* channel_btn_favorite.png */,
 				E1D387A7154DC80B006325E8 /* channel_btn_favorite@2x.png */,
 				E1D387A4154DC80B006325E8 /* channel_btn_favorite_hl.png */,
@@ -2625,6 +2631,8 @@
 				E52628CE1613490B00580115 /* README.md in Resources */,
 				E52628D61613490B00580115 /* MWPhotoBrowser.bundle in Resources */,
 				E52628E11613492C00580115 /* RookieGuideViewController.xib in Resources */,
+				E12F7CAE1614619B000D9480 /* channel_avatar_cover.png in Resources */,
+				E12F7CAF1614619B000D9480 /* channel_avatar_cover@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
