@@ -82,6 +82,19 @@ typedef enum {
     [self clearAllTabBarSubview];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if(self.currentTabBarSubViewControllerName == UserInfoTabBarViewController) {
+        [self.userInfoViewController viewWillAppear:animated];
+    }
+    else if(self.currentTabBarSubViewControllerName == ToDoListTabBarViewController) {
+        [self.toDoListTableViewController viewWillAppear:animated];
+    }
+    else if(self.currentTabBarSubViewControllerName == SettingTabBarViewController) {
+        [self.settingViewController viewWillAppear:animated];
+    }
+}
+
 #pragma mark -
 #pragma mark Logic methods 
 
@@ -159,6 +172,7 @@ typedef enum {
     vc.view.frame = frame;
     self.userInfoViewController = vc;
     [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.userInfoViewController viewWillAppear:YES];
 }
 
 - (void)configureToDoListTabBarViewController {
@@ -173,6 +187,7 @@ typedef enum {
     vc.view.frame = frame;
     self.toDoListTableViewController = vc;
     [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.toDoListTableViewController viewWillAppear:YES];
 }
 
 - (void)configureSettingTabBarViewController {
@@ -187,6 +202,7 @@ typedef enum {
     self.settingViewController = vc;
     self.settingViewController.delegate = self;
     [self.tabBarContentView insertSubview:vc.view belowSubview:self.tabBarView];
+    [self.settingViewController viewWillAppear:YES];
 }
 
 - (void)clearCurrentTabBarSubViewController {

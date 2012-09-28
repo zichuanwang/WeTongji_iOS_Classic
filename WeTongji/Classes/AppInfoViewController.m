@@ -10,7 +10,7 @@
 #import "UIApplication+Addition.h"
 #import "UIImageView+Addition.h"
 
-#define WE_TONGJI_EMAIL             @"we@tongji.edu.cn"
+#define WE_TONGJI_EMAIL             @"wetongji2012@gmail.com"
 #define WE_TONGJI_SINA_WEIBO_URL    @"http://www.weibo.com/wetongji"
 #define WE_TONGJI_APP_STORE_URL     @"http://itunes.apple.com/cn/app/id526260090?mt=8"
 

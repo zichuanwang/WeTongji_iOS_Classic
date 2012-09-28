@@ -64,11 +64,15 @@
 {
     [super viewDidLoad];
     
+    [[self.startButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    [[self.startButton layer] setBorderWidth:2.0f];
+    [[self.startButton layer] setCornerRadius:8.0f];
+    
     [self configureNavBar];
 }
 
 - (void)configureNavBar {
-    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"频道"];
+    UILabel *titleLabel = [UILabel getNavBarTitleLabel:@"新生指南"];
     self.navigationItem.titleView = titleLabel;
     
     UIBarButtonItem *finishButton = [UIBarButtonItem getFunctionButtonItemWithTitle:@"完成" target:self action:@selector(didClickFinishButton)];
