@@ -413,6 +413,7 @@
 													<bytes key="NSWhite">MAA</bytes>
 													<reference key="NSCustomColorSpace" ref="694663931"/>
 												</object>
+												<bool key="IBUIClearsOnBeginEditing">YES</bool>
 												<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 												<float key="IBUIMinimumFontSize">14</float>
 												<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -446,6 +447,7 @@
 													<bytes key="NSWhite">MAA</bytes>
 													<reference key="NSCustomColorSpace" ref="694663931"/>
 												</object>
+												<bool key="IBUIClearsOnBeginEditing">YES</bool>
 												<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 												<float key="IBUIMinimumFontSize">14</float>
 												<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -959,10 +961,6 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1536" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">

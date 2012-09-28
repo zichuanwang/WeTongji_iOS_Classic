@@ -71,6 +71,9 @@
     } else if(self.updatedPasswordTextField.text.length < 6) {
         [UIApplication presentAlertToast:@"请输入至少6位密码。" withVerticalPos:self.toastVerticalPos];
         result = NO;
+    } else if (![self.confirmTextField.text isEqualToString:self.updatedPasswordTextField.text]) {
+        [UIApplication presentAlertToast:@"请确认两次密码一致。" withVerticalPos:self.toastVerticalPos];
+        result = NO;
     }
     return result;
 }
@@ -128,7 +131,7 @@
 
 - (void)configureScrollView {
     CGRect frame = self.scrollView.frame;
-    frame.size.height += 1;
+    frame.size.height = self.bgView.frame.size.height;
     self.scrollView.contentSize = frame.size;
     
     self.mainBgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"paper_main.png"]];
@@ -148,8 +151,6 @@
     [self updatePassword];
 }
 
-
-
 #pragma mark - 
 #pragma mark UITextField delegate
 
@@ -160,6 +161,10 @@
         [self updatePassword];
     }
     return NO;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y / 2) animated:YES];
 }
 
 @end

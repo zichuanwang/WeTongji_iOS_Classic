@@ -14,7 +14,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *paperTitleLabel;
 @property (nonatomic, weak) IBOutlet UITextField *oldPasswordTextField;
 @property (nonatomic, weak) IBOutlet UITextField *updatedPasswordTextField;
+@property (nonatomic, weak) IBOutlet UITextField *confirmTextField;
 @property (nonatomic, weak) IBOutlet UIView *mainBgView;
+@property (nonatomic, weak) IBOutlet UIView *bgView;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 @end
