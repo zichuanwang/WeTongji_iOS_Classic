@@ -181,10 +181,12 @@
     NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
     for (NSIndexPath *indexPath in visiblePaths) {
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        Image *image = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
-        if (image == nil)
-        {
-            [self loadAvatarAtIndexPath:indexPath];
+        ChannelOutlineTableViewCell *cell = (ChannelOutlineTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        if(cell.avatarImageView.image == nil) {
+            Image *image = [Image imageWithURL:activity.avatar_link inManagedObjectContext:self.managedObjectContext];
+            if (image == nil) {
+                [self loadAvatarAtIndexPath:indexPath];
+            }
         }
     }
 }
