@@ -96,7 +96,7 @@
         }
         else {
             if(client.responseStatusCode == 8)
-                [UIApplication presentAlertToast:@"该账户已经注册过。" withVerticalPos:self.toastVerticalPos];
+                [UIApplication presentAlertToast:@"该帐号已经注册过。" withVerticalPos:self.toastVerticalPos];
             
             else if(client.responseStatusCode == 9) 
                 [UIApplication presentAlertToast:@"姓名与学号不匹配。" withVerticalPos:self.toastVerticalPos];

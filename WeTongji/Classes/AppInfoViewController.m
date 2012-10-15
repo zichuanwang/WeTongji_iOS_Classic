@@ -83,7 +83,7 @@
 - (IBAction)didClickFeedbackButton:(UIButton *)sender {
     MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
     if (!picker) {
-        [UIApplication presentAlertToast:@"您的设备未设置邮件账户。" withVerticalPos:DefaultToastVerticalPosition];
+        [UIApplication presentAlertToast:@"您的设备未设置邮件帐号。" withVerticalPos:DefaultToastVerticalPosition];
         return;
     }
     picker.mailComposeDelegate = self;

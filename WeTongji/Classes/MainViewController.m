@@ -95,6 +95,10 @@ typedef enum {
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    // |[super viewWillDisappear:]| is intended omitted here.
+}
+
 #pragma mark -
 #pragma mark Logic methods 
 

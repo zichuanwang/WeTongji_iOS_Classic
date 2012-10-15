@@ -100,13 +100,13 @@
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
-            [self createUser:client.responseData];
             [self.parentViewController dismissModalViewControllerAnimated:YES];
+            [self createUser:client.responseData];
             [UIApplication presentToast:@"登录成功。" withVerticalPos:DefaultToastVerticalPosition];
             [self saveContext];
         } else {
             if(client.responseStatusCode == 11)
-                [UIApplication presentAlertToast:@"账户未激活。" withVerticalPos:self.toastVerticalPos];
+                [UIApplication presentAlertToast:@"帐号未激活。" withVerticalPos:self.toastVerticalPos];
             else
                 [UIApplication presentAlertToast:@"登录失败。" withVerticalPos:self.toastVerticalPos];
             self.sendingRequest = NO;

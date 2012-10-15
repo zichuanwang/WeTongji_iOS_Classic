@@ -103,7 +103,7 @@
     
     UIButton *newAccountButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
     newAccountButton.backgroundColor = [UIColor clearColor];
-    [newAccountButton setTitle:@"点此新增一个账户" forState:UIControlStateNormal];
+    [newAccountButton setTitle:@"点此新增一个帐号" forState:UIControlStateNormal];
     [newAccountButton setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1] forState:UIControlStateNormal];
     [newAccountButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
     newAccountButton.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
@@ -203,8 +203,8 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
 //        UIAlertView *alert = [[UIAlertView alloc] 
-//                              initWithTitle: @"清除账户" 
-//                              message: @"是否确认清除？清除账户不会导致用户数据在服务器端的删除。" 
+//                              initWithTitle: @"清除帐号" 
+//                              message: @"是否确认清除？清除帐号不会导致用户数据在服务器端的删除。" 
 //                              delegate: self
 //                              cancelButtonTitle: @"取消"
 //                              otherButtonTitles: @"确定", nil];
