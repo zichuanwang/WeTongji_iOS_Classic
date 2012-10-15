@@ -89,6 +89,7 @@
             if(indexPath.row < TABLE_VIEW_VISIBLE_ROW_COUNT)
                 [self loadAvatarAtIndexPath:indexPath];
             outlineCell.avatarPlaceHolderImageView.hidden = NO;
+            outlineCell.avatarImageView.image = nil;
         }
     }
 }
