@@ -13,6 +13,7 @@ typedef enum {
     GetActivitySortTypeBeginAsc,
     GetActivitySortTypeBeginDesc,
     GetActivitySortTypeLikeDesc,
+    GetActivitySortTypePublishDesc,
 } GetActivitySortType;
 
 @class WTClient;

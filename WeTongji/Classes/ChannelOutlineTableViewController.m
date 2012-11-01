@@ -107,11 +107,15 @@
     NSSortDescriptor *sortByLike = [[NSSortDescriptor alloc] initWithKey:@"like_count" ascending:NO];
     BOOL sortByBeginAscending = (methodCode != ChannelSortByActivityBeginTimeDesc);
     NSSortDescriptor *sortByBegin = [[NSSortDescriptor alloc] initWithKey:@"begin_time" ascending:sortByBeginAscending];
+    NSSortDescriptor *sortByPublishTime = [[NSSortDescriptor alloc] initWithKey:@"activity_id" ascending:NO];
+
 
     NSArray *descriptors = nil;
     if(methodCode == ChannelSortByLikeCount)
         descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByLike, sortByBegin, nil];
-    else 
+    else if(methodCode == ChannelSortByPublishTimeDesc)
+        descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByPublishTime, nil];
+    else
         descriptors = [NSArray arrayWithObjects:sortByUpdate, sortByBegin, sortByLike, nil];
     [request setSortDescriptors:descriptors]; 
 }
@@ -163,6 +167,8 @@
         sortType = GetActivitySortTypeLikeDesc;
     else if(methodCode == ChannelSortByActivityBeginTimeDesc)
         sortType = GetActivitySortTypeBeginDesc;
+    else if(methodCode == ChannelSortByPublishTimeDesc)
+        sortType = GetActivitySortTypePublishDesc;
     [client getActivitesWithChannelIds:[NSUserDefaults getChannelFollowStatusString] sortType:sortType page:self.nextPage showExpire:[NSUserDefaults getShowExpireActivitiesParam]];
 }
 

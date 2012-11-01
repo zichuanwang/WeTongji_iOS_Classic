@@ -89,7 +89,7 @@
     [self.dataSourceIndexArray addObject:@"过滤条件"];
     
     NSArray *channel = [NSUserDefaults getChannelNameArray];
-    NSArray *sort = [NSArray arrayWithObjects:@"按活动开始时间正序", @"按活动开始时间逆序", @"按好评数逆序", nil];
+    NSArray *sort = [NSArray arrayWithObjects:@"按活动开始时间正序", @"按活动开始时间逆序", @"按好评数逆序", @"按发表日期排序", nil];
     NSArray *expire = [NSArray arrayWithObjects:@"过滤过期活动", nil];
     
     [self.dataSourceDictionary setValue:channel forKey:[self.dataSourceIndexArray objectAtIndex:0]];

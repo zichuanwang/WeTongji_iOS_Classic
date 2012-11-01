@@ -15,8 +15,9 @@
 //static NSString* const APIDomain = @"106.187.95.107:8080";
 static NSString* const APIDomain = @"we.tongji.edu.cn";
 
-#define GetActivitySortMethodLikeDesc   @"`like` DESC"
-#define GetActivitySortMethodBeginDesc  @"`begin` DESC"
+#define GetActivitySortMethodLikeDesc       @"`like` DESC"
+#define GetActivitySortMethodBeginDesc      @"`begin` DESC"
+#define GetActivitySortMethodPublishDesc    @"`created_at` DESC"
 
 @interface WTClient()
 
@@ -225,8 +226,11 @@ report_completion:
         page = 1;
     if(type == GetActivitySortTypeLikeDesc) {
         [self.params setObject:GetActivitySortMethodLikeDesc forKey:@"Sort"];
-    } else if(type == GetActivitySortTypeBeginDesc)
+    } else if(type == GetActivitySortTypeBeginDesc) {
         [self.params setObject:GetActivitySortMethodBeginDesc forKey:@"Sort"];
+    } else if(type == GetActivitySortTypePublishDesc) {
+        [self.params setObject:GetActivitySortMethodPublishDesc forKey:@"Sort"];
+    }
     NSString *currentUserID = [NSUserDefaults getCurrentUserID];
     if(currentUserID) {
         self.currentUserIDRequired = YES;
