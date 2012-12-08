@@ -150,6 +150,7 @@
                 self.activityImageView.image = [self.activityImageView.image compressImage];
                 
                 [self.activityImageView configureShadow];
+                self.activityImageView.hidden = NO;
                 [self refreshViewLayout];
             }
         } cacheInContext:self.managedObjectContext];
