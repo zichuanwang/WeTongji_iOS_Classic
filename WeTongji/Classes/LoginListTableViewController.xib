@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">12A256</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2541</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
 		<string key="IBDocument.AppKitVersion">1185</string>
 		<string key="IBDocument.HIToolboxVersion">622.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1875</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -99,6 +99,11 @@
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">请选择一个账号登录</string>
+										<object class="NSColor" key="IBUITextColor">
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MC4yAA</bytes>
+										</object>
 										<object class="NSColor" key="IBUIHighlightedColor" id="404987012">
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MQA</bytes>
@@ -106,11 +111,6 @@
 										<reference key="IBUIShadowColor" ref="404987012"/>
 										<string key="IBUIShadowOffset">{0, 1}</string>
 										<int key="IBUIBaselineAdjustment">0</int>
-										<string key="IBUIText">请选择一个账号登录</string>
-										<object class="NSColor" key="IBUITextColor">
-											<int key="NSColorSpace">3</int>
-											<bytes key="NSWhite">MC4yAA</bytes>
-										</object>
 										<int key="IBUITextAlignment">1</int>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">2</int>
@@ -122,7 +122,6 @@
 											<int key="NSfFlags">16</int>
 										</object>
 										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-										<int key="IBUIAutoshrinkMode">0</int>
 									</object>
 								</array>
 								<string key="NSFrameSize">{320, 80}</string>
@@ -414,6 +413,6 @@
 			<string key="paper_main.png">{320, 40}</string>
 			<string key="paper_single_line.png">{320, 40}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1875</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>
