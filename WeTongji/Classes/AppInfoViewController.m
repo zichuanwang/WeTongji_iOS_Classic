@@ -81,11 +81,12 @@
 #pragma mark IBActions
 
 - (IBAction)didClickFeedbackButton:(UIButton *)sender {
-    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-    if (!picker) {
+    if (![MFMailComposeViewController canSendMail]) {
         [UIApplication presentAlertToast:@"您的设备未设置邮件帐号。" withVerticalPos:DefaultToastVerticalPosition];
         return;
     }
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
     picker.mailComposeDelegate = self;
     [picker setSubject:@"微同济 1.1.0 用户反馈"];
     [picker.navigationBar setBarStyle:UIBarStyleBlack];

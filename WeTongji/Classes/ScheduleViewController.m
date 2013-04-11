@@ -96,6 +96,7 @@ typedef enum {
     WTClient *client = [WTClient client];
     [client setCompletionBlock:^(WTClient *client) {
         if(!client.hasError) {
+            NSLog(@"%@", client.responseData);
             NSArray *activites = [client.responseData objectForKey:@"Activities"];
             for(NSDictionary *dict in activites) {
                 Activity *activity = [Activity insertActivity:dict inManagedObjectContext:self.managedObjectContext];
